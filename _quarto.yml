@@ -6,7 +6,7 @@ book:
   author: "Brian Weatherson"
   date: today
   search: true
-  repo-url: https://github.com/jjallaire/hopr/
+  repo-url: https://github.com/bweatherson/gtadt
   repo-actions: [issue]
   downloads: [pdf, epub, docx]
   sharing: [twitter, facebook]
