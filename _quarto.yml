@@ -1,0 +1,67 @@
+project:
+  type: book
+
+book:
+  title: "Game Theory as Decision Theory"
+  author: "Brian Weatherson"
+  date: today
+  search: true
+  repo-url: https://github.com/jjallaire/hopr/
+  repo-actions: [issue]
+  downloads: [pdf, epub, docx]
+  sharing: [twitter, facebook]
+  chapters:
+    - index.qmd
+    - intro.qmd
+    - references.qmd
+
+bibliography: ../articles/rBib.bib
+
+comments:
+  hypothesis: 
+    theme: clean
+
+format: 
+    html:
+      theme: 
+        light: 
+          - solar
+          - html-fonts.scss
+          - book-light-defaults.scss
+        dark:
+          - solar
+          - html-fonts.scss
+          - dark-table.scss
+      linestretch: 1.5
+      toc: true
+      toc-title: "In this chapter"
+      toc-depth: 3
+      toc-location: right
+      reference-location: margin
+      margin-header: "&nbsp;"
+      fontsize: 1.2em
+      include-in-header:
+        - text: |
+            <link rel="stylesheet" href="https://use.typekit.net/uzz2drx.css">
+      mainfont: "ff-scala-sans-pro, sans-serif"
+      html-math-method: mathjax
+      self-contained: false
+    docx:
+      reference-doc: my-template.docx
+    epub: default
+    pdf: 
+      format: scrreprt
+      geometry: "left=1.5in,right=1.5in,top=1.78in,bottom=1.78in"
+      mainfont: Scala Pro
+      sansfont: Scala Sans Pro
+      mainfontoptions: Scale = MatchLowercase
+      fontsize: 12pt
+      linkcolor: black
+      link-citations: true
+      include-in-header:
+        text: |
+          \setlength\heavyrulewidth{0ex}
+          \setlength\lightrulewidth{0ex}
+
+editor: visual
+

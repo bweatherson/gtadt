@@ -1,0 +1,51 @@
+/*-- scss:defaults --*/
+$font-weight-normal:           400 !default;
+$font-weight-bold:      600 !default;
+
+
+/*-- scss:rules --*/
+h1, h2, h3, h4, .subtitle, .sidebar-title, .quarto-title-meta-heading {
+  font-family: ff-scala;
+}
+
+.toc-title{
+  font-family: ff-scala;
+}
+
+table {
+    margin-left: auto;
+    margin-right: auto;
+    border-spacing: 0;
+    border-top: 2px solid #002b36;
+}
+table th, td, tr {
+    padding: 2px 2px;
+    border-top: dashed 2px #002b36;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+    background-color: #002b36;
+}
+
+
+/*caption {
+  font-size: smaller;
+}
+
+#tbl-radical-interpreter, 
+#tbl-generic-game, 
+#tbl-stag-hunt, 
+#tbl-global-game,
+#tbl-underspecified,
+#tbl-simple-game,
+#tbl-death-damascus,
+#tbl-up-down{
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+}*/
+
+.column-container{
+  font-weight: 300;
+  font-size: smaller;
+}

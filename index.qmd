@@ -1,0 +1,3 @@
+# Preface {.unnumbered}
+
+Draft for a book based on my (overly long) paper [Gamified Decision Theory](https://brian.weatherson.org/gdt/gdt.html).

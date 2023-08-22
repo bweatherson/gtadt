@@ -1,0 +1,2031 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.433">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Game Theory as Decision Theory - 1&nbsp; Introduction</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./references.html" rel="next">
+<link href="./index.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<link rel="stylesheet" href="https://use.typekit.net/uzz2drx.css">
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+</head>
+
+<body class="nav-sidebar floating slimcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./intro.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Game Theory as Decision Theory</a> 
+        <div class="sidebar-tools-main tools-wide">
+    <a href="https://github.com/jjallaire/hopr/" rel="" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <div class="dropdown">
+      <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download"><i class="bi bi-download"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="./Game-Theory-as-Decision-Theory.pdf">
+              <i class="bi bi-bi-file-pdf pe-1"></i>
+            Download PDF
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="./Game-Theory-as-Decision-Theory.epub">
+              <i class="bi bi-bi-journal pe-1"></i>
+            Download ePub
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="./Game-Theory-as-Decision-Theory.docx">
+              <i class="bi bi-bi-file-word pe-1"></i>
+            Download Docx
+            </a>
+          </li>
+      </ul>
+    </div>
+    <div class="dropdown">
+      <a href="" title="Share" id="quarto-navigation-tool-dropdown-1" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Share"><i class="bi bi-share"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-1">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://twitter.com/intent/tweet?url=|url|">
+              <i class="bi bi-bi-twitter pe-1"></i>
+            Twitter
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://www.facebook.com/sharer/sharer.php?u=|url|">
+              <i class="bi bi-bi-facebook pe-1"></i>
+            Facebook
+            </a>
+          </li>
+      </ul>
+    </div>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar"><div class="quarto-margin-header"><div class="margin-header-item">
+<p>&nbsp;</p>
+</div></div>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">In this chapter</h2>
+   
+  <ul>
+  <li><a href="#sec-ideal" id="toc-sec-ideal" class="nav-link active" data-scroll-target="#sec-ideal"><span class="header-section-number">2</span> Idealised</a></li>
+  <li><a href="#sec-expect" id="toc-sec-expect" class="nav-link" data-scroll-target="#sec-expect"><span class="header-section-number">3</span> Expectationist</a></li>
+  <li><a href="#sec-causal" id="toc-sec-causal" class="nav-link" data-scroll-target="#sec-causal"><span class="header-section-number">4</span> Causal</a></li>
+  <li><a href="#sec-mixed" id="toc-sec-mixed" class="nav-link" data-scroll-target="#sec-mixed"><span class="header-section-number">5</span> Mixtures</a></li>
+  <li><a href="#sec-ratify" id="toc-sec-ratify" class="nav-link" data-scroll-target="#sec-ratify"><span class="header-section-number">6</span> Ratificationist</a></li>
+  <li><a href="#sec-indecisive" id="toc-sec-indecisive" class="nav-link" data-scroll-target="#sec-indecisive"><span class="header-section-number">7</span> Indecisive</a></li>
+  <li><a href="#sec-dualmandate" id="toc-sec-dualmandate" class="nav-link" data-scroll-target="#sec-dualmandate"><span class="header-section-number">8</span> Dual Mandate</a></li>
+  <li><a href="#sec-substantive" id="toc-sec-substantive" class="nav-link" data-scroll-target="#sec-substantive"><span class="header-section-number">9</span> Substantive</a></li>
+  <li><a href="#sec-weak" id="toc-sec-weak" class="nav-link" data-scroll-target="#sec-weak"><span class="header-section-number">10</span> Weak Dominance, Once</a></li>
+  <li><a href="#sec-conclusion" id="toc-sec-conclusion" class="nav-link" data-scroll-target="#sec-conclusion"><span class="header-section-number">11</span> Conclusion</a></li>
+  <li><a href="#sec-rps" id="toc-sec-rps" class="nav-link" data-scroll-target="#sec-rps">Appendix One: Rock-Paper-Scissors</a></li>
+  <li><a href="#sec-buchak" id="toc-sec-buchak" class="nav-link" data-scroll-target="#sec-buchak">Appendix Two: Risk-Weighted Utility</a></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/jjallaire/hopr/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+    </div>
+<!-- main -->
+<main class="content page-columns page-full" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span id="sec-intro" class="quarto-section-identifier"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<p>Textbook versions of game theory embed a distinctive approach to decision theory. That theory isn’t always made explicit, and it isn’t always clear how it handles some cases. But we can extract one interesting and plausible theory, which I’ll call Gamified Decision Theory (GDT), from these textbooks. There are nine characteristics of GDT (as I’ll understand it) that I will focus on. I’ll quickly list them here, then the bulk of the paper will consist of a section on each of the nine characteristics.</p>
+<ol type="1">
+<li><strong>Idealised</strong>; GDT is a theory of what ideal deciders do.</li>
+<li><strong>Expectationist</strong>; the ideal decider prefers getting more expected value to getting less.</li>
+<li><strong>Causal</strong>; GDT is a variety of Causal Decision Theory (CDT).</li>
+<li><strong>Allows Mixtures</strong>; the ideal decider can perform a probabilistic mixture of any acts they can perform.</li>
+<li><strong>Ratificationist</strong>; the ideal decider endorses the decisions they make.</li>
+<li><strong>Indecisive</strong>; GDT sometimes says that multiple options are permissible, and they are not equally good.</li>
+<li><strong>Dual Mandate</strong>; in a dynamic choice, the ideal decider will follow a plan that’s permissible, and take choices at every stage that are permissible.</li>
+<li><strong>Substantive Probability</strong>; the ideal decider has rational credences.</li>
+<li><strong>Weak Dominance, Once</strong>; the ideal decider will not choose weakly dominated options, but they may choose options that would not survive iterated deletion of weakly dominated strategies.</li>
+</ol>
+<p>This is not going to be a work of exegesis, poring over game theory texts to show that they really do endorse all of 1-9. In fact it wouldn’t take much work to show that they endorse 1-5, so the work wouldn’t be worth doing. And while some books endorse 8 and 9, it would take a lot more investigative work than I’m going to do here to show that anything like a majority of them do. It would be interesting, but not obviously a philosophical question, to see what proportion endorse 6 and 7. But I’m going to set that aside.</p>
+<p>What I do want to argue is that you can find some support for all of these in some game theory textbooks, and that combined they produce a plausible decision theory. While the textbooks don’t all agree, for simplicity I’m going to focus on one book: Giacomo Bonanno’s <em>Game Theory</em> <span class="citation" data-cites="Bonanno2018">(<a href="references.html#ref-Bonanno2018" role="doc-biblioref">Bonanno 2018</a>)</span>. This book has two important virtues: it is philosophically deep, and it is available for free. It isn’t hard to find a game theory text with one or other of these virtues, but few have both. So it will be our primary guide in what follows, along with some primary sources (most of which are referenced in that book).</p>
+<p>Methodologically, this paper differs from most works in decision theory in two ways. It has been a commonplace since <span class="citation" data-cites="Nozick1969">Nozick (<a href="references.html#ref-Nozick1969" role="doc-biblioref">1969</a>)</span> to include demons, who are arbitrarily good at predicting a decision, in problems. Some of the cases here will involve two such demons, each of which is arbitrarily good at predicting a decision, and whose errors are probabilistically independent. Second, I’m going to rely less on intuitions about particular cases, and more on intuitions that certain cases should be treated the same way. This makes sense given the history of the field. There is much less consensus about what to do in Newcomb problems than about which problems are Newcomb problems. Judgments, or intuitions if you prefer, about how to classify problems seem more stable and more reliable, and they will be central to this paper.</p>
+<p>The conclusion of this paper is that a permissive version of causal ratificationism is correct. Ideal choosers make choices that they do not immediately regret. With two small caveats, that’s all there is to decision theory; any ratifiable choice is one an ideal agent might make. The first caveat is to with choices over time; the ideal chooser will make choices such that both their individual choices, and the set of choices they make, are ratifiable. This will exclude some possible choices that are individually ratifiable. Second, the ideal chooser will not choose weakly dominated options. These are fairly minor caveats; the resulting theory is not very different from other forms of permissive causal ratificationism, such as that defended by Melissa <span class="citation" data-cites="Fuscond">Fusco (<a href="references.html#ref-Fuscond" role="doc-biblioref">n.d.</a>)</span>.</p>
+<section id="sec-ideal" class="level1 page-columns page-full" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Idealised</h1>
+<p>Consider the following decision problem. Chooser (our main protagonist) is going to be given a series of multiplication problems, where each of the multiplicands is a four digit number. Chooser doesn’t have access to any kind of calculating device, and has no special arithmetic ability. For each question, if Chooser says the right answer, they get $2; if they pass, they get $1; if they say the wrong answer, they get nothing. <a href="#tbl-multi">Table&nbsp;<span>2.1</span></a> has the payout in table form.</p>
+<div id="tbl-multi" class="anchored">
+<table class="table">
+<caption>Table&nbsp;2.1: The multiplication game</caption>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><strong>Best Guess Correct</strong></td>
+<td style="text-align: center;"><strong>Best Guess Incorrect</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong>Guess</strong></td>
+<td style="text-align: center;">$2</td>
+<td style="text-align: center;">$0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><strong>Pass</strong></td>
+<td style="text-align: center;">$1</td>
+<td style="text-align: center;">$1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Every variety of decision theory defended in philosophy journals in recent years, and every game theory textbook, says that Chooser should simply say the correct answer. After all, Chooser should have probabilistically coherent credences, and every mathematical truth has probability 1, so whatever the correct answer is, saying it is a sure $2.</p>
+<p>This is completely terrible advice. Chooser should pass every time, unless the question is something boring like 1000 times 2000. The chance of them getting a question like 5278 times 9713 correct are way less than one in two, so they are better off passing.</p>
+<p>This doesn’t mean that every philosophical decision theory, and every game theory textbook, is wrong. Those theories are not in the business of giving advice to people like Chooser. They are in the business of saying what it would be ideal, in some sense of ideal, for Chooser to do. And it would be ideal for Chooser to be a reliable computer, so if Chooser were reliable, they would always give the correct answer.</p>
+<div class="page-columns page-full"><p>There is a big question about why we should care about what would have if Chooser were ideal. Chooser is not in fact ideal, so who cares what they would do if they were different. One might think that knowing what the ideal is gives Chooser something to aim for. Even if Chooser is not ideal, they can try to be closer to the ideal. The problem is that trying to be more like the ideal will make things worse. The ideal agent will never pass, and even if Chooser doesn’t know the answers to the particular questions, they can know this fact. So if they try to be more like the ideal, they will never pass, and things will go badly.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p><div class="no-row-height column-margin column-container"><li id="fn1"><p><sup>1</sup>&nbsp;This is a special case of Lipsey and Lancaster’s Theory of the Second Best <span class="citation" data-cites="LipseyLancaster">(<a href="references.html#ref-LipseyLancaster" role="doc-biblioref">Lipsey and Lancaster 1956</a>)</span>. If you don’t have control over every parameter, setting the parameters you do control to the ideal values is generally inadvisable.</p></li></div></div>
+<div class="page-columns page-full"><p>In philosophy we have two very different uses of the term ‘idealisation’. One is the kind of idealisation we see in, for example, Ideal Observer theories in ethics. The other is the kind of idealisation we see in, for example, Ideal Gas models in chemistry. It’s important to not confuse the two. Think about the volumeless, infinitely dense, molecules in an Ideal Gas model. To say that this is an idealised model is not to say that having volume, taking up space, is an imperfection. The point is not to tell molecules what the perfect size is. (“The only good molecule is a volumeless molecule.”) Nor is it to tell them that they should approximate the ideal. (“Smaller the better, fellas.”) It’s to say that for some predictive and explanatory purposes, molecules behave no differently to how they would behave if they took up no space.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p><div class="no-row-height column-margin column-container"><li id="fn2"><p><sup>2</sup>&nbsp;I’m drawing here on work on the nature of idealisations by Michael <span class="citation" data-cites="Strevens2008">Strevens (<a href="references.html#ref-Strevens2008" role="doc-biblioref">2008</a>)</span> and by Kevin <span class="citation" data-cites="Davey2011">Davey (<a href="references.html#ref-Davey2011" role="doc-biblioref">2011</a>)</span>.</p></li></div></div>
+<p>The best way to understand decision theorists, and game theorists, is that they are using idealisations in this latter sense. The ideal choosers of decision theory are not like the Ideal Observers in ethics, but like the Ideal Gases. The point of the theory is to say how things go in a simplified version of the case, and then argue that this is useful for predictive and explanatory purposes because, at least some of the time, the simplifications don’t make a difference.</p>
+<p>One nice example of this working is George Akerlof’s discussion of the used car market <span class="citation" data-cites="Akerlof1970">Akerlof (<a href="references.html#ref-Akerlof1970" role="doc-biblioref">1970</a>)</span>. In the twentieth century, it was common for lightly used cars to sell at a massive discount to new cars. There was no good explanation for this, and it was often put down to a brute preference for new cars. What Akerlof showed was that a model where (a) new cars varied substantially in quality, and (b) in the used car market, buyers had less information about the car than sellers, you could get a discount similar to what you saw in real life even if the buyers had no special preference for new cars. Rather, buyers had a preference for good cars, and took the fact that this car was for sale to be evidence that it was badly made. It was important for Akerlof’s explanatory purposes that he could show that people were being rational, and this required that he have a decision theory that they followed. In fact what he used was something like GDT. We now have excellent evidence that something like his model was correct. As the variation in quality of new cars has declined, and the information available to buyers of used cars has risen, the used car discount has just about vanished. (In fact it went negative during the pandemic, for reasons I don’t at all understand.)</p>
+<p>I’ll end this section with a response to one objection, one caveat, and one surprising bonus to doing idealised decision theory this way.</p>
+<div class="page-columns page-full"><p>The objection is that decision theory isn’t actually that helpful for prediction and explanation. If all that it says are things like when rain is more probable, more people take umbrellas, that doesn’t need a whole academic discipline. The response to that is that in non-cooperative games, the predictions, and explanations, can be somewhat surprising. One nice case of this is the discussion of Gulf of Mexico oil leases in <span class="citation" data-cites="Wilson1967">Wilson (<a href="references.html#ref-Wilson1967" role="doc-biblioref">1967</a>)</span>.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> But here’s a simpler surprising prediction that you need something like GDT to get.<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></p><div class="no-row-height column-margin column-container"><li id="fn3"><p><sup>3</sup>&nbsp;I learned about this paper from the excellent discussion of the case in <span class="citation" data-cites="Sutton2000">Sutton (<a href="references.html#ref-Sutton2000" role="doc-biblioref">2000</a>)</span>.</p></li><li id="fn4"><p><sup>4</sup>&nbsp;A somewhat similar point is made in the example of the drowning dog on page 216 of <span class="citation" data-cites="Bonanno2018">Bonanno (<a href="references.html#ref-Bonanno2018" role="doc-biblioref">2018</a>)</span>.</p></li></div></div>
+<p>Imagine Row and Column are playing rock-paper-scissors. A bystander, C, says that he really likes seeing rock beat scissors, so he will pay whoever wins by playing rock $1. Assuming that Row and Column have no ability to collude, the effect of this will be to shift the payouts in the game they are playing from left table to right table, where <em>c</em> is the value of the dollar compared to the value of winning the game. This changes the game they are playing from <a href="#tbl-rps-basic">Table&nbsp;<span>2.2 (a)</span></a> to <a href="#tbl-rps-modified">Table&nbsp;<span>2.2 (b)</span></a>.</p>
+<div id="tbl-rps" class="tbl-parent quarto-layout-panel anchored">
+<div class="panel-caption table-caption">
+<p>Table&nbsp;2.2: Two versions of Rock-Paper-Scissors</p>
+</div>
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div id="tbl-rps-basic" class="quarto-layout-cell quarto-layout-cell-subref anchored" data-ref-parent="tbl-rps" style="flex-basis: 50.0%;justify-content: center;">
+<table class="table">
+<caption>(a) Original game</caption>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><strong>Rock</strong></td>
+<td style="text-align: center;"><strong>Paper</strong></td>
+<td style="text-align: center;"><strong>Scissors</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong>Rock</strong></td>
+<td style="text-align: center;">0,0</td>
+<td style="text-align: center;">-1,1</td>
+<td style="text-align: center;">1,-1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><strong>Paper</strong></td>
+<td style="text-align: center;">1,-1</td>
+<td style="text-align: center;">0,0</td>
+<td style="text-align: center;">-1,1</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong>Scissors</strong></td>
+<td style="text-align: center;">-1,1</td>
+<td style="text-align: center;">1,-1</td>
+<td style="text-align: center;">0,0</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="tbl-rps-modified" class="quarto-layout-cell quarto-layout-cell-subref anchored" data-ref-parent="tbl-rps" style="flex-basis: 50.0%;justify-content: center;">
+<table class="table">
+<caption>(b) Modified game</caption>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><strong>Rock</strong></td>
+<td style="text-align: center;"><strong>Paper</strong></td>
+<td style="text-align: center;"><strong>Scissors</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong>Rock</strong></td>
+<td style="text-align: center;">0,0</td>
+<td style="text-align: center;">-1,1</td>
+<td style="text-align: center;">1+<em>c</em>,-1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><strong>Paper</strong></td>
+<td style="text-align: center;">1,-1</td>
+<td style="text-align: center;">0,0</td>
+<td style="text-align: center;">-1,1</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong>Scissors</strong></td>
+<td style="text-align: center;">-1,1+<em>c</em></td>
+<td style="text-align: center;">1,-1</td>
+<td style="text-align: center;">0,0</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="page-columns page-full"><p>The surprising prediction is that this will <em>decrease</em> the frequency with which the bystander gets their way. The incentive will not make either party play rock more often, they will still play it one third of the time, but the frequency of scissors will decrease, so the <em>rock smash</em> outcome will be less frequent. Moreover, the bigger the incentive, the larger this increase will be<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a>. Simple rules like “When behaviour is rewarded, it happens more often” don’t always work in strategic settings, and it takes some care to tell when they do work.</p><div class="no-row-height column-margin column-container"><li id="fn5"><p><sup>5</sup>&nbsp;The proof is in Appendix One.</p></li></div></div>
+<p>The caveat is that there is a reason that this particular idealisation is chosen, at least as the first attempt. There are a lot of stylised facts about people that we could use in a model of behaviour. In game theory we concentrate on the ways in which people are, at least approximately much of the time, somewhat rational. People who prefer vanilla to chocolate really do buy vanilla more than chocolate. We could also choose stylised facts that are not particularly rational. But there is a worry that these will not remain facts, even approximately, when the stakes go up. And for some purposes, what people do in high stakes situations might be really important. If you think that people are more careful in high stakes situations, and that this care translates into more rational action, and it’s particularly important to make the right predictions in high stakes cases, it makes sense to focus on idealisations that are also true of perfectly rational people.</p>
+<p>There is a tricky complication here that isn’t always attended to in theory, though in practice it’s less of a problem. Especially in decision theory, we idealise away from computational shortcomings, but not away from informational shortcomings. We take the chooser’s information as fixed, and ask how they’ll decide. In high stakes cases, people don’t just get better calculators, they get more information. If this is why we idealise, why don’t we idealise away from ignorance? The reason is that in a lot of cases, either it is impossible to get the evidence the chooser needs, because it is about the future, or it is challenging because there is someone else working just as hard to prevent the chooser getting the information. It’s not a coincidence that game theory, and decision theory, are most explanatory when the chooser’s ignorance is about the future, or about something that someone is trying to hide from them.</p>
+<p>There is one surprising bonus from starting with these rational idealisations. Sometimes one gets a powerful kind of explanation from very carefully working out the ideal theory, and then relaxing one of the components. At a very high level of abstraction, that’s what happened with the development of cursed equilibrium <span class="citation" data-cites="EysterRabin2005">(<a href="references.html#ref-EysterRabin2005" role="doc-biblioref">Eyster and Rabin 2005</a>)</span>. The explanations one gets these ways are, to my mind, very surprising. The models have people acting as if they have solved very complex equations, but have ignored simple facts, notably that other people may know more than they do. But if the model fits the data, it is worth taking seriously. And while it was logically possible to develop a model like cursed equilibrium without first developing an ideal model and then relaxing it, it seems not surprising that in fact that’s how the model was developed.</p>
+<p>So our topic is idealised decision theory. In practice, that means the following things. The chooser can distinguish any two possibilities that are relevant to their decision, there is no unawareness in that sense, and they know when two propositions are necessarily equivalent. They can perform any calculation necessary to making their decision at zero cost. They have perfect recall. They don’t incur deliberation costs; in particular, thinking about the downsides of an option does not reduce the utility of ultimately taking that option, as it does for many humans. They know what options they can perform, and what options they can’t perform. I’ll argue in <a href="#sec-mixed"><span>Chapter&nbsp;5</span></a> that it means they can play mixed strategies. Finally, I’ll assume it means they have numerical credences and utilities. I’m not sure this should be part of the same idealisation, but it simplifies the discussion, and it is arguable that non-numerical credences and utilities come from the same kind of unawareness that we’re assuming away. <span class="citation" data-cites="GrantEtAl2021">(<a href="references.html#ref-GrantEtAl2021" role="doc-biblioref">Grant, Ani, and Quiggin 2021</a>)</span></p>
+<p>So the problems our choosers face look like this. There are some possible states of the world, and possible choices. The chooser knows the value to them of each state-choice pair. (In <a href="#sec-expect"><span>Chapter&nbsp;3</span></a> I’ll say more about this value.) The states are, and are known to be, causally independent of the choices. But the states might not be probabilistically independent of the choices. Instead, we’ll assume that the chooser has a (reasonable) value for Pr(<em>s</em> | <em>c</em>), where <em>s</em> is any one of the states, and <em>c</em> is any one of the choices. The question is what they will do, given all this information.</p>
+</section>
+<section id="sec-expect" class="level1 page-columns page-full" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Expectationist</h1>
+<div class="page-columns page-full"><p>There is a strange split in contemporary decision theory. On the one hand, there are questions about the way to model attitudes to risk, largely organised around the challenge to orthodoxy from <span class="citation" data-cites="Quiggin1982">Quiggin (<a href="references.html#ref-Quiggin1982" role="doc-biblioref">1982</a>)</span> and <span class="citation" data-cites="BuchakRisk">Buchak (<a href="references.html#ref-BuchakRisk" role="doc-biblioref">2013</a>)</span>. On the other hand, there are questions about what to do in cases where the states are causally but not probabilistically independent of one’s actions, with the central case being Newcomb’s Problem <span class="citation" data-cites="Nozick1969">(<a href="references.html#ref-Nozick1969" role="doc-biblioref">Nozick 1969</a>)</span>. The strange split is that these two literatures have almost nothing in common.<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a></p><div class="no-row-height column-margin column-container"><li id="fn6"><p><sup>6</sup>&nbsp;There is a survey article from a few years ago - <span class="citation" data-cites="Elliot2019">Elliott (<a href="references.html#ref-Elliot2019" role="doc-biblioref">2019</a>)</span> - that has summaries of the then state-of-the-art on these two questions. And it makes it very striking how little the literatures on each of them overlap.</p></li></div></div>
+<p>This split might seem to make sense when one reflects that there is no logical difficulty in endorsing any prominent answer to one set of questions with any prominent answer to the other set. But things get more difficult quickly. For one thing, one answer to questions about risk, what I’ll call the expectationist answer, is universally assumed by people working on issues around Newcomb’s Problem. For another, the argument forms used in the two debates are similar, and that should affect how the two arguments go.&nbsp;</p>
+<p>Say that a normal decision problem is one where the states are probabilistically independent of the choices. A simple example is betting on a coin flip. In talking about normal decision problems I’ll normally label the states H, for Heads, or T for Tails. Unless otherwise stated coins are fair, so H and T are equiprobable.&nbsp;</p>
+<p>Say that an abnormal decision problem is simply one that isn’t normal. A simple example is where the states are predictions of an arbitrarily accurate predictor. I’ll normally label such states as PX, where X is a choice the agent may make. In these cases the Predictor is arbitrarily accurate unless otherwise stated, but we will spend some time with more error prone predictors.&nbsp;</p>
+<p>The view I call expectationism has two parts. First, it says that in normal decision problems, the rational agent maximises the expected value of something like the value of their action. Second, it says that something like this expected value plays an important role in the theory of abnormal decision problems. These definitions are vague, so there are possible borderline cases. But in practice this doesn’t arise, at least in the philosophy literature. Everyone working on abnormal problems is an expectationist. Indeed, most work assumes without even saying it that the first clause of expectationism is correct. Everyone working on normal problems makes it clear which side they fall on, so there is no vagueness there. And every game theory text is expectationist.&nbsp;</p>
+<p>I’m going to mostly follow suit. So why am I belabouring this point? One small reason and one large reason. The small reason is that one of the arguments I’ll give concerning abnormal cases generalises to an argument for expectationism about normal cases. The other reason is dialectical.</p>
+<p>In the debate about normal cases, the method of gathering intuitions about cases, and seeing which theory fits the intuitions best, does not favour expectationism. On the contrary, the Quiggin-Buchak theory does a much better job on that score. There is something incoherent about assuming expectationism is true for normal cases, and then thinking that the right way to theorise about abnormal cases is asking which theory fits intuitions best. If that’s the goal of decision theory, we shouldn’t be expectationist to start with.</p>
+<p>The argument for expectationism is not that it fits the intuitions about cases best, but that it’s the only theory that is compatible with various highly plausible principles, such as the Sure Thing Principle. Again, the theorist working on abnormal cases who is an expectationist has a dialectical burden here. They don’t have to believe in the Sure Thing Principle, and indeed many expectationists don’t <span class="citation" data-cites="Gallownd">(<a href="references.html#ref-Gallownd" role="doc-biblioref">Gallow, n.d.</a>)</span>. But they do have to believe in some principle that can be used to make an argument for expectationism. Especially when it comes to evidential decision theorists, I’m not sure what that principle might be. Still, I don’t have an argument that there is no such principle, so I’ll just note this is a challenge, not any kind of refutation.</p>
+<div class="page-columns page-full"><p>Expectationism has a big practical advantage; it lets us treat the payouts in a game table as expected values, not any kind of final value. This is useful because it is very rare that a decision problem results in outcomes that have anything like final value. Often we are thinking about decision problems where the payouts are in dollars, or some other currency. That’s to say, we are often considering gambles whose payout is another gamble. Holding some currency is a bet against inflation; in general, the value of currency is typically highly uncertain.<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a> For the expectationist, this is not a serious theoretical difficulty. As long as a dollar, or a euro, or a peso, has an expected value, we can sensibly talk about decision problems with payouts in those currencies. Depending on just how the non-expectationist thinks about compound gambles, they might have a much harder time handling even simple money bets.<a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a></p><div class="no-row-height column-margin column-container"><li id="fn7"><p><sup>7</sup>&nbsp;See <span class="citation" data-cites="Alcoba2023">Alcoba (<a href="references.html#ref-Alcoba2023" role="doc-biblioref">2023</a>)</span> for what happens when people start thinking that bet is a bad one.</p></li><li id="fn8"><p><sup>8</sup>&nbsp;Joanna <span class="citation" data-cites="Thoma2019">Thoma (<a href="references.html#ref-Thoma2019" role="doc-biblioref">2019</a>)</span> develops a subtle critique of some non-expectationist theories starting with something like this point.</p></li></div></div>
+</section>
+<section id="sec-causal" class="level1 page-columns page-full" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Causal</h1>
+<div class="page-columns page-full"><p>It shouldn’t be controversial to claim that game theory textbooks are committed a broadly causal version of decision theory.<a href="#fn9" class="footnote-ref" id="fnref9" role="doc-noteref"><sup>9</sup></a> For one thing, they always recommend defecting in Prisoners’ Dilemma, even when playing with a twin. As David Lewis showed, this is equivalent to recommending two-boxing in Newcomb’s Problem <span class="citation" data-cites="Lewis1979e">(<a href="references.html#ref-Lewis1979e" role="doc-biblioref">Lewis 1979</a>)</span>. They endorse the causal decision theorist’s signature argument form: the deletion of strongly dominated strategies. Indeed, the typical book introduces this before it introduces anything about probability. When they do get around to probabilities, they tend to define the expected value of a choice in a way only a causal decision theorist could endorse. In particular, they define expected values using unconditional, rather than conditional, probabilities.<a href="#fn10" class="footnote-ref" id="fnref10" role="doc-noteref"><sup>10</sup></a> And the probabilities are simply probabilities of states, not probabilities of any kind of counterfactual. Indeed, you can go entire textbooks without even getting a symbol for a counterfactual conditional.</p><div class="no-row-height column-margin column-container"><li id="fn9"><p><sup>9</sup>&nbsp;This point is made by <span class="citation" data-cites="Harper1988">Harper (<a href="references.html#ref-Harper1988" role="doc-biblioref">1988</a>)</span>, and many (though not all) of the conclusions I draw in this paper will be similar to ones he drew.</p></li><li id="fn10"><p><sup>10</sup>&nbsp;See, for instance, the introduction of them on page 136 of <span class="citation" data-cites="Bonanno2018">Bonanno (<a href="references.html#ref-Bonanno2018" role="doc-biblioref">2018</a>)</span>. And note that we get 135 pages before the notion of an expectation is introduced; that’s how much is done simply with dominance reasoning</p></li></div></div>
+<div class="page-columns page-full"><p>What’s more controversial is that they are right to adopt a kind of causal decision theory (CDT).<a href="#fn11" class="footnote-ref" id="fnref11" role="doc-noteref"><sup>11</sup></a> In the recent literature, I think there are four main kinds of objections to CDT. First, it leaves one with too little money in Newcomb’s Problem. Second, it gives the wrong result in problems like Frustrator <span class="citation" data-cites="SpencerWells2019">(<a href="references.html#ref-SpencerWells2019" role="doc-biblioref">Spencer and Wells 2019</a>)</span>. Third, it gives the wrong result in asymmetric Death in Damascus cases, as in <span class="citation" data-cites="Egan2007-EGASCT">Egan (<a href="references.html#ref-Egan2007-EGASCT" role="doc-biblioref">2007</a>)</span>. Fourth, it gives strange results in Ahmed’s <em>Betting on the Past</em> and <em>Betting on the Laws</em> cases. I’m going to set those problems aside because (a) they require that an agent not always be aware of what actions are possible, and that’s inconsistent with the idealisations introduced in <a href="#sec-ideal"><span>Chapter&nbsp;2</span></a>, and (b) they raise questions about just what it means for two things to be causally independent that go beyond the scope of this paper.</p><div class="no-row-height column-margin column-container"><li id="fn11"><p><sup>11</sup>&nbsp;Note that I’m using <em>CDT</em> here as the name of a family of theories, not a particular theory. So it’s not a great name; Causal Decision Theory is not a theory. Different versions of CDT can, and do, differ in what they say about the Stag Hunt cases I’ll discuss in <a href="#sec-indecisive"><span>Chapter&nbsp;7</span></a>. But the label seems entrenched, so I’ll use it. In contrast, evidential decision theory, EDT, is a theory; it is a full account of what to do in all cases.</p></li></div></div>
+<p>The intuitions behind the asymmetric Death in Damascus cases are inconsistent with the Exit Principle that I’ll discuss in <a href="#sec-indecisive"><span>Chapter&nbsp;7</span></a>. The Frustrator cases are no problem for a version of CDT that says that idealised agents can always play mixed strategies. Like the game theorists, I will also assume mixed strategies are available, and I’ll come back in <a href="#sec-mixed"><span>Chapter&nbsp;5</span></a> to why that assumption should be allowed.</p>
+<div class="page-columns page-full"><p>That leaves the point that CDT leaves one poorly off in Newcomb’s Problem, while other theories, like evidential decision theory (EDT) leave one well off. This isn’t a particular mark against CDT, since other theories, like EDT, leave one poorly off in some situations. Here is one such case.<a href="#fn12" class="footnote-ref" id="fnref12" role="doc-noteref"><sup>12</sup></a></p><div class="no-row-height column-margin column-container"><li id="fn12"><p><sup>12</sup>&nbsp;See <span class="citation" data-cites="Wells2019">Wells (<a href="references.html#ref-Wells2019" role="doc-biblioref">2019</a>)</span> for a slightly more complicated case, and <span class="citation" data-cites="Ahmed2020">Ahmed (<a href="references.html#ref-Ahmed2020" role="doc-biblioref">2020</a>)</span> for an argument that Wells’s argument is unfair to EDT.</p></li></div></div>
+<p>There are two demons, who will predict what Chooser will do. Both of them are arbitrarily good, though not quite perfect, and their errors are independent. Chooser will play either the left or right game in <a href="#tbl-edt-war">Table&nbsp;<span>4.1</span></a>.</p>
+<div id="tbl-edt-war" class="tbl-parent quarto-layout-panel anchored">
+<div class="panel-caption table-caption">
+<p>Table&nbsp;4.1: A Newcomb problem with two demons</p>
+</div>
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div id="tbl-war-left" class="quarto-layout-cell quarto-layout-cell-subref anchored" data-ref-parent="tbl-edt-war" style="flex-basis: 50.0%;justify-content: center;">
+<table class="table">
+<caption>(a) Demon-1 predicts Down</caption>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><strong>PUp</strong></td>
+<td style="text-align: center;"><strong>PDown</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong>Up</strong></td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">3</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><strong>Down</strong></td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">2</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="tbl-war-right" class="quarto-layout-cell quarto-layout-cell-subref anchored" data-ref-parent="tbl-edt-war" style="flex-basis: 50.0%;justify-content: center;">
+<table class="table">
+<caption>(b) Demon-1 predicts Up</caption>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><strong>PUp</strong></td>
+<td style="text-align: center;"><strong>PDown</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong>Up</strong></td>
+<td style="text-align: center;">1001</td>
+<td style="text-align: center;">1003</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><strong>Down</strong></td>
+<td style="text-align: center;">1000</td>
+<td style="text-align: center;">1002</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<p>If Demon-1 predicts that Chooser will play Down, Demon-1 will offer Chooser <a href="#tbl-war-left">Table&nbsp;<span>4.1 (a)</span></a>; if Demon-1 predicts that Chooser will play Up, Demon-1 will offer Chooser <a href="#tbl-war-right">Table&nbsp;<span>4.1 (b)</span></a>. Then Demon-2’s prediction will be used for determining whether the payout is from column PU or PD. In almost all cases, if Chooser uses CDT, they will get 1001, while if they use EDT, they will get 2. So in this case, CDT will get more than EDT.</p>
+<p>This case is not meant as an objection to EDT. It is perfectly fair for the evidential decision theorist to complain that they have simply been the victim of a Demon who intends to punish users of EDT, and reward users of CDT. That seems a perfectly fair complaint. But if the evidential decision theorist makes it, they cannot object when causal decision theorists, such as <span class="citation" data-cites="Lewis1981e">Lewis (<a href="references.html#ref-Lewis1981e" role="doc-biblioref">1981</a>)</span>, use the same language to describe Newcomb’s Problem. The ‘objection’ that CDT leaves one poorly off in one particular case is equally an objection to everyone, and so it is an objection to no one.</p>
+<p>One might worry at this stage that I haven’t shown that everyone is vulnerable to this kind of ‘objection’, just that CDT and EDT are equally vulnerable to it. In particular, so-called ‘resolute’ decision theories will choose one-box in Newcomb’s Problem, and Up in <a href="#tbl-edt-war">Table&nbsp;<span>4.1</span></a>, and so be enriched both times. The so-called ‘foundational decision theory’ that <span class="citation" data-cites="LevinsteinSoares2020">Levinstein and Soares (<a href="references.html#ref-LevinsteinSoares2020" role="doc-biblioref">2020</a>)</span> endorse also makes that pair of choices. But those theories are vulnerable to much more serious objections, that I’ll come to in <a href="#sec-dualmandate"><span>Chapter&nbsp;8</span></a>.</p>
+<p>So I conclude that there is no good objection to adopting a broadly causal decision theory, much as the game theorists do. But which version of CDT do they adopt, and are they right to do so? That will take us much more time.</p>
+</section>
+<section id="sec-mixed" class="level1 page-columns page-full" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Mixtures</h1>
+<p>Perhaps the biggest difference between the decision theory found in game theory textbooks, and the one found in philosophy journals, concerns the status of mixed strategies. In the textbooks, mixed strategies are brought in almost without comment, or perhaps with a remark about their role in a celebrated theorem by <span class="citation" data-cites="Nash1951">Nash (<a href="references.html#ref-Nash1951" role="doc-biblioref">1951</a>)</span>. In philosophy journals, the possibility of mixed strategies is often dismissed almost as quickly.</p>
+<div class="page-columns page-full"><p>The philosophers’ dismissal is usually accompanied by one or both of these reasons.<a href="#fn13" class="footnote-ref" id="fnref13" role="doc-noteref"><sup>13</sup></a> One is that the chooser might not be capable of carrying out a mixed strategy. They might not, for instance, have any coins in their pocket.<a href="#fn14" class="footnote-ref" id="fnref14" role="doc-noteref"><sup>14</sup></a> The other is that the predictor might punish people for randomising in some way, so the payouts will change. I’m going to argue that both reasons overgenerate. If they are reasons to reject mixed strategies, they are also reasons to reject the claim that agents have perfect knowledge of arithmetic. Since we do assume the latter, in decision theory agents take any bet on a true arithmetic claim at any odds, since all arithmetic truths have probability 1, we should also assume mixed strategies are permitted.</p><div class="no-row-height column-margin column-container"><li id="fn13"><p><sup>13</sup>&nbsp;These reasons are both offered, briefly, by <span class="citation" data-cites="Nozick1969">Nozick (<a href="references.html#ref-Nozick1969" role="doc-biblioref">1969</a>)</span>, so they have a history in decision theory.</p></li><li id="fn14"><p><sup>14</sup>&nbsp;Not a particularly realistic concern when everyone carries a smartphone, but in theory smartphones might not exist.</p></li></div></div>
+<p>It isn’t obvious why choosers should be perfect at arithmetic. True, calculators are a real help, but not everyone has a calculator in their pocket. Even if they do have a smartphone, it’s hard to, for instance, solve a travelling salesman problem <span class="citation" data-cites="Robinson1949">(<a href="references.html#ref-Robinson1949" role="doc-biblioref">Robinson 1949</a>)</span> on a typical smartphone. Those problems involve a lot of arithmetic, but ultimately they are just arithmetic. What we mean by saying choosers are perfect at arithmetic is that we are idealising away from arithmetic shortcomings. Once we’re allowed to idealise away from shortcomings, it makes equally good sense to idealise away from inabilities to mix.</p>
+<div class="page-columns page-full"><p>The thought that predictors might punish randomisation is even less conducive to decision theory as we know it. Compare what happens in this problem. Chooser will be given a sequence of pairs of two digit numbers. They can reply by either saying a number, or saying “Pass”. If they say a number, they get $2 if it is the sum of those numbers, and nothing otherwise. If they pass, they get $1. The catch is that if they are detected doing any mental arithmetic between hearing the numbers and saying something, they will be tortured. Decision theory as we know it has nothing to say about this case. Ideally, they simply say the right answer each time, and all the theories in the literature say that’s the right thing to do. In practice, that’s an absurd strategy. Chooser should utter the word “Pass” as often as they can, before they unintentionally do any mental arithmetic. The point is that as soon as we put constraints on how Chooser comes to act, and not just on what action Chooser performs, decision theory as we know it ceases to apply. And playing a mixed strategy is a way of coming to act. Punishing Chooser for it is like punishing Chooser for doing mental arithmetic, and is equally destructive to decision theory.<a href="#fn15" class="footnote-ref" id="fnref15" role="doc-noteref"><sup>15</sup></a></p><div class="no-row-height column-margin column-container"><li id="fn15"><p><sup>15</sup>&nbsp;It’s important to remember here that we are doing idealised decision theory. My view is that idealised decision theory has nothing to say about cases where someone will be punished for doing mental arithmetic.</p></li></div></div>
+<p>Being able to carry out a mixed strategy is of practical value, especially when there are predictors around. It’s not good to lose every game of rock-paper-scissors to the nearest predictor. If some mental activity is of practical value, then being able to carry it out is a skill to do with practical rationality. The idealised agents in decision theory have all the skills to do with practical rationality. Hence they can carry out mixed strategies, since carrying them out is a skill to do with practical rationality. So I conclude that if we are idealising, and if that idealisation extends at least as far as arithmetic perfection, it should also extend to being able to carry out mixed strategies.</p>
+<p>That’s not to say all decision theory should be idealised decision theory. We certainly need theories for real humans. Nor is it to say that decision theory for agents who can’t perform mixed strategies is useless. For any set of idealisations, it could in principle be useful to work out what happens when you relax some of them from the model. The thing that is odd about contemporary philosophical decision theory, and the thing I’ve been stressing in this section, is that there should be some motivation for why one leaves some idealisations in place, and relaxes others. I don’t see any theoretical or practical interest in working out decision theory for agents who are logically and mathematically perfect, but can’t carry out mixed strategies. Such agents are not a lot like us; since we are not logically and mathematically perfect. And they aren’t even particularly close to us; most people are better at carrying out unpredictable mixed strategies than they are at solving the optimisation problems they face in everyday life. That said, it’s important to be cautious here. It’s often hard to tell in advance which combinations of keeping these idealisations and relaxing those will be useful. Still, I haven’t seen much use for the particular combination that most philosophers have landed on, and I’m not sure what use it even could have.</p>
+<p>So from now on I’ll assume (a) if two strategies are available, so is any mixed strategy built on them, and (b) if Chooser plays a mixed strategy, Demon can possibly predict that they play the mixed strategy, but not the output of it.</p>
+</section>
+<section id="sec-ratify" class="level1 page-columns page-full" data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span> Ratificationist</h1>
+<p>Solution concepts in game theory tend to be equilibria. And by an equilibria, everyone is happy with their moves knowing what all the moves of all the players are. (Or, at least, they are as happy as they can be.) Put in decision theoretic terms, that means that all solutions are ratifiable; Chooser is happy with their choice once it is made.</p>
+<p>Ratificationism used to be a more popular view among decision theorists. Richard <span class="citation" data-cites="Jeffrey1983">Jeffrey (<a href="references.html#ref-Jeffrey1983" role="doc-biblioref">1983</a>)</span> added a ratifiability constraint to a broadly evidential decision theory. And ratifiability was endorsed by causal theorists such as <span class="citation" data-cites="Weirich1985">Weirich (<a href="references.html#ref-Weirich1985" role="doc-biblioref">1985</a>)</span> and <span class="citation" data-cites="Harper1986">Harper (<a href="references.html#ref-Harper1986" role="doc-biblioref">1986</a>)</span>. It fell out of popularity, though it has been recently endorsed by <span class="citation" data-cites="Fuscond">Fusco (<a href="references.html#ref-Fuscond" role="doc-biblioref">n.d.</a>)</span>. The loss of popularity was for two reasons.</p>
+<p>One was the existence of cases where there is (allegedly) no ratifiable option. <a href="#tbl-no-pure">Table&nbsp;<span>6.1</span></a> is one such case.</p>
+<div id="tbl-no-pure" class="anchored">
+<table class="table">
+<caption>Table&nbsp;6.1: A case with no pure ratifiable options.</caption>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><strong>PUp</strong></td>
+<td style="text-align: center;"><strong>PDown</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong>Up</strong></td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">5</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><strong>Down</strong></td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">3</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>If Chooser plays Up, they would prefer to play Down. If Chooser plays Down, they would prefer to play Up. Things get worse if we add an option that is ratifiable, but unfortunate, as in <a href="#tbl-bad-third">Table&nbsp;<span>6.2</span></a>.</p>
+<div id="tbl-bad-third" class="anchored">
+<table class="table">
+<caption>Table&nbsp;6.2: A case with only a bad pure ratifiable option.</caption>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><strong>PUp</strong></td>
+<td style="text-align: center;"><strong>PDown</strong></td>
+<td style="text-align: center;"><strong>PX</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong>Up</strong></td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><strong>Down</strong></td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong>X</strong></td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The only ratifiable option is X, but surely it is worse than Up or Down. One might avoid this example by saying that there is a weak dominance constraint on rational choices, as well as a ratifiability constraint. That won’t solve the problem, but it will turn it into a problem like <a href="#tbl-no-pure">Table&nbsp;<span>6.1</span></a>, where there is no good solution. But that won’t help us much, as was pointed out by <span class="citation" data-cites="Skyrms1984">Skyrms (<a href="references.html#ref-Skyrms1984" role="doc-biblioref">1984</a>)</span>, since in <a href="#tbl-verybad-third">Table&nbsp;<span>6.3</span></a> there is no weakly dominant option, but X is surely still a bad play.</p>
+<div id="tbl-verybad-third" class="anchored">
+<table class="table">
+<caption>Table&nbsp;6.3: Skyrms’s counterexample to ratificationism.</caption>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><strong>PUp</strong></td>
+<td style="text-align: center;"><strong>PDown</strong></td>
+<td style="text-align: center;"><strong>PX</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong>Up</strong></td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><strong>Down</strong></td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong>X</strong></td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;"><span class="math inline">\(\varepsilon\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>A better option is to insist, as <span class="citation" data-cites="Harper1986">Harper (<a href="references.html#ref-Harper1986" role="doc-biblioref">1986</a>)</span> did, and as I argued in previous section, that if Chooser is rational, they can play a mixed strategy. In all three of these games, the mixed strategy of (0.5 U, 0.5 D) will be ratifiable, as long as Chooser forms the belief (upon choosing to play this), that Demon will play the mixed strategy (1/3 U, 2/3 D). And that’s a sensible thing for Demon to play, since it is the only strategy that is ratifiable for Demon if Demon thinks Chooser can tell what they are going to do. And given Chooser’s knowledge of Demon’s goals, Chooser can tell what Demon is going to do once they choose.</p>
+<p>So if mixed strategies are allowed, none of the problems for ratifiability persist. And since mixed strategies should be allowed, since Chooser is an ideal practical actor, and not being able to play mixed strategies is an imperfection.</p>
+<p>Moreover, ratifiability is an intuitive constraint. There is something very odd about saying that such-and-such is a rational thing to do, but whoever does it will regret it the moment they act. So I’ll follow the game theory textbooks in saying ratifiability should be part of the correct decision theory.</p>
+<p>This does not mean that we need to have an explicit ratifiability clause in our theory. It could be, and arguably should be, that ratifiability is a consequence of the theory, not an explicit stipulation.</p>
+<p>Could we defend ratifiability without appeal to mixed strategies? It’s not a completely impossible task, but nor is it an appealing one.</p>
+<div class="page-columns page-full"><p><a href="#tbl-no-pure">Table&nbsp;<span>6.1</span></a> poses no serious problem. Without mixed strategies, the case is simply a dilemma. And we know that there are dilemmas in decision theory. Here’s one familiar example. A sinner faces Judgment Day. Because of his sins, it is clear things will end badly for him. But he has done some good in his life, and that counts for something. The judge thinks he should get some days in the Good Place before being off to the Bad Place. But the judge can’t decide how many. So the judge says to the sinner to pick a natural number <em>n</em>, and the sinner will spend <em>n</em> days in the Good Place, and then goodbye. This clearly is a dilemma; for any large <em>n</em>, saying <em>n</em>! would be considerably better.<a href="#fn16" class="footnote-ref" id="fnref16" role="doc-noteref"><sup>16</sup></a> <span class="citation" data-cites="Ahmed2012">Ahmed (<a href="references.html#ref-Ahmed2012" role="doc-biblioref">2012</a>)</span> says that it is an objection to a theory that it allows dilemmas in cases with finitely many options; dilemmas should only arise in infinite cases. But he doesn’t really argue for this, and I can’t see what an argument would be. Once you’ve allowed dilemmas of any kind, the door is open to all of them.</p><div class="no-row-height column-margin column-container"><li id="fn16"><p><sup>16</sup>&nbsp;Note that this is true even if days in heaven have diminishing marginal utility, so the dilemma can arise even if we work within bounded utility theory. This is not just the kind of problem, as discussed by <span class="citation" data-cites="Goodsellnd">Goodsell (<a href="references.html#ref-Goodsellnd" role="doc-biblioref">n.d.</a>)</span>, that arises in decision theory with unbounded utilities.</p></li></div></div>
+<p>Nor does <a href="#tbl-bad-third">Table&nbsp;<span>6.2</span></a> pose a problem, since as I said, the ratifiability theorist could add a weak dominance constraint and turn Second table into another dilemma.</p>
+<p>The problem is <a href="#tbl-verybad-third">Table&nbsp;<span>6.3</span></a>. There the ratifiability theorist who does not allow mixed strategies has to say that the case is an odd kind of Newcomb Problem, where the rational agent will predictably do badly. But it’s a very odd Newcomb Problem; by choosing X the chooser didn’t even make themselves better off. Indeed, they guaranteed the lowest payout in the game. I don’t have a knock-down argument here, and maybe there is more to be said. This is where I think the argument for ratificationism really needs mixed strategies.</p>
+</section>
+<section id="sec-indecisive" class="level1 page-columns page-full" data-number="7">
+<h1 data-number="7"><span class="header-section-number">7</span> Indecisive</h1>
+<p>Game theory is full of <em>solution concepts</em>; ideas for how to solve a game. That is, they are methods for determining the possible outcomes of a game played by rational players. Compared to philosophical decision theory, there are two big things to know about these solution concepts. One is that there are many of them. It isn’t like having a single theory to rule all cases. More complex theories tend to give more intuitive results on more cases. But the complexity is a cost, and in any case no theory gets all the intuitions about all the cases. The other thing is that these will often say that there are multiple possible outcomes for a game, and that knowing the players are rational doesn’t suffice to know what they will do. It’s this latter feature of game theory that I’ll argue here decision theory should imitate.</p>
+<p>Say that a theory is <em>indecisive</em> if for at least one problem it says there are at least two options such that both are rationally permissible, and the options are not equally good. And say, following Ruth <span class="citation" data-cites="Chang2002">Chang (<a href="references.html#ref-Chang2002" role="doc-biblioref">2002</a>)</span>, that two options are equally good if improving either of them by a small amount epsilon would make that one better, i.e., would make it the only permissible choice. So an indecisive theory says that sometimes, multiple choices are permissible, and stay permissible after one or other is sweetened by a small improvement. The vast majority of decision theories on the market are decisive. That’s because they first assign a numerical value to each option, and say to choose with the highest value. This allows multiple options iff multiple choices have the same numerical value. But sweetenings increase the value, so they destroy equality and hence the permissibility of each choice.</p>
+<div class="page-columns page-full"><p>Perhaps the most intuitive case for indecisiveness involves what I’ll call Stag Hunt decisions.<a href="#fn17" class="footnote-ref" id="fnref17" role="doc-noteref"><sup>17</sup></a> Here is an example of a Stag Hunt decision.</p><div class="no-row-height column-margin column-container"><li id="fn17"><p><sup>17</sup>&nbsp;For much more on the philosophical importance of Stag Hunts, see <span class="citation" data-cites="Skyrms2004">Skyrms (<a href="references.html#ref-Skyrms2004" role="doc-biblioref">2004</a>)</span>.</p></li></div></div>
+<div id="tbl-stag-hunt" class="anchored">
+<table class="table">
+<caption>Table&nbsp;7.1: An example of a Stag Hunt.</caption>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><strong>PUp</strong></td>
+<td style="text-align: center;"><strong>PDown</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong>Up</strong></td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><strong>Down</strong></td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">2</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Note three things about this game. First, both Up and Down are ratifiable. Second, Up has a higher expected return than Down. Third, Up has a higher possible regret than Down. If Chooser plays Up and Demon is wrong, Chooser gets 2 less than they might have otherwise. (They get 0 but could have got 2.) If Chooser plays Down and Demon is wrong, Chooser only gets 1 less than they might have otherwise. (They get 5 but could have got 6.)</p>
+<div class="page-columns page-full"><p>There is considerable disagreement about what this means for Chooser. EDT says that Chooser should play Up, as does the ratifiable variant of EDT in <span class="citation" data-cites="Jeffrey1983">Jeffrey (<a href="references.html#ref-Jeffrey1983" role="doc-biblioref">1983</a>)</span>, and some causal decision theorists such as <span class="citation" data-cites="Arntzenius2008">Arntzenius (<a href="references.html#ref-Arntzenius2008" role="doc-biblioref">2008</a>)</span> and <span class="citation" data-cites="Gustafsson2011">Gustafsson (<a href="references.html#ref-Gustafsson2011" role="doc-biblioref">2011</a>)</span>. On the other hand, several other theorists who endorse two-boxing in Newcomb’s Problem, like <span class="citation" data-cites="Wedgwood2013a">Wedgwood (<a href="references.html#ref-Wedgwood2013a" role="doc-biblioref">2013</a>)</span>, <span class="citation" data-cites="Gallow2020">Gallow (<a href="references.html#ref-Gallow2020" role="doc-biblioref">2020</a>)</span>, <span class="citation" data-cites="Podgorski2022">Podgorski (<a href="references.html#ref-Podgorski2022" role="doc-biblioref">2022</a>)</span>, and <span class="citation" data-cites="Barnett2022">Barnett (<a href="references.html#ref-Barnett2022" role="doc-biblioref">2022</a>)</span>, endorse playing Down on the ground of regret miminisation. I think both Up and Down are permissible.<a href="#fn18" class="footnote-ref" id="fnref18" role="doc-noteref"><sup>18</sup></a> I also think this is the intuitively right verdict, though I place no weight on that intuition. In general, I think in any problem that has the three features described in the last paragraph (two equilibria, one better according to EDT, the other with lower possible regret), either option is permissible. Since lightly sweetening either Up or Down in this problem doesn’t change either feature, that is why my theory is indecisive.</p><div class="no-row-height column-margin column-container"><li id="fn18"><p><sup>18</sup>&nbsp;The view I’m going to develop is hence similar to the ‘permissive CDT’ defended by <span class="citation" data-cites="Fuscond">Fusco (<a href="references.html#ref-Fuscond" role="doc-biblioref">n.d.</a>)</span>.</p></li></div></div>
+<p>My argument for indecisiveness will turn on a case that all seven of the views mentioned in the last paragraph agree on, namely <a href="#tbl-coord">Table&nbsp;<span>7.2</span></a>.</p>
+<div id="tbl-coord" class="anchored">
+<table class="table">
+<caption>Table&nbsp;7.2: An example of a coordination game.</caption>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><strong>PUp</strong></td>
+<td style="text-align: center;"><strong>PDown</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong>Up</strong></td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><strong>Down</strong></td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">3</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>All of them agree that Up is the uniquely rational play in this example, and I think intuition agrees with them. I’ll argue, however, that Down is permissible. The argument turns on a variation that embeds cite table in a more complicated problem. This problem involves two demons, each of whom are arbitrarily good at predicting Chooser. The (first version of) the problem involves the following sequence.</p>
+<ol type="1">
+<li>Both Demon-1 and Demon-2 predict Chooser, but do not reveal their prediction.</li>
+<li>If Demon-1 predicts Chooser plays Up, they Exit with probability 0.5, and Chooser gets 0. If Demon-1 predicts Chooser plays Down, they do not Exit. (That is, they Exit with probability 0.) If they Exit, the problem ends, and Chooser is told this. Otherwise, we go to the next step.</li>
+<li>Chooser chooses Up or Down.</li>
+<li>Demon-2’s prediction is chosen, and that determines whether we are in state PU or state PD.</li>
+<li>Chooser’s payouts are given by cite above table.</li>
+</ol>
+<p>I’ll call these Exit Problems, and <a href="#tbl-general-exit">Table&nbsp;<span>7.3</span></a> gives the general form of such a problem. Our problem has this abstract of <a href="#tbl-general-exit">Table&nbsp;<span>7.3</span></a> with <em>b</em> = <em>c</em> = <em>e</em> = <em>y</em> = 0, <em>x</em> = 0.5, <em>a</em> = 4, <em>d</em> = 3.</p>
+<div id="tbl-general-exit" class="tbl-parent quarto-layout-panel anchored">
+<div class="panel-caption table-caption">
+<p>Table&nbsp;7.3: The abstract form of an exit problem.</p>
+</div>
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div id="tbl-exit-param" class="quarto-layout-cell quarto-layout-cell-subref anchored" data-ref-parent="tbl-general-exit" style="flex-basis: 50.0%;justify-content: center;">
+<table class="table">
+<caption>(a) Exit Parameters</caption>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Exit Payout</td>
+<td style="text-align: center;"><em>e</em></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Pr(Exit | PUp)</td>
+<td style="text-align: center;"><em>x</em></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Pr(Exit | PDown)</td>
+<td style="text-align: center;"><em>y</em></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="tbl-exit-r2g" class="quarto-layout-cell quarto-layout-cell-subref anchored" data-ref-parent="tbl-general-exit" style="flex-basis: 50.0%;justify-content: center;">
+<table class="table">
+<caption>(b) Round 2 game</caption>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><strong>PUp</strong></td>
+<td style="text-align: center;"><strong>PDown</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong>Up</strong></td>
+<td style="text-align: center;"><em>a</em></td>
+<td style="text-align: center;"><em>b</em></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><strong>Down</strong></td>
+<td style="text-align: center;"><em>c</em></td>
+<td style="text-align: center;"><em>d</em></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<p>Now consider a simple variant of the above 5 step problem. The same things happen, but steps 2 and 3 are reversed. That is, Chooser decides on Up or Down after Demons make their predictions, but before they are told whether Demon-1 decided to Exit. Still, their choice will only matter if Demon-1 decided not to Exit, since their choices do not make a difference if Demon-1 Exits. Call this variant the Early Choice version, and the original the Late Choice variant. I don’t have any clear intuitions about what to do in most Exit Problems, save for this constraint on choices.</p>
+<ul>
+<li><strong>Exit Principle</strong>: In any Exit Problem, the same choices are permissible in the Early Choice and Late Choice variants.</li>
+</ul>
+<p>The reason comes from thinking about what Chooser is doing in the Early Choice variant. They are making a decision about what to do if Demon-1 doesn’t Exit. The way to make that decision is just to assume that Demon-1 doesn’t Exit, and then decide what to do. It just is the same choice as they face in the Late Choice variant, except now they make it in the context of a conditional. So they should decide it the same way.</p>
+<p>To put the point in game-theoretic terms, there is no difference between extensive form and normal form reasoning when a decider has only one possible choice to make. And there is a natural argument for this claim. It starts with the idea that for any <em>p</em>, the following two questions have the same answers.</p>
+<ol type="1">
+<li>If <em>p</em> happens, what do you want to do?</li>
+<li>So, <em>p</em> happened. What do you want to do?</li>
+</ol>
+<p>When one is asked to choose a strategy for a tree that has only one possible decision in it, the question one is being asked is that if we get to the point in the tree where one has to decide, what will you do. And the ‘Late Question’ is that that point in the tree has been reached; now what will you do? So the questions fit the schema, and should get the same answers. One could see this as a consequence of applying something like the Ramsey test to conditional questions <span class="citation" data-cites="RamseyGeneralProp">(<a href="references.html#ref-RamseyGeneralProp" role="doc-biblioref">Ramsey 1990</a>)</span>. Denying Exit Principle means treating these two very similar sounding questions differently, and that’s implausible.</p>
+<div class="page-columns page-full"><p>One could also argue, I think correctly, that anyone who violates Exit Principle will violate a plausible version of the Sure Thing Principle.<a href="#fn19" class="footnote-ref" id="fnref19" role="doc-noteref"><sup>19</sup></a> Such an argument seems sound to me, but the Sure Thing Principle is controversial, and I prefer to put more weight on the argument from how conditional reasoning works in the previous paragraph. (Indeed, I think using the Exit Principle to motivate a version of the Sure Thing Principle is more plausible than the reverse argument.)</p><div class="no-row-height column-margin column-container"><li id="fn19"><p><sup>19</sup>&nbsp;To be sure, it’s not entirely clear how to even state the Sure Thing Principle in the framework of causal ratificationism. Ratificationism does not output a preference ordering over options; it just says which options are and are not choice-worthy. And exactly how to translate principles like Sure Thing that are usually stated in terms of preference to ones in terms of choiceworthiness isn’t always clear. One consequence of this is that I don’t want to lean on Sure Thing as a premise. Another is that ratificationism isn’t really subject to the objections that <span class="citation" data-cites="Gallownd">Gallow (<a href="references.html#ref-Gallownd" role="doc-biblioref">n.d.</a>)</span> makes to theories that endorse Sure Thing, since the version of Sure Thing he uses is stated in terms of preferences. (Officially, ratificationism is ‘unstable’ in his sense because it doesn’t output a preference ordering over unchosen options; that doesn’t seem like a weakness to me.)</p></li></div></div>
+<p>Any plausible theory that says that only Up is rationally playable in problems like <a href="#tbl-coord">Table&nbsp;<span>7.2</span></a> cite above table will violate Exit Principle. Think about what they will say <a href="#tbl-early-choice">Table&nbsp;<span>7.4</span></a>.</p>
+<div id="tbl-early-choice" class="anchored">
+<table class="table">
+<caption>Table&nbsp;7.4: The Early Choice decision.</caption>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><strong>PUp</strong></td>
+<td style="text-align: center;"><strong>PMixed</strong></td>
+<td style="text-align: center;"><strong>PDown</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong>Up</strong></td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><strong>Down</strong></td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">3</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>In this problem, PUp means that both demons predict Up, PDown means that they both predict Down, and PMixed means that one predicts one, and one the other. This possibility is arbitrarily improbable, and the two strategies have the same expected return given M in any case, so we can ignore it. So really this game comes to <a href="#tbl-early-choice-simplified">Table&nbsp;<span>7.5</span></a>.</p>
+<div id="tbl-early-choice-simplified" class="anchored">
+<table class="table">
+<caption>Table&nbsp;7.5: The Early Choice decision simplified.</caption>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><strong>PUp</strong></td>
+<td style="text-align: center;"><strong>PDown</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong>Up</strong></td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><strong>Down</strong></td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">3</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Now presumably if one prefers Up in above table, it is because one prefers Up in any game like <a href="#tbl-general-coord">Table&nbsp;<span>7.6</span></a> Table below where <em>x</em> &gt; <em>y</em> &gt; 0.</p>
+<div id="tbl-general-coord" class="anchored">
+<table class="table">
+<caption>Table&nbsp;7.6: General coordination game.</caption>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><strong>PUp</strong></td>
+<td style="text-align: center;"><strong>PDown</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong>Up</strong></td>
+<td style="text-align: center;"><em>x</em></td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><strong>Down</strong></td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;"><em>y</em></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>How could it be otherwise? Given expectationism, it’s not like there is anything special about the numbers 4 and 3. But anyone who endorses this policy will play Down <a href="#tbl-early-choice-simplified">Table&nbsp;<span>7.5</span></a> and so, presumably, in <a href="#tbl-early-choice">Table&nbsp;<span>7.4</span></a>. And that means they will violate Exit Principle.</p>
+<p>The only view that is consistent with Exit Principle in cases like <a href="#tbl-general-coord">Table&nbsp;<span>7.6</span></a> is that both Up and Down are permissible. And since in any such case, improving Up or Down be a tiny amount wouldn’t materially change the case, they must both be permissible after small sweetenings. So, given Exit Principle, the only viable theories are indecisive.</p>
+<p>Exit Principle also offers a response to some intuitions that have led people to question CDT in recent years. <a href="#tbl-frustrating-button">Table&nbsp;<span>7.7</span></a> is an example that Jack <span class="citation" data-cites="Spencer2023">Spencer (<a href="references.html#ref-Spencer2023" role="doc-biblioref">2023</a>)</span> used to model the kind of case that’s at issue. As he notes, it is similar to the psychopath button case <span class="citation" data-cites="Egan2007-EGASCT">(<a href="references.html#ref-Egan2007-EGASCT" role="doc-biblioref">Egan 2007</a>)</span>, the asymmetric Death in Damascus case <span class="citation" data-cites="Richter1984">(<a href="references.html#ref-Richter1984" role="doc-biblioref">Richter 1984</a>)</span>, and other puzzles for CDT.</p>
+<div id="tbl-frustrating-button" class="anchored">
+<table class="table">
+<caption>Table&nbsp;7.7: Frustrating Button (from <span class="citation" data-cites="Spencer2023">Spencer (<a href="references.html#ref-Spencer2023" role="doc-biblioref">2023</a>)</span>).</caption>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><strong>PUp</strong></td>
+<td style="text-align: center;"><strong>PDown</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong>Up</strong></td>
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">10</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><strong>Down</strong></td>
+<td style="text-align: center;">15</td>
+<td style="text-align: center;">0</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Apparently the common intuition here is that that Up is the uniquely rational play. Note though that if we embed Frustrating Button in an exit problem, as in <a href="#tbl-frustrating-exit">Table&nbsp;<span>7.8</span></a>, the intuitions shift.</p>
+<div id="tbl-frustrating-exit" class="tbl-parent quarto-layout-panel anchored">
+<div class="panel-caption table-caption">
+<p>Table&nbsp;7.8: An exit problem with Frustrating Button in round 2.</p>
+</div>
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div id="tbl-exit-param-fb" class="quarto-layout-cell quarto-layout-cell-subref anchored" data-ref-parent="tbl-frustrating-exit" style="flex-basis: 50.0%;justify-content: center;">
+<table class="table">
+<caption>(a) Exit Parameters</caption>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Exit Payout</td>
+<td style="text-align: center;">-50</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Pr(Exit | PUp)</td>
+<td style="text-align: center;">0.8</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Pr(Exit | PDown)</td>
+<td style="text-align: center;">0</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="tbl-exit-r2g-fb" class="quarto-layout-cell quarto-layout-cell-subref anchored" data-ref-parent="tbl-frustrating-exit" style="flex-basis: 50.0%;justify-content: center;">
+<table class="table">
+<caption>(b) Frustrating Button</caption>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><strong>PUp</strong></td>
+<td style="text-align: center;"><strong>PDown</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong>Up</strong></td>
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">10</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><strong>Down</strong></td>
+<td style="text-align: center;">15</td>
+<td style="text-align: center;">0</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<p>The Early Version of <a href="#tbl-frustrating-exit">Table&nbsp;<span>7.8</span></a> is <a href="#tbl-ev-fe">Table&nbsp;<span>7.9</span></a>.</p>
+<div id="tbl-ev-fe" class="anchored">
+<table class="table">
+<caption>Table&nbsp;7.9: Early Version of <a href="#tbl-frustrating-exit">Table&nbsp;<span>7.8</span></a>.</caption>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><strong>PUp</strong></td>
+<td style="text-align: center;"><strong>PDown</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong>Up</strong></td>
+<td style="text-align: center;">-38</td>
+<td style="text-align: center;">10</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><strong>Down</strong></td>
+<td style="text-align: center;">-37</td>
+<td style="text-align: center;">0</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="page-columns page-full"><p>And if there is an intuition here, it is that it’s better to choose Down rather than Up.<a href="#fn20" class="footnote-ref" id="fnref20" role="doc-noteref"><sup>20</sup></a> This violates Exit Principle, and it seems incoherent to say that one would choose Down in this game, when Down just means playing Down in round 2, and if one were to reach round 2, one would prefer Up.</p><div class="no-row-height column-margin column-container"><li id="fn20"><p><sup>20</sup>&nbsp;The theory offered in <span class="citation" data-cites="Spencer2021b">Spencer (<a href="references.html#ref-Spencer2021b" role="doc-biblioref">2021b</a>)</span> agrees with intuition here.</p></li></div></div>
+<p>Exit Principle can also be used to argue against the non-expectationist theory offered by Lara <span class="citation" data-cites="BuchakRisk">Buchak (<a href="references.html#ref-BuchakRisk" role="doc-biblioref">2013</a>)</span>, but that argument is more complicated, and I’ll leave it to Appendix Two.</p>
+</section>
+<section id="sec-dualmandate" class="level1 page-columns page-full" data-number="8">
+<h1 data-number="8"><span class="header-section-number">8</span> Dual Mandate</h1>
+<p>Say a decision tree is a series of steps with the following characteristics.</p>
+<ul>
+<li>At every step, Chooser either receives some information, or makes a choice.</li>
+<li>Chooser knows before the first step what possible choices will be available at each step, given the prior steps, or what possible pieces of information could be received.</li>
+<li>No matter what happens, the tree ends after finitely many steps. (Though it may end after more or fewer steps depending on what happens).</li>
+<li>Chooser knows before the first step what payout they will receive given each possible sequence of choices and information.</li>
+<li>Before the first step, chooser has a probability for each possible piece of information they could receive, given the prior steps in the tree.</li>
+</ul>
+<div class="page-columns page-full"><p>That’s incredibly abstract, but it excludes some possibilities. It excludes cases where Chooser learns along the way that they have hitherto unknown abilities. It excludes cases where Chooser gains the capacity to think new relevant thoughts along the way, say by meeting a new person and gaining the capacity to have singular thoughts about them.<a href="#fn21" class="footnote-ref" id="fnref21" role="doc-noteref"><sup>21</sup></a> Still, it does cover a lot of cases.</p><div class="no-row-height column-margin column-container"><li id="fn21"><p><sup>21</sup>&nbsp;Following <span class="citation" data-cites="Stalnaker2008">Stalnaker (<a href="references.html#ref-Stalnaker2008" role="doc-biblioref">2008</a>)</span>, I think it excludes the Sleeping Beauty case, since there Beauty gains the capacity to have singular thoughts about a time, the ‘now’ when she awakes, that she did not previously have.</p></li></div></div>
+<p>Say a strategy for a decision tree is a plan for what to do in every possible choice situation. Following the game theory textbooks, I really do mean <em>every</em> here. A strategy should say what to do in cases that are ruled out by Chooser’s prior choices. A strategy for playing chess as White might say to start with e4, but also include plans for what to do if you inexplicably start Na3. There are both mathematical and philosophical reasons for having such an expansive conception of strategies, but going into why is beyond the scope of this paper.</p>
+<div class="page-columns page-full"><p>In philosophy, there are two common approaches to decision trees. The so-called resolute approach<a href="#fn22" class="footnote-ref" id="fnref22" role="doc-noteref"><sup>22</sup></a> says that one should simply treat the problem as like the kind of one-shot decisions we have discussed so far, except now one is choosing a strategy. Whatever one’s theory of choice is, one should simply apply it to the question of which strategy is best. The so-called sophisticated approach says that one should make the current choices that make best sense given one’s views about what one’s future self will do.</p><div class="no-row-height column-margin column-container"><li id="fn22"><p><sup>22</sup>&nbsp;Most notably defended by <span class="citation" data-cites="McClennan1990">McClennan (<a href="references.html#ref-McClennan1990" role="doc-biblioref">1990</a>)</span>.</p></li></div></div>
+<p>The orthodoxy in game theory, going back to at least <span class="citation" data-cites="Selten1965">Reinhard Selten (<a href="references.html#ref-Selten1965" role="doc-biblioref">1965</a>)</span>, is that both views are correct. When faced with a decision tree, Chooser should follow the advice of the sophisticated theorists, and (given they are ideally rational) do what would be best on the assumption that future choices will be rational. But in doing so, they should instantiate (part of) a strategy that could be rationally chosen by the resolute chooser. I call this the Dual Mandate approach, and I am going to defend it.</p>
+<div class="page-columns page-full"><p>Start with why it is bad to just have a resolute approach.<a href="#fn23" class="footnote-ref" id="fnref23" role="doc-noteref"><sup>23</sup></a> Game theorists usually reject this approach because it means sometimes making a decision that one knows will have worse consequences than an available alternative. I’ll go over an example of this, though I should note it is rather violent. This is unavoidable; it is only in these violent cases that we can be sure the Chooser is really making things worse, and not acting for a strategic or reputational goal.</p><div class="no-row-height column-margin column-container"><li id="fn23"><p><sup>23</sup>&nbsp;The so-called Foundational Decision Theory of <span class="citation" data-cites="LevinsteinSoares2020">Levinstein and Soares (<a href="references.html#ref-LevinsteinSoares2020" role="doc-biblioref">2020</a>)</span> agrees with the resolute approach in the special case where the only information Chooser will receive are the results of predictions, and is subject to the criticisms I’ll make of resolute theories.</p></li></div></div>
+<p>Chooser is the Prime Minister of a small country, and they are threatened by a large neighbour. Unfortunately, neighbour is thinking of carpet bombing Chooser’s capital, in retaliation for some perceived slight. Chooser has no air defences that would prevent a great destruction, and no allies who will rally to help. Fortunately, Chooser has a mighty weapon, a Doomsday device, that could destroy neighbour. Chooser has obviously threatened to use this, but neighbour suspects it is a bluff. This is for a good reason; the doomsday device would also destroy Chooser’s own country. Neighbour is known to employ a Demon who is at least 99% accurate in predicting what military plans Chooser will take. So Chooser can do Nothing (N), or use the Doomsday device (D), should neighbour attack. Chooser would obviously prefer no attack, and would certainly not use the device preemptively. So here is the table.</p>
+<div id="tbl-retaliation" class="anchored">
+<table class="table">
+<caption>Table&nbsp;8.1: Deciding whether to retaliate.</caption>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><strong>PN</strong></td>
+<td style="text-align: center;"><strong>PD</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong>N</strong></td>
+<td style="text-align: center;">-1</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><strong>D</strong></td>
+<td style="text-align: center;">-50</td>
+<td style="text-align: center;">-50</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>In the top left, neighbour bombs Chooser’s capital, thinking correctly that Chooser will not retaliate. In the top right and lower right, neighbour is sufficiently scared of the doomsday device that they do nothing. But in the bottom left, neighbour attacks, and Chooser retaliates, creating a disaster for everyone, something 50 times worse than even the horrors of the carpet bombing.</p>
+<p>Still, if Chooser is picking a strategy before anything starts, the strategy with the highest expected return is to plan to retaliate. This has an expected return of -0.5; since one time in a hundred it returns -50, and otherwise it returns 0. The resolute theorist says that’s what Chooser should do, even if they see the bombers coming, and they realise their bluff has failed. This seems absurd to me, and it is the kind of result that drives game theorists to the dual mandate, but resolute theorists are familiar with the point that their theory says that sometimes one should carry out a plan now known to be pointless. So instead of resting on this case, as decisive as it seems to many, I’ll run through two more arguments against a purely resolute theory.</p>
+<p>Change the example so that Chooser has two advisors who are talking to him as the bombers come in. One of them says that the Demon is 99% reliable. The other says that the Demon is 97% reliable. Whether Chooser launches the doomsday device should, according to the resolute theorist, depend on which advisor Chooser believes. This is just absurd. A debate about the general accuracy of a demon can’t possibly be what these grave military decisions are based on.</p>
+<p>Change the example again, and make it a bit more realistic. Chooser has the same two advisors, with the same views. Chooser thinks the one who says the Demon is 99% reliable is 60% likely to be right, and the other 40% likely. So Chooser forms the plan to retaliate, because right now that’s the strategy with highest expected return. But now, to everyone’s surprise, neighbour attacks. The resolute theorist will say that Chooser should stick to their (overpowered) guns. But think about how the choice of plans looks to Chooser now. The actions of neighbour are evidence about the reliability of the demon. And a simple application of Bayes’ Rule says that Chooser should now think the advisor who thought the demon was 97% reliable is 2/3 likely to be right. That is, given Chooser’s current evidence, retaliating wasn’t even the utility maximising strategy to start with. Yet it is what the resolute theorist, or at least the resolute theorist who is not also sophisticated, would have Chooser do. This is, again, absurd, and enough reason to give up on such a theory.</p>
+<p>What about the other direction? Is it sensible to have a sophisticated theory that is not resolute? There does seem to be something puzzling about such theories. They are “diachronically exploitable” in the sense described by <span class="citation" data-cites="Spencer2021">Spencer (<a href="references.html#ref-Spencer2021" role="doc-biblioref">2021a</a>)</span>. Let’s start with one example. Extend the theory offered by <span class="citation" data-cites="Gallow2020">Gallow (<a href="references.html#ref-Gallow2020" role="doc-biblioref">2020</a>)</span> to make it a pure sophisticated dynamic theory. That is, in a decision tree, the chooser values future choices by the expected value of the choice they’ll make, and if that choice is guaranteed to end the decision tree, they use Gallow’s theory. Chooser is now offered the following two-step option. At step 1 they can choose to receive 1 or play the game in <a href="#tbl-gallow-sophisticated">Table&nbsp;<span>8.2</span></a>.</p>
+<div id="tbl-gallow-sophisticated" class="anchored">
+<table class="table">
+<caption>Table&nbsp;8.2: A challenge for pure sophisticated decision.</caption>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><strong>PU</strong></td>
+<td style="text-align: center;"><strong>PD</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong>U</strong></td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><strong>D</strong></td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">0</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>If Chooser gets to step 2, they’ll play D, since it is the best option according to Gallow’s theory. So at step 1 they’ll choose the 1 rather than playing this game. But that’s absurd; they know they could have done better by simply playing the game and choosing U.</p>
+<p>What the Dual Mandate says is that the last step of reasoning here is sound; it is a fair criticism of an agent to say that their strategy doesn’t make sense even if every step makes sense taken on its own. Since this does seem like a fair criticism, it is reasonable to adopt the Dual Mandate.</p>
+<p>If one has a decisive theory, then a huge number of decision trees will be dilemmas, since it is unlikely that the optimal strategy matches the series of optimal choices. This is not a reason to reject the Dual Mandate; it’s another reason to reject decisiveness.</p>
+<p>You might worry that the argument based around <a href="#tbl-gallow-sophisticated">Table&nbsp;<span>8.2</span></a> is not really an objection to theories that reject the Dual Mandate, but just to the combination of that rejection and the endorsement of Gallow’s particular theory of decision. That worry is half right. This result is a problem for Gallow’s theory. But that doesn’t mean it isn’t also an argument for the Dual Mandate. The point of the Dual Mandate is not to criticise individual decisions, like taking the 1 in this game. It’s to criticise theories that endorse those decisions. It’s true that once we find the right theory of synchronic choice, the Dual Mandate will be unnecessary, since it will be automatically satisfied. But the Dual Mandate plays an essential role in selecting that theory.</p>
+<div class="page-columns page-full"><p>Jack <span class="citation" data-cites="Spencer2021">Spencer (<a href="references.html#ref-Spencer2021" role="doc-biblioref">2021a</a>)</span> has an example which he thinks tells against the Dual Mandate, or what he calls the requirement that Chooser not be diachronically exploitable.<a href="#fn24" class="footnote-ref" id="fnref24" role="doc-noteref"><sup>24</sup></a> The agent will play first the left and then the right game, and their payouts (shown in dollars) will be summed over the game. They won’t be told between the games what they got from the first game.<a href="#fn25" class="footnote-ref" id="fnref25" role="doc-noteref"><sup>25</sup></a></p><div class="no-row-height column-margin column-container"><li id="fn24"><p><sup>24</sup>&nbsp;Spencer’s non-exploitability isn’t quite the same thing as the Dual Mandate, but it’s close enough for these purposes. Spencer rejects non-exploitability, but endorses a weaker constraint he calls the Guaranteed Principle. I don’t see any reason to distinguish between these constraints, in part because of the argument that follows in the text.</p></li><li id="fn25"><p><sup>25</sup>&nbsp;Assume Chooser is reasonably risk-neutral over dollars over this range of outcomes.</p></li></div></div>
+<div id="tbl-newcomb-insurance" class="tbl-parent quarto-layout-panel anchored">
+<div class="panel-caption table-caption">
+<p>Table&nbsp;8.3: Ahmed Insurance (from <span class="citation" data-cites="Spencer2021">Spencer (<a href="references.html#ref-Spencer2021" role="doc-biblioref">2021a</a>)</span>).</p>
+</div>
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div id="tbl-ni-left" class="quarto-layout-cell quarto-layout-cell-subref anchored" data-ref-parent="tbl-newcomb-insurance" style="flex-basis: 50.0%;justify-content: center;">
+<table class="table">
+<caption>(a) First game</caption>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><strong>PU<sub>1</sub></strong></td>
+<td style="text-align: center;"><strong>PD<sub>1</sub></strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong>U<sub>1</sub></strong></td>
+<td style="text-align: center;">50</td>
+<td style="text-align: center;">-50</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><strong>D<sub>1</sub></strong></td>
+<td style="text-align: center;">60</td>
+<td style="text-align: center;">-40</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="tbl-ni-right" class="quarto-layout-cell quarto-layout-cell-subref anchored" data-ref-parent="tbl-newcomb-insurance" style="flex-basis: 50.0%;justify-content: center;">
+<table class="table">
+<caption>(b) Second game</caption>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><strong>Correct</strong></td>
+<td style="text-align: center;"><strong>Incorrect</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong>U<sub>2</sub></strong></td>
+<td style="text-align: center;">25</td>
+<td style="text-align: center;">-75</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><strong>D<sub>2</sub></strong></td>
+<td style="text-align: center;">-25</td>
+<td style="text-align: center;">75</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<p>Note that in <a href="#tbl-ni-right">Table&nbsp;<span>8.3 (b)</span></a>, the states are not the usual ones about Demon’s predictions. Rather, they are that the Demon made the Correct, or Incorrect, prediction in <a href="#tbl-ni-left">Table&nbsp;<span>8.3 (a)</span></a>. There are eight strategies in this game, but since the Demon doesn’t care about what happens at non-chosen nodes, we won’t care either, and just focus on the four combinations of moves Chooser might make, and how they interact with Demon’s prediction. If we do that, we get the following table (also given by Spencer, and also with payouts in dollars).</p>
+<div id="tbl-ni-strategic" class="anchored">
+<table class="table">
+<caption>Table&nbsp;8.4: Strategic form of Ahmed Insurance.</caption>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><strong>PU<sub>1</sub></strong></td>
+<td style="text-align: center;"><strong>PD<sub>1</sub></strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong>U<sub>1</sub>U<sub>2</sub></strong></td>
+<td style="text-align: center;">75</td>
+<td style="text-align: center;">-125</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><strong>U<sub>1</sub>D<sub>2</sub></strong></td>
+<td style="text-align: center;">25</td>
+<td style="text-align: center;">25</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong>D<sub>1</sub>U<sub>2</sub></strong></td>
+<td style="text-align: center;">-15</td>
+<td style="text-align: center;">-15</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><strong>D<sub>1</sub>D<sub>2</sub></strong></td>
+<td style="text-align: center;">135</td>
+<td style="text-align: center;">-65</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Spencer argues that even though D<sub>1</sub>U<sub>2</sub> is dominated by U<sub>1</sub>D<sub>2</sub> it might be rational to play it. After all, it is rational to bet on Demon being correct in <a href="#tbl-ni-right">Table&nbsp;<span>8.3 (b)</span></a>, since Demon is arbitrarily good. And if one knows one is going to do that, one may as well take the sure extra $10 that playing U<sub>1</sub> rather than D<sub>1</sub> gives. So diachronic exploitability is consistent with rationality.</p>
+<p>The reasoning of the previous paragraph fails because neither CDT, nor any other sensible decision theory, recommends taking two boxes in Newcomb Problems embedded in strategic interactions. This would be like thinking that CDT recommended always defecting in Iterated Prisoners’ Dilemma, even it was chancy whether the iterations came to an end after each round, so backward induction reasoning was unavailable. If Chooser has convinced themselves that they will play U<sub>2</sub>, and we’ll come back to whether they should believe that, then the choice in <a href="#tbl-ni-left">Table&nbsp;<span>8.3 (a)</span></a> comes down to this.</p>
+<div id="tbl-ni-new-left" class="anchored">
+<table class="table">
+<caption>Table&nbsp;8.5: First game in Ahmed Insurance, if D<sub>2</sub> will be played.</caption>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><strong>PU<sub>1</sub></strong></td>
+<td style="text-align: center;"><strong>PD<sub>1</sub></strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong>U<sub>1</sub></strong></td>
+<td style="text-align: center;">75</td>
+<td style="text-align: center;">-125</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><strong>D<sub>1</sub></strong></td>
+<td style="text-align: center;">-15</td>
+<td style="text-align: center;">-15</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>This game has two pure strategy equilibria, and on its own I think (because of the arguments in <a href="#sec-indecisive"><span>Chapter&nbsp;7</span></a>) that either play is acceptable. In context though, either play is clearly unacceptable. Given that one chooses either U<sub>1</sub> or D<sub>1</sub>, the only reasonable thing to believe is that Demon has almost certainly predicted this, so it makes to play U<sub>2</sub>, since Demon is almost certainly correct. So one ends up playing U<sub>1</sub>U<sub>2</sub> or D<sub>1</sub>U<sub>2</sub>, both of which are dominated and hence absurd strategies.</p>
+<p>Spencer argues that since the Demon is almost certainly accurate, Chooser should play U<sub>2</sub>, so they should play a dominated strategy, so the Dual Mandate doesn’t apply. (This assumes that synchronic choice rules out strictly dominated options in cases like this, but Spencer agrees that it does.) This argument only goes through if Chooser doesn’t have access to mixed strategies; i.e., if Chooser is not ideally practically rational. If Chooser does have access to mixed strategies, they should play a 50/50 mix of U<sub>1</sub> and D<sub>1</sub>, then choose D<sub>2</sub>. That is ratifiable as long as Chooser believes Demon plays PU<sub>1</sub> with probability 0.45, and PD<sub>1</sub> with probability 0.55. Since that’s the only ratifiable play for Demon, it’s reasonable for Chooser to believe this. If mixed strategies are allowed, this is not a case where the Dual Mandate fails.</p>
+<p>In general, if mixed strategies are not allowed, the Dual Mandate is implausible. But that’s because without mixed strategies, cases like <a href="#tbl-newcomb-insurance">Table&nbsp;<span>8.3</span></a> are dilemmas; they have no ratifiable choices. And it’s true that the Dual Mandate is implausible in dilemmas. Think back to the sinner described in <a href="#sec-ratify"><span>Chapter&nbsp;6</span></a>. Imagine that sinner will in fact say that they get <em>d</em> days in heaven. Now complicate the case; they are offered a choice of <em>d</em>! days in heaven, or to make their own choice. If they will in fact choose <em>d</em>, they should simply take <em>d</em>!, even though there are strategies available, like choosing <em>d</em>!! days, that are better. Weird things happen when there are dilemmas around, and we shouldn’t judge decision theories against these cases.</p>
+<div class="page-columns page-full"><p>The Dual Mandate is also implausible if Chooser thinks they will be irrational, or that they will have different preferences. Indeed, it is implausible if Chooser thinks they might either change or lose their mind. For example, Odysseus binds himself to the mast because he does not approve of future-Odysseus’s preferences. Professor Procrastinate<a href="#fn26" class="footnote-ref" id="fnref26" role="doc-noteref"><sup>26</sup></a> cite turns down a referee request because he does not trust his future self to be practically rational. Both of them deliberately turn down strategies that would be better than where they end up, because they do not trust their future selves to carry them out. They are alienated in this way from their future selves. When one does not endorse one’s future preferences, or does not trust one’s rationality in the future, it makes sense to be alienated from one’s future self in this way. In such cases, one’s future self is just another part of the world that must be predicted and worked around. And so it might make sense to forego, as Odysseus and Procrastinate forego, strategies that one’s future self will not be so kind as to carry out.</p><div class="no-row-height column-margin column-container"><li id="fn26"><p><sup>26</sup>&nbsp;A famous character in <span class="citation" data-cites="JacksonPargetter1986">Jackson and Pargetter (<a href="references.html#ref-JacksonPargetter1986" role="doc-biblioref">1986</a>)</span>.</p></li></div></div>
+<p>My main claim here is when neither of those two conditions obtain, i.e., when one knows that one’s future self will be rational and have the same preferences, one’s choices should make strategic sense. That is, they should satisfy the fairly weak condition that they are part of some strategy that one could choose if one was simply choosing a strategy for the whole tree. Unless one fears future irrationality, or future change of preference, one should not be alienated from one’s future self. If Chooser takes 1 rather than play <a href="#tbl-gallow-sophisticated">Table&nbsp;<span>8.2</span></a>, they are alienated in this way. They have to think, I know I’d be better off if I played U. But that fool future-me will play D instead, and blow up the plan. But future-them is not a fool; by hypothesis they are known to be ideally rational. So it isn’t coherent to think this way, and that reveals that it is incoherent to ‘rationally’ take the 1. And that is why the Dual Mandate requires that one’s strategy be rational, and not just the moves that make up the strategy.</p>
+</section>
+<section id="sec-substantive" class="level1 page-columns page-full" data-number="9">
+<h1 data-number="9"><span class="header-section-number">9</span> Substantive</h1>
+<div class="page-columns page-full"><p>Here are two interesting characters. Piz wants to put mud on his pizza. This won’t bring him joy, or any other positive emotions; he has a non-instrumental desire for mud pizza. Za wants to eat a tasty pizza, and believes that putting mud on his pizza will make it tasty. There is a long tradition of saying that the point of philosophical decision theory is not to evaluate beliefs and desires, but merely to say what actions those beliefs and desires do or should issue in. On such a view, both Piz and Za should (or at least will) put mud on their pizzas. Here is David Lewis expressing such a view.<a href="#fn27" class="footnote-ref" id="fnref27" role="doc-noteref"><sup>27</sup></a></p><div class="no-row-height column-margin column-container"><li id="fn27"><p><sup>27</sup>&nbsp;I’m using Lewis as an example of the orthodox view that decision theory does not care about whether beliefs and desires are substantively rational, just that they are coherent. But note that Lewis has an idiosyncratic view in the neighbourhood of this one. He denies that the point of decision theory is to guide or judge action. He thinks that decision theory is primarily description, not normative. I agreed with that in <a href="#sec-ideal"><span>Chapter&nbsp;2</span></a>. But he thinks its descriptive role is primarily in defining belief and desire; I think it is in explaining social phenomena.</p></li></div></div>
+<blockquote class="blockquote">
+<p>The central question of decision theory is: which choices are the ones that serve one’s desires according to one’s beliefs? <span class="citation" data-cites="Lewis-Gorman-10071979">(<a href="references.html#ref-Lewis-Gorman-10071979" role="doc-biblioref">Lewis 2020, 472</a>)</span></p>
+</blockquote>
+<p>We need one caveat on this. Philosophical decision theories typically do not issue verdicts unless the chooser satisfies some coherence constraints. So it’s not quite that the theory says nothing about what the beliefs and desires should be. It’s that it says nothing <em>substantive</em> about what the beliefs and desires should be. Purely structural constraints, like transitivity of preferences, or belief in the law of excluded middle, may be imposed.</p>
+<p>At least sometimes, game theorists impose non-structural, substantive conditions on the beliefs of players. Most notably, the “intuitive criterion” of <span class="citation" data-cites="ChoKreps1987">Cho and Kreps (<a href="references.html#ref-ChoKreps1987" role="doc-biblioref">1987</a>)</span> is meant to be continuous with other equilibrium conditions, and is a substantive constraint. Someone who violates it has coherent beliefs that don’t conform to their evidence. The intuitive criterion takes some time to set up, but I’ll get to a simplified version of it later in this section.</p>
+<p>First, I’ll note some general reasons for scepticism about this use of the substantive-structural distinction. One obvious point is that Piz and Za do not look like rational choosers. Another is that this draws distinctions between overly similar characters, such as these two, Cla and Sic. Both of them have taken classes in classical statistics, but only skimmed the textbooks without attending to the details. Cla came away with the belief that any experiment with a <em>P</em> value less than 0.05 proved that its hypothesis is true. Sic came away with a standing disposition to belief the hypothesis whenever there was an experiment with a <em>P</em> value less than 0.05. Cla is incoherent; there is no possible world where that belief is true. Sic is coherent; any one of their beliefs could be true. It’s just they just have a disposition to often form substantially irrational beliefs. Personally, I don’t think the difference between Cla and Sic is important enough to be philosophically load bearing. Lastly, it has proven incredibly hard to even define what makes a norm structural. The most important recent attempt is in Alex Worsnip’s book <em>Fitting Things Together: Coherence and the Demands of Structural Rationality</em> <span class="citation" data-cites="Worsnip2021">(<a href="references.html#ref-Worsnip2021" role="doc-biblioref">Worsnip 2021</a>)</span>. Here’s his definition:</p>
+<blockquote class="blockquote">
+<p><em>Incoherence Test</em>. A set of attitudinal mental states is jointly incoherent iff it is (partially) constitutive of (at least some of) the states in the set that any agent who holds this set of states has a disposition, when conditions of full transparency are met, to revise at least one of the states. <span class="citation" data-cites="Worsnip2021">(<a href="references.html#ref-Worsnip2021" role="doc-biblioref">Worsnip 2021, 132</a>)</span></p>
+</blockquote>
+<div class="page-columns page-full"><p>This won’t capture nearly enough. If probabilism is correct, then non-probabilists about uncertainty like Glenn <span class="citation" data-cites="Shafer1976">Shafer (<a href="references.html#ref-Shafer1976" role="doc-biblioref">1976</a>)</span> endorse incoherent views. If expectationalism is correct, then non-expectationalist decision theorists, like Lara <span class="citation" data-cites="BuchakRisk">Buchak (<a href="references.html#ref-BuchakRisk" role="doc-biblioref">2013</a>)</span>, endorse incoherent views. If classical logic is correct, then intuitionist logicians like Crispin <span class="citation" data-cites="WrightVaguenessCollection">Wright (<a href="references.html#ref-WrightVaguenessCollection" role="doc-biblioref">2021</a>)</span> are incoherent. Those three all seem to meet Worsnip’s conditions of full transparency, and don’t seem disposed to revise their beliefs. Maybe this is just a problem with Worsnip’s definition, but it is also a reason to be sceptical that there even is a distinction to be drawn here. Wooram <span class="citation" data-cites="Leend">Lee (<a href="references.html#ref-Leend" role="doc-biblioref">n.d.</a>)</span> raises some different challenges for Worsnip, and offers a rival theory. But for that theory to work, Lee requires that when a dialethist proposes to solve the Liar Paradox by saying the liar sentence is both true and not true, they are being insincere. The idea is that sincerely saying <em>p</em> requires believing <em>p</em> and not believing its negation. But this simply isn’t part of the concept of sincerity, and as much as I find the dialethist solution to the Liar implausible, I think the dialethists I know have been perfectly sincere in offering it. Maybe there is some theory of coherence waiting to be found, but the search for one feels like a degenerating research program.<a href="#fn28" class="footnote-ref" id="fnref28" role="doc-noteref"><sup>28</sup></a></p><div class="no-row-height column-margin column-container"><li id="fn28"><p><sup>28</sup>&nbsp;See also <span class="citation" data-cites="Heinzelmannnd">Heinzelmann (<a href="references.html#ref-Heinzelmannnd" role="doc-biblioref">n.d.</a>)</span> for a different set of reasons to be sceptical that there is a notion of coherence that can do the work its philosophical defenders want.</p></li></div></div>
+<p>Even if the substantive/structural distinction can be made precise, and shown to do philosophical work, it won’t track the notion game theorists most care about. We can see this with a version of the beer-quiche game <span class="citation" data-cites="ChoKreps1987">Cho and Kreps (<a href="references.html#ref-ChoKreps1987" role="doc-biblioref">1987</a>)</span>, here translated into decision-theoretic language.</p>
+<p>There are five steps in the game.</p>
+<ol type="1">
+<li>A coin will be flipped, landing Heads or Tails. It is biased, 60% likely to land Heads. It will be shown to Chooser, but not to Demon.</li>
+<li>Chooser will say either Heads or Tails.</li>
+<li>Demon, knowing what Chooser has said, and being arbitrarily good at predicting Chooser’s strategy<a href="#fn29" class="footnote-ref" id="fnref29" role="doc-noteref"><sup>29</sup></a>. will say Heads if it is more probable the coin landed Heads, and Tails if it is more probable the coin landed Tails.<a href="#fn30" class="footnote-ref" id="fnref30" role="doc-noteref"><sup>30</sup></a></li>
+<li>Chooser is paid $30 if Demon says Heads, and nothing if Demon says Tails.</li>
+<li>Chooser is paid $10 if what they say matches how the coin landed, and nothing otherwise. This is on top of the payment at step 4, so Chooser could make up to $40.</li>
+</ol>
+<div class="no-row-height column-margin column-container"><li id="fn29"><p><sup>29</sup>&nbsp;That is, what Chooser will do if Heads, and what they will do if Tails.</p></li><li id="fn30"><p><sup>30</sup>&nbsp;If both are equally likely, Demon will flip a fair coin and say how it lands.</p></li></div><p>If you prefer things in table form, here are the payouts chooser gets, given what happens at steps 1-3.</p>
+<div id="tbl-cho-kreps" class="anchored">
+<table class="table">
+<caption>Table&nbsp;9.1: The coin game.</caption>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><strong>Coin</strong></td>
+<td style="text-align: center;"><strong>Chooser</strong></td>
+<td style="text-align: center;"><strong>Demon</strong></td>
+<td style="text-align: center;"><strong>Dollars</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">H</td>
+<td style="text-align: center;">H</td>
+<td style="text-align: center;">H</td>
+<td style="text-align: center;">40</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">H</td>
+<td style="text-align: center;">H</td>
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">10</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">H</td>
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">H</td>
+<td style="text-align: center;">30</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">H</td>
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">H</td>
+<td style="text-align: center;">H</td>
+<td style="text-align: center;">30</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">H</td>
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">H</td>
+<td style="text-align: center;">40</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">10</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>What will Chooser do? There are two coherent things for Chooser to do, though each of them is only coherent given a background belief that isn’t entailed by the evidence.</p>
+<ol type="1">
+<li>Chooser could say Heads however the coin lands. Demon gets no information from Chooser, so their probability that the coin landed Heads is 0.6, so they will say Heads. Further, Chooser believes that if they were to say Tails, Demon would say Tails, so saying Heads produces the best expected return even after seeing the coin.</li>
+<li>Chooser could say Tails however the coin lands. Demon gets no information from Chooser, so their probability that the coin landed Heads is 0.6, so they will say Heads. Further, Chooser believes that if they were to say Heads, Demon would say Tails, so saying Tails produces the best expected return even after seeing the coin.</li>
+</ol>
+<p>While both of these are coherent, there is something very odd, very unintuitive about option 2. I guess we’ve been trained to be sceptical when philosophers report intuitions, but here we have a very large data pool to draw on. Cho and Kreps reported essentially the same intuition. Their paper has been cited tens of thousands of times, and I don’t think this intuition has been often questioned. Option 2, while coherent, is unintuitive. It is the kind of option that the theory of rationality behind game theory, and behind decision theory, should rule out.</p>
+<div class="page-columns page-full"><p>But what about it is incoherent? One might think it is because it has an expected return of $34, while option 1 has an expected return of $36. But we showed in section Indecisive ref that using expected returns to choose between coherent options leads to implausible results. Moreover, if you change the payout in the bottom row to $50, the intuition doesn’t really go away, but the expected return of option 2 is now $38; higher option 1’s payout.<a href="#fn31" class="footnote-ref" id="fnref31" role="doc-noteref"><sup>31</sup></a> Alternatively, one might think it is because option 2 requires Chooser to believe a counterfactual that is not entailed by the evidence. But option 1 also requires Chooser to believe a counterfactual that is not entailed by the evidence. That can’t be the difference between them, but it is closer to the truth.</p><div class="no-row-height column-margin column-container"><li id="fn31"><p><sup>31</sup>&nbsp;I believe if you change that payout to $65, the various regret based theories I discussed in <a href="#sec-indecisive"><span>Chapter&nbsp;7</span></a> also start preferring option 2. But applying these theories to complex cases is hard, so I’m not quite sure about this.</p></li></div></div>
+<p>What Cho and Kreps argue, persuasively, is that the difference between the options is that in one case the counterfactual belief is reasonable, and in the other it is unreasonable. Assume Chooser plans to adopt option 1. But when it becomes time to play, they change their mind, and say Tails. What would explain that? Not the coin landing Heads - given their plan, they will get the maximum possible payout by sticking to the plan (assuming Demon has done their job). No, the only plausible explanation is the coin landed Tails, and Chooser was (foolishly) chasing the extra $10. In option 1, Chooser believes the counterfactual that’s grounded in Demon picking an explanation that makes sense. What about in option 2? Here, everything is back to front. If Chooser is ever going to depart from their plan, it’s when the coin lands Heads. Then Chooser might chase the extra $10 by saying Heads. But Chooser has to believe that were they to depart from the plan, Demon would draw the explanation that makes no sense whatsoever, that they gave up on their plan even though it was about to lead to the best possible outcome. This makes no sense at all. And in fact it makes less sense the more you increase the payout in line 8.</p>
+<p>So that’s why decision theory requires substantive rationality. The right decision theory should say to take option 1. And the argument against option 2 is not that it is incoherent, but that carrying it out requires believing Demon will do things that make no sense given Demon’s evidence. It is substantive, not structural, rationality that rules out option 2. And yet, as the game theorists have insisted, option 2 must be ruled out. So decision theory should be sensitive to substantial rationality.</p>
+</section>
+<section id="sec-weak" class="level1 page-columns page-full" data-number="10">
+<h1 data-number="10"><span class="header-section-number">10</span> Weak Dominance, Once</h1>
+<p>An option <em>a</em> weakly dominates another option <em>b</em> if <em>a</em> is at least as good as <em>b</em> in all states, and better than <em>b</em> in some states. Just what role weak dominance has in decision theory is one of the most unsettled topics in game theory. There are three natural positions, and all of them are occupied. One is that weak dominance is of no significance. A second is that ideal agents do not choose weakly dominated options, and that’s the only role weak dominance has. And a third is that ideal agents do not choose options that are eliminated by an iterative process of deleting weakly dominated strategies. I’m going to argue in favour of the middle position. I’m not going to try to argue this is the standard game-theoretic move; as I said, I think you can find prominent support for all three options. To argue for the middle position requires making two cases: first, that weakly dominated options are not ideally chosen; and second, that options that would be eliminated by iterative deletion of weakly dominated options are ideally chosen. I’ll argue for these in turn.</p>
+<p>Start with <a href="#tbl-first-wd">Table&nbsp;<span>10.1</span></a>; what would the ideal chooser do?</p>
+<div id="tbl-first-wd" class="anchored">
+<table class="table">
+<caption>Table&nbsp;10.1: A ratifiable, weakly dominated, option.</caption>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><strong>PU</strong></td>
+<td style="text-align: center;"><strong>PD</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong>U</strong></td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><strong>D</strong></td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>On the one hand, D is ratifiable, as long as Demon is sufficiently reliable. If Demon will in fact get the predictions right, D gets a return of 1, and had Chooser played U, they would have still received 1. So they would not regret playing D, so by ratifiability it is fine to play it. Against this, there are three reasons to not play D.</p>
+<p>First, it is rather unrealistic to think that the probability that Demon will make an accurate prediction is 1. And even if Demon’s prediction is correct with probability 1 - ε, then D will not be ratifiable. I’m inclined to rule out, on broadly Humean grounds, the very possibility of a Demon whose predictions are correct with probability 1, but is causally independent of Chooser’s choice. Temporally backwards causation is not a logical impossibility, and a world where the predictions are correct with probability 1 seems like a world which has backwards causation. I don’t want to rest the case for GDT on contentious metaphysics, so I won’t lean on this point.</p>
+<p>Second, playing D involves taking on an uncompensated risk. It might be that we don’t have a good way of capturing within probability theory just what this risk is. Perhaps you think that it makes sense to say that Demon is correct with probability 1. Still, in some sense D has a risk of failure that U lacks. One should not take on a risk without some compensation. So one should not play D in this case. This, I think, is the most persuasive argument against D.</p>
+<p>Third, it has been argued by game theorists that we should always allow for the possibility that one or other player in a game will make some kind of performance error. This idea is at the heart of Reinhard Selten’s notion of trembling hand equilibrium <span class="citation" data-cites="Selten1975">(<a href="references.html#ref-Selten1975" role="doc-biblioref">R. Selten 1975</a>)</span>, and Roger Myerson’s notion of proper equilibrium <span class="citation" data-cites="Myerson1978">(<a href="references.html#ref-Myerson1978" role="doc-biblioref">Myerson 1978</a>)</span>. If a strategy would not make sense if the probability of an error by one or other player was positive, even if it was arbitrarily low, it should not be played. Since D only makes sense if the probability of an error by Demon is 0, that means D should not be played.</p>
+<div class="page-columns page-full"><p>If it is good to remove weakly dominated options, then one might think it follows straight away that it is good to keep doing this.<a href="#fn32" class="footnote-ref" id="fnref32" role="doc-noteref"><sup>32</sup></a> Think about <a href="#tbl-wd-itd">Table&nbsp;<span>10.2</span></a>.</p><div class="no-row-height column-margin column-container"><li id="fn32"><p><sup>32</sup>&nbsp;This suggestion is made by, for example <span class="citation" data-cites="HareHedden2015">Hare and Hedden (<a href="references.html#ref-HareHedden2015" role="doc-biblioref">2015</a>)</span>.</p></li></div></div>
+<div id="tbl-wd-itd" class="anchored">
+<table class="table">
+<caption>Table&nbsp;10.2: An example of iterated weak dominance.</caption>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><strong>PU</strong></td>
+<td style="text-align: center;"><strong>PD</strong></td>
+<td style="text-align: center;"><strong>PX</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong>U</strong></td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><strong>D</strong></td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong>X</strong></td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>In <a href="#tbl-wd-itd">Table&nbsp;<span>10.2</span></a>, X is weakly dominated by D. So it shouldn’t be played. But if X isn’t played, then PX is weakly dominated by both PU and PD. Demon can’t make a correct prediction by playing PX, since by hypothesis it won’t be played, so it can’t be better than PU or PD. But both PU and PD can be better than PX. So PX is now weakly dominated. So let’s remove it as well. If both X and PX are deleted, we’re back to <a href="#tbl-first-wd">Table&nbsp;<span>10.1</span></a>, in which we said Chooser should play U.</p>
+<p>So does it make sense to say that U is the only play in <a href="#tbl-wd-itd">Table&nbsp;<span>10.2</span></a>? I think not, for three reasons.</p>
+<p>First, as Bonanno <span class="citation" data-cites="Bonanno2018">(<a href="references.html#ref-Bonanno2018" role="doc-biblioref">2018, 37</a>)</span> points out, in general iterative deletion of weakly dominated strategies is not a well defined decision procedure. It turns out that in two player games, the order that weakly dominated strategies are deleted can affect which choices one ends up with. There are ways of fixing this problem, by specifying one or other order of deletion as canonical, but they all feel somewhat artificial.</p>
+<p>Second, iterative deletion of weakly dominated strategies leads to a single solution to the money-burning game described by <span class="citation" data-cites="BenPorathDekel1992">Ben-Porath and Dekel (<a href="references.html#ref-BenPorathDekel1992" role="doc-biblioref">1992</a>)</span>. But, as <span class="citation" data-cites="Stalnaker1998">Stalnaker (<a href="references.html#ref-Stalnaker1998" role="doc-biblioref">1998</a>)</span> showed, this game has multiple rational solutions, and arguments to the contrary turn on conflating indicative and subjunctive conditionals.</p>
+<p>Third, the reasons we gave for avoiding the weakly dominated option in <a href="#tbl-first-wd">Table&nbsp;<span>10.1</span></a> simply don’t carry over to <a href="#tbl-wd-itd">Table&nbsp;<span>10.2</span></a>. In the latter game, D is not an uncompensated risk. It’s true that D loses if Demon makes an incorrect prediction and plays PU. But U loses if Demon makes an incorrect prediction and plays PX. Unless one thinks that PX is particularly unlikely to be played, it seems U and D are just as risky as each other. So both of them look like rational plays.</p>
+<p>So I conclude that we just need one round of deleting weakly dominated options to get rid of irrational plays. D is irrational in <a href="#tbl-first-wd">Table&nbsp;<span>10.1</span></a>, but not in <a href="#tbl-wd-itd">Table&nbsp;<span>10.2</span></a>.</p>
+</section>
+<section id="sec-conclusion" class="level1 page-columns page-full" data-number="11">
+<h1 data-number="11"><span class="header-section-number">11</span> Conclusion</h1>
+<p>Given all that, here is the positive theory, what I’m calling Gamified Decision Theory (GDT). The core is that rational choices are ratifiable. That is, they maximise expected utility from the perspective of someone who chooses them. Formally, that means that in a particular problem, with choices <em>o</em><sub>1</sub>, <span class="math inline">\(\dots\)</span>, <em>o<sub>m</sub></em>, and causally independent states <em>s</em><sub>1</sub>, <span class="math inline">\(\dots\)</span> <em>s<sub>n</sub></em>, a choice <em>o</em> is rational iff there is some probability function Pr that is a rational credal distribution over the <em>s</em> after choosing <em>o</em>, and such that for all <em>o<sub>j</sub></em>, <span class="math inline">\(\Sigma\)</span>Pr(<em>s<sub>i</sub></em>)V(<em>os<sub>i</sub></em>) ≥ <span class="math inline">\(\Sigma\)</span>Pr(<em>s<sub>i</sub></em>)V(<em>o<sub>j</sub>s<sub>i</sub></em>).</p>
+<p>There are two extra clauses. First, <em>o</em> is choiceworthy only if it is not be weakly dominated by any other option. Second, if one is making a series of decisions in a tree, and one knows that one will be rational and not change one’s preferences throughout, then both the decisions one makes at any given time, and the set of decisions one collectively makes, must satisfy all the other conditions of rational choice. That is, they must be ratifiable and not weakly dominated.</p>
+<p>The big advantage of this theory is that it satisfies the nine conditions I mentioned at the start, and that it is consistent with Exit Principle. These turn out to be very sharp constraints on a theory. For example, any theory that associates some number with each choice, and says to maximise the number, will violate the Indecisiveness constraint. Any theory that simply the chooser’s credences as given will violate the Substantiveness constraint. The vast bulk of decision theories on the market in philosophy do at least one of these two things, and typically both. So we have strong reason to prefer GDT to them.</p>
+<div class="page-columns page-full"><p>GDT does require that mixed strategies are available to choosers, on pain of saying that a lot of decision problems are dilemmas. That is not a problem for GDT, since ideal agents can perform mixed strategies. It is a shortcoming to not be able to perform them, and ideal agents don’t have these kinds of shortcomings. But it does suggest an important research program in working out how GDT should be altered for agents who lack one or other idealisation. In fact it suggests two research programs: a descriptive one, setting out what choosers who don’t satisfy one or other idealisation in fact do; and a normative one, setting out what these choosers should do. But those projects are for a very different paper.<a href="#fn33" class="footnote-ref" id="fnref33" role="doc-noteref"><sup>33</sup></a></p><div class="no-row-height column-margin column-container"><li id="fn33"><p><sup>33</sup>&nbsp;Thanks to many people for conversations on these topics, especially Dmitri Gallow and Ishani Maitra, and audiences and ACU and UBC, and students in my group choices classes at University of Michigan.</p></li></div></div>
+</section>
+<section id="sec-rps" class="level1 unnumbered appendix">
+<h1 class="unnumbered appendix">Appendix One: Rock-Paper-Scissors</h1>
+<p>This appendix shows how to find the equilibrium of <a href="#tbl-rps-modified">Table&nbsp;<span>2.2 (b)</span></a>, the version of Rock-Paper-Scissors where it is common knowledge that the players will get a bonus of <span class="math inline">\(c&nbsp;&gt;&nbsp;0\)</span> if they will while playing rock. The game is symmetric, so we’ll just work out Column’s strategy, and the same will go for Row.</p>
+<p>There is no pure strategy equilibrium of the game, so we have to find a mixed strategy for each player. And a mixed strategy equilibrium requires that every option that has positive probability has equal expected returns. (If that didn’t happen, it wouldn’t make sense to mix between them.) Let <span class="math inline">\(x\)</span> be the probability (in equilibrium) that Column plays Rock, <span class="math inline">\(y\)</span> that they play Paper, and <span class="math inline">\(z\)</span> that they play Scissors. Given that, the expected return of the three options for Row are:</p>
+<span class="math display">\[\begin{align*}
+V(Rock) &amp;= z(1+c) - y \\
+V(Paper) &amp;= x - z \\
+V(Scissors) &amp;= y - x
+\end{align*}\]</span>
+<p>We know that these three values are equal, and that <span class="math inline">\(x+y+z=1\)</span>. From this we can start making some deductions.</p>
+<p>Since <span class="math inline">\(x-z=y-x\)</span>, it follows that <span class="math inline">\(x=\frac{y+z}{2}\)</span>. And that plus the fact that <span class="math inline">\(x+y+z=1\)</span> implies that <span class="math inline">\(x=\frac{1}{3}\)</span>. So we’ve already shown one of the surprising results; adding in the bonus <span class="math inline">\(c\)</span> will not change the probability with which Rock is played. Substituting this value for <span class="math inline">\(x\)</span> into the fact that Rock and Paper have the same payout, we get the following.</p>
+<span class="math display">\[\begin{align*}
+&amp;&amp; \frac{1}{3} - z &amp;= z(1+c) - y \\
+\Rightarrow &amp;&amp; \frac{1}{3} + y &amp;= z(2+c) \\
+\Rightarrow &amp;&amp; z &amp;= \frac{y + \frac{1}{3}}{2 + c}
+\end{align*}\]</span>
+<p>Now we can substitute the values for <span class="math inline">\(x\)</span> and <span class="math inline">\(z\)</span> into the fact that <span class="math inline">\(x+y+z=1\)</span>.</p>
+<span class="math display">\[\begin{align*}
+&amp;&amp; x + y + z &amp;= 1  &amp;&amp; \\
+\Rightarrow &amp;&amp; \frac{1}{3} + y + \frac{y + \frac{1}{3}}{2 + c} &amp;= 1 &amp;&amp; \\
+\Rightarrow &amp;&amp; (2+c) + 3y(2+c) + (3y+1) &amp;= 3(2+c) &amp;&amp; \text{Multiply both sides by } 3(2+c) \\
+\Rightarrow &amp;&amp; 3cy + 9y + c + 3 &amp;= 3c + 6 \\
+\Rightarrow &amp;&amp; 3cy + 9y &amp;= 2c + 3 \\
+\Rightarrow &amp;&amp; y &amp;= \frac{2c + 3}{3c + 9} \\
+\Rightarrow &amp;&amp; z &amp;= \frac{3}{3c + 9} &amp;&amp; \text{From previous derivation for }z
+\end{align*}\]</span>
+<p>So each option has expected payout <span class="math inline">\(\frac{c}{3c+9}\)</span>. And there is one unsurprising result, namely that the expected return to the players increases as <span class="math inline">\(c\)</span> increases. But note that <span class="math inline">\(x\)</span>, the probability that a player plays Rock, is invariant as <span class="math inline">\(c\)</span> changes. And <span class="math inline">\(z\)</span>, the probability that a player plays Scissors, goes down as <span class="math inline">\(c\)</span> goes up.</p>
+<p>It is intuitive that announcing the reward makes each player less likely to play Scissors. And that in turn puts down downward pressure on playing Rock. What you need some theory (and algebra) to show is that this downward pressure is exactly as strong as the upward pressure that comes from the incentive for playing Rock supplied by the bystander. Intuition alone can tell you what the various forces are that are acting on a chooser; the role of theory is to say something more precise about the strength of these forces.</p>
+</section>
+<section id="sec-buchak" class="level1 unnumbered appendix">
+<h1 class="unnumbered appendix">Appendix Two: Risk-Weighted Utility</h1>
+<p>This appendix goes over a problem for Lara Buchak’s risk-weighted utility theory, based around the Exit Principle from <a href="#sec-indecisive"><span>Chapter&nbsp;7</span></a>. Buchak’s theory concerns normal decision problems, where there are no demons lying around, so we have to modify Exit Principle a little to make it apply. The modifications still leave it recognisably the same principle though. And the main point of this appendix is to show that it is possible to theorise about normal and abnormal decision problems using the same tools.</p>
+<p>The core of Buchak’s theory is a non-standard way of valuing a gamble. For simplicity, we’ll focus on gambles with finitely many outcomes. Associate a gamble with a random variable <span class="math inline">\(O\)</span>, which takes values <span class="math inline">\(o_1, \dots, o_n\)</span>, where <span class="math inline">\(o_j &gt; o_i\)</span> iff <span class="math inline">\(j &gt; i\)</span>. Buchak says that the risk-weighted expected utility of <span class="math inline">\(O\)</span> is given by this formula, where <span class="math inline">\(r\)</span> is the agent’s risk-weighting function.</p>
+<p><span class="math display">\[
+REU(O) = o_1 + \sum_{i = 2}^n r(\Pr(O \geq o_i))(o_i - o_{i-1})
+\]</span></p>
+<p>The decision rule then is simple: choose the gamble with the highest REU.</p>
+<p>The key notion here is the function <span class="math inline">\(r\)</span>, which measures Chooser’s attitudes to risk. If <span class="math inline">\(r\)</span> is the identity function, then this definition becomes a slightly non-standard way of defining expected utility. Buchak allows it to be much more general. The key constraints are that <span class="math inline">\(r\)</span> is monotonically increasing, that <span class="math inline">\(r(0) = 0\)</span> and <span class="math inline">\(r(1) = 1\)</span>. In general, if <span class="math inline">\(r(x) &lt; x\)</span>, Chooser is some intuitive sense more risk-averse than an expected utility maximiser, while if <span class="math inline">\(r(x) &gt; x\)</span>, Chooser is more risk-seeking. The former case is more relevant to everyday intuitions.</p>
+<p>There are a number of good reasons to like Buchak’s theory. Standard expected utility theory explains risk-aversion in a surprisingly roundabout way. Risk-aversion simply falls out as a consequence of the fact that at almost all points, almost all goods have a declining marginal utiility. This is theoretically elegant - risk-aversion and relative satiation are explained in a single framework - but has a number of downsides. For one thing, it doesn’t allow rational agents to have certain kinds of risk-aversion, such as the kind described by <span class="citation" data-cites="Allais1953">Allais (<a href="references.html#ref-Allais1953" role="doc-biblioref">1953</a>)</span>. For another, it doesn’t seem like risk-aversion just is the same thing as the declining marginal utility of goods. Buchak’s theory, by putting attitudes to risk into <span class="math inline">\(r\)</span>, avoids both these problems.</p>
+<p>Unfortunately, Buchak’s theory runs into problems. Our focus will be on two-stage problems where Chooser’s choice only makes a difference if the game gets to stage 2. The general structure will be this.</p>
+<ol type="1">
+<li>A coin with probability <span class="math inline">\(y\)</span> of landing Heads will be flipped. If it lands Tails, Chooser gets the Exit Payout, and the game ends.</li>
+<li>If the game is still going, a second coin, with probability <span class="math inline">\(x\)</span> of landing Heads, will be flipped.</li>
+<li>Chooser’s payout will be a function of whether they chose Up or Down, and the result of this second coin.</li>
+</ol>
+<p>I’ll write <span class="math inline">\(H_1\)</span> and <span class="math inline">\(T_1\)</span> for the propositions that the first coin lands Heads and Tails respectively, and <span class="math inline">\(H_2\)</span> and <span class="math inline">\(T_2\)</span> for the propositions that the second coin lands Heads and Tails respectively. I’ll mostly be interested in the case where Up is a bet on <span class="math inline">\(H_2\)</span>, and Down is declining that bet, but the general case is important to have on the table. The general structure of these problems is given by <a href="#tbl-general-coin-exit">Table&nbsp;<span>11.1</span></a>.</p>
+<div id="tbl-general-coin-exit" class="tbl-parent quarto-layout-panel anchored">
+<div class="panel-caption table-caption">
+<p>Table&nbsp;11.1: The abstract form of an exit problem with coins.</p>
+</div>
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div id="tbl-coin-exit-param" class="quarto-layout-cell quarto-layout-cell-subref anchored" data-ref-parent="tbl-general-coin-exit" style="flex-basis: 50.0%;justify-content: center;">
+<table class="table">
+<caption>(a) Exit Parameters</caption>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Exit Payout</td>
+<td style="text-align: center;"><span class="math inline">\(e\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Pr(<span class="math inline">\(H_1\)</span>)</td>
+<td style="text-align: center;"><span class="math inline">\(y\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Pr(<span class="math inline">\(H_2\)</span>)</td>
+<td style="text-align: center;"><span class="math inline">\(x\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="tbl-coin-exit-r2g" class="quarto-layout-cell quarto-layout-cell-subref anchored" data-ref-parent="tbl-general-coin-exit" style="flex-basis: 50.0%;justify-content: center;">
+<table class="table">
+<caption>(b) Round 2 game</caption>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><span class="math inline">\(H_2\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(T_2\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong>Up</strong></td>
+<td style="text-align: center;"><span class="math inline">\(a\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(b\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><strong>Down</strong></td>
+<td style="text-align: center;"><span class="math inline">\(c\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(d\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<p>Then we get a version of Exit Principle that applies to games like this.</p>
+<ul>
+<li><strong>Exit Principle</strong>: Whether a choice is rational for Chooser is independent of whether Chooser chooses before or after they are told the result of the first coin flip.</li>
+</ul>
+<p>Again, the argument for this turns on reflections about conditional questions. If Chooser is asked before the first coin flip, they are being asked what they want to do if the first coin lands Heads; if they are asked after that flip, they are being asked what they want to do now that the first coin landed Heads. These questions should get the same answer. I’ll show that REU-maximisation only gets that result if <span class="math inline">\(r\)</span> is the identity function, i.e., if REU-maximisation just is expected utility maximisation.</p>
+<p>As before, I’ll refer to Chooser’s Early and Late choices, meaning their choices before and after being told the result of the first coin. I’ll write <span class="math inline">\(REU_E(X)\)</span> to be the risk-weighted expected utility of <span class="math inline">\(X\)</span> before finding out the result of the first coin toss, and <span class="math inline">\(REU_L(X)\)</span> to be the risk-weighted expected utility of <span class="math inline">\(X\)</span> after finding out the result of the first coin toss. So Exit Principle essentially becomes this biconditional, for any gambles <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>.</p>
+<p><span class="math display">\[
+REU_E(X) \geq REU_E(Y) \leftrightarrow REU_L(X) \geq REU_L(Y)
+\]</span></p>
+<p>I’ll first prove that this implies that <span class="math inline">\(r\)</span> must be multiplicative, i.e., that <span class="math inline">\(r(xy) = r(x)r(y)\)</span> for all <span class="math inline">\(x, y\)</span>. This isn’t a particularly problematic result; the most intuitive values for <span class="math inline">\(r\)</span>, like <span class="math inline">\(r(x) = x^2\)</span>, are multiplicative. Consider the Exit Problem shown in <a href="#tbl-zero-coin-exit">Table&nbsp;<span>11.2</span></a>, where <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> are arbitrary.</p>
+<div id="tbl-zero-coin-exit" class="tbl-parent quarto-layout-panel anchored">
+<div class="panel-caption table-caption">
+<p>Table&nbsp;11.2: An exit game with exit payout 0.</p>
+</div>
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div id="tbl-zero-coin-exit-param" class="quarto-layout-cell quarto-layout-cell-subref anchored" data-ref-parent="tbl-zero-coin-exit" style="flex-basis: 50.0%;justify-content: center;">
+<table class="table">
+<caption>(a) Exit Parameters</caption>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Exit Payout</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Pr(<span class="math inline">\(H_1\)</span>)</td>
+<td style="text-align: center;"><span class="math inline">\(y\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Pr(<span class="math inline">\(H_2\)</span>)</td>
+<td style="text-align: center;"><span class="math inline">\(x\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="tbl-zero-coin-exit-r2g" class="quarto-layout-cell quarto-layout-cell-subref anchored" data-ref-parent="tbl-zero-coin-exit" style="flex-basis: 50.0%;justify-content: center;">
+<table class="table">
+<caption>(b) Round 2 game</caption>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><span class="math inline">\(H_2\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(T_2\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong>Up</strong></td>
+<td style="text-align: center;"><span class="math inline">\(\frac{1}{r(x)}\)</span></td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><strong>Down</strong></td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<p>It’s easy to check that <span class="math inline">\(REU_L(U) = REU_L(D) = 1\)</span>. So by Exit Principle, <span class="math inline">\(REU_E(U) = REU_E(D)\)</span>. Since <span class="math inline">\(REU_E(U) = \frac{r(xy)}{r(x)}\)</span>, and <span class="math inline">\(REU_L(D) = r(y)\)</span>, it follows that <span class="math inline">\(r(xy) = r(x)r(y)\)</span>, as required.</p>
+<p>Define <span class="math inline">\(m\)</span>, for midpoint, as <span class="math inline">\(r^{-1}(0.5)\)</span>. Intuitively, <span class="math inline">\(m\)</span> is the probability where the risk-weighting agent is indifferent between taking and declining a bet that stands to win and lose the same amount. Since <span class="math inline">\(r\)</span> is monotonically increasing, and goes from 0 to 1, <span class="math inline">\(m\)</span> must exist. Consider now <a href="#tbl-one-coin-exit">Table&nbsp;<span>11.3</span></a>, where <span class="math inline">\(y\)</span> is arbitrary.</p>
+<div id="tbl-one-coin-exit" class="tbl-parent quarto-layout-panel anchored">
+<div class="panel-caption table-caption">
+<p>Table&nbsp;11.3: An exit game with exit payout 1.</p>
+</div>
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div id="tbl-one-coin-exit-param" class="quarto-layout-cell quarto-layout-cell-subref anchored" data-ref-parent="tbl-one-coin-exit" style="flex-basis: 50.0%;justify-content: center;">
+<table class="table">
+<caption>(a) Exit Parameters</caption>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Exit Payout</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Pr(<span class="math inline">\(H_1\)</span>)</td>
+<td style="text-align: center;"><span class="math inline">\(y\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Pr(<span class="math inline">\(H_2\)</span>)</td>
+<td style="text-align: center;"><span class="math inline">\(m\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="tbl-one-coin-exit-r2g" class="quarto-layout-cell quarto-layout-cell-subref anchored" data-ref-parent="tbl-one-coin-exit" style="flex-basis: 50.0%;justify-content: center;">
+<table class="table">
+<caption>(b) Round 2 game</caption>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><span class="math inline">\(H_2\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(T_2\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong>Up</strong></td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><strong>Down</strong></td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<p>In <a href="#tbl-one-coin-exit">Table&nbsp;<span>11.3</span></a>, it’s also easy to see that <span class="math inline">\(REU_L(U) = REU_L(D) = 1\)</span>. So by Exit Principle, <span class="math inline">\(REU_E(U) = REU_E(D)\)</span>. And it’s also clear that <span class="math inline">\(REU_E(D) = 1\)</span>, since that’s the only possible payout for Down. So <span class="math inline">\(REU_E(U) = 1\)</span>. So we get the following result.</p>
+<span class="math display">\[\begin{align*}
+REU_E(U) &amp;= r(1-y(1-m)) + r(ym) \\
+&amp;= 1    \\
+\therefore  r(1-y(1-m)) &amp;= r(ym)
+\end{align*}\]</span>
+<p>That doesn’t look like a particularly notable result, but it will become useful when we discuss our last case, <a href="#tbl-two-coin-exit">Table&nbsp;<span>11.4</span></a>, which is just the same as <a href="#tbl-one-coin-exit">Table&nbsp;<span>11.3</span></a>, except the exit payout is now 2.</p>
+<div id="tbl-two-coin-exit" class="tbl-parent quarto-layout-panel anchored">
+<div class="panel-caption table-caption">
+<p>Table&nbsp;11.4: An exit game with exit payout 2.</p>
+</div>
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div id="tbl-two-coin-exit-param" class="quarto-layout-cell quarto-layout-cell-subref anchored" data-ref-parent="tbl-two-coin-exit" style="flex-basis: 50.0%;justify-content: center;">
+<table class="table">
+<caption>(a) Exit Parameters</caption>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Exit Payout</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Pr(<span class="math inline">\(H_1\)</span>)</td>
+<td style="text-align: center;"><span class="math inline">\(y\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Pr(<span class="math inline">\(H_2\)</span>)</td>
+<td style="text-align: center;"><span class="math inline">\(m\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="tbl-two-coin-exit-r2g" class="quarto-layout-cell quarto-layout-cell-subref anchored" data-ref-parent="tbl-two-coin-exit" style="flex-basis: 50.0%;justify-content: center;">
+<table class="table">
+<caption>(b) Round 2 game</caption>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><span class="math inline">\(H_2\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(T_2\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong>Up</strong></td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><strong>Down</strong></td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<p>In <a href="#tbl-two-coin-exit">Table&nbsp;<span>11.4</span></a>, it’s again easy to see that <span class="math inline">\(REU_L(U) = REU_L(D) = 1\)</span>. So by Exit Principle, <span class="math inline">\(REU_E(U) = REU_E(D)\)</span>. But the early values are more complicated. <span class="math inline">\(REU_E(D) = 1 + r(1-y)\)</span>, and <span class="math inline">\(REU_E(U) = 2r(1-y(1-m))\)</span>. Using what we’ve discovered so far, we can do something with that last value.</p>
+<span class="math display">\[\begin{align*}
+REU_E(U) &amp;= 2r(1-y(1-m)) \\
+  &amp;= 2(1-r(ym))  &amp;&amp; \text{from previous calculations} \\
+  &amp;= 2 - 2r(ym) \\
+  &amp;= 2 - 2r(y)r(m) &amp;&amp; \text{since $r$ is multiplicative} \\
+  &amp;= 2 - r(y)  &amp;&amp; \text{since $r(m) = 0.5$}
+\end{align*}\]</span>
+<p>Putting all this together, we get</p>
+<span class="math display">\[\begin{align*}
+REU_E(D) &amp;= REU_E(U)  &amp;&amp; \Rightarrow \\
+1 + r(1-y) &amp;= 2 - r(y) &amp;&amp; \Rightarrow \\
+r(y) + r(1-y) &amp;= 1
+\end{align*}\]</span>
+<p>So <span class="math inline">\(r\)</span> is a monotonic increasing function satisfying <span class="math inline">\(r(0) = 0, r(1) = 1, r(xy) = r(x)r(y)\)</span> and <span class="math inline">\(r(y) + r(1-y) = 1\)</span>. The only such function is <span class="math inline">\(r(x) = x\)</span>. So the only version of risk-weighted expected utility theory that satisfies Exit Principle is where <span class="math inline">\(r(x) = x\)</span>, i.e., where risk-weighted expected utility just is old-fashioned expected utility.</p>
+<p>This doesn’t yet prove expectationism. I haven’t shown that there is no other alternative to expected utility theory that satisfies Exit Principle. There are such other theories out there, such as the Weighted-linear utility theory described by <span class="citation" data-cites="BottomleyWilliamsonnd">Bottomley and WIlliamson (<a href="references.html#ref-BottomleyWilliamsonnd" role="doc-biblioref">n.d.</a>)</span>. But it’s a guide to how we could start defending expectationism in a way consistent with how we handle decision problems involving demons.</p>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="ref-Ahmed2012" class="csl-entry" role="listitem">
+Ahmed, Arif. 2012. <span>“Push the Button.”</span> <em>Philosophy of Science</em> 79 (3): 386–95. <a href="https://doi.org/10.1086/666065">https://doi.org/10.1086/666065</a>.
+</div>
+<div id="ref-Ahmed2020" class="csl-entry" role="listitem">
+———. 2020. <span>“Equal Opportunities in Newcomb’s Problem and Elsewhere.”</span> <em>Mind</em> 129 (515): 867–86. <a href="https://doi.org/10.1093/mind/fzz073">https://doi.org/10.1093/mind/fzz073</a>.
+</div>
+<div id="ref-Akerlof1970" class="csl-entry" role="listitem">
+Akerlof, George. 1970. <span>“The Market for "Lemons": Quality Uncertainty and the Market Mechanism.”</span> <em>Quarterly Journal of Economics</em> 84 (3): 488–500. <a href="https://doi.org/10.2307/1879431">https://doi.org/10.2307/1879431</a>.
+</div>
+<div id="ref-Alcoba2023" class="csl-entry" role="listitem">
+Alcoba, Natalie. 2023. <span>“In Argentina, Inflation Passes 100% (and the Restaurants Are Packed).”</span> <em>The New York Times</em>, June 19, 2023. <a href="https://www.nytimes.com/2023/06/19/world/americas/argentina-inflation-peso-restaurants.html">https://www.nytimes.com/2023/06/19/world/americas/argentina-inflation-peso-restaurants.html</a>.
+</div>
+<div id="ref-Allais1953" class="csl-entry" role="listitem">
+Allais, M. 1953. <span>“Le Comportement de l’homme Rationnel Devant Le Risque: Critique Des Postulats Et Axiomes de l’ecole Americaine.”</span> <em>Econometrica</em> 21 (4): 503–46. <a href="https://doi.org/10.2307/1907921">https://doi.org/10.2307/1907921</a>.
+</div>
+<div id="ref-Arntzenius2008" class="csl-entry" role="listitem">
+Arntzenius, Frank. 2008. <span>“No Regrets; or, Edith Piaf Revamps Decision Theory.”</span> <em>Erkenntnis</em> 68 (2): 277–97. <a href="https://doi.org/10.1007/s10670-007-9084-8">https://doi.org/10.1007/s10670-007-9084-8</a>.
+</div>
+<div id="ref-Barnett2022" class="csl-entry" role="listitem">
+Barnett, David James. 2022. <span>“Graded Ratifiability.”</span> <em>Journal of Philosophy</em> 119 (2): 57–88. <a href="https://doi.org/10.5840/jphil202211925">https://doi.org/10.5840/jphil202211925</a>.
+</div>
+<div id="ref-BenPorathDekel1992" class="csl-entry" role="listitem">
+Ben-Porath, Elchanan, and Eddie Dekel. 1992. <span>“Signaling Future Actions and the Potential for Sacrifice.”</span> <em>Journal of Economic Theory</em> 57 (1): 36–51. <a href="https://doi.org/10.1016/S0022-0531(05)80039-0">https://doi.org/10.1016/S0022-0531(05)80039-0</a>.
+</div>
+<div id="ref-Bonanno2018" class="csl-entry" role="listitem">
+Bonanno, Giacomo. 2018. <span>“Game Theory.”</span> Davis, CA: Kindle Direct Publishing. 2018. <a href="http://faculty.econ.ucdavis.edu/faculty/bonanno/GT_Book.html">http://faculty.econ.ucdavis.edu/faculty/bonanno/GT_Book.html</a>.
+</div>
+<div id="ref-BottomleyWilliamsonnd" class="csl-entry" role="listitem">
+Bottomley, Christopher, and Timothy Luke WIlliamson. n.d. <span>“Rational Risk-Aversion: Good Things Come to Those Who Weight.”</span> <span>P</span>hilosophy and <span>P</span>henomenological <span>R</span>esearch. <a href="https://doi.org/doi.org/10.1111/phpr.13006">https://doi.org/doi.org/10.1111/phpr.13006</a>.
+</div>
+<div id="ref-BuchakRisk" class="csl-entry" role="listitem">
+Buchak, Lara. 2013. <em>Risk and Rationality</em>. Oxford: Oxford University Press.
+</div>
+<div id="ref-Chang2002" class="csl-entry" role="listitem">
+Chang, Ruth. 2002. <span>“The Possibility of Parity.”</span> <em>Ethics</em> 112 (4): 659–88. <a href="https://doi.org/10.1086/339673">https://doi.org/10.1086/339673</a>.
+</div>
+<div id="ref-ChoKreps1987" class="csl-entry" role="listitem">
+Cho, In-Koo, and David M. Kreps. 1987. <span>“Signalling Games and Stable Equilibria.”</span> <em>The Quarterly Journal of Economics</em> 102 (2): 179–221. <a href="https://doi.org/10.2307/1885060">https://doi.org/10.2307/1885060</a>.
+</div>
+<div id="ref-Davey2011" class="csl-entry" role="listitem">
+Davey, Kevin. 2011. <span>“Idealizations and Contextualism in Physics.”</span> <em>Philosophy of Science</em> 78 (1): 16–38. <a href="https://doi.org/10.1086/658093">https://doi.org/10.1086/658093</a>.
+</div>
+<div id="ref-Egan2007-EGASCT" class="csl-entry" role="listitem">
+Egan, Andy. 2007. <span>“<span class="nocase">Some Counterexamples to Causal Decision Theory</span>.”</span> <em>Philosophical Review</em> 116 (1): 93–114. <a href="https://doi.org/10.1215/00318108-2006-023">https://doi.org/10.1215/00318108-2006-023</a>.
+</div>
+<div id="ref-Elliot2019" class="csl-entry" role="listitem">
+Elliott, Edward. 2019. <span>“Normative Decision Theory.”</span> <em>Analysis</em> 79 (4): 755–72. <a href="https://doi.org/10.1093/analys/anz059">https://doi.org/10.1093/analys/anz059</a>.
+</div>
+<div id="ref-EysterRabin2005" class="csl-entry" role="listitem">
+Eyster, Erik, and Matthew Rabin. 2005. <span>“Cursed Equilibrium.”</span> <em>Econometrica</em> 73 (5): 1623–72. <a href="https://10.1111/j.1468-0262.2005.00631.x">10.1111/j.1468-0262.2005.00631.x</a>.
+</div>
+<div id="ref-Fuscond" class="csl-entry" role="listitem">
+Fusco, Melissa. n.d. <span>“Absolution of a Causal Decision Theorist.”</span> No<span>û</span>s. <a href="https://doi.org/10.1111/nous.12459">https://doi.org/10.1111/nous.12459</a>.
+</div>
+<div id="ref-Gallow2020" class="csl-entry" role="listitem">
+Gallow, J. Dmitri. 2020. <span>“The Causal Decision Theorist’s Gudie to Managing the News.”</span> <em>The Journal of Philosophy</em> 117 (3): 117–49. <a href="https://doi.org/10.5840/jphil202011739">https://doi.org/10.5840/jphil202011739</a>.
+</div>
+<div id="ref-Gallownd" class="csl-entry" role="listitem">
+———. n.d. <span>“The Sure Thing Principle Leads to Instability.”</span> Philosophical Quarterly. <a href="https://philpapers.org/archive/GALTST-2.pdf">https://philpapers.org/archive/GALTST-2.pdf</a>.
+</div>
+<div id="ref-Goodsellnd" class="csl-entry" role="listitem">
+Goodsell, Zachary. n.d. <span>“Decision Theory Unbound.”</span> No<span>û</span>s. <a href="https://doi.org/10.1111/nous.12473">https://doi.org/10.1111/nous.12473</a>.
+</div>
+<div id="ref-GrantEtAl2021" class="csl-entry" role="listitem">
+Grant, Simon, Guerdjikova Ani, and John Quiggin. 2021. <span>“Ambiguity and Awareness: A Coherent Multiple Priors Model.”</span> <em>The B.E. Journal of Theoretical Economics</em> 21 (2): 571–612. <a href="https://doi.org/10.1515/bejte-2018-0185">https://doi.org/10.1515/bejte-2018-0185</a>.
+</div>
+<div id="ref-Gustafsson2011" class="csl-entry" role="listitem">
+Gustafsson, Johan E. 2011. <span>“A Note in Defence of Ratificationism.”</span> <em>Erkenntnis</em> 75 (1): 147–50. <a href="https://doi.org/10.1007/s10670-010-9267-6">https://doi.org/10.1007/s10670-010-9267-6</a>.
+</div>
+<div id="ref-HareHedden2015" class="csl-entry" role="listitem">
+Hare, Caspar, and Brian Hedden. 2015. <span>“Self-Reinforcing and Self-Frustrating Decisions.”</span> <em>Noûs</em> 50 (3): 604–28. <a href="https://doi.org/10.1111/nous.12094">https://doi.org/10.1111/nous.12094</a>.
+</div>
+<div id="ref-Harper1986" class="csl-entry" role="listitem">
+Harper, William. 1986. <span>“Mixed Strategies and Ratifiability in Causal Decision Theory.”</span> <em>Erkenntnis</em> 24 (1): 25–36. <a href="https://doi.org/10.1007/BF00183199">https://doi.org/10.1007/BF00183199</a>.
+</div>
+<div id="ref-Harper1988" class="csl-entry" role="listitem">
+———. 1988. <span>“Causal Decision Theory and Game Theory: A Classic Argument for Equilibrium Solutions, a Defense of Weak Equilibria, and a New Problem for the Normal Form Representation.”</span> In <em>Causation in Decision, Belief Change, and Statistics: Proceedings of the Irvine Conference on Probability and Causation</em>, edited by William Harper and Brian Skyrms, 25–48. Dordrecht: Springer Netherlands. <a href="https://doi.org/10.1007/978-94-009-2865-7_2">https://doi.org/10.1007/978-94-009-2865-7_2</a>.
+</div>
+<div id="ref-Heinzelmannnd" class="csl-entry" role="listitem">
+Heinzelmann, Nora. n.d. <span>“Rationality Is Not Coherence.”</span> Philosophical Quarterly. <a href="https://doi.org/10.1093/pq/pqac083">https://doi.org/10.1093/pq/pqac083</a>.
+</div>
+<div id="ref-JacksonPargetter1986" class="csl-entry" role="listitem">
+Jackson, Frank, and Robert Pargetter. 1986. <span>“Oughts, Options, and Actualism.”</span> <em>Philosophical Review</em> 95 (2): 233–55. <a href="https://doi.org/10.2307/2185591">https://doi.org/10.2307/2185591</a>.
+</div>
+<div id="ref-Jeffrey1983" class="csl-entry" role="listitem">
+Jeffrey, Richard. 1983. <span>“Bayesianism with a Human Face.”</span> In <em>Testing Scientific Theories</em>, edited by J. Earman (ed.). Minneapolis: University of Minnesota Press.
+</div>
+<div id="ref-Leend" class="csl-entry" role="listitem">
+Lee, Wooram. n.d. <span>“What Is Structural Rationality?”</span> Philosophical Quarterly. <a href="https://doi.org/10.1093/pq/pqad072">https://doi.org/10.1093/pq/pqad072</a>.
+</div>
+<div id="ref-LevinsteinSoares2020" class="csl-entry" role="listitem">
+Levinstein, Benjamin Anders, and Nate Soares. 2020. <span>“Cheating Death in Damascus.”</span> <em>Journal of Philosophy</em> 117 (5): 237–66. <a href="https://doi.org/10.5840/jphil2020117516">https://doi.org/10.5840/jphil2020117516</a>.
+</div>
+<div id="ref-Lewis1979e" class="csl-entry" role="listitem">
+Lewis, David. 1979. <span>“Prisoners’ Dilemma Is a <span>N</span>ewcomb Problem.”</span> <em>Philosophy and Public Affairs</em> 8 (3): 235–40.
+</div>
+<div id="ref-Lewis1981e" class="csl-entry" role="listitem">
+———. 1981. <span>“Why Ain’cha Rich?”</span> <em>No<span>û</span>s</em> 15 (3): 377–80. <a href="https://doi.org/10.2307/2215439">https://doi.org/10.2307/2215439</a>.
+</div>
+<div id="ref-Lewis-Gorman-10071979" class="csl-entry" role="listitem">
+———. 2020. <span>“Letter to Jonathan Gorman, 19 April 1989.”</span> In <em>Philosophical Letters of David <span>K</span>. Lewis</em>, edited by Helen Beebee and A. R. J. Fisher, 2:472–73. Oxford: Oxford University Press.
+</div>
+<div id="ref-LipseyLancaster" class="csl-entry" role="listitem">
+Lipsey, R. G., and Kelvin Lancaster. 1956. <span>“The General Theory of Second Best.”</span> <em>Review of Economic Studies</em> 24 (1): 11–32. <a href="https://doi.org/10.2307/2296233">https://doi.org/10.2307/2296233</a>.
+</div>
+<div id="ref-McClennan1990" class="csl-entry" role="listitem">
+McClennan, Edward. 1990. <em>Rationality and Dynamic Choice</em>. Cambridge: Cambridge University Press.
+</div>
+<div id="ref-Myerson1978" class="csl-entry" role="listitem">
+Myerson, R. B. 1978. <span>“Refinements of the Nash Equilibrium Concept.”</span> <em>International Journal of Game Theory</em> 7 (2): 73–80. <a href="https://doi.org/10.1007/BF01753236">https://doi.org/10.1007/BF01753236</a>.
+</div>
+<div id="ref-Nash1951" class="csl-entry" role="listitem">
+Nash, John. 1951. <span>“Non-Cooperative Games.”</span> <em>Annals of Mathematics</em> 54 (2): 286–95.
+</div>
+<div id="ref-Nozick1969" class="csl-entry" role="listitem">
+Nozick, Robert. 1969. <span>“Newcomb’s Problem and Two Principles of Choice.”</span> In <em>Essays in Honor of Carl <span>G</span>. Hempel: A Tribute on the Occasion of His Sixty-Fifth Birthday. Hempel: A Tribute on the Occasion of His Sixty-Fifth Birthday</em>, edited by Nicholas Rescher, 114–46. Riedel: Springer.
+</div>
+<div id="ref-Podgorski2022" class="csl-entry" role="listitem">
+Podgorski, Aberlard. 2022. <span>“Tournament Decision Theory.”</span> <em>No<span>û</span>s</em> 56 (1): 176–203. <a href="https://doi.org/10.1111/nous.12353">https://doi.org/10.1111/nous.12353</a>.
+</div>
+<div id="ref-Quiggin1982" class="csl-entry" role="listitem">
+Quiggin, John. 1982. <span>“A Theory of Anticipated Utility.”</span> <em>Journal of Economic Behavior &amp; Organization</em> 3 (4): 323–43. <a href="https://doi.org/10.1016/0167-2681(82)90008-7">https://doi.org/10.1016/0167-2681(82)90008-7</a>.
+</div>
+<div id="ref-RamseyGeneralProp" class="csl-entry" role="listitem">
+Ramsey, Frank. 1990. <span>“General Propositions and Causality.”</span> In <em>Philosophical Papers</em>, edited by D. H. Mellor, 145–63. Cambridge: Cambridge University Press.
+</div>
+<div id="ref-Richter1984" class="csl-entry" role="listitem">
+Richter, Reed. 1984. <span>“Rationality Revisited.”</span> <em>Australasian Journal of Philosophy</em> 62 (4): 393–404. <a href="https://doi.org/10.1080/00048408412341601">https://doi.org/10.1080/00048408412341601</a>.
+</div>
+<div id="ref-Robinson1949" class="csl-entry" role="listitem">
+Robinson, Julia. 1949. <span>“On the Hamiltonian Game (a Traveling Salesman Problem).”</span> Santa Monica, CA: The RAND Corporation.
+</div>
+<div id="ref-Selten1975" class="csl-entry" role="listitem">
+Selten, R. 1975. <span>“Reexamination of the Perfectness Concept for Equilibrium Points in Extensive Games.”</span> <em>International Journal of Game Theory</em> 4 (1): 25–55. <a href="https://doi.org/10.1007/BF01766400">https://doi.org/10.1007/BF01766400</a>.
+</div>
+<div id="ref-Selten1965" class="csl-entry" role="listitem">
+Selten, Reinhard. 1965. <span>“Spieltheoretische Behandlung Eines Oligopolmodells Mit Nachfragetr<span>ä</span>gheit.”</span> <em>Zeitschrift f<span>ü</span>r Die Gesamte Staatswissenschaft</em> 121 (2): 301–24.
+</div>
+<div id="ref-Shafer1976" class="csl-entry" role="listitem">
+Shafer, Glenn. 1976. <em>A Mathematical Theory of Evidence</em>. Princeton: Princeton University Press.
+</div>
+<div id="ref-Skyrms1984" class="csl-entry" role="listitem">
+Skyrms, Brian. 1984. <em>Pragmatics and Empiricism</em>. New Haven, CT: Yale University Press.
+</div>
+<div id="ref-Skyrms2004" class="csl-entry" role="listitem">
+———. 2004. <em>The Stag Hunt and the Evolution of Social Structure</em>. Cambridge: <span>C</span>ambridge <span>U</span>niversity <span>P</span>ress.
+</div>
+<div id="ref-Spencer2021" class="csl-entry" role="listitem">
+Spencer, Jack. 2021a. <span>“An Argument Against Causal Decision Theory.”</span> <em>Analysis</em> 81 (1): 52–61. <a href="https://doi.org/10.1093/analys/anaa037">https://doi.org/10.1093/analys/anaa037</a>.
+</div>
+<div id="ref-Spencer2021b" class="csl-entry" role="listitem">
+———. 2021b. <span>“Rational Monism and Rational Pluralism.”</span> <em>Philosophical Studies</em> 178: 1769–1800. <a href="https://doi.org/10.1007/s11098-020-01509-9">https://doi.org/10.1007/s11098-020-01509-9</a>.
+</div>
+<div id="ref-Spencer2023" class="csl-entry" role="listitem">
+———. 2023. <span>“Can It Be Irrational to Knowingly Choose the Best?”</span> <em>Australasian Journal of Philosophy</em> 101 (1): 128–39. <a href="https://doi.org/10.1080/00048402.2021.1958880">https://doi.org/10.1080/00048402.2021.1958880</a>.
+</div>
+<div id="ref-SpencerWells2019" class="csl-entry" role="listitem">
+Spencer, Jack, and Ian Wells. 2019. <span>“Why Take Both Boxes?”</span> <em><span>P</span>hilosophy and <span>P</span>henomenological <span>R</span>esearch</em> 99 (1): 27–48. <a href="https://doi.org/10.1111/phpr.12466">https://doi.org/10.1111/phpr.12466</a>.
+</div>
+<div id="ref-Stalnaker1998" class="csl-entry" role="listitem">
+Stalnaker, Robert. 1998. <span>“Belief Revision in Games: Forward and Backward Induction.”</span> <em>Mathematical Social Sciences</em> 36 (1): 31–56. <a href="https://doi.org/10.1016/S0165-4896(98)00007-9">https://doi.org/10.1016/S0165-4896(98)00007-9</a>.
+</div>
+<div id="ref-Stalnaker2008" class="csl-entry" role="listitem">
+———. 2008. <em>Our Knowledge of the Internal World</em>. Oxford: Oxford University Press.
+</div>
+<div id="ref-Strevens2008" class="csl-entry" role="listitem">
+Strevens, Michael. 2008. <em>Depth: An Account of Scientific Explanations</em>. Cambridge, MA: Harvard University Press.
+</div>
+<div id="ref-Sutton2000" class="csl-entry" role="listitem">
+Sutton, John. 2000. <em>Marshall’s Tendencies: What Can Economists Know?</em> Cambridge, MA: <span>MIT</span> Press.
+</div>
+<div id="ref-Thoma2019" class="csl-entry" role="listitem">
+Thoma, Johanna. 2019. <span>“Risk Aversion and the Long Run.”</span> <em>Ethics</em> 129 (2): 230–53. <a href="https://doi.org/10.1086/699256">https://doi.org/10.1086/699256</a>.
+</div>
+<div id="ref-Wedgwood2013a" class="csl-entry" role="listitem">
+Wedgwood, Ralph. 2013. <span>“Gandalf’s Solution to the Newcomb Problem.”</span> <em>Synthese</em> 190 (14): 2643–75. <a href="https://doi.org/10.1007/s11229-011-9900-1">https://doi.org/10.1007/s11229-011-9900-1</a>.
+</div>
+<div id="ref-Weirich1985" class="csl-entry" role="listitem">
+Weirich, Paul. 1985. <span>“Decision Instability.”</span> <em>Australasian Journal of Philosophy</em> 63 (4): 465–72. <a href="https://doi.org/10.1080/00048408512342061">https://doi.org/10.1080/00048408512342061</a>.
+</div>
+<div id="ref-Wells2019" class="csl-entry" role="listitem">
+Wells, Ian. 2019. <span>“Equal Opportunity and Newcomb’s Problem.”</span> <em>Mind</em> 128 (510): 429–57. <a href="https://doi.org/10.1093/mind/fzx018">https://doi.org/10.1093/mind/fzx018</a>.
+</div>
+<div id="ref-Wilson1967" class="csl-entry" role="listitem">
+Wilson, Robert B. 1967. <span>“Competitive Bidding with Asymmetric Information.”</span> <em>Management Science</em> 13 (11): 816–20. <a href="https://doi.org/10.1287/mnsc.13.11.816">https://doi.org/10.1287/mnsc.13.11.816</a>.
+</div>
+<div id="ref-Worsnip2021" class="csl-entry" role="listitem">
+Worsnip, Alex. 2021. <em>Fitting Things Together: Coherence and the Demands of Structural Rationality</em>. Oxford: Oxford University Press.
+</div>
+<div id="ref-WrightVaguenessCollection" class="csl-entry" role="listitem">
+Wright, Crispin. 2021. <em>The Riddle of Vagueness: Selected Essays 1975-2020</em>. Oxford: Oxford University Press.
+</div>
+</div>
+</section>
+
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  let localAlternateSentinel = 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./index.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Preface</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./references.html" class="pagination-link">
+        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>

@@ -1,0 +1,44 @@
+/** Change border color to white **/
+.table>thead>tr>th {
+  border-color: white;
+}
+
+
+/** White borders within the table body **/
+.table>tbody>tr>td {
+  border: 1px solid white;
+}
+
+
+/** Add a top border to the table header row **/
+.table thead tr:first-child { 
+  border-top: 1px solid green;
+}
+
+
+/** Add a bottom border to the table body **/
+.table tbody tr:last-child {
+  border-bottom: 1px solid white;
+}
+
+
+table {
+    margin-left: auto;
+    margin-right: auto;
+    border-spacing: 0;
+    border-top: 2px solid black;
+}
+table th, td, tr {
+    padding: 2px 2px;
+    border-top: dashed 2px white;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+    background-color: white;
+}
+
+caption {
+  border-bottom: none;
+}
+
+mermaid-edge-color: red
