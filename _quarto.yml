@@ -13,6 +13,17 @@ book:
   chapters:
     - index.qmd
     - intro.qmd
+    - idealised.qmd
+    - expectationist.qmd
+    - causal.qmd
+    - mix.qmd
+    - ratify.qmd
+    - dual.qmd
+    - substantive.qmd
+    - weak.qmd
+    - conclusion.qmd
+    - rps.qmd
+    - buchak.qmd
     - references.qmd
 
 bibliography: ../articles/rBib.bib

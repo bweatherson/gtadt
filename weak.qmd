@@ -1,0 +1,47 @@
+# Weak Dominance, Once {#sec-weak}
+
+An option *a* weakly dominates another option *b* if *a* is at least as good as *b* in all states, and better than *b* in some states. Just what role weak dominance has in decision theory is one of the most unsettled topics in game theory. There are three natural positions, and all of them are occupied. One is that weak dominance is of no significance. A second is that ideal agents do not choose weakly dominated options, and that's the only role weak dominance has. And a third is that ideal agents do not choose options that are eliminated by an iterative process of deleting weakly dominated strategies. I'm going to argue in favour of the middle position. I'm not going to try to argue this is the standard game-theoretic move; as I said, I think you can find prominent support for all three options. To argue for the middle position requires making two cases: first, that weakly dominated options are not ideally chosen; and second, that options that would be eliminated by iterative deletion of weakly dominated options are ideally chosen. I'll argue for these in turn.
+
+Start with @tbl-first-wd; what would the ideal chooser do?
+
+|       |        |        |
+|:-----:|:------:|:------:|
+|       | **PU** | **PD** |
+| **U** |   1    |   1    |
+| **D** |   0    |   1    |
+
+: A ratifiable, weakly dominated, option. {#tbl-first-wd}
+
+On the one hand, D is ratifiable, as long as Demon is sufficiently reliable. If Demon will in fact get the predictions right, D gets a return of 1, and had Chooser played U, they would have still received 1. So they would not regret playing D, so by ratifiability it is fine to play it. Against this, there are three reasons to not play D.
+
+First, it is rather unrealistic to think that the probability that Demon will make an accurate prediction is 1. And even if Demon's prediction is correct with probability 1 - ε, then D will not be ratifiable. I'm inclined to rule out, on broadly Humean grounds, the very possibility of a Demon whose predictions are correct with probability 1, but is causally independent of Chooser's choice. Temporally backwards causation is not a logical impossibility, and a world where the predictions are correct with probability 1 seems like a world which has backwards causation. I don't want to rest the case for GDT on contentious metaphysics, so I won't lean on this point.
+
+Second, playing D involves taking on an uncompensated risk. It might be that we don't have a good way of capturing within probability theory just what this risk is. Perhaps you think that it makes sense to say that Demon is correct with probability 1. Still, in some sense D has a risk of failure that U lacks. One should not take on a risk without some compensation. So one should not play D in this case. This, I think, is the most persuasive argument against D.
+
+Third, it has been argued by game theorists that we should always allow for the possibility that one or other player in a game will make some kind of performance error. This idea is at the heart of Reinhard Selten's notion of trembling hand equilibrium [@Selten1975], and Roger Myerson's notion of proper equilibrium [@Myerson1978]. If a strategy would not make sense if the probability of an error by one or other player was positive, even if it was arbitrarily low, it should not be played. Since D only makes sense if the probability of an error by Demon is 0, that means D should not be played.
+
+If it is good to remove weakly dominated options, then one might think it follows straight away that it is good to keep doing this.[^32] Think about @tbl-wd-itd.
+
+[^32]: This suggestion is made by, for example @HareHedden2015.
+
+|       |        |        |        |
+|:-----:|:------:|:------:|:------:|
+|       | **PU** | **PD** | **PX** |
+| **U** |   1    |   1    |   0    |
+| **D** |   0    |   1    |   1    |
+| **X** |   0    |   0    |   1    |
+
+: An example of iterated weak dominance. {#tbl-wd-itd}
+
+In @tbl-wd-itd, X is weakly dominated by D. So it shouldn't be played. But if X isn't played, then PX is weakly dominated by both PU and PD. Demon can't make a correct prediction by playing PX, since by hypothesis it won't be played, so it can't be better than PU or PD. But both PU and PD can be better than PX. So PX is now weakly dominated. So let's remove it as well. If both X and PX are deleted, we're back to @tbl-first-wd, in which we said Chooser should play U.
+
+So does it make sense to say that U is the only play in @tbl-wd-itd? I think not, for three reasons.
+
+First, as Bonanno [-@Bonanno2018, 37] points out, in general iterative deletion of weakly dominated strategies is not a well defined decision procedure. It turns out that in two player games, the order that weakly dominated strategies are deleted can affect which choices one ends up with. There are ways of fixing this problem, by specifying one or other order of deletion as canonical, but they all feel somewhat artificial.
+
+Second, iterative deletion of weakly dominated strategies leads to a single solution to the money-burning game described by @BenPorathDekel1992. But, as @Stalnaker1998 showed, this game has multiple rational solutions, and arguments to the contrary turn on conflating indicative and subjunctive conditionals.
+
+Third, the reasons we gave for avoiding the weakly dominated option in @tbl-first-wd simply don't carry over to @tbl-wd-itd. In the latter game, D is not an uncompensated risk. It's true that D loses if Demon makes an incorrect prediction and plays PU. But U loses if Demon makes an incorrect prediction and plays PX. Unless one thinks that PX is particularly unlikely to be played, it seems U and D are just as risky as each other. So both of them look like rational plays.
+
+So I conclude that we just need one round of deleting weakly dominated options to get rid of irrational plays. D is irrational in @tbl-first-wd, but not in @tbl-wd-itd.
+

@@ -1,0 +1,56 @@
+# Ratificationist {#sec-ratify}
+
+Solution concepts in game theory tend to be equilibria. And by an equilibria, everyone is happy with their moves knowing what all the moves of all the players are. (Or, at least, they are as happy as they can be.) Put in decision theoretic terms, that means that all solutions are ratifiable; Chooser is happy with their choice once it is made.
+
+Ratificationism used to be a more popular view among decision theorists. Richard @Jeffrey1983 added a ratifiability constraint to a broadly evidential decision theory. And ratifiability was endorsed by causal theorists such as @Weirich1985 and @Harper1986. It fell out of popularity, though it has been recently endorsed by @Fuscond. The loss of popularity was for two reasons.
+
+One was the existence of cases where there is (allegedly) no ratifiable option. @tbl-no-pure is one such case.
+
+|          |         |           |
+|:--------:|:-------:|:---------:|
+|          | **PUp** | **PDown** |
+|  **Up**  |    3    |     5     |
+| **Down** |    4    |     3     |
+
+: A case with no pure ratifiable options. {#tbl-no-pure}
+
+If Chooser plays Up, they would prefer to play Down. If Chooser plays Down, they would prefer to play Up. Things get worse if we add an option that is ratifiable, but unfortunate, as in @tbl-bad-third.
+
+|          |         |           |        |
+|:--------:|:-------:|:---------:|:------:|
+|          | **PUp** | **PDown** | **PX** |
+|  **Up**  |    3    |     5     |   0    |
+| **Down** |    4    |     3     |   0    |
+|  **X**   |    0    |     0     |   0    |
+
+: A case with only a bad pure ratifiable option. {#tbl-bad-third}
+
+The only ratifiable option is X, but surely it is worse than Up or Down. One might avoid this example by saying that there is a weak dominance constraint on rational choices, as well as a ratifiability constraint. That won't solve the problem, but it will turn it into a problem like @tbl-no-pure, where there is no good solution. But that won't help us much, as was pointed out by @Skyrms1984, since in @tbl-verybad-third there is no weakly dominant option, but X is surely still a bad play.
+
+|          |         |           |               |
+|:--------:|:-------:|:---------:|:-------------:|
+|          | **PUp** | **PDown** |    **PX**     |
+|  **Up**  |    3    |     5     |       0       |
+| **Down** |    4    |     3     |       0       |
+|  **X**   |    0    |     0     | $\varepsilon$ |
+
+: Skyrms's counterexample to ratificationism. {#tbl-verybad-third}
+
+A better option is to insist, as @Harper1986 did, and as I argued in previous section, that if Chooser is rational, they can play a mixed strategy. In all three of these games, the mixed strategy of (0.5 U, 0.5 D) will be ratifiable, as long as Chooser forms the belief (upon choosing to play this), that Demon will play the mixed strategy (1/3 U, 2/3 D). And that's a sensible thing for Demon to play, since it is the only strategy that is ratifiable for Demon if Demon thinks Chooser can tell what they are going to do. And given Chooser's knowledge of Demon's goals, Chooser can tell what Demon is going to do once they choose.
+
+So if mixed strategies are allowed, none of the problems for ratifiability persist. And since mixed strategies should be allowed, since Chooser is an ideal practical actor, and not being able to play mixed strategies is an imperfection.
+
+Moreover, ratifiability is an intuitive constraint. There is something very odd about saying that such-and-such is a rational thing to do, but whoever does it will regret it the moment they act. So I'll follow the game theory textbooks in saying ratifiability should be part of the correct decision theory.
+
+This does not mean that we need to have an explicit ratifiability clause in our theory. It could be, and arguably should be, that ratifiability is a consequence of the theory, not an explicit stipulation.
+
+Could we defend ratifiability without appeal to mixed strategies? It's not a completely impossible task, but nor is it an appealing one.
+
+@tbl-no-pure poses no serious problem. Without mixed strategies, the case is simply a dilemma. And we know that there are dilemmas in decision theory. Here's one familiar example. A sinner faces Judgment Day. Because of his sins, it is clear things will end badly for him. But he has done some good in his life, and that counts for something. The judge thinks he should get some days in the Good Place before being off to the Bad Place. But the judge can't decide how many. So the judge says to the sinner to pick a natural number *n*, and the sinner will spend *n* days in the Good Place, and then goodbye. This clearly is a dilemma; for any large *n*, saying *n*! would be considerably better.[^16] @Ahmed2012 says that it is an objection to a theory that it allows dilemmas in cases with finitely many options; dilemmas should only arise in infinite cases. But he doesn't really argue for this, and I can't see what an argument would be. Once you've allowed dilemmas of any kind, the door is open to all of them.
+
+[^16]: Note that this is true even if days in heaven have diminishing marginal utility, so the dilemma can arise even if we work within bounded utility theory. This is not just the kind of problem, as discussed by @Goodsellnd, that arises in decision theory with unbounded utilities.
+
+Nor does @tbl-bad-third pose a problem, since as I said, the ratifiability theorist could add a weak dominance constraint and turn Second table into another dilemma.
+
+The problem is @tbl-verybad-third. There the ratifiability theorist who does not allow mixed strategies has to say that the case is an odd kind of Newcomb Problem, where the rational agent will predictably do badly. But it's a very odd Newcomb Problem; by choosing X the chooser didn't even make themselves better off. Indeed, they guaranteed the lowest payout in the game. I don't have a knock-down argument here, and maybe there is more to be said. This is where I think the argument for ratificationism really needs mixed strategies.
+

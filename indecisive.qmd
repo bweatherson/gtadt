@@ -1,0 +1,165 @@
+# Indecisive {#sec-indecisive}
+
+Game theory is full of *solution concepts*; ideas for how to solve a game. That is, they are methods for determining the possible outcomes of a game played by rational players. Compared to philosophical decision theory, there are two big things to know about these solution concepts. One is that there are many of them. It isn't like having a single theory to rule all cases. More complex theories tend to give more intuitive results on more cases. But the complexity is a cost, and in any case no theory gets all the intuitions about all the cases. The other thing is that these will often say that there are multiple possible outcomes for a game, and that knowing the players are rational doesn't suffice to know what they will do. It's this latter feature of game theory that I'll argue here decision theory should imitate.
+
+Say that a theory is *indecisive* if for at least one problem it says there are at least two options such that both are rationally permissible, and the options are not equally good. And say, following Ruth @Chang2002, that two options are equally good if improving either of them by a small amount epsilon would make that one better, i.e., would make it the only permissible choice. So an indecisive theory says that sometimes, multiple choices are permissible, and stay permissible after one or other is sweetened by a small improvement. The vast majority of decision theories on the market are decisive. That's because they first assign a numerical value to each option, and say to choose with the highest value. This allows multiple options iff multiple choices have the same numerical value. But sweetenings increase the value, so they destroy equality and hence the permissibility of each choice.
+
+Perhaps the most intuitive case for indecisiveness involves what I'll call Stag Hunt decisions.[^17] Here is an example of a Stag Hunt decision.
+
+[^17]: For much more on the philosophical importance of Stag Hunts, see @Skyrms2004.
+
+|          |         |           |
+|:--------:|:-------:|:---------:|
+|          | **PUp** | **PDown** |
+|  **Up**  |    6    |     0     |
+| **Down** |    5    |     2     |
+
+: An example of a Stag Hunt. {#tbl-stag-hunt}
+
+Note three things about this game. First, both Up and Down are ratifiable. Second, Up has a higher expected return than Down. Third, Up has a higher possible regret than Down. If Chooser plays Up and Demon is wrong, Chooser gets 2 less than they might have otherwise. (They get 0 but could have got 2.) If Chooser plays Down and Demon is wrong, Chooser only gets 1 less than they might have otherwise. (They get 5 but could have got 6.)
+
+There is considerable disagreement about what this means for Chooser. EDT says that Chooser should play Up, as does the ratifiable variant of EDT in @Jeffrey1983, and some causal decision theorists such as @Arntzenius2008 and @Gustafsson2011. On the other hand, several other theorists who endorse two-boxing in Newcomb's Problem, like @Wedgwood2013a, @Gallow2020, @Podgorski2022, and @Barnett2022, endorse playing Down on the ground of regret miminisation. I think both Up and Down are permissible.[^18] I also think this is the intuitively right verdict, though I place no weight on that intuition. In general, I think in any problem that has the three features described in the last paragraph (two equilibria, one better according to EDT, the other with lower possible regret), either option is permissible. Since lightly sweetening either Up or Down in this problem doesn't change either feature, that is why my theory is indecisive.
+
+[^18]: The view I'm going to develop is hence similar to the 'permissive CDT' defended by @Fuscond.
+
+My argument for indecisiveness will turn on a case that all seven of the views mentioned in the last paragraph agree on, namely @tbl-coord.
+
+|          |         |           |
+|:--------:|:-------:|:---------:|
+|          | **PUp** | **PDown** |
+|  **Up**  |    4    |     0     |
+| **Down** |    0    |     3     |
+
+: An example of a coordination game. {#tbl-coord}
+
+All of them agree that Up is the uniquely rational play in this example, and I think intuition agrees with them. I'll argue, however, that Down is permissible. The argument turns on a variation that embeds cite table in a more complicated problem. This problem involves two demons, each of whom are arbitrarily good at predicting Chooser. The (first version of) the problem involves the following sequence.
+
+1.  Both Demon-1 and Demon-2 predict Chooser, but do not reveal their prediction.
+2.  If Demon-1 predicts Chooser plays Up, they Exit with probability 0.5, and Chooser gets 0. If Demon-1 predicts Chooser plays Down, they do not Exit. (That is, they Exit with probability 0.) If they Exit, the problem ends, and Chooser is told this. Otherwise, we go to the next step.
+3.  Chooser chooses Up or Down.
+4.  Demon-2's prediction is chosen, and that determines whether we are in state PU or state PD.
+5.  Chooser's payouts are given by cite above table.
+
+I'll call these Exit Problems, and @tbl-general-exit gives the general form of such a problem. Our problem has this abstract of @tbl-general-exit with *b* = *c* = *e* = *y* = 0, *x* = 0.5, *a* = 4, *d* = 3.
+
+::: {#tbl-general-exit layout-ncol="2"}
+|                   |     |
+|:-----------------:|:---:|
+|    Exit Payout    | *e* |
+|  Pr(Exit \| PUp)  | *x* |
+| Pr(Exit \| PDown) | *y* |
+
+: Exit Parameters {#tbl-exit-param}
+
+|          |         |           |
+|:--------:|:-------:|:---------:|
+|          | **PUp** | **PDown** |
+|  **Up**  |   *a*   |    *b*    |
+| **Down** |   *c*   |    *d*    |
+
+: Round 2 game {#tbl-exit-r2g}
+
+The abstract form of an exit problem.
+:::
+
+Now consider a simple variant of the above 5 step problem. The same things happen, but steps 2 and 3 are reversed. That is, Chooser decides on Up or Down after Demons make their predictions, but before they are told whether Demon-1 decided to Exit. Still, their choice will only matter if Demon-1 decided not to Exit, since their choices do not make a difference if Demon-1 Exits. Call this variant the Early Choice version, and the original the Late Choice variant. I don't have any clear intuitions about what to do in most Exit Problems, save for this constraint on choices.
+
+-   **Exit Principle**: In any Exit Problem, the same choices are permissible in the Early Choice and Late Choice variants.
+
+The reason comes from thinking about what Chooser is doing in the Early Choice variant. They are making a decision about what to do if Demon-1 doesn't Exit. The way to make that decision is just to assume that Demon-1 doesn't Exit, and then decide what to do. It just is the same choice as they face in the Late Choice variant, except now they make it in the context of a conditional. So they should decide it the same way.
+
+To put the point in game-theoretic terms, there is no difference between extensive form and normal form reasoning when a decider has only one possible choice to make. And there is a natural argument for this claim. It starts with the idea that for any *p*, the following two questions have the same answers.
+
+1.  If *p* happens, what do you want to do?
+2.  So, *p* happened. What do you want to do?
+
+When one is asked to choose a strategy for a tree that has only one possible decision in it, the question one is being asked is that if we get to the point in the tree where one has to decide, what will you do. And the 'Late Question' is that that point in the tree has been reached; now what will you do? So the questions fit the schema, and should get the same answers. One could see this as a consequence of applying something like the Ramsey test to conditional questions [@RamseyGeneralProp]. Denying Exit Principle means treating these two very similar sounding questions differently, and that's implausible.
+
+One could also argue, I think correctly, that anyone who violates Exit Principle will violate a plausible version of the Sure Thing Principle.[^19] Such an argument seems sound to me, but the Sure Thing Principle is controversial, and I prefer to put more weight on the argument from how conditional reasoning works in the previous paragraph. (Indeed, I think using the Exit Principle to motivate a version of the Sure Thing Principle is more plausible than the reverse argument.)
+
+[^19]: To be sure, it's not entirely clear how to even state the Sure Thing Principle in the framework of causal ratificationism. Ratificationism does not output a preference ordering over options; it just says which options are and are not choice-worthy. And exactly how to translate principles like Sure Thing that are usually stated in terms of preference to ones in terms of choiceworthiness isn't always clear. One consequence of this is that I don't want to lean on Sure Thing as a premise. Another is that ratificationism isn't really subject to the objections that @Gallownd makes to theories that endorse Sure Thing, since the version of Sure Thing he uses is stated in terms of preferences. (Officially, ratificationism is 'unstable' in his sense because it doesn't output a preference ordering over unchosen options; that doesn't seem like a weakness to me.)
+
+Any plausible theory that says that only Up is rationally playable in problems like @tbl-coord cite above table will violate Exit Principle. Think about what they will say @tbl-early-choice.
+
+|          |         |            |           |
+|:--------:|:-------:|:----------:|:---------:|
+|          | **PUp** | **PMixed** | **PDown** |
+|  **Up**  |    2    |     3      |     0     |
+| **Down** |    0    |     3      |     3     |
+
+: The Early Choice decision. {#tbl-early-choice}
+
+In this problem, PUp means that both demons predict Up, PDown means that they both predict Down, and PMixed means that one predicts one, and one the other. This possibility is arbitrarily improbable, and the two strategies have the same expected return given M in any case, so we can ignore it. So really this game comes to @tbl-early-choice-simplified.
+
+|          |         |           |
+|:--------:|:-------:|:---------:|
+|          | **PUp** | **PDown** |
+|  **Up**  |    2    |     0     |
+| **Down** |    0    |     3     |
+
+: The Early Choice decision simplified. {#tbl-early-choice-simplified}
+
+Now presumably if one prefers Up in above table, it is because one prefers Up in any game like @tbl-general-coord Table below where *x* \> *y* \> 0.
+
+|          |         |           |
+|:--------:|:-------:|:---------:|
+|          | **PUp** | **PDown** |
+|  **Up**  |   *x*   |     0     |
+| **Down** |    0    |    *y*    |
+
+: General coordination game. {#tbl-general-coord}
+
+How could it be otherwise? Given expectationism, it's not like there is anything special about the numbers 4 and 3. But anyone who endorses this policy will play Down @tbl-early-choice-simplified and so, presumably, in @tbl-early-choice. And that means they will violate Exit Principle.
+
+The only view that is consistent with Exit Principle in cases like @tbl-general-coord is that both Up and Down are permissible. And since in any such case, improving Up or Down be a tiny amount wouldn't materially change the case, they must both be permissible after small sweetenings. So, given Exit Principle, the only viable theories are indecisive.
+
+Exit Principle also offers a response to some intuitions that have led people to question CDT in recent years. @tbl-frustrating-button is an example that Jack @Spencer2023 used to model the kind of case that's at issue. As he notes, it is similar to the psychopath button case [@Egan2007-EGASCT], the asymmetric Death in Damascus case [@Richter1984], and other puzzles for CDT.
+
+|          |         |           |
+|:--------:|:-------:|:---------:|
+|          | **PUp** | **PDown** |
+|  **Up**  |   10    |    10     |
+| **Down** |   15    |     0     |
+
+: Frustrating Button (from @Spencer2023). {#tbl-frustrating-button}
+
+Apparently the common intuition here is that that Up is the uniquely rational play. Note though that if we embed Frustrating Button in an exit problem, as in @tbl-frustrating-exit, the intuitions shift.
+
+::: {#tbl-frustrating-exit layout-ncol="2"}
+|                   |     |
+|:-----------------:|:---:|
+|    Exit Payout    | -50 |
+|  Pr(Exit \| PUp)  | 0.8 |
+| Pr(Exit \| PDown) |  0  |
+
+: Exit Parameters {#tbl-exit-param-fb}
+
+|          |         |           |
+|:--------:|:-------:|:---------:|
+|          | **PUp** | **PDown** |
+|  **Up**  |   10    |    10     |
+| **Down** |   15    |     0     |
+
+: Frustrating Button {#tbl-exit-r2g-fb}
+
+An exit problem with Frustrating Button in round 2.
+:::
+
+The Early Version of @tbl-frustrating-exit is @tbl-ev-fe.
+
+|          |         |           |
+|:--------:|:-------:|:---------:|
+|          | **PUp** | **PDown** |
+|  **Up**  |   -38   |    10     |
+| **Down** |   -37   |     0     |
+
+: Early Version of @tbl-frustrating-exit. {#tbl-ev-fe}
+
+\newpage
+
+And if there is an intuition here, it is that it's better to choose Down rather than Up.[^20] This violates Exit Principle, and it seems incoherent to say that one would choose Down in this game, when Down just means playing Down in round 2, and if one were to reach round 2, one would prefer Up.
+
+[^20]: The theory offered in @Spencer2021b agrees with intuition here.
+
+Exit Principle can also be used to argue against the non-expectationist theory offered by Lara @BuchakRisk, but that argument is more complicated, and I'll leave it to Appendix Two.
+

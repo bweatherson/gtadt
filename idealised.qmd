@@ -1,0 +1,75 @@
+# Idealised {#sec-ideal}
+
+Consider the following decision problem. Chooser (our main protagonist) is going to be given a series of multiplication problems, where each of the multiplicands is a four digit number. Chooser doesn't have access to any kind of calculating device, and has no special arithmetic ability. For each question, if Chooser says the right answer, they get \$2; if they pass, they get \$1; if they say the wrong answer, they get nothing. @tbl-multi has the payout in table form.
+
+|           |                        |                          |
+|:---------:|:----------------------:|:------------------------:|
+|           | **Best Guess Correct** | **Best Guess Incorrect** |
+| **Guess** |          \$2           |           \$0            |
+| **Pass**  |          \$1           |           \$1            |
+
+: The multiplication game {#tbl-multi}
+
+Every variety of decision theory defended in philosophy journals in recent years, and every game theory textbook, says that Chooser should simply say the correct answer. After all, Chooser should have probabilistically coherent credences, and every mathematical truth has probability 1, so whatever the correct answer is, saying it is a sure \$2.
+
+This is completely terrible advice. Chooser should pass every time, unless the question is something boring like 1000 times 2000. The chance of them getting a question like 5278 times 9713 correct are way less than one in two, so they are better off passing.
+
+This doesn't mean that every philosophical decision theory, and every game theory textbook, is wrong. Those theories are not in the business of giving advice to people like Chooser. They are in the business of saying what it would be ideal, in some sense of ideal, for Chooser to do. And it would be ideal for Chooser to be a reliable computer, so if Chooser were reliable, they would always give the correct answer.
+
+There is a big question about why we should care about what would have if Chooser were ideal. Chooser is not in fact ideal, so who cares what they would do if they were different. One might think that knowing what the ideal is gives Chooser something to aim for. Even if Chooser is not ideal, they can try to be closer to the ideal. The problem is that trying to be more like the ideal will make things worse. The ideal agent will never pass, and even if Chooser doesn't know the answers to the particular questions, they can know this fact. So if they try to be more like the ideal, they will never pass, and things will go badly.[^1]
+
+[^1]: This is a special case of Lipsey and Lancaster's Theory of the Second Best [@LipseyLancaster]. If you don't have control over every parameter, setting the parameters you do control to the ideal values is generally inadvisable.
+
+In philosophy we have two very different uses of the term 'idealisation'. One is the kind of idealisation we see in, for example, Ideal Observer theories in ethics. The other is the kind of idealisation we see in, for example, Ideal Gas models in chemistry. It's important to not confuse the two. Think about the volumeless, infinitely dense, molecules in an Ideal Gas model. To say that this is an idealised model is not to say that having volume, taking up space, is an imperfection. The point is not to tell molecules what the perfect size is. ("The only good molecule is a volumeless molecule.") Nor is it to tell them that they should approximate the ideal. ("Smaller the better, fellas.") It's to say that for some predictive and explanatory purposes, molecules behave no differently to how they would behave if they took up no space.[^2]
+
+[^2]: I'm drawing here on work on the nature of idealisations by Michael @Strevens2008 and by Kevin @Davey2011.
+
+The best way to understand decision theorists, and game theorists, is that they are using idealisations in this latter sense. The ideal choosers of decision theory are not like the Ideal Observers in ethics, but like the Ideal Gases. The point of the theory is to say how things go in a simplified version of the case, and then argue that this is useful for predictive and explanatory purposes because, at least some of the time, the simplifications don't make a difference.
+
+One nice example of this working is George Akerlof's discussion of the used car market @Akerlof1970. In the twentieth century, it was common for lightly used cars to sell at a massive discount to new cars. There was no good explanation for this, and it was often put down to a brute preference for new cars. What Akerlof showed was that a model where (a) new cars varied substantially in quality, and (b) in the used car market, buyers had less information about the car than sellers, you could get a discount similar to what you saw in real life even if the buyers had no special preference for new cars. Rather, buyers had a preference for good cars, and took the fact that this car was for sale to be evidence that it was badly made. It was important for Akerlof's explanatory purposes that he could show that people were being rational, and this required that he have a decision theory that they followed. In fact what he used was something like GDT. We now have excellent evidence that something like his model was correct. As the variation in quality of new cars has declined, and the information available to buyers of used cars has risen, the used car discount has just about vanished. (In fact it went negative during the pandemic, for reasons I don't at all understand.)
+
+I'll end this section with a response to one objection, one caveat, and one surprising bonus to doing idealised decision theory this way.
+
+The objection is that decision theory isn't actually that helpful for prediction and explanation. If all that it says are things like when rain is more probable, more people take umbrellas, that doesn't need a whole academic discipline. The response to that is that in non-cooperative games, the predictions, and explanations, can be somewhat surprising. One nice case of this is the discussion of Gulf of Mexico oil leases in @Wilson1967.[^3] But here's a simpler surprising prediction that you need something like GDT to get.[^4]
+
+[^3]: I learned about this paper from the excellent discussion of the case in @Sutton2000.
+
+[^4]: A somewhat similar point is made in the example of the drowning dog on page 216 of @Bonanno2018.
+
+Imagine Row and Column are playing rock-paper-scissors. A bystander, C, says that he really likes seeing rock beat scissors, so he will pay whoever wins by playing rock \$1. Assuming that Row and Column have no ability to collude, the effect of this will be to shift the payouts in the game they are playing from left table to right table, where *c* is the value of the dollar compared to the value of winning the game. This changes the game they are playing from @tbl-rps-basic to @tbl-rps-modified.
+
+::: {#tbl-rps layout-ncol="2"}
+|              |          |           |              |
+|:------------:|:--------:|:---------:|:------------:|
+|              | **Rock** | **Paper** | **Scissors** |
+|   **Rock**   |   0,0    |   -1,1    |     1,-1     |
+|  **Paper**   |   1,-1   |    0,0    |     -1,1     |
+| **Scissors** |   -1,1   |   1,-1    |     0,0      |
+
+: Original game {#tbl-rps-basic}
+
+|              |          |           |              |
+|:------------:|:--------:|:---------:|:------------:|
+|              | **Rock** | **Paper** | **Scissors** |
+|   **Rock**   |   0,0    |   -1,1    |   1+*c*,-1   |
+|  **Paper**   |   1,-1   |    0,0    |     -1,1     |
+| **Scissors** | -1,1+*c* |   1,-1    |     0,0      |
+
+: Modified game {#tbl-rps-modified}
+
+Two versions of Rock-Paper-Scissors
+:::
+
+The surprising prediction is that this will *decrease* the frequency with which the bystander gets their way. The incentive will not make either party play rock more often, they will still play it one third of the time, but the frequency of scissors will decrease, so the *rock smash* outcome will be less frequent. Moreover, the bigger the incentive, the larger this increase will be[^5]. Simple rules like "When behaviour is rewarded, it happens more often" don't always work in strategic settings, and it takes some care to tell when they do work.
+
+[^5]: The proof is in Appendix One.
+
+The caveat is that there is a reason that this particular idealisation is chosen, at least as the first attempt. There are a lot of stylised facts about people that we could use in a model of behaviour. In game theory we concentrate on the ways in which people are, at least approximately much of the time, somewhat rational. People who prefer vanilla to chocolate really do buy vanilla more than chocolate. We could also choose stylised facts that are not particularly rational. But there is a worry that these will not remain facts, even approximately, when the stakes go up. And for some purposes, what people do in high stakes situations might be really important. If you think that people are more careful in high stakes situations, and that this care translates into more rational action, and it's particularly important to make the right predictions in high stakes cases, it makes sense to focus on idealisations that are also true of perfectly rational people.
+
+There is a tricky complication here that isn't always attended to in theory, though in practice it's less of a problem. Especially in decision theory, we idealise away from computational shortcomings, but not away from informational shortcomings. We take the chooser's information as fixed, and ask how they'll decide. In high stakes cases, people don't just get better calculators, they get more information. If this is why we idealise, why don't we idealise away from ignorance? The reason is that in a lot of cases, either it is impossible to get the evidence the chooser needs, because it is about the future, or it is challenging because there is someone else working just as hard to prevent the chooser getting the information. It's not a coincidence that game theory, and decision theory, are most explanatory when the chooser's ignorance is about the future, or about something that someone is trying to hide from them.
+
+There is one surprising bonus from starting with these rational idealisations. Sometimes one gets a powerful kind of explanation from very carefully working out the ideal theory, and then relaxing one of the components. At a very high level of abstraction, that's what happened with the development of cursed equilibrium [@EysterRabin2005]. The explanations one gets these ways are, to my mind, very surprising. The models have people acting as if they have solved very complex equations, but have ignored simple facts, notably that other people may know more than they do. But if the model fits the data, it is worth taking seriously. And while it was logically possible to develop a model like cursed equilibrium without first developing an ideal model and then relaxing it, it seems not surprising that in fact that's how the model was developed.
+
+So our topic is idealised decision theory. In practice, that means the following things. The chooser can distinguish any two possibilities that are relevant to their decision, there is no unawareness in that sense, and they know when two propositions are necessarily equivalent. They can perform any calculation necessary to making their decision at zero cost. They have perfect recall. They don't incur deliberation costs; in particular, thinking about the downsides of an option does not reduce the utility of ultimately taking that option, as it does for many humans. They know what options they can perform, and what options they can't perform. I'll argue in @sec-mixed that it means they can play mixed strategies. Finally, I'll assume it means they have numerical credences and utilities. I'm not sure this should be part of the same idealisation, but it simplifies the discussion, and it is arguable that non-numerical credences and utilities come from the same kind of unawareness that we're assuming away. [@GrantEtAl2021]
+
+So the problems our choosers face look like this. There are some possible states of the world, and possible choices. The chooser knows the value to them of each state-choice pair. (In @sec-expect I'll say more about this value.) The states are, and are known to be, causally independent of the choices. But the states might not be probabilistically independent of the choices. Instead, we'll assume that the chooser has a (reasonable) value for Pr(*s* \| *c*), where *s* is any one of the states, and *c* is any one of the choices. The question is what they will do, given all this information.

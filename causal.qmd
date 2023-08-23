@@ -1,0 +1,47 @@
+# Causal {#sec-causal}
+
+It shouldn't be controversial to claim that game theory textbooks are committed a broadly causal version of decision theory.[^9] For one thing, they always recommend defecting in Prisoners' Dilemma, even when playing with a twin. As David Lewis showed, this is equivalent to recommending two-boxing in Newcomb's Problem [@Lewis1979e]. They endorse the causal decision theorist's signature argument form: the deletion of strongly dominated strategies. Indeed, the typical book introduces this before it introduces anything about probability. When they do get around to probabilities, they tend to define the expected value of a choice in a way only a causal decision theorist could endorse. In particular, they define expected values using unconditional, rather than conditional, probabilities.[^10] And the probabilities are simply probabilities of states, not probabilities of any kind of counterfactual. Indeed, you can go entire textbooks without even getting a symbol for a counterfactual conditional.
+
+[^9]: This point is made by @Harper1988, and many (though not all) of the conclusions I draw in this paper will be similar to ones he drew.
+
+[^10]: See, for instance, the introduction of them on page 136 of @Bonanno2018. And note that we get 135 pages before the notion of an expectation is introduced; that's how much is done simply with dominance reasoning
+
+What's more controversial is that they are right to adopt a kind of causal decision theory (CDT).[^11] In the recent literature, I think there are four main kinds of objections to CDT. First, it leaves one with too little money in Newcomb's Problem. Second, it gives the wrong result in problems like Frustrator [@SpencerWells2019]. Third, it gives the wrong result in asymmetric Death in Damascus cases, as in @Egan2007-EGASCT. Fourth, it gives strange results in Ahmed's *Betting on the Past* and *Betting on the Laws* cases. I'm going to set those problems aside because (a) they require that an agent not always be aware of what actions are possible, and that's inconsistent with the idealisations introduced in @sec-ideal, and (b) they raise questions about just what it means for two things to be causally independent that go beyond the scope of this paper.
+
+[^11]: Note that I'm using *CDT* here as the name of a family of theories, not a particular theory. So it's not a great name; Causal Decision Theory is not a theory. Different versions of CDT can, and do, differ in what they say about the Stag Hunt cases I'll discuss in @sec-indecisive. But the label seems entrenched, so I'll use it. In contrast, evidential decision theory, EDT, is a theory; it is a full account of what to do in all cases.
+
+The intuitions behind the asymmetric Death in Damascus cases are inconsistent with the Exit Principle that I'll discuss in @sec-indecisive. The Frustrator cases are no problem for a version of CDT that says that idealised agents can always play mixed strategies. Like the game theorists, I will also assume mixed strategies are available, and I'll come back in @sec-mixed to why that assumption should be allowed.
+
+That leaves the point that CDT leaves one poorly off in Newcomb's Problem, while other theories, like evidential decision theory (EDT) leave one well off. This isn't a particular mark against CDT, since other theories, like EDT, leave one poorly off in some situations. Here is one such case.[^12]
+
+[^12]: See @Wells2019 for a slightly more complicated case, and @Ahmed2020 for an argument that Wells's argument is unfair to EDT.
+
+There are two demons, who will predict what Chooser will do. Both of them are arbitrarily good, though not quite perfect, and their errors are independent. Chooser will play either the left or right game in @tbl-edt-war.
+
+::: {#tbl-edt-war layout-ncol="2"}
+|          |         |           |
+|:--------:|:-------:|:---------:|
+|          | **PUp** | **PDown** |
+|  **Up**  |    1    |     3     |
+| **Down** |    0    |     2     |
+
+: Demon-1 predicts Down {#tbl-war-left}
+
+|          |         |           |
+|:--------:|:-------:|:---------:|
+|          | **PUp** | **PDown** |
+|  **Up**  |  1001   |   1003    |
+| **Down** |  1000   |   1002    |
+
+: Demon-1 predicts Up {#tbl-war-right}
+
+A Newcomb problem with two demons
+:::
+
+If Demon-1 predicts that Chooser will play Down, Demon-1 will offer Chooser @tbl-war-left; if Demon-1 predicts that Chooser will play Up, Demon-1 will offer Chooser @tbl-war-right. Then Demon-2's prediction will be used for determining whether the payout is from column PU or PD. In almost all cases, if Chooser uses CDT, they will get 1001, while if they use EDT, they will get 2. So in this case, CDT will get more than EDT.
+
+This case is not meant as an objection to EDT. It is perfectly fair for the evidential decision theorist to complain that they have simply been the victim of a Demon who intends to punish users of EDT, and reward users of CDT. That seems a perfectly fair complaint. But if the evidential decision theorist makes it, they cannot object when causal decision theorists, such as @Lewis1981e, use the same language to describe Newcomb's Problem. The 'objection' that CDT leaves one poorly off in one particular case is equally an objection to everyone, and so it is an objection to no one.
+
+One might worry at this stage that I haven't shown that everyone is vulnerable to this kind of 'objection', just that CDT and EDT are equally vulnerable to it. In particular, so-called 'resolute' decision theories will choose one-box in Newcomb's Problem, and Up in @tbl-edt-war, and so be enriched both times. The so-called 'foundational decision theory' that @LevinsteinSoares2020 endorse also makes that pair of choices. But those theories are vulnerable to much more serious objections, that I'll come to in @sec-dualmandate.
+
+So I conclude that there is no good objection to adopting a broadly causal decision theory, much as the game theorists do. But which version of CDT do they adopt, and are they right to do so? That will take us much more time.

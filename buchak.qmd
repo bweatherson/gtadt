@@ -1,0 +1,156 @@
+# Appendix Two: Risk-Weighted Utility {#sec-buchak .unnumbered .appendix}
+
+This appendix goes over a problem for Lara Buchak's risk-weighted utility theory, based around the Exit Principle from @sec-indecisive. Buchak's theory concerns normal decision problems, where there are no demons lying around, so we have to modify Exit Principle a little to make it apply. The modifications still leave it recognisably the same principle though. And the main point of this appendix is to show that it is possible to theorise about normal and abnormal decision problems using the same tools.
+
+The core of Buchak's theory is a non-standard way of valuing a gamble. For simplicity, we'll focus on gambles with finitely many outcomes. Associate a gamble with a random variable $O$, which takes values $o_1, \dots, o_n$, where $o_j > o_i$ iff $j > i$. Buchak says that the risk-weighted expected utility of $O$ is given by this formula, where $r$ is the agent's risk-weighting function.
+
+$$
+REU(O) = o_1 + \sum_{i = 2}^n r(\Pr(O \geq o_i))(o_i - o_{i-1})
+$$
+
+The decision rule then is simple: choose the gamble with the highest REU.
+
+The key notion here is the function $r$, which measures Chooser's attitudes to risk. If $r$ is the identity function, then this definition becomes a slightly non-standard way of defining expected utility. Buchak allows it to be much more general. The key constraints are that $r$ is monotonically increasing, that $r(0) = 0$ and $r(1) = 1$. In general, if $r(x) < x$, Chooser is some intuitive sense more risk-averse than an expected utility maximiser, while if $r(x) > x$, Chooser is more risk-seeking. The former case is more relevant to everyday intuitions.
+
+There are a number of good reasons to like Buchak's theory. Standard expected utility theory explains risk-aversion in a surprisingly roundabout way. Risk-aversion simply falls out as a consequence of the fact that at almost all points, almost all goods have a declining marginal utiility. This is theoretically elegant - risk-aversion and relative satiation are explained in a single framework - but has a number of downsides. For one thing, it doesn't allow rational agents to have certain kinds of risk-aversion, such as the kind described by @Allais1953. For another, it doesn't seem like risk-aversion just is the same thing as the declining marginal utility of goods. Buchak's theory, by putting attitudes to risk into $r$, avoids both these problems.
+
+Unfortunately, Buchak's theory runs into problems. Our focus will be on two-stage problems where Chooser's choice only makes a difference if the game gets to stage 2. The general structure will be this.
+
+1.  A coin with probability $y$ of landing Heads will be flipped. If it lands Tails, Chooser gets the Exit Payout, and the game ends.
+2.  If the game is still going, a second coin, with probability $x$ of landing Heads, will be flipped.
+3.  Chooser's payout will be a function of whether they chose Up or Down, and the result of this second coin.
+
+I'll write $H_1$ and $T_1$ for the propositions that the first coin lands Heads and Tails respectively, and $H_2$ and $T_2$ for the propositions that the second coin lands Heads and Tails respectively. I'll mostly be interested in the case where Up is a bet on $H_2$, and Down is declining that bet, but the general case is important to have on the table. The general structure of these problems is given by @tbl-general-coin-exit.
+
+::: {#tbl-general-coin-exit layout-ncol="2"}
+|             |     |
+|:-----------:|:---:|
+| Exit Payout | $e$ |
+|  Pr($H_1$)  | $y$ |
+|  Pr($H_2$)  | $x$ |
+
+: Exit Parameters {#tbl-coin-exit-param}
+
+|          |       |       |
+|:--------:|:-----:|:-----:|
+|          | $H_2$ | $T_2$ |
+|  **Up**  |  $a$  |  $b$  |
+| **Down** |  $c$  |  $d$  |
+
+: Round 2 game {#tbl-coin-exit-r2g}
+
+The abstract form of an exit problem with coins.
+:::
+
+Then we get a version of Exit Principle that applies to games like this.
+
+-   **Exit Principle**: Whether a choice is rational for Chooser is independent of whether Chooser chooses before or after they are told the result of the first coin flip.
+
+Again, the argument for this turns on reflections about conditional questions. If Chooser is asked before the first coin flip, they are being asked what they want to do if the first coin lands Heads; if they are asked after that flip, they are being asked what they want to do now that the first coin landed Heads. These questions should get the same answer. I'll show that REU-maximisation only gets that result if $r$ is the identity function, i.e., if REU-maximisation just is expected utility maximisation.
+
+As before, I'll refer to Chooser's Early and Late choices, meaning their choices before and after being told the result of the first coin. I'll write $REU_E(X)$ to be the risk-weighted expected utility of $X$ before finding out the result of the first coin toss, and $REU_L(X)$ to be the risk-weighted expected utility of $X$ after finding out the result of the first coin toss. So Exit Principle essentially becomes this biconditional, for any gambles $X$ and $Y$.
+
+$$
+REU_E(X) \geq REU_E(Y) \leftrightarrow REU_L(X) \geq REU_L(Y)
+$$
+
+I'll first prove that this implies that $r$ must be multiplicative, i.e., that $r(xy) = r(x)r(y)$ for all $x, y$. This isn't a particularly problematic result; the most intuitive values for $r$, like $r(x) = x^2$, are multiplicative. Consider the Exit Problem shown in @tbl-zero-coin-exit, where $x$ and $y$ are arbitrary.
+
+::: {#tbl-zero-coin-exit layout-ncol="2"}
+|             |     |
+|:-----------:|:---:|
+| Exit Payout |  0  |
+|  Pr($H_1$)  | $y$ |
+|  Pr($H_2$)  | $x$ |
+
+: Exit Parameters {#tbl-zero-coin-exit-param}
+
+|          |                  |       |
+|:--------:|:----------------:|:-----:|
+|          |      $H_2$       | $T_2$ |
+|  **Up**  | $\frac{1}{r(x)}$ |   0   |
+| **Down** |        1         |   1   |
+
+: Round 2 game {#tbl-zero-coin-exit-r2g}
+
+An exit game with exit payout 0.
+:::
+
+It's easy to check that $REU_L(U) = REU_L(D) = 1$. So by Exit Principle, $REU_E(U) = REU_E(D)$. Since $REU_E(U) = \frac{r(xy)}{r(x)}$, and $REU_L(D) = r(y)$, it follows that $r(xy) = r(x)r(y)$, as required.
+
+Define $m$, for midpoint, as $r^{-1}(0.5)$. Intuitively, $m$ is the probability where the risk-weighting agent is indifferent between taking and declining a bet that stands to win and lose the same amount. Since $r$ is monotonically increasing, and goes from 0 to 1, $m$ must exist. Consider now @tbl-one-coin-exit, where $y$ is arbitrary.
+
+::: {#tbl-one-coin-exit layout-ncol="2"}
+|             |     |
+|:-----------:|:---:|
+| Exit Payout |  1  |
+|  Pr($H_1$)  | $y$ |
+|  Pr($H_2$)  | $m$ |
+
+: Exit Parameters {#tbl-one-coin-exit-param}
+
+|          |       |       |
+|:--------:|:-----:|:-----:|
+|          | $H_2$ | $T_2$ |
+|  **Up**  |   2   |   0   |
+| **Down** |   1   |   1   |
+
+: Round 2 game {#tbl-one-coin-exit-r2g}
+
+An exit game with exit payout 1.
+:::
+
+In @tbl-one-coin-exit, it's also easy to see that $REU_L(U) = REU_L(D) = 1$. So by Exit Principle, $REU_E(U) = REU_E(D)$. And it's also clear that $REU_E(D) = 1$, since that's the only possible payout for Down. So $REU_E(U) = 1$. So we get the following result.
+
+```{=tex}
+\begin{align*}
+REU_E(U) &= r(1-y(1-m)) + r(ym) \\
+ &= 1    \\
+\therefore  r(1-y(1-m)) &= r(ym)
+\end{align*}
+```
+That doesn't look like a particularly notable result, but it will become useful when we discuss our last case, @tbl-two-coin-exit, which is just the same as @tbl-one-coin-exit, except the exit payout is now 2.
+
+::: {#tbl-two-coin-exit layout-ncol="2"}
+|             |     |
+|:-----------:|:---:|
+| Exit Payout |  2  |
+|  Pr($H_1$)  | $y$ |
+|  Pr($H_2$)  | $m$ |
+
+: Exit Parameters {#tbl-two-coin-exit-param}
+
+|          |       |       |
+|:--------:|:-----:|:-----:|
+|          | $H_2$ | $T_2$ |
+|  **Up**  |   2   |   0   |
+| **Down** |   1   |   1   |
+
+: Round 2 game {#tbl-two-coin-exit-r2g}
+
+An exit game with exit payout 2.
+:::
+
+In @tbl-two-coin-exit, it's again easy to see that $REU_L(U) = REU_L(D) = 1$. So by Exit Principle, $REU_E(U) = REU_E(D)$. But the early values are more complicated. $REU_E(D) = 1 + r(1-y)$, and $REU_E(U) = 2r(1-y(1-m))$. Using what we've discovered so far, we can do something with that last value.
+
+```{=tex}
+\begin{align*}
+REU_E(U) &= 2r(1-y(1-m)) \\
+  &= 2(1-r(ym))  && \text{from previous calculations} \\
+  &= 2 - 2r(ym) \\
+  &= 2 - 2r(y)r(m) && \text{since $r$ is multiplicative} \\
+  &= 2 - r(y)  && \text{since $r(m) = 0.5$}
+\end{align*}
+```
+Putting all this together, we get
+
+```{=tex}
+\begin{align*}
+REU_E(D) &= REU_E(U)  && \Rightarrow \\
+1 + r(1-y) &= 2 - r(y) && \Rightarrow \\
+r(y) + r(1-y) &= 1
+\end{align*}
+```
+So $r$ is a monotonic increasing function satisfying $r(0) = 0, r(1) = 1, r(xy) = r(x)r(y)$ and $r(y) + r(1-y) = 1$. The only such function is $r(x) = x$. So the only version of risk-weighted expected utility theory that satisfies Exit Principle is where $r(x) = x$, i.e., where risk-weighted expected utility just is old-fashioned expected utility.
+
+This doesn't yet prove expectationism. I haven't shown that there is no other alternative to expected utility theory that satisfies Exit Principle. There are such other theories out there, such as the Weighted-linear utility theory described by @BottomleyWilliamsonnd. But it's a guide to how we could start defending expectationism in a way consistent with how we handle decision problems involving demons.
