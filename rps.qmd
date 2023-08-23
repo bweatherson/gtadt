@@ -1,4 +1,4 @@
-# Appendix One: Rock-Paper-Scissors {#sec-rps .unnumbered .appendix}
+# Rock-Paper-Scissors {#sec-rps}
 
 This appendix shows how to find the equilibrium of @tbl-rps-modified, the version of Rock-Paper-Scissors where it is common knowledge that the players will get a bonus of $c > 0$ if they will while playing rock. The game is symmetric, so we'll just work out Column's strategy, and the same will go for Row.
 
@@ -38,4 +38,3 @@ Now we can substitute the values for $x$ and $z$ into the fact that $x+y+z=1$.
 So each option has expected payout $\frac{c}{3c+9}$. And there is one unsurprising result, namely that the expected return to the players increases as $c$ increases. But note that $x$, the probability that a player plays Rock, is invariant as $c$ changes. And $z$, the probability that a player plays Scissors, goes down as $c$ goes up.
 
 It is intuitive that announcing the reward makes each player less likely to play Scissors. And that in turn puts down downward pressure on playing Rock. What you need some theory (and algebra) to show is that this downward pressure is exactly as strong as the upward pressure that comes from the incentive for playing Rock supplied by the bystander. Intuition alone can tell you what the various forces are that are acting on a chooser; the role of theory is to say something more precise about the strength of these forces.
-

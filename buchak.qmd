@@ -1,4 +1,4 @@
-# Appendix Two: Risk-Weighted Utility {#sec-buchak .unnumbered .appendix}
+# Risk-Weighted Utility {#sec-buchak}
 
 This appendix goes over a problem for Lara Buchak's risk-weighted utility theory, based around the Exit Principle from @sec-indecisive. Buchak's theory concerns normal decision problems, where there are no demons lying around, so we have to modify Exit Principle a little to make it apply. The modifications still leave it recognisably the same principle though. And the main point of this appendix is to show that it is possible to theorise about normal and abnormal decision problems using the same tools.
 

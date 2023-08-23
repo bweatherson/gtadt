@@ -4,9 +4,9 @@ Game theory is full of *solution concepts*; ideas for how to solve a game. That 
 
 Say that a theory is *indecisive* if for at least one problem it says there are at least two options such that both are rationally permissible, and the options are not equally good. And say, following Ruth @Chang2002, that two options are equally good if improving either of them by a small amount epsilon would make that one better, i.e., would make it the only permissible choice. So an indecisive theory says that sometimes, multiple choices are permissible, and stay permissible after one or other is sweetened by a small improvement. The vast majority of decision theories on the market are decisive. That's because they first assign a numerical value to each option, and say to choose with the highest value. This allows multiple options iff multiple choices have the same numerical value. But sweetenings increase the value, so they destroy equality and hence the permissibility of each choice.
 
-Perhaps the most intuitive case for indecisiveness involves what I'll call Stag Hunt decisions.[^17] Here is an example of a Stag Hunt decision.
+Perhaps the most intuitive case for indecisiveness involves what I'll call Stag Hunt decisions.[^indecisive-1] Here is an example of a Stag Hunt decision.
 
-[^17]: For much more on the philosophical importance of Stag Hunts, see @Skyrms2004.
+[^indecisive-1]: For much more on the philosophical importance of Stag Hunts, see @Skyrms2004.
 
 |          |         |           |
 |:--------:|:-------:|:---------:|
@@ -18,9 +18,9 @@ Perhaps the most intuitive case for indecisiveness involves what I'll call Stag 
 
 Note three things about this game. First, both Up and Down are ratifiable. Second, Up has a higher expected return than Down. Third, Up has a higher possible regret than Down. If Chooser plays Up and Demon is wrong, Chooser gets 2 less than they might have otherwise. (They get 0 but could have got 2.) If Chooser plays Down and Demon is wrong, Chooser only gets 1 less than they might have otherwise. (They get 5 but could have got 6.)
 
-There is considerable disagreement about what this means for Chooser. EDT says that Chooser should play Up, as does the ratifiable variant of EDT in @Jeffrey1983, and some causal decision theorists such as @Arntzenius2008 and @Gustafsson2011. On the other hand, several other theorists who endorse two-boxing in Newcomb's Problem, like @Wedgwood2013a, @Gallow2020, @Podgorski2022, and @Barnett2022, endorse playing Down on the ground of regret miminisation. I think both Up and Down are permissible.[^18] I also think this is the intuitively right verdict, though I place no weight on that intuition. In general, I think in any problem that has the three features described in the last paragraph (two equilibria, one better according to EDT, the other with lower possible regret), either option is permissible. Since lightly sweetening either Up or Down in this problem doesn't change either feature, that is why my theory is indecisive.
+There is considerable disagreement about what this means for Chooser. EDT says that Chooser should play Up, as does the ratifiable variant of EDT in @Jeffrey1983, and some causal decision theorists such as @Arntzenius2008 and @Gustafsson2011. On the other hand, several other theorists who endorse two-boxing in Newcomb's Problem, like @Wedgwood2013a, @Gallow2020, @Podgorski2022, and @Barnett2022, endorse playing Down on the ground of regret miminisation. I think both Up and Down are permissible.[^indecisive-2] I also think this is the intuitively right verdict, though I place no weight on that intuition. In general, I think in any problem that has the three features described in the last paragraph (two equilibria, one better according to EDT, the other with lower possible regret), either option is permissible. Since lightly sweetening either Up or Down in this problem doesn't change either feature, that is why my theory is indecisive.
 
-[^18]: The view I'm going to develop is hence similar to the 'permissive CDT' defended by @Fuscond.
+[^indecisive-2]: The view I'm going to develop is hence similar to the 'permissive CDT' defended by @Fuscond.
 
 My argument for indecisiveness will turn on a case that all seven of the views mentioned in the last paragraph agree on, namely @tbl-coord.
 
@@ -75,9 +75,9 @@ To put the point in game-theoretic terms, there is no difference between extensi
 
 When one is asked to choose a strategy for a tree that has only one possible decision in it, the question one is being asked is that if we get to the point in the tree where one has to decide, what will you do. And the 'Late Question' is that that point in the tree has been reached; now what will you do? So the questions fit the schema, and should get the same answers. One could see this as a consequence of applying something like the Ramsey test to conditional questions [@RamseyGeneralProp]. Denying Exit Principle means treating these two very similar sounding questions differently, and that's implausible.
 
-One could also argue, I think correctly, that anyone who violates Exit Principle will violate a plausible version of the Sure Thing Principle.[^19] Such an argument seems sound to me, but the Sure Thing Principle is controversial, and I prefer to put more weight on the argument from how conditional reasoning works in the previous paragraph. (Indeed, I think using the Exit Principle to motivate a version of the Sure Thing Principle is more plausible than the reverse argument.)
+One could also argue, I think correctly, that anyone who violates Exit Principle will violate a plausible version of the Sure Thing Principle.[^indecisive-3] Such an argument seems sound to me, but the Sure Thing Principle is controversial, and I prefer to put more weight on the argument from how conditional reasoning works in the previous paragraph. (Indeed, I think using the Exit Principle to motivate a version of the Sure Thing Principle is more plausible than the reverse argument.)
 
-[^19]: To be sure, it's not entirely clear how to even state the Sure Thing Principle in the framework of causal ratificationism. Ratificationism does not output a preference ordering over options; it just says which options are and are not choice-worthy. And exactly how to translate principles like Sure Thing that are usually stated in terms of preference to ones in terms of choiceworthiness isn't always clear. One consequence of this is that I don't want to lean on Sure Thing as a premise. Another is that ratificationism isn't really subject to the objections that @Gallownd makes to theories that endorse Sure Thing, since the version of Sure Thing he uses is stated in terms of preferences. (Officially, ratificationism is 'unstable' in his sense because it doesn't output a preference ordering over unchosen options; that doesn't seem like a weakness to me.)
+[^indecisive-3]: To be sure, it's not entirely clear how to even state the Sure Thing Principle in the framework of causal ratificationism. Ratificationism does not output a preference ordering over options; it just says which options are and are not choice-worthy. And exactly how to translate principles like Sure Thing that are usually stated in terms of preference to ones in terms of choiceworthiness isn't always clear. One consequence of this is that I don't want to lean on Sure Thing as a premise. Another is that ratificationism isn't really subject to the objections that @Gallownd makes to theories that endorse Sure Thing, since the version of Sure Thing he uses is stated in terms of preferences. (Officially, ratificationism is 'unstable' in his sense because it doesn't output a preference ordering over unchosen options; that doesn't seem like a weakness to me.)
 
 Any plausible theory that says that only Up is rationally playable in problems like @tbl-coord cite above table will violate Exit Principle. Think about what they will say @tbl-early-choice.
 
@@ -157,9 +157,8 @@ The Early Version of @tbl-frustrating-exit is @tbl-ev-fe.
 
 \newpage
 
-And if there is an intuition here, it is that it's better to choose Down rather than Up.[^20] This violates Exit Principle, and it seems incoherent to say that one would choose Down in this game, when Down just means playing Down in round 2, and if one were to reach round 2, one would prefer Up.
+And if there is an intuition here, it is that it's better to choose Down rather than Up.[^indecisive-4] This violates Exit Principle, and it seems incoherent to say that one would choose Down in this game, when Down just means playing Down in round 2, and if one were to reach round 2, one would prefer Up.
 
-[^20]: The theory offered in @Spencer2021b agrees with intuition here.
+[^indecisive-4]: The theory offered in @Spencer2021b agrees with intuition here.
 
 Exit Principle can also be used to argue against the non-expectationist theory offered by Lara @BuchakRisk, but that argument is more complicated, and I'll leave it to Appendix Two.
-

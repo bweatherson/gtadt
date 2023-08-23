@@ -1,4 +1,4 @@
-# Introduction {#sec-intro}
+# Introduction {#sec-intro .unnumbered}
 
 Textbook versions of game theory embed a distinctive approach to decision theory. That theory isn't always made explicit, and it isn't always clear how it handles some cases. But we can extract one interesting and plausible theory, which I'll call Gamified Decision Theory (GDT), from these textbooks. There are nine characteristics of GDT (as I'll understand it) that I will focus on. I'll quickly list them here, then the bulk of the paper will consist of a section on each of the nine characteristics.
 

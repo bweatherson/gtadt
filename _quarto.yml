@@ -18,13 +18,18 @@ book:
     - causal.qmd
     - mix.qmd
     - ratify.qmd
+    - indecisive.qmd
     - dual.qmd
     - substantive.qmd
     - weak.qmd
     - conclusion.qmd
+    - references.qmd
+  appendices:
+    - nidt.qmd
     - rps.qmd
     - buchak.qmd
-    - references.qmd
+    - unique.qmd
+    - gad.qmd
 
 bibliography: ../articles/rBib.bib
 
@@ -44,7 +49,7 @@ format:
           - html-fonts.scss
           - dark-table.scss
       linestretch: 1.5
-      toc: true
+      toc: false
       toc-title: "In this chapter"
       toc-depth: 3
       toc-location: right

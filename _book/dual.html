@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.340">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Game Theory as Decision Theory - 7&nbsp; Dual Mandate</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./substantive.html" rel="next">
+<link href="./indecisive.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+<script type="application/json" class="js-hypothesis-config">
+{
+  "theme": "clean"
+}
+</script>
+<script async="" src="https://hypothes.is/embed.js"></script>
+<link rel="stylesheet" href="https://use.typekit.net/uzz2drx.css">
+
+
+</head>
+
+<body class="nav-sidebar floating slimcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./dual.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Dual Mandate</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Game Theory as Decision Theory</a> 
+        <div class="sidebar-tools-main tools-wide">
+    <a href="https://github.com/bweatherson/gtadt" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <div class="dropdown">
+      <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download"><i class="bi bi-download"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="./Game-Theory-as-Decision-Theory.pdf">
+              <i class="bi bi-bi-file-pdf pe-1"></i>
+            Download PDF
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="./Game-Theory-as-Decision-Theory.epub">
+              <i class="bi bi-bi-journal pe-1"></i>
+            Download ePub
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="./Game-Theory-as-Decision-Theory.docx">
+              <i class="bi bi-bi-file-word pe-1"></i>
+            Download Docx
+            </a>
+          </li>
+      </ul>
+    </div>
+    <div class="dropdown">
+      <a href="" title="Share" id="quarto-navigation-tool-dropdown-1" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Share"><i class="bi bi-share"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-1">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://twitter.com/intent/tweet?url=|url|">
+              <i class="bi bi-bi-twitter pe-1"></i>
+            Twitter
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://www.facebook.com/sharer/sharer.php?u=|url|">
+              <i class="bi bi-bi-facebook pe-1"></i>
+            Facebook
+            </a>
+          </li>
+      </ul>
+    </div>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./idealised.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Idealised</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./expectationist.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Expectationist</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./causal.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Causal</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./mix.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Mixtures</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ratify.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Ratificationist</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./indecisive.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Indecisive</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./dual.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Dual Mandate</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./substantive.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Substantive</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./weak.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Weak Dominance, Once</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./conclusion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Conclusion</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./nidt.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Non-Ideal Decision Theory</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./rps.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Rock-Paper-Scissors</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./buchak.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Risk-Weighted Utility</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unique.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Against Uniqueness</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./gad.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Games as Decisions</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar"><div class="quarto-margin-header"><div class="margin-header-item">
+<p>&nbsp;</p>
+</div></div>
+    </div>
+<!-- main -->
+<main class="content page-columns page-full" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span id="sec-dualmandate" class="quarto-section-identifier"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Dual Mandate</span></span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<p>Say a decision tree is a series of steps with the following characteristics.</p>
+<ul>
+<li>At every step, Chooser either receives some information, or makes a choice.</li>
+<li>Chooser knows before the first step what possible choices will be available at each step, given the prior steps, or what possible pieces of information could be received.</li>
+<li>No matter what happens, the tree ends after finitely many steps. (Though it may end after more or fewer steps depending on what happens).</li>
+<li>Chooser knows before the first step what payout they will receive given each possible sequence of choices and information.</li>
+<li>Before the first step, chooser has a probability for each possible piece of information they could receive, given the prior steps in the tree.</li>
+</ul>
+<div class="page-columns page-full"><p>That’s incredibly abstract, but it excludes some possibilities. It excludes cases where Chooser learns along the way that they have hitherto unknown abilities. It excludes cases where Chooser gains the capacity to think new relevant thoughts along the way, say by meeting a new person and gaining the capacity to have singular thoughts about them.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> Still, it does cover a lot of cases.</p><div class="no-row-height column-margin column-container"><li id="fn1"><p><sup>1</sup>&nbsp;Following <span class="citation" data-cites="Stalnaker2008">Stalnaker (<a href="references.html#ref-Stalnaker2008" role="doc-biblioref">2008</a>)</span>, I think it excludes the Sleeping Beauty case, since there Beauty gains the capacity to have singular thoughts about a time, the ‘now’ when she awakes, that she did not previously have.</p></li></div></div>
+<p>Say a strategy for a decision tree is a plan for what to do in every possible choice situation. Following the game theory textbooks, I really do mean <em>every</em> here. A strategy should say what to do in cases that are ruled out by Chooser’s prior choices. A strategy for playing chess as White might say to start with e4, but also include plans for what to do if you inexplicably start Na3. There are both mathematical and philosophical reasons for having such an expansive conception of strategies, but going into why is beyond the scope of this paper.</p>
+<div class="page-columns page-full"><p>In philosophy, there are two common approaches to decision trees. The so-called resolute approach<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> says that one should simply treat the problem as like the kind of one-shot decisions we have discussed so far, except now one is choosing a strategy. Whatever one’s theory of choice is, one should simply apply it to the question of which strategy is best. The so-called sophisticated approach says that one should make the current choices that make best sense given one’s views about what one’s future self will do.</p><div class="no-row-height column-margin column-container"><li id="fn2"><p><sup>2</sup>&nbsp;Most notably defended by <span class="citation" data-cites="McClennan1990">McClennan (<a href="references.html#ref-McClennan1990" role="doc-biblioref">1990</a>)</span>.</p></li></div></div>
+<p>The orthodoxy in game theory, going back to at least <span class="citation" data-cites="Selten1965">Selten (<a href="references.html#ref-Selten1965" role="doc-biblioref">1965</a>)</span>, is that both views are correct. When faced with a decision tree, Chooser should follow the advice of the sophisticated theorists, and (given they are ideally rational) do what would be best on the assumption that future choices will be rational. But in doing so, they should instantiate (part of) a strategy that could be rationally chosen by the resolute chooser. I call this the Dual Mandate approach, and I am going to defend it.</p>
+<div class="page-columns page-full"><p>Start with why it is bad to just have a resolute approach.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> Game theorists usually reject this approach because it means sometimes making a decision that one knows will have worse consequences than an available alternative. I’ll go over an example of this, though I should note it is rather violent. This is unavoidable; it is only in these violent cases that we can be sure the Chooser is really making things worse, and not acting for a strategic or reputational goal.</p><div class="no-row-height column-margin column-container"><li id="fn3"><p><sup>3</sup>&nbsp;The so-called Foundational Decision Theory of <span class="citation" data-cites="LevinsteinSoares2020">Levinstein and Soares (<a href="references.html#ref-LevinsteinSoares2020" role="doc-biblioref">2020</a>)</span> agrees with the resolute approach in the special case where the only information Chooser will receive are the results of predictions, and is subject to the criticisms I’ll make of resolute theories.</p></li></div></div>
+<p>Chooser is the Prime Minister of a small country, and they are threatened by a large neighbour. Unfortunately, neighbour is thinking of carpet bombing Chooser’s capital, in retaliation for some perceived slight. Chooser has no air defences that would prevent a great destruction, and no allies who will rally to help. Fortunately, Chooser has a mighty weapon, a Doomsday device, that could destroy neighbour. Chooser has obviously threatened to use this, but neighbour suspects it is a bluff. This is for a good reason; the doomsday device would also destroy Chooser’s own country. Neighbour is known to employ a Demon who is at least 99% accurate in predicting what military plans Chooser will take. So Chooser can do Nothing (N), or use the Doomsday device (D), should neighbour attack. Chooser would obviously prefer no attack, and would certainly not use the device preemptively. So here is the table.</p>
+<div id="tbl-retaliation" class="anchored">
+<table class="table">
+<caption>Table&nbsp;7.1: Deciding whether to retaliate.</caption>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><strong>PN</strong></td>
+<td style="text-align: center;"><strong>PD</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong>N</strong></td>
+<td style="text-align: center;">-1</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><strong>D</strong></td>
+<td style="text-align: center;">-50</td>
+<td style="text-align: center;">-50</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>In the top left, neighbour bombs Chooser’s capital, thinking correctly that Chooser will not retaliate. In the top right and lower right, neighbour is sufficiently scared of the doomsday device that they do nothing. But in the bottom left, neighbour attacks, and Chooser retaliates, creating a disaster for everyone, something 50 times worse than even the horrors of the carpet bombing.</p>
+<p>Still, if Chooser is picking a strategy before anything starts, the strategy with the highest expected return is to plan to retaliate. This has an expected return of -0.5; since one time in a hundred it returns -50, and otherwise it returns 0. The resolute theorist says that’s what Chooser should do, even if they see the bombers coming, and they realise their bluff has failed. This seems absurd to me, and it is the kind of result that drives game theorists to the dual mandate, but resolute theorists are familiar with the point that their theory says that sometimes one should carry out a plan now known to be pointless. So instead of resting on this case, as decisive as it seems to many, I’ll run through two more arguments against a purely resolute theory.</p>
+<p>Change the example so that Chooser has two advisors who are talking to him as the bombers come in. One of them says that the Demon is 99% reliable. The other says that the Demon is 97% reliable. Whether Chooser launches the doomsday device should, according to the resolute theorist, depend on which advisor Chooser believes. This is just absurd. A debate about the general accuracy of a demon can’t possibly be what these grave military decisions are based on.</p>
+<p>Change the example again, and make it a bit more realistic. Chooser has the same two advisors, with the same views. Chooser thinks the one who says the Demon is 99% reliable is 60% likely to be right, and the other 40% likely. So Chooser forms the plan to retaliate, because right now that’s the strategy with highest expected return. But now, to everyone’s surprise, neighbour attacks. The resolute theorist will say that Chooser should stick to their (overpowered) guns. But think about how the choice of plans looks to Chooser now. The actions of neighbour are evidence about the reliability of the demon. And a simple application of Bayes’ Rule says that Chooser should now think the advisor who thought the demon was 97% reliable is 2/3 likely to be right. That is, given Chooser’s current evidence, retaliating wasn’t even the utility maximising strategy to start with. Yet it is what the resolute theorist, or at least the resolute theorist who is not also sophisticated, would have Chooser do. This is, again, absurd, and enough reason to give up on such a theory.</p>
+<p>What about the other direction? Is it sensible to have a sophisticated theory that is not resolute? There does seem to be something puzzling about such theories. They are “diachronically exploitable” in the sense described by <span class="citation" data-cites="Spencer2021">Spencer (<a href="references.html#ref-Spencer2021" role="doc-biblioref">2021</a>)</span>. Let’s start with one example. Extend the theory offered by <span class="citation" data-cites="Gallow2020">Gallow (<a href="references.html#ref-Gallow2020" role="doc-biblioref">2020</a>)</span> to make it a pure sophisticated dynamic theory. That is, in a decision tree, the chooser values future choices by the expected value of the choice they’ll make, and if that choice is guaranteed to end the decision tree, they use Gallow’s theory. Chooser is now offered the following two-step option. At step 1 they can choose to receive 1 or play the game in <a href="#tbl-gallow-sophisticated">Table&nbsp;<span>7.2</span></a>.</p>
+<div id="tbl-gallow-sophisticated" class="anchored">
+<table class="table">
+<caption>Table&nbsp;7.2: A challenge for pure sophisticated decision.</caption>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><strong>PU</strong></td>
+<td style="text-align: center;"><strong>PD</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong>U</strong></td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><strong>D</strong></td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">0</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>If Chooser gets to step 2, they’ll play D, since it is the best option according to Gallow’s theory. So at step 1 they’ll choose the 1 rather than playing this game. But that’s absurd; they know they could have done better by simply playing the game and choosing U.</p>
+<p>What the Dual Mandate says is that the last step of reasoning here is sound; it is a fair criticism of an agent to say that their strategy doesn’t make sense even if every step makes sense taken on its own. Since this does seem like a fair criticism, it is reasonable to adopt the Dual Mandate.</p>
+<p>If one has a decisive theory, then a huge number of decision trees will be dilemmas, since it is unlikely that the optimal strategy matches the series of optimal choices. This is not a reason to reject the Dual Mandate; it’s another reason to reject decisiveness.</p>
+<p>You might worry that the argument based around <a href="#tbl-gallow-sophisticated">Table&nbsp;<span>7.2</span></a> is not really an objection to theories that reject the Dual Mandate, but just to the combination of that rejection and the endorsement of Gallow’s particular theory of decision. That worry is half right. This result is a problem for Gallow’s theory. But that doesn’t mean it isn’t also an argument for the Dual Mandate. The point of the Dual Mandate is not to criticise individual decisions, like taking the 1 in this game. It’s to criticise theories that endorse those decisions. It’s true that once we find the right theory of synchronic choice, the Dual Mandate will be unnecessary, since it will be automatically satisfied. But the Dual Mandate plays an essential role in selecting that theory.</p>
+<div class="page-columns page-full"><p>Jack <span class="citation" data-cites="Spencer2021">Spencer (<a href="references.html#ref-Spencer2021" role="doc-biblioref">2021</a>)</span> has an example which he thinks tells against the Dual Mandate, or what he calls the requirement that Chooser not be diachronically exploitable.<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> The agent will play first the left and then the right game, and their payouts (shown in dollars) will be summed over the game. They won’t be told between the games what they got from the first game.<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a></p><div class="no-row-height column-margin column-container"><li id="fn4"><p><sup>4</sup>&nbsp;Spencer’s non-exploitability isn’t quite the same thing as the Dual Mandate, but it’s close enough for these purposes. Spencer rejects non-exploitability, but endorses a weaker constraint he calls the Guaranteed Principle. I don’t see any reason to distinguish between these constraints, in part because of the argument that follows in the text.</p></li><li id="fn5"><p><sup>5</sup>&nbsp;Assume Chooser is reasonably risk-neutral over dollars over this range of outcomes.</p></li></div></div>
+<div id="tbl-newcomb-insurance" class="tbl-parent quarto-layout-panel anchored">
+<div class="panel-caption table-caption">
+<p>Table&nbsp;7.3: Ahmed Insurance (from <span class="citation" data-cites="Spencer2021">Spencer (<a href="references.html#ref-Spencer2021" role="doc-biblioref">2021</a>)</span>).</p>
+</div>
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div id="tbl-ni-left" class="quarto-layout-cell quarto-layout-cell-subref anchored" data-ref-parent="tbl-newcomb-insurance" style="flex-basis: 50.0%;justify-content: center;">
+<table class="table">
+<caption>(a) First game</caption>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><strong>PU<sub>1</sub></strong></td>
+<td style="text-align: center;"><strong>PD<sub>1</sub></strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong>U<sub>1</sub></strong></td>
+<td style="text-align: center;">50</td>
+<td style="text-align: center;">-50</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><strong>D<sub>1</sub></strong></td>
+<td style="text-align: center;">60</td>
+<td style="text-align: center;">-40</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="tbl-ni-right" class="quarto-layout-cell quarto-layout-cell-subref anchored" data-ref-parent="tbl-newcomb-insurance" style="flex-basis: 50.0%;justify-content: center;">
+<table class="table">
+<caption>(b) Second game</caption>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><strong>Correct</strong></td>
+<td style="text-align: center;"><strong>Incorrect</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong>U<sub>2</sub></strong></td>
+<td style="text-align: center;">25</td>
+<td style="text-align: center;">-75</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><strong>D<sub>2</sub></strong></td>
+<td style="text-align: center;">-25</td>
+<td style="text-align: center;">75</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<p>Note that in <a href="#tbl-ni-right">Table&nbsp;<span>7.3 (b)</span></a>, the states are not the usual ones about Demon’s predictions. Rather, they are that the Demon made the Correct, or Incorrect, prediction in <a href="#tbl-ni-left">Table&nbsp;<span>7.3 (a)</span></a>. There are eight strategies in this game, but since the Demon doesn’t care about what happens at non-chosen nodes, we won’t care either, and just focus on the four combinations of moves Chooser might make, and how they interact with Demon’s prediction. If we do that, we get the following table (also given by Spencer, and also with payouts in dollars).</p>
+<div id="tbl-ni-strategic" class="anchored">
+<table class="table">
+<caption>Table&nbsp;7.4: Strategic form of Ahmed Insurance.</caption>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><strong>PU<sub>1</sub></strong></td>
+<td style="text-align: center;"><strong>PD<sub>1</sub></strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong>U<sub>1</sub>U<sub>2</sub></strong></td>
+<td style="text-align: center;">75</td>
+<td style="text-align: center;">-125</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><strong>U<sub>1</sub>D<sub>2</sub></strong></td>
+<td style="text-align: center;">25</td>
+<td style="text-align: center;">25</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong>D<sub>1</sub>U<sub>2</sub></strong></td>
+<td style="text-align: center;">-15</td>
+<td style="text-align: center;">-15</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><strong>D<sub>1</sub>D<sub>2</sub></strong></td>
+<td style="text-align: center;">135</td>
+<td style="text-align: center;">-65</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Spencer argues that even though D<sub>1</sub>U<sub>2</sub> is dominated by U<sub>1</sub>D<sub>2</sub> it might be rational to play it. After all, it is rational to bet on Demon being correct in <a href="#tbl-ni-right">Table&nbsp;<span>7.3 (b)</span></a>, since Demon is arbitrarily good. And if one knows one is going to do that, one may as well take the sure extra $10 that playing U<sub>1</sub> rather than D<sub>1</sub> gives. So diachronic exploitability is consistent with rationality.</p>
+<p>The reasoning of the previous paragraph fails because neither CDT, nor any other sensible decision theory, recommends taking two boxes in Newcomb Problems embedded in strategic interactions. This would be like thinking that CDT recommended always defecting in Iterated Prisoners’ Dilemma, even it was chancy whether the iterations came to an end after each round, so backward induction reasoning was unavailable. If Chooser has convinced themselves that they will play U<sub>2</sub>, and we’ll come back to whether they should believe that, then the choice in <a href="#tbl-ni-left">Table&nbsp;<span>7.3 (a)</span></a> comes down to this.</p>
+<div id="tbl-ni-new-left" class="anchored">
+<table class="table">
+<caption>Table&nbsp;7.5: First game in Ahmed Insurance, if D<sub>2</sub> will be played.</caption>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><strong>PU<sub>1</sub></strong></td>
+<td style="text-align: center;"><strong>PD<sub>1</sub></strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong>U<sub>1</sub></strong></td>
+<td style="text-align: center;">75</td>
+<td style="text-align: center;">-125</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><strong>D<sub>1</sub></strong></td>
+<td style="text-align: center;">-15</td>
+<td style="text-align: center;">-15</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>This game has two pure strategy equilibria, and on its own I think (because of the arguments in <a href="indecisive.html"><span>Chapter&nbsp;6</span></a>) that either play is acceptable. In context though, either play is clearly unacceptable. Given that one chooses either U<sub>1</sub> or D<sub>1</sub>, the only reasonable thing to believe is that Demon has almost certainly predicted this, so it makes to play U<sub>2</sub>, since Demon is almost certainly correct. So one ends up playing U<sub>1</sub>U<sub>2</sub> or D<sub>1</sub>U<sub>2</sub>, both of which are dominated and hence absurd strategies.</p>
+<p>Spencer argues that since the Demon is almost certainly accurate, Chooser should play U<sub>2</sub>, so they should play a dominated strategy, so the Dual Mandate doesn’t apply. (This assumes that synchronic choice rules out strictly dominated options in cases like this, but Spencer agrees that it does.) This argument only goes through if Chooser doesn’t have access to mixed strategies; i.e., if Chooser is not ideally practically rational. If Chooser does have access to mixed strategies, they should play a 50/50 mix of U<sub>1</sub> and D<sub>1</sub>, then choose D<sub>2</sub>. That is ratifiable as long as Chooser believes Demon plays PU<sub>1</sub> with probability 0.45, and PD<sub>1</sub> with probability 0.55. Since that’s the only ratifiable play for Demon, it’s reasonable for Chooser to believe this. If mixed strategies are allowed, this is not a case where the Dual Mandate fails.</p>
+<p>In general, if mixed strategies are not allowed, the Dual Mandate is implausible. But that’s because without mixed strategies, cases like <a href="#tbl-newcomb-insurance">Table&nbsp;<span>7.3</span></a> are dilemmas; they have no ratifiable choices. And it’s true that the Dual Mandate is implausible in dilemmas. Think back to the sinner described in <a href="ratify.html"><span>Chapter&nbsp;5</span></a>. Imagine that sinner will in fact say that they get <em>d</em> days in heaven. Now complicate the case; they are offered a choice of <em>d</em>! days in heaven, or to make their own choice. If they will in fact choose <em>d</em>, they should simply take <em>d</em>!, even though there are strategies available, like choosing <em>d</em>!! days, that are better. Weird things happen when there are dilemmas around, and we shouldn’t judge decision theories against these cases.</p>
+<div class="page-columns page-full"><p>The Dual Mandate is also implausible if Chooser thinks they will be irrational, or that they will have different preferences. Indeed, it is implausible if Chooser thinks they might either change or lose their mind. For example, Odysseus binds himself to the mast because he does not approve of future-Odysseus’s preferences. Professor Procrastinate<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a> cite turns down a referee request because he does not trust his future self to be practically rational. Both of them deliberately turn down strategies that would be better than where they end up, because they do not trust their future selves to carry them out. They are alienated in this way from their future selves. When one does not endorse one’s future preferences, or does not trust one’s rationality in the future, it makes sense to be alienated from one’s future self in this way. In such cases, one’s future self is just another part of the world that must be predicted and worked around. And so it might make sense to forego, as Odysseus and Procrastinate forego, strategies that one’s future self will not be so kind as to carry out.</p><div class="no-row-height column-margin column-container"><li id="fn6"><p><sup>6</sup>&nbsp;A famous character in <span class="citation" data-cites="JacksonPargetter1986">Jackson and Pargetter (<a href="references.html#ref-JacksonPargetter1986" role="doc-biblioref">1986</a>)</span>.</p></li></div></div>
+<p>My main claim here is when neither of those two conditions obtain, i.e., when one knows that one’s future self will be rational and have the same preferences, one’s choices should make strategic sense. That is, they should satisfy the fairly weak condition that they are part of some strategy that one could choose if one was simply choosing a strategy for the whole tree. Unless one fears future irrationality, or future change of preference, one should not be alienated from one’s future self. If Chooser takes 1 rather than play <a href="#tbl-gallow-sophisticated">Table&nbsp;<span>7.2</span></a>, they are alienated in this way. They have to think, I know I’d be better off if I played U. But that fool future-me will play D instead, and blow up the plan. But future-them is not a fool; by hypothesis they are known to be ideally rational. So it isn’t coherent to think this way, and that reveals that it is incoherent to ‘rationally’ take the 1. And that is why the Dual Mandate requires that one’s strategy be rational, and not just the moves that make up the strategy.</p>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="ref-Gallow2020" class="csl-entry" role="listitem">
+Gallow, J. Dmitri. 2020. <span>“The Causal Decision Theorist’s Gudie to Managing the News.”</span> <em>The Journal of Philosophy</em> 117 (3): 117–49. <a href="https://doi.org/10.5840/jphil202011739">https://doi.org/10.5840/jphil202011739</a>.
+</div>
+<div id="ref-JacksonPargetter1986" class="csl-entry" role="listitem">
+Jackson, Frank, and Robert Pargetter. 1986. <span>“Oughts, Options, and Actualism.”</span> <em>Philosophical Review</em> 95 (2): 233–55. <a href="https://doi.org/10.2307/2185591">https://doi.org/10.2307/2185591</a>.
+</div>
+<div id="ref-LevinsteinSoares2020" class="csl-entry" role="listitem">
+Levinstein, Benjamin Anders, and Nate Soares. 2020. <span>“Cheating Death in Damascus.”</span> <em>Journal of Philosophy</em> 117 (5): 237–66. <a href="https://doi.org/10.5840/jphil2020117516">https://doi.org/10.5840/jphil2020117516</a>.
+</div>
+<div id="ref-McClennan1990" class="csl-entry" role="listitem">
+McClennan, Edward. 1990. <em>Rationality and Dynamic Choice</em>. Cambridge: Cambridge University Press.
+</div>
+<div id="ref-Selten1965" class="csl-entry" role="listitem">
+Selten, Reinhard. 1965. <span>“Spieltheoretische Behandlung Eines Oligopolmodells Mit Nachfragetr<span>ä</span>gheit.”</span> <em>Zeitschrift f<span>ü</span>r Die Gesamte Staatswissenschaft</em> 121 (2): 301–24.
+</div>
+<div id="ref-Spencer2021" class="csl-entry" role="listitem">
+Spencer, Jack. 2021. <span>“An Argument Against Causal Decision Theory.”</span> <em>Analysis</em> 81 (1): 52–61. <a href="https://doi.org/10.1093/analys/anaa037">https://doi.org/10.1093/analys/anaa037</a>.
+</div>
+<div id="ref-Stalnaker2008" class="csl-entry" role="listitem">
+Stalnaker, Robert. 2008. <em>Our Knowledge of the Internal World</em>. Oxford: Oxford University Press.
+</div>
+</div>
+
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  let localAlternateSentinel = 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./indecisive.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Indecisive</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./substantive.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Substantive</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/bweatherson/gtadt/issues/new" class="toc-action">Report an issue</a></p></div></div></div></div></footer></body></html>
