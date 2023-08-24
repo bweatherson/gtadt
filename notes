@@ -1,0 +1,5 @@
+try doing a hotelling style game where the probability that a person will go to a truck at all is given by the hyperbolic secant function
+
+https://rpubs.com/FJRubio/HSD
+
+Aim is to get a case where iterated deletion does not get the intuitive order of the choices. So cant derive a preference ordering from the order of deletion
