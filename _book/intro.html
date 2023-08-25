@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.340">
+<meta name="generator" content="quarto-1.3.433">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -78,7 +78,8 @@ div.csl-indent {
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 <script type="application/json" class="js-hypothesis-config">
@@ -92,7 +93,7 @@ div.csl-indent {
 
 </head>
 
-<body class="nav-sidebar floating">
+<body class="nav-sidebar floating slimcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -104,7 +105,7 @@ div.csl-indent {
       <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./intro.html">Introduction</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -118,7 +119,7 @@ div.csl-indent {
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Game Theory as Decision Theory</a> 
         <div class="sidebar-tools-main tools-wide">
-    <a href="https://github.com/bweatherson/gtadt" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <a href="https://github.com/bweatherson/gtadt" rel="" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
     <div class="dropdown">
       <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download"><i class="bi bi-download"></i></a>
       <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
@@ -226,20 +227,26 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./select.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Selection</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./substantive.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Substantive</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Substantive</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./weak.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Weak Dominance, Once</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Weak Dominance, Once</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./conclusion.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Conclusion</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Conclusion</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -299,7 +306,7 @@ div.csl-indent {
 </div></div>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -318,7 +325,7 @@ div.csl-indent {
 
 </header>
 
-<p>Textbook versions of game theory embed a distinctive approach to decision theory. That theory isn’t always made explicit, and it isn’t always clear how it handles some cases. But we can extract one interesting and plausible theory, which I’ll call Gamified Decision Theory (GDT), from these textbooks. There are nine characteristics of GDT (as I’ll understand it) that I will focus on. I’ll quickly list them here, then the bulk of the paper will consist of a section on each of the nine characteristics.</p>
+<p>Textbook versions of game theory embed a distinctive approach to decision theory. That theory isn’t always made explicit, and it isn’t always clear how it handles some cases. But we can extract an interesting and plausible theory, which I’ll call Gamified Decision Theory (GDT), from these textbooks. There are ten characteristics of GDT (as I’ll understand it) that I will focus on. I’ll quickly list them here, then the bulk of the book will consist of a chapter describing and motivating each of the ten characteristics.</p>
 <ol type="1">
 <li><strong>Idealised</strong>; GDT is a theory of what ideal deciders do.</li>
 <li><strong>Expectationist</strong>; the ideal decider prefers getting more expected value to getting less.</li>
@@ -327,13 +334,14 @@ div.csl-indent {
 <li><strong>Ratificationist</strong>; the ideal decider endorses the decisions they make.</li>
 <li><strong>Indecisive</strong>; GDT sometimes says that multiple options are permissible, and they are not equally good.</li>
 <li><strong>Dual Mandate</strong>; in a dynamic choice, the ideal decider will follow a plan that’s permissible, and take choices at every stage that are permissible.</li>
+<li><strong>Selection</strong>: The aim of decision theory is to generate a function from possible choices to choice-worthy options, not to generate a preference ordering over the options.</li>
 <li><strong>Substantive Probability</strong>; the ideal decider has rational credences.</li>
 <li><strong>Weak Dominance, Once</strong>; the ideal decider will not choose weakly dominated options, but they may choose options that would not survive iterated deletion of weakly dominated strategies.</li>
 </ol>
-<p>This is not going to be a work of exegesis, poring over game theory texts to show that they really do endorse all of 1-9. In fact it wouldn’t take much work to show that they endorse 1-5, so the work wouldn’t be worth doing. And while some books endorse 8 and 9, it would take a lot more investigative work than I’m going to do here to show that anything like a majority of them do. It would be interesting, but not obviously a philosophical question, to see what proportion endorse 6 and 7. But I’m going to set that aside.</p>
+<p>This is not going to be a work of exegesis, poring over game theory texts to show that they really do endorse all ten of these. In fact it wouldn’t take much work to show that they endorse 1-5, so the work wouldn’t be worth doing. And while some textbooks endorse 9 and 10, it would take a lot more investigative work than I’m going to do here to show that anything like a majority of them do. It would be interesting, but not obviously a philosophical question, to see what proportion endorse 6 to 8. But I’m going to set that aside.</p>
 <p>What I do want to argue is that you can find some support for all of these in some game theory textbooks, and that combined they produce a plausible decision theory. While the textbooks don’t all agree, for simplicity I’m going to focus on one book: Giacomo Bonanno’s <em>Game Theory</em> <span class="citation" data-cites="Bonanno2018">(<a href="references.html#ref-Bonanno2018" role="doc-biblioref">Bonanno 2018</a>)</span>. This book has two important virtues: it is philosophically deep, and it is available for free. It isn’t hard to find a game theory text with one or other of these virtues, but few have both. So it will be our primary guide in what follows, along with some primary sources (most of which are referenced in that book).</p>
-<p>Methodologically, this paper differs from most works in decision theory in two ways. It has been a commonplace since <span class="citation" data-cites="Nozick1969">Nozick (<a href="references.html#ref-Nozick1969" role="doc-biblioref">1969</a>)</span> to include demons, who are arbitrarily good at predicting a decision, in problems. Some of the cases here will involve two such demons, each of which is arbitrarily good at predicting a decision, and whose errors are probabilistically independent. Second, I’m going to rely less on intuitions about particular cases, and more on intuitions that certain cases should be treated the same way. This makes sense given the history of the field. There is much less consensus about what to do in Newcomb problems than about which problems are Newcomb problems. Judgments, or intuitions if you prefer, about how to classify problems seem more stable and more reliable, and they will be central to this paper.</p>
-<p>The conclusion of this paper is that a permissive version of causal ratificationism is correct. Ideal choosers make choices that they do not immediately regret. With two small caveats, that’s all there is to decision theory; any ratifiable choice is one an ideal agent might make. The first caveat is to with choices over time; the ideal chooser will make choices such that both their individual choices, and the set of choices they make, are ratifiable. This will exclude some possible choices that are individually ratifiable. Second, the ideal chooser will not choose weakly dominated options. These are fairly minor caveats; the resulting theory is not very different from other forms of permissive causal ratificationism, such as that defended by Melissa <span class="citation" data-cites="Fuscond">Fusco (<a href="references.html#ref-Fuscond" role="doc-biblioref">n.d.</a>)</span>.</p>
+<div class="page-columns page-full"><p>Methodologically, this paper differs from most works in decision theory in two ways. It has been a commonplace since <span class="citation" data-cites="Nozick1969">Nozick (<a href="references.html#ref-Nozick1969" role="doc-biblioref">1969</a>)</span> to include demons, who are arbitrarily good at predicting a decision, in problems. Some of the cases here will involve two such demons, each of which is arbitrarily good at predicting a decision, and whose errors are probabilistically independent. Second, I’m going to rely less on intuitions about particular cases, and more on intuitions that certain cases should be treated the same way. This makes sense given the history of the field. There is much less consensus about what to do in Newcomb problems than about which problems are Newcomb problems. Judgments, or intuitions if you prefer, about how to classify problems seem more stable and more reliable, and they will be central to this book.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p><div class="no-row-height column-margin column-container"><li id="fn1"><p><sup>1</sup>&nbsp;I’ll have a more principled argument for scepticism about intuitions in <a href="expectationist.html"><span>Chapter&nbsp;2</span></a>.</p></li></div></div>
+<p>The conclusion of this book is that a permissive version of causal ratificationism is correct. Ideal choosers make choices that they do not immediately regret. With two small caveats, that’s all there is to decision theory; any ratifiable choice is one an ideal agent might make. The first caveat is to with choices over time; the ideal chooser will make choices such that both their individual choices, and the set of choices they make, are ratifiable. This will exclude some possible choices that are individually ratifiable. Second, the ideal chooser will not choose weakly dominated options. These are fairly minor caveats; the resulting theory is not very different from other forms of permissive causal ratificationism, such as that defended by Melissa <span class="citation" data-cites="Fuscond">Fusco (<a href="references.html#ref-Fuscond" role="doc-biblioref">n.d.</a>)</span>. The aim is not to develop a novel theory, indeed part of the point is that the theory is implicit in a bunch of textbooks, but to develop arguments for that theory.</p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
@@ -347,6 +355,7 @@ Fusco, Melissa. n.d. <span>“Absolution of a Causal Decision Theorist.”</span
 Nozick, Robert. 1969. <span>“Newcomb’s Problem and Two Principles of Choice.”</span> In <em>Essays in Honor of Carl <span>G</span>. Hempel: A Tribute on the Occasion of His Sixty-Fifth Birthday. Hempel: A Tribute on the Occasion of His Sixty-Fifth Birthday</em>, edited by Nicholas Rescher, 114–46. Riedel: Springer.
 </div>
 </div>
+
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

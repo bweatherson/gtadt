@@ -1,0 +1,18 @@
+# Selection {#sec-select}
+
+- Solution concepts are not preference ordering
+- Talk about Sen for a bit, and how there are principled constraints on selection functions
+- One reason why not preference ordering: Indecisiveness. The permissible choices are not things the chooser is indifferent between
+- Another, better, reason why not preference ordering: doesn't play an explanatory role. 
+- Possible objection: It does play an explanatory role, it explains what they would do with fewer choices.
+- This is I think the most important point, and it's why I've put off this discussion for so long.
+- First reply: Gotta specify whether the loss of option is common knowledge or not, and both answers have flaws
+- Second reply: Taking away mixed strategies might take us out of the realm of rational choice (if I'm right in mixed strategies chapter)
+- Third reply: Taking away some strategies in dynamic cases might be really weird.
+- Example: Two rounds. At each round a $1 bill is on table, and Chooser takes it or leaves it.
+- What does it mean to remove the strategy TTT, i.e., take at R1, and then take at R2 whether you take or leave at R1.
+- Counter: This is an artifact of the definition of strategies
+- My reply: Need this definition of strategies to explain simple (3 step) centipede problems
+- Counter: Stalnaker says that this is wrong
+- My reply: Eh, that's a point. I disagree here, but whatever
+- This is why I reject strategic form normal form

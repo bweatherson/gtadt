@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.340">
+<meta name="generator" content="quarto-1.3.433">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Game Theory as Decision Theory - 9&nbsp; Weak Dominance, Once</title>
+<title>Game Theory as Decision Theory - 10&nbsp; Weak Dominance, Once</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -78,7 +78,8 @@ div.csl-indent {
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 <script type="application/json" class="js-hypothesis-config">
@@ -101,10 +102,10 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./weak.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Weak Dominance, Once</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./weak.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Weak Dominance, Once</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -118,7 +119,7 @@ div.csl-indent {
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Game Theory as Decision Theory</a> 
         <div class="sidebar-tools-main tools-wide">
-    <a href="https://github.com/bweatherson/gtadt" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <a href="https://github.com/bweatherson/gtadt" rel="" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
     <div class="dropdown">
       <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download"><i class="bi bi-download"></i></a>
       <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
@@ -226,20 +227,26 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./select.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Selection</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./substantive.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Substantive</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Substantive</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./weak.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Weak Dominance, Once</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Weak Dominance, Once</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./conclusion.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Conclusion</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Conclusion</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -303,7 +310,7 @@ div.csl-indent {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span id="sec-weak" class="quarto-section-identifier"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Weak Dominance, Once</span></span></h1>
+<h1 class="title"><span id="sec-weak" class="quarto-section-identifier"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Weak Dominance, Once</span></span></h1>
 </div>
 
 
@@ -319,10 +326,10 @@ div.csl-indent {
 </header>
 
 <p>An option <em>a</em> weakly dominates another option <em>b</em> if <em>a</em> is at least as good as <em>b</em> in all states, and better than <em>b</em> in some states. Just what role weak dominance has in decision theory is one of the most unsettled topics in game theory. There are three natural positions, and all of them are occupied. One is that weak dominance is of no significance. A second is that ideal agents do not choose weakly dominated options, and that’s the only role weak dominance has. And a third is that ideal agents do not choose options that are eliminated by an iterative process of deleting weakly dominated strategies. I’m going to argue in favour of the middle position. I’m not going to try to argue this is the standard game-theoretic move; as I said, I think you can find prominent support for all three options. To argue for the middle position requires making two cases: first, that weakly dominated options are not ideally chosen; and second, that options that would be eliminated by iterative deletion of weakly dominated options are ideally chosen. I’ll argue for these in turn.</p>
-<p>Start with <a href="#tbl-first-wd">Table&nbsp;<span>9.1</span></a>; what would the ideal chooser do?</p>
+<p>Start with <a href="#tbl-first-wd">Table&nbsp;<span>10.1</span></a>; what would the ideal chooser do?</p>
 <div id="tbl-first-wd" class="anchored">
 <table class="table">
-<caption>Table&nbsp;9.1: A ratifiable, weakly dominated, option.</caption>
+<caption>Table&nbsp;10.1: A ratifiable, weakly dominated, option.</caption>
 <tbody>
 <tr class="odd">
 <td style="text-align: center;"></td>
@@ -346,10 +353,10 @@ div.csl-indent {
 <p>First, it is rather unrealistic to think that the probability that Demon will make an accurate prediction is 1. And even if Demon’s prediction is correct with probability 1 - ε, then D will not be ratifiable. I’m inclined to rule out, on broadly Humean grounds, the very possibility of a Demon whose predictions are correct with probability 1, but is causally independent of Chooser’s choice. Temporally backwards causation is not a logical impossibility, and a world where the predictions are correct with probability 1 seems like a world which has backwards causation. I don’t want to rest the case for GDT on contentious metaphysics, so I won’t lean on this point.</p>
 <p>Second, playing D involves taking on an uncompensated risk. It might be that we don’t have a good way of capturing within probability theory just what this risk is. Perhaps you think that it makes sense to say that Demon is correct with probability 1. Still, in some sense D has a risk of failure that U lacks. One should not take on a risk without some compensation. So one should not play D in this case. This, I think, is the most persuasive argument against D.</p>
 <p>Third, it has been argued by game theorists that we should always allow for the possibility that one or other player in a game will make some kind of performance error. This idea is at the heart of Reinhard Selten’s notion of trembling hand equilibrium <span class="citation" data-cites="Selten1975">(<a href="references.html#ref-Selten1975" role="doc-biblioref">Selten 1975</a>)</span>, and Roger Myerson’s notion of proper equilibrium <span class="citation" data-cites="Myerson1978">(<a href="references.html#ref-Myerson1978" role="doc-biblioref">Myerson 1978</a>)</span>. If a strategy would not make sense if the probability of an error by one or other player was positive, even if it was arbitrarily low, it should not be played. Since D only makes sense if the probability of an error by Demon is 0, that means D should not be played.</p>
-<div class="page-columns page-full"><p>If it is good to remove weakly dominated options, then one might think it follows straight away that it is good to keep doing this.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> Think about <a href="#tbl-wd-itd">Table&nbsp;<span>9.2</span></a>.</p><div class="no-row-height column-margin column-container"><li id="fn1"><p><sup>1</sup>&nbsp;This suggestion is made by, for example <span class="citation" data-cites="HareHedden2015">Hare and Hedden (<a href="references.html#ref-HareHedden2015" role="doc-biblioref">2015</a>)</span>.</p></li></div></div>
+<div class="page-columns page-full"><p>If it is good to remove weakly dominated options, then one might think it follows straight away that it is good to keep doing this.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> Think about <a href="#tbl-wd-itd">Table&nbsp;<span>10.2</span></a>.</p><div class="no-row-height column-margin column-container"><li id="fn1"><p><sup>1</sup>&nbsp;This suggestion is made by, for example <span class="citation" data-cites="HareHedden2015">Hare and Hedden (<a href="references.html#ref-HareHedden2015" role="doc-biblioref">2015</a>)</span>.</p></li></div></div>
 <div id="tbl-wd-itd" class="anchored">
 <table class="table">
-<caption>Table&nbsp;9.2: An example of iterated weak dominance.</caption>
+<caption>Table&nbsp;10.2: An example of iterated weak dominance.</caption>
 <tbody>
 <tr class="odd">
 <td style="text-align: center;"></td>
@@ -378,12 +385,12 @@ div.csl-indent {
 </tbody>
 </table>
 </div>
-<p>In <a href="#tbl-wd-itd">Table&nbsp;<span>9.2</span></a>, X is weakly dominated by D. So it shouldn’t be played. But if X isn’t played, then PX is weakly dominated by both PU and PD. Demon can’t make a correct prediction by playing PX, since by hypothesis it won’t be played, so it can’t be better than PU or PD. But both PU and PD can be better than PX. So PX is now weakly dominated. So let’s remove it as well. If both X and PX are deleted, we’re back to <a href="#tbl-first-wd">Table&nbsp;<span>9.1</span></a>, in which we said Chooser should play U.</p>
-<p>So does it make sense to say that U is the only play in <a href="#tbl-wd-itd">Table&nbsp;<span>9.2</span></a>? I think not, for three reasons.</p>
+<p>In <a href="#tbl-wd-itd">Table&nbsp;<span>10.2</span></a>, X is weakly dominated by D. So it shouldn’t be played. But if X isn’t played, then PX is weakly dominated by both PU and PD. Demon can’t make a correct prediction by playing PX, since by hypothesis it won’t be played, so it can’t be better than PU or PD. But both PU and PD can be better than PX. So PX is now weakly dominated. So let’s remove it as well. If both X and PX are deleted, we’re back to <a href="#tbl-first-wd">Table&nbsp;<span>10.1</span></a>, in which we said Chooser should play U.</p>
+<p>So does it make sense to say that U is the only play in <a href="#tbl-wd-itd">Table&nbsp;<span>10.2</span></a>? I think not, for three reasons.</p>
 <p>First, as Bonanno <span class="citation" data-cites="Bonanno2018">(<a href="references.html#ref-Bonanno2018" role="doc-biblioref">2018, 37</a>)</span> points out, in general iterative deletion of weakly dominated strategies is not a well defined decision procedure. It turns out that in two player games, the order that weakly dominated strategies are deleted can affect which choices one ends up with. There are ways of fixing this problem, by specifying one or other order of deletion as canonical, but they all feel somewhat artificial.</p>
 <p>Second, iterative deletion of weakly dominated strategies leads to a single solution to the money-burning game described by <span class="citation" data-cites="BenPorathDekel1992">Ben-Porath and Dekel (<a href="references.html#ref-BenPorathDekel1992" role="doc-biblioref">1992</a>)</span>. But, as <span class="citation" data-cites="Stalnaker1998">Stalnaker (<a href="references.html#ref-Stalnaker1998" role="doc-biblioref">1998</a>)</span> showed, this game has multiple rational solutions, and arguments to the contrary turn on conflating indicative and subjunctive conditionals.</p>
-<p>Third, the reasons we gave for avoiding the weakly dominated option in <a href="#tbl-first-wd">Table&nbsp;<span>9.1</span></a> simply don’t carry over to <a href="#tbl-wd-itd">Table&nbsp;<span>9.2</span></a>. In the latter game, D is not an uncompensated risk. It’s true that D loses if Demon makes an incorrect prediction and plays PU. But U loses if Demon makes an incorrect prediction and plays PX. Unless one thinks that PX is particularly unlikely to be played, it seems U and D are just as risky as each other. So both of them look like rational plays.</p>
-<p>So I conclude that we just need one round of deleting weakly dominated options to get rid of irrational plays. D is irrational in <a href="#tbl-first-wd">Table&nbsp;<span>9.1</span></a>, but not in <a href="#tbl-wd-itd">Table&nbsp;<span>9.2</span></a>.</p>
+<p>Third, the reasons we gave for avoiding the weakly dominated option in <a href="#tbl-first-wd">Table&nbsp;<span>10.1</span></a> simply don’t carry over to <a href="#tbl-wd-itd">Table&nbsp;<span>10.2</span></a>. In the latter game, D is not an uncompensated risk. It’s true that D loses if Demon makes an incorrect prediction and plays PU. But U loses if Demon makes an incorrect prediction and plays PX. Unless one thinks that PX is particularly unlikely to be played, it seems U and D are just as risky as each other. So both of them look like rational plays.</p>
+<p>So I conclude that we just need one round of deleting weakly dominated options to get rid of irrational plays. D is irrational in <a href="#tbl-first-wd">Table&nbsp;<span>10.1</span></a>, but not in <a href="#tbl-wd-itd">Table&nbsp;<span>10.2</span></a>.</p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
@@ -760,12 +767,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./substantive.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Substantive</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Substantive</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./conclusion.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Conclusion</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Conclusion</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
