@@ -1,5 +1,7 @@
 # Expectationist {#sec-expect}
 
+-----Spell this all out much much more slowly----
+
 There is a strange split in contemporary decision theory. On the one hand, there are questions about the way to model attitudes to risk, largely organised around the challenge to orthodoxy from @Quiggin1982 and @BuchakRisk. On the other hand, there are questions about what to do in cases where the states are causally but not probabilistically independent of one's actions, with the central case being Newcomb's Problem [@Nozick1969]. The strange split is that these two literatures have almost nothing in common.[^expectationist-1]
 
 [^expectationist-1]: There is a survey article from a few years ago - @Elliot2019 - that has summaries of the then state-of-the-art on these two questions. And it makes it very striking how little the literatures on each of them overlap.
