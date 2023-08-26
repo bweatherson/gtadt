@@ -30,7 +30,13 @@ One nice example of this working is George Akerlof's discussion of the used car 
 
 I'll end this section with a response to one objection, one caveat, and one surprising bonus to doing idealised decision theory this way.
 
-The objection is that decision theory isn't actually that helpful for prediction and explanation. If all that it says are things like when rain is more probable, more people take umbrellas, that doesn't need a whole academic discipline. The response to that is that in non-cooperative games, the predictions, and explanations, can be somewhat surprising. One nice case of this is the discussion of Gulf of Mexico oil leases in @Wilson1967.[^idealised-3] But here's a simpler surprising prediction that you need something like GDT to get.[^idealised-4]
+The objection is that decision theory isn't actually that helpful for prediction and explanation. If all that it says are things like when rain is more probable, more people take umbrellas, that doesn't need a whole academic discipline. The objector might echo the sentiments that Keynes expresses in a widely quoted passage. (Though it is rare that the key quote is put in its proper context; I think I'm not guilty of that here.
+
+> But this _long run_ is a misleading guide to current affairs. _In the long run we are all dead_. Economists set themselves too easy, too useless a task if in tempestuous seasons they can only tell us that when the storm is long past the ocean will be flat again. [@Keynes1923, 80, emphasis in original]
+
+Don’t focus on the temporal connotations of Keynes’s terminology of ‘long run’. What’s characteristic of his long run is not that it takes place in the distant future. What is characteristic of it instead is that it takes place in a world where some sources of interference are absent. It’s a world where we sail but there are no storms. It’s a study where we abstract away from storms and other unfortunate complications. And that’s what’s characteristic of Ideal Decision Theory. We know that people cannot easily solve hard arithmetic problems, but we abstract away from that fact. Does this leave the resulting theory "easy and useless"?
+
+To see that it's not "easy", it simply suffices to take a casual glance at any economics journal. But what about Keynes's suggestion that it is "useless"? If all we could say was that when it's more likely to rain, more people will take umbrellas, that objection would start to have some bite. But we can say much more. In non-cooperative games, the predictions, and explanations, the theory delivers can be rather surprising. One nice case of this is the discussion of Gulf of Mexico oil leases in @Wilson1967.[^idealised-3] But here's a simpler surprising prediction that you need something like GDT to get.[^idealised-4]
 
 [^idealised-3]: I learned about this paper from the excellent discussion of the case in @Sutton2000.
 
