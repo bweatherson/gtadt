@@ -1,38 +1,170 @@
 # Idealised {#sec-ideal}
 
-Game theorists, like philosophical decision theorists, are doing ideal theory. To see that they are doing ideal theory, 
+## Introducing Ideal Theory {#sec-ideal-intro}
 
-Consider the following decision problem. Chooser (our main protagonist) is going to be given a series of multiplication problems, where each of the multiplicands is a four digit number. Chooser doesn't have access to any kind of calculating device, and has no special arithmetic ability. For each question, if Chooser says the right answer, they get \$2; if they pass, they get \$1; if they say the wrong answer, they get nothing. @tbl-multi has the payout in table form.
+Game theorists, like philosophical decision theorists, are doing ideal theory. To see that they are doing ideal theory, compare what they say about two problems: **Salesman** and **Basketball**. The first is a version of what Julia Robinson dubbed the 'travelling salesman' problem.[^demons-and-decisions-1]
 
-|           |                        |                          |
-|:---------:|:----------------------:|:------------------------:|
-|           | **Best Guess Correct** | **Best Guess Incorrect** |
-| **Guess** |          \$2           |           \$0            |
-| **Pass**  |          \$1           |           \$1            |
+[^demons-and-decisions-1]: The dubbing is in @Robinson1949. For a thorough history of the problem, see @Schrijver2005. For an accessible history of the problem, which includes these references, see the wikipedia page on 'Traveling Salesman Problem'.
 
-: The multiplication game {#tbl-multi}
+> **Salesman**
+> Chooser is given the straight line distance between each pair of cities from the 257 represented on the map below. Using this information, Chooser has to find as short a path as possible that goes through all 257 cities and returns to the first one. The longer a path Chooser selects, the worse things will be for Chooser.
 
-Every variety of decision theory defended in philosophy journals in recent years, and every game theory textbook, says that Chooser should simply say the correct answer. After all, Chooser should have probabilistically coherent credences, and every mathematical truth has probability 1, so whatever the correct answer is, saying it is a sure \$2.
+```{r salesman-points, fig.cap="The 257 cities that must be visited in the Salesman problem."}
 
-This is completely terrible advice. Chooser should pass every time, unless the question is something boring like 1000 times 2000. The chance of them getting a question like 5278 times 9713 correct are way less than one in two, so they are better off passing.
+theme_map <- function(base_size=9, base_family="") {
+  theme_bw(base_size=base_size, base_family=base_family) %+replace%
+    theme(axis.line=element_blank(),
+          axis.text=element_blank(),
+          axis.ticks=element_blank(),
+          axis.title=element_blank(),
+          panel.background=element_blank(),
+          panel.border=element_blank(),
+          panel.grid=element_blank(),
+          panel.spacing=unit(0, "lines"),
+          plot.background=element_blank(),
+          legend.justification = c(0,0),
+          legend.position = c(0,0)
+    )
+}
 
-This doesn't mean that every philosophical decision theory, and every game theory textbook, is wrong. Those theories are not in the business of giving advice to people like Chooser. They are in the business of saying what it would be ideal, in some sense of ideal, for Chooser to do. And it would be ideal for Chooser to be a reliable computer, so if Chooser were reliable, they would always give the correct answer.
+theme_set(theme_map())
 
-There is a big question about why we should care about what would have if Chooser were ideal. Chooser is not in fact ideal, so who cares what they would do if they were different. One might think that knowing what the ideal is gives Chooser something to aim for. Even if Chooser is not ideal, they can try to be closer to the ideal. The problem is that trying to be more like the ideal will make things worse. The ideal agent will never pass, and even if Chooser doesn't know the answers to the particular questions, they can know this fact. So if they try to be more like the ideal, they will never pass, and things will go badly.[^idealised-1]
+all_states <- map_data("state") %>% 
+  group_by(region) %>% 
+  tally() %>% 
+  select(state = region)
+
+all_states$code <- c("AL", "AZ", "AR", "CA", "CO", "CT", "DE", "DC", "FL", "GA",
+                     "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MD", "MA", 
+                     "MI", "MN", "MS", "MO", "MT", "NE", "NV", "NH", "NJ", "NM", 
+                     "NY", "NC", "ND", "OH", "OK", "OR", "PA", "RI", "SC", "SD", 
+                     "TN", "TX", "UT", "VT", "VA", "WA", "WV", "WI", "WY")
+
+used_states <- 1:49
+
+long_states <- all_states$state[used_states]
+short_states <- all_states$code[used_states]
+
+data("USCA312")
+data("USCA312_GPS")
+
+cities <- as_tibble(as.matrix(USCA312))
+
+city_numbers <- tibble(
+  id = 1:312,
+  thecities = colnames(cities)
+) %>% 
+  mutate(used_city = case_when(str_sub(thecities, -2) %in% short_states  ~ 1,
+                               TRUE ~ 0))
+
+the_city_numbers <- filter(city_numbers, used_city == 1)$id
+
+
+our_cities <- cities %>% 
+  select(all_of(the_city_numbers)) %>% 
+  slice(the_city_numbers)
+
+our_gps <- USCA312_GPS %>% 
+  slice(the_city_numbers) %>% 
+  rowid_to_column()
+
+city_matrix <- as.matrix(our_cities)
+
+rownames(city_matrix) <- filter(city_numbers, used_city == 1)$thecities
+
+## Fine tour
+#tour_line <- solve_TSP(as.TSP(city_matrix), method="farthest_insertion")
+#tour_line <- solve_TSP(as.TSP(city_matrix), method="two_opt", tour = tour_line)
+
+## Not good tour
+#tour_line <- solve_TSP(as.TSP(city_matrix), method="cheapest_insertion", start = 17) # - Very messy
+
+## Generate tour by longitude - really bad
+#tour_line <- TOUR(arrange(our_gps, long)$rowid, tsp = as.TSP(city_matrix))
+
+## Best tour
+load("tour_line.RData")
+
+## Turn tour to map path
+# paths <- tribble(
+#   ~step, ~property, ~rowid, ~long, ~lat
+# )
+# 
+# for (i in 1:nrow(our_gps)){
+#   x <- tour_line[i]
+#   first_city <- our_gps %>% slice(x)
+#   next_city <- our_gps %>% slice(x %% 31)
+#   paths <- paths %>% 
+#     add_row(step = i, property = "from", rowid = first_city$rowid[1], long = first_city$long[1], lat = first_city$lat[1])# %>% 
+#   #    add_row(step = i, property = "to", rowid = next_city$rowid[1], long = next_city$long[1], lat = next_city$lat[1])
+# }
+# 
+# x <- tour_line[1]
+# 
+# paths <- paths %>% add_row(step = 24, property = "from", rowid = our_gps$rowid[x], long = our_gps$long[x], lat = our_gps$lat[x])
+
+
+state_map_data <- map_data("state") %>%
+  #  filter(subregion != "north" | is.na(subregion)) %>%
+  filter(region %in% long_states) 
+
+tour_map <- ggplot(state_map_data, aes(long, lat, group = group)) +
+  geom_polygon(fill = "white", colour = "grey90") + 
+  geom_point(data = our_gps %>% select(long, lat), aes(x = long, y = lat), size = 0.25, inherit.aes = FALSE) +
+#  geom_path(data = paths %>% select(long, lat), aes(x = long, y = lat), inherit.aes = FALSE, colour = "grey30", alpha = 0.5 ) + 
+  coord_quickmap()
+#tour_length(tour_line)
+tour_map
+
+tour_map_points_only <- tour_map
+
+#str_c(our_gps$name, sep = "; ", collapse = "; ")
+```
+
+Since there are 256! possible paths, and 256! ≈ 10^727^, Chooser has a few options here.[^demons-and-decisions-2] Game theorists, and philosophical decision theorists, start with the assumption that the people in their models can solve these problems in zero time and at zero cost. That's not even approximately true for any actual person without technological assistance. Even with knowledge of the problem and a good computer, there are not that many actual people who you could properly model as being able to solve it in zero time and at zero cost.
+
+[^demons-and-decisions-2]: The 256 cities are the cities in the lower 48 states from the 312 cities in North America that John Burkardt mapped in his dataset Cities, available at [people.sc.fsu.edu/\~jburkardt/datasets/cities/cities.html](https://people.sc.fsu.edu/~jburkardt/datasets/cities/cities.html). 
+
+The question of how to think about people who do have to spend time and resources to solve a problem like this is an interesting one. We might call that problem one in *non-ideal decision theory*.[^demons-and-decisions-3] I won't say much about non-ideal decision theory in the body of this book, though I'll come back to it in @sec-nidt. What I mostly want to do now is use **Salesman** to say something about what the difference between ideal and non-ideal theory is. And that difference is brought up vividly by the following problem.
+
+[^demons-and-decisions-3]: I'm borrowing the term 'non-ideal' from work in political philosophy. See @Valentini2012 for a good survey of some relevant work, and @Mills2005 for an important critique of the centrality of ideal theory in political philosophy. Critics of ideal theory, such as Mills, and @Sen2006, argue that we shouldn't base non-ideal theory on ideal theory. I'm going to agree, but my focus is primarily in the other direction. I'm going to argue that it isn't a constraint on ideal theory that it is useful in constructing a non-ideal theory.
+
+> **Basketball**
+> Chooser is at a casino, and a basketball game is about to start. Chooser knows that basketball games don't have draws or ties; one side will win. And Chooser knows the teams are equally balanced; each team is 50% likely to win. Chooser has three options. They can bet on the Home team to win, bet on the Away team to win, or Pass, and not bet. If they bet, they win \$100 if the team they bet on wins, and lose \$110 if that team loses. If they Pass, they neither gain nor lose anything.
+
+Ideal decision theory says that in **Basketball**, Chooser should Pass. That's not the optimal outcome for Chooser. The optimal outcome is that they bet on the winning team. But since they don't know who that is, and either bet will, on average, lose them money, they should Pass rather than bet on Home or Away. We could have a theory that just evaluated the possible outcomes in any decision. I'll call this Outcome Evaluation Theory. Contrast this with two other theories. Game theory says that the ideal agent chooses the shortest route, whatever it is, in **Salesman** and does not bet in **Basketball**. If an ordinary reasonable person was advising a friend facing these two problems, they would give the same advice as the game theorist about **Basketball**, but in **Salesman** they would not simply say _Choose the shortest path!_, since that's useless advice. Rather they would suggest something about how to solve the problem, possibly by looking up strategies.
+
+So we have three theories on the table: Outcome Evaluation Theory; the game theory approach, which I'll call Ideal Decision Theory; and the ordinary reasonable person approach, which I'll call Non-Ideal Decision Theory. We can distinguish these three theories by what they say to do in two examples introduced so far: Salesman and Basketball.
+
+|     **Theory**     |    **Salesman**    | **Basketball** |
+|:------------------:|:------------------:|:--------------:|
+| Outcome Evaluation |   Shortest route   | Bet on winner  |
+|   Ideal Decision   |   Shortest route   |      Pass      |
+| Non-Ideal Decision | Study optimization |      Pass      |
+
+: How three kinds of theories handle two problems. {#tab-three-theories}
+
+Game theory agrees with the middle row. GDT, the theory I'm developing in this book, does so too. And so do almost all decision theorists working in philosophy.^[The exceptions are people working in 'descriptive decision theory' [@ChandlerSEP]. But that's normally not taken to be a normative theory in any respect; it isn't about what people should do in problems like **Salesman**, but what they actually do.] So in trying to convince philosophers to adopt GDT, I'm not asking them to change their view on this point. But still, this is odd. What is the benefit of a theory of decision that does not produce the best outcomes, and does not produce useful, reasonable advice?
+
+We could say that if Chooser were ideal, they would agree with Ideal Decision Theory. But why we should care about what would have if Chooser were ideal, since Chooser is not in fact ideal? One might think that knowing what the ideal is gives Chooser something to aim for. Even if Chooser is not ideal, they can try to be closer to the ideal. The problem is that trying to be more like the ideal will make things worse. The ideal agent will announce the best answer they have after spending no time calculating the solution to **Salesman**, and resembling the ideal agent in that respect will make Chooser worse.[^idealised-1] And there is a separate problem. Why say it is ideal to make a choice in **Basketball** that Chooser knows will lead to a sub-optimal outcome? We can make progress on both these problems, what it means to say something is ideal, and why we should care about the ideal, but stepping back and asking what we even mean by 'ideal', and 'idealisation'.
 
 [^idealised-1]: This is a special case of Lipsey and Lancaster's Theory of the Second Best [@LipseyLancaster]. If you don't have control over every parameter, setting the parameters you do control to the ideal values is generally inadvisable.
 
-In philosophy we have two very different uses of the term 'idealisation'. One is the kind of idealisation we see in, for example, Ideal Observer theories in ethics. The other is the kind of idealisation we see in, for example, Ideal Gas models in chemistry. It's important to not confuse the two. Think about the volumeless, infinitely dense, molecules in an Ideal Gas model. To say that this is an idealised model is not to say that having volume, taking up space, is an imperfection. The point is not to tell molecules what the perfect size is. ("The only good molecule is a volumeless molecule.") Nor is it to tell them that they should approximate the ideal. ("Smaller the better, fellas.") It's to say that for some predictive and explanatory purposes, molecules behave no differently to how they would behave if they took up no space.[^idealised-2]
+In philosophy, it turns out we have two very different uses of the term 'idealisation'. One is the kind of idealisation we see in, for example, Ideal Observer theories in ethics. The other is the kind of idealisation we see in, for example, Ideal Gas models in chemistry. It's important to not confuse the two. Think about the volumeless, infinitely dense, molecules in an Ideal Gas model. To say that this is an idealised model is not to say that having volume, taking up space, is an imperfection. The point is not to tell molecules what the perfect size is. ("The only good molecule is a volumeless molecule.") Nor is it to tell them that they should approximate the ideal. ("Smaller the better, fellas.") It's to say that for some predictive and explanatory purposes, molecules behave no differently to how they would behave if they took up no space.[^idealised-2]
 
 [^idealised-2]: I'm drawing here on work on the nature of idealisations by Michael @Strevens2008 and by Kevin @Davey2011.
 
-The best way to understand decision theorists, and game theorists, is that they are using idealisations in this latter sense. The ideal choosers of decision theory are not like the Ideal Observers in ethics, but like the Ideal Gases. The point of the theory is to say how things go in a simplified version of the case, and then argue that this is useful for predictive and explanatory purposes because, at least some of the time, the simplifications don't make a difference.
+The best way to understand game theorists, and most philosophical decision theorists, is that they are using idealisations in this latter sense. The ideal choosers of decision theory are not like the Ideal Observers in ethics, but like the Ideal Gases. The point of the theory is to say how things go in a simplified version of the case, and then argue that this is useful for predictive and explanatory purposes because, at least some of the time, the simplifications don't make a difference.
+
+## Uses of Ideal Theory {#sec-uses-ideal}
+
+So 
 
 One nice example of this working is George Akerlof's discussion of the used car market @Akerlof1970. In the twentieth century, it was common for lightly used cars to sell at a massive discount to new cars. There was no good explanation for this, and it was often put down to a brute preference for new cars. What Akerlof showed was that a model where (a) new cars varied substantially in quality, and (b) in the used car market, buyers had less information about the car than sellers, you could get a discount similar to what you saw in real life even if the buyers had no special preference for new cars. Rather, buyers had a preference for good cars, and took the fact that this car was for sale to be evidence that it was badly made. It was important for Akerlof's explanatory purposes that he could show that people were being rational, and this required that he have a decision theory that they followed. In fact what he used was something like GDT. We now have excellent evidence that something like his model was correct. As the variation in quality of new cars has declined, and the information available to buyers of used cars has risen, the used car discount has just about vanished. (In fact it went negative during the pandemic, for reasons I don't at all understand.)
 
 I'll end this section with a response to one objection, one caveat, and one surprising bonus to doing idealised decision theory this way.
 
-The objection is that decision theory isn't actually that helpful for prediction and explanation. If all that it says are things like when rain is more probable, more people take umbrellas, that doesn't need a whole academic discipline. The objector might echo the sentiments that Keynes expresses in a widely quoted passage. (Though it is rare that the key quote is put in its proper context; I think I'm not guilty of that here.
+The objection is that decision theory isn't actually that helpful for prediction and explanation. If all that it says are things like when rain is more probable, more people take umbrellas, that doesn't need a whole academic discipline. The objector might echo the sentiments that Keynes expresses in a widely quoted passage. (Though it is rare that the key quote is put in its proper context; I think I'm not guilty of that here.)
 
 > But this _long run_ is a misleading guide to current affairs. _In the long run we are all dead_. Economists set themselves too easy, too useless a task if in tempestuous seasons they can only tell us that when the storm is long past the ocean will be flat again. [@Keynes1923, 80, emphasis in original]
 
