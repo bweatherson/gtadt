@@ -1,5 +1,7 @@
 # Idealised {#sec-ideal}
 
+Game theorists, like philosophical decision theorists, are doing ideal theory. To see that they are doing ideal theory, 
+
 Consider the following decision problem. Chooser (our main protagonist) is going to be given a series of multiplication problems, where each of the multiplicands is a four digit number. Chooser doesn't have access to any kind of calculating device, and has no special arithmetic ability. For each question, if Chooser says the right answer, they get \$2; if they pass, they get \$1; if they say the wrong answer, they get nothing. @tbl-multi has the payout in table form.
 
 |           |                        |                          |
@@ -93,4 +95,3 @@ Like Knight, I think that explanations in social science can treat people as rat
 There is one other point of agreement with Knight that I want to emphasise. If we don't act by first drawing Marshallian curves and solving optimisation problems, how do we act? As he says, we typically act "by rule". Our lives are governed, on day-by-day, minute-by-minute basis, by a series of rules we have internalised for how to act in various situations. The rules will typically have some kind of hierarchical structure - do this in this situation unless a particular exception arises, in which case do this other thing, unless of course a further exception arises, in which case, and so on. And the benefit of adopting rules with this structure is that they, typically, produce the best trade off between results and cognitive effort.
 
 One other useful role for idealised decision theory is in the testing and generation of these rules. We don't expect people who have to make split-second decisions to calculate expected utilities. But we can expect them to learn some simple heuristics, and we can expect theorists to use ideal decision theory to test whether those heuristics are right, or whether some other simple heuristic would be better. This kind of approach is very useful in sports, where athletes have to make decisions very fast, and there is enough repetition for theorists to calculate expected utilities with some precision. But it can be used in other parts of life, and it is a useful role for idealised decision theory alongside its roles in prediction and explanation.
-
