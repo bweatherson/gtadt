@@ -65,6 +65,7 @@ format:
       self-contained: false
     docx:
       reference-doc: my-template.docx
+      toc: false
     epub: default
     pdf: 
       format: scrreprt
