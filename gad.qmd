@@ -6,7 +6,7 @@ Say that a demonic decision problem is a problem where the states are sensitive 
 
 You might worry that this only gives you cases where Demon is approximately perfect, but we also want cases where the demon is, say, 80% accurate. But that's easy to do as well. In fact there are two ways to do it.
 
-The first is what I'll call the Selten strategy, because it gives the demon a 'trembling hand' in the sense of @Selten1975. Instead of letting Demon choose a state in the original problem, let Demon choose one of _n_ buttons, where $n$ is the number of choices the (human) chooser has. Each button is connected to a probabilistic device that generates one of the original states. If you want Demon to be 80% accurate when option _o~i~_ is chosen, say the button $b_i$ associated with option _o~i~_ outputs state _s~i~_ with probability 0.8, and each of the other states with probability $\frac{0.2}{n - 1}$. And still say that Demon gets payout 1 for any _i_ if the chooser selects _o~i~_ and the button generates state _s~i~_, and 0 otherwise.
+The first is what I'll call the Selten strategy, because it gives the demon a 'trembling hand' in the sense of @Selten1975. Instead of letting Demon choose a state in the original problem, let Demon choose one of *n* buttons, where $n$ is the number of choices the (human) chooser has. Each button is connected to a probabilistic device that generates one of the original states. If you want Demon to be 80% accurate when option *o~i~* is chosen, say the button $b_i$ associated with option *o~i~* outputs state *s~i~* with probability 0.8, and each of the other states with probability $\frac{0.2}{n - 1}$. And still say that Demon gets payout 1 for any *i* if the chooser selects *o~i~* and the button generates state *s~i~*, and 0 otherwise.
 
 The second is what I'll call the Smullyan strategy, because it involves a Knights and Knaves puzzle of the kind that play a role in several of Smullyan's books, especially his [-@Smullyan1978]. Here the randomisation takes place before Demon's choice. Demon is assigned a type Knight or Knave. Demon is told of the assignment, but Chooser is not. If Demon is assigned type Knight, the payouts stay the same as in the game where Demon is arbitrarily accurate. If Demon is assigned type Knave, the payouts are reversed, and Demon gets payout 1 for an incorrect prediction.
 
@@ -14,27 +14,27 @@ There are benefits to each approach, and there are slightly different edge cases
 
 Turning games into demonic decision problems is a bit more interesting. Start with a completely generic two-player, two-option, simultaneous move, symmetric game, as shown in table @tbl-basic-sym-game. We won't only look at symmetric games, but it's a nice way to start.
 
-|       |   A      |   B      |
+|       |    A     |    B     |
 |:-----:|:--------:|:--------:|
-| **A** | _x_, _x_ | _y_, _z_ |
-| **B** | _z_, _y_ | _w_, _w_ |
+| **A** | *x*, *x* | *y*, *z* |
+| **B** | *z*, *y* | *w*, *w* |
 
 : A generic symmetric game. {#tbl-basic-sym-game}
 
-In words, what this says is that each player chooses either A or B. If they both choose A, they both get $x$. If they both choose B, they both get _w_. And if one chooses A and the other chooses B, the one who chooses A gets _y_ and the one who chooses B gets _z_. (Note that the payouts list row's payment first, if you're struggling to translate between the table and the text.) A lot of famous games can be defined in terms of restrictions on the four payout values. For example, a game like this is a Prisoners' Dilemma if the following constraints are met.
+In words, what this says is that each player chooses either A or B. If they both choose A, they both get $x$. If they both choose B, they both get *w*. And if one chooses A and the other chooses B, the one who chooses A gets *y* and the one who chooses B gets *z*. (Note that the payouts list row's payment first, if you're struggling to translate between the table and the text.) A lot of famous games can be defined in terms of restrictions on the four payout values. For example, a game like this is a Prisoners' Dilemma if the following constraints are met.
 
--   _x_ > _z_
--   _y_ > _w_
--   _w_ > _x_
+-   *x* \> *z*
+-   *y* \> *w*
+-   *w* \> *x*
 
-Some books will also add 2_x_ > _y_ + _z_ as a further constraint, but I'll stick with these three.
+Some books will also add 2_x\_ \> *y* + *z* as a further constraint, but I'll stick with these three.
 
 Now to turn a game into a demonic decision problem, first replace column's payouts with 1s and 0s, with 1s along the main diagonal, and 0s everywhere else. Table @tbl-demon-sym-game shows what a generic symmetric game looks like after this transformation.
 
 |       |   A    |   B    |
 |:-----:|:------:|:------:|
-| **A** | _x_, 1 | _y_, 0 |
-| **B** | _z_, 0 | _w_, 1 |
+| **A** | *x*, 1 | *y*, 0 |
+| **B** | *z*, 0 | *w*, 1 |
 
 : The demonic version of a generic symmetric game. {#tbl-demon-sym-game}
 
@@ -42,102 +42,103 @@ The next step is to replace Demon's moves with states that are generated by Demo
 
 |       | PA  | PB  |
 |:-----:|:---:|:---:|
-| **A** | _x_ | _y_ |
-| **B** | _z_ | _w_ |
+| **A** | *x* | *y* |
+| **B** | *z* | *w* |
 
 : The demonic decision problem generated by a generic symmetric game.. {#tbl-gen-dem-problem}
 
-If we add the constraints _x_ > _z_, _y_ > _w_, _w_ > _x_, this is a Newcomb Problem. I'm a long way from the first to point out the connections between Prisoners' Dilemma and Newcomb's Problem; it's literally in the title of a David Lewis paper [@Lewis1979e]. But what I want to stress here is the recipe for turning a familiar game into a demonic problem.
+If we add the constraints *x* \> *z*, *y* \> *w*, *w* \> *x*, this is a Newcomb Problem. I'm a long way from the first to point out the connections between Prisoners' Dilemma and Newcomb's Problem; it's literally in the title of a David Lewis paper [@Lewis1979e]. But what I want to stress here is the recipe for turning a familiar game into a demonic problem.
 
 We can do the same thing with Chicken. The toy story behind Chicken is that two cars are facing off at the end of a road. They will drive straight at each other, and at the last second, each driver will choose to swerve off the road, which we'll call option A, or stay on the road, which we'll call option B. If one swerves and the other stays, the one who stays is the winner. If they both swerve they both lose and it's boring, and if they both stay it's a fiery crash. So in terms of the payouts in the general symmetric game, the constraints are:
 
--   _x_ < _z_
--   _y_ >> _w_
--   _x_ >> _w_
+-   *x* \< *z*
+-   *y* \>\> *w*
+-   *x* \>\> *w*
 
-Just what it means for one value to be much more than another, which is what I mean by '>>', is obviously vague. @tab-basic-chicken gives an example with some numbers that should satisfy it.
+Just what it means for one value to be much more than another, which is what I mean by '\>\>', is obviously vague. @tbl-basic-chicken gives an example with some numbers that should satisfy it.
 
-|       |   A      |   B       |
-|:-----:|:--------:|:---------:|
-| **A** | 0, 0     | 0, 1      |
-| **B** | 1, 0     | -100,-100 |
+|       |  A   |     B     |
+|:-----:|:----:|:---------:|
+| **A** | 0, 0 |   0, 1    |
+| **B** | 1, 0 | -100,-100 |
 
 : A version of Chicken. {#tbl-basic-chicken}
 
-Replace the other driver, the one who plays column in this version, with a Demon, who only wants to predict row's move. The result is @tab-demon-chicken.
+Replace the other driver, the one who plays column in this version, with a Demon, who only wants to predict row's move. The result is @tbl-demon-chicken.
 
-|       |   A      |   B       |
-|:-----:|:--------:|:---------:|
-| **A** | 0, 1     | 0, 0      |
-| **B** | 1, 0     | -100,1    |
+|       |  A   |   B    |
+|:-----:|:----:|:------:|
+| **A** | 0, 1 |  0, 0  |
+| **B** | 1, 0 | -100,1 |
 
 : A demonic version of Chicken. {#tbl-demon-chicken}
 
+All I've done to generate table @tbl-demon-chicken is replace column's payouts with 1s on the main diagonal, and 0s elsewhere. The next step is to replace the demonic player with states generated by Demon's choices. The result is table @tbl-egan-game.
 
-All I've done to generate table @tab-demon-chicken is replace column's payouts with 1s on the main diagonal, and 0s elsewhere. The next step is to replace the demonic player with states generated by Demon's choices. The result is table @tab-egan-game.
-
-|       |   PA     |   PB      |
-|:-----:|:--------:|:---------:|
-| **A** |    0     |     0     |
-| **B** |    1     | -100      |
+|       | PA  |  PB  |
+|:-----:|:---:|:----:|
+| **A** |  0  |  0   |
+| **B** |  1  | -100 |
 
 : A demonic decision problem based on Chicken. {#tbl-egan-game}
 
-And @tab-egan-game is just the Psychopath Button example that Andy @Egan2007 raises as a problem for Causal Decision Theory.
+And @tbl-egan-game is just the Psychopath Button example that Andy @Egan2007 raises as a problem for Causal Decision Theory.
 
-Another familiar game from introductory game theory textbooks is matching pennies. This is a somewhat simplified version of rock-paper-scissors. Each player has a penny, and they reveal their penny simultaneously. They can either show it with the heads side up (option A), or the tails side up (option B). We specify in advance who wins if they show the same way, and who wins if they show opposite ways. So let's say column will win if both coins are heads or both are tails, and row will win if they are different. The payouts are shown in @tab-match-pennies.
+Another familiar game from introductory game theory textbooks is matching pennies. This is a somewhat simplified version of rock-paper-scissors. Each player has a penny, and they reveal their penny simultaneously. They can either show it with the heads side up (option A), or the tails side up (option B). We specify in advance who wins if they show the same way, and who wins if they show opposite ways. So let's say column will win if both coins are heads or both are tails, and row will win if they are different. The payouts are shown in @tbl-match-pennies.
 
-|       |   A      |   B       |
-|:-----:|:--------:|:---------:|
-| **A** | 0, 1     | 1, 0      |
-| **B** | 1, 0     | 0, 1      |
+|       |  A   |  B   |
+|:-----:|:----:|:----:|
+| **A** | 0, 1 | 1, 0 |
+| **B** | 1, 0 | 0, 1 |
 
-: The game matching pennies. {#tbl-basic-chicken}
+: The game matching pennies. {#tbl-match-pennies}
 
-This isn't a symmetric game, but it is already demonic. Column's payouts are 1 in the main diagonal and 0 elsewhere. So we can convert it to a demonic decision problem fairly easily, as in @tab-death-in-damascus.
+This isn't a symmetric game, but it is already demonic. Column's payouts are 1 in the main diagonal and 0 elsewhere. So we can convert it to a demonic decision problem fairly easily, as in @tbl-death-in-damascus.
 
-|       |   PA     |   PB      |
-|:-----:|:--------:|:---------:|
-| **A** | 0        | 1         |
-| **B** | 1        | 0         |
+|       | PA  | PB  |
+|:-----:|:---:|:---:|
+| **A** |  0  |  1  |
+| **B** |  1  |  0  |
 
 : Matching Pennies as a decision problem. {#tbl-death-in-damascus}
 
-And @tab-death-in-damascus is the familiar problem Death in Damascus from @GibbardHarper1978.
+And @tbl-death-in-damascus is the familiar problem Death in Damascus from @GibbardHarper1978.
 
-Let's do one last one, starting with the familiar game Battle of the Sexes.^[@OConnor2019 calls this the Bach-Stravinsky game, which is a better name.] Row and Column each have to choose whether to do R or C. They both prefer doing the same thing to doing different things. But Row would prefer they both do R, and Column would prefer they both do C. The original name comes from a version of the story where Row and Column are a heterosexual married couple, and Row wants to do some stereotypically male thing, while Column wants to do some stereotypically female thing. That framing is tiresome at best, but the category of asymmetric coordination games is not, hence my more abstract presentation. So @tab-bach-stravinsky is one way we might think of the payouts.
+Let's do one last one, starting with the familiar game Battle of the Sexes.[^gad-1] Row and Column each have to choose whether to do R or C. They both prefer doing the same thing to doing different things. But Row would prefer they both do R, and Column would prefer they both do C. The original name comes from a version of the story where Row and Column are a heterosexual married couple, and Row wants to do some stereotypically male thing, while Column wants to do some stereotypically female thing. That framing is tiresome at best, but the category of asymmetric coordination games is not, hence my more abstract presentation. So @tbl-bach-stravinsky is one way we might think of the payouts.
 
-|       |   R      |   C       |
-|:-----:|:--------:|:---------:|
-| **R** | 4, 1     | 0, 0      |
-| **C** | 0, 0     | 1, 4      |
+[^gad-1]: @OConnor2019 calls this the Bach-Stravinsky game, which is a better name.
+
+|       |  R   |  C   |
+|:-----:|:----:|:----:|
+| **R** | 4, 1 | 0, 0 |
+| **C** | 0, 0 | 1, 4 |
 
 : A version of Battle of the Sexes. {#tbl-bach-stravinsky}
 
-As it stands, that's not a symmetric game. But we can make it a symmetric game by relabeling the choices. Let option A for each player be doing their favored choice, and option B be doing their less favored choice. That turns @tab-bach-stravinsky into @tab-bach-stravinsky-symmetric.
+As it stands, that's not a symmetric game. But we can make it a symmetric game by relabeling the choices. Let option A for each player be doing their favored choice, and option B be doing their less favored choice. That turns @tbl-bach-stravinsky into @tbl-bach-stravinsky-symmetric.
 
-|       |   A      |   B       |
-|:-----:|:--------:|:---------:|
-| **A** | 0, 0     | 4, 1      |
-| **B** | 1, 4     | 0, 0      |
+|       |  A   |  B   |
+|:-----:|:----:|:----:|
+| **A** | 0, 0 | 4, 1 |
+| **B** | 1, 4 | 0, 0 |
 
-: Battle of the Sexes, relabeled. {#tbl-bach-stravinsky-relabeled}
+: Battle of the Sexes, relabeled. {#tbl-bach-stravinsky-symmetric}
 
 After making that change, change column's payouts so that it is a demonic game. The result is @tbl-bach-demon.
 
-|       |   A      |   B       |
-|:-----:|:--------:|:---------:|
-| **A** | 0, 1     | 4, 0      |
-| **B** | 1, 0     | 0, 1      |
+|       |  A   |  B   |
+|:-----:|:----:|:----:|
+| **A** | 0, 1 | 4, 0 |
+| **B** | 1, 0 | 0, 1 |
 
 : A demonic version of battle of the sexes. {#tbl-bach-demon}
 
 Finally, replace Demon's choices with states generated by (probably accurate) predictions, to get the decision problem in @tbl-asymm-death-damascus.
 
-|       |   PA     |   PB      |
-|:-----:|:--------:|:---------:|
-| **A** | 0        | 4         |
-| **B** | 1        | 0         |
+|       | PA  | PB  |
+|:-----:|:---:|:---:|
+| **A** |  0  |  4  |
+| **B** |  1  |  0  |
 
 : A demonic decision problem based on Battle of the Sexes. {#tbl-asymm-death-damascus}
 
