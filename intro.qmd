@@ -1,6 +1,6 @@
 # Introduction {#sec-intro}
 
-## Ten Features of a Good Decision Theory
+## Ten Features of a Good Decision Theory {#sec-ten-features}
 
 Textbook versions of game theory embed a distinctive approach to decision theory. That theory isn't always made explicit, and it isn't always clear how it handles some cases. But we can extract an interesting and plausible theory, which I'll call Gamified Decision Theory (GDT), from these textbooks. There are ten characteristics of GDT (as I'll understand it) that I will focus on. I'll quickly list them here, then the bulk of the book will consist of a chapter describing and motivating each of the ten characteristics.
 
@@ -95,7 +95,7 @@ So as I'm using the term, Causal Decision Theory is not a theory. That might be 
 
 [^intro-2]: The most notable of these will be the Functional Decision Theory of @LevinsteinSoares2020, and the non-expectationist theories of @Quiggin1982 and @Buchak2013.
 
-## Gamified Decision Theory
+## Gamified Decision Theory {#sec-gdt-defined}
 
 The actual theory I will defend, GDT, is a version of what's sometimes called causal ratificationism.
 
@@ -113,7 +113,50 @@ By Pr~A~ I mean the rational probabilities that Chooser has after choosing A. If
 
 [^intro-4]: If there is more than one alternative to A, and more than one rational probability function, the rule is that there is some probability function such that A does better than every possible alternative, if we put that function into the inequality above. It's not enough that for each alternative there is some probability function that judges A to be better than the alternative.
 
--   Paragraph about Harper.
--   Link to chapter on ratifiability
--   Something about weak dominance, including example
--   Something about dynamic choice, including example
+I'm far from the first to endorse ratifiability as a constraint on decisions. It's defended by William @Harper1986, in a paper that was a central inspiration for this project, both because of its conclusions, and because of the way it connected decision theory to game theory. I'll talk about the ratifiability constraint much more in @sec-ratify.
+
+GDT, as I'm defining it, has three extra features beyond this causal ratification constraint, and I'll end this chapter with a brief discussion of each of them.
+
+GDT says that permissible choices are not weakly dominated. An option weakly dominates another if it could be better, and couldn't be worse. So in @tbl-weak-dominance-example, A is not a permissible choice because it is weakly dominated by B.
+
+|       |  PA  | PB  |
+|:-----:|:----:|:---:|
+| **A** | 2 |  0  |
+| **B** | 2 |  1  |
+
+: An example of weak dominance. {#tbl-weak-dominance-example}
+
+Since B could be better than A, if Demon predicted B, and could not be worse than A, at worst they produce the same outcome if Demon predicts A, B weakly dominates A. And weakly dominated actions are not rational choices. So in this problem the only rational choice is B. This is not particularly intuitive, but I don't think agreement with first pass intuition is a particularly strong constraint on decision theories, for reasons I'll go over in @sec-expect. And I'll have much more to say about weak dominance, and in particular why I reject an iterated version of the weak dominance constraint, in @sec-weak.
+
+In dynamic choices, GDT says that Chooser must satisfy two constraints. First, the plan they make for what to do over time, what we'll call a strategy, must be a permissible choice of strategy. Second, at each point in time, they must choose an option that would be permissible were the dynamic choice problem to have started at that point, with that set of options. These two constraints, which I'll discuss much more in chapter @sec-dualmandate, have some surprising consequences. Imagine that Chooser has the following two-stage problem. At stage 1, they can choose to Exit or Continue. If they Exit, they get 4. If they continue, they make a choice in the following Demonic problem.^[In this problem, the Demon makes a prediction after Chooser opts to Continue, but this prediction is only revealed after Chooser selects A or B.]
+
+|       |  PA  | PB  |
+|:-----:|:----:|:---:|
+| **A** | 3 |  3  |
+| **B** | 0 |  5  |
+
+: The second stage of a dynamic problem. {#tbl-first-dynamic-example}
+
+The plan of Continuing, then choosing A, is not a sensible plan. Chooser knows from the start that there is a plan which is guaranteed to be better, namely Exiting. If they Exit, they are guaranteed to get 4, if they Continue then choose A, they are guaranteed to get 3. So they may not Continue then choose A. But this does not mean that they must Exit. They may Continue and choose B. Now here's the surprising part. If they faced @tbl-first-dynamic-example as the first choice they have to make, they could choose B, but they also could choose A. In @tbl-first-dynamic-example, A is ratifiable and not weakly dominated. So GDT is not a purely forward looking decision theory. By that I mean that sometimes, choices that Chooser makes earlier in a dynamic choice situation constrain which choices are rational later in the game. A lot of versions of CDT do not specify how they are to be extended into theories of dynamic choice, but my impression is that many philosophers do think decision theory should be purely forward looking, and GDT disagrees with them on this point.
+
+There are some decision theorists who agree with GDT that decisions should not be strictly forward-looking. These include the resolute theorists, in the sense of @McClennan1990, and the functional theorists, in the sense of @LevinsteinSoares2020. But GDT disagrees with them as well. Those theorists think that the only thing Chooser must do is choose a sensible plan, and then at each stage Chooser should just carry it out. Here is a case where GDT disagrees with them. It will be a three stage game, and the role of Demon will be somewhat different to their role in previous examples.
+
+1. First, Chooser chooses to scratch their ear or not scratch. The choice is revealed to Demon, but it makes no difference to anyone's payouts.
+2. Second, Demon predicts whether Chooser will select A, B or C at stage 3. Demon's prediction is partially revealed to Chooser. If Demon predicts C, Chooser is told this. If Demon predicts A or B, Chooser is just told that Demon did not predict C.
+3. Chooser selects A or B, knowing what Demon predicted. And then Chooser's payouts are given by @tbl-anti-resolute.
+
+|       |  PA  | PB  |  PC |
+|:-----:|:----:|:---:|:---:|
+| **A** | 2    |  0  |   3 |
+| **B** | 2    |  1  |   0 |
+| **C** |  0   |  1  |   1 |
+
+: Payouts in the three stage game. {#tbl-anti-resolute}
+
+The strategy of scratching one's ear, then choosing AB whatever Demon announces, is a permissible choice of strategy. By that, I mean that if Chooser were able (counterfactually) playing a game where they just announced a strategy and it was carried out automatically, the strategy scratch then play A whatever happens, would be permissible.^[So would not scratch then play A whatever Demon announces. The scratching is just there to make it clear that Chooser has a choice to make before Demon makes any prediction. I'll mostly drop this device in later examples, and just stipulate that the dynamic problem may start before Chooser's first choice.] In that strategic form of the game, this strategy is ratifiable and not weakly dominated. But in the actual dynamic game Chooser is playing, GDT says that it is not permissible. After all, were Chooser to learn that Demon did not predict C, then Chooser would be back in @tbl-weak-dominance-example, and in that example A is impermissible.
+
+I really don't think this example will motivate people to prefer GDT either to its forward looking alternatives, or to extant backward looking theories like resolute choice or functional decision theory. I'm not sure what intuition says about this puzzle, but I really don't think it says that choosing B if Demon announces they have not predicted C is the only rational alternative. That, however, is what GDT says; the only rational choice here is to do whatever one likes about scratching or not scratching, then choose A if Demon predicts C, and B if Demon does not predict C. 
+
+The point of this chapter is to describe GDT, not argue for it. And the point of this example is to show that GDT differs from theories like resolute or functional choice, which say that choosing A whatever one learns from Demon is at least permissible, and perhaps mandatory.
+
+Finally, my version of GDT says that what matters for rational choice is what probabilities over states are rational, not which probabilities Chooser happens to endorse. GDT is a theory of rational choice simpliciter, not a theory of rational choice given possibly irrational beliefs. I'll have more to say about this in @sec-substantive.
