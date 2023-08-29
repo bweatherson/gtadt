@@ -1,4 +1,6 @@
-# Introduction {#sec-intro .unnumbered}
+# Introduction {#sec-intro}
+
+## Ten Features of a Good Decision Theory
 
 Textbook versions of game theory embed a distinctive approach to decision theory. That theory isn't always made explicit, and it isn't always clear how it handles some cases. But we can extract an interesting and plausible theory, which I'll call Gamified Decision Theory (GDT), from these textbooks. There are ten characteristics of GDT (as I'll understand it) that I will focus on. I'll quickly list them here, then the bulk of the book will consist of a chapter describing and motivating each of the ten characteristics.
 
@@ -17,8 +19,101 @@ This is not going to be a work of exegesis, poring over game theory texts to sho
 
 What I do want to argue is that you can find some support for all of these in some game theory textbooks, and that combined they produce a plausible decision theory. While the textbooks don't all agree, for simplicity I'm going to focus on one book: Giacomo Bonanno's *Game Theory* [@Bonanno2018]. This book has two important virtues: it is philosophically deep, and it is available for free. It isn't hard to find a game theory text with one or other of these virtues, but few have both. So it will be our primary guide in what follows, along with some primary sources (most of which are referenced in that book).
 
-Methodologically, this paper differs from most works in decision theory in two ways. It has been a commonplace since @Nozick1969 to include demons, who are arbitrarily good at predicting a decision, in problems. Some of the cases here will involve two such demons, each of which is arbitrarily good at predicting a decision, and whose errors are probabilistically independent. Second, I'm going to rely less on intuitions about particular cases, and more on intuitions that certain cases should be treated the same way. This makes sense given the history of the field. There is much less consensus about what to do in Newcomb problems than about which problems are Newcomb problems. Judgments, or intuitions if you prefer, about how to classify problems seem more stable and more reliable, and they will be central to this book.[^intro-1]
+## Demons {#sec-intro-demons}
 
-[^intro-1]: I'll have a more principled argument for scepticism about intuitions in @sec-expect.
+A lot of contemporary philosophical decision theory revolves around what to do if there is a certain kind of demon around. Following @Nozick1969, such a demon is typically taken to be arbitrarily good at predicting what a human deliberater will do. I'll call our arbitrary deliberater Chooser, and whenever X is a choice Chooser can make, I'll use PX to mean that the demon predicts Chooser makes that choice. It's not so common to have problems where there are two such demons around, but I'll make heavy use of them, and in such cases I'll be clear about whether PX means that the first or the second demon predicted that Chooser will do X. These are predictions, and we assume that causation runs from past to future, so what Chooser does has no causal impact on what Demon predicts.
 
-The conclusion of this book is that a permissive version of causal ratificationism is correct. Ideal choosers make choices that they do not immediately regret. With two small caveats, that's all there is to decision theory; any ratifiable choice is one an ideal agent might make. The first caveat is to with choices over time; the ideal chooser will make choices such that both their individual choices, and the set of choices they make, are ratifiable. This will exclude some possible choices that are individually ratifiable. Second, the ideal chooser will not choose weakly dominated options. These are fairly minor caveats; the resulting theory is not very different from other forms of permissive causal ratificationism, such as that defended by Melissa @Fuscond. The aim is not to develop a novel theory, indeed part of the point is that the theory is implicit in a bunch of textbooks, but to develop arguments for that theory.
+I'm squeamish about assigning probability 1 to predictions that are causally isolated from the thing being predicted; I have reductionist enough views about causation to think that if a prediction is correct with probability 1, that raises questions about whether causation does really run from past to future in this case. So I prefer to say that the Demon is correct with a probability close enough to 1 that it doesn't matter for the purposes of the problem being analysed. But this squeamishness, and the associated reductionism about causation, is not part of GDT. If you're happy with having causally isolated Demons who are correct with probability 1, everything else I say should be acceptable. Indeed, some of the reasoning goes through even more smoothly with perfectly accurate, but causally isolated, Demons.
+
+A generic binary choice problem involving Chooser and Demon looks like this.
+
+|       | PA  | PB  |
+|:-----:|:---:|:---:|
+| **A** | *x* | *y* |
+| **B** | *z* | *w* |
+
+: The demonic decision problem generated by a generic symmetric game. {#tbl-gen-dem-problem}
+
+Chooser selects A or B, Demon predicts the choice, and there are four possible outcomes. I'll assume that the value of these outcomes can be measured numerically, with greater numbers being better. We'll come back to this assumption briefly in @sec-ideal, and more substantively in @sec-expect. Following @Nozick1969, the most common problem that people discuss involving Demon is what Nozick dubbed "Newcomb's Problem", after the physicist who suggested the problem to him. A Newcomb problem is an instance of @tbl-gen-dem-problem satisfying the following constraints.
+
+-   *z* \> *x*
+-   *w* \> *y*
+-   *x* \>\> *w*
+
+The standard example uses (more or less) the following values, but all that really matters are the three inequalities above.
+
+|       |  PA  | PB  |
+|:-----:|:----:|:---:|
+| **A** | 1000 |  0  |
+| **B** | 1001 |  1  |
+
+: Newcomb's Problem. {#tbl-newcomb}
+
+Option A and B are typically called 'one-boxing' and 'two-boxing' respectively, because they involve selecting either one or two boxes in the vignette Nozick gives to go along with the story. But what really matters is the schematic form, not the details of the physical setup.
+
+Nozick distinguishes two approaches to this problem you might take. He doesn't use the following terms, but they quickly became identified as Evidential Decision Theory, and Causal Decision Theory. Evidential Decision Theory (EDT) says that one should first assign values to each option using the following formulae. I'll just give the formulae for the case where there are two states of the world, PA and PB, but it should be clear how to generalise this to the case where there are *m* possible states. When X is a choice and Y a state, I'll use V(XY) to mean the value of choosing X in state Y. So for example in [Newcomb's Problem](#tbl-newcomb), V(BPA) = 1001; if Chooser selects B and Demon predicts A, Chooser's payout is 1001. And I'll use Pr(Y \| X) to mean the probability of being in state Y conditional on choosing X. Using this terminology, EDT says that the value of the choices is:
+
+|                                                    |
+|:--------------------------------------------------:|
+| V(A) = V(APA) · Pr(PA \| A) + V(APB) · Pr(PB \| A) |
+| V(B) = V(BPA) · Pr(PA \| B) + V(BPB) · Pr(PB \| B) |
+
+So in [Newcomb's Problem](#tbl-newcomb), if the Demon is, say, 90% reliable, we have:
+
+|                                   |
+|:---------------------------------:|
+| V(A) = 1000 · 0.9 + 0 · 0.1 = 900 |
+| V(B) = 1001 · 0.1 + 1 · 0.9 = 101 |
+
+Then EDT says that higher valued options are better, so A is better than B, since 900 \> 101. And if the Demon is even more reliable than 90%, that gap just grows further.
+
+Causal Decision Theory (CDT), on the other hand, is moved by the following argument. Whatever Demon has predicted, Chooser is better off choosing B than A. That, says CDT, settles things; Chooser should take option B. I think this is right; Chooser should choose B, and they should do so for this reason. But note that this is not anything like a complete theory of choice. Two people could agree with this little argument and have any number of different views about problems that not so easily disposed of. In this book, especially in @sec-indecisive, we'll spend a lot of time on problems like the following.
+
+|       | PA  | PB  |
+|:-----:|:---:|:---:|
+| **A** |  6  |  0  |
+| **B** |  5  |  2  |
+
+: The Stag Decision.[^intro-1] {#tbl-stag-decision-first}
+
+[^intro-1]: I say much more about why the problem has this label in @sec-gad.
+
+It turns out that among people who endorse the little argument for choosing B in @tbl-newcomb, there are at least four distinct views about what to do in @tbl-stag-decision-first.
+
+1.  Frank @Arntzenius2008 and Johan E. @Gustafsson2011 recommend Choosing A.
+2.  Ralph @Wedgwood2012, Dmitri @Gallow2020, Abelard @Podgorski2022, and David @Barnett2022 recommend choosing B.
+3.  James @Joyce2012 says that what Chooser should do is a function of Chooser's probability distribution over their choices prior to deliberating about what to do.
+4.  Jack @Spencer2021b and Melissa @Fuscond say that Chooser can rationally take either option.
+
+I'm going to side with option 4. Though note that Spencer and Fusco disagree about what Chooser should do in several other cases, most notably in cases like @tbl-stag-decision-first but with the payouts inverted, and GDT is going to agree more with Fusco than Spencer.
+
+But I'm not going to argue for option 4, let alone my preferred version of option 4, or against any other options, just yet. Rather, I want to start with a terminological point. It's not obvious, either from the description of the problems or the history of the philosophical discussion, which if any of these theories should get the name "Causal Decision Theory". Some people write as if Joyce's view is the unique one that should get that name; indeed many of the people I've listed above describe themselves as critics of CDT who are offering an alternative to it. I think that's not the most helpful way to classify views. All of them accept that in [Newcomb's Problem](#tbl-newcomb), Chooser should choose option B, and that Chooser should choose it because Chooser can't make a causal difference to whether PA or PB happens, and either way, B is better than A. That's the core idea behind Causal Decision Theory.
+
+A decision theory should say what to do not just in one problem, but across a family of problems. It should say what to do in @tbl-stag-decision-first, for example. As I'm using the term, Causal Decision Theory, as such, is neutral between the four possible approaches to @tbl-stag-decision-first. So it isn't a theory. Rather, it is a family of theories, that all agree about what to do in [Newcomb's Problem](#tbl-newcomb), and about why to do it, but disagree in different problems.
+
+So as I'm using the term, Causal Decision Theory is not a theory. That might be surprising, since it has the word 'Theory' in the name. But we're used to things like the United States of America which includes parts that are neither States nor in America (e.g., Guam). We can live with Causal Decision Theory not being a theory, and instead being a family that agree about what to do, and why to do it, in [Newcomb's Problem](#tbl-newcomb). The bulk of this book will be an in house dispute between causal decision theories, though I'll spend some time objecting to EDT, and also some time objecting to other theories that reject both CDT and EDT.[^intro-2]
+
+[^intro-2]: The most notable of these will be the Functional Decision Theory of @LevinsteinSoares2020, and the non-expectationist theories of @Quiggin1982 and @Buchak2013.
+
+## Gamified Decision Theory
+
+The actual theory I will defend, GDT, is a version of what's sometimes called causal ratificationism.
+
+The 'causal' in causal ratificationism means that there are constraints on the proper formulation of a decision problem. EDT says it does not matter how we divide the world into states; decision theory should give the same verdict. If we rewrite [Newcomb's Problem](#tbl-newcomb) with the states being that Demon predicted correctly, and that Demon predicted incorrectly, EDT gives the same recommendation, for essentially the same reason. GDT, like all causal theories, rejects this. The correct formulation of a decision problem requires that the states, like PA and PB, be causally independent of the choices that Chooser makes. I have a fairly strong version of this independence constraint, which I'll discuss more in @sec-causal.
+
+The 'ratificationism' in causal ratificationism means that Chooser will ratify their choice once they make it, i.e., that Chooser will not regret a rational choice as soon as it is made. Formally, this means that Chooser will only choose A in cases like @tbl-gen-dem-problem if the following inequality holds.[^intro-3]
+
+[^intro-3]: In general, the sum on each side of the inequality ranges over all possible states, so if there are more than two states, there will be more than two summands on either side. And A must be ratified compared to all alternatives, so if there are more than two options, this inequality must hold if you replace B with C, D, or any other choice.
+
+|                                                                                    |
+|:----------------------------------------------------------------------------------:|
+| V(APA) · Pr~A~(PA) + V(APB) · Pr~A~(PB) ≥ V(BPA) · Pr~A~(PA) + V(BPB) · Pr~A~(PB)  |
+
+By Pr~A~ I mean the rational probabilities that Chooser has after choosing A. If there is more than one rational probability that Chooser could have, all that matters is that the inequality hold for one such probability function.[^intro-4] In somewhat technical English, what this inequality says is that once A is chosen, the expected value of choosing A is at least as great as the expected value of having chosen B. That's what I mean by ratifiability; once Chooser selects A, they think it was for the best (or at least equal best) that they chose it.
+
+[^intro-4]: If there is more than one alternative to A, and more than one rational probability function, the rule is that there is some probability function such that A does better than every possible alternative, if we put that function into the inequality above. It's not enough that for each alternative there is some probability function that judges A to be better than the alternative.
+
+-   Paragraph about Harper.
+-   Link to chapter on ratifiability
+-   Something about weak dominance, including example
+-   Something about dynamic choice, including example

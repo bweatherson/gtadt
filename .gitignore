@@ -4,3 +4,7 @@
 .Ruserdata
 /.quarto/
 .DS_Store
+cross-test.html
+cross-test.pdf
+cross-test.qmd
+cross-test_files

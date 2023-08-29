@@ -324,6 +324,8 @@ div.csl-indent {
 
 </header>
 
+<section id="ten-features-of-a-good-decision-theory" class="level2">
+<h2 class="anchored" data-anchor-id="ten-features-of-a-good-decision-theory">Ten Features of a Good Decision Theory</h2>
 <p>Textbook versions of game theory embed a distinctive approach to decision theory. That theory isn’t always made explicit, and it isn’t always clear how it handles some cases. But we can extract an interesting and plausible theory, which I’ll call Gamified Decision Theory (GDT), from these textbooks. There are ten characteristics of GDT (as I’ll understand it) that I will focus on. I’ll quickly list them here, then the bulk of the book will consist of a chapter describing and motivating each of the ten characteristics.</p>
 <ol type="1">
 <li><strong>Idealised</strong>; GDT is a theory of what ideal deciders do.</li>
@@ -339,21 +341,150 @@ div.csl-indent {
 </ol>
 <p>This is not going to be a work of exegesis, poring over game theory texts to show that they really do endorse all ten of these. In fact it wouldn’t take much work to show that they endorse 1-5, so the work wouldn’t be worth doing. And while some textbooks endorse 9 and 10, it would take a lot more investigative work than I’m going to do here to show that anything like a majority of them do. It would be interesting, but not obviously a philosophical question, to see what proportion endorse 6 to 8. But I’m going to set that aside.</p>
 <p>What I do want to argue is that you can find some support for all of these in some game theory textbooks, and that combined they produce a plausible decision theory. While the textbooks don’t all agree, for simplicity I’m going to focus on one book: Giacomo Bonanno’s <em>Game Theory</em> <span class="citation" data-cites="Bonanno2018">(<a href="references.html#ref-Bonanno2018" role="doc-biblioref">Bonanno 2018</a>)</span>. This book has two important virtues: it is philosophically deep, and it is available for free. It isn’t hard to find a game theory text with one or other of these virtues, but few have both. So it will be our primary guide in what follows, along with some primary sources (most of which are referenced in that book).</p>
-<div class="page-columns page-full"><p>Methodologically, this paper differs from most works in decision theory in two ways. It has been a commonplace since <span class="citation" data-cites="Nozick1969">Nozick (<a href="references.html#ref-Nozick1969" role="doc-biblioref">1969</a>)</span> to include demons, who are arbitrarily good at predicting a decision, in problems. Some of the cases here will involve two such demons, each of which is arbitrarily good at predicting a decision, and whose errors are probabilistically independent. Second, I’m going to rely less on intuitions about particular cases, and more on intuitions that certain cases should be treated the same way. This makes sense given the history of the field. There is much less consensus about what to do in Newcomb problems than about which problems are Newcomb problems. Judgments, or intuitions if you prefer, about how to classify problems seem more stable and more reliable, and they will be central to this book.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p><div class="no-row-height column-margin column-container"><li id="fn1"><p><sup>1</sup>&nbsp;I’ll have a more principled argument for scepticism about intuitions in <a href="expectationist.html"><span>Chapter&nbsp;2</span></a>.</p></li></div></div>
+</section>
+<section id="sec-intro-demons" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="sec-intro-demons">Demons</h2>
+<p>A lot of contemporary decision theory revolves around what to do if there is a certain kind of demon around. Following <span class="citation" data-cites="Nozick1969">Nozick (<a href="references.html#ref-Nozick1969" role="doc-biblioref">1969</a>)</span>, such a demon is typically taken to be arbitrarily good at predicting what a human deliberater will do. I’ll call our arbitrary deliberater Chooser, and whenever X is a choice Chooser can make, I’ll use PX to mean that the demon predicts Chooser makes that choice. It’s not so common to have problems where there are two such demons around, but I’ll make heavy use of them, and in such cases I’ll be clear about whether PX means that the first or the second demon predicted that Chooser will do X. These are predictions, and we assume that causation runs from past to future, so what Chooser does has no causal impact on what Demon predicts.</p>
+<p>I’m squeamish about assigning probability 1 to predictions that are causally isolated from the thing being predicted; I have reductionist enough views about causation to think that if a prediction is correct with probability 1, that raises questions about whether causation does really run from past to future in this case. So I prefer to say that the Demon is correct with a probability close enough to 1 that it doesn’t matter for the purposes of the problem being analysed. But this squeamishness, and the associated reductionism about causation, is not part of GDT. If you’re happy with having causally isolated Demons who are correct with probability 1, everything else I say should be acceptable. Indeed, some of the reasoning goes through even more smoothly with perfectly accurate, but causally isolated, Demons.</p>
+<p>A generic binary choice problem involving Chooser and Demon looks like this.</p>
+<div id="tbl-gen-dem-problem" class="anchored">
+<table class="table">
+<caption>Table&nbsp;1: The demonic decision problem generated by a generic symmetric game.</caption>
+<thead>
+<tr class="header">
+<th style="text-align: center;"></th>
+<th style="text-align: center;">PA</th>
+<th style="text-align: center;">PB</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><strong>A</strong></td>
+<td style="text-align: center;"><em>x</em></td>
+<td style="text-align: center;"><em>y</em></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong>B</strong></td>
+<td style="text-align: center;"><em>z</em></td>
+<td style="text-align: center;"><em>w</em></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Chooser selects A or B, Demon predicts the choice, and there are four possible outcomes. I’ll assume that the value of these outcomes can be measured numerically, with greater numbers being better. We’ll come back to this assumption briefly in <a href="idealised.html"><span>Chapter&nbsp;1</span></a>, and more substantively in <a href="expectationist.html"><span>Chapter&nbsp;2</span></a>. Following <span class="citation" data-cites="Nozick1969">Nozick (<a href="references.html#ref-Nozick1969" role="doc-biblioref">1969</a>)</span>, the most common problem that people discuss involving Demon is what Nozick dubbed “Newcomb’s Problem”, after the physicist who suggested the problem to him. A Newcomb problem is an instance of <a href="gad.html#tbl-gen-dem-problem">Table&nbsp;<span>A.3</span></a> satisfying the following constraints.</p>
+<ul>
+<li><em>z</em> &gt; <em>x</em></li>
+<li><em>w</em> &gt; <em>y</em></li>
+<li><em>x</em> &gt;&gt; <em>w</em></li>
+</ul>
+<p>The standard example uses (more or less) the following values, but all that really matters are the three inequalities above.</p>
+<div id="tbl-newcomb" class="anchored">
+<table class="table">
+<caption>Table&nbsp;2: Newcomb’s Problem.</caption>
+<thead>
+<tr class="header">
+<th style="text-align: center;"></th>
+<th style="text-align: center;">PA</th>
+<th style="text-align: center;">PB</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><strong>A</strong></td>
+<td style="text-align: center;">1000</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong>B</strong></td>
+<td style="text-align: center;">1001</td>
+<td style="text-align: center;">1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Option A and B are typically called ‘one-boxing’ and ‘two-boxing’ respectively, because they involve selecting either one or two boxes in the vignette Nozick gives to go along with the story. But what really matters is the schematic form, not the details of the physical setup.</p>
+<p>Nozick distinguishes two approaches to this problem you might take. He doesn’t use the following terms, but they quickly became identified as Evidential Decision Theory, and Causal Decision Theory. Evidential Decision Theory says that the value of an option X for Chooser is given by taking the following sum. For each possible state, i.e., each prediction that may have been made, multiply the value of choosing X and being in that state, by the probability of being in that state given that X is chosen. Compute that product for each state, sum across the results, and that’s the value of the action. So if Demon is 90% reliable, the value of A is 0.9 times 1000, plus 0.1 times 0, equals 900, and the value of B is 0.1 times 1001, plus 0.9 times 1, equals 101. Then Evidential Decision Theory says to prefer more valuable to less valuable options, so it says the choose option A.</p>
+<p>Causal Decision Theory, on the other hand, is moved by the following argument. Whatever Demon has predicted, Chooser is better off choosing B than A. That, says Causal Decision Theory, settles things; Chooser should take option B. I think this is right; Chooser should choose B, and they should do so for this reason. But note that this is not anything like a complete theory of choice. Two people could agree with this little argument and have any number of different views about problems that not so easily disposed of. In this book, especially in <a href="indecisive.html"><span>Chapter&nbsp;6</span></a>, we’ll spend a lot of time on problems like the following.</p>
+<div id="tbl-stag-decision-first" class="anchored page-columns page-full">
+<table class="table">
+<caption>Table&nbsp;3: The Stag Decision.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></caption>
+<thead>
+<tr class="header">
+<th style="text-align: center;"></th>
+<th style="text-align: center;">PA</th>
+<th style="text-align: center;">PB</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><strong>A</strong></td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong>B</strong></td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">2</td>
+</tr>
+</tbody>
+</table>
+<div class="no-row-height column-margin column-container"><li id="fn1"><p><sup>1</sup>&nbsp;I say much more about why the problem has this label in <a href="gad.html"><span>Appendix&nbsp;A</span></a>.</p></li></div></div>
+<p>It turns out that among people who endorse the little argument for choosing B in <a href="#tbl-newcomb">Table&nbsp;<span>2</span></a>, there are at least four distinct views about what to do in <a href="#tbl-stag-decision-first">Table&nbsp;<span>3</span></a>.</p>
+<ol type="1">
+<li>Frank <span class="citation" data-cites="Arntzenius2008">Arntzenius (<a href="references.html#ref-Arntzenius2008" role="doc-biblioref">2008</a>)</span> and Johan E. <span class="citation" data-cites="Gustafsson2011">Gustafsson (<a href="references.html#ref-Gustafsson2011" role="doc-biblioref">2011</a>)</span> recommend Choosing A.</li>
+<li>Ralph <span class="citation" data-cites="Wedgwood2012">Wedgwood (<a href="references.html#ref-Wedgwood2012" role="doc-biblioref">2012</a>)</span>, Dmitri <span class="citation" data-cites="Gallow2020">Gallow (<a href="references.html#ref-Gallow2020" role="doc-biblioref">2020</a>)</span>, Abelard <span class="citation" data-cites="Podgorski2022">Podgorski (<a href="references.html#ref-Podgorski2022" role="doc-biblioref">2022</a>)</span>, and David <span class="citation" data-cites="Barnett2022">Barnett (<a href="references.html#ref-Barnett2022" role="doc-biblioref">2022</a>)</span> recommend choosing B.</li>
+<li>James <span class="citation" data-cites="Joyce2012">Joyce (<a href="references.html#ref-Joyce2012" role="doc-biblioref">2012</a>)</span> says that what Chooser should do is a function of Chooser’s probability distribution over their choices prior to deliberating about what to do.</li>
+<li>Jack <span class="citation" data-cites="Spencer2021b">Spencer (<a href="references.html#ref-Spencer2021b" role="doc-biblioref">2021</a>)</span> and Melissa <span class="citation" data-cites="Fuscond">Fusco (<a href="references.html#ref-Fuscond" role="doc-biblioref">n.d.</a>)</span> say that Chooser can rationally take either option.</li>
+</ol>
+<p>I’m going to side with option 4. Though note that Spencer and Fusco disagree about what Chooser should do in several other cases, most notably in cases like <a href="#tbl-stag-decision-first">Table&nbsp;<span>3</span></a> but with the payouts inverted. (For what it’s worth, I’m going to be more or less on Fusco’s side on these disputes, though with a small difference in emphasis.)</p>
+<p>But I’m not going to argue for option 4, or against any other options, just yet. Rather, I want to start with a terminological point. It’s not obvious, either from the decsription of the problems or the history of the philosophical discussion, which if any of these theories should be called Causal Decision Theory. Some people write as if Joyce’s view is the unique one that should get that name; indeed many of the people I’ve listed above describe themselves as critics of Causal Decision Theory who are offering an alternative to it. I think that’s not the most helpful way to classify views. All of them accept that in <a href="#tbl-newcomb">Table&nbsp;<span>2</span></a> Chooser should choose option B, and that Chooser should choose it because Chooser can’t make a causal difference to whether PA or PB happens, and either way, B is better than A. That’s the core idea behind Causal Decision Theory.</p>
+<ul>
+<li>Not a theory.</li>
+<li>Lots of ways of spelling out.</li>
+<li>Better to save “Causal Decision Theory” for the family, and use other terms for the more particular views.</li>
+<li>This means “Causal Decision Theory” is not a theory, but hey we’re used to that.</li>
+<li>In any case, that’s how I’m using the term - any theory that recommends B because it is causally dominant is a causal decision theory. Capital letters Causal Decision Theory is the name of the family of views. The bulk of this book will be an in-house dispute between these theories, though I will have one somewhat novel argument against EDT.</li>
+</ul>
+<div class="page-columns page-full"><p>Methodologically, this paper differs from most works in decision theory in two ways. It has been a commonplace since <span class="citation" data-cites="Nozick1969">Nozick (<a href="references.html#ref-Nozick1969" role="doc-biblioref">1969</a>)</span> to include demons, who are arbitrarily good at predicting a decision, in problems. Some of the cases here will involve two such demons, each of which is arbitrarily good at predicting a decision, and whose errors are probabilistically independent. Second, I’m going to rely less on intuitions about particular cases, and more on intuitions that certain cases should be treated the same way. This makes sense given the history of the field. There is much less consensus about what to do in Newcomb problems than about which problems are Newcomb problems. Judgments, or intuitions if you prefer, about how to classify problems seem more stable and more reliable, and they will be central to this book.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p><div class="no-row-height column-margin column-container"><li id="fn2"><p><sup>2</sup>&nbsp;I’ll have a more principled argument for scepticism about intuitions in <a href="expectationist.html"><span>Chapter&nbsp;2</span></a>.</p></li></div></div>
 <p>The conclusion of this book is that a permissive version of causal ratificationism is correct. Ideal choosers make choices that they do not immediately regret. With two small caveats, that’s all there is to decision theory; any ratifiable choice is one an ideal agent might make. The first caveat is to with choices over time; the ideal chooser will make choices such that both their individual choices, and the set of choices they make, are ratifiable. This will exclude some possible choices that are individually ratifiable. Second, the ideal chooser will not choose weakly dominated options. These are fairly minor caveats; the resulting theory is not very different from other forms of permissive causal ratificationism, such as that defended by Melissa <span class="citation" data-cites="Fuscond">Fusco (<a href="references.html#ref-Fuscond" role="doc-biblioref">n.d.</a>)</span>. The aim is not to develop a novel theory, indeed part of the point is that the theory is implicit in a bunch of textbooks, but to develop arguments for that theory.</p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="ref-Arntzenius2008" class="csl-entry" role="listitem">
+Arntzenius, Frank. 2008. <span>“No Regrets; or, Edith Piaf Revamps Decision Theory.”</span> <em>Erkenntnis</em> 68 (2): 277–97. <a href="https://doi.org/10.1007/s10670-007-9084-8">https://doi.org/10.1007/s10670-007-9084-8</a>.
+</div>
+<div id="ref-Barnett2022" class="csl-entry" role="listitem">
+Barnett, David James. 2022. <span>“Graded Ratifiability.”</span> <em>Journal of Philosophy</em> 119 (2): 57–88. <a href="https://doi.org/10.5840/jphil202211925">https://doi.org/10.5840/jphil202211925</a>.
+</div>
 <div id="ref-Bonanno2018" class="csl-entry" role="listitem">
 Bonanno, Giacomo. 2018. <span>“Game Theory.”</span> Davis, CA: Kindle Direct Publishing. 2018. <a href="http://faculty.econ.ucdavis.edu/faculty/bonanno/GT_Book.html">http://faculty.econ.ucdavis.edu/faculty/bonanno/GT_Book.html</a>.
 </div>
 <div id="ref-Fuscond" class="csl-entry" role="listitem">
 Fusco, Melissa. n.d. <span>“Absolution of a Causal Decision Theorist.”</span> No<span>û</span>s. <a href="https://doi.org/10.1111/nous.12459">https://doi.org/10.1111/nous.12459</a>.
 </div>
+<div id="ref-Gallow2020" class="csl-entry" role="listitem">
+Gallow, J. Dmitri. 2020. <span>“The Causal Decision Theorist’s Gudie to Managing the News.”</span> <em>The Journal of Philosophy</em> 117 (3): 117–49. <a href="https://doi.org/10.5840/jphil202011739">https://doi.org/10.5840/jphil202011739</a>.
+</div>
+<div id="ref-Gustafsson2011" class="csl-entry" role="listitem">
+Gustafsson, Johan E. 2011. <span>“A Note in Defence of Ratificationism.”</span> <em>Erkenntnis</em> 75 (1): 147–50. <a href="https://doi.org/10.1007/s10670-010-9267-6">https://doi.org/10.1007/s10670-010-9267-6</a>.
+</div>
+<div id="ref-Joyce2012" class="csl-entry" role="listitem">
+Joyce, James M. 2012. <span>“Regret and Instability in Causal Decision Theory.”</span> <em>Synthese</em> 187 (1): 123–45. <a href="https://doi.org/10.1007/s11229-011-0022-6">https://doi.org/10.1007/s11229-011-0022-6</a>.
+</div>
 <div id="ref-Nozick1969" class="csl-entry" role="listitem">
 Nozick, Robert. 1969. <span>“Newcomb’s Problem and Two Principles of Choice.”</span> In <em>Essays in Honor of Carl <span>G</span>. Hempel: A Tribute on the Occasion of His Sixty-Fifth Birthday. Hempel: A Tribute on the Occasion of His Sixty-Fifth Birthday</em>, edited by Nicholas Rescher, 114–46. Riedel: Springer.
 </div>
+<div id="ref-Podgorski2022" class="csl-entry" role="listitem">
+Podgorski, Aberlard. 2022. <span>“Tournament Decision Theory.”</span> <em>No<span>û</span>s</em> 56 (1): 176–203. <a href="https://doi.org/10.1111/nous.12353">https://doi.org/10.1111/nous.12353</a>.
 </div>
+<div id="ref-Spencer2021b" class="csl-entry" role="listitem">
+Spencer, Jack. 2021. <span>“Rational Monism and Rational Pluralism.”</span> <em>Philosophical Studies</em> 178: 1769–1800. <a href="https://doi.org/10.1007/s11098-020-01509-9">https://doi.org/10.1007/s11098-020-01509-9</a>.
+</div>
+<div id="ref-Wedgwood2012" class="csl-entry" role="listitem">
+Wedgwood, Ralph. 2012. <span>“Justified Inference.”</span> <em>Synthese</em> 189 (2): 273–95. <a href="https://doi.org/10.1007/s11229-011-0012-8">https://doi.org/10.1007/s11229-011-0012-8</a>.
+</div>
+</div>
+</section>
 
 
 </main> <!-- /main -->
