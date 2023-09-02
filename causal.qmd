@@ -6,28 +6,80 @@ It shouldn't be controversial to claim that game theory textbooks are committed 
 
 [^10]: See, for instance, the introduction of them on page 136 of @Bonanno2018. And note that we get 135 pages before the notion of an expectation is introduced; that's how much is done simply with dominance reasoning
 
-What's more controversial is that they are right to adopt a kind of causal decision theory (CDT).[^11] In the recent literature, I think there are four main kinds of objections to CDT. First, it leaves one with too little money in Newcomb's Problem. Second, it gives the wrong result in problems like Frustrator [@SpencerWells2019]. Third, it gives the wrong result in asymmetric Death in Damascus cases, as in @Egan2007-EGASCT. Fourth, it gives strange results in Ahmed's *Betting on the Past* and *Betting on the Laws* cases. I'm going to set those problems aside because (a) they require that an agent not always be aware of what actions are possible, and that's inconsistent with the idealisations introduced in @sec-ideal, and (b) they raise questions about just what it means for two things to be causally independent that go beyond the scope of this paper.
+What's more controversial is that they are right to adopt a kind of causal decision theory (CDT).[^11] In the recent literature, I think there are three main kinds of problem that have been raised for CDT. First, it does badly in cases where there are no pure ratifiable strategies. Second, it gives strange results in cases involving betting on grand propositions about the past history of the world, or about the laws of nature. Third, it leaves its proponents will less money in Newcomb's Problem than EDT does. In this chapter I'll respond to each of these in turn.
 
-[^11]: Note that I'm using *CDT* here as the name of a family of theories, not a particular theory. So it's not a great name; Causal Decision Theory is not a theory. Different versions of CDT can, and do, differ in what they say about the Stag Hunt cases I'll discuss in @sec-indecisive. But the label seems entrenched, so I'll use it. In contrast, evidential decision theory, EDT, is a theory; it is a full account of what to do in all cases.
+[^11]: Recall that I'm using 'CDT' here as the name for a family of theories. The point of this chapter will be to argue that the member of the family I prefer is immune to several challenges that have been raised against other members of the family.
 
-The intuitions behind the asymmetric Death in Damascus cases are inconsistent with the Exit Principle that I'll discuss in @sec-indecisive. The Frustrator cases are no problem for a version of CDT that says that idealised agents can always play mixed strategies. Like the game theorists, I will also assume mixed strategies are available, and I'll come back in @sec-mixed to why that assumption should be allowed.
+## No Ratifiable Choices
+
+In some simple cases, neither of the options on the table look very good by the lights of GDT. @tbl-no-ratify-1 is an almost maximally simple case.
+
+|          |   PA    |  PB       |
+|:--------:|:-------:|:---------:|
+|  **A**   |    0    |    100    |
+| **B**    |   100   |     0     |
+
+: A problem with no ratifiable choice {#tbl-no-ratify-1}
+
+Everyone agrees that there is nothing to choose between the options here.^[Almost everyone agrees that Chooser should be indifferent between A and B here. I don't, for reasons that will become important presently, and will be discussed much more in @sec-indecisive. I think A and B should be treated symmetrically, of course, but they are incomparable not equally good.] Things get complicated when A gets somewhat sweetened, say by adding 99 to the payouts if Chooser selects A, resulting in @tbl-no-ratify-2.
+
+|          |   PA    |  PB       |
+|:--------:|:-------:|:---------:|
+|  **A**   |   99    |    199    |
+| **B**    |   100   |     0     |
+
+: An asymmetric problem with no ratifiable choice {#tbl-no-ratify-2}
+
+Many versions of CDT, including GDT, do not unconditionally recommend A in this case. Yet there are many problems with the same structure as @tbl-no-ratify-2 where people have insisted that intuition says A is the only rational choice, and it is a problem for a decision theory that doesn't agree.^[This objection goes back to @Richter1984. The most memorable version of an asymmetric problem with no ratifiable choice is the Psychopath Button case presented by Andy @Egan2007.]
+
+A related objection is raised by Arif @Ahmed2014 and by Jack Spencer and Ian Wells [-@SpencerWells2019]. I'll focus on the latter version, but the points are essentially the same. Start with @tbl-no-ratify-1 and add a third option X. X gets a guaranteed return of 40, and if Demon predicts X, then A and B return 50. They call this problem [The Frustrator](#tbl-frustrator).
+
+|          |   PA    |  PB       |  PX    |
+|:--------:|:-------:|:---------:|:------:|
+|  **A**   |    0    |    100    |   50   |
+| **B**    |   100   |     0     |   50   |
+| **X**    |    40   |    40     |   40   |
+
+: The Frustrator {#tbl-frustrator}
+
+They say, and many seem to agree, that intuition says that taking X is the only rational option. This is a bit surprising since there are two things wrong with X. Or, better, there is one thing wrong with X that has two manifestations which turn out to be equivalent. 
+
+For one thing X is strongly dominated by the mixed strategy of playing A and B with probability 0.5 each. Whatever Demon does, that mixed strategy has an expected return of 50, while X has a guaranteed return of 40.
+
+For another thing, there is no probability distribution over the three states, PA, PB, and PX, such that X maximises expected utility. If Pr(PA) ≥ Pr(PB), then A will have a higher expected return than X, and if Pr(PB) ≥ Pr(PA), then B will have a greater return than X. In game-theoretic terms, X is not a best response [@Bonanno2018, 41]; no matter what Chooser thinks Demon will do, indeed no matter what probability Chooser has over Demon's choices, X is sub-optimal.
+
+The last two things turn out to be equivalent. As @Pearce1984 shows, an option is sometimes a best response iff it is not strictly dominated by any other pure or mixed strategy.^[@Bonanno2018, 207 attributes this to Pearce, who has a rather elegant proof of the result that involves turning the decision problem into a zero-sum game, and applying a famous result of Nash's.] That is, for any option O, there is some probability distribution over the states such that no alternative to O has a higher expected utility iff there is no mixture of alternatives to O that has a higher expected return than O in all states.
+
+GDT's response to these kinds of problems is in two parts. One part is to argue, as I will in @sec-indecisive, that the intuitions behind cases like this are unstable. The other is to argue that in fact the right choice here is to play the mixed strategy. That requires arguing that mixed strategies are available, as I will in @sec-mixed, and indeed saying more about what it is to play a mixed strategy. And then it requires appealing to Pearce's result to say that any option ruled out in cases like [The Frustrator](#tbl-frustrator) is in fact strictly dominated, and so not choice-worthy.
+
+There are a lot of promissory notes in the last paragraph, but hopefully I've said enough to say how GDT will, eventually, respond to cases like these.
+
+## Laws, and other Non-Events
+
+- Cite Ahmed book for the general problem
+- Cite Hedden's recent version
+- Note I'm really dismissing this problem not replying to it
+- Objection 1: This violates the idealising constraints; we don't know what we can do.
+- Objection 2: These are not events, and causal independence requires independent events. (Caveat: All that matters is that it can be treated as an event, as in Spence or ChoKreps. Can it? Eh, maybe.)
+- Objection 3: I think we do maybe cause the laws (or the past). One reason - Humeanism implies future events are partially constitutive of the laws. (Caveat: My response to Hawthorne.) And if determinism is true, then counterfactuals go all funny; maybe the past is counterfactually sensitive to current actions (for yes, see Lewis; for no, see Dorr).
+- General objection: The point is to explain, predict, and maybe evaluate, ordinary people making ordinary decisions. And ordinary people come with ordinary pictures of how the world works. If it turned out the theory didn't even apply to people with non-standard notions of causation, or who applied the notion of causation beyond its intended scope of understanding current day interactions between medium sized dry goods, I wouldn't be too worried.
+
+## War on WAR
 
 That leaves the point that CDT leaves one poorly off in Newcomb's Problem, while other theories, like evidential decision theory (EDT) leave one well off. This isn't a particular mark against CDT, since other theories, like EDT, leave one poorly off in some situations. Here is one such case.
 
 There are two demons, who will predict what Chooser will do. Both of them are arbitrarily good, though not quite perfect, and their errors are independent. Both demons will predict what Chooser does before anything else happens. Chooser will play either the left or right game in @tbl-edt-war.
 
 ::: {#tbl-edt-war layout-ncol="2"}
-|          |         |           |
+|          |   PUp   |  PDown    |
 |:--------:|:-------:|:---------:|
-|          | **PUp** | **PDown** |
 |  **Up**  |    1    |     3     |
 | **Down** |    0    |     2     |
 
 : Demon-1 predicts Down {#tbl-war-left}
 
-|          |         |           |
+|          |   PUp   |  PDown    |
 |:--------:|:-------:|:---------:|
-|          | **PUp** | **PDown** |
 |  **Up**  |  1001   |   1003    |
 | **Down** |  1000   |   1002    |
 
