@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.433">
+<meta name="generator" content="quarto-1.3.340">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -78,8 +78,7 @@ div.csl-indent {
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
+    "search-submit-button-title": "Submit"
   }
 }</script>
 <script type="application/json" class="js-hypothesis-config">
@@ -107,7 +106,7 @@ div.csl-indent {
       <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./causal.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Causal</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -121,7 +120,7 @@ div.csl-indent {
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Game Theory as Decision Theory</a> 
         <div class="sidebar-tools-main tools-wide">
-    <a href="https://github.com/bweatherson/gtadt" rel="" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <a href="https://github.com/bweatherson/gtadt" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
     <div class="dropdown">
       <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download"><i class="bi bi-download"></i></a>
       <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
@@ -328,30 +327,139 @@ div.csl-indent {
 </header>
 
 <div class="page-columns page-full"><p>It shouldn’t be controversial to claim that game theory textbooks are committed a broadly causal version of decision theory.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> For one thing, they always recommend defecting in Prisoners’ Dilemma, even when playing with a twin. As David Lewis showed, this is equivalent to recommending two-boxing in Newcomb’s Problem <span class="citation" data-cites="Lewis1979e">(<a href="references.html#ref-Lewis1979e" role="doc-biblioref">Lewis 1979</a>)</span>. They endorse the causal decision theorist’s signature argument form: the deletion of strongly dominated strategies. Indeed, the typical book introduces this before it introduces anything about probability. When they do get around to probabilities, they tend to define the expected value of a choice in a way only a causal decision theorist could endorse. In particular, they define expected values using unconditional, rather than conditional, probabilities.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> And the probabilities are simply probabilities of states, not probabilities of any kind of counterfactual. Indeed, you can go entire textbooks without even getting a symbol for a counterfactual conditional.</p><div class="no-row-height column-margin column-container"><li id="fn1"><p><sup>1</sup>&nbsp;This point is made by <span class="citation" data-cites="Harper1988">Harper (<a href="references.html#ref-Harper1988" role="doc-biblioref">1988</a>)</span>, and many (though not all) of the conclusions I draw in this paper will be similar to ones he drew.</p></li><li id="fn2"><p><sup>2</sup>&nbsp;See, for instance, the introduction of them on page 136 of <span class="citation" data-cites="Bonanno2018">Bonanno (<a href="references.html#ref-Bonanno2018" role="doc-biblioref">2018</a>)</span>. And note that we get 135 pages before the notion of an expectation is introduced; that’s how much is done simply with dominance reasoning</p></li></div></div>
-<div class="page-columns page-full"><p>What’s more controversial is that they are right to adopt a kind of causal decision theory (CDT).<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> In the recent literature, I think there are four main kinds of objections to CDT. First, it leaves one with too little money in Newcomb’s Problem. Second, it gives the wrong result in problems like Frustrator <span class="citation" data-cites="SpencerWells2019">(<a href="references.html#ref-SpencerWells2019" role="doc-biblioref">Spencer and Wells 2019</a>)</span>. Third, it gives the wrong result in asymmetric Death in Damascus cases, as in <span class="citation" data-cites="Egan2007-EGASCT">Egan (<a href="references.html#ref-Egan2007-EGASCT" role="doc-biblioref">2007</a>)</span>. Fourth, it gives strange results in Ahmed’s <em>Betting on the Past</em> and <em>Betting on the Laws</em> cases. I’m going to set those problems aside because (a) they require that an agent not always be aware of what actions are possible, and that’s inconsistent with the idealisations introduced in <a href="idealised.html"><span>Chapter&nbsp;2</span></a>, and (b) they raise questions about just what it means for two things to be causally independent that go beyond the scope of this paper.</p><div class="no-row-height column-margin column-container"><li id="fn3"><p><sup>3</sup>&nbsp;Note that I’m using <em>CDT</em> here as the name of a family of theories, not a particular theory. So it’s not a great name; Causal Decision Theory is not a theory. Different versions of CDT can, and do, differ in what they say about the Stag Hunt cases I’ll discuss in <a href="indecisive.html"><span>Chapter&nbsp;7</span></a>. But the label seems entrenched, so I’ll use it. In contrast, evidential decision theory, EDT, is a theory; it is a full account of what to do in all cases.</p></li></div></div>
-<p>The intuitions behind the asymmetric Death in Damascus cases are inconsistent with the Exit Principle that I’ll discuss in <a href="indecisive.html"><span>Chapter&nbsp;7</span></a>. The Frustrator cases are no problem for a version of CDT that says that idealised agents can always play mixed strategies. Like the game theorists, I will also assume mixed strategies are available, and I’ll come back in <a href="mix.html"><span>Chapter&nbsp;5</span></a> to why that assumption should be allowed.</p>
+<div class="page-columns page-full"><p>What’s more controversial is that they are right to adopt a kind of causal decision theory (CDT).<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> In the recent literature, I think there are three main kinds of problem that have been raised for CDT. First, it does badly in cases where there are no pure ratifiable strategies. Second, it gives strange results in cases involving betting on grand propositions about the past history of the world, or about the laws of nature. Third, it leaves its proponents will less money in Newcomb’s Problem than EDT does. In this chapter I’ll respond to each of these in turn.</p><div class="no-row-height column-margin column-container"><li id="fn3"><p><sup>3</sup>&nbsp;Recall that I’m using ‘CDT’ here as the name for a family of theories. The point of this chapter will be to argue that the member of the family I prefer is immune to several challenges that have been raised against other members of the family.</p></li></div></div>
+<section id="no-ratifiable-choices" class="level2 page-columns page-full" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="no-ratifiable-choices"><span class="header-section-number">4.1</span> No Ratifiable Choices</h2>
+<p>In some simple cases, neither of the options on the table look very good by the lights of GDT. <a href="#tbl-no-ratify-1">Table&nbsp;<span>4.1</span></a> is an almost maximally simple case.</p>
+<div id="tbl-no-ratify-1" class="anchored">
+<table class="table">
+<caption>Table&nbsp;4.1: A problem with no ratifiable choice</caption>
+<thead>
+<tr class="header">
+<th style="text-align: center;"></th>
+<th style="text-align: center;">PA</th>
+<th style="text-align: center;">PB</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><strong>A</strong></td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">100</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong>B</strong></td>
+<td style="text-align: center;">100</td>
+<td style="text-align: center;">0</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="page-columns page-full"><p>Everyone agrees that there is nothing to choose between the options here.<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> Things get complicated when A gets somewhat sweetened, say by adding 99 to the payouts if Chooser selects A, resulting in <a href="#tbl-no-ratify-2">Table&nbsp;<span>4.2</span></a>.</p><div class="no-row-height column-margin column-container"><li id="fn4"><p><sup>4</sup>&nbsp;Almost everyone agrees that Chooser should be indifferent between A and B here. I don’t, for reasons that will become important presently, and will be discussed much more in <a href="indecisive.html"><span>Chapter&nbsp;7</span></a>. I think A and B should be treated symmetrically, of course, but they are incomparable not equally good.</p></li></div></div>
+<div id="tbl-no-ratify-2" class="anchored">
+<table class="table">
+<caption>Table&nbsp;4.2: An asymmetric problem with no ratifiable choice</caption>
+<thead>
+<tr class="header">
+<th style="text-align: center;"></th>
+<th style="text-align: center;">PA</th>
+<th style="text-align: center;">PB</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><strong>A</strong></td>
+<td style="text-align: center;">99</td>
+<td style="text-align: center;">199</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong>B</strong></td>
+<td style="text-align: center;">100</td>
+<td style="text-align: center;">0</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="page-columns page-full"><p>Many versions of CDT, including GDT, do not unconditionally recommend A in this case. Yet there are many problems with the same structure as <a href="#tbl-no-ratify-2">Table&nbsp;<span>4.2</span></a> where people have insisted that intuition says A is the only rational choice, and it is a problem for a decision theory that doesn’t agree.<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a></p><div class="no-row-height column-margin column-container"><li id="fn5"><p><sup>5</sup>&nbsp;This objection goes back to <span class="citation" data-cites="Richter1984">Richter (<a href="references.html#ref-Richter1984" role="doc-biblioref">1984</a>)</span>. The most memorable version of an asymmetric problem with no ratifiable choice is the Psychopath Button case presented by Andy <span class="citation" data-cites="Egan2007">Egan (<a href="references.html#ref-Egan2007" role="doc-biblioref">2007</a>)</span>.</p></li></div></div>
+<p>A related objection is raised by Arif <span class="citation" data-cites="Ahmed2014a">Ahmed (<a href="references.html#ref-Ahmed2014a" role="doc-biblioref">2014</a>)</span> and by Jack Spencer and Ian Wells <span class="citation" data-cites="SpencerWells2019">(<a href="references.html#ref-SpencerWells2019" role="doc-biblioref">2019</a>)</span>. I’ll focus on the latter version, but the points are essentially the same. Start with <a href="#tbl-no-ratify-1">Table&nbsp;<span>4.1</span></a> and add a third option X. X gets a guaranteed return of 40, and if Demon predicts X, then A and B return 50. They call this problem <a href="#tbl-frustrator">The Frustrator</a>.</p>
+<div id="tbl-frustrator" class="anchored">
+<table class="table">
+<caption>Table&nbsp;4.3: The Frustrator</caption>
+<thead>
+<tr class="header">
+<th style="text-align: center;"></th>
+<th style="text-align: center;">PA</th>
+<th style="text-align: center;">PB</th>
+<th style="text-align: center;">PX</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><strong>A</strong></td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">100</td>
+<td style="text-align: center;">50</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong>B</strong></td>
+<td style="text-align: center;">100</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">50</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><strong>X</strong></td>
+<td style="text-align: center;">40</td>
+<td style="text-align: center;">40</td>
+<td style="text-align: center;">40</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>They say, and many seem to agree, that intuition says that taking X is the only rational option. This is a bit surprising since there are two things wrong with X. Or, better, there is one thing wrong with X that has two manifestations which turn out to be equivalent.</p>
+<p>For one thing X is strongly dominated by the mixed strategy of playing A and B with probability 0.5 each. Whatever Demon does, that mixed strategy has an expected return of 50, while X has a guaranteed return of 40.</p>
+<p>For another thing, there is no probability distribution over the three states, PA, PB, and PX, such that X maximises expected utility. If Pr(PA) ≥ Pr(PB), then A will have a higher expected return than X, and if Pr(PB) ≥ Pr(PA), then B will have a greater return than X. In game-theoretic terms, X is not a best response <span class="citation" data-cites="Bonanno2018">(<a href="references.html#ref-Bonanno2018" role="doc-biblioref">Bonanno 2018, 41</a>)</span>; no matter what Chooser thinks Demon will do, indeed no matter what probability Chooser has over Demon’s choices, X is sub-optimal.</p>
+<div class="page-columns page-full"><p>The last two things turn out to be equivalent. As <span class="citation" data-cites="Pearce1984">Pearce (<a href="references.html#ref-Pearce1984" role="doc-biblioref">1984</a>)</span> shows, an option is sometimes a best response iff it is not strictly dominated by any other pure or mixed strategy.<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a> That is, for any option O, there is some probability distribution over the states such that no alternative to O has a higher expected utility iff there is no mixture of alternatives to O that has a higher expected return than O in all states.</p><div class="no-row-height column-margin column-container"><li id="fn6"><p><sup>6</sup>&nbsp;<span class="citation" data-cites="Bonanno2018">Bonanno (<a href="references.html#ref-Bonanno2018" role="doc-biblioref">2018</a>)</span>, 207 attributes this to Pearce, who has a rather elegant proof of the result that involves turning the decision problem into a zero-sum game, and applying a famous result of Nash’s.</p></li></div></div>
+<p>GDT’s response to these kinds of problems is in two parts. One part is to argue, as I will in <a href="indecisive.html"><span>Chapter&nbsp;7</span></a>, that the intuitions behind cases like this are unstable. The other is to argue that in fact the right choice here is to play the mixed strategy. That requires arguing that mixed strategies are available, as I will in <a href="mix.html"><span>Chapter&nbsp;5</span></a>, and indeed saying more about what it is to play a mixed strategy. And then it requires appealing to Pearce’s result to say that any option ruled out in cases like <a href="#tbl-frustrator">The Frustrator</a> is in fact strictly dominated, and so not choice-worthy.</p>
+<p>There are a lot of promissory notes in the last paragraph, but hopefully I’ve said enough to say how GDT will, eventually, respond to cases like these.</p>
+</section>
+<section id="laws-and-other-non-events" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="laws-and-other-non-events"><span class="header-section-number">4.2</span> Laws, and other Non-Events</h2>
+<ul>
+<li>Cite Ahmed book for the general problem</li>
+<li>Cite Hedden’s recent version</li>
+<li>Note I’m really dismissing this problem not replying to it</li>
+<li>Objection 1: This violates the idealising constraints; we don’t know what we can do.</li>
+<li>Objection 2: These are not events, and causal independence requires independent events. (Caveat: All that matters is that it can be treated as an event, as in Spence or ChoKreps. Can it? Eh, maybe.)</li>
+<li>Objection 3: I think we do maybe cause the laws (or the past). One reason - Humeanism implies future events are partially constitutive of the laws. (Caveat: My response to Hawthorne.) And if determinism is true, then counterfactuals go all funny; maybe the past is counterfactually sensitive to current actions (for yes, see Lewis; for no, see Dorr).</li>
+<li>General objection: The point is to explain, predict, and maybe evaluate, ordinary people making ordinary decisions. And ordinary people come with ordinary pictures of how the world works. If it turned out the theory didn’t even apply to people with non-standard notions of causation, or who applied the notion of causation beyond its intended scope of understanding current day interactions between medium sized dry goods, I wouldn’t be too worried.</li>
+</ul>
+</section>
+<section id="war-on-war" class="level2 page-columns page-full" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="war-on-war"><span class="header-section-number">4.3</span> War on WAR</h2>
 <p>That leaves the point that CDT leaves one poorly off in Newcomb’s Problem, while other theories, like evidential decision theory (EDT) leave one well off. This isn’t a particular mark against CDT, since other theories, like EDT, leave one poorly off in some situations. Here is one such case.</p>
-<p>There are two demons, who will predict what Chooser will do. Both of them are arbitrarily good, though not quite perfect, and their errors are independent. Both demons will predict what Chooser does before anything else happens. Chooser will play either the left or right game in <a href="#tbl-edt-war">Table&nbsp;<span>4.1</span></a>.</p>
+<p>There are two demons, who will predict what Chooser will do. Both of them are arbitrarily good, though not quite perfect, and their errors are independent. Both demons will predict what Chooser does before anything else happens. Chooser will play either the left or right game in <a href="#tbl-edt-war">Table&nbsp;<span>4.4</span></a>.</p>
 <div id="tbl-edt-war" class="tbl-parent quarto-layout-panel anchored">
 <div class="panel-caption table-caption">
-<p>Table&nbsp;4.1: A Newcomb problem with two demons</p>
+<p>Table&nbsp;4.4: A Newcomb problem with two demons</p>
 </div>
 <div class="quarto-layout-row quarto-layout-valign-top">
 <div id="tbl-war-left" class="quarto-layout-cell quarto-layout-cell-subref anchored" data-ref-parent="tbl-edt-war" style="flex-basis: 50.0%;justify-content: center;">
 <table class="table">
 <caption>(a) Demon-1 predicts Down</caption>
+<thead>
+<tr class="header">
+<th style="text-align: center;"></th>
+<th style="text-align: center;">PUp</th>
+<th style="text-align: center;">PDown</th>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: center;"></td>
-<td style="text-align: center;"><strong>PUp</strong></td>
-<td style="text-align: center;"><strong>PDown</strong></td>
-</tr>
-<tr class="even">
 <td style="text-align: center;"><strong>Up</strong></td>
 <td style="text-align: center;">1</td>
 <td style="text-align: center;">3</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: center;"><strong>Down</strong></td>
 <td style="text-align: center;">0</td>
 <td style="text-align: center;">2</td>
@@ -362,18 +470,20 @@ div.csl-indent {
 <div id="tbl-war-right" class="quarto-layout-cell quarto-layout-cell-subref anchored" data-ref-parent="tbl-edt-war" style="flex-basis: 50.0%;justify-content: center;">
 <table class="table">
 <caption>(b) Demon-1 predicts Up</caption>
+<thead>
+<tr class="header">
+<th style="text-align: center;"></th>
+<th style="text-align: center;">PUp</th>
+<th style="text-align: center;">PDown</th>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: center;"></td>
-<td style="text-align: center;"><strong>PUp</strong></td>
-<td style="text-align: center;"><strong>PDown</strong></td>
-</tr>
-<tr class="even">
 <td style="text-align: center;"><strong>Up</strong></td>
 <td style="text-align: center;">1001</td>
 <td style="text-align: center;">1003</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: center;"><strong>Down</strong></td>
 <td style="text-align: center;">1000</td>
 <td style="text-align: center;">1002</td>
@@ -383,13 +493,13 @@ div.csl-indent {
 </div>
 </div>
 </div>
-<p>If Demon-1 predicts that Chooser will play Down, Demon-1 will offer Chooser <a href="#tbl-war-left">Table&nbsp;<span>4.1 (a)</span></a>; if Demon-1 predicts that Chooser will play Up, Demon-1 will offer Chooser <a href="#tbl-war-right">Table&nbsp;<span>4.1 (b)</span></a>. And Chooser knows what they are playing, that’s part of what it is to play a game, so Demon-1’s prediction will be announced, though Demon-2’s prediction will be secret. After Chooser makes a decision, Demon-2’s prediction will be used for determining whether the payout is from column PU or PD. In almost all cases, if Chooser uses CDT, they will get 1001, while if they use EDT, they will get 2. So in this case, CDT will get more than EDT.</p>
+<p>If Demon-1 predicts that Chooser will play Down, Demon-1 will offer Chooser <a href="#tbl-war-left">Table&nbsp;<span>4.4 (a)</span></a>; if Demon-1 predicts that Chooser will play Up, Demon-1 will offer Chooser <a href="#tbl-war-right">Table&nbsp;<span>4.4 (b)</span></a>. And Chooser knows what they are playing, that’s part of what it is to play a game, so Demon-1’s prediction will be announced, though Demon-2’s prediction will be secret. After Chooser makes a decision, Demon-2’s prediction will be used for determining whether the payout is from column PU or PD. In almost all cases, if Chooser uses CDT, they will get 1001, while if they use EDT, they will get 2. So in this case, CDT will get more than EDT.</p>
 <p>This case is not meant as an objection to EDT. It is perfectly fair for the evidential decision theorist to complain that they have simply been the victim of a Demon who intends to punish users of EDT, and reward users of CDT. That seems a perfectly fair complaint. But if the evidential decision theorist makes it, they cannot object when causal decision theorists, such as <span class="citation" data-cites="Lewis1981e">Lewis (<a href="references.html#ref-Lewis1981e" role="doc-biblioref">1981</a>)</span>, use the same language to describe Newcomb’s Problem. The ‘objection’ that CDT leaves one poorly off in one particular case is equally an objection to everyone, and so it is an objection to no one.</p>
 <p>One might object that this is unfair because at the time they make decisions, the EDTer and the CDTer have different evidence. After all, they will know what Demon-1 predicted and it will (almost certainly) be different in each case. Can we get rid of that step? We can, but it’s a bit complicated and has some other complications. The example I’ll use to illustrate this is a version of a signalling game of the kind introduced by <span class="citation" data-cites="Lewis1969a">Lewis (<a href="references.html#ref-Lewis1969a" role="doc-biblioref">1969</a>)</span>. And in particular it’s a version of the broadly adversarial kinds of signalling games that are central to the plot of <span class="citation" data-cites="ChoKreps1987">Cho and Kreps (<a href="references.html#ref-ChoKreps1987" role="doc-biblioref">1987</a>)</span>. It will involve a human Chooser, and a Demon who is excellent at predictions, and the game will have three stages.</p>
-<p>At the first stage a fair coin is flipped, and the result shown to Chooser, but not to Demon. At the second stage, Chooser will choose Up or Down, and the choice will be publicly announced. At the third stage, Demon will try to guess what the coin showed. Demon knows the payoff table I’m about to show you, and is arbitrarily good at predicting Chooser’s strategy for what to do given how the coin appears. This prediction is causally independent of Chooser’s choice, but Demon’s guess is not independent; it could be affected by the choice. The payoffs to each player are a function of what happens at each of the three steps, and are given by table <a href="#tbl-payoffs-demon-coin">Table&nbsp;<span>4.2</span></a>. (The payoffs here are all in utils.)</p>
+<p>At the first stage a fair coin is flipped, and the result shown to Chooser, but not to Demon. At the second stage, Chooser will choose Up or Down, and the choice will be publicly announced. At the third stage, Demon will try to guess what the coin showed. Demon knows the payoff table I’m about to show you, and is arbitrarily good at predicting Chooser’s strategy for what to do given how the coin appears. This prediction is causally independent of Chooser’s choice, but Demon’s guess is not independent; it could be affected by the choice. The payoffs to each player are a function of what happens at each of the three steps, and are given by table <a href="#tbl-payoffs-demon-coin">Table&nbsp;<span>4.5</span></a>. (The payoffs here are all in utils.)</p>
 <div id="tbl-payoffs-demon-coin" class="anchored">
 <table class="table">
-<caption>Table&nbsp;4.2: Payouts for the coins and signals game</caption>
+<caption>Table&nbsp;4.5: Payouts for the coins and signals game</caption>
 <thead>
 <tr class="header">
 <th style="text-align: center;">Coin</th>
@@ -470,11 +580,11 @@ div.csl-indent {
 </div>
 </div>
 </div>
-<div class="page-columns page-full"><p>I intend the Demon to be a rational player in a game-theoretic sense. But to translate that into decision-theory terms, it’s important to make a few stipulations.<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> Demon predicts Chooser’s strategy, that is Chooser’s plan about what to do if the coin lands Heads and what to do if the coin lands Tails, before the game starts. They make their guess about how the coin landed after seeing Chooser’s actual choice, and updating their prior beliefs (about both the coin and Chooser) with this information. If they predict that Chooser will do the same thing however the coin lands, they will have no useful information about the coin, so they will flip their own coin to make a guess. In that case it will be 50/50 whether Demon says Heads or Tails. Also, Demon is surprised by what Chooser does, i.e., if they had predicted Chooser would do one thing however the coin lands but Chooser does the other thing, Demon will also flip their own coin to make a guess.<span class="citation" data-cites="ChoKreps1987">(^A key part of the discussion in <a href="references.html#ref-ChoKreps1987" role="doc-biblioref">Cho and Kreps 1987</a> is that in sone cases we can say substantuve things about what a player will do if they are surprised in this sense. But <a href="references.html#fig-second-anti-war" role="doc-biblioref">Figure&nbsp;<span>4.1</span></a> is not one of these cases.)</span> Finally, Demon’s predictions are arbitrarily accurate. For simplicity, I’ll assume Demon is correct with probability 1, though it doesn’t matter if you allow for probability <span class="math inline">\(\varepsilon\)</span> that Demon gets it wrong.</p><div class="no-row-height column-margin column-container"><li id="fn4"><p><sup>4</sup>&nbsp;I’ll make the same stipulations in subsequent cases that involve Demon and games that unfold over time.</p></li></div></div>
-<p>Now I want to analyse what Chooser will do if they follow EDT. It should be fairly clear that if the coin lands Heads, Chooser should say Up. The worst possible return from Up is 40, the best possible return from Down is 0. So that’s what any theory would recommend, and Chooser will do that whether or not they follow EDT. Indeed, this is so clear that we should assume Demon will predict that Chooser will play Up if the coin lands Heads. So what happens if the coin lands Tails? There are four possibilities here: the two things Chooser might do crossed with the two predictions Demon might make. The expected return to Chooser in these four possibilities is given in <a href="#tbl-payout-if-tails">Table&nbsp;<span>4.3</span></a>.</p>
+<div class="page-columns page-full"><p>I intend the Demon to be a rational player in a game-theoretic sense. But to translate that into decision-theory terms, it’s important to make a few stipulations.<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a> Demon predicts Chooser’s strategy, that is Chooser’s plan about what to do if the coin lands Heads and what to do if the coin lands Tails, before the game starts. They make their guess about how the coin landed after seeing Chooser’s actual choice, and updating their prior beliefs (about both the coin and Chooser) with this information. If they predict that Chooser will do the same thing however the coin lands, they will have no useful information about the coin, so they will flip their own coin to make a guess. In that case it will be 50/50 whether Demon says Heads or Tails. Also, Demon is surprised by what Chooser does, i.e., if they had predicted Chooser would do one thing however the coin lands but Chooser does the other thing, Demon will also flip their own coin to make a guess.<span class="citation" data-cites="ChoKreps1987">(^A key part of the discussion in <a href="references.html#ref-ChoKreps1987" role="doc-biblioref">Cho and Kreps 1987</a> is that in sone cases we can say substantuve things about what a player will do if they are surprised in this sense. But <a href="references.html#fig-second-anti-war" role="doc-biblioref">Figure&nbsp;<span>4.1</span></a> is not one of these cases.)</span> Finally, Demon’s predictions are arbitrarily accurate. For simplicity, I’ll assume Demon is correct with probability 1, though it doesn’t matter if you allow for probability <span class="math inline">\(\varepsilon\)</span> that Demon gets it wrong.</p><div class="no-row-height column-margin column-container"><li id="fn7"><p><sup>7</sup>&nbsp;I’ll make the same stipulations in subsequent cases that involve Demon and games that unfold over time.</p></li></div></div>
+<p>Now I want to analyse what Chooser will do if they follow EDT. It should be fairly clear that if the coin lands Heads, Chooser should say Up. The worst possible return from Up is 40, the best possible return from Down is 0. So that’s what any theory would recommend, and Chooser will do that whether or not they follow EDT. Indeed, this is so clear that we should assume Demon will predict that Chooser will play Up if the coin lands Heads. So what happens if the coin lands Tails? There are four possibilities here: the two things Chooser might do crossed with the two predictions Demon might make. The expected return to Chooser in these four possibilities is given in <a href="#tbl-payout-if-tails">Table&nbsp;<span>4.6</span></a>.</p>
 <div id="tbl-payout-if-tails" class="anchored">
 <table class="table">
-<caption>Table&nbsp;4.3: The expected payout to Chooser in four cases if the coin lands Tails</caption>
+<caption>Table&nbsp;4.6: The expected payout to Chooser in four cases if the coin lands Tails</caption>
 <thead>
 <tr class="header">
 <th style="text-align: center;"></th>
@@ -496,24 +606,27 @@ div.csl-indent {
 </tbody>
 </table>
 </div>
-<p>The numbers in <a href="#tbl-payout-if-tails">Table&nbsp;<span>4.3</span></a> aren’t entirely obvious; I’ll spell out how I got them.</p>
+<p>The numbers in <a href="#tbl-payout-if-tails">Table&nbsp;<span>4.6</span></a> aren’t entirely obvious; I’ll spell out how I got them.</p>
 <ul>
-<li>If Demon predicts Up, Demon will flip a coin. That’s because they’ll either get no information (if Chooser plays Up), or will be surprised (if Chooser plays Down). So Chooser will get the average of lines 5 and 6 in <a href="#tbl-payoffs-demon-coin">Table&nbsp;<span>4.2</span></a> if they play Up, and the average of lines 7 and 8 if they play Down.</li>
-<li>If Demon predicts Down, and Chooser plays Up, Demon will think (falsely) that the coin must have landed Heads, since Demon will have predicted that Chooser will only say Up if Heads. So Demon will say Heads. So we’ll definitely be at line 5 of <a href="#tbl-payoffs-demon-coin">Table&nbsp;<span>4.2</span></a>, where Chooser gets 40.</li>
-<li>If Demon predicts Down, and Chooser plays Down, Demon will think (correctly) that the coin must have landed Tails. So Demon will say that, and we’ll be at line 8 of <a href="#tbl-payoffs-demon-coin">Table&nbsp;<span>4.2</span></a>.</li>
+<li>If Demon predicts Up, Demon will flip a coin. That’s because they’ll either get no information (if Chooser plays Up), or will be surprised (if Chooser plays Down). So Chooser will get the average of lines 5 and 6 in <a href="#tbl-payoffs-demon-coin">Table&nbsp;<span>4.5</span></a> if they play Up, and the average of lines 7 and 8 if they play Down.</li>
+<li>If Demon predicts Down, and Chooser plays Up, Demon will think (falsely) that the coin must have landed Heads, since Demon will have predicted that Chooser will only say Up if Heads. So Demon will say Heads. So we’ll definitely be at line 5 of <a href="#tbl-payoffs-demon-coin">Table&nbsp;<span>4.5</span></a>, where Chooser gets 40.</li>
+<li>If Demon predicts Down, and Chooser plays Down, Demon will think (correctly) that the coin must have landed Tails. So Demon will say that, and we’ll be at line 8 of <a href="#tbl-payoffs-demon-coin">Table&nbsp;<span>4.5</span></a>.</li>
 </ul>
-<p>In a decision problem like <a href="#tbl-payout-if-tails">Table&nbsp;<span>4.3</span></a>, EDT says that all that matters is which of the top-left and bottom-right cells is largest. In this case, it’s the bottom-right, so EDT says to play Down. That isn’t absurd in this case; it gets the best possible payout of 44. So that’s our analysis of the game for EDT: Chooser plays Up if Heads, Down if Tails, gets 40 if Heads and 44 if Tails (plus/minus a small amount in expectation if Demon has <span class="math inline">\(\varepsilon\)</span> chance of being wrong), and on average gets 42.</p>
-<p>GDT does not give any clear verdict about what to do in <a href="#tbl-payout-if-tails">Table&nbsp;<span>4.3</span></a>; it says either Up or Down is permissible. So following GDT doesn’t mean you’ll do better than EDT in this game; you might do exactly as well as EDT. But all it takes to get a “Why Ain’cha Rich?” argument going is to show that one theory does better than EDT. And the version of CDT that Dmitri <span class="citation" data-cites="Gallow2020">Gallow (<a href="references.html#ref-Gallow2020" role="doc-biblioref">2020</a>)</span> endorses implies that one should play Up in <a href="#tbl-payout-if-tails">Table&nbsp;<span>4.3</span></a>. So someone following his theory will play Up however the coin lands. So Demon will always flip a coin to decide what to do. So all of the top four outcomes in <a href="#fig-second-anti-war">Figure&nbsp;<span>4.1</span></a> are equally likely, and Chooser will on average get a return of 127. Since 127&nbsp;&gt;&nbsp;42, that means that on average if Chooser follows Gallow’s theory, they will on average be much richer than if they follow EDT. So if “Why Ain’Cha Rich?”, they show that EDT should be rejected in favor of Gallow’s theory.</p>
+<p>In a decision problem like <a href="#tbl-payout-if-tails">Table&nbsp;<span>4.6</span></a>, EDT says that all that matters is which of the top-left and bottom-right cells is largest. In this case, it’s the bottom-right, so EDT says to play Down. That isn’t absurd in this case; it gets the best possible payout of 44. So that’s our analysis of the game for EDT: Chooser plays Up if Heads, Down if Tails, gets 40 if Heads and 44 if Tails (plus/minus a small amount in expectation if Demon has <span class="math inline">\(\varepsilon\)</span> chance of being wrong), and on average gets 42.</p>
+<p>GDT does not give any clear verdict about what to do in <a href="#tbl-payout-if-tails">Table&nbsp;<span>4.6</span></a>; it says either Up or Down is permissible. So following GDT doesn’t mean you’ll do better than EDT in this game; you might do exactly as well as EDT. But all it takes to get a “Why Ain’cha Rich?” argument going is to show that one theory does better than EDT. And the version of CDT that Dmitri <span class="citation" data-cites="Gallow2020">Gallow (<a href="references.html#ref-Gallow2020" role="doc-biblioref">2020</a>)</span> endorses implies that one should play Up in <a href="#tbl-payout-if-tails">Table&nbsp;<span>4.6</span></a>. So someone following his theory will play Up however the coin lands. So Demon will always flip a coin to decide what to do. So all of the top four outcomes in <a href="#fig-second-anti-war">Figure&nbsp;<span>4.1</span></a> are equally likely, and Chooser will on average get a return of 127. Since 127&nbsp;&gt;&nbsp;42, that means that on average if Chooser follows Gallow’s theory, they will on average be much richer than if they follow EDT. So if “Why Ain’Cha Rich?”, they show that EDT should be rejected in favor of Gallow’s theory.</p>
 <p>Ian <span class="citation" data-cites="Wells2019">Wells (<a href="references.html#ref-Wells2019" role="doc-biblioref">2019</a>)</span> has earlier offered an example where EDT predictably does worse than (all versions of) CDT. His case involves a two-step game, where the EDTer will, at step 2, make a decision that everyone, whether they believe in CDT or EDT or any other plausible theory, think is bad from the perspective of the player at step 1. At round 1 the players can pay to tie their hands at round 2, and the EDTer will make this payment. (As would the CDTer who thinks they will become an EDTer before round 2 starts.) Arif <span class="citation" data-cites="Ahmed2020">Ahmed (<a href="references.html#ref-Ahmed2020" role="doc-biblioref">2020</a>)</span> responds that this is an unfair criticism. In Wells’s cases, he says, the EDT and CDT deciders are not in equivalent situations in round one. The EDTer knows that they will use EDT in later rounds, and the CDTer knows that they will use CDT in later rounds. So they have different evidence about what will happen at some later time in a way that’s relevant to their current decision, so it’s not a like-for-like comparison between CDT and EDT at the first stage.</p>
 <p>I don’t think this is a fair criticism of Wells, or a successful defence of EDT. But even if you think EDT survives Wells’s criticisms, that response doesn’t work here. Chooser will definitely choose Up if the coin lands Heads, whether they follow EDT, Gallow’s theory, or any remotely plausible theory. And this is common knowledge. Demon knows this, and Chooser knows that Demon knows it, and so on. The only difference is that if Chooser follows EDT, they will play Down if Tails. And that’s good as far as it goes; they’ll probably get the highest possible payoff they can get at that point. More importantly for this debate, they will have the same subjective states if Tails is true whether they follow EDT, Gallow’s theory, or anything else. They will believe that they would have played Up if Heads, and that the Demon would have predicted that. So the different choices they make if the coin lands Tails can’t be traced back to differences in their subjective states. So the complaint that Ahmed makes about Wells’s examples can’t be made here (even setting aside the question of whether it is fair complaint). Nonetheless, the EDTer ends up with less money in the long run than the follower of Gallow’s theory when playing this game.</p>
 <p>All of this is to say that while followers of EDT end up with more money than followers of causal theories <em>when playing Newcomb’s Problem</em>, this is not because of the distinctive money-making powers of EDT. It’s because Newcomb’s Problem is designed to leave causally based decision theories badly off. Design a case to leave evidential theories badly off, and they’ll be badly off. The “Why Ain’Cha Rich?” consideration tells against everyone, so it overgenerates, so it should be rejected.</p>
-<p>Well, not quite everyone. It doesn’t tell against some kind of ‘resolute’ decision theories which recommend one-box in Newcomb’s Problem, Up in <a href="#tbl-edt-war">Table&nbsp;<span>4.1</span></a>, and always Up in <a href="#fig-second-anti-war">Figure&nbsp;<span>4.1</span></a>. Those theories leave their proponents well off in all three cases. The so-called ‘foundational decision theory’ that <span class="citation" data-cites="LevinsteinSoares2020">Levinstein and Soares (<a href="references.html#ref-LevinsteinSoares2020" role="doc-biblioref">2020</a>)</span> endorse also endorse the same three choices. But those theories are vulnerable to much more serious objections, that I’ll come to in <a href="dual.html"><span>Chapter&nbsp;8</span></a>.</p>
+<p>Well, not quite everyone. It doesn’t tell against some kind of ‘resolute’ decision theories which recommend one-box in Newcomb’s Problem, Up in <a href="#tbl-edt-war">Table&nbsp;<span>4.4</span></a>, and always Up in <a href="#fig-second-anti-war">Figure&nbsp;<span>4.1</span></a>. Those theories leave their proponents well off in all three cases. The so-called ‘foundational decision theory’ that <span class="citation" data-cites="LevinsteinSoares2020">Levinstein and Soares (<a href="references.html#ref-LevinsteinSoares2020" role="doc-biblioref">2020</a>)</span> endorse also endorse the same three choices. But those theories are vulnerable to much more serious objections, that I’ll come to in <a href="dual.html"><span>Chapter&nbsp;8</span></a>.</p>
 <p>So I conclude that there is no good objection to adopting a broadly causal decision theory, much as the game theorists do. But which version of CDT do they adopt, and are they right to do so? That will take us much more time.</p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="ref-Ahmed2014a" class="csl-entry" role="listitem">
+Ahmed, Arif. 2014. <span>“Dicing with Death.”</span> <em>Analysis</em> 74 (4): 587–92. <a href="https://doi.org/10.1093/analys/anu084">https://doi.org/10.1093/analys/anu084</a>.
+</div>
 <div id="ref-Ahmed2020" class="csl-entry" role="listitem">
-Ahmed, Arif. 2020. <span>“Equal Opportunities in Newcomb’s Problem and Elsewhere.”</span> <em>Mind</em> 129 (515): 867–86. <a href="https://doi.org/10.1093/mind/fzz073">https://doi.org/10.1093/mind/fzz073</a>.
+———. 2020. <span>“Equal Opportunities in Newcomb’s Problem and Elsewhere.”</span> <em>Mind</em> 129 (515): 867–86. <a href="https://doi.org/10.1093/mind/fzz073">https://doi.org/10.1093/mind/fzz073</a>.
 </div>
 <div id="ref-Bonanno2018" class="csl-entry" role="listitem">
 Bonanno, Giacomo. 2018. <span>“Game Theory.”</span> Davis, CA: Kindle Direct Publishing. 2018. <a href="http://faculty.econ.ucdavis.edu/faculty/bonanno/GT_Book.html">http://faculty.econ.ucdavis.edu/faculty/bonanno/GT_Book.html</a>.
@@ -521,8 +634,8 @@ Bonanno, Giacomo. 2018. <span>“Game Theory.”</span> Davis, CA: Kindle Direct
 <div id="ref-ChoKreps1987" class="csl-entry" role="listitem">
 Cho, In-Koo, and David M. Kreps. 1987. <span>“Signalling Games and Stable Equilibria.”</span> <em>The Quarterly Journal of Economics</em> 102 (2): 179–221. <a href="https://doi.org/10.2307/1885060">https://doi.org/10.2307/1885060</a>.
 </div>
-<div id="ref-Egan2007-EGASCT" class="csl-entry" role="listitem">
-Egan, Andy. 2007. <span>“<span class="nocase">Some Counterexamples to Causal Decision Theory</span>.”</span> <em>Philosophical Review</em> 116 (1): 93–114. <a href="https://doi.org/10.1215/00318108-2006-023">https://doi.org/10.1215/00318108-2006-023</a>.
+<div id="ref-Egan2007" class="csl-entry" role="listitem">
+Egan, Andy. 2007. <span>“Some Counterexamples to Causal Decision Theory.”</span> <em>Philosophical Review</em> 116 (1): 93–114. <a href="https://doi.org/10.1215/00318108-2006-023">https://doi.org/10.1215/00318108-2006-023</a>.
 </div>
 <div id="ref-Gallow2020" class="csl-entry" role="listitem">
 Gallow, J. Dmitri. 2020. <span>“The Causal Decision Theorist’s Gudie to Managing the News.”</span> <em>The Journal of Philosophy</em> 117 (3): 117–49. <a href="https://doi.org/10.5840/jphil202011739">https://doi.org/10.5840/jphil202011739</a>.
@@ -542,6 +655,12 @@ Lewis, David. 1969. <em>Convention: A Philosophical Study</em>. Cambridge: Harva
 <div id="ref-Lewis1981e" class="csl-entry" role="listitem">
 ———. 1981. <span>“Why Ain’cha Rich?”</span> <em>No<span>û</span>s</em> 15 (3): 377–80. <a href="https://doi.org/10.2307/2215439">https://doi.org/10.2307/2215439</a>.
 </div>
+<div id="ref-Pearce1984" class="csl-entry" role="listitem">
+Pearce, David G. 1984. <span>“Rationalizable Strategic Behavior and the Problem of Perfection.”</span> <em>Econometrica</em> 52 (4): 1029–50. <a href="https://doi.org/10.2307/1911197">https://doi.org/10.2307/1911197</a>.
+</div>
+<div id="ref-Richter1984" class="csl-entry" role="listitem">
+Richter, Reed. 1984. <span>“Rationality Revisited.”</span> <em>Australasian Journal of Philosophy</em> 62 (4): 393–404. <a href="https://doi.org/10.1080/00048408412341601">https://doi.org/10.1080/00048408412341601</a>.
+</div>
 <div id="ref-SpencerWells2019" class="csl-entry" role="listitem">
 Spencer, Jack, and Ian Wells. 2019. <span>“Why Take Both Boxes?”</span> <em><span>P</span>hilosophy and <span>P</span>henomenological <span>R</span>esearch</em> 99 (1): 27–48. <a href="https://doi.org/10.1111/phpr.12466">https://doi.org/10.1111/phpr.12466</a>.
 </div>
@@ -549,6 +668,7 @@ Spencer, Jack, and Ian Wells. 2019. <span>“Why Take Both Boxes?”</span> <em>
 Wells, Ian. 2019. <span>“Equal Opportunity and Newcomb’s Problem.”</span> <em>Mind</em> 128 (510): 429–57. <a href="https://doi.org/10.1093/mind/fzx018">https://doi.org/10.1093/mind/fzx018</a>.
 </div>
 </div>
+</section>
 
 
 </main> <!-- /main -->
