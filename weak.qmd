@@ -2,13 +2,14 @@
 
 An option *a* weakly dominates another option *b* if *a* is at least as good as *b* in all states, and better than *b* in some states. Just what role weak dominance has in decision theory is one of the most unsettled topics in game theory. There are three natural positions, and all of them are occupied. One is that weak dominance is of no significance. A second is that ideal agents do not choose weakly dominated options, and that's the only role weak dominance has. And a third is that ideal agents do not choose options that are eliminated by an iterative process of deleting weakly dominated strategies. I'm going to argue in favour of the middle position. I'm not going to try to argue this is the standard game-theoretic move; as I said, I think you can find prominent support for all three options. To argue for the middle position requires making two cases: first, that weakly dominated options are not ideally chosen; and second, that options that would be eliminated by iterative deletion of weakly dominated options are ideally chosen. I'll argue for these in turn.
 
+## Avoid Weakly Dominated Options {#sec-weak-avoid}
+
 Start with @tbl-first-wd; what would the ideal chooser do?
 
-|       |        |        |
-|:-----:|:------:|:------:|
-|       | **PU** | **PD** |
-| **U** |   1    |   1    |
-| **D** |   0    |   1    |
+|       | PU  | PD  |
+|:-----:|:---:|:---:|
+| **U** |  1  |  1  |
+| **D** |  0  |  1  |
 
 : A ratifiable, weakly dominated, option. {#tbl-first-wd}
 
@@ -20,16 +21,17 @@ Second, playing D involves taking on an uncompensated risk. It might be that we 
 
 Third, it has been argued by game theorists that we should always allow for the possibility that one or other player in a game will make some kind of performance error. This idea is at the heart of Reinhard Selten's notion of trembling hand equilibrium [@Selten1975], and Roger Myerson's notion of proper equilibrium [@Myerson1978]. If a strategy would not make sense if the probability of an error by one or other player was positive, even if it was arbitrarily low, it should not be played. Since D only makes sense if the probability of an error by Demon is 0, that means D should not be played.
 
-If it is good to remove weakly dominated options, then one might think it follows straight away that it is good to keep doing this.[^32] Think about @tbl-wd-itd.
+## Against Iterative Deletion {#sec-weak-iterate}
 
-[^32]: This suggestion is made by, for example @HareHedden2015.
+If it is good to remove weakly dominated options, then one might think it follows straight away that it is good to keep doing this.[^weak-1] Think about @tbl-wd-itd.
 
-|       |        |        |        |
-|:-----:|:------:|:------:|:------:|
-|       | **PU** | **PD** | **PX** |
-| **U** |   1    |   1    |   0    |
-| **D** |   0    |   1    |   1    |
-| **X** |   0    |   0    |   1    |
+[^weak-1]: This suggestion is made by, for example @HareHedden2015.
+
+|       | PU  | PD  | PX  |
+|:-----:|:---:|:---:|:---:|
+| **U** |  1  |  1  |  0  |
+| **D** |  0  |  1  |  1  |
+| **X** |  0  |  0  |  1  |
 
 : An example of iterated weak dominance. {#tbl-wd-itd}
 
@@ -39,9 +41,41 @@ So does it make sense to say that U is the only play in @tbl-wd-itd? I think not
 
 First, as Bonanno [-@Bonanno2018, 37] points out, in general iterative deletion of weakly dominated strategies is not a well defined decision procedure. It turns out that in two player games, the order that weakly dominated strategies are deleted can affect which choices one ends up with. There are ways of fixing this problem, by specifying one or other order of deletion as canonical, but they all feel somewhat artificial.
 
-Second, iterative deletion of weakly dominated strategies leads to a single solution to the money-burning game described by @BenPorathDekel1992. But, as @Stalnaker1998 showed, this game has multiple rational solutions, and arguments to the contrary turn on conflating indicative and subjunctive conditionals.
+Second, iterative deletion of weakly dominated strategies (combined with the [dual mandate](dual.qmd) approach to dynamic choice) leads to a single solution to the [money burning game](#tbl-money-burning) described by @BenPorathDekel1992. The money burning game has two players, and two stages. At stage 1, Column will have the choice to burn or not burn \$20. The burning will be public, so Row will see what Column does, or does not do. At stage 2, Row and Column will play the simultaneous move game in @tbl-money-burning-part-two.
+
+|       |     A      |     B      |
+|:-----:|:----------:|:----------:|
+| **A** | \$10, \$40 |  \$0, \$0  |
+| **B** |  \$0, \$0  | \$40, \$10 |
+
+: The second stage of the money burning game {#tbl-money-burning-part-two}
+
+Here is one way to think about the game. I'm going to number the steps here so we can refer back to them later.
+
+1.  It would be clearly irrational to burn the money and play B, since that results in a maximum possible payout to Column of -\$10, when any strategy that involves not burning the money results in a minimum payout of \$0.
+2.  So Row can infer that if Column burns the money, they are playing A.
+3.  So if Column burns the money, Row would maximise their own return by also playing A.
+4.  Since Column can figure out everything in steps 1-3, it follows that burning the money will get them a return of \$20.
+5.  Since burning the money gets \$20, and playing B gets at most \$10, it is irrational to ever play B.
+6.  Since Row can figure out steps 1-5, it follows that Row knows that Column will play A.
+7.  Hence it is always rational for Row to play A.
+8.  Hence Column does not need to burn the money, since Row will play A, and hence playing A without burning will get them \$40.
+
+So this looks like an interesting result. By just giving Column the option of burning the money, we guarantee that Column will get their best possible outcome, even though they don't actually use that option. We'll come back to whether this reasoning works. (Spoiler alert: I'm going to endorse an existing objection to it.)
+
+Let's look at the argument in something like strategic form. For simplicity, I'm going to assume Column has four strategies: whether to burn or not burn, crossed with whether to play A or B in @tbl-money-burning-part-two. Strictly speaking, we should distinguish strategies that differ in what Column is disposed to do in the non-taken option at stage 1, but such distinctions don't matter to the analysis, and end up cluttering the table. Row has four strategies: two choices for what to do if Column burns the money, crossed with two choices for what to do if Column keeps the money.
+
+So as not to confuse the Burning with playing option B, I'll write **L** for Lighting the money on fire, and **K** for Keeping the money. So Column's strategies will be one of L and K, followed by one of A and B. For Row, I'll write XY for the strategy of doing option X if Column lights the money on fire, and option Y if Column keeps the money. So AB is the strategy of doing A iff they see the money lit on fire. Given that, here is the payout table. (To reduce clutter, I'll write the payouts in dollars, but will leave off the dollar signs.)
+
+|       |     A      |     B      |
+|:-----:|:----------:|:----------:|
+| **A** | \$10, \$40 |  \$0, \$0  |
+| **B** |  \$0, \$0  | \$40, \$10 |
+
+: The second stage of the money burning game {#tbl-money-burning-part-two}
+
+But, as @Stalnaker1998 showed, this game has multiple rational solutions, and arguments to the contrary turn on conflating indicative and subjunctive conditionals.
 
 Third, the reasons we gave for avoiding the weakly dominated option in @tbl-first-wd simply don't carry over to @tbl-wd-itd. In the latter game, D is not an uncompensated risk. It's true that D loses if Demon makes an incorrect prediction and plays PU. But U loses if Demon makes an incorrect prediction and plays PX. Unless one thinks that PX is particularly unlikely to be played, it seems U and D are just as risky as each other. So both of them look like rational plays.
 
 So I conclude that we just need one round of deleting weakly dominated options to get rid of irrational plays. D is irrational in @tbl-first-wd, but not in @tbl-wd-itd.
-
