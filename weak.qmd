@@ -41,7 +41,9 @@ So does it make sense to say that U is the only play in @tbl-wd-itd? I think not
 
 First, as Bonanno [-@Bonanno2018, 37] points out, in general iterative deletion of weakly dominated strategies is not a well defined decision procedure. It turns out that in two player games, the order that weakly dominated strategies are deleted can affect which choices one ends up with. There are ways of fixing this problem, by specifying one or other order of deletion as canonical, but they all feel somewhat artificial.
 
-Second, iterative deletion of weakly dominated strategies (combined with the [dual mandate](dual.qmd) approach to dynamic choice) leads to a single solution to the [money burning game](#tbl-money-burning) described by @BenPorathDekel1992. The money burning game has two players, and two stages. At stage 1, Column will have the choice to burn or not burn \$20. The burning will be public, so Row will see what Column does, or does not do. At stage 2, Row and Column will play the simultaneous move game in @tbl-money-burning-part-two.
+Second, the reasons we gave for avoiding the weakly dominated option in @tbl-first-wd simply don't carry over to @tbl-wd-itd. In the latter game, D is not an uncompensated risk. It's true that D loses if Demon makes an incorrect prediction and plays PU. But U loses if Demon makes an incorrect prediction and plays PX. Unless one thinks that PX is particularly unlikely to be played, it seems U and D are just as risky as each other. So both of them look like rational plays.
+
+Third, iterative deletion of weakly dominated strategies (combined with the [dual mandate](dual.qmd) approach to dynamic choice) leads to a single solution to the [money burning game](#tbl-money-burning) described by @BenPorathDekel1992. The money burning game has two players, and two stages. At stage 1, Column will have the choice to burn or not burn \$20. The burning will be public, so Row will see what Column does, or does not do. At stage 2, Row and Column will play the simultaneous move game in @tbl-money-burning-part-two.
 
 |       |     A      |     B      |
 |:-----:|:----------:|:----------:|
@@ -52,30 +54,73 @@ Second, iterative deletion of weakly dominated strategies (combined with the [du
 
 Here is one way to think about the game. I'm going to number the steps here so we can refer back to them later.
 
-1.  It would be clearly irrational to burn the money and play B, since that results in a maximum possible payout to Column of -\$10, when any strategy that involves not burning the money results in a minimum payout of \$0.
-2.  So Row can infer that if Column burns the money, they are playing A.
-3.  So if Column burns the money, Row would maximise their own return by also playing A.
-4.  Since Column can figure out everything in steps 1-3, it follows that burning the money will get them a return of \$20.
-5.  Since burning the money gets \$20, and playing B gets at most \$10, it is irrational to ever play B.
-6.  Since Row can figure out steps 1-5, it follows that Row knows that Column will play A.
-7.  Hence it is always rational for Row to play A.
-8.  Hence Column does not need to burn the money, since Row will play A, and hence playing A without burning will get them \$40.
+1.  It would be irrational to burn the money and play B, since that results in a maximum possible payout to Column of -\$10, when any strategy that involves not burning the money results in a minimum payout of \$0.
+2.  So Row can infer that if Column burns the money, they are playing A. So if Column burns the money, Row would maximise their own return by also playing A.
+3.  Since Column can figure out everything in steps 1-2, it follows that burning the money will get them a return of \$20, while playing B gets at most \$10, so it is irrational to ever play B.
+4.  Since Row can figure out steps 1-3, it follows that Row knows that Column will play A, hence it is always rational for Row to play A.
+5.  Hence Column does not need to burn the money, since Row will play A, and hence playing A without burning will get them \$40.
 
 So this looks like an interesting result. By just giving Column the option of burning the money, we guarantee that Column will get their best possible outcome, even though they don't actually use that option. We'll come back to whether this reasoning works. (Spoiler alert: I'm going to endorse an existing objection to it.)
 
 Let's look at the argument in something like strategic form. For simplicity, I'm going to assume Column has four strategies: whether to burn or not burn, crossed with whether to play A or B in @tbl-money-burning-part-two. Strictly speaking, we should distinguish strategies that differ in what Column is disposed to do in the non-taken option at stage 1, but such distinctions don't matter to the analysis, and end up cluttering the table. Row has four strategies: two choices for what to do if Column burns the money, crossed with two choices for what to do if Column keeps the money.
 
-So as not to confuse the Burning with playing option B, I'll write **L** for Lighting the money on fire, and **K** for Keeping the money. So Column's strategies will be one of L and K, followed by one of A and B. For Row, I'll write XY for the strategy of doing option X if Column lights the money on fire, and option Y if Column keeps the money. So AB is the strategy of doing A iff they see the money lit on fire. Given that, here is the payout table. (To reduce clutter, I'll write the payouts in dollars, but will leave off the dollar signs.)
+So as not to confuse the Burning with playing option B, I'll write **L** for Lighting the money on fire, and **K** for Keeping the money. So Column's strategies will be one of L and K, followed by one of A and B. For Row, I'll write XY for the strategy of doing option X if Column keeps the money, and option Y if Column lights it on fire. So AB is the strategy of doing A iff they don't see the money on fire. Given that, here is the payout table. (To reduce clutter, I'll write the payouts in dollars, but will leave off the dollar signs.)
 
-|       |     A      |     B      |
-|:-----:|:----------:|:----------:|
-| **A** | \$10, \$40 |  \$0, \$0  |
-| **B** |  \$0, \$0  | \$40, \$10 |
+|          |     KA      |     KB      |      LA    |     LB    |
+|:--------:|:-----------:|:-----------:|:----------:|:---------:|
+|  **AA**  |  10, 40     |   0, 0      |   10, 20   |   0, -20  |
+|  **AB**  |  10, 40     |   0, 0      |   0, -20   |  40, -10  |
+|  **BA**  |  0, 0       | 40, 10      |   10, 20   |   0, -20  |
+|  **BB**  |  0, 0       | 40, 10      |   0, -20   |  10, -10  |
 
-: The second stage of the money burning game {#tbl-money-burning-part-two}
+: Simplified strategic form of the money burning game. {#tbl-money-burning}
 
-But, as @Stalnaker1998 showed, this game has multiple rational solutions, and arguments to the contrary turn on conflating indicative and subjunctive conditionals.
+We can use weak dominance to then reason as follows.
 
-Third, the reasons we gave for avoiding the weakly dominated option in @tbl-first-wd simply don't carry over to @tbl-wd-itd. In the latter game, D is not an uncompensated risk. It's true that D loses if Demon makes an incorrect prediction and plays PU. But U loses if Demon makes an incorrect prediction and plays PX. Unless one thinks that PX is particularly unlikely to be played, it seems U and D are just as risky as each other. So both of them look like rational plays.
+1. LB is strongly dominated by both KA and KB, so it won't be played.
+2. If LB is deleted, then AB is weakly dominated by AA, and BB is weakly dominated by BA, so both AB and BB can be deleted.
+3. Without AB and BB, LA strongly dominates KB, so KB can be deleted.
+4. Without KB and LB, AA weakly dominates BA, so BA can be deleted.
+5. Without AB, BA and BB, KA strongly dominates LA, so LA can be deleted.
 
-So I conclude that we just need one round of deleting weakly dominated options to get rid of irrational plays. D is irrational in @tbl-first-wd, but not in @tbl-wd-itd.
+The result is that only AA and KA remain, and that's the solution to the game. Note that it's not just that we've got the same result by thinking through the strategic form of the game as we'd reached by the earlier dynamic analysis, we've reached it in exactly the same way. Whatever one thinks in general about strategic analysis of dynamic games, in this case it seems the two analyses are as good as each other.
+
+That's bad news for iterated weak dominance, because in the dynamic argument, step 2 is bad. That implies that in the strategic argument, which uses weak dominance, step 2 is also bad. Notably, that's the very first step where iterated weak dominance is used, so we have strong evidence that iterated weak dominance is the culprit here.
+
+The problem with step 2, as @Stalnaker1998 points out, is that it confuses indicative and subjunctive conditionals. What Row knows at that point is the negation of a conjunction: it's not the case that Column will burn the money and play B. Arguably, that implies the indicative conditional: If Column burns the money, they don't play B. But what is needed for the next step is the subjunctive: If Column burned the money, they would not play B. And that doesn't at all follow from the negated conjunction.
+
+Maybe you don't agree that a subjunctive conditional is what Row needs this point. That part of Stalnaker's analysis is unnecessary for the main argument. It's enough to note that this negated conjunction can't be enough to derive any inferences about what to do if Column burns the money. That's because by the end of the derivation, Row knows that column (if rational) won't burn the money. So here's another negated conjunction that they know: it's not the case that Column will burn the money and play A. They know this because they know the first conjunct is false, and they are (on standard assumptions) logically omniscient. Since Row's knowledge is symmetric in this respect, they know both the negated conjunctions, Column won't burn and play A, and, Column won't burn and play B, knowledge of one of them can't motivate an asymmetric attitude to what Column will do.
+
+The five-step argument is self-undermining in a related way. It concludes that if Column is rational they won't burn the money. But it gets there by making substantive inferences about what Column will do if they rationally burn the money. There are no such substantive inferences to draw; rational Column will (according to the argument) not burn the money, so once Row sees the money on fire, they should infer Column is irrational, and stop making any inferences about what Column will or won't do based on the assumption of rationality.
+
+From all this, I conclude that iterated weak dominance reasoning rests on a fallacy. I agree with Stalnaker's diagnosis that the fallacy is confusing indicative and subjunctive conditionals, but as I've argued in the last two paragraphs, there is independent reason to accept Stalnaker's claim that there is a fallacy involved even if you don't accept his diagnosis.
+
+## Back to Strong Dominance {#sec-weak-strong}
+
+This argument might, for some readers, trigger guilt by association concerns. If initially appealing reasoning like the 1-5 inference in @sec-weak-iterate is wrong, might it also be that iterated strong dominance reasoning rests on a fallacy?
+
+I suspect that concern is at least half-right; some informal presentations of iterated strong dominance reasoning probably does commit exactly the same fallacy. But it turns out not to matter; we have independent reason to accept iterated strong dominance 
+
+The reason comes from the theorem of Pearce's that I mentioned back in @sec-no-ratify, in the context of discussing [The Frustrator](causal.qmd#tbl-frustrator). Pearce goes on to show something stronger than what I described there, but it needs a little more terminology to state it.
+
+Say a strategy _S_ in a two player game is a best-response~1~ iff there is some probability distribution _Pr_ over the other player's strategies such that given _Pr_, no strategy available to the player has a higher expected return than _S_ does.
+
+Say a strategy _S_ in a two player game is a best-response~_k_+1~ iff there is some probability distribution _Pr_ over the other player's strategies such that (a) _Pr_ only assigns positive probability to the other player choosing strategies which are best-responses~_k_~, and (b) given _Pr_, no strategy available to the player has a higher expected return than _S_ does.
+
+Finally, say that a strategy _S_ is **rationalisable** iff for any _n_, it is a best-response~_k_~.
+
+It is very intuitive that given common knowledge of rationality, each player should play rationalizable strategies. Playing rationalizable strategies just means having answers to all of the following questions.
+
+- Why are you playing _S_? Because my credence distribution over the other player's strategies is _Pr_~0~, and given _Pr_~0~, _S_ maximises expected returns.
+- Why is your credence distribution over the other player's strategies _Pr_~0~? Because for every strategy that _Pr_~0~ gives positive probability to, there is some probability distribution _Pr_~1~ that they might have over my strategies such that, given _Pr_~1~, that strategy is optimal.
+- Why should we think _Pr_~1~ is their probability distribution? Because for every strategy of mine that _Pr_~1~ gives positive probability to, there is some probability distribution _Pr_~2~ such that that strategy is optimal given _Pr_~2~.
+
+This line of questioning could go on indefinitely. Presumably _Pr_~2~ isn't defined over any old things the other player might play. But if the original strategy is rationalisable, it will give positive probabilities to things that it would make some sense for the other player to play. And so on indefintely.
+
+This, ultimately, is why I think dominance reasoning, and in particular iterated dominance reasoning, should be incorporated into our decision theory. Using dominance reasoning is a somewhat convenient shorthand for what we should be doing, namely finding rationalisable strategies.
+
+To be sure, I think we should do somewhat more than find rationalisable strategies. We should also find strategies that are not weakly dominated (as argued in @sec-weak), and which are substantively rational (as argued in @sec-substantive). But the first necessary step is to remove the non-rationalisable strategies.
+
+## Summary {#sec-weak-summary}
+
+So I conclude that we just need one round of deleting weakly dominated options to get rid of irrational plays. D is irrational in @tbl-first-wd, but not in @tbl-wd-itd. The reasons for not iterating weak dominance reasoning do not apply to strong dominance reasoning, and iterated strong dominance reasoning leads to the same results as reasoning that is unimpeachable, namely finding rationalisable strategies.

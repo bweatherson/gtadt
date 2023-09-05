@@ -10,7 +10,7 @@ What's more controversial is that they are right to adopt a kind of causal decis
 
 [^causal-3]: Recall that I'm using 'CDT' here as the name for a family of theories. The point of this chapter will be to argue that the member of the family I prefer is immune to several challenges that have been raised against other members of the family.
 
-## No Ratifiable Choices
+## No Ratifiable Choices {#sec-no-ratify}
 
 In some simple cases, neither of the options on the table look very good by the lights of GDT. @tbl-no-ratify-1 is an almost maximally simple case.
 
