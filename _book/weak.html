@@ -325,22 +325,26 @@ div.csl-indent {
 </header>
 
 <p>An option <em>a</em> weakly dominates another option <em>b</em> if <em>a</em> is at least as good as <em>b</em> in all states, and better than <em>b</em> in some states. Just what role weak dominance has in decision theory is one of the most unsettled topics in game theory. There are three natural positions, and all of them are occupied. One is that weak dominance is of no significance. A second is that ideal agents do not choose weakly dominated options, and that’s the only role weak dominance has. And a third is that ideal agents do not choose options that are eliminated by an iterative process of deleting weakly dominated strategies. I’m going to argue in favour of the middle position. I’m not going to try to argue this is the standard game-theoretic move; as I said, I think you can find prominent support for all three options. To argue for the middle position requires making two cases: first, that weakly dominated options are not ideally chosen; and second, that options that would be eliminated by iterative deletion of weakly dominated options are ideally chosen. I’ll argue for these in turn.</p>
+<section id="sec-weak-avoid" class="level2" data-number="11.1">
+<h2 data-number="11.1" class="anchored" data-anchor-id="sec-weak-avoid"><span class="header-section-number">11.1</span> Avoid Weakly Dominated Options</h2>
 <p>Start with <a href="#tbl-first-wd">Table&nbsp;<span>11.1</span></a>; what would the ideal chooser do?</p>
 <div id="tbl-first-wd" class="anchored">
 <table class="table">
 <caption>Table&nbsp;11.1: A ratifiable, weakly dominated, option.</caption>
+<thead>
+<tr class="header">
+<th style="text-align: center;"></th>
+<th style="text-align: center;">PU</th>
+<th style="text-align: center;">PD</th>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: center;"></td>
-<td style="text-align: center;"><strong>PU</strong></td>
-<td style="text-align: center;"><strong>PD</strong></td>
-</tr>
-<tr class="even">
 <td style="text-align: center;"><strong>U</strong></td>
 <td style="text-align: center;">1</td>
 <td style="text-align: center;">1</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: center;"><strong>D</strong></td>
 <td style="text-align: center;">0</td>
 <td style="text-align: center;">1</td>
@@ -352,30 +356,35 @@ div.csl-indent {
 <p>First, it is rather unrealistic to think that the probability that Demon will make an accurate prediction is 1. And even if Demon’s prediction is correct with probability 1 - ε, then D will not be ratifiable. I’m inclined to rule out, on broadly Humean grounds, the very possibility of a Demon whose predictions are correct with probability 1, but is causally independent of Chooser’s choice. Temporally backwards causation is not a logical impossibility, and a world where the predictions are correct with probability 1 seems like a world which has backwards causation. I don’t want to rest the case for GDT on contentious metaphysics, so I won’t lean on this point.</p>
 <p>Second, playing D involves taking on an uncompensated risk. It might be that we don’t have a good way of capturing within probability theory just what this risk is. Perhaps you think that it makes sense to say that Demon is correct with probability 1. Still, in some sense D has a risk of failure that U lacks. One should not take on a risk without some compensation. So one should not play D in this case. This, I think, is the most persuasive argument against D.</p>
 <p>Third, it has been argued by game theorists that we should always allow for the possibility that one or other player in a game will make some kind of performance error. This idea is at the heart of Reinhard Selten’s notion of trembling hand equilibrium <span class="citation" data-cites="Selten1975">(<a href="references.html#ref-Selten1975" role="doc-biblioref">Selten 1975</a>)</span>, and Roger Myerson’s notion of proper equilibrium <span class="citation" data-cites="Myerson1978">(<a href="references.html#ref-Myerson1978" role="doc-biblioref">Myerson 1978</a>)</span>. If a strategy would not make sense if the probability of an error by one or other player was positive, even if it was arbitrarily low, it should not be played. Since D only makes sense if the probability of an error by Demon is 0, that means D should not be played.</p>
+</section>
+<section id="sec-weak-iterate" class="level2 page-columns page-full" data-number="11.2">
+<h2 data-number="11.2" class="anchored" data-anchor-id="sec-weak-iterate"><span class="header-section-number">11.2</span> Against Iterative Deletion</h2>
 <div class="page-columns page-full"><p>If it is good to remove weakly dominated options, then one might think it follows straight away that it is good to keep doing this.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> Think about <a href="#tbl-wd-itd">Table&nbsp;<span>11.2</span></a>.</p><div class="no-row-height column-margin column-container"><li id="fn1"><p><sup>1</sup>&nbsp;This suggestion is made by, for example <span class="citation" data-cites="HareHedden2015">Hare and Hedden (<a href="references.html#ref-HareHedden2015" role="doc-biblioref">2015</a>)</span>.</p></li></div></div>
 <div id="tbl-wd-itd" class="anchored">
 <table class="table">
 <caption>Table&nbsp;11.2: An example of iterated weak dominance.</caption>
+<thead>
+<tr class="header">
+<th style="text-align: center;"></th>
+<th style="text-align: center;">PU</th>
+<th style="text-align: center;">PD</th>
+<th style="text-align: center;">PX</th>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: center;"></td>
-<td style="text-align: center;"><strong>PU</strong></td>
-<td style="text-align: center;"><strong>PD</strong></td>
-<td style="text-align: center;"><strong>PX</strong></td>
-</tr>
-<tr class="even">
 <td style="text-align: center;"><strong>U</strong></td>
 <td style="text-align: center;">1</td>
 <td style="text-align: center;">1</td>
 <td style="text-align: center;">0</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: center;"><strong>D</strong></td>
 <td style="text-align: center;">0</td>
 <td style="text-align: center;">1</td>
 <td style="text-align: center;">1</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: center;"><strong>X</strong></td>
 <td style="text-align: center;">0</td>
 <td style="text-align: center;">0</td>
@@ -387,9 +396,123 @@ div.csl-indent {
 <p>In <a href="#tbl-wd-itd">Table&nbsp;<span>11.2</span></a>, X is weakly dominated by D. So it shouldn’t be played. But if X isn’t played, then PX is weakly dominated by both PU and PD. Demon can’t make a correct prediction by playing PX, since by hypothesis it won’t be played, so it can’t be better than PU or PD. But both PU and PD can be better than PX. So PX is now weakly dominated. So let’s remove it as well. If both X and PX are deleted, we’re back to <a href="#tbl-first-wd">Table&nbsp;<span>11.1</span></a>, in which we said Chooser should play U.</p>
 <p>So does it make sense to say that U is the only play in <a href="#tbl-wd-itd">Table&nbsp;<span>11.2</span></a>? I think not, for three reasons.</p>
 <p>First, as Bonanno <span class="citation" data-cites="Bonanno2018">(<a href="references.html#ref-Bonanno2018" role="doc-biblioref">2018, 37</a>)</span> points out, in general iterative deletion of weakly dominated strategies is not a well defined decision procedure. It turns out that in two player games, the order that weakly dominated strategies are deleted can affect which choices one ends up with. There are ways of fixing this problem, by specifying one or other order of deletion as canonical, but they all feel somewhat artificial.</p>
-<p>Second, iterative deletion of weakly dominated strategies leads to a single solution to the money-burning game described by <span class="citation" data-cites="BenPorathDekel1992">Ben-Porath and Dekel (<a href="references.html#ref-BenPorathDekel1992" role="doc-biblioref">1992</a>)</span>. But, as <span class="citation" data-cites="Stalnaker1998">Stalnaker (<a href="references.html#ref-Stalnaker1998" role="doc-biblioref">1998</a>)</span> showed, this game has multiple rational solutions, and arguments to the contrary turn on conflating indicative and subjunctive conditionals.</p>
-<p>Third, the reasons we gave for avoiding the weakly dominated option in <a href="#tbl-first-wd">Table&nbsp;<span>11.1</span></a> simply don’t carry over to <a href="#tbl-wd-itd">Table&nbsp;<span>11.2</span></a>. In the latter game, D is not an uncompensated risk. It’s true that D loses if Demon makes an incorrect prediction and plays PU. But U loses if Demon makes an incorrect prediction and plays PX. Unless one thinks that PX is particularly unlikely to be played, it seems U and D are just as risky as each other. So both of them look like rational plays.</p>
-<p>So I conclude that we just need one round of deleting weakly dominated options to get rid of irrational plays. D is irrational in <a href="#tbl-first-wd">Table&nbsp;<span>11.1</span></a>, but not in <a href="#tbl-wd-itd">Table&nbsp;<span>11.2</span></a>.</p>
+<p>Second, the reasons we gave for avoiding the weakly dominated option in <a href="#tbl-first-wd">Table&nbsp;<span>11.1</span></a> simply don’t carry over to <a href="#tbl-wd-itd">Table&nbsp;<span>11.2</span></a>. In the latter game, D is not an uncompensated risk. It’s true that D loses if Demon makes an incorrect prediction and plays PU. But U loses if Demon makes an incorrect prediction and plays PX. Unless one thinks that PX is particularly unlikely to be played, it seems U and D are just as risky as each other. So both of them look like rational plays.</p>
+<p>Third, iterative deletion of weakly dominated strategies (combined with the <a href="./dual.html">dual mandate</a> approach to dynamic choice) leads to a single solution to the <a href="#tbl-money-burning">money burning game</a> described by <span class="citation" data-cites="BenPorathDekel1992">Ben-Porath and Dekel (<a href="references.html#ref-BenPorathDekel1992" role="doc-biblioref">1992</a>)</span>. The money burning game has two players, and two stages. At stage 1, Column will have the choice to burn or not burn $20. The burning will be public, so Row will see what Column does, or does not do. At stage 2, Row and Column will play the simultaneous move game in <a href="#tbl-money-burning-part-two">Table&nbsp;<span>11.3</span></a>.</p>
+<div id="tbl-money-burning-part-two" class="anchored">
+<table class="table">
+<caption>Table&nbsp;11.3: The second stage of the money burning game</caption>
+<thead>
+<tr class="header">
+<th style="text-align: center;"></th>
+<th style="text-align: center;">A</th>
+<th style="text-align: center;">B</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><strong>A</strong></td>
+<td style="text-align: center;">$10, $40</td>
+<td style="text-align: center;">$0, $0</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong>B</strong></td>
+<td style="text-align: center;">$0, $0</td>
+<td style="text-align: center;">$40, $10</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Here is one way to think about the game. I’m going to number the steps here so we can refer back to them later.</p>
+<ol type="1">
+<li>It would be irrational to burn the money and play B, since that results in a maximum possible payout to Column of -$10, when any strategy that involves not burning the money results in a minimum payout of $0.</li>
+<li>So Row can infer that if Column burns the money, they are playing A. So if Column burns the money, Row would maximise their own return by also playing A.</li>
+<li>Since Column can figure out everything in steps 1-2, it follows that burning the money will get them a return of $20, while playing B gets at most $10, so it is irrational to ever play B.</li>
+<li>Since Row can figure out steps 1-3, it follows that Row knows that Column will play A, hence it is always rational for Row to play A.</li>
+<li>Hence Column does not need to burn the money, since Row will play A, and hence playing A without burning will get them $40.</li>
+</ol>
+<p>So this looks like an interesting result. By just giving Column the option of burning the money, we guarantee that Column will get their best possible outcome, even though they don’t actually use that option. We’ll come back to whether this reasoning works. (Spoiler alert: I’m going to endorse an existing objection to it.)</p>
+<p>Let’s look at the argument in something like strategic form. For simplicity, I’m going to assume Column has four strategies: whether to burn or not burn, crossed with whether to play A or B in <a href="#tbl-money-burning-part-two">Table&nbsp;<span>11.3</span></a>. Strictly speaking, we should distinguish strategies that differ in what Column is disposed to do in the non-taken option at stage 1, but such distinctions don’t matter to the analysis, and end up cluttering the table. Row has four strategies: two choices for what to do if Column burns the money, crossed with two choices for what to do if Column keeps the money.</p>
+<p>So as not to confuse the Burning with playing option B, I’ll write <strong>L</strong> for Lighting the money on fire, and <strong>K</strong> for Keeping the money. So Column’s strategies will be one of L and K, followed by one of A and B. For Row, I’ll write XY for the strategy of doing option X if Column keeps the money, and option Y if Column lights it on fire. So AB is the strategy of doing A iff they don’t see the money on fire. Given that, here is the payout table. (To reduce clutter, I’ll write the payouts in dollars, but will leave off the dollar signs.)</p>
+<div id="tbl-money-burning" class="anchored">
+<table class="table">
+<caption>Table&nbsp;11.4: Simplified strategic form of the money burning game.</caption>
+<thead>
+<tr class="header">
+<th style="text-align: center;"></th>
+<th style="text-align: center;">KA</th>
+<th style="text-align: center;">KB</th>
+<th style="text-align: center;">LA</th>
+<th style="text-align: center;">LB</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><strong>AA</strong></td>
+<td style="text-align: center;">10, 40</td>
+<td style="text-align: center;">0, 0</td>
+<td style="text-align: center;">10, 20</td>
+<td style="text-align: center;">0, -20</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong>AB</strong></td>
+<td style="text-align: center;">10, 40</td>
+<td style="text-align: center;">0, 0</td>
+<td style="text-align: center;">0, -20</td>
+<td style="text-align: center;">40, -10</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><strong>BA</strong></td>
+<td style="text-align: center;">0, 0</td>
+<td style="text-align: center;">40, 10</td>
+<td style="text-align: center;">10, 20</td>
+<td style="text-align: center;">0, -20</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong>BB</strong></td>
+<td style="text-align: center;">0, 0</td>
+<td style="text-align: center;">40, 10</td>
+<td style="text-align: center;">0, -20</td>
+<td style="text-align: center;">10, -10</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>We can use weak dominance to then reason as follows.</p>
+<ol type="1">
+<li>LB is strongly dominated by both KA and KB, so it won’t be played.</li>
+<li>If LB is deleted, then AB is weakly dominated by AA, and BB is weakly dominated by BA, so both AB and BB can be deleted.</li>
+<li>Without AB and BB, LA strongly dominates KB, so KB can be deleted.</li>
+<li>Without KB and LB, AA weakly dominates BA, so BA can be deleted.</li>
+<li>Without AB, BA and BB, KA strongly dominates LA, so LA can be deleted.</li>
+</ol>
+<p>The result is that only AA and KA remain, and that’s the solution to the game. Note that it’s not just that we’ve got the same result by thinking through the strategic form of the game as we’d reached by the earlier dynamic analysis, we’ve reached it in exactly the same way. Whatever one thinks in general about strategic analysis of dynamic games, in this case it seems the two analyses are as good as each other.</p>
+<p>That’s bad news for iterated weak dominance, because in the dynamic argument, step 2 is bad. That implies that in the strategic argument, which uses weak dominance, step 2 is also bad. Notably, that’s the very first step where iterated weak dominance is used, so we have strong evidence that iterated weak dominance is the culprit here.</p>
+<p>The problem with step 2, as <span class="citation" data-cites="Stalnaker1998">Stalnaker (<a href="references.html#ref-Stalnaker1998" role="doc-biblioref">1998</a>)</span> points out, is that it confuses indicative and subjunctive conditionals. What Row knows at that point is the negation of a conjunction: it’s not the case that Column will burn the money and play B. Arguably, that implies the indicative conditional: If Column burns the money, they don’t play B. But what is needed for the next step is the subjunctive: If Column burned the money, they would not play B. And that doesn’t at all follow from the negated conjunction.</p>
+<p>Maybe you don’t agree that a subjunctive conditional is what Row needs this point. That part of Stalnaker’s analysis is unnecessary for the main argument. It’s enough to note that this negated conjunction can’t be enough to derive any inferences about what to do if Column burns the money. That’s because by the end of the derivation, Row knows that column (if rational) won’t burn the money. So here’s another negated conjunction that they know: it’s not the case that Column will burn the money and play A. They know this because they know the first conjunct is false, and they are (on standard assumptions) logically omniscient. Since Row’s knowledge is symmetric in this respect, they know both the negated conjunctions, Column won’t burn and play A, and, Column won’t burn and play B, knowledge of one of them can’t motivate an asymmetric attitude to what Column will do.</p>
+<p>The five-step argument is self-undermining in a related way. It concludes that if Column is rational they won’t burn the money. But it gets there by making substantive inferences about what Column will do if they rationally burn the money. There are no such substantive inferences to draw; rational Column will (according to the argument) not burn the money, so once Row sees the money on fire, they should infer Column is irrational, and stop making any inferences about what Column will or won’t do based on the assumption of rationality.</p>
+<p>From all this, I conclude that iterated weak dominance reasoning rests on a fallacy. I agree with Stalnaker’s diagnosis that the fallacy is confusing indicative and subjunctive conditionals, but as I’ve argued in the last two paragraphs, there is independent reason to accept Stalnaker’s claim that there is a fallacy involved even if you don’t accept his diagnosis.</p>
+</section>
+<section id="sec-weak-strong" class="level2" data-number="11.3">
+<h2 data-number="11.3" class="anchored" data-anchor-id="sec-weak-strong"><span class="header-section-number">11.3</span> Back to Strong Dominance</h2>
+<p>This argument might, for some readers, trigger guilt by association concerns. If initially appealing reasoning like the 1-5 inference in <a href="#sec-weak-iterate"><span>Section&nbsp;11.2</span></a> is wrong, might it also be that iterated strong dominance reasoning rests on a fallacy?</p>
+<p>I suspect that concern is at least half-right; some informal presentations of iterated strong dominance reasoning probably does commit exactly the same fallacy. But it turns out not to matter; we have independent reason to accept iterated strong dominance</p>
+<p>The reason comes from the theorem of Pearce’s that I mentioned back in <a href="causal.html#sec-no-ratify"><span>Section&nbsp;4.1</span></a>, in the context of discussing <a href="./causal.html#tbl-frustrator">The Frustrator</a>. Pearce goes on to show something stronger than what I described there, but it needs a little more terminology to state it.</p>
+<p>Say a strategy <em>S</em> in a two player game is a best-response<sub>1</sub> iff there is some probability distribution <em>Pr</em> over the other player’s strategies such that given <em>Pr</em>, no strategy available to the player has a higher expected return than <em>S</em> does.</p>
+<p>Say a strategy <em>S</em> in a two player game is a best-response<sub><em>k</em>+1</sub> iff there is some probability distribution <em>Pr</em> over the other player’s strategies such that (a) <em>Pr</em> only assigns positive probability to the other player choosing strategies which are best-responses<sub><em>k</em></sub>, and (b) given <em>Pr</em>, no strategy available to the player has a higher expected return than <em>S</em> does.</p>
+<p>Finally, say that a strategy <em>S</em> is <strong>rationalisable</strong> iff for any <em>n</em>, it is a best-response<sub><em>k</em></sub>.</p>
+<p>It is very intuitive that given common knowledge of rationality, each player should play rationalizable strategies. Playing rationalizable strategies just means having answers to all of the following questions.</p>
+<ul>
+<li>Why are you playing <em>S</em>? Because my credence distribution over the other player’s strategies is <em>Pr</em><sub>0</sub>, and given <em>Pr</em><sub>0</sub>, <em>S</em> maximises expected returns.</li>
+<li>Why is your credence distribution over the other player’s strategies <em>Pr</em><sub>0</sub>? Because for every strategy that <em>Pr</em><sub>0</sub> gives positive probability to, there is some probability distribution <em>Pr</em><sub>1</sub> that they might have over my strategies such that, given <em>Pr</em><sub>1</sub>, that strategy is optimal.</li>
+<li>Why should we think <em>Pr</em><sub>1</sub> is their probability distribution? Because for every strategy of mine that <em>Pr</em><sub>1</sub> gives positive probability to, there is some probability distribution <em>Pr</em><sub>2</sub> such that that strategy is optimal given <em>Pr</em><sub>2</sub>.</li>
+</ul>
+<p>This line of questioning could go on indefinitely. Presumably <em>Pr</em><sub>2</sub> isn’t defined over any old things the other player might play. But if the original strategy is rationalisable, it will give positive probabilities to things that it would make some sense for the other player to play. And so on indefintely.</p>
+<p>This, ultimately, is why I think dominance reasoning, and in particular iterated dominance reasoning, should be incorporated into our decision theory. Using dominance reasoning is a somewhat convenient shorthand for what we should be doing, namely finding rationalisable strategies.</p>
+<p>To be sure, I think we should do somewhat more than find rationalisable strategies. We should also find strategies that are not weakly dominated (as argued in <a href="#sec-weak"><span>Chapter&nbsp;11</span></a>), and which are substantively rational (as argued in <a href="substantive.html"><span>Chapter&nbsp;10</span></a>). But the first necessary step is to remove the non-rationalisable strategies.</p>
+</section>
+<section id="sec-weak-summary" class="level2" data-number="11.4">
+<h2 data-number="11.4" class="anchored" data-anchor-id="sec-weak-summary"><span class="header-section-number">11.4</span> Summary</h2>
+<p>So I conclude that we just need one round of deleting weakly dominated options to get rid of irrational plays. D is irrational in <a href="#tbl-first-wd">Table&nbsp;<span>11.1</span></a>, but not in <a href="#tbl-wd-itd">Table&nbsp;<span>11.2</span></a>. The reasons for not iterating weak dominance reasoning do not apply to strong dominance reasoning, and iterated strong dominance reasoning leads to the same results as reasoning that is unimpeachable, namely finding rationalisable strategies.</p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
@@ -412,6 +535,7 @@ Selten, R. 1975. <span>“Reexamination of the Perfectness Concept for Equilibri
 Stalnaker, Robert. 1998. <span>“Belief Revision in Games: Forward and Backward Induction.”</span> <em>Mathematical Social Sciences</em> 36 (1): 31–56. <a href="https://doi.org/10.1016/S0165-4896(98)00007-9">https://doi.org/10.1016/S0165-4896(98)00007-9</a>.
 </div>
 </div>
+</section>
 
 
 </main> <!-- /main -->

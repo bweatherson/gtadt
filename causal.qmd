@@ -195,7 +195,7 @@ I intend the Demon to be a rational player in a game-theoretic sense. But to tra
 
 Now I want to analyse what Chooser will do if they follow EDT. It should be fairly clear that if the coin lands Heads, Chooser should say Up. The worst possible return from Up is 40, the best possible return from Down is 0. So that's what any theory would recommend, and Chooser will do that whether or not they follow EDT. Indeed, this is so clear that we should assume Demon will predict that Chooser will play Up if the coin lands Heads. So what happens if the coin lands Tails? There are four possibilities here: the two things Chooser might do crossed with the two predictions Demon might make. The expected return to Chooser in these four possibilities is given in @tbl-payout-if-tails.
 
-|          | Predict Up | Predict Down |
+|          |  PUp       | PDown        |
 |:--------:|:----------:|:------------:|
 |  **Up**  |     34     |      40      |
 | **Down** |     18     |      44      |

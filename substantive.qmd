@@ -1,8 +1,8 @@
 # Substantive {#sec-substantive}
 
-Here are two interesting characters. Piz wants to put mud on his pizza. This won't bring him joy, or any other positive emotions; he has a non-instrumental desire for mud pizza. Za wants to eat a tasty pizza, and believes that putting mud on his pizza will make it tasty. There is a long tradition of saying that the point of philosophical decision theory is not to evaluate beliefs and desires, but merely to say what actions those beliefs and desires do or should issue in. On such a view, both Piz and Za should (or at least will) put mud on their pizzas. Here is David Lewis expressing such a view.[^27]
+Here are two interesting characters. Piz wants to put mud on his pizza. This won't bring him joy, or any other positive emotions; he has a non-instrumental desire for mud pizza. Za wants to eat a tasty pizza, and believes that putting mud on his pizza will make it tasty. There is a long tradition of saying that the point of philosophical decision theory is not to evaluate beliefs and desires, but merely to say what actions those beliefs and desires do or should issue in. On such a view, both Piz and Za should (or at least will) put mud on their pizzas. Here is David Lewis expressing such a view.[^substantive-1]
 
-[^27]: I'm using Lewis as an example of the orthodox view that decision theory does not care about whether beliefs and desires are substantively rational, just that they are coherent. But note that Lewis has an idiosyncratic view in the neighbourhood of this one. He denies that the point of decision theory is to guide or judge action. He thinks that decision theory is primarily description, not normative. I agreed with that in @sec-ideal. But he thinks its descriptive role is primarily in defining belief and desire; I think it is in explaining social phenomena.
+[^substantive-1]: I'm using Lewis as an example of the orthodox view that decision theory does not care about whether beliefs and desires are substantively rational, just that they are coherent. But note that Lewis has an idiosyncratic view in the neighbourhood of this one. He denies that the point of decision theory is to guide or judge action. He thinks that decision theory is primarily description, not normative. I agreed with that in @sec-ideal. But he thinks its descriptive role is primarily in defining belief and desire; I think it is in explaining social phenomena.
 
 > The central question of decision theory is: which choices are the ones that serve one's desires according to one's beliefs? [@Lewis-Gorman-10071979, 472]
 
@@ -12,7 +12,9 @@ The point of this chapter is to argue that this is not enough. Decision theory i
 
 The opposing view is that decision theory is part of the theory of structural rationality. Not doing what maximises expected utility according to one's beliefs is like not believing the logical consequences of one's beliefs. It is, according to the theorist of structural rationality, bad even if the initial beliefs are bad.
 
-I'm going to offer two arguments against this. First, I'll argue that this notion of structural rationality, if it is even coherent, is not philosophically interesting. This is a big debate, and I don't suspect I'll convince many people of something this sweeping.^[My own book length contribution to this debate is in _Normative Externalism_ [@Weatherson2019].] Hopefully I'll convince some, but I don't want to rest the argument on these general considerations. So second, I'll focus more on decision theory, and argue that reflecting on an important case from the game theory literature, the beer-quiche game due to @ChoKreps1987, gives us reason to deny that decision theory is part of the theory of structural rationality.
+I'm going to offer two arguments against this. First, I'll argue that this notion of structural rationality, if it is even coherent, is not philosophically interesting. This is a big debate, and I don't suspect I'll convince many people of something this sweeping.[^substantive-2] Hopefully I'll convince some, but I don't want to rest the argument on these general considerations. So second, I'll focus more on decision theory, and argue that reflecting on an important case from the game theory literature, the beer-quiche game due to @ChoKreps1987, gives us reason to deny that decision theory is part of the theory of structural rationality.
+
+[^substantive-2]: My own book length contribution to this debate is in *Normative Externalism* [@Weatherson2019].
 
 ## Against Structural Rationality {#sec-against-structural}
 
@@ -22,29 +24,30 @@ First, I'll note some general reasons for scepticism about this use of the subst
 
 > *Incoherence Test*. A set of attitudinal mental states is jointly incoherent iff it is (partially) constitutive of (at least some of) the states in the set that any agent who holds this set of states has a disposition, when conditions of full transparency are met, to revise at least one of the states. [@Worsnip2021, 132]
 
-This won't capture nearly enough. If probabilism is correct, then non-probabilists about uncertainty like Glenn @Shafer1976 endorse incoherent views. If expectationalism is correct, then non-expectationalist decision theorists, like Lara @BuchakRisk, endorse incoherent views. If classical logic is correct, then intuitionist logicians like Crispin @WrightVaguenessCollection are incoherent. Those three all seem to meet Worsnip's conditions of full transparency, and don't seem disposed to revise their beliefs. Maybe this is just a problem with Worsnip's definition, but it is also a reason to be sceptical that there even is a distinction to be drawn here. Wooram @Leend raises some different challenges for Worsnip, and offers a rival theory. But for that theory to work, Lee requires that when a dialethist proposes to solve the Liar Paradox by saying the liar sentence is both true and not true, they are being insincere. The idea is that sincerely saying *p* requires believing *p* and not believing its negation. But this simply isn't part of the concept of sincerity, and as much as I find the dialethist solution to the Liar implausible, I think the dialethists I know have been perfectly sincere in offering it. Maybe there is some theory of coherence waiting to be found, but the search for one feels like a degenerating research program.[^28]
+This won't capture nearly enough. If probabilism is correct, then non-probabilists about uncertainty like Glenn @Shafer1976 endorse incoherent views. If expectationalism is correct, then non-expectationalist decision theorists, like Lara @BuchakRisk, endorse incoherent views. If classical logic is correct, then intuitionist logicians like Crispin @WrightVaguenessCollection are incoherent. Those three all seem to meet Worsnip's conditions of full transparency, and don't seem disposed to revise their beliefs. Maybe this is just a problem with Worsnip's definition, but it is also a reason to be sceptical that there even is a distinction to be drawn here. Wooram @Leend raises some different challenges for Worsnip, and offers a rival theory. But for that theory to work, Lee requires that when a dialethist proposes to solve the Liar Paradox by saying the liar sentence is both true and not true, they are being insincere. The idea is that sincerely saying *p* requires believing *p* and not believing its negation. But this simply isn't part of the concept of sincerity, and as much as I find the dialethist solution to the Liar implausible, I think the dialethists I know have been perfectly sincere in offering it. Maybe there is some theory of coherence waiting to be found, but the search for one feels like a degenerating research program.[^substantive-3]
 
-[^28]: See also @Heinzelmannnd for a different set of reasons to be sceptical that there is a notion of coherence that can do the work its philosophical defenders want.
+[^substantive-3]: See also @Heinzelmannnd for a different set of reasons to be sceptical that there is a notion of coherence that can do the work its philosophical defenders want.
+
+## The Beer-Quiche Game  {#sec-beer-quiche}
 
 Even if the substantive/structural distinction can be made precise, and shown to do philosophical work, it won't track the notion game theorists most care about. We can see this with a version of the beer-quiche game @ChoKreps1987, here translated into decision-theoretic language.
 
-There are five steps in the game.
+There are five steps in the game. (I'm going to call it the beer-quiche game to refer back to Cho and Kreps, and to distinguish it from the similar game earlier that is shown in @fig-second-anti-war,)
 
 1.  A coin will be flipped, landing Heads or Tails. It is biased, 60% likely to land Heads. It will be shown to Chooser, but not to Demon.
 2.  Chooser will say either Heads or Tails.
-3.  Demon, knowing what Chooser has said, and being arbitrarily good at predicting Chooser's strategy[^29]. will say Heads if it is more probable the coin landed Heads, and Tails if it is more probable the coin landed Tails.[^30]
+3.  Demon, knowing what Chooser has said, and being arbitrarily good at predicting Chooser's strategy[^substantive-4]. will say Heads if it is more probable the coin landed Heads, and Tails if it is more probable the coin landed Tails.[^substantive-5]
 4.  Chooser is paid \$30 if Demon says Heads, and nothing if Demon says Tails.
 5.  Chooser is paid \$10 if what they say matches how the coin landed, and nothing otherwise. This is on top of the payment at step 4, so Chooser could make up to \$40.
 
-[^29]: That is, what Chooser will do if Heads, and what they will do if Tails.
+[^substantive-4]: That is, what Chooser will do if Heads, and what they will do if Tails.
 
-[^30]: If both are equally likely, Demon will flip a fair coin and say how it lands.
+[^substantive-5]: If both are equally likely, Demon will flip a fair coin and say how it lands.
 
-If you prefer things in table form, here are the payouts chooser gets, given what happens at steps 1-3.
+If you prefer things in table form, the payouts are in @tbl-cho-kreps.
 
-|          |             |           |             |
+|  Coin    | Chooser     | Demon     | Dollars     |
 |:--------:|:-----------:|:---------:|:-----------:|
-| **Coin** | **Chooser** | **Demon** | **Dollars** |
 |    H     |      H      |     H     |     40      |
 |    H     |      H      |     T     |     10      |
 |    H     |      T      |     H     |     30      |
@@ -54,7 +57,75 @@ If you prefer things in table form, here are the payouts chooser gets, given wha
 |    T     |      T      |     H     |     40      |
 |    T     |      T      |     T     |     10      |
 
-: The coin game. {#tbl-cho-kreps}
+: The beer-quiche game in table form. {#tbl-cho-kreps}
+
+Or in graphical form it looks like @fig-cho-kreps.
+
+```{r engine='tikz'}
+#| label: fig-cho-kreps
+#| fig.cap: "Tree diagram of the beer-quiche game."
+#| fig.ext: 'png'
+#| cache: TRUE
+#| echo: FALSE
+#| fig.width: 4
+
+\usetikzlibrary{calc}
+
+\begin{tikzpicture}[scale=1.4,font=\footnotesize]
+\tikzset{
+% Two node styles for game trees: solid and hollow
+solid node/.style={circle,draw,inner sep=1.5,fill=black},
+hollow node/.style={circle,draw,inner sep=1.5},
+square node/.style={rectangle,draw, inner sep = 1, fill = black}
+}
+
+% Specify spacing for each level of the tree
+\tikzstyle{level 1}=[level distance=12mm,sibling distance=25mm]
+\tikzstyle{level 2}=[level distance=15mm,sibling distance=15mm]
+\tikzstyle{level 3}=[level distance=13mm,sibling distance=11mm]
+
+% The Tree
+\node(0)[hollow node,label=above:{Coin}]{}
+child[grow=left]{node[solid node,label=left:{
+$Chooser$
+}] {}
+child[grow=up]{node(1)[solid node]{}
+child{node[square node,label=above:{$10$}]{} edge from parent node [right]{$T$}}
+child{node[square node,label=above:{$40$}]{} edge from parent node [left]{$H$}}
+edge from parent node [left, yshift = -5]{$H$}
+}
+child[grow=down]{node(3)[solid node]{}
+child{node[square node,label=below:{$30$}]{} edge from parent node [left]{$H$}}
+child{node[square node,label=below:{$0$}]{} edge from parent node [right]{$T$}}
+edge from parent node [left, yshift = 5]{$T$}
+}
+edge from parent node [below, align=center]{$H$ \\ $0.6$}
+}
+child[grow=right]{node[solid node,label=right:{
+$Chooser$
+}] {}
+child[grow=up]{node(2)[solid node]{}
+child{node[square node,label=above:{$0$}]{} edge from parent node [right]{$T$}}
+child{node[square node,label=above:{$30$}]{} edge from parent node [left]{$H$}}
+edge from parent node [right, yshift = -5]{$H$}
+}
+child[grow=down]{node(4)[solid node]{}
+child{node[square node,label=below:{$40$}]{} edge from parent node [left]{$H$}}
+child{node[square node,label=below:{$10$}]{} edge from parent node [right]{$T$}}
+edge from parent node [right, yshift = 5]{$T$}
+}
+edge from parent node [below,align=center]{$T$ \\ $0.4$}
+};
+
+% information set
+\draw[dashed,rounded corners=10]($(1) + (-.45,.45)$)rectangle($(2) +(.45,-.45)$);
+\draw[dashed,rounded corners=10]($(3) + (-.45,.45)$)rectangle($(4) +(.45,-.45)$);
+% specify mover at 2nd information set
+\node at ($(1)!.5!(2)$) {$Demon$};
+\node at ($(3)!.5!(4)$) {$Demon$};
+\end{tikzpicture}
+```
+
 
 What will Chooser do? There are two coherent things for Chooser to do, though each of them is only coherent given a background belief that isn't entailed by the evidence.
 
@@ -63,9 +134,9 @@ What will Chooser do? There are two coherent things for Chooser to do, though ea
 
 While both of these are coherent, there is something very odd, very unintuitive about option 2. I guess we've been trained to be sceptical when philosophers report intuitions, but here we have a very large data pool to draw on. Cho and Kreps reported essentially the same intuition. Their paper has been cited tens of thousands of times, and I don't think this intuition has been often questioned. Option 2, while coherent, is unintuitive. It is the kind of option that the theory of rationality behind game theory, and behind decision theory, should rule out.
 
-But what about it is incoherent? One might think it is because it has an expected return of \$34, while option 1 has an expected return of \$36. But we showed in section Indecisive ref that using expected returns to choose between coherent options leads to implausible results. Moreover, if you change the payout in the bottom row to \$50, the intuition doesn't really go away, but the expected return of option 2 is now \$38; higher option 1's payout.[^31] Alternatively, one might think it is because option 2 requires Chooser to believe a counterfactual that is not entailed by the evidence. But option 1 also requires Chooser to believe a counterfactual that is not entailed by the evidence. That can't be the difference between them, but it is closer to the truth.
+But what about it is incoherent? One might think it is because it has an expected return of \$34, while option 1 has an expected return of \$36. But we showed in section Indecisive ref that using expected returns to choose between coherent options leads to implausible results. Moreover, if you change the payout in the bottom row to \$50, the intuition doesn't really go away, but the expected return of option 2 is now \$38; higher option 1's payout.[^substantive-6] Alternatively, one might think it is because option 2 requires Chooser to believe a counterfactual that is not entailed by the evidence. But option 1 also requires Chooser to believe a counterfactual that is not entailed by the evidence. That can't be the difference between them, but it is closer to the truth.
 
-[^31]: I believe if you change that payout to \$65, the various regret based theories I discussed in @sec-indecisive also start preferring option 2. But applying these theories to complex cases is hard, so I'm not quite sure about this.
+[^substantive-6]: I believe if you change that payout to \$65, the various regret based theories I discussed in @sec-indecisive also start preferring option 2. But applying these theories to complex cases is hard, so I'm not quite sure about this.
 
 What Cho and Kreps argue, persuasively, is that the difference between the options is that in one case the counterfactual belief is reasonable, and in the other it is unreasonable. Assume Chooser plans to adopt option 1. But when it becomes time to play, they change their mind, and say Tails. What would explain that? Not the coin landing Heads - given their plan, they will get the maximum possible payout by sticking to the plan (assuming Demon has done their job). No, the only plausible explanation is the coin landed Tails, and Chooser was (foolishly) chasing the extra \$10. In option 1, Chooser believes the counterfactual that's grounded in Demon picking an explanation that makes sense. What about in option 2? Here, everything is back to front. If Chooser is ever going to depart from their plan, it's when the coin lands Heads. Then Chooser might chase the extra \$10 by saying Heads. But Chooser has to believe that were they to depart from the plan, Demon would draw the explanation that makes no sense whatsoever, that they gave up on their plan even though it was about to lead to the best possible outcome. This makes no sense at all. And in fact it makes less sense the more you increase the payout in line 8.
 

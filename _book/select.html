@@ -20,7 +20,26 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -70,6 +89,8 @@ ul.task-list li input[type="checkbox"] {
 <script async="" src="https://hypothes.is/embed.js"></script>
 <link rel="stylesheet" href="https://use.typekit.net/uzz2drx.css">
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 </head>
 
@@ -305,6 +326,10 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
+<p>Some decision theories, most notably EDT, output a valuation of all possible choices. From that valuation a preference function over choices can be easily generated; choices that are more highly valued are preferred to those that are less highly valued. Indeed, that preference ordering will be a total preorder. Other theories, especially the theories that recommend Gathering in Stag Decisions, do not output valuations of all choices, but they do output a preference ordering over all choices. In some cases that is a total preorder, but often it is simply a preorder. Still, they share with EDT the idea that a decision theory outputs a preference ordering over the choices.</p>
+<p>GDT rejects this assumption. The aim of a decision theory is to say what the idealised chooser will choose, given some options. It is not to say that this unchosen option is 7th best, and that unchosen one is 9th best. It can’t be that, because these claims don’t explain behaviour, and explaining behaviour is the aim of the project. One does not behave differently whether this or that unchosen option is preferred.</p>
+<p>So we should think of GDT as outputting not a preference function, but a choice function in the sense of <span class="citation" data-cites="Samuelson1938">(<a href="references.html#ref-Samuelson1938" role="doc-biblioref"><strong>Samuelson1938?</strong></a>)</span>, <span class="citation" data-cites="Chernoff1954">(<a href="references.html#ref-Chernoff1954" role="doc-biblioref"><strong>Chernoff1954?</strong></a>)</span>, and <span class="citation" data-cites="Sen1971">(<a href="references.html#ref-Sen1971" role="doc-biblioref"><strong>Sen1971?</strong></a>)</span>. This is consistent with the practice in decision theory. Think about the use of solution concepts like subgame perfect equilibrium <span class="citation" data-cites="Bonanno2018">(<a href="references.html#ref-Bonanno2018" role="doc-biblioref">Bonanno 2018</a>, sec 4.4)</span> or Perfect Bayesian equilibrium <span class="citation" data-cites="Bonanno2018">(<a href="references.html#ref-Bonanno2018" role="doc-biblioref">Bonanno 2018</a>, ch.&nbsp;13)</span>. These describe which choices are acceptable in dynamic situations. But they don’t even purport to offer a ranking over the unchosen options. The algorithms one uses to solve games using these concepts don’t suggest that this or that unchosen option is better than some others. All the theory says is that given a situation, these options are choice-worthy, and these ones are not.</p>
+<p>That doesn’t mean that anything goes when it comes to choice. We can put some substantive constraints on what a choice function looks like. Following standard practice, when <em>X</em> is a set of options, let <em>c</em>(<em>X</em>) be the set of choice-worthy options in <em>X</em>. One plausible principle is that if <em>Y</em> is a subset of <em>X</em>, i.e., it is generated from <em>X</em> by deleting alternatives, then anything in <em>c</em>(<em>X</em>) that is also in <em>Y</em> is in <em>c</em>(<em>Y</em>). That is, deleting options does not turn something choice-worthy into something non-choice-worthy, unless it is indeed deleted. This is called principle <span class="math inline">\(\alpha\)</span> by <span class="citation" data-cites="Sen1971">(<a href="references.html#ref-Sen1971" role="doc-biblioref"><strong>Sen1971?</strong></a>)</span>, though it is often also (following <span class="citation" data-cites="Moulin1985">(<a href="references.html#ref-Moulin1985" role="doc-biblioref"><strong>Moulin1985?</strong></a>)</span>) called the Chernoff condition, since it is equivalent to one of Chernoff’s postulates. And this principle is important in game theory, for without it the method of solving games by deleting rejected options would not make sense.</p>
 <ul>
 <li>Solution concepts are not preference ordering</li>
 <li>Talk about Sen for a bit, and how there are principled constraints on selection functions</li>
@@ -325,6 +350,11 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="ref-Bonanno2018" class="csl-entry" role="listitem">
+Bonanno, Giacomo. 2018. <span>“Game Theory.”</span> Davis, CA: Kindle Direct Publishing. 2018. <a href="http://faculty.econ.ucdavis.edu/faculty/bonanno/GT_Book.html">http://faculty.econ.ucdavis.edu/faculty/bonanno/GT_Book.html</a>.
+</div>
+</div>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
