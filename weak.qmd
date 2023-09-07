@@ -109,13 +109,13 @@ Say a strategy _S_ in a two player game is a best-response~_k_+1~ iff there is s
 
 Finally, say that a strategy _S_ is **rationalisable** iff for any _n_, it is a best-response~_k_~.
 
-It is very intuitive that given common knowledge of rationality, each player should play rationalizable strategies. Playing rationalizable strategies just means having answers to all of the following questions.
+It is very intuitive that given common knowledge of rationality, each player should play rationalisable strategies. Playing rationalisable strategies just means having answers to all of the following questions.
 
 - Why are you playing _S_? Because my credence distribution over the other player's strategies is _Pr_~0~, and given _Pr_~0~, _S_ maximises expected returns.
 - Why is your credence distribution over the other player's strategies _Pr_~0~? Because for every strategy that _Pr_~0~ gives positive probability to, there is some probability distribution _Pr_~1~ that they might have over my strategies such that, given _Pr_~1~, that strategy is optimal.
 - Why should we think _Pr_~1~ is their probability distribution? Because for every strategy of mine that _Pr_~1~ gives positive probability to, there is some probability distribution _Pr_~2~ such that that strategy is optimal given _Pr_~2~.
 
-This line of questioning could go on indefinitely. Presumably _Pr_~2~ isn't defined over any old things the other player might play. But if the original strategy is rationalisable, it will give positive probabilities to things that it would make some sense for the other player to play. And so on indefintely.
+This line of questioning could go on indefinitely. Presumably _Pr_~2~ isn't defined over any old things the other player might play. But if the original strategy is rationalisable, it will give positive probabilities to things that it would make some sense for the other player to play. And so on indefinitely.
 
 This, ultimately, is why I think dominance reasoning, and in particular iterated dominance reasoning, should be incorporated into our decision theory. Using dominance reasoning is a somewhat convenient shorthand for what we should be doing, namely finding rationalisable strategies.
 
