@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.340">
+<meta name="generator" content="quarto-1.3.433">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -78,7 +78,8 @@ div.csl-indent {
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 <script type="application/json" class="js-hypothesis-config">
@@ -104,7 +105,7 @@ div.csl-indent {
       <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./weak.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Weak Dominance, Once</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -118,7 +119,7 @@ div.csl-indent {
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Game Theory as Decision Theory</a> 
         <div class="sidebar-tools-main tools-wide">
-    <a href="https://github.com/bweatherson/gtadt" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <a href="https://github.com/bweatherson/gtadt" rel="" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
     <div class="dropdown">
       <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download"><i class="bi bi-download"></i></a>
       <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
@@ -500,13 +501,13 @@ div.csl-indent {
 <p>Say a strategy <em>S</em> in a two player game is a best-response<sub>1</sub> iff there is some probability distribution <em>Pr</em> over the other player’s strategies such that given <em>Pr</em>, no strategy available to the player has a higher expected return than <em>S</em> does.</p>
 <p>Say a strategy <em>S</em> in a two player game is a best-response<sub><em>k</em>+1</sub> iff there is some probability distribution <em>Pr</em> over the other player’s strategies such that (a) <em>Pr</em> only assigns positive probability to the other player choosing strategies which are best-responses<sub><em>k</em></sub>, and (b) given <em>Pr</em>, no strategy available to the player has a higher expected return than <em>S</em> does.</p>
 <p>Finally, say that a strategy <em>S</em> is <strong>rationalisable</strong> iff for any <em>n</em>, it is a best-response<sub><em>k</em></sub>.</p>
-<p>It is very intuitive that given common knowledge of rationality, each player should play rationalizable strategies. Playing rationalizable strategies just means having answers to all of the following questions.</p>
+<p>It is very intuitive that given common knowledge of rationality, each player should play rationalisable strategies. Playing rationalisable strategies just means having answers to all of the following questions.</p>
 <ul>
 <li>Why are you playing <em>S</em>? Because my credence distribution over the other player’s strategies is <em>Pr</em><sub>0</sub>, and given <em>Pr</em><sub>0</sub>, <em>S</em> maximises expected returns.</li>
 <li>Why is your credence distribution over the other player’s strategies <em>Pr</em><sub>0</sub>? Because for every strategy that <em>Pr</em><sub>0</sub> gives positive probability to, there is some probability distribution <em>Pr</em><sub>1</sub> that they might have over my strategies such that, given <em>Pr</em><sub>1</sub>, that strategy is optimal.</li>
 <li>Why should we think <em>Pr</em><sub>1</sub> is their probability distribution? Because for every strategy of mine that <em>Pr</em><sub>1</sub> gives positive probability to, there is some probability distribution <em>Pr</em><sub>2</sub> such that that strategy is optimal given <em>Pr</em><sub>2</sub>.</li>
 </ul>
-<p>This line of questioning could go on indefinitely. Presumably <em>Pr</em><sub>2</sub> isn’t defined over any old things the other player might play. But if the original strategy is rationalisable, it will give positive probabilities to things that it would make some sense for the other player to play. And so on indefintely.</p>
+<p>This line of questioning could go on indefinitely. Presumably <em>Pr</em><sub>2</sub> isn’t defined over any old things the other player might play. But if the original strategy is rationalisable, it will give positive probabilities to things that it would make some sense for the other player to play. And so on indefinitely.</p>
 <p>This, ultimately, is why I think dominance reasoning, and in particular iterated dominance reasoning, should be incorporated into our decision theory. Using dominance reasoning is a somewhat convenient shorthand for what we should be doing, namely finding rationalisable strategies.</p>
 <p>To be sure, I think we should do somewhat more than find rationalisable strategies. We should also find strategies that are not weakly dominated (as argued in <a href="#sec-weak"><span>Chapter&nbsp;11</span></a>), and which are substantively rational (as argued in <a href="substantive.html"><span>Chapter&nbsp;10</span></a>). But the first necessary step is to remove the non-rationalisable strategies.</p>
 </section>

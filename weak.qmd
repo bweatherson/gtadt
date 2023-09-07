@@ -66,22 +66,22 @@ Let's look at the argument in something like strategic form. For simplicity, I'm
 
 So as not to confuse the Burning with playing option B, I'll write **L** for Lighting the money on fire, and **K** for Keeping the money. So Column's strategies will be one of L and K, followed by one of A and B. For Row, I'll write XY for the strategy of doing option X if Column keeps the money, and option Y if Column lights it on fire. So AB is the strategy of doing A iff they don't see the money on fire. Given that, here is the payout table. (To reduce clutter, I'll write the payouts in dollars, but will leave off the dollar signs.)
 
-|          |     KA      |     KB      |      LA    |     LB    |
-|:--------:|:-----------:|:-----------:|:----------:|:---------:|
-|  **AA**  |  10, 40     |   0, 0      |   10, 20   |   0, -20  |
-|  **AB**  |  10, 40     |   0, 0      |   0, -20   |  40, -10  |
-|  **BA**  |  0, 0       | 40, 10      |   10, 20   |   0, -20  |
-|  **BB**  |  0, 0       | 40, 10      |   0, -20   |  10, -10  |
+|        |   KA   |   KB   |   LA   |   LB    |
+|:------:|:------:|:------:|:------:|:-------:|
+| **AA** | 10, 40 |  0, 0  | 10, 20 | 0, -20  |
+| **AB** | 10, 40 |  0, 0  | 0, -20 | 40, -10 |
+| **BA** |  0, 0  | 40, 10 | 10, 20 | 0, -20  |
+| **BB** |  0, 0  | 40, 10 | 0, -20 | 10, -10 |
 
 : Simplified strategic form of the money burning game. {#tbl-money-burning}
 
 We can use weak dominance to then reason as follows.
 
-1. LB is strongly dominated by both KA and KB, so it won't be played.
-2. If LB is deleted, then AB is weakly dominated by AA, and BB is weakly dominated by BA, so both AB and BB can be deleted.
-3. Without AB and BB, LA strongly dominates KB, so KB can be deleted.
-4. Without KB and LB, AA weakly dominates BA, so BA can be deleted.
-5. Without AB, BA and BB, KA strongly dominates LA, so LA can be deleted.
+1.  LB is strongly dominated by both KA and KB, so it won't be played.
+2.  If LB is deleted, then AB is weakly dominated by AA, and BB is weakly dominated by BA, so both AB and BB can be deleted.
+3.  Without AB and BB, LA strongly dominates KB, so KB can be deleted.
+4.  Without KB and LB, AA weakly dominates BA, so BA can be deleted.
+5.  Without AB, BA and BB, KA strongly dominates LA, so LA can be deleted.
 
 The result is that only AA and KA remain, and that's the solution to the game. Note that it's not just that we've got the same result by thinking through the strategic form of the game as we'd reached by the earlier dynamic analysis, we've reached it in exactly the same way. Whatever one thinks in general about strategic analysis of dynamic games, in this case it seems the two analyses are as good as each other.
 
@@ -99,23 +99,23 @@ From all this, I conclude that iterated weak dominance reasoning rests on a fall
 
 This argument might, for some readers, trigger guilt by association concerns. If initially appealing reasoning like the 1-5 inference in @sec-weak-iterate is wrong, might it also be that iterated strong dominance reasoning rests on a fallacy?
 
-I suspect that concern is at least half-right; some informal presentations of iterated strong dominance reasoning probably does commit exactly the same fallacy. But it turns out not to matter; we have independent reason to accept iterated strong dominance 
+I suspect that concern is at least half-right; some informal presentations of iterated strong dominance reasoning probably does commit exactly the same fallacy. But it turns out not to matter; we have independent reason to accept iterated strong dominance
 
 The reason comes from the theorem of Pearce's that I mentioned back in @sec-no-ratify, in the context of discussing [The Frustrator](causal.qmd#tbl-frustrator). Pearce goes on to show something stronger than what I described there, but it needs a little more terminology to state it.
 
-Say a strategy _S_ in a two player game is a best-response~1~ iff there is some probability distribution _Pr_ over the other player's strategies such that given _Pr_, no strategy available to the player has a higher expected return than _S_ does.
+Say a strategy *S* in a two player game is a best-response~1~ iff there is some probability distribution *Pr* over the other player's strategies such that given *Pr*, no strategy available to the player has a higher expected return than *S* does.
 
-Say a strategy _S_ in a two player game is a best-response~_k_+1~ iff there is some probability distribution _Pr_ over the other player's strategies such that (a) _Pr_ only assigns positive probability to the other player choosing strategies which are best-responses~_k_~, and (b) given _Pr_, no strategy available to the player has a higher expected return than _S_ does.
+Say a strategy *S* in a two player game is a best-response~*k*+1~ iff there is some probability distribution *Pr* over the other player's strategies such that (a) *Pr* only assigns positive probability to the other player choosing strategies which are best-responses~*k*~, and (b) given *Pr*, no strategy available to the player has a higher expected return than *S* does.
 
-Finally, say that a strategy _S_ is **rationalisable** iff for any _n_, it is a best-response~_k_~.
+Finally, say that a strategy *S* is **rationalisable** iff for any *n*, it is a best-response~*k*~.
 
 It is very intuitive that given common knowledge of rationality, each player should play rationalisable strategies. Playing rationalisable strategies just means having answers to all of the following questions.
 
-- Why are you playing _S_? Because my credence distribution over the other player's strategies is _Pr_~0~, and given _Pr_~0~, _S_ maximises expected returns.
-- Why is your credence distribution over the other player's strategies _Pr_~0~? Because for every strategy that _Pr_~0~ gives positive probability to, there is some probability distribution _Pr_~1~ that they might have over my strategies such that, given _Pr_~1~, that strategy is optimal.
-- Why should we think _Pr_~1~ is their probability distribution? Because for every strategy of mine that _Pr_~1~ gives positive probability to, there is some probability distribution _Pr_~2~ such that that strategy is optimal given _Pr_~2~.
+-   Why are you playing *S*? Because my credence distribution over the other player's strategies is *Pr*~0~, and given *Pr*~0~, *S* maximises expected returns.
+-   Why is your credence distribution over the other player's strategies *Pr*~0~? Because for every strategy that *Pr*~0~ gives positive probability to, there is some probability distribution *Pr*~1~ that they might have over my strategies such that, given *Pr*~1~, that strategy is optimal.
+-   Why should we think *Pr*~1~ is their probability distribution? Because for every strategy of mine that *Pr*~1~ gives positive probability to, there is some probability distribution *Pr*~2~ such that that strategy is optimal given *Pr*~2~.
 
-This line of questioning could go on indefinitely. Presumably _Pr_~2~ isn't defined over any old things the other player might play. But if the original strategy is rationalisable, it will give positive probabilities to things that it would make some sense for the other player to play. And so on indefinitely.
+This line of questioning could go on indefinitely. Presumably *Pr*~2~ isn't defined over any old things the other player might play. But if the original strategy is rationalisable, it will give positive probabilities to things that it would make some sense for the other player to play. And so on indefinitely.
 
 This, ultimately, is why I think dominance reasoning, and in particular iterated dominance reasoning, should be incorporated into our decision theory. Using dominance reasoning is a somewhat convenient shorthand for what we should be doing, namely finding rationalisable strategies.
 
