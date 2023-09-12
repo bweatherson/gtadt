@@ -18,8 +18,8 @@ book:
     - causal.qmd
     - mix.qmd
     - ratify.qmd
-    - indecisive.qmd
     - dual.qmd
+    - indecisive.qmd
     - select.qmd
     - substantive.qmd
     - weak.qmd
