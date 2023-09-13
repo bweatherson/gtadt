@@ -105,9 +105,9 @@ The 'ratificationism' in causal ratificationism means that Chooser will ratify t
 
 [^intro-3]: In general, the sum on each side of the inequality ranges over all possible states, so if there are more than two states, there will be more than two summands on either side. And A must be ratified compared to all alternatives, so if there are more than two options, this inequality must hold if you replace B with C, D, or any other choice.
 
-|                                                                                    |
-|:----------------------------------------------------------------------------------:|
-| V(APA) · Pr~A~(PA) + V(APB) · Pr~A~(PB) ≥ V(BPA) · Pr~A~(PA) + V(BPB) · Pr~A~(PB)  |
+|                                                                                   |
+|:----------------------------------------------------------------------:|
+| V(APA) · Pr~A~(PA) + V(APB) · Pr~A~(PB) ≥ V(BPA) · Pr~A~(PA) + V(BPB) · Pr~A~(PB) |
 
 By Pr~A~ I mean the rational probabilities that Chooser has after choosing A. If there is more than one rational probability that Chooser could have, all that matters is that the inequality hold for one such probability function.[^intro-4] In somewhat technical English, what this inequality says is that once A is chosen, the expected value of choosing A is at least as great as the expected value of having chosen B. That's what I mean by ratifiability; once Chooser selects A, they think it was for the best (or at least equal best) that they chose it.
 
@@ -119,69 +119,147 @@ GDT, as I'm defining it, has three extra features beyond this causal ratificatio
 
 GDT says that permissible choices are not weakly dominated. An option weakly dominates another if it could be better, and couldn't be worse. So in @tbl-weak-dominance-example, A is not a permissible choice because it is weakly dominated by B.
 
-|       |  PA  | PB  |
-|:-----:|:----:|:---:|
-| **A** | 2 |  0  |
-| **B** | 2 |  1  |
+|       | PA  | PB  |
+|:-----:|:---:|:---:|
+| **A** |  2  |  0  |
+| **B** |  2  |  1  |
 
 : An example of weak dominance. {#tbl-weak-dominance-example}
 
 Since B could be better than A, if Demon predicted B, and could not be worse than A, at worst they produce the same outcome if Demon predicts A, B weakly dominates A. And weakly dominated actions are not rational choices. So in this problem the only rational choice is B. This is not particularly intuitive, but I don't think agreement with first pass intuition is a particularly strong constraint on decision theories, for reasons I'll go over in @sec-expect. And I'll have much more to say about weak dominance, and in particular why I reject an iterated version of the weak dominance constraint, in @sec-weak.
 
-In dynamic choices, GDT says that Chooser must satisfy two constraints. First, the plan they make for what to do over time, what we'll call a strategy, must be a permissible choice of strategy. Second, at each point in time, they must choose an option that would be permissible were the dynamic choice problem to have started at that point, with that set of options. These two constraints, which I'll discuss much more in chapter @sec-dualmandate, have some surprising consequences. Imagine that Chooser has the following two-stage problem. At stage 1, they can choose to Exit or Continue. If they Exit, they get 2. If they continue, they make a choice in the following Demonic problem.^[In this problem, the Demon makes a prediction after Chooser opts to Continue, but this prediction is only revealed after Chooser selects A or B.]
+In dynamic choices, GDT says that Chooser must satisfy two constraints. First, the plan they make for what to do over time, what we'll call a strategy[^intro-5], must be a permissible choice of strategy. Second, at each point in time, they must choose an option that would be permissible were the dynamic choice problem to have started at that point, with that set of options. These two constraints, which I'll discuss much more in chapter @sec-dualmandate, have some surprising consequences. Imagine that Chooser has the following two-stage problem. At stage 1, they can choose to Exit or Continue. If they Exit, they get 2. If they continue, they make a choice in the following Demonic problem.[^intro-6]
 
-|       |  PA  | PB  |
-|:-----:|:----:|:---:|
-| **A** | 1 |  1  |
-| **B** | 0 |  5  |
+[^intro-5]: A strategy in this sense must plan for what to do in every possibility, including one's ruled out by earlier choices.
+
+[^intro-6]: In this problem, the Demon makes a prediction after Chooser opts to Continue, but this prediction is only revealed after Chooser selects A or B.
+
+|       | PA  | PB  |
+|:-----:|:---:|:---:|
+| **A** |  1  |  1  |
+| **B** |  0  |  5  |
 
 : The second stage of a dynamic problem. {#tbl-first-dynamic-example}
 
-The plan of Continuing, then choosing A, is not a sensible plan. Chooser knows from the start that there is a plan which is guaranteed to be better, namely Exiting. If they Exit, they are guaranteed to get 2, if they Continue then choose A, they are guaranteed to get1. So they may not Continue then choose A. But this does not mean that they must Exit. They may Continue and choose B. Now here's the surprising part. If they faced @tbl-first-dynamic-example as the first choice they have to make, they could choose B, but they also could choose A. In @tbl-first-dynamic-example, A is ratifiable and not weakly dominated. So GDT is not a purely forward looking decision theory. By that I mean that sometimes, choices that Chooser makes earlier in a dynamic choice situation constrain which choices are rational later in the game. A lot of versions of CDT do not specify how they are to be extended into theories of dynamic choice, but my impression is that many philosophers do think decision theory should be purely forward looking, and GDT disagrees with them on this point.
+The plan of Continuing, then choosing A, is not a sensible plan. Chooser knows from the start that there is a plan which is guaranteed to be better, namely Exiting. If they Exit, they are guaranteed to get 2, if they Continue then choose A, they are guaranteed to get1. So they may not Continue then choose A. But this does not mean that they must Exit. They may Continue and choose B. Now here's the surprising part. If they faced @tbl-first-dynamic-example as the first choice they have to make, they could choose B, but they also could choose A. In @tbl-first-dynamic-example, A is ratifiable and not weakly dominated. So GDT is not a purely consequentialist decision theory. By that I mean that sometimes, choices that Chooser makes earlier in a dynamic choice situation constrain which choices are rational later in the game. A lot of versions of CDT do not specify how they are to be extended into theories of dynamic choice, but my impression is that many philosophers, and especially many philosophers who endorse CDT, do think decision theory should be purely consequentialist, and GDT disagrees with them on this point.
 
-There are some decision theorists who agree with GDT that decisions should not be strictly forward-looking. These include the resolute theorists, in the sense of @McClennan1990, and the functional theorists, in the sense of @LevinsteinSoares2020. But GDT disagrees with them as well. Those theorists think that the only thing Chooser must do is choose a sensible plan, and then at each stage Chooser should just carry it out. Here is a case where GDT disagrees with them. It will be a three stage game, and the role of Demon will be somewhat different to their role in previous examples.
+There are some decision theorists who agree with GDT that decisions should not be strictly consequentialist. These include the resolute theorists, in the sense of @McClennan1990, and the functional theorists, in the sense of @LevinsteinSoares2020. But GDT disagrees with them as well. Those theorists think that the only thing Chooser must do is choose a sensible plan, and then at each stage Chooser should just carry it out. Here is a case where GDT disagrees with this idea, i.e., with the idea that rational play in a game is just a matter of carrying out a rationally chosen plan.[^intro-7]
 
-1. First, Chooser chooses to scratch their ear or not scratch. The choice is revealed to Demon, but it makes no difference to anyone's payouts.
-2. Second, Demon predicts whether Chooser will select A, B or C at stage 3. Demon's prediction is partially revealed to Chooser. If Demon predicts C, Chooser is told this. If Demon predicts A or B, Chooser is just told that Demon did not predict C.
-3. Chooser selects A or B, knowing what Demon predicted. And then Chooser's payouts are given by @tbl-anti-resolute.
+[^intro-7]: One might have expected it would be easy to generate examples where this fails in GDT, by simply translating the examples of games involving incredible threats [@Bonanno2018, 86] into demonic decision problems. It turns out to be harder than one might have expected, or at least than I originally expected, to come up with such a case where (a) one player is Demon, and (b) the 'threat' strategy is not weakly dominated. And in @sec-weak I'm going to follow @Stalnaker1999 in ruling out weakly dominated strategies. That explains some of the complications in the example to follow.
 
-|       |  PA  | PB  |  PC |
-|:-----:|:----:|:---:|:---:|
-| **A** | 2    |  0  |   3 |
-| **B** | 2    |  1  |   0 |
-| **C** |  0   |  1  |   1 |
+```{r engine='tikz'}
+#| label: fig-stalnaker-centipede
+#| fig.cap: "Tree Diagram of the Centipede Game"
+#| fig.ext: 'png'
+#| cache: TRUE
+#| echo: FALSE
+#| fig.width: 4
+\usetikzlibrary{calc}
 
-: Payouts in the three stage game. {#tbl-anti-resolute}
+\begin{tikzpicture}[scale=1.4,font=\footnotesize]
+\tikzset{
+% Two node styles for game trees: solid and hollow
+solid node/.style={circle,draw,inner sep=1.5,fill=black},
+hollow node/.style={circle,draw,inner sep=1.5},
+square node/.style={rectangle,draw, inner sep = 1, fill = black}
+}
 
-The strategy of scratching one's ear, then choosing AB whatever Demon announces, is a permissible choice of strategy. By that, I mean that if Chooser were able (counterfactually) playing a game where they just announced a strategy and it was carried out automatically, the strategy scratch then play A whatever happens, would be permissible.^[So would not scratch then play A whatever Demon announces. The scratching is just there to make it clear that Chooser has a choice to make before Demon makes any prediction. I'll mostly drop this device in later examples, and just stipulate that the dynamic problem may start before Chooser's first choice.] In that strategic form of the game, this strategy is ratifiable and not weakly dominated. But in the actual dynamic game Chooser is playing, GDT says that it is not permissible. After all, were Chooser to learn that Demon did not predict C, then Chooser would be back in @tbl-weak-dominance-example, and in that example A is impermissible.
+% Specify spacing for each level of the tree
+\tikzstyle{level 1}=[level distance=20mm,sibling distance=20mm]
+\tikzstyle{level 2}=[level distance=20mm,sibling distance=20mm]
+\tikzstyle{level 3}=[level distance=20mm,sibling distance=20mm]
 
-I really don't think this example will motivate people to prefer GDT either to its forward looking alternatives, or to extant backward looking theories like resolute choice or functional decision theory. I'm not sure what intuition says about this puzzle, but I really don't think it says that choosing B if Demon announces they have not predicted C is the only rational alternative. That, however, is what GDT says; the only rational choice here is to do whatever one likes about scratching or not scratching, then choose A if Demon predicts C, and B if Demon does not predict C. 
+% The Tree
+\node(0)[hollow node,label=above:{Chooser}]{}
+    child[grow=down]{
+        node[square node,label=below:{$2$}]{} edge from parent node [left]{$D_1$}}
+     child[grow=right]{node(1)[solid node, label=above:{Demon}]{}
+        child[grow=down]{node[square node,label=below:{$1$}]{} edge from parent node [left]{$d$}}
+        child[grow=right]{
+            node(2)[solid node, label=above:{Chooser}]{}
+                    child[grow=down]{node[square node,label=below:{$0$}]{} edge from parent node [left]{$D_2$}}
+                    child[grow=right]{node[square node,label=right:{$3$}]{} edge from parent node [below]{$A_2$}}                    
+                    edge from parent node [below]{$a$}
+                    }
+            edge from parent node [below]{$A_1$}
+            }
+;
+\end{tikzpicture}
+```
 
-The point of this chapter is to describe GDT, not argue for it. And the point of this example is to show that GDT differs from theories like resolute or functional choice, which say that choosing A whatever one learns from Demon is at least permissible, and perhaps mandatory.
+There are three stages, though the game might end at any stage. Chooser is the mover at stage 1 and, if the game gets that far, stage 3. Demon is the mover at stage 2, again if the game gets that far. At stage 1 and 2, if the mover moves down, the game ends. After stage 3, the game ends either way. Chooser's payouts are given on the tree. Demon's disposition is to do whatever they predict Chooser will do at stage 3, and they are arbitrarily good at predicting Chooser's strategy.[^intro-8]
+
+[^intro-8]: This problem is very closely modelled on a game described by Stalnaker [-@Stalnaker1998, 47]. But note that how I've described Demon is different to how Stalnaker describes 'Bob', the player who moves at stage 2 in his version of the game. That's why I get what appears to be a different analysis to Stalnaker; we're not disagreeing here I think, just analysing different games.
+
+In this dynamic game, the only sensible thing for Chooser to do at stage 1 is to play A~1~. That's because they know that if they get to stage 3, they will play A~2~, getting 3, rather than D~2~, getting 0.[^intro-9] So they should believe that Demon will predict that they will play A~2~, and hence will play a. So they should believe at stage 1 that playing A~1~ will get 3, while playing D~1~ will get 2, so they should play A~1~ at stage 1.
+
+[^intro-9]: We need to be careful about how we state the idealisations to make this last step of the reasoning work. I'll say much more about the relevant idealisations in the chapters that follow.
+
+None of that should be too surprising; it's the standard backward induction solution of the game, though we've had to be a bit careful in just how we describe Demon for it to go through. But now consider what happens in the strategic form of the game. Chooser has four strategies: A~1~ or D~1~, crossed with A~2~ or D~2~. Let's simply give these strategies names, as follows.
+
+| Strategy | Move 1 | Move 2 |
+|:--------:|:------:|:------:|
+|   S~1~   |  D~1~  |  D~2~  |
+|   S~2~   |  D~1~  |  A~2~  |
+|   S~3~   |  A~1~  |  D~2~  |
+|   S~4~   |  A~1~  |  A~2~  |
+
+: The possible strategies for Chooser in @fig-stalnaker-centipede. {#tbl-stalnaker-centipede-strategies}
+
+Then Demon has two moves as well, which I'll call PO and PE. PO means that Demon predicts that Chooser will play an odd numbered strategy, i.e., S~1~ or S~3~. That is, Demon predicts that Chooser will play (or be disposed to play) D~2~. So PO is equivalent to Demon playing (or being disposed to play) d. PE means that Demon predicts that Chooser will play an even numbered strategy, i.e., S~2~ or S~4~. That is, Demon predicts that Chooser will play (or be disposed to play) A~2~. So PO is equivalent to Demon playing (or being disposed to play) a. Given that, we can describe the strategic form of the decision problem. That is, we can set out the strategies for Chooser and Demon, and say what payout Chooser gets for each possible pair of choices.
+
+|          | PO  | PE  |
+|:--------:|:---:|:---:|
+| **S~1~** |  2  |  2  |
+| **S~2~** |  2  |  2  |
+| **S~3~** |  0  |  1  |
+| **S~4~** |  3  |  1  |
+
+: The strategic form of @fig-stalnaker-centipede. {#tbl-stalnaker-centipede}
+
+If Chooser was making a one-off choice in @tbl-stalnaker-centipede, it would be rational, according to GDT, to choose S~2~. That is ratifiable and not weakly dominated. It wouldn't be rational to choose S~1~, because given S~1~ it would be better to choose S~4~. But given S~2~ is chosen, it is optimal, since once S~2~ is chosen, Chooser should believe that Demon is playing PE. So in this one-shot game, where one just chooses a strategy, it is rational (according to GDT) to play S~2~.
+
+This means that GDT does not endorse what's sometimes called strategic form-extensive form equivalence. It is not the case, according to GDT, that all that matters in an extensive form decision problem, like the tree in @fig-stalnaker-centipede, is the rational choice of strategy. Sometimes a rational strategy might commit one to playing irrational moves down the track, and that's ruled out.
+
+The point of these discussions of dynamic games has not been to argue for GDT. I will use some dynamic games to argue for GDT, and indeed I'll start sketching those games in @sec-dynamic-argue. Here my aim was just to describe what GDT says, and in particular set out the slightly distinctive position it takes on dynamic games. There will be much more on this to follow.
 
 Finally, my version of GDT says that what matters for rational choice is what probabilities over states are rational, not which probabilities Chooser happens to endorse. GDT is a theory of rational choice simpliciter, not a theory of rational choice given possibly irrational beliefs. I'll have more to say about this in @sec-substantive.
 
-## Dynamic Arguments for Static Theories
+## Dynamic Arguments for Static Theories {#sec-dynamic-argue}
 
 The full argument for GDT takes the bulk of the book to set out. There is, however, a much shorter argument for something in the ballpark of GDT, and certainly for something distinct from most existing views in the philosophical literature, that starts with three principles about dynamic choice. This is not because GDT is itself a dynamic theory; in the first instance it is a version of causal ratificationism, a static theory. The point is that only certain static theories are even capable of being extended into decent theories of dynamic choice, and this is a tighter constraint than has always been appreciated.
 
-The first of the three principles concerns the following situation.^[In @sec-indecisive I'm going to call this Exit Principle, because it has a distinctive role to play in games where one player can choose to Exit before the main action takes place.] If _p_ is false, Chooser's payouts are (causally) independent of anything they do. If _p_ is true, Chooser will have to make a single choice. But if they do, they won't learn anything relevant other than that _p_ is true before choosing. In game theoretic terms, the tree of the game Chooser is playing has just one node where they act, and it's a singleton information set. These are fairly tight constraints; most dynamic choice situations involve either multiple possible choices, or multiple things that one could learn before a choice. We're just interested in this very special case.
+The first of the three principles concerns the following situation.[^intro-10] If *p* is false, Chooser's payouts are (causally) independent of anything they do. If *p* is true, Chooser will have to make a single choice. But if they do, they won't learn anything relevant other than that *p* is true before choosing. In game theoretic terms, the tree of the game Chooser is playing has just one node where they act, and it's a singleton information set. These are fairly tight constraints; most dynamic choice situations involve either multiple possible choices, or multiple things that one could learn before a choice. We're just interested in this very special case.
 
-The principle I rely on is that in such a situation, it doesn't matter whether Chooser is asked to choose before or after learning that _p_ is true. That is, if they are asked to come up with a strategy, which in this case is just a plan for what to do if _p_ is true, that's just the same as being told that _p_ is true, and being asked to come up with a move. Slightly more informally, the following two questions should get the same answer because in some deep sense they are the same question:
+[^intro-10]: In @sec-indecisive I'm going to call this Exit Principle, because it has a distinctive role to play in games where one player can choose to Exit before the main action takes place.
 
-1. If _p_ is true, what do you want to do?
-2. Hey, _p_ is true. What do you want to do?
+The principle I rely on is that in such a situation, it doesn't matter whether Chooser is asked to choose before or after learning that *p* is true. That is, if they are asked to come up with a strategy, which in this case is just a plan for what to do if *p* is true, that's just the same as being told that *p* is true, and being asked to come up with a move. Slightly more informally, the following two questions should get the same answer because in some deep sense they are the same question:
 
-This principle is violated by, among others, the theory of choice that Lara @BuchakRisk defends.^[Buchak offers a very clear outline of her view in her -@Buchak2017.] Imagine that Suzy has two things she is planning to give away. The first is a lottery ticket that has a 50% chance of being worth $4, and a 50% chance of being worth nothing. The second is a dollar. She is going to give one to Billy and the other to Teddy. She comes up with the following somewhat convoluted plan to decide what to do. She's going to flip a fair coin. If it lands heads, Billy will get the ticket. If it lands tails, Billy will get a choice of the ticket or the dollar. Billy's risk-function^[On the role of risk-functions in Buchak's theory, see @Buchak2017, 2366.] _r_ is _r_(_p_) = _p_^2^. And money has an ever-so-slightly declining marginal utility for Billy.^[The example is not sensitive to the details on this point, but to make it concrete, imagine that Billy's utility from wealth _w_ is log(_w_), and he currently has a few thousand dollars.] Then if Billy follows Buchak's theory, he'll say the following things. Ask him before the coin is flipped what he would like if it lands tails, and he'll say the ticket. Tell him the coin has landed tails, and ask him what he'd like, and he'll say the dollar. That looks inconsistent, even incoherent, to me, and it's enough reason for me to look for a separate theory.^[In @sec-buchak I go over a more general version of this example, showing that unless the risk-function is the identity function, such a problem can arise. If the risk-function is the identity function, Buchak's theory does not disagree with GDT.]
+1.  If *p* is true, what do you want to do?
+2.  Hey, *p* is true. What do you want to do?
+
+This principle is violated by, among others, the theory of choice that Lara @BuchakRisk defends.[^intro-11] Imagine that Suzy has two things she is planning to give away. The first is a lottery ticket that has a 50% chance of being worth \$4, and a 50% chance of being worth nothing. The second is a dollar. She is going to give one to Billy and the other to Teddy. She comes up with the following somewhat convoluted plan to decide what to do. She's going to flip a fair coin. If it lands heads, Billy will get the ticket. If it lands tails, Billy will get a choice of the ticket or the dollar. Billy's risk-function[^intro-12] *r* is *r*(*p*) = *p*^2^. And money has an ever-so-slightly declining marginal utility for Billy.[^intro-13] Then if Billy follows Buchak's theory, he'll say the following things. Ask him before the coin is flipped what he would like if it lands tails, and he'll say the ticket. Tell him the coin has landed tails, and ask him what he'd like, and he'll say the dollar. That looks inconsistent, even incoherent, to me, and it's enough reason for me to look for a separate theory.[^intro-14]
+
+[^intro-11]: Buchak offers a very clear outline of her view in her -@Buchak2017.
+
+[^intro-12]: On the role of risk-functions in Buchak's theory, see @Buchak2017, 2366.
+
+[^intro-13]: The example is not sensitive to the details on this point, but to make it concrete, imagine that Billy's utility from wealth *w* is log(*w*), and he currently has a few thousand dollars.
+
+[^intro-14]: In @sec-buchak I go over a more general version of this example, showing that unless the risk-function is the identity function, such a problem can arise. If the risk-function is the identity function, Buchak's theory does not disagree with GDT.
 
 The second principle says that in a dynamic choice situation, every choice that a rational chooser makes must make sense in purely forward-looking terms. That is to say, every choice must be one that could be rationally made if it were the first choice being made in a different, simpler, dynamic choice. It's easiest to see what this rules out by looking at an example. This is going to be a version of [Newcomb's Problem](#tbl-newcomb) without any suspense, i.e., with the Chooser being allowed to look inside the boxes.
 
-Chooser is going to be presented with two boxes, one red and one blue. The boxes will be open, so Chooser will see what's in them. Chooser will be allowed to take the contents of one of them, at their choice. There is a Demon who predicted Chooser's choice. If Demon predicted Chooser would choose the red box, they put $10 in the red box, and $11 in the blue box. If Demon predicted Chooser would choose the blue box, they put $0 in the red box, and $1 in the blue box. The second principle says that in this case, Chooser must take the blue box. What it rules out is the following reasoning, which is endorsed by, e.g., @LevinsteinSoares2020. The optimal strategy is to plan to take the red box, since on average that gets $10 rather than $1. Then when the boxes are opened, what Chooser should do is carry out the optimal strategy, i.e., take the red box. The second principle says that reasoning is illegitimate. If Chooser is going to take the red box now, they must be capable of defending that decision using purely forward-looking considerations. And that's impossible to do, since there is quite clearly one more dollar in the blue box. The only consideration in favour of the red box is backward-looking; it correlates with getting a more favourable distribution of funds to the boxes.
+Chooser is going to be presented with two boxes, one red and one blue. The boxes will be open, so Chooser will see what's in them. Chooser will be allowed to take the contents of one of them, at their choice. There is a Demon who predicted Chooser's choice. If Demon predicted Chooser would choose the red box, they put \$10 in the red box, and \$11 in the blue box. If Demon predicted Chooser would choose the blue box, they put \$0 in the red box, and \$1 in the blue box. The second principle says that in this case, Chooser must take the blue box. What it rules out is the following reasoning, which is endorsed by, e.g., @LevinsteinSoares2020. The optimal strategy is to plan to take the red box, since on average that gets \$10 rather than \$1. Then when the boxes are opened, what Chooser should do is carry out the optimal strategy, i.e., take the red box. The second principle says that reasoning is illegitimate. If Chooser is going to take the red box now, they must be capable of defending that decision using purely forward-looking considerations. And that's impossible to do, since there is quite clearly one more dollar in the blue box. The only consideration in favour of the red box is backward-looking; it correlates with getting a more favourable distribution of funds to the boxes.
 
-The third principle is a converse of sorts to the third. It says that at the end of a series of choices, a rational chooser must be able to defend why they made that series of choices rather than some alternative series.^[There are a bunch of caveats needed on this, and I go over them more in @sec-dualmandate. For now, all that matters is that the example I'll use does not violate any of the needed caveats.] To see why this matters, it helps to use a version of GDT that I used to believe was correct, before I considered what it said about examples like @tbl-first-dynamic-example. This theory says that all that matters for choice at a time is that one do something ratifiable (and not weakly dominated), and that all that matters for dynamic choice is that one equates the possibility of reaching a future choice with a lottery ticket whose payouts are the payouts of that later choice, with the probabilities of each payout of the ticket the same as the probability one gives to the payouts of the later choice.
+The third principle is a converse of sorts to the third. It says that at the end of a series of choices, a rational chooser must be able to defend why they made that series of choices rather than some alternative series.[^intro-15] To see why this matters, it helps to use a version of GDT that I used to believe was correct, before I considered what it said about examples like @tbl-first-dynamic-example. This theory says that all that matters for choice at a time is that one do something ratifiable (and not weakly dominated), and that all that matters for dynamic choice is that one equates the possibility of reaching a future choice with a lottery ticket whose payouts are the payouts of that later choice, with the probabilities of each payout of the ticket the same as the probability one gives to the payouts of the later choice.
 
-Start with this theory, and think about the following kind of Chooser. They think that if they don't exit, and instead choose to play @tbl-first-dynamic-example, it's 60% likely they'll choose A (and Demon will too), and 40% likely they'll choose B. So playing the game has an expected return of 2.6, while exiting has a guaranteed return of 2, so they play the game. And the likely thing happens, they play A, and they get 1. This seems irrational; they could have got 2. The third principle says that it is irrational. The strategy, play the game then choose A, is not a strategy one could defend as a whole. The alternative strategy of exiting^[To be more precise, there are multiple exit strategies, which differ in what one is disposed to do if one doesn't exit. This level of precision will occasionally matter, but not that often.] strictly dominates it. Much to my surprise, it turns out that according to GDT, a series of choices, each rational in themselves, can be collectively irrational. And that's what is distinctive about the third principle. In game-theoretic terms, it says that one's sequence of choices (and dispositions to choose in unreached nodes of the game-tree) must be defensible if one was choosing a strategy. And this turns out to be a non-trivial constraint.
+[^intro-15]: There are a bunch of caveats needed on this, and I go over them more in @sec-dualmandate. For now, all that matters is that the example I'll use does not violate any of the needed caveats.
 
-None of these three principles will strike people working in decision theory as particularly novel. I've framed them in terms of choice-worthiness rather than preference, which makes them a bit weaker and hence more plausible. And as the book goes on I'll offer some somewhat new arguments for them. But none of them alone are particularly innovative. What is, I think, more innovative, is putting them together. While many theories exist that satisfy at least one of them, or even satisfy some pair of them, as far as I can tell, only versions of causal ratificationism look capable of satisfying all three. 
+Start with this theory, and think about the following kind of Chooser. They think that if they don't exit, and instead choose to play @tbl-first-dynamic-example, it's 60% likely they'll choose A (and Demon will too), and 40% likely they'll choose B. So playing the game has an expected return of 2.6, while exiting has a guaranteed return of 2, so they play the game. And the likely thing happens, they play A, and they get 1. This seems irrational; they could have got 2. The third principle says that it is irrational. The strategy, play the game then choose A, is not a strategy one could defend as a whole. The alternative strategy of exiting[^intro-16] strictly dominates it. Much to my surprise, it turns out that according to GDT, a series of choices, each rational in themselves, can be collectively irrational. And that's what is distinctive about the third principle. In game-theoretic terms, it says that one's sequence of choices (and dispositions to choose in unreached nodes of the game-tree) must be defensible if one was choosing a strategy. And this turns out to be a non-trivial constraint.
+
+[^intro-16]: To be more precise, there are multiple exit strategies, which differ in what one is disposed to do if one doesn't exit. This level of precision will occasionally matter, but not that often.
+
+None of these three principles will strike people working in decision theory as particularly novel. I've framed them in terms of choice-worthiness rather than preference, which makes them a bit weaker and hence more plausible. And as the book goes on I'll offer some somewhat new arguments for them. But none of them alone are particularly innovative. What is, I think, more innovative, is putting them together. While many theories exist that satisfy at least one of them, or even satisfy some pair of them, as far as I can tell, only versions of causal ratificationism look capable of satisfying all three.
 
 If there is a single master argument of the book, it is that the right decision theory complies with these three principles, only causal ratificationism complies with these three principles, so the correct decision theory is a form of causal ratificationism. I'll have much more to say about the principles, and about the particular form of causal ratificationism I prefer. That argument, however, is the simplest guide to where we're going.
