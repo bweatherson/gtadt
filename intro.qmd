@@ -78,18 +78,18 @@ Causal Decision Theory (CDT), on the other hand, is moved by the following argum
 
 [^intro-1]: I say much more about why the problem has this label in @sec-gad.
 
-It turns out that among people who endorse the little argument for choosing B in @tbl-newcomb, there are at least four distinct views about what to do in @tbl-stag-decision-first.
+It turns out that among people who endorse the little argument for choosing B in @tbl-newcomb, there are at least four distinct views about what to do in [Stag Decision](#tbl-stag-decision-first).
 
 1.  Frank @Arntzenius2008 and Johan E. @Gustafsson2011 recommend Choosing A.
 2.  Ralph @Wedgwood2012, Dmitri @Gallow2020, Abelard @Podgorski2022, and David @Barnett2022 recommend choosing B.
 3.  James @Joyce2012 says that what Chooser should do is a function of Chooser's probability distribution over their choices prior to deliberating about what to do.
 4.  Jack @Spencer2021b and Melissa @Fuscond say that Chooser can rationally take either option.
 
-I'm going to side with option 4. Though note that Spencer and Fusco disagree about what Chooser should do in several other cases, most notably in cases like @tbl-stag-decision-first but with the payouts inverted, and GDT is going to agree more with Fusco than Spencer.
+I'm going to side with option 4. Though note that Spencer and Fusco disagree about what Chooser should do in several other cases, most notably in cases like [Stag Decision](#tbl-stag-decision-first) but with the payouts inverted, and GDT is going to agree more with Fusco than Spencer.
 
 But I'm not going to argue for option 4, let alone my preferred version of option 4, or against any other options, just yet. Rather, I want to start with a terminological point. It's not obvious, either from the description of the problems or the history of the philosophical discussion, which if any of these theories should get the name "Causal Decision Theory". Some people write as if Joyce's view is the unique one that should get that name; indeed many of the people I've listed above describe themselves as critics of CDT who are offering an alternative to it. I think that's not the most helpful way to classify views. All of them accept that in [Newcomb's Problem](#tbl-newcomb), Chooser should choose option B, and that Chooser should choose it because Chooser can't make a causal difference to whether PA or PB happens, and either way, B is better than A. That's the core idea behind Causal Decision Theory.
 
-A decision theory should say what to do not just in one problem, but across a family of problems. It should say what to do in @tbl-stag-decision-first, for example. As I'm using the term, Causal Decision Theory, as such, is neutral between the four possible approaches to @tbl-stag-decision-first. So it isn't a theory. Rather, it is a family of theories, that all agree about what to do in [Newcomb's Problem](#tbl-newcomb), and about why to do it, but disagree in different problems.
+A decision theory should say what to do not just in one problem, but across a family of problems. It should say what to do in [Stag Decision](#tbl-stag-decision-first) for example. As I'm using the term, Causal Decision Theory, as such, is neutral between the four possible approaches to [Stag Decision](#tbl-stag-decision-first) So it isn't a theory. Rather, it is a family of theories, that all agree about what to do in [Newcomb's Problem](#tbl-newcomb), and about why to do it, but disagree in different problems.
 
 So as I'm using the term, Causal Decision Theory is not a theory. That might be surprising, since it has the word 'Theory' in the name. But we're used to things like the United States of America which includes parts that are neither States nor in America (e.g., Guam). We can live with Causal Decision Theory not being a theory, and instead being a family that agree about what to do, and why to do it, in [Newcomb's Problem](#tbl-newcomb). The bulk of this book will be an in house dispute between causal decision theories, though I'll spend some time objecting to EDT, and also some time objecting to other theories that reject both CDT and EDT.[^intro-2]
 
