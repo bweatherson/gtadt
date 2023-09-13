@@ -1,0 +1,77 @@
+# Actions and Strategies {#sec-non-equiv}
+
+This appendix sets out an example where a strategy that would be rational if one were selecting a strategy all at once cannot be rationally carried out. It's easy to find such cases if one's theory of choice in one-shot games is something other than GDT. But the cases where GDT rules in a strategy which contains moves GDT itself rules out are a little more complicated. @fig-stalnaker-centipede is the game tree (in the sense described in @sec-dualmandate) for one such example.
+
+```{r engine='tikz'}
+#| label: fig-stalnaker-centipede
+#| fig.cap: "Tree Diagram of the Centipede Game"
+#| fig.ext: 'png'
+#| cache: TRUE
+#| echo: FALSE
+#| fig.width: 4
+\usetikzlibrary{calc}
+
+\begin{tikzpicture}[scale=1.4,font=\footnotesize]
+\tikzset{
+% Two node styles for game trees: solid and hollow
+solid node/.style={circle,draw,inner sep=1.5,fill=black},
+hollow node/.style={circle,draw,inner sep=1.5},
+square node/.style={rectangle,draw, inner sep = 1, fill = black}
+}
+
+% Specify spacing for each level of the tree
+\tikzstyle{level 1}=[level distance=20mm,sibling distance=20mm]
+\tikzstyle{level 2}=[level distance=20mm,sibling distance=20mm]
+\tikzstyle{level 3}=[level distance=20mm,sibling distance=20mm]
+
+% The Tree
+\node(0)[hollow node,label=above:{Chooser}]{}
+    child[grow=down]{
+        node[square node,label=below:{$2$}]{} edge from parent node [left]{$D_1$}}
+     child[grow=right]{node(1)[solid node, label=above:{Demon}]{}
+        child[grow=down]{node[square node,label=below:{$1$}]{} edge from parent node [left]{$d$}}
+        child[grow=right]{
+            node(2)[solid node, label=above:{Chooser}]{}
+                    child[grow=down]{node[square node,label=below:{$0$}]{} edge from parent node [left]{$D_2$}}
+                    child[grow=right]{node[square node,label=right:{$3$}]{} edge from parent node [below]{$A_2$}}                    
+                    edge from parent node [below]{$a$}
+                    }
+            edge from parent node [below]{$A_1$}
+            }
+;
+\end{tikzpicture}
+```
+
+There are three stages, though the game might end at any stage. Chooser is the mover at stage 1 and, if the game gets that far, stage 3. Demon is the mover at stage 2, again if the game gets that far. At stage 1 and 2, if the mover moves down, the game ends. After stage 3, the game ends either way. Chooser's payouts are given on the tree. Demon's disposition is to do whatever they predict Chooser will do at stage 3, and they are arbitrarily good at predicting Chooser's strategy.[^intro-8]
+
+[^intro-8]: This problem is very closely modelled on a game described by Stalnaker [-@Stalnaker1998, 47]. But note that how I've described Demon is different to how Stalnaker describes 'Bob', the player who moves at stage 2 in his version of the game. That's why I get what appears to be a different analysis to Stalnaker; we're not disagreeing here I think, just analysing different games.
+
+In this dynamic game, the only sensible thing for Chooser to do at stage 1 is to play A~1~. That's because they know that if they get to stage 3, they will play A~2~, getting 3, rather than D~2~, getting 0.[^intro-9] So they should believe that Demon will predict that they will play A~2~, and hence will play a. So they should believe at stage 1 that playing A~1~ will get 3, while playing D~1~ will get 2, so they should play A~1~ at stage 1.
+
+[^intro-9]: I'm assuming here that Chooser knows that they will be rational in the future, and this knowledge persists no matter what earlier choices they make. This is a substantial idealisation, but makes sense given the other idealisations that were described in @sec-idealised.
+
+None of that should be too surprising; it's the standard backward induction solution of the game, though we've had to be a bit careful in just how we describe Demon for it to go through. But now consider what happens in the strategic form of the game. Chooser has four strategies: A~1~ or D~1~, crossed with A~2~ or D~2~. Let's simply give these strategies names, as follows.
+
+| Strategy | Move 1 | Move 2 |
+|:--------:|:------:|:------:|
+|   S~1~   |  D~1~  |  D~2~  |
+|   S~2~   |  D~1~  |  A~2~  |
+|   S~3~   |  A~1~  |  D~2~  |
+|   S~4~   |  A~1~  |  A~2~  |
+
+: The possible strategies for Chooser in @fig-stalnaker-centipede. {#tbl-stalnaker-centipede-strategies}
+
+Then Demon has two moves as well, which I'll call PO and PE. PO means that Demon predicts that Chooser will play an odd numbered strategy, i.e., S~1~ or S~3~. That is, Demon predicts that Chooser will play (or be disposed to play) D~2~. So PO is equivalent to Demon playing (or being disposed to play) d. PE means that Demon predicts that Chooser will play an even numbered strategy, i.e., S~2~ or S~4~. That is, Demon predicts that Chooser will play (or be disposed to play) A~2~. So PO is equivalent to Demon playing (or being disposed to play) a. Given that, we can describe the strategic form of the decision problem. That is, we can set out the strategies for Chooser and Demon, and say what payout Chooser gets for each possible pair of choices.
+
+|          | PO  | PE  |
+|:--------:|:---:|:---:|
+| **S~1~** |  2  |  2  |
+| **S~2~** |  2  |  2  |
+| **S~3~** |  0  |  1  |
+| **S~4~** |  3  |  1  |
+
+: The strategic form of @fig-stalnaker-centipede. {#tbl-stalnaker-centipede}
+
+If Chooser was making a one-off choice in @tbl-stalnaker-centipede, it would be rational, according to GDT, to choose S~2~. That is ratifiable and not weakly dominated. It wouldn't be rational to choose S~1~, because given S~1~ it would be better to choose S~4~. But given S~2~ is chosen, it is optimal, since once S~2~ is chosen, Chooser should believe that Demon is playing PE. So in this one-shot game, where one just chooses a strategy, it is rational (according to GDT) to play S~2~.
+
+This means that GDT does not endorse what's sometimes called strategic form-extensive form equivalence. It is not the case, according to GDT, that all that matters in an extensive form decision problem, like the tree in @fig-stalnaker-centipede, is the rational choice of strategy. Sometimes a rational strategy might commit one to playing irrational moves down the track, and that's ruled out.
