@@ -70,7 +70,7 @@ There are a lot of promissory notes in the last paragraph, but hopefully I've sa
 -   Objection 3: I think we do maybe cause the laws (or the past). One reason - Humeanism implies future events are partially constitutive of the laws. (Caveat: My response to Hawthorne.) And if determinism is true, then counterfactuals go all funny; maybe the past is counterfactually sensitive to current actions (for yes, see Lewis; for no, see Dorr).
 -   General objection: The point is to explain, predict, and maybe evaluate, ordinary people making ordinary decisions. And ordinary people come with ordinary pictures of how the world works. If it turned out the theory didn't even apply to people with non-standard notions of causation, or who applied the notion of causation beyond its intended scope of understanding current day interactions between medium sized dry goods, I wouldn't be too worried.
 
-## War on WAR
+## War on WAR {#sec-war-on-war}
 
 That leaves the point that CDT leaves one poorly off in Newcomb's Problem, while other theories, like evidential decision theory (EDT) leave one well off. This isn't a particular mark against CDT, since other theories, like EDT, leave one poorly off in some situations. Here is one such case.
 

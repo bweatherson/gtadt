@@ -101,25 +101,78 @@ The first thing to note is that the pair Out, Fight is a Nash equilibrium of the
 
 Putting the last few paragraphs together, we get the following conclusions. In the extensive form of the game, where Incumbent chooses after Entrant's move is revealed, there is only one rational move: Accommodate. But in the strategic form of the game, Fight is at least rationally permissible, and perhaps rationally desirable. So a strategy that could be rationally chosen in the strategic form of the game, namely Fight, cannot be rationally chosen in the extensive form. So purely strategic approach to decisions in games is wrong; it says that Fight is rationally permissible in @fig-chain-store but it is not.
 
-There are two natural ways to object to the reasoning in the last paragraph. One could argue that Fight is indeed rational in @fig-chain-store. It's true that it is leaving money on the table at the only point where one makes a choice. But, in response to this, one could argue that this is overly short-term thinking; the fact that Fight will lead to higher returns just is reason to accept it. This is what the theory that Ben Levinstein and Nate Soares defend says about this game [@LevinsteinSoares2020]. Alternatively, one could argue that Fight is not in fact acceptable in the strategic form of the game, i.e., @tbl-chain-store. After all, Fight is weakly dominated by Accommodate. This is what the theory that Robert Stalnaker defends say about this game [@Stalnaker1999], and in @sec-weak I'm going to argue that Stalnaker is right about @tbl-chain-store. Either objection would restore parity between the extensive and strategic forms of the game in this case, and would open the possibility of a purely strategic approach to decision theory in general. I'm going to first argue against the Levinstein and Soares approach, then describe an example where even if we say that weakly dominated strategies are not choice-worthy, the purely strategic approach seems wrong. The first argument will turn on what I think are fairly clear intuitions about a case; the latter turns on some judgment calls about which idealisations are appropriate, and is considerably less conclusive. But between them, they set out why I don't accept the purely strategic approach.
+There are two natural ways to object to the reasoning in the last paragraph; one could reject the claim that it's wrong to Fight at stage two, or one could reject the claim that it's acceptable to choose the strategy Fight in the strategic form. The next two sections will look at these options in turn. I'm going to argue neither gives us a reason to stick with a purely strategic theory.
 
-### Levinstein and Soares
+### Strategic EDT {#sec-sedt}
 
-Levinstein and Soares agree with the not uncommon intuition that in [Newcomb's Problem](index.qmd#tbl-newcomb) one should take the option one expects to end up with more money. But they have a twist on this. They say one should do this even if one is told what prediction Demon makes. 
+Call Strategic EDT (hereafter, SEDT) the theory that a rational Chooser will approach decision trees by (a) evaluating each possible strategy using EDT, (b) choosing one of the strategies that has maximal value, and (c) acting at each stage by implementing the chosen strategy, even if it no longer looks optimal. Ben Levinstein and Nate Soares [@LevinsteinSoares2020] have a theory that is a bit more subtle than SEDT, but (if I understand the view correctly), agrees with SEDT on all the cases I'll discuss in this subsection.
 
-The most popular theory that says to do this in Newcomb's Problem, Evidential Decision Theory, says that if one is told what the Demon has predicted, then one must take the causally dominant option. Levinstein and Soares disagree. And if you think through a real-life case, it is easy to appreciate their position. 
+One way to motivate SEDT is by thinking about a version of [Newcomb's Problem](index.qmd#tbl-newcomb) where Demon's predictions are revealed to Chooser. The game tree for this variant on Newcomb's Problem is in @fig-open-newcomb.
 
-Imagine someone who will take option A if they don't know the prediction and option B if they do. And add to the story that as Chooser approaches the point where they can make an irrevocable choice, they are flooded with signs and speech saying what Demon has predicted. The Evidential Decision Theorist says that Chooser, to be rational, must close their eyes, and make some kind of noise to drown out the speech, because they must make the choice of A before the fatal moment where they learn the prediction. The figure of Chooser walking up to the choice with their eyes closed, singing "La La La I Can't Hear You", doesn't look to me like a paragon of rationality.
+```{r engine='tikz'}
+#| label: fig-open-newcomb
+#| fig.cap: "Tree Diagram of the Open Newcomb game."
+#| fig.ext: 'png'
+#| cache: TRUE
+#| echo: FALSE
+#| fig.width: 4
+\usetikzlibrary{calc}
 
-It's true that Levinstein and Soares have Chooser giving the following speech. "I am not here to be a hero; I'm just trying to make money. And I can see that choosing B will give me more money than A. But I'm taking A." Again, this doesn't sound great. But, they argue, it does in fact lead to getting more money, so maybe there is something to it.
+\begin{tikzpicture}[scale=1.4,font=\footnotesize]
+\tikzset{
+% Two node styles for game trees: solid and hollow
+solid node/.style={circle,draw,inner sep=1.5,fill=black},
+hollow node/.style={circle,draw,inner sep=1.5},
+square node/.style={rectangle,draw, inner sep = 1, fill = black}
+}
 
-I rather doubt their view is defensible in all somewhat realistic situations. The example I'll use to demonstrate this is rather more violent than the other examples in this book. But it needs to be rather violent in order to rule out the possibility of there being strategic or reputational considerations that are being left out.
+% Specify spacing for each level of the tree
+\tikzstyle{level 1}=[level distance=10mm,sibling distance=20mm]
+\tikzstyle{level 2}=[level distance=10mm,sibling distance=10mm]
+\tikzstyle{level 3}=[level distance=20mm,sibling distance=20mm]
+
+% The Tree
+  \node[hollow node,label=above:{Demon}]{}
+    child {
+      node[solid node,label=left:{Chooser}]{}
+      child {
+        node[square node,label=below:{1000}]{}
+        edge from parent node[left] {A}
+      }
+      child {
+        node[square node,label=below:{1001}]{}
+        edge from parent node[right] {B}
+      }
+      edge from parent node[left] {PA}
+    }
+    child {
+      node[solid node,label=right:{Chooser}]{}
+      child {
+        node[square node,label=below:{0}]{}
+        edge from parent node[left] {A}
+      }
+      child {
+        node[square node,label=below:{1}]{}
+        edge from parent node[right] {B}
+      }
+      edge from parent node[right] {PB}
+    };
+\end{tikzpicture}
+```
+
+In @fig-open-newcomb, regular EDT says to choose B. After all, no matter which node one is at, the best thing to do given that one is there is to take the extra 1 on offer. But it's surprisingly hard to come up with reasons to choose A in the original problem that do not extend to this problem. The main reason which is offered, that people who choose A end up richer, applies equally well here. And the main objection that opponents make, that choosing A is strange because one knows that one would choose B once one discovered what prediction was made, does not have any bite if one would follow SEDT and not in fact choose B were the prediction revealed.
+
+It's a little amusing to imagine a proponent of regular EDT playing a version of @fig-open-newcomb. Presumably they would do whatever they could to not learn what the prediction was until they could make a choice. After all, by their own lights, learning what the prediction was would cost them, in expectation, 999. So depending on how this information will be revealed, they will close their eyes, sing "La la la I can't hear you" to block out noises, maybe hold their breath if the information will be revealed by distinctive smells, and so on. This doesn't seem like an image of a practically rational Chooser, and SEDT avoids all these problems.
+
+That's not to say that SEDT is entirely without its own intuitive costs, even in simple cases like @fig-open-newcomb. The person carrying out SEDT will give the following speech. "I am not here to be a hero; I'm not following some philosophical theory just because it's cool. My job is making money. And, now that the prediction is revealed, I can see that I'll make more money choosing B. But I'm taking A." Again, this doesn't sound great. But, they argue, it does in fact lead to getting more money, on average, so maybe there is something to it. And SEDT does not agree with EDT in the cases I described in @sec-war-on-war, so I can't say that they are relying, as EDT relies, on too narrow a diet of cases.
+
+Still, SEDT is not defensible in all somewhat realistic situations. The example I'll use to demonstrate this is rather more violent than the other examples in this book. But it needs to be rather violent in order to rule out the possibility of there being strategic or reputational considerations that are being left out.
 
 Chooser is the Prime Minister of a small country, and they are threatened by a large nearby country, Neighbour. Unfortunately, Neighbour is thinking of carpet bombing Chooser's capital, in retaliation for some perceived slight during trade negotiations. Chooser has no air defences to stop the bombing, and no allies who will rally to help. 
 
 Fortunately, Chooser has a mighty weapon, a Doomsday device, that could destroy Neighbour. Chooser has obviously threatened to use this, but Neighbour suspects it is a bluff. This is for a good reason; the doomsday device would also destroy Chooser's own country. Neighbour is known to employ Demon who is at least 99% accurate in predicting what military plans Chooser will take.[^dual-6] In practice, all Demon has to do is predict So Chooser can do Nothing (N), or use the Doomsday device (D), should neighbour attack. Chooser would obviously prefer no attack, and would certainly not use the device preemptively. And Neighbour will attack iff Demon predicts that Chooser will do Nothing. Given all that the decision table that Chooser faces is in @tbl-retaliation.
 
-[^dual-6]: It's very important to this example that Demon is not perfectly accurate. There hasn't been as much attention as there might have been to what happens to resolute theories in the context of good but not perfect Demons.
+[^dual-6]: It's very important to this example that Demon is not perfectly accurate. There hasn't been as much attention as there might have been to what happens to theories like SEDT in the context of good but not perfect Demons.
     
     One might worry that the case is not, as promised, realistic, because states do not in fact have Demons. That's true, but they do have spies, and analysts, and they are somewhat reliable in making predictions. It seems plausible that they could be reliable enough to get the case to work.
 
@@ -132,15 +185,15 @@ Fortunately, Chooser has a mighty weapon, a Doomsday device, that could destroy 
 
 In the top left, Neighbour bombs Chooser's capital, thinking correctly that Chooser will not retaliate. In the top right and lower right, neighbour is sufficiently scared of the doomsday device that they do nothing. But in the bottom left, Neighbour attacks, and Chooser retaliates, creating a disaster for everyone, something 50 times worse than even the horrors of the carpet bombing.
 
-Still, if Chooser is picking a strategy before anything starts, the strategy with the highest expected return is to plan to use the Doomsday device. This has an expected return of -0.5; since one time in a hundred it returns -50, and otherwise it returns 0. The purely strategic theorist who aims to maximise expected returns says that's what Chooser should do. And they say Chooser should quite literally stick to their guns, even if they see the bombers coming, and they realise their bluff has failed. 
+Still, if Chooser is picking a strategy before anything starts, the strategy with the highest value, according to EDT, is to plan to use the Doomsday device. This has an expected return of -0.5; since one time in a hundred it returns -50, and otherwise it returns 0. That's what SEDT says one should do. And it says Chooser should quite literally stick to their guns, even if they see the bombers coming, and they realise their bluff has failed. 
 
 This seems absurd to me, and it is the kind of result that drives game theorists to the dual mandate. In case that example isn't decisive enough, let's consider two more variants on it.
 
-Change the example so that Chooser has two advisors who are talking to him as the bombers come in. One of them says that the Demon is 99% reliable. The other says that the Demon is 97% reliable. Whether Chooser launches the Doomsday device should, according to this view, depend on which advisor Chooser believes. This is just absurd. A debate about the general accuracy of a Demon can't possibly be what these grave military decisions are based on.
+Change the example so that Chooser has two advisors who are talking to them as the bombers come in. One of them says that the Demon is 99% reliable. The other says that the Demon is 97% reliable. Whether Chooser launches the Doomsday device should, according to SEDT, depend on which advisor Chooser believes. This is just absurd. A debate about the general accuracy of a Demon can't possibly be what these grave military decisions are based on.
 
-Change the example again, and make it a bit more realistic. Chooser has the same two advisors, with the same views. Chooser thinks the one who says the Demon is 99% reliable is 60% likely to be right, and the other 40% likely. So Chooser forms the plan use the Doomsday device, because right now that's the strategy with highest expected return. But now, to everyone's surprise, Neighbour attacks. If the right thing to do is simply to carry out the strategy that had highest expected value at the start, again, Chooser should launch the Doomsday decive.
+Change the example again, and make it a bit more realistic. Chooser has the same two advisors, with the same views. Chooser thinks the one who says the Demon is 99% reliable is 60% likely to be right, and the other 40% likely. So Chooser forms the plan use the Doomsday device, because right now that's the strategy with highest expected return. But having made that decision, much to everyone's surprise, Neighbour attacks. SEDT now says to launch the Doomsday device.
 
-But think about how the choice of plans looks to Chooser now. The actions of Neighbour are evidence about the reliability of Demon. And a simple application of Bayes' Rule says that Chooser should now think the advisor who thought the demon was 97% reliable is 2/3 likely to be right. That is, given Chooser's current evidence, using the Doomsday device wasn't even the utility maximising strategy to start with. Yet if Chooser follows the purely strategic theory which says to maximise expected value at the start of the game, this is what Chooser should do. This seems completely absurd, and enough to have us move to a new theory.
+But think about how the choice of plans looks to Chooser now. The actions of Neighbour are evidence about the reliability of Demon. And a simple application of Bayes' Rule says that Chooser should now think the advisor who thought the demon was 97% reliable is 2/3 likely to be right. That is, given Chooser's current evidence merely about the Demon's reliability (and not about what the Demon actually did), SEDT says not to use the Doomsday device. Yet despite it not being either the utility maximising strategy, or the utility maximising choice, SEDT says to launch the Doomsday device. This seems completely absurd, and enough to have us move to a new theory.
 
 #### Actions and Strategies {#sec-non-equiv}
 
