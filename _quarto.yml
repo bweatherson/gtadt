@@ -28,7 +28,6 @@ book:
   appendices:
     - gad.qmd
     - nidt.qmd
-    - non_ideal.qmd
     - rps.qmd
     - buchak.qmd
     - unique.qmd
