@@ -1,14 +1,16 @@
-# Causal {#sec-causal}
+# Causal[^causal-1] {#sec-causal}
 
-It shouldn't be controversial to claim that game theory textbooks are committed a broadly causal version of decision theory.[^causal-1] For one thing, they always recommend defecting in Prisoners' Dilemma, even when playing with a twin. As David Lewis showed, this is equivalent to recommending two-boxing in Newcomb's Problem [@Lewis1979e]. They endorse the causal decision theorist's signature argument form: the deletion of strongly dominated strategies. Indeed, the typical book introduces this before it introduces anything about probability. When they do get around to probabilities, they tend to define the expected value of a choice in a way only a causal decision theorist could endorse. In particular, they define expected values using unconditional, rather than conditional, probabilities.[^causal-2] And the probabilities are simply probabilities of states, not probabilities of any kind of counterfactual. Indeed, you can go entire textbooks without even getting a symbol for a counterfactual conditional.
+[^causal-1]: Note to self: Change Two-stage newcomb in two ways. Flip Up and Down, and change them to A and B. And change text to suit. And move other example to an appendix.
 
-[^causal-1]: This point is made by @Harper1988, and many (though not all) of the conclusions I draw in this paper will be similar to ones he drew.
+It shouldn't be controversial to claim that game theory textbooks are committed a broadly causal version of decision theory.[^causal-2] For one thing, they always recommend defecting in Prisoners' Dilemma, even when playing with a twin. As David Lewis showed, this is equivalent to recommending two-boxing in Newcomb's Problem [@Lewis1979e]. They endorse the causal decision theorist's signature argument form: the deletion of strongly dominated strategies. Indeed, the typical book introduces this before it introduces anything about probability. When they do get around to probabilities, they tend to define the expected value of a choice in a way only a causal decision theorist could endorse. In particular, they define expected values using unconditional, rather than conditional, probabilities.[^causal-3] And the probabilities are simply probabilities of states, not probabilities of any kind of counterfactual. Indeed, you can go entire textbooks without even getting a symbol for a counterfactual conditional.
 
-[^causal-2]: See, for instance, the introduction of them on page 136 of @Bonanno2018. And note that we get 135 pages before the notion of an expectation is introduced; that's how much is done simply with dominance reasoning
+[^causal-2]: This point is made by @Harper1988, and many (though not all) of the conclusions I draw in this paper will be similar to ones he drew.
 
-What's more controversial is that they are right to adopt a kind of causal decision theory (CDT).[^causal-3] In the recent literature, I think there are three main kinds of problem that have been raised for CDT. First, it does badly in cases where there are no pure ratifiable strategies. Second, it gives strange results in cases involving betting on grand propositions about the past history of the world, or about the laws of nature. Third, it leaves its proponents will less money in Newcomb's Problem than EDT does. In this chapter I'll respond to each of these in turn.
+[^causal-3]: See, for instance, the introduction of them on page 136 of @Bonanno2018. And note that we get 135 pages before the notion of an expectation is introduced; that's how much is done simply with dominance reasoning
 
-[^causal-3]: Recall that I'm using 'CDT' here as the name for a family of theories. The point of this chapter will be to argue that the member of the family I prefer is immune to several challenges that have been raised against other members of the family.
+What's more controversial is that they are right to adopt a kind of causal decision theory (CDT).[^causal-4] In the recent literature, I think there are three main kinds of problem that have been raised for CDT. First, it does badly in cases where there are no pure ratifiable strategies. Second, it gives strange results in cases involving betting on grand propositions about the past history of the world, or about the laws of nature. Third, it leaves its proponents will less money in Newcomb's Problem than EDT does. In this chapter I'll respond to each of these in turn.
+
+[^causal-4]: Recall that I'm using 'CDT' here as the name for a family of theories. The point of this chapter will be to argue that the member of the family I prefer is immune to several challenges that have been raised against other members of the family.
 
 ## No Ratifiable Choices {#sec-no-ratify}
 
@@ -21,9 +23,9 @@ In some simple cases, neither of the options on the table look very good by the 
 
 : A problem with no ratifiable choice {#tbl-no-ratify-1}
 
-Everyone agrees that there is nothing to choose between the options here.[^causal-4] Things get complicated when A gets somewhat sweetened, say by adding 99 to the payouts if Chooser selects A, resulting in @tbl-no-ratify-2.
+Everyone agrees that there is nothing to choose between the options here.[^causal-5] Things get complicated when A gets somewhat sweetened, say by adding 99 to the payouts if Chooser selects A, resulting in @tbl-no-ratify-2.
 
-[^causal-4]: Almost everyone agrees that Chooser should be indifferent between A and B here. I don't, for reasons that will become important presently, and will be discussed much more in @sec-indecisive. I think A and B should be treated symmetrically, of course, but they are incomparable not equally good.
+[^causal-5]: Almost everyone agrees that Chooser should be indifferent between A and B here. I don't, for reasons that will become important presently, and will be discussed much more in @sec-indecisive. I think A and B should be treated symmetrically, of course, but they are incomparable not equally good.
 
 |       | PA  | PB  |
 |:-----:|:---:|:---:|
@@ -32,9 +34,9 @@ Everyone agrees that there is nothing to choose between the options here.[^causa
 
 : An asymmetric problem with no ratifiable choice {#tbl-no-ratify-2}
 
-Many versions of CDT, including GDT, do not unconditionally recommend A in this case. Yet there are many problems with the same structure as @tbl-no-ratify-2 where people have insisted that intuition says A is the only rational choice, and it is a problem for a decision theory that doesn't agree.[^causal-5]
+Many versions of CDT, including GDT, do not unconditionally recommend A in this case. Yet there are many problems with the same structure as @tbl-no-ratify-2 where people have insisted that intuition says A is the only rational choice, and it is a problem for a decision theory that doesn't agree.[^causal-6]
 
-[^causal-5]: This objection goes back to @Richter1984. The most memorable version of an asymmetric problem with no ratifiable choice is the Psychopath Button case presented by Andy @Egan2007.
+[^causal-6]: This objection goes back to @Richter1984. The most memorable version of an asymmetric problem with no ratifiable choice is the Psychopath Button case presented by Andy @Egan2007.
 
 A related objection is raised by Arif @Ahmed2014a and by Jack Spencer and Ian Wells [-@SpencerWells2019]. I'll focus on the latter version, but the points are essentially the same. Start with @tbl-no-ratify-1 and add a third option X. X gets a guaranteed return of 40, and if Demon predicts X, then A and B return 50. They call this problem [The Frustrator](#tbl-frustrator).
 
@@ -52,9 +54,9 @@ For one thing X is strongly dominated by the mixed strategy of playing A and B w
 
 For another thing, there is no probability distribution over the three states, PA, PB, and PX, such that X maximises expected utility. If Pr(PA) ≥ Pr(PB), then A will have a higher expected return than X, and if Pr(PB) ≥ Pr(PA), then B will have a greater return than X. In game-theoretic terms, X is not a best response [@Bonanno2018, 41]; no matter what Chooser thinks Demon will do, indeed no matter what probability Chooser has over Demon's choices, X is sub-optimal.
 
-The last two things turn out to be equivalent. As @Pearce1984 shows, an option is sometimes a best response iff it is not strictly dominated by any other pure or mixed strategy.[^causal-6] That is, for any option O, there is some probability distribution over the states such that no alternative to O has a higher expected utility iff there is no mixture of alternatives to O that has a higher expected return than O in all states.
+The last two things turn out to be equivalent. As @Pearce1984 shows, an option is sometimes a best response iff it is not strictly dominated by any other pure or mixed strategy.[^causal-7] That is, for any option O, there is some probability distribution over the states such that no alternative to O has a higher expected utility iff there is no mixture of alternatives to O that has a higher expected return than O in all states.
 
-[^causal-6]: @Bonanno2018, 207 attributes this to Pearce, who has a rather elegant proof of the result that involves turning the decision problem into a zero-sum game, and applying a famous result of Nash's.
+[^causal-7]: @Bonanno2018, 207 attributes this to Pearce, who has a rather elegant proof of the result that involves turning the decision problem into a zero-sum game, and applying a famous result of Nash's.
 
 GDT's response to these kinds of problems is in two parts. One part is to argue, as I will in @sec-indecisive, that the intuitions behind cases like this are unstable. The other is to argue that in fact the right choice here is to play the mixed strategy. That requires arguing that mixed strategies are available, as I will in @sec-mixed, and indeed saying more about what it is to play a mixed strategy. And then it requires appealing to Pearce's result to say that any option ruled out in cases like [The Frustrator](#tbl-frustrator) is in fact strictly dominated, and so not choice-worthy.
 
@@ -189,16 +191,18 @@ edge from parent node [below,align=center]{$T$ \\ $0.5$}
 \end{tikzpicture}
 ```
 
-I intend the Demon to be a rational player in a game-theoretic sense. But to translate that into decision-theory terms, it's important to make a few stipulations.[^causal-7] Demon predicts Chooser's strategy, that is Chooser's plan about what to do if the coin lands Heads and what to do if the coin lands Tails, before the game starts. They make their guess about how the coin landed after seeing Chooser's actual choice, and updating their prior beliefs (about both the coin and Chooser) with this information. If they predict that Chooser will do the same thing however the coin lands, they will have no useful information about the coin, so they will flip their own coin to make a guess. In that case it will be 50/50 whether Demon says Heads or Tails. Also, Demon is surprised by what Chooser does, i.e., if they had predicted Chooser would do one thing however the coin lands but Chooser does the other thing, Demon will also flip their own coin to make a guess.^[A key part of the discussion in @ChoKreps1987 is that in sone cases we can say substantive things about what a player will do if they are surprised in this sense. But @fig-second-anti-war is not one of these cases.] Finally, Demon's predictions are arbitrarily accurate. For simplicity, I'll assume Demon is correct with probability 1, though it doesn't matter if you allow for probability $\varepsilon$ that Demon gets it wrong.
+I intend the Demon to be a rational player in a game-theoretic sense. But to translate that into decision-theory terms, it's important to make a few stipulations.[^causal-8] Demon predicts Chooser's strategy, that is Chooser's plan about what to do if the coin lands Heads and what to do if the coin lands Tails, before the game starts. They make their guess about how the coin landed after seeing Chooser's actual choice, and updating their prior beliefs (about both the coin and Chooser) with this information. If they predict that Chooser will do the same thing however the coin lands, they will have no useful information about the coin, so they will flip their own coin to make a guess. In that case it will be 50/50 whether Demon says Heads or Tails. Also, Demon is surprised by what Chooser does, i.e., if they had predicted Chooser would do one thing however the coin lands but Chooser does the other thing, Demon will also flip their own coin to make a guess.[^causal-9] Finally, Demon's predictions are arbitrarily accurate. For simplicity, I'll assume Demon is correct with probability 1, though it doesn't matter if you allow for probability $\varepsilon$ that Demon gets it wrong.
 
-[^causal-7]: I'll make the same stipulations in subsequent cases that involve Demon and games that unfold over time.
+[^causal-8]: I'll make the same stipulations in subsequent cases that involve Demon and games that unfold over time.
+
+[^causal-9]: A key part of the discussion in @ChoKreps1987 is that in sone cases we can say substantive things about what a player will do if they are surprised in this sense. But @fig-second-anti-war is not one of these cases.
 
 Now I want to analyse what Chooser will do if they follow EDT. It should be fairly clear that if the coin lands Heads, Chooser should say Up. The worst possible return from Up is 40, the best possible return from Down is 0. So that's what any theory would recommend, and Chooser will do that whether or not they follow EDT. Indeed, this is so clear that we should assume Demon will predict that Chooser will play Up if the coin lands Heads. So what happens if the coin lands Tails? There are four possibilities here: the two things Chooser might do crossed with the two predictions Demon might make. The expected return to Chooser in these four possibilities is given in @tbl-payout-if-tails.
 
-|          |  PUp       | PDown        |
-|:--------:|:----------:|:------------:|
-|  **Up**  |     34     |      40      |
-| **Down** |     18     |      44      |
+|          | PUp | PDown |
+|:--------:|:---:|:-----:|
+|  **Up**  | 34  |  40   |
+| **Down** | 18  |  44   |
 
 : The expected payout to Chooser in four cases if the coin lands Tails {#tbl-payout-if-tails}
 
