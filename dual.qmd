@@ -50,14 +50,23 @@ In a finite game, there will be finitely many strategies. This finite number may
 
 All that's then left to do is to carry the strategy out. It's perhaps a bit easier to see this in practice. And I'll use EDT to illustrate it, because variants of CDT sometimes get complicated to apply to cases beyond binary choice.
 
-I'll start with a case we've seen before, the two stage Newcomb Problem I used earlier to argue against EDT: @tbl-edt-war. As a reminder, the game has three players, Chooser, Demon-1, and Demon-2. And it plays out over the following four stages.^[As usual, each demon is arbitrarily accurate with their predictions, and their errors are probabilistically independent.]
+I'll start with a case we've seen before, the two stage Newcomb Problem I used earlier to argue against EDT: @tbl-edt-war. As a reminder, the game has three players, Chooser, Demon-1, and Demon-2. And it plays out over the following four stages.
 
 1. At stage 1, Demon-1 predicts what Chooser will do at stage 4. This information is kept hidden from everyone.
 2. At stage 2, Demon-2 predicts what Chooser will do at stage 4. This information is also kept hidden from everyone.
 3. At stage 3, Demon-1's prediction is revealed to Chooser, but Demon-2's prediction is kept secret.
 4. At stage 4, Chooser chooses A or B. Chooser's payout is a function of their choice, and the two predictions the demons make.
 
-Earlier, I represented the game as a pair of tables, repeated here as @tbl-edt-war-reprise
+Because this game is a bit more complicated than the standard problems involving demons in decision theory, I need to make a few more stipulations about how demons work. These will be standard from now on in all problems unless stated otherwise.
+
+- Each demon is arbitrarily accurate at predicting Chooser's strategy.
+- The demon's errors are probabilistically independent, so knowing that Demon-1 has erred is no evidence that Demon-2 will err.
+- If the rules say that a demon predicts the move Chooser will make at a node, what that means is they choose the move that is most probable for Chooser to make given their prediction of Chooser's strategy, and whatever other information they have to that point.
+- If _n_ predictions are tied for being equally probable given demon's prediction and information, that demon plays the mixed strategy of making any one prediction with probability 1/_n_.
+
+The last requirement will be important here. If Chooser plays the strategy of doing whatever Demon-1 predicts, then without the last clause we can't work out the conditional probabilities for Demon-1's moves given Chooser's strategy. And it was part of our definition of a decision tree that these conditional probabilities were required. The last clause implies that in that case Demon-1 will flip a coin to decide what to 'predict'. The same happens if Chooser adopts the strategy of doing the opposite of what Demon-1 predicts.
+
+Earlier, I represented the game as a pair of tables, repeated here as @tbl-edt-war-reprise. In these tables, the columns are the predictions of Demon-2.
 
 ::: {#tbl-edt-war-reprise layout-ncol="2"}
 |          | PA  | PB    |
@@ -77,4 +86,4 @@ Earlier, I represented the game as a pair of tables, repeated here as @tbl-edt-w
 A Newcomb problem with two demons.
 :::
 
-
+Given what was said so far, we have two perhaps more perspicuous ways to represent the game. The first is visually, as a tree diagram. This is shown in @fig-edt-war-reprise.
