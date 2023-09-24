@@ -40,69 +40,41 @@ A decision tree is like a game tree, but with more players that are distinctive 
 
 While these demons are a lot like the demons that have been central to decision theory ever since the introduction of Newcomb's Problem, there are two things I'm doing differently here that I want to note up front. First, there may be more than one demon. In the examples to follow, there will occasionally be four players: Chooser, two demons, and Nature. Second, the conditional probabilities are conditional on strategies, not just choices. This will matter in two stage games; to make the second stage game be just like the familiar games in decision theory (like Newcomb's Problem), it will be important that Demon's dispositions are sensitive to Chooser's dispositions about the second game. And this is important even in cases (of which there will be a few below) where Chooser can choose whether to play that second-round game.
 
-## Two Familiar Approaches to Decision Trees
+## Introducing the Dual Mandate {#sec-dual-intro}
+
+### Purely Strategic Approaches {#sec-purely-strategic}
+
+One way to think about what ideal Chooser will do in a decision tree takes the notion of a strategy as primitive. The short version is that it says Chooser uses decision theory to choose a strategy, and then implements that strategy at each node.
+
+In a finite game, there will be finitely many strategies. This finite number may be very large. The number of strategies Chooser has is the product, across each of the nodes in the tree where they choose, of the number of choices available at that node. But still, it is finite. And similarly there are finitely many strategies for each of the non-human players, and Chooser can work out the conditional probability for each such strategy given their choice of strategy. So we have a very large, but finite, game, and most decision theories on the market in philosophy will have something to say about what Chooser should do in this large game.
+
+All that's then left to do is to carry the strategy out. It's perhaps a bit easier to see this in practice. And I'll use EDT to illustrate it, because variants of CDT sometimes get complicated to apply to cases beyond binary choice.
+
+I'll start with a case we've seen before, the two stage Newcomb Problem I used earlier to argue against EDT: @tbl-edt-war. As a reminder, the game has three players, Chooser, Demon-1, and Demon-2. And it plays out over the following four stages.^[As usual, each demon is arbitrarily accurate with their predictions, and their errors are probabilistically independent.]
+
+1. At stage 1, Demon-1 predicts what Chooser will do at stage 4. This information is kept hidden from everyone.
+2. At stage 2, Demon-2 predicts what Chooser will do at stage 4. This information is also kept hidden from everyone.
+3. At stage 3, Demon-1's prediction is revealed to Chooser, but Demon-2's prediction is kept secret.
+4. At stage 4, Chooser chooses A or B. Chooser's payout is a function of their choice, and the two predictions the demons make.
+
+Earlier, I represented the game as a pair of tables, repeated here as @tbl-edt-war-reprise
+
+::: {#tbl-edt-war-reprise layout-ncol="2"}
+|          | PA  | PB    |
+|:--------:|:---:|:-----:|
+|  **A**   |  1  |   3   |
+| **B**    |  0  |   2   |
+
+: Demon-1 predicts A {#tbl-war-left-reprise}
+
+|          | PA   | PB    |
+|:--------:|:----:|:-----:|
+|  **A**   | 1001 | 1003  |
+| **B**    | 1000 | 1002  |
+
+: Demon-1 predicts B {#tbl-war-right-reprise}
+
+A Newcomb problem with two demons.
+:::
 
 
-The elements of Di satisfy the following restrictions:
-
-
- where something is a game tree if and only if the following conditions are met.
-
--   At every step, Chooser either receives some information, or makes a choice.
--   Chooser knows before the first step what possible choices will be available at each step, given the prior steps, or what possible pieces of information could be received.
--   No matter what happens, the tree ends after finitely many steps. (Though it may end after more or fewer steps depending on what happens).
--   Chooser knows before the first step what payout they will receive given each possible sequence of choices and information.
--   Before the first step, chooser has a probability for each possible piece of information they could receive, given the prior steps in the tree.
-
-- Dynamic turn, which lasts the rest of the way
-- What a dynamic decision problem is, and what it isn't
-- Define strategy, note that it includes realism about dispositions
-- Two options: Purely strategic, and purely consequentialist
-- My view: Neither; the strategy implemented and the choices made are both rationally defensible
-
-## Philosophical Background
-
-- Dr Strangelove and the purely strategic
-- Zaphod Beeblebrox and the purely consequentialist
-- Stalnaker on future
-- Spencer on binding; as it stands not a great argument, maybe humans can't bind but ideal humans should. But it seems, and this is a judgment call, that we don't get any extra explanatory power from doing that. Maybe we do, but most people will give up on plans that they are sure have failed, if the stakes are high enough.
-- My picture; can make plans and carry them out, conditional on the plans being rational were they to be reconsidered.
-- This is not a trivial constraint; it doesn't just say bind yourself to what you'd do anyway. It says that even if multiple options are permissible, can bind yourself to one of them.
-
-## Against Pure Strategy
-
-We have to do this in parts.
-
-### Against Pure Strategy and EDT
-
-Cut and paste from existing discussion
-
-### Against Pure Strategy and CDT
-
-Have some of this already
-Note that there are complications
-Some of the argument here is not the cases, which don't seal the case, but the philosophical considerations from background
-
-## Against Pure Consequentialism
-
-### Two Examples
-
-Note the Spencer example, but don't go over it; relies on unavailability of mixed strategy
-Objection to the regret based strategies; 0, 5 // 2, 2; alternative is to get 1.
-Objection to GDT; 1, 0 // 0, 5; alternative is to get 2.
-
-### Analysis of the Examples
-
-Intuitively, could do better.
-Do the choosers have a defence?
-There certainly are cases where we rationally play a sub-optimal strategy: will cease being rational and/or will change preferences
-It feels to me that that's all; otherwise it's unacceptable alienation. Chooser endorses the choices being made, but regrets them. That doesn't make sense.
-And this does feel like an acceptable form of binding
-People can, after all, make plans, and we can plan around them.
-
-## Mixtures
-
-- Dual Mandate requires mixtures
-- Can see this with an example that Spencer uses
-- I think since the dual mandate is independently plausible, this is an argument that ideal agents can mix.
-- Of course, the dual mandate is absurd for non-ideal agents; see the eternal debate between actualists and eternalists
