@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.433">
+<meta name="generator" content="quarto-1.3.340">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -78,8 +78,7 @@ div.csl-indent {
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
+    "search-submit-button-title": "Submit"
   }
 }</script>
 <script type="application/json" class="js-hypothesis-config">
@@ -90,6 +89,8 @@ div.csl-indent {
 <script async="" src="https://hypothes.is/embed.js"></script>
 <link rel="stylesheet" href="https://use.typekit.net/uzz2drx.css">
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 </head>
 
@@ -105,7 +106,7 @@ div.csl-indent {
       <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./dual.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Dual Mandate</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -119,7 +120,7 @@ div.csl-indent {
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Game Theory as Decision Theory</a> 
         <div class="sidebar-tools-main tools-wide">
-    <a href="https://github.com/bweatherson/gtadt" rel="" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <a href="https://github.com/bweatherson/gtadt" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
     <div class="dropdown">
       <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download"><i class="bi bi-download"></i></a>
       <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
@@ -198,7 +199,7 @@ div.csl-indent {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./causal.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Causal</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Causal[^causal-1]</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -310,7 +311,7 @@ div.csl-indent {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span id="sec-dualmandate" class="quarto-section-identifier"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Dual Mandate</span></span></h1>
+<h1 class="title"><span id="sec-dual" class="quarto-section-identifier"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Dual Mandate</span></span></h1>
 </div>
 
 
@@ -325,223 +326,128 @@ div.csl-indent {
 
 </header>
 
-<p>Say a decision tree is a series of steps with the following characteristics.</p>
+<section id="sec-dual-introduction" class="level2 page-columns page-full" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="sec-dual-introduction"><span class="header-section-number">7.1</span> Introduction</h2>
+<p>This chapter marks a turning point in the book. From here on, a large amount of the time will be spent discussion situations involving dynamic choice. A central argument for GDT is that only it, or something like it, is compatible with plausible principles of dynamic choice. I’ll call the dynamic choice situations I’ll be interested in decision trees. To define them, it helps to start with an orthodox definition of a game tree.</p>
+<blockquote class="blockquote page-columns page-full">
+<div class="page-columns page-full"><p>A finite extensive form (or frame) with perfect recall consists of the following items.<br>
+- A finite rooted directed tree.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> - A set of players <em>I</em> = {1,…,n} and a function that assigns one player to every decision node. A set of actions <em>A</em> and a function that assigns one action to every directed edge, satisfying the restriction that no two edges out of the same node are assigned the same action. A set of outcomes_O_ and a function that assigns an outcome to every terminal node. For every player <em>i</em> <span class="math inline">\(\in\)</span> <em>I</em>, a partition <span class="math inline">\(\mathfrak{D}_i\)</span> of the set <em>D<sub>i</sub></em> of decision nodes assigned to player <em>i</em> (thus <span class="math inline">\(\mathfrak{D}_i\)</span> is a collection of mutually disjoint subsets of <em>D<sub>i</sub></em> whose union is equal to <em>D<sub>i</sub></em>). Each element of Di is called an information set of player <em>i</em>. <span class="citation" data-cites="Bonanno2018">(<a href="references.html#ref-Bonanno2018" role="doc-biblioref">Bonanno 2018, 119</a>)</span></p><div class="no-row-height column-margin column-container"><li id="fn1"><p><sup>1</sup>&nbsp;This is defined earlier, on page 75, but the details aren’t important to what we’re doing.</p></li></div></div>
+</blockquote>
+<p>The quote continues with some restrictions on <span class="math inline">\(\mathfrak{D}_i\)</span>, but I want to pause first to say what this is supposed to represent, and then it is easy to say informally what the constraints are. This partition is an epistemic accessibility relation. If two nodes are in the same cell of the partition, then when the player is in one of them, for all they know, they are in the other. The strongest thing they know, when they are at a particular node, is that they are somewhere in that cell of the partition.</p>
+<p>Implicitly, the assumption here is that the right accessibility relation for epistemic logic is an equivalence relation. That’s absurd in full generality. But I think in this context it’s a harmless enough idealisation. That is, it’s harmless enough if we remember that an idealisation here is a simplification, and not something that we think is desirable, or in any way something to aim for.</p>
+<p>There are two standard restrictions on <span class="math inline">\(\mathfrak{D}_i\)</span>. First, players know what moves are possible, so for any two nodes in a cell of <span class="math inline">\(\mathfrak{D}_i\)</span>, the same actions are possible. Second, players remember their actions, so for any two nodes in a cell of <span class="math inline">\(\mathfrak{D}_i\)</span>, the paths to those nodes only differ with respect to moves made by other players.</p>
+<div class="page-columns page-full"><p>We’re also going to make three more assumptions that are I think implicit in the standard formulation, but not always made explicit.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> Say a ‘play’ is a particular path through the tree that happens in real time. The assumptions concern what happens in all plays of a tree thus understood.</p><div class="no-row-height column-margin column-container"><li id="fn2"><p><sup>2</sup>&nbsp;Bonanno does make all these explicit at various times, but doesn’t list them in one spot for neat quoting.</p></li></div></div>
+<p>First, each player is motivated to get the best outcome possible. If we interpret the outcomes as preferences of the player at the end of the play, and assume that players are motivated by their current preferences, this is in effect an assumption that preferences do not change over the course of the play.</p>
+<div class="page-columns page-full"><p>Second, the tree is common knowledge at the start of the play. A player will not acquire new capacities over the game, or learn that they had capacities they didn’t realise. They will not acquire any capacity to make distinctions between possibilities that they did not have at the start of the play. So, for instance, there can’t be a point in the tree where a player meets a new individual, and acquires by acquaintance the ability to have singular thoughts about that person, and distinguish that person from descriptive duplicates.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p><div class="no-row-height column-margin column-container"><li id="fn3"><p><sup>3</sup>&nbsp;Following <span class="citation" data-cites="Stalnaker2008">Stalnaker (<a href="references.html#ref-Stalnaker2008" role="doc-biblioref">2008</a>)</span>, I think this constraint means that we can’t represent the Sleeping Beauty problem as a tree, since there Beauty gains the capacity to have singular thoughts about a time, the ‘now’ when she awakes, that she did not previously have.</p></li></div></div>
+<p>Third, it is common knowledge among all the time-slices of a player that all of the player’s time-slices are rational. At this stage, it’s important that ‘rational’ be left as something of a placeholder, or, perhaps better, a variable. In some sense the aim of the theorising around here is to solve for the value of ‘rational’ given some intuitive data about rational play. But whatever rationality is, we assume the player always has it, they always know they will always have it, they always know that they always know they will always have it, and so on.</p>
+<p>A <em>strategy</em> for player <em>i</em> is a function from the members of <span class="math inline">\(\mathfrak{D}_i\)</span> to probability distributions over actions. That is, the strategy says which action, or mixed action, a player will do at each information set that they could reach consistent with the rules of the game.</p>
+<div class="page-columns page-full"><p>It will become important that these are extremely fine-grained. A strategy describes what a player will do at nodes that are ruled out by other choices the player makes. Consider a game that consists of two rounds of some simple two-player, two-choice game, like Prisoners’ Dilemma, with the results of the first round revealed before the second round is played. Each player has 32 strategies. (So there are 1024 strategy pairs.) The tree for the game has five information sets where each player might move; the first-round game, then, since there are four ways the first game could go, four more possibilities for what they might know when the second-round game is played. Since there are 2<sub>5</sub>, i.e., 32, ways to make binary choices over five possible choices, there are 32 strategies.<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></p><div class="no-row-height column-margin column-container"><li id="fn4"><p><sup>4</sup>&nbsp;Some of the results of the next few chapters came from work I started investigating what happened in two-round decision problems like that. None of that work appears here, because for every result I found, I eventually found an illustration with many fewer strategies. If you’re grateful you don’t have to look at 32-by-32 strategy tables, you can’t imagine how grateful I am to not be writing them.</p></li></div></div>
+<p>I’m going to assume a kind of realism about strategies. Players actually have dispositions about what they will do at nodes that aren’t reached, and even at nodes that couldn’t be reached given their prior dispositions. These dispositions are at least real enough to play the following two roles: they can be the conditions that conditional probabilities are defined over, and they are subject to evaluation as rational or irrational.</p>
+<div class="page-columns page-full"><p>Trees in game theory textbooks frequently designate one special player: Nature <span class="citation" data-cites="Bonanno2018">(<a href="references.html#ref-Bonanno2018" role="doc-biblioref">Bonanno 2018, 134ff</a>)</span>. Nature is different in a few respects. It does not have any special outcome; the outcomes are utilities for the players other than Nature. It is usually taken to be common knowledge among the other players that they are rational; but Nature is not rational. Rather, at every node where Nature makes a move, there is an externally provided probability distribution over the possible moves. These probabilities are common knowledge at the start of the game.<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a></p><div class="no-row-height column-margin column-container"><li id="fn5"><p><sup>5</sup>&nbsp;Though note that does not mean all players know the probability of each move at any time Nature moves. It could be that while the game is going, a player does not know precisely which node they are at, so they do not know what probability distribution Nature is using. This is common in card games. If I don’t know what’s in your hand, I don’t know what cards are left, so I don’t know whether the probability that Nature is about to give a player the Jack of Hearts is, say, 0.025, or 0.</p></li></div></div>
+<p>A decision tree is like a game tree, but with more players that are distinctive in the way Nature is. There is only one player stipulated to be rational: Chooser. (They will be player 1 in what follows, unless stated otherwise.) At most one player is Nature, in the sense of the previous paragraph. The other players are all demons. If a demon moves at a node, then Chooser knows not the unconditional probability of that demon’s possible actions, but the conditional probability of the demon’s actions given their strategy choice. In more familiar terms, the demon predicts their strategy with a certain probability of accuracy, and has dispositions about what to do given each prediction.</p>
+<p>While these demons are a lot like the demons that have been central to decision theory ever since the introduction of Newcomb’s Problem, there are two things I’m doing differently here that I want to note up front. First, there may be more than one demon. In the examples to follow, there will occasionally be four players: Chooser, two demons, and Nature. Second, the conditional probabilities are conditional on strategies, not just choices. This will matter in two stage games; to make the second stage game be just like the familiar games in decision theory (like Newcomb’s Problem), it will be important that Demon’s dispositions are sensitive to Chooser’s dispositions about the second game. And this is important even in cases (of which there will be a few below) where Chooser can choose whether to play that second-round game.</p>
+</section>
+<section id="sec-dual-intro" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="sec-dual-intro"><span class="header-section-number">7.2</span> Introducing the Dual Mandate</h2>
+<section id="sec-purely-strategic" class="level3" data-number="7.2.1">
+<h3 data-number="7.2.1" class="anchored" data-anchor-id="sec-purely-strategic"><span class="header-section-number">7.2.1</span> Purely Strategic Approaches</h3>
+<p>One way to think about what ideal Chooser will do in a decision tree takes the notion of a strategy as primitive. The short version is that it says Chooser uses decision theory to choose a strategy, and then implements that strategy at each node.</p>
+<p>In a finite game, there will be finitely many strategies. This finite number may be very large. The number of strategies Chooser has is the product, across each of the nodes in the tree where they choose, of the number of choices available at that node. But still, it is finite. And similarly there are finitely many strategies for each of the non-human players, and Chooser can work out the conditional probability for each such strategy given their choice of strategy. So we have a very large, but finite, game, and most decision theories on the market in philosophy will have something to say about what Chooser should do in this large game.</p>
+<p>All that’s then left to do is to carry the strategy out. It’s perhaps a bit easier to see this in practice. And I’ll use EDT to illustrate it, because variants of CDT sometimes get complicated to apply to cases beyond binary choice.</p>
+<p>I’ll start with a case we’ve seen before, the two stage Newcomb Problem I used earlier to argue against EDT: <a href="causal.html#tbl-edt-war">Table&nbsp;<span>4.4</span></a>. As a reminder, the game has three players, Chooser, Demon-1, and Demon-2. And it plays out over the following four stages.</p>
+<ol type="1">
+<li>At stage 1, Demon-1 predicts what Chooser will do at stage 4. This information is kept hidden from everyone.</li>
+<li>At stage 2, Demon-2 predicts what Chooser will do at stage 4. This information is also kept hidden from everyone.</li>
+<li>At stage 3, Demon-1’s prediction is revealed to Chooser, but Demon-2’s prediction is kept secret.</li>
+<li>At stage 4, Chooser chooses A or B. Chooser’s payout is a function of their choice, and the two predictions the demons make.</li>
+</ol>
+<p>Because this game is a bit more complicated than the standard problems involving demons in decision theory, I need to make a few more stipulations about how demons work. These will be standard from now on in all problems unless stated otherwise.</p>
 <ul>
-<li>At every step, Chooser either receives some information, or makes a choice.</li>
-<li>Chooser knows before the first step what possible choices will be available at each step, given the prior steps, or what possible pieces of information could be received.</li>
-<li>No matter what happens, the tree ends after finitely many steps. (Though it may end after more or fewer steps depending on what happens).</li>
-<li>Chooser knows before the first step what payout they will receive given each possible sequence of choices and information.</li>
-<li>Before the first step, chooser has a probability for each possible piece of information they could receive, given the prior steps in the tree.</li>
+<li>Each demon is arbitrarily accurate at predicting Chooser’s strategy.</li>
+<li>The demon’s errors are probabilistically independent, so knowing that Demon-1 has erred is no evidence that Demon-2 will err.</li>
+<li>If the rules say that a demon predicts the move Chooser will make at a node, what that means is they choose the move that is most probable for Chooser to make given their prediction of Chooser’s strategy, and whatever other information they have to that point.</li>
+<li>If <em>n</em> predictions are tied for being equally probable given demon’s prediction and information, that demon plays the mixed strategy of making any one prediction with probability 1/<em>n</em>.</li>
 </ul>
-<div class="page-columns page-full"><p>That’s incredibly abstract, but it excludes some possibilities. It excludes cases where Chooser learns along the way that they have hitherto unknown abilities. It excludes cases where Chooser gains the capacity to think new relevant thoughts along the way, say by meeting a new person and gaining the capacity to have singular thoughts about them.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> Still, it does cover a lot of cases.</p><div class="no-row-height column-margin column-container"><li id="fn1"><p><sup>1</sup>&nbsp;Following <span class="citation" data-cites="Stalnaker2008">Stalnaker (<a href="references.html#ref-Stalnaker2008" role="doc-biblioref">2008</a>)</span>, I think it excludes the Sleeping Beauty case, since there Beauty gains the capacity to have singular thoughts about a time, the ‘now’ when she awakes, that she did not previously have.</p></li></div></div>
-<p>Say a strategy for a decision tree is a plan for what to do in every possible choice situation. Following the game theory textbooks, I really do mean <em>every</em> here. A strategy should say what to do in cases that are ruled out by Chooser’s prior choices. A strategy for playing chess as White might say to start with e4, but also include plans for what to do if you inexplicably start Na3. There are both mathematical and philosophical reasons for having such an expansive conception of strategies, and I’ll come back to one reason why later in this chapter.</p>
-<p>Here are two classes of philosophical views about how decision makers facing such trees should act.</p>
-<p>One approach is what I’ll call the <strong>purely strategic</strong> approach. This says that Chooser should treat the problem as one of making a one-off choice between the (potentially very large) number of strategies. Then at each step, an act is permissible iff it is part of the strategy Chooser has permissibly chosen. On this view, the only difference between a static choice, where Chooser just makes a decision, finds out something about the world, and gets a return, and a dynamic choice, like when Chooser faces a tree like this, is that in the latter Chooser has to implement their choice in stages.</p>
-<p>Another approach is what I’ll call the <strong>purely consequentialist</strong> approach. This says that at each time Chooser has to make a decision, they are facing a wholly new decision problem, and the only rational constraints they face are ones that they would be facing if they were at the start of a tree. Moreover, Chooser knows now that their future self will be like this. So when they now make decisions whose consequences turn on (among other things) what their future self will do, they regard those decisions by their future self as matters for prediction, not planning. They take the same attitude towards their future self as they take to other decision makers. That means that they may assume (if it’s given as an assumption) that they will be rational, and if there are multiple possible rational choices, they can have a probability distribution over the choices the person may make, but they don’t regard themselves as in a position to bind their future self.</p>
-<p>I’m going to reject both of these approaches. My preferred approach follows what I take the orthodoxy in game theory to be. This view follows the lead suggested by <span class="citation" data-cites="Selten1965">Selten (<a href="references.html#ref-Selten1965" role="doc-biblioref">1965</a>)</span> which says in effect that both the strategic and consequentialist approaches are correct. But because they are both correct, it can’t be right to have a <em>purely</em> strategic, or a <em>purely</em> consequentialist view. I’m going to call this the <strong>dual mandate</strong> approach. More formally, it says that in such a tree, every choice Chooser makes should be defensible on consequentialist grounds, and the set of choices that Chooser makes should all be part of some strategy that is defensible on strategic grounds. Chooser’s choices must make sense taken one-at-a-time, and they must make sense taken collectively. As I said, I think this is more or less game-theoretic orthodoxy, but I don’t think it’s a common position in the philosophical literature.</p>
-<div class="page-columns page-full"><p>The three options from the last three paragraphs do not exhaust the field. There are views that reject the way I have set up the problem. In the first bullet point, I said that Chooser might either receive information, or make a choice. In a game, there are two kinds of information Chooser might receive. Either a genuinely random possibility might get resolved some way, or a rational player might act.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> One could have a theory that treated the two possibilities differently. For instance, I can see the appeal of having a view that was more strategic when it came to interactions with others, but more consequentialist when it came to interactions with purely random parts of the world.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> My arguments below against the purely strategic approach are meant to extend to these moderately strategic approaches, but it’s impossible to predict every possible move that might be made, and I suspect there are some interesting approaches on these lines that aren’t ruled out, even if everything I say here is true.</p><div class="no-row-height column-margin column-container"><li id="fn2"><p><sup>2</sup>&nbsp;Game theorists typically refer to the first as ‘Nature’ making a move.</p></li><li id="fn3"><p><sup>3</sup>&nbsp;For people familiar with the decision theory literature, this kind of position may be appealing to those whose intuitions supported taking one box in Newcomb’s Problem, but supported taking the causally dominant choice in “Medical Newcomb Problems” (to borrow a phrase from Huw <span class="citation" data-cites="Price1991">Price (<a href="references.html#ref-Price1991" role="doc-biblioref">1991</a>)</span>).</p></li></div></div>
-<div class="page-columns page-full"><p>In philosophy, the purely strategic approach is often called the resolute approach<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>, and the purely consequentialist approach is called the sophisticated approach. But I don’t think it’s too bad to introduce new names here. My use of consequentialist follows the very influential use of <span class="citation" data-cites="Hammond1988">Hammond (<a href="references.html#ref-Hammond1988" role="doc-biblioref">1988</a>)</span>, and it’s useful to connect the strategic approach to game-theoretic strategies.</p><div class="no-row-height column-margin column-container"><li id="fn4"><p><sup>4</sup>&nbsp;Most notably defended by <span class="citation" data-cites="McClennan1990">McClennan (<a href="references.html#ref-McClennan1990" role="doc-biblioref">1990</a>)</span>.</p></li></div></div>
-<p>The orthodoxy in game theory, going back to at least <span class="citation" data-cites="Selten1965">Selten (<a href="references.html#ref-Selten1965" role="doc-biblioref">1965</a>)</span>, is that both views are correct. When faced with a decision tree, Chooser should follow the advice of the sophisticated theorists, and (given they are ideally rational) do what would be best on the assumption that future choices will be rational. But in doing so, they should instantiate (part of) a strategy that could be rationally chosen by the resolute chooser. I call this the Dual Mandate approach, and I am going to defend it.</p>
-<div class="page-columns page-full"><p>Start with why it is bad to just have a resolute approach.<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a> Game theorists usually reject this approach because it means sometimes making a decision that one knows will have worse consequences than an available alternative. I’ll go over an example of this, though I should note it is rather violent. This is unavoidable; it is only in these violent cases that we can be sure the Chooser is really making things worse, and not acting for a strategic or reputational goal.</p><div class="no-row-height column-margin column-container"><li id="fn5"><p><sup>5</sup>&nbsp;The so-called Foundational Decision Theory of <span class="citation" data-cites="LevinsteinSoares2020">Levinstein and Soares (<a href="references.html#ref-LevinsteinSoares2020" role="doc-biblioref">2020</a>)</span> agrees with the resolute approach in the special case where the only information Chooser will receive are the results of predictions, and is subject to the criticisms I’ll make of resolute theories.</p></li></div></div>
-<p>Chooser is the Prime Minister of a small country, and they are threatened by a large neighbour. Unfortunately, neighbour is thinking of carpet bombing Chooser’s capital, in retaliation for some perceived slight. Chooser has no air defences that would prevent a great destruction, and no allies who will rally to help. Fortunately, Chooser has a mighty weapon, a Doomsday device, that could destroy neighbour. Chooser has obviously threatened to use this, but neighbour suspects it is a bluff. This is for a good reason; the doomsday device would also destroy Chooser’s own country. Neighbour is known to employ a Demon who is at least 99% accurate in predicting what military plans Chooser will take. So Chooser can do Nothing (N), or use the Doomsday device (D), should neighbour attack. Chooser would obviously prefer no attack, and would certainly not use the device preemptively. So here is the table.</p>
-<div id="tbl-retaliation" class="anchored">
-<table class="table">
-<caption>Table&nbsp;7.1: Deciding whether to retaliate.</caption>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;"></td>
-<td style="text-align: center;"><strong>PN</strong></td>
-<td style="text-align: center;"><strong>PD</strong></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><strong>N</strong></td>
-<td style="text-align: center;">-1</td>
-<td style="text-align: center;">0</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><strong>D</strong></td>
-<td style="text-align: center;">-50</td>
-<td style="text-align: center;">-50</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>In the top left, neighbour bombs Chooser’s capital, thinking correctly that Chooser will not retaliate. In the top right and lower right, neighbour is sufficiently scared of the doomsday device that they do nothing. But in the bottom left, neighbour attacks, and Chooser retaliates, creating a disaster for everyone, something 50 times worse than even the horrors of the carpet bombing.</p>
-<p>Still, if Chooser is picking a strategy before anything starts, the strategy with the highest expected return is to plan to retaliate. This has an expected return of -0.5; since one time in a hundred it returns -50, and otherwise it returns 0. The resolute theorist says that’s what Chooser should do, even if they see the bombers coming, and they realise their bluff has failed. This seems absurd to me, and it is the kind of result that drives game theorists to the dual mandate, but resolute theorists are familiar with the point that their theory says that sometimes one should carry out a plan now known to be pointless. So instead of resting on this case, as decisive as it seems to many, I’ll run through two more arguments against a purely resolute theory.</p>
-<p>Change the example so that Chooser has two advisors who are talking to him as the bombers come in. One of them says that the Demon is 99% reliable. The other says that the Demon is 97% reliable. Whether Chooser launches the doomsday device should, according to the resolute theorist, depend on which advisor Chooser believes. This is just absurd. A debate about the general accuracy of a demon can’t possibly be what these grave military decisions are based on.</p>
-<p>Change the example again, and make it a bit more realistic. Chooser has the same two advisors, with the same views. Chooser thinks the one who says the Demon is 99% reliable is 60% likely to be right, and the other 40% likely. So Chooser forms the plan to retaliate, because right now that’s the strategy with highest expected return. But now, to everyone’s surprise, neighbour attacks. The resolute theorist will say that Chooser should stick to their (overpowered) guns. But think about how the choice of plans looks to Chooser now. The actions of neighbour are evidence about the reliability of the demon. And a simple application of Bayes’ Rule says that Chooser should now think the advisor who thought the demon was 97% reliable is 2/3 likely to be right. That is, given Chooser’s current evidence, retaliating wasn’t even the utility maximising strategy to start with. Yet it is what the resolute theorist, or at least the resolute theorist who is not also sophisticated, would have Chooser do. This is, again, absurd, and enough reason to give up on such a theory.</p>
-<p>What about the other direction? Is it sensible to have a sophisticated theory that is not resolute? There does seem to be something puzzling about such theories. They are “diachronically exploitable” in the sense described by <span class="citation" data-cites="Spencer2021">Spencer (<a href="references.html#ref-Spencer2021" role="doc-biblioref">2021</a>)</span>. Let’s start with one example. Extend the theory offered by <span class="citation" data-cites="Gallow2020">Gallow (<a href="references.html#ref-Gallow2020" role="doc-biblioref">2020</a>)</span> to make it a pure sophisticated dynamic theory. That is, in a decision tree, the chooser values future choices by the expected value of the choice they’ll make, and if that choice is guaranteed to end the decision tree, they use Gallow’s theory. Chooser is now offered the following two-step option. At step 1 they can choose to receive 1 or play the game in <a href="#tbl-gallow-sophisticated">Table&nbsp;<span>7.2</span></a>.</p>
-<div id="tbl-gallow-sophisticated" class="anchored">
-<table class="table">
-<caption>Table&nbsp;7.2: A challenge for pure sophisticated decision.</caption>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;"></td>
-<td style="text-align: center;"><strong>PU</strong></td>
-<td style="text-align: center;"><strong>PD</strong></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><strong>U</strong></td>
-<td style="text-align: center;">2</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><strong>D</strong></td>
-<td style="text-align: center;">5</td>
-<td style="text-align: center;">0</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>If Chooser gets to step 2, they’ll play D, since it is the best option according to Gallow’s theory. So at step 1 they’ll choose the 1 rather than playing this game. But that’s absurd; they know they could have done better by simply playing the game and choosing U.</p>
-<p>What the Dual Mandate says is that the last step of reasoning here is sound; it is a fair criticism of an agent to say that their strategy doesn’t make sense even if every step makes sense taken on its own. Since this does seem like a fair criticism, it is reasonable to adopt the Dual Mandate.</p>
-<p>If one has a decisive theory, then a huge number of decision trees will be dilemmas, since it is unlikely that the optimal strategy matches the series of optimal choices. This is not a reason to reject the Dual Mandate; it’s another reason to reject decisiveness.</p>
-<div class="page-columns page-full"><p>You might worry that the argument based around <a href="#tbl-gallow-sophisticated">Table&nbsp;<span>7.2</span></a> is not really an objection to theories that reject the Dual Mandate, but just to the combination of that rejection and the endorsement of Gallow’s particular theory of decision. That worry is half right. This result is a problem for Gallow’s theory. But that doesn’t mean it isn’t also an argument for the Dual Mandate. The point of the Dual Mandate is not to criticise individual decisions, like taking the 1 in this game. It’s to criticise theories that endorse those decisions. It’s true that once we find the right theory of synchronic choice, the Dual Mandate will be unnecessary, since it will be automatically satisfied.<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a> But the Dual Mandate plays an essential role in selecting that theory.</p><div class="no-row-height column-margin column-container"><li id="fn6"><p><sup>6</sup>&nbsp;IMPORTANT NOTE TO SELF: This isn’t right. In cases where there are multiple equilibria, earlier choices might rule out some later choices. E.g., when there is an exit choice that is guaranteed to be better than some earlier choice. Gotta fix all this.</p></li></div></div>
-<div class="page-columns page-full"><p>Jack <span class="citation" data-cites="Spencer2021">Spencer (<a href="references.html#ref-Spencer2021" role="doc-biblioref">2021</a>)</span> has an example which he thinks tells against the Dual Mandate, or what he calls the requirement that Chooser not be diachronically exploitable.<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a> The agent will play first the left and then the right game, and their payouts (shown in dollars) will be summed over the game. They won’t be told between the games what they got from the first game.<a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a></p><div class="no-row-height column-margin column-container"><li id="fn7"><p><sup>7</sup>&nbsp;Spencer’s non-exploitability isn’t quite the same thing as the Dual Mandate, but it’s close enough for these purposes. Spencer rejects non-exploitability, but endorses a weaker constraint he calls the Guaranteed Principle. I don’t see any reason to distinguish between these constraints, in part because of the argument that follows in the text.</p></li><li id="fn8"><p><sup>8</sup>&nbsp;Assume Chooser is reasonably risk-neutral over dollars over this range of outcomes.</p></li></div></div>
-<div id="tbl-newcomb-insurance" class="tbl-parent quarto-layout-panel anchored">
+<p>The last requirement will be important here. If Chooser plays the strategy of doing whatever Demon-1 predicts, then without the last clause we can’t work out the conditional probabilities for Demon-1’s moves given Chooser’s strategy. And it was part of our definition of a decision tree that these conditional probabilities were required. The last clause implies that in that case Demon-1 will flip a coin to decide what to ‘predict’. The same happens if Chooser adopts the strategy of doing the opposite of what Demon-1 predicts.</p>
+<p>Earlier, I represented the game as a pair of tables, repeated here as <a href="#tbl-edt-war-reprise">Table&nbsp;<span>7.1</span></a>. In these tables, the columns are the predictions of Demon-2.</p>
+<div id="tbl-edt-war-reprise" class="tbl-parent quarto-layout-panel anchored">
 <div class="panel-caption table-caption">
-<p>Table&nbsp;7.3: Ahmed Insurance (from <span class="citation" data-cites="Spencer2021">Spencer (<a href="references.html#ref-Spencer2021" role="doc-biblioref">2021</a>)</span>).</p>
+<p>Table&nbsp;7.1: A Newcomb problem with two demons.</p>
 </div>
 <div class="quarto-layout-row quarto-layout-valign-top">
-<div id="tbl-ni-left" class="quarto-layout-cell quarto-layout-cell-subref anchored" data-ref-parent="tbl-newcomb-insurance" style="flex-basis: 50.0%;justify-content: center;">
+<div id="tbl-war-left-reprise" class="quarto-layout-cell quarto-layout-cell-subref anchored" data-ref-parent="tbl-edt-war-reprise" style="flex-basis: 50.0%;justify-content: center;">
 <table class="table">
-<caption>(a) First game</caption>
+<caption>(a) Demon-1 predicts A</caption>
+<thead>
+<tr class="header">
+<th style="text-align: center;"></th>
+<th style="text-align: center;">PA</th>
+<th style="text-align: center;">PB</th>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: center;"></td>
-<td style="text-align: center;"><strong>PU<sub>1</sub></strong></td>
-<td style="text-align: center;"><strong>PD<sub>1</sub></strong></td>
+<td style="text-align: center;"><strong>A</strong></td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">3</td>
 </tr>
 <tr class="even">
-<td style="text-align: center;"><strong>U<sub>1</sub></strong></td>
-<td style="text-align: center;">50</td>
-<td style="text-align: center;">-50</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><strong>D<sub>1</sub></strong></td>
-<td style="text-align: center;">60</td>
-<td style="text-align: center;">-40</td>
+<td style="text-align: center;"><strong>B</strong></td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">2</td>
 </tr>
 </tbody>
 </table>
 </div>
-<div id="tbl-ni-right" class="quarto-layout-cell quarto-layout-cell-subref anchored" data-ref-parent="tbl-newcomb-insurance" style="flex-basis: 50.0%;justify-content: center;">
+<div id="tbl-war-right-reprise" class="quarto-layout-cell quarto-layout-cell-subref anchored" data-ref-parent="tbl-edt-war-reprise" style="flex-basis: 50.0%;justify-content: center;">
 <table class="table">
-<caption>(b) Second game</caption>
+<caption>(b) Demon-1 predicts B</caption>
+<thead>
+<tr class="header">
+<th style="text-align: center;"></th>
+<th style="text-align: center;">PA</th>
+<th style="text-align: center;">PB</th>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: center;"></td>
-<td style="text-align: center;"><strong>Correct</strong></td>
-<td style="text-align: center;"><strong>Incorrect</strong></td>
+<td style="text-align: center;"><strong>A</strong></td>
+<td style="text-align: center;">1001</td>
+<td style="text-align: center;">1003</td>
 </tr>
 <tr class="even">
-<td style="text-align: center;"><strong>U<sub>2</sub></strong></td>
-<td style="text-align: center;">25</td>
-<td style="text-align: center;">-75</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><strong>D<sub>2</sub></strong></td>
-<td style="text-align: center;">-25</td>
-<td style="text-align: center;">75</td>
+<td style="text-align: center;"><strong>B</strong></td>
+<td style="text-align: center;">1000</td>
+<td style="text-align: center;">1002</td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
 </div>
-<p>Note that in <a href="#tbl-ni-right">Table&nbsp;<span>7.3 (b)</span></a>, the states are not the usual ones about Demon’s predictions. Rather, they are that the Demon made the Correct, or Incorrect, prediction in <a href="#tbl-ni-left">Table&nbsp;<span>7.3 (a)</span></a>. There are eight strategies in this game, but since the Demon doesn’t care about what happens at non-chosen nodes, we won’t care either, and just focus on the four combinations of moves Chooser might make, and how they interact with Demon’s prediction. If we do that, we get the following table (also given by Spencer, and also with payouts in dollars).</p>
-<div id="tbl-ni-strategic" class="anchored">
-<table class="table">
-<caption>Table&nbsp;7.4: Strategic form of Ahmed Insurance.</caption>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;"></td>
-<td style="text-align: center;"><strong>PU<sub>1</sub></strong></td>
-<td style="text-align: center;"><strong>PD<sub>1</sub></strong></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><strong>U<sub>1</sub>U<sub>2</sub></strong></td>
-<td style="text-align: center;">75</td>
-<td style="text-align: center;">-125</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><strong>U<sub>1</sub>D<sub>2</sub></strong></td>
-<td style="text-align: center;">25</td>
-<td style="text-align: center;">25</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><strong>D<sub>1</sub>U<sub>2</sub></strong></td>
-<td style="text-align: center;">-15</td>
-<td style="text-align: center;">-15</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><strong>D<sub>1</sub>D<sub>2</sub></strong></td>
-<td style="text-align: center;">135</td>
-<td style="text-align: center;">-65</td>
-</tr>
-</tbody>
-</table>
+<p>Given what was said so far, we have two perhaps more perspicuous ways to represent the game. The first is visually, as a tree diagram. This is shown in <a href="#fig-edt-war-reprise">Figure&nbsp;<span>7.1</span></a>.</p>
+<div class="cell" data-hash="dual_cache/html/fig-edt-war-reprise_c48f51ea32426f0d079e7120f20cfaed">
+<div class="cell-output-display">
+<div id="fig-edt-war-reprise" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="dual_files/figure-html/fig-edt-war-reprise-1.png" class="img-fluid figure-img" width="384"></p>
+<figcaption class="figure-caption">Figure&nbsp;7.1: Tree Diagram of the Two Stage Newcomb game</figcaption>
+</figure>
 </div>
-<p>Spencer argues that even though D<sub>1</sub>U<sub>2</sub> is dominated by U<sub>1</sub>D<sub>2</sub> it might be rational to play it. After all, it is rational to bet on Demon being correct in <a href="#tbl-ni-right">Table&nbsp;<span>7.3 (b)</span></a>, since Demon is arbitrarily good. And if one knows one is going to do that, one may as well take the sure extra $10 that playing U<sub>1</sub> rather than D<sub>1</sub> gives. So diachronic exploitability is consistent with rationality.</p>
-<p>The reasoning of the previous paragraph fails because neither CDT, nor any other sensible decision theory, recommends taking two boxes in Newcomb Problems embedded in strategic interactions. This would be like thinking that CDT recommended always defecting in Iterated Prisoners’ Dilemma, even it was chancy whether the iterations came to an end after each round, so backward induction reasoning was unavailable. If Chooser has convinced themselves that they will play U<sub>2</sub>, and we’ll come back to whether they should believe that, then the choice in <a href="#tbl-ni-left">Table&nbsp;<span>7.3 (a)</span></a> comes down to this.</p>
-<div id="tbl-ni-new-left" class="anchored">
-<table class="table">
-<caption>Table&nbsp;7.5: First game in Ahmed Insurance, if D<sub>2</sub> will be played.</caption>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;"></td>
-<td style="text-align: center;"><strong>PU<sub>1</sub></strong></td>
-<td style="text-align: center;"><strong>PD<sub>1</sub></strong></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><strong>U<sub>1</sub></strong></td>
-<td style="text-align: center;">75</td>
-<td style="text-align: center;">-125</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><strong>D<sub>1</sub></strong></td>
-<td style="text-align: center;">-15</td>
-<td style="text-align: center;">-15</td>
-</tr>
-</tbody>
-</table>
 </div>
-<p>This game has two pure strategy equilibria, and on its own I think (because of the arguments in <a href="indecisive.html"><span>Chapter&nbsp;8</span></a>) that either play is acceptable. In context though, either play is clearly unacceptable. Given that one chooses either U<sub>1</sub> or D<sub>1</sub>, the only reasonable thing to believe is that Demon has almost certainly predicted this, so it makes to play U<sub>2</sub>, since Demon is almost certainly correct. So one ends up playing U<sub>1</sub>U<sub>2</sub> or D<sub>1</sub>U<sub>2</sub>, both of which are dominated and hence absurd strategies.</p>
-<p>Spencer argues that since the Demon is almost certainly accurate, Chooser should play U<sub>2</sub>, so they should play a dominated strategy, so the Dual Mandate doesn’t apply. (This assumes that synchronic choice rules out strictly dominated options in cases like this, but Spencer agrees that it does.) This argument only goes through if Chooser doesn’t have access to mixed strategies; i.e., if Chooser is not ideally practically rational. If Chooser does have access to mixed strategies, they should play a 50/50 mix of U<sub>1</sub> and D<sub>1</sub>, then choose D<sub>2</sub>. That is ratifiable as long as Chooser believes Demon plays PU<sub>1</sub> with probability 0.45, and PD<sub>1</sub> with probability 0.55. Since that’s the only ratifiable play for Demon, it’s reasonable for Chooser to believe this. If mixed strategies are allowed, this is not a case where the Dual Mandate fails.</p>
-<p>In general, if mixed strategies are not allowed, the Dual Mandate is implausible. But that’s because without mixed strategies, cases like <a href="#tbl-newcomb-insurance">Table&nbsp;<span>7.3</span></a> are dilemmas; they have no ratifiable choices. And it’s true that the Dual Mandate is implausible in dilemmas. Think back to the sinner described in <a href="ratify.html"><span>Chapter&nbsp;6</span></a>. Imagine that sinner will in fact say that they get <em>d</em> days in heaven. Now complicate the case; they are offered a choice of <em>d</em>! days in heaven, or to make their own choice. If they will in fact choose <em>d</em>, they should simply take <em>d</em>!, even though there are strategies available, like choosing <em>d</em>!! days, that are better. Weird things happen when there are dilemmas around, and we shouldn’t judge decision theories against these cases.</p>
-<div class="page-columns page-full"><p>The Dual Mandate is also implausible if Chooser thinks they will be irrational, or that they will have different preferences. Indeed, it is implausible if Chooser thinks they might either change or lose their mind. For example, Odysseus binds himself to the mast because he does not approve of future-Odysseus’s preferences. Professor Procrastinate<a href="#fn9" class="footnote-ref" id="fnref9" role="doc-noteref"><sup>9</sup></a> cite turns down a referee request because he does not trust his future self to be practically rational. Both of them deliberately turn down strategies that would be better than where they end up, because they do not trust their future selves to carry them out. They are alienated in this way from their future selves. When one does not endorse one’s future preferences, or does not trust one’s rationality in the future, it makes sense to be alienated from one’s future self in this way. In such cases, one’s future self is just another part of the world that must be predicted and worked around. And so it might make sense to forego, as Odysseus and Procrastinate forego, strategies that one’s future self will not be so kind as to carry out.</p><div class="no-row-height column-margin column-container"><li id="fn9"><p><sup>9</sup>&nbsp;A famous character in <span class="citation" data-cites="JacksonPargetter1986">Jackson and Pargetter (<a href="references.html#ref-JacksonPargetter1986" role="doc-biblioref">1986</a>)</span>.</p></li></div></div>
-<p>My main claim here is when neither of those two conditions obtain, i.e., when one knows that one’s future self will be rational and have the same preferences, one’s choices should make strategic sense. That is, they should satisfy the fairly weak condition that they are part of some strategy that one could choose if one was simply choosing a strategy for the whole tree. Unless one fears future irrationality, or future change of preference, one should not be alienated from one’s future self. If Chooser takes 1 rather than play <a href="#tbl-gallow-sophisticated">Table&nbsp;<span>7.2</span></a>, they are alienated in this way. They have to think, I know I’d be better off if I played U. But that fool future-me will play D instead, and blow up the plan. But future-them is not a fool; by hypothesis they are known to be ideally rational. So it isn’t coherent to think this way, and that reveals that it is incoherent to ‘rationally’ take the 1. And that is why the Dual Mandate requires that one’s strategy be rational, and not just the moves that make up the strategy.</p>
+</div>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
-<div id="ref-Gallow2020" class="csl-entry" role="listitem">
-Gallow, J. Dmitri. 2020. <span>“The Causal Decision Theorist’s Gudie to Managing the News.”</span> <em>The Journal of Philosophy</em> 117 (3): 117–49. <a href="https://doi.org/10.5840/jphil202011739">https://doi.org/10.5840/jphil202011739</a>.
-</div>
-<div id="ref-Hammond1988" class="csl-entry" role="listitem">
-Hammond, Peter J. 1988. <span>“Consequentialist Foundations for Expected Utility.”</span> <em>Theory and Decision</em> 25 (1): 25–78. <a href="https://doi.org/10.1007/BF00129168">https://doi.org/10.1007/BF00129168</a>.
-</div>
-<div id="ref-JacksonPargetter1986" class="csl-entry" role="listitem">
-Jackson, Frank, and Robert Pargetter. 1986. <span>“Oughts, Options, and Actualism.”</span> <em>Philosophical Review</em> 95 (2): 233–55. <a href="https://doi.org/10.2307/2185591">https://doi.org/10.2307/2185591</a>.
-</div>
-<div id="ref-LevinsteinSoares2020" class="csl-entry" role="listitem">
-Levinstein, Benjamin Anders, and Nate Soares. 2020. <span>“Cheating Death in Damascus.”</span> <em>Journal of Philosophy</em> 117 (5): 237–66. <a href="https://doi.org/10.5840/jphil2020117516">https://doi.org/10.5840/jphil2020117516</a>.
-</div>
-<div id="ref-McClennan1990" class="csl-entry" role="listitem">
-McClennan, Edward. 1990. <em>Rationality and Dynamic Choice</em>. Cambridge: Cambridge University Press.
-</div>
-<div id="ref-Price1991" class="csl-entry" role="listitem">
-Price, Huw. 1991. <span>“Agency and Probabilistic Causality.”</span> <em>British Journal for the Philosophy of Science</em> 42 (2): 157–76. <a href="https://doi.org/10.1093/bjps/42.2.157">https://doi.org/10.1093/bjps/42.2.157</a>.
-</div>
-<div id="ref-Selten1965" class="csl-entry" role="listitem">
-Selten, Reinhard. 1965. <span>“Spieltheoretische Behandlung Eines Oligopolmodells Mit Nachfragetr<span>ä</span>gheit.”</span> <em>Zeitschrift f<span>ü</span>r Die Gesamte Staatswissenschaft</em> 121 (2): 301–24.
-</div>
-<div id="ref-Spencer2021" class="csl-entry" role="listitem">
-Spencer, Jack. 2021. <span>“An Argument Against Causal Decision Theory.”</span> <em>Analysis</em> 81 (1): 52–61. <a href="https://doi.org/10.1093/analys/anaa037">https://doi.org/10.1093/analys/anaa037</a>.
+<div id="ref-Bonanno2018" class="csl-entry" role="listitem">
+Bonanno, Giacomo. 2018. <span>“Game Theory.”</span> Davis, CA: Kindle Direct Publishing. 2018. <a href="http://faculty.econ.ucdavis.edu/faculty/bonanno/GT_Book.html">http://faculty.econ.ucdavis.edu/faculty/bonanno/GT_Book.html</a>.
 </div>
 <div id="ref-Stalnaker2008" class="csl-entry" role="listitem">
 Stalnaker, Robert. 2008. <em>Our Knowledge of the Internal World</em>. Oxford: Oxford University Press.
 </div>
 </div>
+</section>
+</section>
 
 
 </main> <!-- /main -->

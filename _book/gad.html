@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.433">
+<meta name="generator" content="quarto-1.3.340">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -78,8 +78,7 @@ div.csl-indent {
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
+    "search-submit-button-title": "Submit"
   }
 }</script>
 <script type="application/json" class="js-hypothesis-config">
@@ -107,7 +106,7 @@ div.csl-indent {
       <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./gad.html">Appendices</a></li><li class="breadcrumb-item"><a href="./gad.html"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Games as Decisions</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -121,7 +120,7 @@ div.csl-indent {
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Game Theory as Decision Theory</a> 
         <div class="sidebar-tools-main tools-wide">
-    <a href="https://github.com/bweatherson/gtadt" rel="" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <a href="https://github.com/bweatherson/gtadt" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
     <div class="dropdown">
       <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download"><i class="bi bi-download"></i></a>
       <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
@@ -200,7 +199,7 @@ div.csl-indent {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./causal.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Causal</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Causal[^causal-1]</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -333,7 +332,7 @@ div.csl-indent {
 <p>The first is what I’ll call the Selten strategy, because it gives the demon a ‘trembling hand’ in the sense of <span class="citation" data-cites="Selten1975">Selten (<a href="references.html#ref-Selten1975" role="doc-biblioref">1975</a>)</span>. Instead of letting Demon choose a state in the original problem, let Demon choose one of <em>n</em> buttons, where <span class="math inline">\(n\)</span> is the number of choices the (human) chooser has. Each button is connected to a probabilistic device that generates one of the original states. If you want Demon to be 80% accurate when option <em>o<sub>i</sub></em> is chosen, say the button <span class="math inline">\(b_i\)</span> associated with option <em>o<sub>i</sub></em> outputs state <em>s<sub>i</sub></em> with probability 0.8, and each of the other states with probability <span class="math inline">\(\frac{0.2}{n - 1}\)</span>. And still say that Demon gets payout 1 for any <em>i</em> if the chooser selects <em>o<sub>i</sub></em> and the button generates state <em>s<sub>i</sub></em>, and 0 otherwise.</p>
 <p>The second is what I’ll call the Smullyan strategy, because it involves a Knights and Knaves puzzle of the kind that play a role in several of Smullyan’s books, especially his <span class="citation" data-cites="Smullyan1978">(<a href="references.html#ref-Smullyan1978" role="doc-biblioref">1978</a>)</span>. Here the randomisation takes place before Demon’s choice. Demon is assigned a type Knight or Knave. Demon is told of the assignment, but Chooser is not. If Demon is assigned type Knight, the payouts stay the same as in the game where Demon is arbitrarily accurate. If Demon is assigned type Knave, the payouts are reversed, and Demon gets payout 1 for an incorrect prediction.</p>
 <p>There are benefits to each approach, and there are slightly different edge cases that are handled better by one or other version. I find the Selten strategy a little easier to use, especially if Demon’s expected accuracy is different with different choices by Chooser. But in general either will work for turning a demonic decision problem into a game.</p>
-<div class="page-columns page-full"><p>Turning one-shot games into demonic decision problems is a bit more interesting.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> Start with a completely generic two-player, two-option, simultaneous move, symmetric game, as shown in table <a href="#tbl-basic-sym-game">Table&nbsp;<span>A.1</span></a>. We won’t only look at symmetric games, but it’s a nice way to start.</p><div class="no-row-height column-margin column-container"><li id="fn1"><p><sup>1</sup>&nbsp;This approach doesn’t always generalise to dynamic games, as became relevant to the discussion of <a href="intro.html#fig-stalnaker-centipede">Figure&nbsp;<span>1.1</span></a>. But it does work sometimes, and applying the approach to the beer-quiche game has been a major part of the story.</p></li></div></div>
+<div class="page-columns page-full"><p>Turning one-shot games into demonic decision problems is a bit more interesting.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> Start with a completely generic two-player, two-option, simultaneous move, symmetric game, as shown in table <a href="#tbl-basic-sym-game">Table&nbsp;<span>A.1</span></a>. We won’t only look at symmetric games, but it’s a nice way to start.</p><div class="no-row-height column-margin column-container"><li id="fn1"><p><sup>1</sup>&nbsp;This approach doesn’t always generalise to dynamic games, as became relevant to the discussion of <span class="quarto-unresolved-ref">?fig-stalnaker-centipede</span>. But it does work sometimes, and applying the approach to the beer-quiche game has been a major part of the story.</p></li></div></div>
 <div id="tbl-basic-sym-game" class="anchored">
 <table class="table">
 <caption>Table&nbsp;A.1: A generic symmetric game.</caption>
@@ -574,10 +573,10 @@ div.csl-indent {
 </tbody>
 </table>
 </div>
-<p>As it stands, that’s not a symmetric game. But we can make it a symmetric game by relabeling the choices. Let option A for each player be doing their favored choice, and option B be doing their less favored choice. That turns <a href="#tbl-bach-stravinsky">Table&nbsp;<span>A.9</span></a> into <a href="#tbl-bach-stravinsky-symmetric">Table&nbsp;<span>A.10</span></a>.</p>
+<p>As it stands, that’s not a symmetric game. But we can make it a symmetric game by relabelling the choices. Let option A for each player be doing their favoured choice, and option B be doing their less favoured choice. That turns <a href="#tbl-bach-stravinsky">Table&nbsp;<span>A.9</span></a> into <a href="#tbl-bach-stravinsky-symmetric">Table&nbsp;<span>A.10</span></a>.</p>
 <div id="tbl-bach-stravinsky-symmetric" class="anchored">
 <table class="table">
-<caption>Table&nbsp;A.10: Battle of the Sexes, relabeled.</caption>
+<caption>Table&nbsp;A.10: Battle of the Sexes, relabelled.</caption>
 <thead>
 <tr class="header">
 <th style="text-align: center;"></th>

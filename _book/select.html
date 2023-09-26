@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.433">
+<meta name="generator" content="quarto-1.3.340">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -78,8 +78,7 @@ div.csl-indent {
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
+    "search-submit-button-title": "Submit"
   }
 }</script>
 <script type="application/json" class="js-hypothesis-config">
@@ -107,7 +106,7 @@ div.csl-indent {
       <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./select.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Selection</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -121,7 +120,7 @@ div.csl-indent {
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Game Theory as Decision Theory</a> 
         <div class="sidebar-tools-main tools-wide">
-    <a href="https://github.com/bweatherson/gtadt" rel="" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <a href="https://github.com/bweatherson/gtadt" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
     <div class="dropdown">
       <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download"><i class="bi bi-download"></i></a>
       <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
@@ -200,7 +199,7 @@ div.csl-indent {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./causal.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Causal</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Causal[^causal-1]</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -329,8 +328,8 @@ div.csl-indent {
 
 <p>Some decision theories, most notably EDT, output a valuation of all possible choices. From that valuation a preference function over choices can be easily generated; choices that are more highly valued are preferred to those that are less highly valued. Indeed, that preference ordering will be a total preorder. Other theories, especially the theories that recommend Gathering in Stag Decisions, do not output valuations of all choices, but they do output a preference ordering over all choices. In some cases that is a total preorder, but often it is simply a preorder. Still, they share with EDT the idea that a decision theory outputs a preference ordering over the choices.</p>
 <p>GDT rejects this assumption. The aim of a decision theory is to say what the idealised chooser will choose, given some options. It is not to say that this unchosen option is 7th best, and that unchosen one is 9th best. It can’t be that, because these claims don’t explain behaviour, and explaining behaviour is the aim of the project. One does not behave differently whether this or that unchosen option is preferred.</p>
-<p>So we should think of GDT as outputting not a preference function, but a choice function in the sense of <span class="citation" data-cites="Samuelson1938">Samuelson (<a href="references.html#ref-Samuelson1938" role="doc-biblioref">1938</a>)</span>, <span class="citation" data-cites="Chernoff1954">Chernoff (<a href="references.html#ref-Chernoff1954" role="doc-biblioref">1954</a>)</span>, and <span class="citation" data-cites="Sen1971">Sen (<a href="references.html#ref-Sen1971" role="doc-biblioref">1971</a>)</span>. This is consistent with the practice in decision theory. Think about the use of solution concepts like subgame perfect equilibrium <span class="citation" data-cites="Bonanno2018">(<a href="references.html#ref-Bonanno2018" role="doc-biblioref">Bonanno 2018</a>, sec 4.4)</span> or Perfect Bayesian equilibrium <span class="citation" data-cites="Bonanno2018">(<a href="references.html#ref-Bonanno2018" role="doc-biblioref">Bonanno 2018</a>, ch.&nbsp;13)</span>. These describe which choices are acceptable in dynamic situations. But they don’t even purport to offer a ranking over the unchosen options. The algorithms one uses to solve games using these concepts don’t suggest that this or that unchosen option is better than some others. All the theory says is that given a situation, these options are choice-worthy, and these ones are not.</p>
-<p>That doesn’t mean that anything goes when it comes to choice. We can put some substantive constraints on what a choice function looks like. Following standard practice, when <em>X</em> is a set of options, let <em>c</em>(<em>X</em>) be the set of choice-worthy options in <em>X</em>. One plausible principle is that if <em>Y</em> is a subset of <em>X</em>, i.e., it is generated from <em>X</em> by deleting alternatives, then anything in <em>c</em>(<em>X</em>) that is also in <em>Y</em> is in <em>c</em>(<em>Y</em>). That is, deleting options does not turn something choice-worthy into something non-choice-worthy, unless it is indeed deleted. This is called principle <span class="math inline">\(\alpha\)</span> by <span class="citation" data-cites="Sen1971">Sen (<a href="references.html#ref-Sen1971" role="doc-biblioref">1971</a>)</span>, though it is often also (following <span class="citation" data-cites="Moulin1985">Moulin (<a href="references.html#ref-Moulin1985" role="doc-biblioref">1985</a>)</span>) called the Chernoff condition, since it is equivalent to one of Chernoff’s postulates. And this principle is important in game theory, for without it the method of solving games by deleting rejected options would not make sense.</p>
+<p>So we should think of GDT as outputting not a preference function, but a choice function in the sense of <span class="citation" data-cites="Samuelson1938">(<a href="references.html#ref-Samuelson1938" role="doc-biblioref"><strong>Samuelson1938?</strong></a>)</span>, <span class="citation" data-cites="Chernoff1954">(<a href="references.html#ref-Chernoff1954" role="doc-biblioref"><strong>Chernoff1954?</strong></a>)</span>, and <span class="citation" data-cites="Sen1971">(<a href="references.html#ref-Sen1971" role="doc-biblioref"><strong>Sen1971?</strong></a>)</span>. This is consistent with the practice in decision theory. Think about the use of solution concepts like subgame perfect equilibrium <span class="citation" data-cites="Bonanno2018">(<a href="references.html#ref-Bonanno2018" role="doc-biblioref">Bonanno 2018</a>, sec 4.4)</span> or Perfect Bayesian equilibrium <span class="citation" data-cites="Bonanno2018">(<a href="references.html#ref-Bonanno2018" role="doc-biblioref">Bonanno 2018</a>, ch.&nbsp;13)</span>. These describe which choices are acceptable in dynamic situations. But they don’t even purport to offer a ranking over the unchosen options. The algorithms one uses to solve games using these concepts don’t suggest that this or that unchosen option is better than some others. All the theory says is that given a situation, these options are choice-worthy, and these ones are not.</p>
+<p>That doesn’t mean that anything goes when it comes to choice. We can put some substantive constraints on what a choice function looks like. Following standard practice, when <em>X</em> is a set of options, let <em>c</em>(<em>X</em>) be the set of choice-worthy options in <em>X</em>. One plausible principle is that if <em>Y</em> is a subset of <em>X</em>, i.e., it is generated from <em>X</em> by deleting alternatives, then anything in <em>c</em>(<em>X</em>) that is also in <em>Y</em> is in <em>c</em>(<em>Y</em>). That is, deleting options does not turn something choice-worthy into something non-choice-worthy, unless it is indeed deleted. This is called principle <span class="math inline">\(\alpha\)</span> by <span class="citation" data-cites="Sen1971">(<a href="references.html#ref-Sen1971" role="doc-biblioref"><strong>Sen1971?</strong></a>)</span>, though it is often also (following <span class="citation" data-cites="Moulin1985">(<a href="references.html#ref-Moulin1985" role="doc-biblioref"><strong>Moulin1985?</strong></a>)</span>) called the Chernoff condition, since it is equivalent to one of Chernoff’s postulates. And this principle is important in game theory, for without it the method of solving games by deleting rejected options would not make sense.</p>
 <ul>
 <li>Solution concepts are not preference ordering</li>
 <li>Talk about Sen for a bit, and how there are principled constraints on selection functions</li>
@@ -354,18 +353,6 @@ div.csl-indent {
 <div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
 <div id="ref-Bonanno2018" class="csl-entry" role="listitem">
 Bonanno, Giacomo. 2018. <span>“Game Theory.”</span> Davis, CA: Kindle Direct Publishing. 2018. <a href="http://faculty.econ.ucdavis.edu/faculty/bonanno/GT_Book.html">http://faculty.econ.ucdavis.edu/faculty/bonanno/GT_Book.html</a>.
-</div>
-<div id="ref-Chernoff1954" class="csl-entry" role="listitem">
-Chernoff, Herman. 1954. <span>“Rational Selection of Decision Functions.”</span> <em>Econometrica</em> 22 (4): 422–43. <a href="https://doi.org/10.2307/1907435">https://doi.org/10.2307/1907435</a>.
-</div>
-<div id="ref-Moulin1985" class="csl-entry" role="listitem">
-Moulin, H. 1985. <span>“Choice Functions over a Finite Set: A Summary.”</span> <em>Social Choice and Welfare</em> 2 (2): 147–60.
-</div>
-<div id="ref-Samuelson1938" class="csl-entry" role="listitem">
-Samuelson, Paul A. 1938. <span>“A Note on the Pure Theory of Consumer’s Behaviour.”</span> <em>Econometrica</em> 5 (17): 61–71. <a href="https://doi.org/10.2307/2548836">https://doi.org/10.2307/2548836</a>.
-</div>
-<div id="ref-Sen1971" class="csl-entry" role="listitem">
-Sen, Amartya. 1971. <span>“Choice Functions and Revealed Preference.”</span> <em>Review of Economic Studies</em> 38 (3): 307–17. <a href="https://doi.org/10.2307/2296384">https://doi.org/10.2307/2296384</a>.
 </div>
 </div>
 
