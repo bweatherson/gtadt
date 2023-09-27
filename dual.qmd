@@ -173,12 +173,14 @@ I think CEDT is really what philosophers who have defended EDT have in mind when
 
 But what will a Pure Consequentialist do if they face a series of choices? In general, they will work backwards. They will work out what they will do at terminal stages of the game, i.e., at stages where they will have no more decisions whatever they do. When they are making a decision at a non-terminal stage, they will treat their own future decisions as something to be predicted, not planned for. So they will have a probability distribution over the possible choices, and act as if Nature is (randomly) selecting which choice. Now we've stipulated that Chooser knows they will be rational in future stages, so in cases where there is only one rational choice, Chooser will assign probability 1 to them making that choice, and 0 to the alternatives. But in the cases where there are multiple options that are rationally permissible, this probability assignment might be more interesting.
 
-This has an important technical consequence: Purely Consequentialist theories are _unstable_ in the sense Dmitri @Gallownd has described. If the pure consequentialist changes their own probability distribution over what they will do, what act is rational for them changes.^[The point here is somewhat connected to the point Bonanno makes about how backwards induction works in games where a player is indifferent between certain outcomes [@Bonanno2018, 80ff].] I don't think this is ever an issue for CEDT, but it is an issue for other Purely Consequentialist theories. For instance, GDT says that either A or B is a permissible choice in @tbl-unstable-example.
+This has an important technical consequence: Purely Consequentialist theories are *unstable* in the sense Dmitri @Gallownd has described. If the pure consequentialist changes their own probability distribution over what they will do, what act is rational for them changes.[^dual-6] I don't think this is ever an issue for CEDT, but it is an issue for other Purely Consequentialist theories. For instance, GDT says that either A or B is a permissible choice in @tbl-unstable-example.
 
-|       |  PA  |  PB  |
-|:-----:|:----:|:----:|
-| **A** | 2    | 2    |
-| **B** | 0    | 4    |
+[^dual-6]: The point here is somewhat connected to the point Bonanno makes about how backwards induction works in games where a player is indifferent between certain outcomes [@Bonanno2018, 80ff].
+
+|       | PA  | PB  |
+|:-----:|:---:|:---:|
+| **A** |  2  |  2  |
+| **B** |  0  |  4  |
 
 : A game with two permissible choices. {#tbl-unstable example}
 
@@ -227,4 +229,4 @@ square node/.style={rectangle,draw, inner sep = 1, fill = black}
 \end{tikzpicture}
 ```
 
-Now consider a Purely Consequentialist version of GDT, call it CGDT. It will say that Chooser will have some probability distribution over what they will play if they reach the information set in the bottom-right of @fig-unstable-example. But CGDT itself won't say anything about what the probability distribution will be, since either option is permissible. If the probability they will play A is above 0.5, they will Play rather than Exit at the top node, since the expected return to Play is 2(1 + _x_), where _x_ is the probability they will play A. But if that probability is below 0.5, they will Exit rather than Play, since the expected return to Playing is under 3.
+Now consider a Purely Consequentialist version of GDT, call it CGDT. It will say that Chooser will have some probability distribution over what they will play if they reach the information set in the bottom-right of @fig-unstable-example. But CGDT itself won't say anything about what the probability distribution will be, since either option is permissible. If the probability they will play A is above 0.5, they will Play rather than Exit at the top node, since the expected return to Play is 2(1 + *x*), where *x* is the probability they will play A. But if that probability is below 0.5, they will Exit rather than Play, since the expected return to Playing is under 3.
