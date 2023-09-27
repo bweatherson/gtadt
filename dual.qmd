@@ -162,5 +162,3 @@ A brief word is needed on the notation in @tbl-edt-war-strategy. On the rows, I'
 For now the important thing about this example is that it illustrates the difference between Purely Strategic EDT and Purely Consequentialist EDT. The former, SEDT from now on, will select the strategy LBRB. It has an expected return of (approximately) 1001, while the expected return of LARA is (approximately) 2, and the other two strategies have expected returns of (approximately) 501.5. So SEDT says to play LBRB.
 
 Now this might seem very surprising. By the time Chooser gets to play, they know they are facing a Newcomb Problem. And SEDT, as we've just seen, says to play B whatever Demon-1 does. And playing B is not what EDT says to do in Newcomb Problems. Indeed, if Chooser had just been landed in either @tbl-war-left-reprise or @tbl-war-right-reprise without any sense of why Demon-1 had placed them there, SEDT (like EDT) would say to play A. None of this is, yet, to object to SEDT; it's just to note the distinctiveness of it.
-
-
