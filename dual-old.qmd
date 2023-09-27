@@ -10,9 +10,9 @@ Say a decision tree is a series of steps with the following characteristics.
 -   Chooser knows before the first step what payout they will receive given each possible sequence of choices and information.
 -   Before the first step, chooser has a probability for each possible piece of information they could receive, given the prior steps in the tree.
 
-That's incredibly abstract, but it excludes some possibilities. It excludes cases where Chooser learns along the way that they have hitherto unknown abilities. It excludes cases where Chooser gains the capacity to think new relevant thoughts along the way, say by meeting a new person and gaining the capacity to have singular thoughts about them.[^dual-1] Still, it does cover a lot of cases.
+That's incredibly abstract, but it excludes some possibilities. It excludes cases where Chooser learns along the way that they have hitherto unknown abilities. It excludes cases where Chooser gains the capacity to think new relevant thoughts along the way, say by meeting a new person and gaining the capacity to have singular thoughts about them.[^dual-old-1] Still, it does cover a lot of cases.
 
-[^dual-1]: Following @Stalnaker2008, I think it excludes the Sleeping Beauty case, since there Beauty gains the capacity to have singular thoughts about a time, the 'now' when she awakes, that she did not previously have.
+[^dual-old-1]: Following @Stalnaker2008, I think it excludes the Sleeping Beauty case, since there Beauty gains the capacity to have singular thoughts about a time, the 'now' when she awakes, that she did not previously have.
 
 Say a strategy for a decision tree is a plan for what to do in every possible choice situation. Following the game theory textbooks, I really do mean *every* here. A strategy should say what to do in cases that are ruled out by Chooser's prior choices. A strategy for playing chess as White might say to start with e4, but also include plans for what to do if you inexplicably start Na3. There are both mathematical and philosophical reasons for having such an expansive conception of strategies, and I'll come back to one reason why later in this chapter.
 
@@ -24,23 +24,23 @@ Another approach is what I'll call the **purely consequentialist** approach. Thi
 
 I'm going to reject both of these approaches. My preferred approach follows what I take the orthodoxy in game theory to be. This view follows the lead suggested by @Selten1965 which says in effect that both the strategic and consequentialist approaches are correct. But because they are both correct, it can't be right to have a *purely* strategic, or a *purely* consequentialist view. I'm going to call this the **dual mandate** approach. More formally, it says that in such a tree, every choice Chooser makes should be defensible on consequentialist grounds, and the set of choices that Chooser makes should all be part of some strategy that is defensible on strategic grounds. Chooser's choices must make sense taken one-at-a-time, and they must make sense taken collectively. As I said, I think this is more or less game-theoretic orthodoxy, but I don't think it's a common position in the philosophical literature.
 
-The three options from the last three paragraphs do not exhaust the field. There are views that reject the way I have set up the problem. In the first bullet point, I said that Chooser might either receive information, or make a choice. In a game, there are two kinds of information Chooser might receive. Either a genuinely random possibility might get resolved some way, or a rational player might act.[^dual-2] One could have a theory that treated the two possibilities differently. For instance, I can see the appeal of having a view that was more strategic when it came to interactions with others, but more consequentialist when it came to interactions with purely random parts of the world.[^dual-3] My arguments below against the purely strategic approach are meant to extend to these moderately strategic approaches, but it's impossible to predict every possible move that might be made, and I suspect there are some interesting approaches on these lines that aren't ruled out, even if everything I say here is true.
+The three options from the last three paragraphs do not exhaust the field. There are views that reject the way I have set up the problem. In the first bullet point, I said that Chooser might either receive information, or make a choice. In a game, there are two kinds of information Chooser might receive. Either a genuinely random possibility might get resolved some way, or a rational player might act.[^dual-old-2] One could have a theory that treated the two possibilities differently. For instance, I can see the appeal of having a view that was more strategic when it came to interactions with others, but more consequentialist when it came to interactions with purely random parts of the world.[^dual-old-3] My arguments below against the purely strategic approach are meant to extend to these moderately strategic approaches, but it's impossible to predict every possible move that might be made, and I suspect there are some interesting approaches on these lines that aren't ruled out, even if everything I say here is true.
 
-[^dual-2]: Game theorists typically refer to the first as 'Nature' making a move.
+[^dual-old-2]: Game theorists typically refer to the first as 'Nature' making a move.
 
-[^dual-3]: For people familiar with the decision theory literature, this kind of position may be appealing to those whose intuitions supported taking one box in Newcomb's Problem, but supported taking the causally dominant choice in "Medical Newcomb Problems" (to borrow a phrase from Huw @Price1991).
+[^dual-old-3]: For people familiar with the decision theory literature, this kind of position may be appealing to those whose intuitions supported taking one box in Newcomb's Problem, but supported taking the causally dominant choice in "Medical Newcomb Problems" (to borrow a phrase from Huw @Price1991).
 
-In philosophy, the purely strategic approach is often called the resolute approach[^dual-4], and the purely consequentialist approach is called the sophisticated approach. But I don't think it's too bad to introduce new names here. My use of consequentialist follows the very influential use of @Hammond1988, and it's useful to connect the strategic approach to game-theoretic strategies.
+In philosophy, the purely strategic approach is often called the resolute approach[^dual-old-4], and the purely consequentialist approach is called the sophisticated approach. But I don't think it's too bad to introduce new names here. My use of consequentialist follows the very influential use of @Hammond1988, and it's useful to connect the strategic approach to game-theoretic strategies.
 
-[^dual-4]: Most notably defended by @McClennan1990.
+[^dual-old-4]: Most notably defended by @McClennan1990.
 
 The orthodoxy in game theory, going back to at least @Selten1965, is that both views are correct. When faced with a decision tree, Chooser should follow the advice of the sophisticated theorists, and (given they are ideally rational) do what would be best on the assumption that future choices will be rational. But in doing so, they should instantiate (part of) a strategy that could be rationally chosen by the resolute chooser. I call this the Dual Mandate approach, and I am going to defend it.
 
 ## Against Purely Strategic Approaches
 
-Game theorists usually reject the purely strategic approach because it means sometimes making a decision that one knows will have worse consequences than an available alternative. I'm going to go over three strategic decisions in this section which illustrate this in the three subsections. The first is a textbook example of why game theorists reject purely strategic versions. (Quite literally, it's from a textbook.) This isn't really enough to make the philosophical point, however, since many philosophers know of such examples, and think that either (a) the option game theorists rule out is desirable, so this is not actually a counterexample to purely strategic approaches, or (b) the example stops working if we add that weakly dominated strategies are not choice-worthy.[^dual-5] So in following two sub-sections I'll go over distinct examples that motivate rejecting each position.
+Game theorists usually reject the purely strategic approach because it means sometimes making a decision that one knows will have worse consequences than an available alternative. I'm going to go over three strategic decisions in this section which illustrate this in the three subsections. The first is a textbook example of why game theorists reject purely strategic versions. (Quite literally, it's from a textbook.) This isn't really enough to make the philosophical point, however, since many philosophers know of such examples, and think that either (a) the option game theorists rule out is desirable, so this is not actually a counterexample to purely strategic approaches, or (b) the example stops working if we add that weakly dominated strategies are not choice-worthy.[^dual-old-5] So in following two sub-sections I'll go over distinct examples that motivate rejecting each position.
 
-[^dual-5]: To the best of my knowledge, everyone who makes complaint (a) is a one-boxer in [Newcomb's Problem](intro.qmd#tbl-newcomb), and everyone who makes complaint (b) is a two-boxer. This might help in placing the arguments in what follows.
+[^dual-old-5]: To the best of my knowledge, everyone who makes complaint (a) is a one-boxer in [Newcomb's Problem](intro.qmd#tbl-newcomb), and everyone who makes complaint (b) is a two-boxer. This might help in placing the arguments in what follows.
 
 ### The Textbook Counterexample
 
@@ -90,10 +90,10 @@ The orthodox (and I think correct) treatment of the game starts with Incumbent's
 
 But look at the strategic form of the game, in @tbl-chain-store. This is quite a simple structure, since each player only has one possible choice. I'll write the strategy table with Incumbent choosing a row, and Entrant choosing a Column.
 
-|                 |  In   |  Out  |
-|:---------------:|:-----:|:-----:|
-| **Accommodate** | 2, 2  | 5, 1  |
-| **Fight**       | 0, 0  | 5, 1  |
+|                 |  In  | Out  |
+|:---------------:|:----:|:----:|
+| **Accommodate** | 2, 2 | 5, 1 |
+|    **Fight**    | 0, 0 | 5, 1 |
 
 : The strategic form of the Chain Store Game {#tbl-chain-store}
 
@@ -168,24 +168,24 @@ That's not to say that SEDT is entirely without its own intuitive costs, even in
 
 Still, SEDT is not defensible in all somewhat realistic situations. The example I'll use to demonstrate this is rather more violent than the other examples in this book. But it needs to be rather violent in order to rule out the possibility of there being strategic or reputational considerations that are being left out.
 
-Chooser is the Prime Minister of a small country, and they are threatened by a large nearby country, Neighbour. Unfortunately, Neighbour is thinking of carpet bombing Chooser's capital, in retaliation for some perceived slight during trade negotiations. Chooser has no air defences to stop the bombing, and no allies who will rally to help. 
+Chooser is the Prime Minister of a small country, and they are threatened by a large nearby country, Neighbour. Unfortunately, Neighbour is thinking of carpet bombing Chooser's capital, in retaliation for some perceived slight during trade negotiations. Chooser has no air defences to stop the bombing, and no allies who will rally to help.
 
-Fortunately, Chooser has a mighty weapon, a Doomsday device, that could destroy Neighbour. Chooser has obviously threatened to use this, but Neighbour suspects it is a bluff. This is for a good reason; the doomsday device would also destroy Chooser's own country. Neighbour is known to employ Demon who is at least 99% accurate in predicting what military plans Chooser will take.[^dual-6] In practice, all Demon has to do is predict So Chooser can do Nothing (N), or use the Doomsday device (D), should neighbour attack. Chooser would obviously prefer no attack, and would certainly not use the device preemptively. And Neighbour will attack iff Demon predicts that Chooser will do Nothing. Given all that the decision table that Chooser faces is in @tbl-retaliation.
+Fortunately, Chooser has a mighty weapon, a Doomsday device, that could destroy Neighbour. Chooser has obviously threatened to use this, but Neighbour suspects it is a bluff. This is for a good reason; the doomsday device would also destroy Chooser's own country. Neighbour is known to employ Demon who is at least 99% accurate in predicting what military plans Chooser will take.[^dual-old-6] In practice, all Demon has to do is predict So Chooser can do Nothing (N), or use the Doomsday device (D), should neighbour attack. Chooser would obviously prefer no attack, and would certainly not use the device preemptively. And Neighbour will attack iff Demon predicts that Chooser will do Nothing. Given all that the decision table that Chooser faces is in @tbl-retaliation.
 
-[^dual-6]: It's very important to this example that Demon is not perfectly accurate. There hasn't been as much attention as there might have been to what happens to theories like SEDT in the context of good but not perfect Demons.
-    
+[^dual-old-6]: It's very important to this example that Demon is not perfectly accurate. There hasn't been as much attention as there might have been to what happens to theories like SEDT in the context of good but not perfect Demons.
+
     One might worry that the case is not, as promised, realistic, because states do not in fact have Demons. That's true, but they do have spies, and analysts, and they are somewhat reliable in making predictions. It seems plausible that they could be reliable enough to get the case to work.
 
-|       | PN    | PD  |
-|:-----:|:-----:|:---:|
-| **N** | -1    | 0   |
-| **D** | -50   | 0   |
+|       | PN  | PD  |
+|:-----:|:---:|:---:|
+| **N** | -1  |  0  |
+| **D** | -50 |  0  |
 
 : Deciding whether to retaliate. {#tbl-retaliation}
 
 In the top left, Neighbour bombs Chooser's capital, thinking correctly that Chooser will not retaliate. In the top right and lower right, neighbour is sufficiently scared of the doomsday device that they do nothing. But in the bottom left, Neighbour attacks, and Chooser retaliates, creating a disaster for everyone, something 50 times worse than even the horrors of the carpet bombing.
 
-Still, if Chooser is picking a strategy before anything starts, the strategy with the highest value, according to EDT, is to plan to use the Doomsday device. This has an expected return of -0.5; since one time in a hundred it returns -50, and otherwise it returns 0. That's what SEDT says one should do. And it says Chooser should quite literally stick to their guns, even if they see the bombers coming, and they realise their bluff has failed. 
+Still, if Chooser is picking a strategy before anything starts, the strategy with the highest value, according to EDT, is to plan to use the Doomsday device. This has an expected return of -0.5; since one time in a hundred it returns -50, and otherwise it returns 0. That's what SEDT says one should do. And it says Chooser should quite literally stick to their guns, even if they see the bombers coming, and they realise their bluff has failed.
 
 This seems absurd to me, and it is the kind of result that drives game theorists to the dual mandate. In case that example isn't decisive enough, let's consider two more variants on it.
 
@@ -239,13 +239,13 @@ square node/.style={rectangle,draw, inner sep = 1, fill = black}
 \end{tikzpicture}
 ```
 
-There are three stages, though the game might end at any stage. Chooser is the mover at stage 1 and, if the game gets that far, stage 3. Demon is the mover at stage 2, again if the game gets that far. At stage 1 and 2, if the mover moves down, the game ends. After stage 3, the game ends either way. Chooser's payouts are given on the tree. Demon's disposition is to do whatever they predict Chooser will do at stage 3, and they are arbitrarily good at predicting Chooser's strategy.[^dual-7]
+There are three stages, though the game might end at any stage. Chooser is the mover at stage 1 and, if the game gets that far, stage 3. Demon is the mover at stage 2, again if the game gets that far. At stage 1 and 2, if the mover moves down, the game ends. After stage 3, the game ends either way. Chooser's payouts are given on the tree. Demon's disposition is to do whatever they predict Chooser will do at stage 3, and they are arbitrarily good at predicting Chooser's strategy.[^dual-old-7]
 
-[^dual-7]: This problem is very closely modelled on a game described by Stalnaker [-@Stalnaker1998, 47]. But note that how I've described Demon is different to how Stalnaker describes 'Bob', the player who moves at stage 2 in his version of the game. That's why I get what appears to be a different analysis to Stalnaker; we're not disagreeing here I think, just analysing different games.
+[^dual-old-7]: This problem is very closely modelled on a game described by Stalnaker [-@Stalnaker1998, 47]. But note that how I've described Demon is different to how Stalnaker describes 'Bob', the player who moves at stage 2 in his version of the game. That's why I get what appears to be a different analysis to Stalnaker; we're not disagreeing here I think, just analysing different games.
 
-In this dynamic game, the only sensible thing for Chooser to do at stage 1 is to play A~1~. That's because they know that if they get to stage 3, they will play A~2~, getting 3, rather than D~2~, getting 0.[^dual-8] So they should believe that Demon will predict that they will play A~2~, and hence will play a. So they should believe at stage 1 that playing A~1~ will get 3, while playing D~1~ will get 2, so they should play A~1~ at stage 1.
+In this dynamic game, the only sensible thing for Chooser to do at stage 1 is to play A~1~. That's because they know that if they get to stage 3, they will play A~2~, getting 3, rather than D~2~, getting 0.[^dual-old-8] So they should believe that Demon will predict that they will play A~2~, and hence will play a. So they should believe at stage 1 that playing A~1~ will get 3, while playing D~1~ will get 2, so they should play A~1~ at stage 1.
 
-[^dual-8]: I'm assuming here that Chooser knows that they will be rational in the future, and this knowledge persists no matter what earlier choices they make. This is a substantial idealisation, but makes sense given the other idealisations that were described in @sec-idealised.
+[^dual-old-8]: I'm assuming here that Chooser knows that they will be rational in the future, and this knowledge persists no matter what earlier choices they make. This is a substantial idealisation, but makes sense given the other idealisations that were described in @sec-idealised.
 
 None of that should be too surprising; it's the standard backward induction solution of the game, though we've had to be a bit careful in just how we describe Demon for it to go through. But now consider what happens in the strategic form of the game. Chooser has four strategies: A~1~ or D~1~, crossed with A~2~ or D~2~. Let's simply give these strategies names, as follows.
 
@@ -291,15 +291,15 @@ What the Dual Mandate says is that the last step of reasoning here is sound; it 
 
 If one has a decisive theory, then a huge number of decision trees will be dilemmas, since it is unlikely that the optimal strategy matches the series of optimal choices. This is not a reason to reject the Dual Mandate; it's another reason to reject decisiveness.
 
-You might worry that the argument based around @tbl-gallow-sophisticated is not really an objection to theories that reject the Dual Mandate, but just to the combination of that rejection and the endorsement of Gallow's particular theory of decision. That worry is half right. This result is a problem for Gallow's theory. But that doesn't mean it isn't also an argument for the Dual Mandate. The point of the Dual Mandate is not to criticise individual decisions, like taking the 1 in this game. It's to criticise theories that endorse those decisions. It's true that once we find the right theory of synchronic choice, the Dual Mandate will be unnecessary, since it will be automatically satisfied.[^dual-9] But the Dual Mandate plays an essential role in selecting that theory.
+You might worry that the argument based around @tbl-gallow-sophisticated is not really an objection to theories that reject the Dual Mandate, but just to the combination of that rejection and the endorsement of Gallow's particular theory of decision. That worry is half right. This result is a problem for Gallow's theory. But that doesn't mean it isn't also an argument for the Dual Mandate. The point of the Dual Mandate is not to criticise individual decisions, like taking the 1 in this game. It's to criticise theories that endorse those decisions. It's true that once we find the right theory of synchronic choice, the Dual Mandate will be unnecessary, since it will be automatically satisfied.[^dual-old-9] But the Dual Mandate plays an essential role in selecting that theory.
 
-[^dual-9]: IMPORTANT NOTE TO SELF: This isn't right. In cases where there are multiple equilibria, earlier choices might rule out some later choices. E.g., when there is an exit choice that is guaranteed to be better than some earlier choice. Gotta fix all this.
+[^dual-old-9]: IMPORTANT NOTE TO SELF: This isn't right. In cases where there are multiple equilibria, earlier choices might rule out some later choices. E.g., when there is an exit choice that is guaranteed to be better than some earlier choice. Gotta fix all this.
 
-Jack @Spencer2021 has an example which he thinks tells against the Dual Mandate, or what he calls the requirement that Chooser not be diachronically exploitable.[^dual-10] The agent will play first the left and then the right game, and their payouts (shown in dollars) will be summed over the game. They won't be told between the games what they got from the first game.[^dual-11]
+Jack @Spencer2021 has an example which he thinks tells against the Dual Mandate, or what he calls the requirement that Chooser not be diachronically exploitable.[^dual-old-10] The agent will play first the left and then the right game, and their payouts (shown in dollars) will be summed over the game. They won't be told between the games what they got from the first game.[^dual-old-11]
 
-[^dual-10]: Spencer's non-exploitability isn't quite the same thing as the Dual Mandate, but it's close enough for these purposes. Spencer rejects non-exploitability, but endorses a weaker constraint he calls the Guaranteed Principle. I don't see any reason to distinguish between these constraints, in part because of the argument that follows in the text.
+[^dual-old-10]: Spencer's non-exploitability isn't quite the same thing as the Dual Mandate, but it's close enough for these purposes. Spencer rejects non-exploitability, but endorses a weaker constraint he calls the Guaranteed Principle. I don't see any reason to distinguish between these constraints, in part because of the argument that follows in the text.
 
-[^dual-11]: Assume Chooser is reasonably risk-neutral over dollars over this range of outcomes.
+[^dual-old-11]: Assume Chooser is reasonably risk-neutral over dollars over this range of outcomes.
 
 ::: {#tbl-newcomb-insurance layout-ncol="2"}
 |          |           |           |
@@ -351,8 +351,8 @@ Spencer argues that since the Demon is almost certainly accurate, Chooser should
 
 In general, if mixed strategies are not allowed, the Dual Mandate is implausible. But that's because without mixed strategies, cases like @tbl-newcomb-insurance are dilemmas; they have no ratifiable choices. And it's true that the Dual Mandate is implausible in dilemmas. Think back to the sinner described in @sec-ratify. Imagine that sinner will in fact say that they get *d* days in heaven. Now complicate the case; they are offered a choice of *d*! days in heaven, or to make their own choice. If they will in fact choose *d*, they should simply take *d*!, even though there are strategies available, like choosing *d*!! days, that are better. Weird things happen when there are dilemmas around, and we shouldn't judge decision theories against these cases.
 
-The Dual Mandate is also implausible if Chooser thinks they will be irrational, or that they will have different preferences. Indeed, it is implausible if Chooser thinks they might either change or lose their mind. For example, Odysseus binds himself to the mast because he does not approve of future-Odysseus's preferences. Professor Procrastinate[^dual-12] cite turns down a referee request because he does not trust his future self to be practically rational. Both of them deliberately turn down strategies that would be better than where they end up, because they do not trust their future selves to carry them out. They are alienated in this way from their future selves. When one does not endorse one's future preferences, or does not trust one's rationality in the future, it makes sense to be alienated from one's future self in this way. In such cases, one's future self is just another part of the world that must be predicted and worked around. And so it might make sense to forego, as Odysseus and Procrastinate forego, strategies that one's future self will not be so kind as to carry out.
+The Dual Mandate is also implausible if Chooser thinks they will be irrational, or that they will have different preferences. Indeed, it is implausible if Chooser thinks they might either change or lose their mind. For example, Odysseus binds himself to the mast because he does not approve of future-Odysseus's preferences. Professor Procrastinate[^dual-old-12] cite turns down a referee request because he does not trust his future self to be practically rational. Both of them deliberately turn down strategies that would be better than where they end up, because they do not trust their future selves to carry them out. They are alienated in this way from their future selves. When one does not endorse one's future preferences, or does not trust one's rationality in the future, it makes sense to be alienated from one's future self in this way. In such cases, one's future self is just another part of the world that must be predicted and worked around. And so it might make sense to forego, as Odysseus and Procrastinate forego, strategies that one's future self will not be so kind as to carry out.
 
-[^dual-12]: A famous character in @JacksonPargetter1986.
+[^dual-old-12]: A famous character in @JacksonPargetter1986.
 
 My main claim here is when neither of those two conditions obtain, i.e., when one knows that one's future self will be rational and have the same preferences, one's choices should make strategic sense. That is, they should satisfy the fairly weak condition that they are part of some strategy that one could choose if one was simply choosing a strategy for the whole tree. Unless one fears future irrationality, or future change of preference, one should not be alienated from one's future self. If Chooser takes 1 rather than play @tbl-gallow-sophisticated, they are alienated in this way. They have to think, I know I'd be better off if I played U. But that fool future-me will play D instead, and blow up the plan. But future-them is not a fool; by hypothesis they are known to be ideally rational. So it isn't coherent to think this way, and that reveals that it is incoherent to 'rationally' take the 1. And that is why the Dual Mandate requires that one's strategy be rational, and not just the moves that make up the strategy.
