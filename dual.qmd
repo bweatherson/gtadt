@@ -179,6 +179,36 @@ Consequentialist views as Zaphod; future me is just this guy.
 
 Neither is good.
 
+### Binding {#sec-binding}
+
+Is it part of our theory of rationality that people can bind themselves?
+
+Quote Spencer on this.
+
+Not a great argument; even if we can't bind, maybe ideal people can.
+
+But it seems, and this is a judgment call, that we don't get any extra explanatory power from doing that. Maybe we do, but most people will give up on plans that they are sure have failed, if the stakes are high enough.
+
+GDT view: people can bind themselves to plans that make sense. If asked now whether I want to bet on heads or tails in an hour, I can bind myself to heads. I can form an intention, in the Bratman-Holton sense, to bet on heads, and simply carry it out. What was permissible, betting on tails, becomes impermissible. That seems to be possible, and add predictive weight.
+
+In normal theories, this is just a weird edge case. Who cares? But for GDT, it's the main case, since there are lots of times there are multiple permissible options.
+
+## Against Purely Strategic Approaches {#sec-against-pure-strategy}
+
+Hard because can't just give one response: have to do both EDT and CDT. And there are so many versions of CDT. 
+
+But no counterexample for CDT, just note it breaches the spirit.
+
+For EDT, copy in text from dual-old.qmd.
+
+## Against Purely Consequentialist Approaches {#sec-against-pure-consequence}
+
+First against CEDT - breaches the spirit of EDT.
+
+Then against Gallow + Consequence: Could lead to choosing dominated option.
+
+What about Hunting + Consequence? Not sure I have an argument there.
+
 This has an important technical consequence: Purely Consequentialist theories are *unstable* in the sense Dmitri @Gallownd has described. If the pure consequentialist changes their own probability distribution over what they will do, what act is rational for them changes.[^dual-oct-5-23-6] I don't think this is ever an issue for CEDT, but it is an issue for other Purely Consequentialist theories. For instance, GDT says that either A or B is a permissible choice in @tbl-unstable-example.
 
 [^dual-oct-5-23-6]: The point here is somewhat connected to the point Bonanno makes about how backwards induction works in games where a player is indifferent between certain outcomes [@Bonanno2018, 80ff].
