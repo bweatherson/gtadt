@@ -1,0 +1,232 @@
+# Dual Mandate {#sec-dual}
+
+## Introduction {#sec-dual-introduction}
+
+This chapter marks a turning point in the book. From here on, a large amount of the time will be spent discussion situations involving dynamic choice. A central argument for GDT is that only it, or something like it, is compatible with plausible principles of dynamic choice. I'll call the dynamic choice situations I'll be interested in decision trees. To define them, it helps to start with an orthodox definition of a game tree.
+
+> A finite extensive form (or frame) with perfect recall consists of the following items.\
+> - A finite rooted directed tree.[^dual-oct-5-23-1] - A set of players *I* = {1,...,n} and a function that assigns one player to every decision node. A set of actions *A* and a function that assigns one action to every directed edge, satisfying the restriction that no two edges out of the same node are assigned the same action. A set of outcomes_O\_ and a function that assigns an outcome to every terminal node. For every player *i* $\in$ *I*, a partition $\mathfrak{D}_i$ of the set *D~i~* of decision nodes assigned to player *i* (thus $\mathfrak{D}_i$ is a collection of mutually disjoint subsets of *D~i~* whose union is equal to *D~i~*). Each element of Di is called an information set of player *i*. [@Bonanno2018, 119]
+
+[^dual-oct-5-23-1]: This is defined earlier, on page 75, but the details aren't important to what we're doing.
+
+The quote continues with some restrictions on $\mathfrak{D}_i$, but I want to pause first to say what this is supposed to represent, and then it is easy to say informally what the constraints are. This partition is an epistemic accessibility relation. If two nodes are in the same cell of the partition, then when the player is in one of them, for all they know, they are in the other. The strongest thing they know, when they are at a particular node, is that they are somewhere in that cell of the partition.
+
+Implicitly, the assumption here is that the right accessibility relation for epistemic logic is an equivalence relation. That's absurd in full generality. But I think in this context it's a harmless enough idealisation. That is, it's harmless enough if we remember that an idealisation here is a simplification, and not something that we think is desirable, or in any way something to aim for.
+
+There are two standard restrictions on $\mathfrak{D}_i$. First, players know what moves are possible, so for any two nodes in a cell of $\mathfrak{D}_i$, the same actions are possible. Second, players remember their actions, so for any two nodes in a cell of $\mathfrak{D}_i$, the paths to those nodes only differ with respect to moves made by other players.
+
+We're also going to make three more assumptions that are I think implicit in the standard formulation, but not always made explicit.[^dual-oct-5-23-2] Say a 'play' is a particular path through the tree that happens in real time. The assumptions concern what happens in all plays of a tree thus understood.
+
+[^dual-oct-5-23-2]: Bonanno does make all these explicit at various times, but doesn't list them in one spot for neat quoting.
+
+First, each player is motivated to get the best outcome possible. If we interpret the outcomes as preferences of the player at the end of the play, and assume that players are motivated by their current preferences, this is in effect an assumption that preferences do not change over the course of the play.
+
+Second, the tree is common knowledge at the start of the play. A player will not acquire new capacities over the game, or learn that they had capacities they didn't realise. They will not acquire any capacity to make distinctions between possibilities that they did not have at the start of the play. So, for instance, there can't be a point in the tree where a player meets a new individual, and acquires by acquaintance the ability to have singular thoughts about that person, and distinguish that person from descriptive duplicates.[^dual-oct-5-23-3]
+
+[^dual-oct-5-23-3]: Following @Stalnaker2008, I think this constraint means that we can't represent the Sleeping Beauty problem as a tree, since there Beauty gains the capacity to have singular thoughts about a time, the 'now' when she awakes, that she did not previously have.
+
+Third, it is common knowledge among all the time-slices of a player that all of the player's time-slices are rational. At this stage, it's important that 'rational' be left as something of a placeholder, or, perhaps better, a variable. In some sense the aim of the theorising around here is to solve for the value of 'rational' given some intuitive data about rational play. But whatever rationality is, we assume the player always has it, they always know they will always have it, they always know that they always know they will always have it, and so on.
+
+A *strategy* for player *i* is a function from the members of $\mathfrak{D}_i$ to probability distributions over actions. That is, the strategy says which action, or mixed action, a player will do at each information set that they could reach consistent with the rules of the game.
+
+It will become important that these are extremely fine-grained. A strategy describes what a player will do at nodes that are ruled out by other choices the player makes. Consider a game that consists of two rounds of some simple two-player, two-choice game, like Prisoners' Dilemma, with the results of the first round revealed before the second round is played. Each player has 32 strategies. (So there are 1024 strategy pairs.) The tree for the game has five information sets where each player might move; the first-round game, then, since there are four ways the first game could go, four more possibilities for what they might know when the second-round game is played. Since there are 2~5~, i.e., 32, ways to make binary choices over five possible choices, there are 32 strategies.[^dual-oct-5-23-4]
+
+[^dual-oct-5-23-4]: Some of the results of the next few chapters came from work I started investigating what happened in two-round decision problems like that. None of that work appears here, because for every result I found, I eventually found an illustration with many fewer strategies. If you're grateful you don't have to look at 32-by-32 strategy tables, you can't imagine how grateful I am to not be writing them.
+
+I'm going to assume a kind of realism about strategies. Players actually have dispositions about what they will do at nodes that aren't reached, and even at nodes that couldn't be reached given their prior dispositions. These dispositions are at least real enough to play the following two roles: they can be the conditions that conditional probabilities are defined over, and they are subject to evaluation as rational or irrational.
+
+Trees in game theory textbooks frequently designate one special player: Nature [@Bonanno2018, 134ff]. Nature is different in a few respects. It does not have any special outcome; the outcomes are utilities for the players other than Nature. It is usually taken to be common knowledge among the other players that they are rational; but Nature is not rational. Rather, at every node where Nature makes a move, there is an externally provided probability distribution over the possible moves. These probabilities are common knowledge at the start of the game.[^dual-oct-5-23-5]
+
+[^dual-oct-5-23-5]: Though note that does not mean all players know the probability of each move at any time Nature moves. It could be that while the game is going, a player does not know precisely which node they are at, so they do not know what probability distribution Nature is using. This is common in card games. If I don't know what's in your hand, I don't know what cards are left, so I don't know whether the probability that Nature is about to give a player the Jack of Hearts is, say, 0.025, or 0.
+
+A decision tree is like a game tree, but with more players that are distinctive in the way Nature is. There is only one player stipulated to be rational: Chooser. (They will be player 1 in what follows, unless stated otherwise.) At most one player is Nature, in the sense of the previous paragraph. The other players are all demons. If a demon moves at a node, then Chooser knows not the unconditional probability of that demon's possible actions, but the conditional probability of the demon's actions given their strategy choice. In more familiar terms, the demon predicts their strategy with a certain probability of accuracy, and has dispositions about what to do given each prediction.
+
+While these demons are a lot like the demons that have been central to decision theory ever since the introduction of Newcomb's Problem, there are two things I'm doing differently here that I want to note up front. First, there may be more than one demon. In the examples to follow, there will occasionally be four players: Chooser, two demons, and Nature. Second, the conditional probabilities are conditional on strategies, not just choices. This will matter in two stage games; to make the second stage game be just like the familiar games in decision theory (like Newcomb's Problem), it will be important that Demon's dispositions are sensitive to Chooser's dispositions about the second game. And this is important even in cases (of which there will be a few below) where Chooser can choose whether to play that second-round game.
+
+## Introducing the Dual Mandate {#sec-dual-intro}
+
+### Purely Strategic Approaches {#sec-purely-strategic}
+
+One way to think about what ideal Chooser will do in a decision tree takes the notion of a strategy as primitive. The short version is that it says Chooser uses decision theory to choose a strategy, and then implements that strategy at each node. This is sometimes known in philosophy as the resolute approach to decision theory. Though that particular term, 'resolute', is associated with a view that Edward McClennen developed to deal with cases of foreseeable changes of preference [@McClennen1990]. I'm using a different term in part to mirror the game theorists' use of the strategic form of a game, and in part to indicate that I'm primarily interested in a different kind of problem. In the problems I'll consider, there are no changes of preference over time. Cases of preference change are fascinating, but we'll have enough to deal with without worrying about them.
+
+In a finite game, there will be finitely many strategies. This finite number may be very large. The number of strategies Chooser has is the product, across each of the nodes in the tree where they choose, of the number of choices available at that node. But still, it is finite. And similarly there are finitely many strategies for each of the non-human players, and Chooser can work out the conditional probability for each such strategy given their choice of strategy. So we have a very large, but finite, game, and most decision theories on the market in philosophy will have something to say about what Chooser should do in this large game.
+
+All that's then left to do is to carry the strategy out. It's perhaps a bit easier to see this in practice. And I'll use EDT to illustrate it, because variants of CDT sometimes get complicated to apply to cases beyond binary choice.
+
+I'll start with a case we've seen before, the two stage Newcomb Problem I used earlier to argue against EDT: @tbl-edt-war. As a reminder, the game has three players, Chooser, Demon-1, and Demon-2. And it plays out over the following four stages.
+
+1.  At stage 1, Demon-1 predicts what Chooser will do at stage 4. This information is kept hidden from everyone.
+2.  At stage 2, Demon-2 predicts what Chooser will do at stage 4. This information is also kept hidden from everyone.
+3.  At stage 3, Demon-1's prediction is revealed to Chooser, but Demon-2's prediction is kept secret.
+4.  At stage 4, Chooser chooses A or B. Chooser's payout is a function of their choice, and the two predictions the demons make.
+
+Because this game is a bit more complicated than the standard problems involving demons in decision theory, I need to make a few more stipulations about how demons work. These will be standard from now on in all problems unless stated otherwise.
+
+-   Each demon is arbitrarily accurate at predicting Chooser's strategy.
+-   The demon's errors are probabilistically independent, so knowing that Demon-1 has erred is no evidence that Demon-2 will err.
+-   If the rules say that a demon predicts the move Chooser will make at a node, what that means is they choose the move that is most probable for Chooser to make given their prediction of Chooser's strategy, and whatever other information they have to that point.
+-   If *n* predictions are tied for being equally probable given demon's prediction and information, that demon plays the mixed strategy of making any one prediction with probability 1/*n*.
+
+The last requirement will be important here. If Chooser plays the strategy of doing whatever Demon-1 predicts, then without the last clause we can't work out the conditional probabilities for Demon-1's moves given Chooser's strategy. And it was part of our definition of a decision tree that these conditional probabilities were required. The last clause implies that in that case Demon-1 will flip a coin to decide what to 'predict'. The same happens if Chooser adopts the strategy of doing the opposite of what Demon-1 predicts.
+
+Earlier, I represented the game as a pair of tables, repeated here as @tbl-edt-war-reprise. In these tables, the columns are the predictions of Demon-2.
+
+::: {#tbl-edt-war-reprise layout-ncol="2"}
+|       | PA  | PB  |
+|:-----:|:---:|:---:|
+| **A** |  2  |  0  |
+| **B** |  3  |  1  |
+
+: Demon-1 predicts A {#tbl-war-left-reprise}
+
+|       |  PA  |  PB  |
+|:-----:|:----:|:----:|
+| **A** | 1002 | 1000 |
+| **B** | 1003 | 1001 |
+
+: Demon-1 predicts B {#tbl-war-right-reprise}
+
+The Two Stage Newcomb game.
+:::
+
+Given what was said so far, we have two perhaps more perspicuous ways to represent the game. The first is visually, as a tree diagram. This is shown in @fig-edt-war-reprise. The other is as a strategy table, going over what happens in all combinations of Chooser's strategies, and the two demons' predictions. This is shown in @tbl-edt-war-strategy.
+
+```{r engine='tikz'}
+#| label: fig-edt-war-reprise
+#| fig.cap: "Tree Diagram of the Two Stage Newcomb game"
+#| fig.ext: 'png'
+#| cache: TRUE
+#| echo: FALSE
+#| fig.width: 4
+
+\usetikzlibrary{calc, arrows,positioning,fit,shapes}
+
+\begin{tikzpicture}[scale=1.4,font=\footnotesize]
+\tikzset{
+% Two node styles for game trees: solid and hollow
+solid node/.style={circle,draw,inner sep=1.5,fill=black},
+hollow node/.style={circle,draw,inner sep=1.5},
+square node/.style={rectangle,draw, inner sep = 1, fill = black}
+}
+
+% Specify spacing for each level of the tree
+\tikzstyle{level 1}=[level distance=15mm,sibling distance=25mm]
+\tikzstyle{level 2}=[level distance=15mm,sibling distance=13mm]
+\tikzstyle{level 3}=[level distance=15mm,sibling distance=8mm]
+
+\node(Player 1) [hollow node,label=above:{Demon-1}]{}
+    child {node(Player 2-1) [solid node] {} 
+        child {node(Player 3-1)[solid node] {} 
+            child {node [square node, label=below:{2}]{  } edge from parent node[left]{A}} 
+            child {node [square node, label=below:{3}]{  } edge from parent node[right]{B}}
+            edge from parent node[left]{A}}
+        child {node(Player 3-2) [solid node] {} 
+            child {node [square node, label=below:{0}]{  } edge from parent node[left]{A}}
+            child {node [square node, label=below:{1}]{  } edge from parent node[right]{B}}
+            edge from parent node[right]{B}}
+        edge from parent node[left]{A} }
+    child {node(Player 2-2)[solid node] {} 
+        child {node(Player 3-3) [solid node] {} 
+            child {node [square node, label=below:{1002}]{  } edge from parent node[left]{A}} 
+            child {node [square node, label=below:{1003}]{  } edge from parent node[right]{B}}
+                edge from parent node[left]{A}}
+        child {node(Player 3-4) [solid node] {} 
+            child {node [square node, label=below:{1000}]{  } edge from parent node[left]{A}}
+            child {node [square node, label=below:{1001}]{  } edge from parent node[right]{B}}
+                edge from parent node[right]{B}}
+         edge from parent node[right]{B} };
+
+\draw[dashed,rounded corners=10]($(Player 2-1) + (-.45,.45)$)rectangle($(Player 2-2) +(.45,-.45)$);
+\draw[dashed,rounded corners=10]($(Player 3-1) + (-.45,.45)$)rectangle($(Player 3-2) +(.45,-.45)$);
+\draw[dashed,rounded corners=10]($(Player 3-3) + (-.45,.45)$)rectangle($(Player 3-4) +(.45,-.45)$);
+
+    
+\node at ($(Player 2-1)!.5!(Player 2-2)$) {Demon-2};
+\node at ($(Player 3-1)!.5!(Player 3-2)$) {Chooser};
+\node at ($(Player 3-3)!.5!(Player 3-4)$) {Chooser};
+
+\end{tikzpicture}
+```
+
+|          | A1A2 | A1B2 |  B1A2  |  B1B2  |
+|:--------:|:----:|:----:|:------:|:------:|
+| **LARA** | *2*  |  0   |  1002  |  1000  |
+| **LARB** | *2*  |  0   |  1003  | *1001* |
+| **LBRA** |  3   | *1*  | *1002* |  1000  |
+| **LBRB** |  3   |  1   |  1003  | *1001* |
+
+: The strategic form of the Two Stage Newcomb game {#tbl-edt-war-strategy}
+
+A brief word is needed on the notation in @tbl-edt-war-strategy. On the rows, I've written LXRY for the strategy of doing X on the left hand part of the tree, i.e., if Demon-1 predicts A, and doing Y on the right hand part of the tree, i.e., if Demon-2 predicts B. And I've written X1Y2 for the state where Demon-1 predicts X and Demon-2 predicts Y. I've italicised the cells that have substantial conditional probability conditional on Chooser selecting that row. In the first and fourth rows, that's just one cell. In the second and third, there are two cells that are both about 50% likely given the strategy choice.
+
+For now the important thing about this example is that it illustrates the difference between Purely Strategic EDT and Purely Consequentialist EDT. The former, SEDT from now on, will select the strategy LBRB. It has an expected return of (approximately) 1001, while the expected return of LARA is (approximately) 2, and the other two strategies have expected returns of (approximately) 501.5. So SEDT says to play LBRB.
+
+Now this might seem very surprising. By the time Chooser gets to play, they know they are facing a Newcomb Problem. And SEDT, as we've just seen, says to play B whatever Demon-1 does. And playing B is not what EDT says to do in Newcomb Problems. Indeed, if Chooser had just been landed in either @tbl-war-left-reprise or @tbl-war-right-reprise without any sense of why Demon-1 had placed them there, SEDT (like EDT) would say to play A. None of this is, yet, to object to SEDT; it's just to note the distinctiveness of it.
+
+### Purely Consequentialist Approaches {#sec-purely-consequentialist}
+
+A different way to think about what Chooser will do in dynamic games is to think that they will take every decision on its own merits, solely thinking about the consequences of this decision. This is sometimes called the 'sophisticated' approach to dynamic choice in philosophical discussions, but I prefer calling it the Purely Consequentialist approach. I don't like the implicit endorsement in calling something sophisticated, and given that I've already called the rival approach strategic, having two names starting with the same letter is bad. This name echoes the influential understanding of consequentialism in @Hammond1988. And it gets at what is important about the view; that it rules out looking back.
+
+It's easy to distinguish it from the strategic approach by thinking about what it says about the Two Stage Newcomb game from @sec-purely-strategic. Call Consequentialist EDT, or CEDT, the view that in one shot choices one should use EDT, combined with the Purely Consequentialist approach to dynamic choice. If Chooser follows CEDT then at stage 4, they will definitely choose A. That's because given what they know at stage 4, choosing A maximises expected value (as EDT understands expected value). So they'll play the strategy LARA.
+
+I think CEDT is really what philosophers who have defended EDT have in mind when they state their theories. When they present one shot examples like @tbl-war-left-reprise, they don't say "Well, if you're dropped in this game, choose A, but if you know why you're playing it, maybe choose B." They just say to choose A. And that's what CEDT says, and SEDT denies. The crucial thing for CEDT, like all purely consequentialist theories, is that it says that given one is playing a one-shot game, knowing the payouts and probabilities of the game settles what to do; questions about how one got there are irrelevant.
+
+But what will a Pure Consequentialist do if they face a series of choices? In general, they will work backwards. They will work out what they will do at terminal stages of the game, i.e., at stages where they will have no more decisions whatever they do. When they are making a decision at a non-terminal stage, they will treat their own future decisions as something to be predicted, not planned for. So they will have a probability distribution over the possible choices, and act as if Nature is (randomly) selecting which choice. Now we've stipulated that Chooser knows they will be rational in future stages, so in cases where there is only one rational choice, Chooser will assign probability 1 to them making that choice, and 0 to the alternatives. But in the cases where there are multiple options that are rationally permissible, this probability assignment might be more interesting.
+
+This has an important technical consequence: Purely Consequentialist theories are *unstable* in the sense Dmitri @Gallownd has described. If the pure consequentialist changes their own probability distribution over what they will do, what act is rational for them changes.[^dual-oct-5-23-6] I don't think this is ever an issue for CEDT, but it is an issue for other Purely Consequentialist theories. For instance, GDT says that either A or B is a permissible choice in @tbl-unstable-example.
+
+[^dual-oct-5-23-6]: The point here is somewhat connected to the point Bonanno makes about how backwards induction works in games where a player is indifferent between certain outcomes [@Bonanno2018, 80ff].
+
+|       | PA  | PB  |
+|:-----:|:---:|:---:|
+| **A** |  2  |  2  |
+| **B** |  0  |  4  |
+
+: A game with two permissible choices. {#tbl-unstable example}
+
+Now consider a dynamic game where at stage 1, Chooser has a choice between a sure payoff of 3, and (on the other hand) the chance to play @tbl-unstable-example. The tree for this game is shown in @fig-unstable-example.
+
+```{r engine='tikz'}
+#| label: fig-unstable-example
+#| fig.cap: "Tree diagram of the game with unstable choice."
+#| fig.ext: 'png'
+#| cache: TRUE
+#| echo: FALSE
+#| fig.width: 4
+
+\usetikzlibrary{calc, arrows,positioning,fit,shapes}
+
+\begin{tikzpicture}[scale=1.4,font=\footnotesize]
+\tikzset{
+% Two node styles for game trees: solid and hollow
+solid node/.style={circle,draw,inner sep=1.5,fill=black},
+hollow node/.style={circle,draw,inner sep=1.5},
+square node/.style={rectangle,draw, inner sep = 1, fill = black}
+}
+
+% Specify spacing for each level of the tree
+\tikzstyle{level 1}=[level distance=15mm,sibling distance=25mm]
+\tikzstyle{level 2}=[level distance=15mm,sibling distance=13mm]
+\tikzstyle{level 3}=[level distance=15mm,sibling distance=8mm]
+
+\node(Player 1) [hollow node,label=above:{Chooser}]{}
+    child {node [square node, label=below:{0}]{  } edge from parent node[left]{Exit}}
+    child {node(Player 2-2)[solid node, label=above:{Demon}] {} 
+        child {node(Player 3-3) [solid node] {} 
+            child {node [square node, label=below:{2}]{  } edge from parent node[left]{A}} 
+            child {node [square node, label=below:{2}]{  } edge from parent node[right]{B}}
+                edge from parent node[left]{PA}}
+        child {node(Player 3-4) [solid node] {} 
+            child {node [square node, label=below:{0}]{  } edge from parent node[left]{A}}
+            child {node [square node, label=below:{4}]{  } edge from parent node[right]{B}}
+                edge from parent node[right]{PB}}
+         edge from parent node[right]{Play} };
+
+\draw[dashed,rounded corners=10]($(Player 3-3) + (-.45,.45)$)rectangle($(Player 3-4) +(.45,-.45)$);
+
+\node at ($(Player 3-3)!.5!(Player 3-4)$) {Chooser};
+
+\end{tikzpicture}
+```
+
+Now consider a Purely Consequentialist version of GDT, call it CGDT. It will say that Chooser will have some probability distribution over what they will play if they reach the information set in the bottom-right of @fig-unstable-example. But CGDT itself won't say anything about what the probability distribution will be, since either option is permissible. If the probability they will play A is above 0.5, they will Play rather than Exit at the top node, since the expected return to Play is 2(1 + *x*), where *x* is the probability they will play A. But if that probability is below 0.5, they will Exit rather than Play, since the expected return to Playing is under 3.

@@ -1,12 +1,11 @@
-
 ## Philosophical Background
 
-- Dr Strangelove and the purely strategic
-- Zaphod Beeblebrox and the purely consequentialist
-- Stalnaker on future
-- Spencer on binding; as it stands not a great argument, maybe humans can't bind but ideal humans should. But it seems, and this is a judgment call, that we don't get any extra explanatory power from doing that. Maybe we do, but most people will give up on plans that they are sure have failed, if the stakes are high enough.
-- My picture; can make plans and carry them out, conditional on the plans being rational were they to be reconsidered.
-- This is not a trivial constraint; it doesn't just say bind yourself to what you'd do anyway. It says that even if multiple options are permissible, can bind yourself to one of them.
+-   Dr Strangelove and the purely strategic
+-   Zaphod Beeblebrox and the purely consequentialist
+-   Stalnaker on future
+-   Spencer on binding; as it stands not a great argument, maybe humans can't bind but ideal humans should. But it seems, and this is a judgment call, that we don't get any extra explanatory power from doing that. Maybe we do, but most people will give up on plans that they are sure have failed, if the stakes are high enough.
+-   My picture; can make plans and carry them out, conditional on the plans being rational were they to be reconsidered.
+-   This is not a trivial constraint; it doesn't just say bind yourself to what you'd do anyway. It says that even if multiple options are permissible, can bind yourself to one of them.
 
 ## Against Pure Strategy
 
@@ -18,30 +17,25 @@ Cut and paste from existing discussion
 
 ### Against Pure Strategy and CDT
 
-Have some of this already
-Note that there are complications
-Some of the argument here is not the cases, which don't seal the case, but the philosophical considerations from background
+Have some of this already Note that there are complications Some of the argument here is not the cases, which don't seal the case, but the philosophical considerations from background
 
 ## Against Pure Consequentialism
 
 ### Two Examples
 
-Note the Spencer example, but don't go over it; relies on unavailability of mixed strategy
-Objection to the regret based strategies; 0, 5 // 2, 2; alternative is to get 1.
-Objection to GDT; 1, 0 // 0, 5; alternative is to get 2.
+Note the Spencer example, but don't go over it; relies on unavailability of mixed strategy Objection to the regret based strategies; 0, 5 // 2, 2; alternative is to get 1. Objection to GDT; 1, 0 // 0, 5; alternative is to get 2.
 
 ### Analysis of the Examples
 
-Intuitively, could do better.
-Do the choosers have a defence?
-There certainly are cases where we rationally play a sub-optimal strategy: will cease being rational and/or will change preferences
-It feels to me that that's all; otherwise it's unacceptable alienation. Chooser endorses the choices being made, but regrets them. That doesn't make sense.
-And this does feel like an acceptable form of binding
-People can, after all, make plans, and we can plan around them.
+Intuitively, could do better. Do the choosers have a defence? There certainly are cases where we rationally play a sub-optimal strategy: will cease being rational and/or will change preferences It feels to me that that's all; otherwise it's unacceptable alienation. Chooser endorses the choices being made, but regrets them. That doesn't make sense. And this does feel like an acceptable form of binding People can, after all, make plans, and we can plan around them.
+
+## Against Equivalence
+
+Have examples of this in
 
 ## Mixtures
 
-- Dual Mandate requires mixtures
-- Can see this with an example that Spencer uses
-- I think since the dual mandate is independently plausible, this is an argument that ideal agents can mix.
-- Of course, the dual mandate is absurd for non-ideal agents; see the eternal debate between actualists and eternalists
+-   Dual Mandate requires mixtures
+-   Can see this with an example that Spencer uses
+-   I think since the dual mandate is independently plausible, this is an argument that ideal agents can mix.
+-   Of course, the dual mandate is absurd for non-ideal agents; see the eternal debate between actualists and eternalists
