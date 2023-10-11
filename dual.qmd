@@ -280,9 +280,16 @@ Then Demon has two moves as well, which I'll call PO and PE. PO means that Demon
 
 If Chooser was making a one-off choice in @tbl-stalnaker-centipede, it would be rational, according to GDT, to choose S~2~. That is ratifiable and not weakly dominated. It wouldn't be rational to choose S~1~, because given S~1~ it would be better to choose S~4~. But given S~2~ is chosen, it is optimal, since once S~2~ is chosen, Chooser should believe that Demon is playing PE. So in this one-shot game, where one just chooses a strategy, it is rational (according to GDT) to play S~2~.
 
-That's my argument against Equivalence. In @tbl-stalnaker-centipede it is rational to choose S~2~. But in @fig-stalnaker-centipede it is not rational to play 
+That's my argument against Equivalence. In @tbl-stalnaker-centipede it is rational to choose S~2~. But in @fig-stalnaker-centipede it is not rational to play that strategy, i.e., to play D~1~, because the backward induction argument for playing A~1~ is sound. So the strategic and extensive forms of the game are not equivalent.
 
-This means that GDT does not endorse what's sometimes called strategic form-extensive form equivalence. It is not the case, according to GDT, that all that matters in an extensive form decision problem, like the tree in @fig-stalnaker-centipede, is the rational choice of strategy. Sometimes a rational strategy might commit one to playing irrational moves down the track, and that's ruled out.
+I could try to turn this into an argument against Purely Strategic approaches to decision theory as well, using the following reasoning.
+
+1. In @tbl-stalnaker-centipede, it is rational to play S~2~.
+2. In @fig-stalnaker-centipede, it is not rational to play S~2~.
+3. If Purely Strategic approaches to decision theory are correct, then the same choices are rational in @tbl-stalnaker-centipede and @fig-stalnaker-centipede.
+4. Therefore, Purely Strategic approaches are incorrect.
+
+But this argument would be blatantly question-begging. The argument for premise 2 relies on backward induction reasoning, and people who endorse Purely Strategic reasoning do so because they reject backward induction reasoning. So it wouldn't be at all convincing. (Probably many people who endorse Purely Strategic approaches would reject premise 1 as well.) So in @sec-against-pure-strategy I'll offer some arguments against Purely Strategic approaches that are not so obviously question-begging.
 
 ## Against Purely Strategic Approaches {#sec-against-pure-strategy}
 
