@@ -12,13 +12,13 @@ For related reasons, this chapter will be longer and more technical than what ca
 
 I'll call the dynamic choice situations I'll be interested in decision trees. To define them, it helps to start with an orthodox definition of a game tree.
 
-> A finite extensive form (or frame) with perfect recall consists of the following items.
-
-> - A finite rooted directed tree.[^dual-1] 
-- A set of players *I* = {1,...,n} and a function that assigns one player to every decision node. 
-- A set of actions *A* and a function that assigns one action to every directed edge, satisfying the restriction that no two edges out of the same node are assigned the same action. 
-- A set of outcomes *O* and a function that assigns an outcome to every terminal node. 
-- For every player *i* $\in$ *I*, a partition $\mathfrak{D}_i$ of the set *D~i~* of decision nodes assigned to player *i* (thus $\mathfrak{D}_i$ is a collection of mutually disjoint subsets of *D~i~* whose union is equal to *D~i~*). Each element of $\mathfrak{D}_i$ is called an information set of player *i*. [@Bonanno2018, 119]
+> "A finite extensive form (or frame) with perfect recall consists of the following items.
+>
+> -   A finite rooted directed tree.[^dual-1]
+> -   A set of players *I* = {1,...,n} and a function that assigns one player to every decision node.
+> -   A set of actions *A* and a function that assigns one action to every directed edge, satisfying the restriction that no two edges out of the same node are assigned the same action.
+> -   A set of outcomes *O* and a function that assigns an outcome to every terminal node.
+> -   For every player *i* $\in$ *I*, a partition $\mathfrak{D}_i$ of the set *D~i~* of decision nodes assigned to player *i* (thus $\mathfrak{D}_i$ is a collection of mutually disjoint subsets of *D~i~* whose union is equal to *D~i~*). Each element of $\mathfrak{D}_i$ is called an information set of player *i*."[@Bonanno2018, 119]
 
 [^dual-1]: This is defined earlier, on page 75, but the details aren't important to what we're doing.
 
@@ -52,15 +52,15 @@ I'm going to assume a kind of realism about strategies. Players actually have di
 
 ### Special Players {#sec-special-players}
 
-Trees in game theory textbooks frequently designate one special player: Nature [@Bonanno2018, 134ff]. Nature is different in two key respects.
+Trees in game theory textbooks frequently designate one special player: Nature [@Bonanno2018, 134ff]. Nature is different to human players in two key respects.
 
 Nature does not care about which outcome the game ends with; formally, we describe an outcome by listing the utilities for the players other than Nature.
 
-Nature is not rational. It is usually taken to be common knowledge among the other players that they are rational; but Nature is treated differently. Rather, at every node where Nature makes a move, there is an externally provided probability distribution over the possible moves. These probabilities are common knowledge at the start of the game.[^dual-5]
+Nature is not rational. It is usually taken to be common knowledge among the other players that they are rational; but Nature is treated differently. Instead of assuming rationality, we assume common knowledge of the externally provided probability distribution over the possible moves Nature might make at each node.[^dual-5]
 
 [^dual-5]: Though note that does not mean all players know the probability of each move at any time Nature moves. It could be that while the game is going, a player does not know precisely which node they are at, so they do not know what probability distribution Nature is using. This is common in card games. If I don't know what's in your hand, I don't know what cards are left, so I don't know whether the probability that Nature is about to give a player the Jack of Hearts is, say, 0.025, or 0.
 
-The key formal move here is to introduce new players, demons, which behave a bit like rational players, and a bit like Nature.
+The key formal move in this book is to introduce new players, demons, which behave a bit like rational players, and a bit like Nature.
 
 A **decision tree**, as I'll understand it in this book, is like a game tree, but with more players that are distinctive in the way Nature is. There is only one player stipulated to be rational: Chooser. (They will be player 1 in what follows, unless stated otherwise.) At most one player is Nature, in the game-theoretic sense. The other players are all demons. If a demon moves at a node, then Chooser knows not the unconditional probability of that demon's possible actions, but the conditional probability of the demon's actions given their strategy choice. In more familiar terms, the demon predicts their strategy with a certain probability of accuracy, and has dispositions about what to do given each prediction.
 
@@ -78,7 +78,9 @@ Strategic Form - Extensive Form Equivalence
 
 :   Some moves in an extensive form of a decision tree are rational (both individually and collectively) iff they are part of some strategy that can be rationally played in the corresponding strategic form decision.
 
-Most game theorists deny this equivalence.^[The next few paragraphs are based on the game theoretic notion of non-credible threats [@Bonanno2018, 86ff].] The examples used to motivate this are fairly simple. In @fig-subgame-example, Demon moves first, and Chooser moves second. Chooser can play A or B, Demon can play PA or PB. Demon wants these predictions to be correct. Chooser gets a reward iff Demon's prediction is correct. Chooser gets a higher reward if they both choose A than if they both choose B. Demon is arbitrarily good at predicting Chooser's [strategy](#sec-strategies), and this is common knowledge to both players. Demon will do whatever makes it most likely that their prediction is correct, or flip a coin if their choice does not affect the probability that they will make a correct prediction. 
+Most game theorists deny this equivalence.[^dual-7] The examples used to motivate this are fairly simple. In @fig-subgame-example, Demon moves first, and Chooser moves second. Chooser can play A or B, Demon can play PA or PB. Demon wants these predictions to be correct. Chooser gets a reward iff Demon's prediction is correct. Chooser gets a higher reward if they both choose A than if they both choose B. Demon is arbitrarily good at predicting Chooser's [strategy](#sec-strategies), and this is common knowledge to both players. Demon will do whatever makes it most likely that their prediction is correct, or flip a coin if their choice does not affect the probability that they will make a correct prediction.
+
+[^dual-7]: The next few paragraphs are based on the game theoretic notion of non-credible threats [@Bonanno2018, 86ff].
 
 ```{r engine='tikz'}
 #| label: fig-subgame-example
@@ -133,36 +135,44 @@ square node/.style={rectangle,draw, inner sep = 1, fill = black}
 
 Here is how to understand graphs like @fig-subgame-example. The circles are nodes where one or other player (Chooser, Demon, or Nature) has to make a choice. The open circle, here at the top of the tree, is the first such choice. Where possible, I'll draw trees where later choices are lower on the page than earlier choices, but this isn't always possible. What is always the case is that the open circle is the opening move. The small square nodes are terminal nodes; at that point the game ends, and Chooser collects their payout.
 
-The strategic form of this game is given in @tbl-subgame-example. Demon clearly has two strategies, PA and PB. But Chooser has four; since they have to plan for a binary choice in two possibilities. I've written LXRY for the strategy of doing X on the left hand part of the tree, i.e., if Demon predicts A, and doing Y on the right hand part of the tree, i.e., if Demon predicts B. 
+The strategic form of this game is given in @tbl-subgame-example. Demon clearly has two strategies, PA and PB. But Chooser has four; since they have to plan for a binary choice in two possibilities. I've written LXRY for the strategy of doing X on the left hand part of the tree, i.e., if Demon predicts A, and doing Y on the right hand part of the tree, i.e., if Demon predicts B.
 
-|          | PA   | PB   |
-|:--------:|:----:|:----:|
-| **LARA** |  2   |  0   |
-| **LARB** |  2   |  1   |
-| **LBRA** |  0   |  0   |
-| **LBRB** |  0   |  1   |
+|          | PA  | PB  |
+|:--------:|:---:|:---:|
+| **LARA** |  2  |  0  |
+| **LARB** |  2  |  1  |
+| **LBRA** |  0  |  0  |
+| **LBRB** |  0  |  1  |
 
 : Strategic form of the Non-Equivalence Game {#tbl-subgame-example}
 
 The argument against Strategic Form - Extensive Form Equivalence is now fairly simple. In @fig-subgame-example, there is only one rational choice: LARB. Whatever happens, Chooser has an option between getting something and getting nothing, and it's better to get something than nothing. But in @tbl-subgame-example, there are many rational choices. The pair of Chooser playing LARA and Demon playing PA is a Nash equilibrium. If one's theory of rational choice for strategic games is that any Nash equilibrium is rational, then playing LARA in @tbl-subgame-example is rational. Hence different strategies are rational in @fig-subgame-example and @tbl-subgame-example, so Equivalence fails.
 
-There are a bunch of ways one could reply to this. One could argue that in fact LARA is rational in @fig-subgame-example. We'll see a theory that says that in @sec-against-pure-strategy. One could argue that LARB is the only rational play in @tbl-bach-demon-subgame-example. And this complicates the dialectic here, because while GDT _rejects_ Equivalence, it also rejects this example. It agrees that LARB is the only rational choice in @tbl-subgame-example, because it weakly dominates LARA.^[I'll discuss this more at length in @sec-weak.] The examples that motivate rejecting Equivalence within GDT are more complicated, and I'll come back to them in @sec-against-equivalence.
+There are a bunch of ways one could reply to this. One could argue that in fact LARA is rational in @fig-subgame-example. We'll see a theory that says that in @sec-against-pure-strategy. One could argue that LARB is the only rational play in @tbl-subgame-example. This possibility complicates the dialectic around here, because while GDT *rejects* Equivalence, it also rejects this example. It agrees that LARB is the only rational choice in @tbl-subgame-example, because it weakly dominates LARA.[^dual-8] The examples that motivate rejecting Equivalence within GDT are more complicated, and I'll come back to them in @sec-against-equivalence.
 
-Note that it's not enough to merely deny that there are multiple permissible moves in @tbl-subgame-example. Evidential Decision Theory says that there is only one rational move in that game, and it's LARA. That has an expected return of 2, while LARB has an expected return of 1.5. So this does work as a counterexample to Equivalence within standard forms of EDT, though not for the same reason that the game theorists think it is a counterexample.
+[^dual-8]: I'll discuss this more at length in @sec-weak.
+
+Note that to save Equivalence, it's not enough to merely deny that there are multiple permissible moves in @tbl-subgame-example. Evidential Decision Theory says that there is only one rational move in that game, and it's LARA. That has an expected return of 2, while LARB has an expected return of 1.5. But EDT agrees that in @fig-subgame-example, the only rational strategy is LARB. So EDT agrees with the game theory textbooks that this is a counterexample to Equivalence, even though it disagrees about why it is a counterexample.
 
 ## Four Options {#sec-four-options}
 
 ### Introducing the Contestants {#sec-contestants}
 
-I've already briefly alluded to these, but it's time to set out in more detail the four approaches to dynamic choice that I'll consider at greater length.
+I've already briefly alluded to these, but it's time to set out in more detail the four approaches to dynamic choice that I'll consider at greater length over this chapter.
 
-**Purely Strategic** approaches say that Chooser uses decision theory to choose a strategy, and then implements that strategy at each node. This is sometimes known in philosophy as the resolute approach to decision theory.^[That particular term, 'resolute', is associated with a view that Edward McClennen developed to deal with cases of foreseeable changes of preference [@McClennen1990]. As already indicated, I'm just looking at games where preferences do not change over the game.] In a finite game, there will be finitely many strategies. This finite number may be very large, but it can be calculated. And similarly there are finitely many strategies for each of the non-human players, and Chooser can work out the conditional probability for each such strategy given their choice of strategy. So we have a very large, but finite, game, and most decision theories on the market in philosophy will have something to say about what Chooser should do in this large game. All that's then left to do is to carry the strategy out. 
+**Purely Strategic** approaches say that Chooser uses decision theory to choose a strategy, and then implements that strategy at each node. This is sometimes known in philosophy as the resolute approach to decision theory.[^dual-9] In a finite game, there will be finitely many strategies. This finite number may be very large, but it can be calculated. And similarly there are finitely many strategies for each of the non-human players, and Chooser can work out the conditional probability for each such strategy given their choice of strategy. So we have a very large, but finite, game, and most decision theories on the market in philosophy will have something to say about what Chooser should do in this large game. All that's then left to do is to carry the strategy out.
 
-**Purely Consequentialist** approaches say that Chooser will every decision on its own merits, solely thinking about the consequences of that particular decision. This is sometimes called the 'sophisticated' approach to dynamic choice in philosophical discussions, but I prefer calling it the Purely Consequentialist approach. I don't like the implicit endorsement in calling something sophisticated, and given that I've already called the rival approach strategic, having two names starting with the same letter is bad. This name echoes the influential understanding of consequentialism in @Hammond1988. And it gets at what is important about the view; that it rules out looking back.
+[^dual-9]: That particular term, 'resolute', is associated with a view that Edward McClennen developed to deal with cases of foreseeable changes of preference [@McClennen1990]. As already indicated, I'm just looking at games where preferences do not change over the game.
 
-If Chooser is Purely Consequentialist and they face a series of choices, they will work backwards.^[See the discussion of backward induction on pages 80ff of @Bonanno2018.] They will work out what they will do at terminal stages of the game, i.e., at stages where they will have no more decisions whatever they do. When they are making a decision at a non-terminal stage, they will treat their own future decisions as something to be predicted, not planned for. So they will have a probability distribution over the possible choices, and act as if Nature is (randomly) selecting which choice. Now we've stipulated that Chooser knows they will be rational in future stages, so in cases where there is only one rational choice, Chooser will assign probability 1 to them making that choice, and 0 to the alternatives. But in the cases where there are multiple options that are rationally permissible, this probability assignment might be more interesting, and I'll have more to say in @sec-against-pure-consequence about the effects of this.
+**Purely Consequentialist** approaches say that Chooser will consider every decision at a node on its own merits, solely thinking about the consequences of that particular decision. This is sometimes called the 'sophisticated' approach to dynamic choice in philosophical discussions, but I prefer calling it the Purely Consequentialist approach. I don't like the implicit endorsement in calling something sophisticated, and given that I've already called the rival approach strategic, having two names starting with the same letter is bad. The name I'm using echoes the influential understanding of consequentialism in @Hammond1988. And it gets at what is important about the view; that it rules out looking back.
 
-**Equivalence** approaches say that Chooser does not have to adopt one or other of these approaches, because once we have the right theory of choice in one-shot games, it will turn out that the two approaches issue in the same verdicts. That is, it will turn out that Strategic Form - Normal Form Equivalence is true. Robert @Stalnaker1999 defends this view in game theory. I'll argue that the differences between demonic decisions problems and games are just big enough that his defence can't be adopted to the puzzles I'm looking at.^[This is just about the only place in the book where I'll rely on a _disanalogy_ between decision theory and game theory.]
+If Chooser is Purely Consequentialist and they face a series of choices, they will work backwards.[^dual-10] They will work out what they will do at terminal stages of the game, i.e., at stages where they will have no more decisions whatever they do. When they are making a decision at a non-terminal stage, they will treat their own future decisions as something to be predicted, not planned for. So they will have a probability distribution over the possible choices, and act as if Nature is (randomly) selecting which choice. Now we've stipulated that Chooser knows they will be rational in future stages, so in cases where there is only one rational choice, Chooser will assign probability 1 to them making that choice, and 0 to the alternatives. But in the cases where there are multiple options that are rationally permissible, this probability assignment might be more interesting, and I'll have more to say in @sec-against-pure-consequence about the effects of this.
+
+[^dual-10]: See the discussion of backward induction on pages 80ff of @Bonanno2018.
+
+**Equivalence** approaches say that Chooser does not have to adopt one or other of these approaches, because once we have the right theory of choice in one-shot games, it will turn out that the two approaches issue in the same verdicts. That is, it will turn out that Strategic Form - Normal Form Equivalence is true. Robert @Stalnaker1999 defends this view in game theory. I'll argue that the differences between demonic decisions problems and games are just big enough that his defence can't be adopted to the puzzles I'm looking at.[^dual-11]
+
+[^dual-11]: This is just about the only place in the book where I'll rely on a *disanalogy* between decision theory and game theory.
 
 Finally, the **Dual Mandate** approach says that both of the first two approaches were partly correct. Both of them correctly state necessary conditions for rational action. Where they go wrong is the 'pure' part, i.e., by saying that these are sufficient conditions for rational action. And that's what GDT says, and what I'm going to defend.
 
@@ -204,7 +214,7 @@ I'll start with arguing against Equivalence. This is the view that we don't have
 
 Earlier I mentioned that this is usually rejected in game theory textbooks on the basis of examples like @fig-subgame-example and @tbl-subgame-example. The strategic form of that game has a Nash equilibrium that seems obviously bad to play in the extensive form of the game.
 
-This is a bad argument against equivalence because it's easy to fix the theory of strategic choice to avoid the problem. If we say that weakly dominated strategies are not choice-worthy, then the strategies that can be rationally chosen in @tbl-subgame-example are exactly the strategies that can be rationally played in @fig-subgame-example. 
+This is a bad argument against equivalence because it's easy to fix the theory of strategic choice to avoid the problem. If we say that weakly dominated strategies are not choice-worthy, then the strategies that can be rationally chosen in @tbl-subgame-example are exactly the strategies that can be rationally played in @fig-subgame-example.
 
 But this only shows that this example is not a counterexample to Equivalence. It could be that there are other cases that are counterexamples. @fig-stalnaker-centipede is the game tree (in the sense described in @sec-decision-tree) for one such example.
 
@@ -248,15 +258,17 @@ square node/.style={rectangle,draw, inner sep = 1, fill = black}
 \end{tikzpicture}
 ```
 
-In @fig-stalnaker-centipede are three stages, though the game might end at any stage. Chooser is the mover at stage 1 and, if the game gets that far, stage 3. Demon is the mover at stage 2, again if the game gets that far. At stage 1 and 2, if the mover moves down, the game ends. After stage 3, the game ends either way. Chooser's payouts are given on the tree. Demon's disposition is to do whatever they predict Chooser will do at stage 3, and they are arbitrarily good at predicting Chooser's strategy.[^dual-old-7]
+In @fig-stalnaker-centipede are three stages, though the game might end at any stage. Chooser is the mover at stage 1 and, if the game gets that far, stage 3. Demon is the mover at stage 2, again if the game gets that far. At stage 1 and 2, if the mover moves down, the game ends. After stage 3, the game ends either way. Chooser's payouts are given on the tree. Demon's disposition is to do whatever they predict Chooser will do at stage 3, and they are arbitrarily good at predicting Chooser's strategy.[^dual-12]
 
-[^dual-old-7]: This problem is very closely modelled on a game described by Stalnaker [-@Stalnaker1998, 47]. But note that how I've described Demon is different to how Stalnaker describes 'Bob', the player who moves at stage 2 in his version of the game. In his version of the game, the player who moves first just knows that the player who moves second is rational, and the function they are trying to maximise. In my version of the game, the player who moves first also knows how the player who moves second will react if they are indifferent between their options. That's why I get what appears to be a different analysis to Stalnaker; we're not disagreeing here I think, just analysing different games.
+[^dual-12]: This problem is very closely modelled on a game described by Stalnaker [-@Stalnaker1998, 47]. But note that how I've described Demon is different to how Stalnaker describes 'Bob', the player who moves at stage 2 in his version of the game. In his version of the game, the player who moves first just knows that the player who moves second is rational, and the function they are trying to maximise. In my version of the game, the player who moves first also knows how the player who moves second will react if they are indifferent between their options. That's why I get what appears to be a different analysis to Stalnaker; we're not disagreeing here I think, just analysing different games.
 
-In this dynamic game, the only sensible thing for Chooser to do at stage 1 is to play A~1~. That's because they know that if they get to stage 3, they will play A~2~, getting 3, rather than D~2~, getting 0.[^dual-old-8] So they should believe that Demon will predict that they will play A~2~, and hence will play a. So they should believe at stage 1 that playing A~1~ will get 3, while playing D~1~ will get 2, so they should play A~1~ at stage 1.
+In this dynamic game, the only sensible thing for Chooser to do at stage 1 is to play A~1~. That's because they know that if they get to stage 3, they will play A~2~, getting 3, rather than D~2~, getting 0.[^dual-13] So they should believe that Demon will predict that they will play A~2~, and hence will play a. So they should believe at stage 1 that playing A~1~ will get 3, while playing D~1~ will get 2, so they should play A~1~ at stage 1.
 
-[^dual-old-8]: I'm assuming here that Chooser knows that they will be rational in the future, and this knowledge persists no matter what earlier choices they make. This is a substantial idealisation, but makes sense given the other idealisations that were described in @sec-ideal.
+[^dual-13]: I'm assuming here that Chooser knows that they will be rational in the future, and this knowledge persists no matter what earlier choices they make. This is a substantial idealisation, but makes sense given the other idealisations that were described in @sec-ideal.
 
-None of that should be too surprising; it's the standard backward induction solution of the game.^[Though I've been a bit more careful here about just what assumptions each player can make about the other at each stage than is usual.] But now consider what happens in the strategic form of the game. Chooser has four strategies: A~1~ or D~1~, crossed with A~2~ or D~2~. Let's simply give these strategies names, as follows.
+None of that should be too surprising; it's the standard backward induction solution of the game.[^dual-14] But now consider what happens in the strategic form of the game. Chooser has four strategies: A~1~ or D~1~, crossed with A~2~ or D~2~. Let's simply give these strategies names, as follows.
+
+[^dual-14]: Though I've been a bit more careful here about just what assumptions each player can make about the other at each stage than is usual.
 
 | Strategy | Move 1 | Move 2 |
 |:--------:|:------:|:------:|
@@ -284,10 +296,10 @@ That's my argument against Equivalence. In @tbl-stalnaker-centipede it is ration
 
 I could try to turn this into an argument against Purely Strategic approaches to decision theory as well, using the following reasoning.
 
-1. In @tbl-stalnaker-centipede, it is rational to play S~2~.
-2. In @fig-stalnaker-centipede, it is not rational to play S~2~.
-3. If Purely Strategic approaches to decision theory are correct, then the same choices are rational in @tbl-stalnaker-centipede and @fig-stalnaker-centipede.
-4. Therefore, Purely Strategic approaches are incorrect.
+1.  In @tbl-stalnaker-centipede, it is rational to play S~2~.
+2.  In @fig-stalnaker-centipede, it is not rational to play S~2~.
+3.  If Purely Strategic approaches to decision theory are correct, then the same choices are rational in @tbl-stalnaker-centipede and @fig-stalnaker-centipede.
+4.  Therefore, Purely Strategic approaches are incorrect.
 
 But this argument would be blatantly question-begging. The argument for premise 2 relies on backward induction reasoning, and people who endorse Purely Strategic reasoning do so because they reject backward induction reasoning. So it wouldn't be at all convincing. (Probably many people who endorse Purely Strategic approaches would reject premise 1 as well.) So in @sec-against-pure-strategy I'll offer some arguments against Purely Strategic approaches that are not so obviously question-begging.
 
@@ -301,8 +313,8 @@ In practice, defenders of Purely Strategic views do not normally assume CDT. The
 
 SEDT is a fairly simple theory. It has two rules.
 
-1. In dynamic choices, one should choose an optimal strategy at the start of the tree, and carry that strategy out the rest of the way.
-2. The right way to evaluate strategies is to use Evidential Decision Theory.
+1.  In dynamic choices, one should choose an optimal strategy at the start of the tree, and carry that strategy out the rest of the way.
+2.  The right way to evaluate strategies is to use Evidential Decision Theory.
 
 SEDT is very similar to the Functional Decision Theory defended by @LevinsteinSoares2020. My excuses for using a new name are that (a) this name is a little more descriptive, and (b) I'm not quite sure that the theories are the same. I think they say the same things about every case I'll discuss in this section, but Levinstein and Soares don't discuss cases of demons who make imperfect predictions, so I'm guessing a little bit about what they'd say. And possibly my understanding of what a single decision problem is doesn't exactly match theirs. So rather than do more exegesis, I'll focus on SEDT, which is in any case an interesting theory.
 
@@ -369,9 +381,9 @@ Still, SEDT is not defensible in all somewhat realistic situations. The example 
 
 Chooser is the Prime Minister of a small country, and they are threatened by a large nearby country, Neighbour. Unfortunately, Neighbour is thinking of carpet bombing Chooser's capital, in retaliation for some perceived slight during trade negotiations. Chooser has no air defences to stop the bombing, and no allies who will rally to help.
 
-Fortunately, Chooser has a mighty weapon, a Doomsday device, that could destroy Neighbour. Chooser has obviously threatened to use this, but Neighbour suspects it is a bluff. This is for a good reason; the doomsday device would also destroy Chooser's own country. Neighbour is known to employ Demon who is at least 99% accurate in predicting what military plans Chooser will take.[^dual-old-6] In practice, all Demon has to do is predict So Chooser can do Nothing (N), or use the Doomsday device (D), should neighbour attack. Chooser would obviously prefer no attack, and would certainly not use the device preemptively. And Neighbour will attack iff Demon predicts that Chooser will do Nothing. Given all that the decision table that Chooser faces is in @tbl-retaliation.
+Fortunately, Chooser has a mighty weapon, a Doomsday device, that could destroy Neighbour. Chooser has obviously threatened to use this, but Neighbour suspects it is a bluff. This is for a good reason; the doomsday device would also destroy Chooser's own country. Neighbour is known to employ Demon who is at least 99% accurate in predicting what military plans Chooser will take.[^dual-15] In practice, all Demon has to do is predict So Chooser can do Nothing (N), or use the Doomsday device (D), should neighbour attack. Chooser would obviously prefer no attack, and would certainly not use the device preemptively. And Neighbour will attack iff Demon predicts that Chooser will do Nothing. Given all that the decision table that Chooser faces is in @tbl-retaliation.
 
-[^dual-old-6]: It's very important to this example that Demon is not perfectly accurate. There hasn't been as much attention as there might have been to what happens to theories like SEDT in the context of good but not perfect Demons.
+[^dual-15]: It's very important to this example that Demon is not perfectly accurate. There hasn't been as much attention as there might have been to what happens to theories like SEDT in the context of good but not perfect Demons.
 
     One might worry that the case is not, as promised, realistic, because states do not in fact have Demons. That's true, but they do have spies, and analysts, and they are somewhat reliable in making predictions. It seems plausible that they could be reliable enough to get the case to work.
 
@@ -402,6 +414,6 @@ Then against Gallow + Consequence: Could lead to choosing dominated option.
 
 What about Hunting + Consequence? Not sure I have an argument there.
 
-This has an important technical consequence: Purely Consequentialist theories are *unstable* in the sense Dmitri @Gallownd has described. If the pure consequentialist changes their own probability distribution over what they will do, what act is rational for them changes.[^dual-oct-5-23-6] I don't think this is ever an issue for CEDT, but it is an issue for other Purely Consequentialist theories. For instance, GDT says that either A or B is a permissible choice in @tbl-unstable-example.
+This has an important technical consequence: Purely Consequentialist theories are *unstable* in the sense Dmitri @Gallownd has described. If the pure consequentialist changes their own probability distribution over what they will do, what act is rational for them changes.[^dual-16] I don't think this is ever an issue for CEDT, but it is an issue for other Purely Consequentialist theories. For instance, GDT says that either A or B is a permissible choice in @tbl-unstable-example.
 
-[^dual-oct-5-23-6]: The point here is somewhat connected to the point Bonanno makes about how backwards induction works in games where a player is indifferent between certain outcomes [@Bonanno2018, 80ff].
+[^dual-16]: The point here is somewhat connected to the point Bonanno makes about how backwards induction works in games where a player is indifferent between certain outcomes [@Bonanno2018, 80ff].
