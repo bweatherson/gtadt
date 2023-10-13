@@ -28,7 +28,7 @@ This won't capture nearly enough. If probabilism is correct, then non-probabilis
 
 [^substantive-3]: See also @Heinzelmannnd for a different set of reasons to be sceptical that there is a notion of coherence that can do the work its philosophical defenders want.
 
-## The Beer-Quiche Game  {#sec-beer-quiche}
+## The Beer-Quiche Game {#sec-beer-quiche}
 
 Even if the substantive/structural distinction can be made precise, and shown to do philosophical work, it won't track the notion game theorists most care about. We can see this with a version of the beer-quiche game @ChoKreps1987, here translated into decision-theoretic language.
 
@@ -46,16 +46,16 @@ There are five steps in the game. (I'm going to call it the beer-quiche game to 
 
 If you prefer things in table form, the payouts are in @tbl-cho-kreps.
 
-|  Coin    | Chooser     | Demon     | Dollars     |
-|:--------:|:-----------:|:---------:|:-----------:|
-|    H     |      H      |     H     |     40      |
-|    H     |      H      |     T     |     10      |
-|    H     |      T      |     H     |     30      |
-|    H     |      T      |     T     |      0      |
-|    T     |      H      |     H     |     30      |
-|    T     |      H      |     T     |      0      |
-|    T     |      T      |     H     |     40      |
-|    T     |      T      |     T     |     10      |
+| Coin | Chooser | Demon | Dollars |
+|:----:|:-------:|:-----:|:-------:|
+|  H   |    H    |   H   |   40    |
+|  H   |    H    |   T   |   10    |
+|  H   |    T    |   H   |   30    |
+|  H   |    T    |   T   |    0    |
+|  T   |    H    |   H   |   30    |
+|  T   |    H    |   T   |    0    |
+|  T   |    T    |   H   |   40    |
+|  T   |    T    |   T   |   10    |
 
 : The beer-quiche game in table form. {#tbl-cho-kreps}
 
@@ -125,7 +125,6 @@ edge from parent node [below,align=center]{$T$ \\ $0.4$}
 \node at ($(3)!.5!(4)$) {$Demon$};
 \end{tikzpicture}
 ```
-
 
 What will Chooser do? There are two coherent things for Chooser to do, though each of them is only coherent given a background belief that isn't entailed by the evidence.
 

@@ -408,6 +408,87 @@ But think about how the choice of plans looks to Chooser now. The actions of Nei
 
 ## Against Purely Consequentialist Approaches {#sec-against-pure-consequence}
 
+```{r engine='tikz'}
+#| label: fig-against-consequence
+#| fig.cap: "Tree Diagram of the Open Newcomb game."
+#| fig.ext: 'png'
+#| cache: TRUE
+#| echo: FALSE
+#| fig.width: 4
+\usetikzlibrary{calc}
+
+\begin{tikzpicture}[scale=1.4,font=\footnotesize]
+\tikzset{
+% Two node styles for game trees: solid and hollow
+solid node/.style={circle,draw,inner sep=1.5,fill=black},
+hollow node/.style={circle,draw,inner sep=1.5},
+square node/.style={rectangle,draw, inner sep = 1, fill = black}
+}
+
+% Specify spacing for each level of the tree
+\tikzstyle{level 1}=[level distance=10mm,sibling distance=25mm]
+\tikzstyle{level 2}=[level distance=15mm,sibling distance=25mm]
+\tikzstyle{level 3}=[level distance=15mm,sibling distance=10mm]
+
+% The Tree
+  \node[hollow node,label=above:{$Chooser$}]{}
+    child{
+        node[square node,label=below:{5}]{}
+        edge from parent node[above left] {E}
+    }
+    child{
+        node[solid node, label=right:{$Demon$}]{}
+        child {
+          node(1)[solid node]{}
+          child {
+            node[square node,label=below:{8}]{}
+            edge from parent node[left] {A}
+          }
+          child {
+            node[square node,label=below:{0}]{}
+            edge from parent node[right] {B}
+          }
+          edge from parent node[above left] {PA}
+        }
+        child {
+          node(2)[solid node]{}
+          child {
+            node[square node,label=below:{4}]{}
+            edge from parent node[left] {A}
+          }
+          child {
+            node[square node,label=below:{4}]{}
+            edge from parent node[right] {B}
+          }
+          edge from parent node[above right] {PB}
+        }
+                edge from parent node[above right] {C}
+    };
+% information set
+\draw[dashed,rounded corners=10]($(1) + (-.45,.45)$)rectangle($(2) +(.45,-.45)$);
+% specify mover at information set
+\node at ($(1)!.5!(2)$) {$Chooser$};
+\end{tikzpicture}
+```
+
+|       | PA  | PB  |
+|:-----:|:---:|:---:|
+| **A** | 8   |  0  |
+| **B** |  4  |  4  |
+
+: The second round game in @fig-against-consequence. {#tbl-against-consequence-short}
+
+|        | PA  | PB  |
+|:------:|:---:|:---:|
+| **EA** | 5   |  5  |
+| **EB** | 5   |  5  |
+| **CA** | 8   |  0  |
+| **CB** |  4  |  4  |
+
+: The strategy table for @fig-against-consequence. {#tbl-against-consequence-long}
+
+
+
 First against CEDT - breaches the spirit of EDT.
 
 Then against Gallow + Consequence: Could lead to choosing dominated option.
