@@ -50,8 +50,8 @@ format:
           - html-fonts.scss
           - dark-table.scss
       linestretch: 1.5
-      toc: false
-      toc-title: "In this chapter"
+      toc: true
+      toc-title: "In this chapter:"
       toc-depth: 3
       toc-location: right
       reference-location: margin

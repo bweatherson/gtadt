@@ -495,6 +495,6 @@ Then against Gallow + Consequence: Could lead to choosing dominated option.
 
 What about Hunting + Consequence? Not sure I have an argument there.
 
-This has an important technical consequence: Purely Consequentialist theories are *unstable* in the sense Dmitri @Gallownd has described. If the pure consequentialist changes their own probability distribution over what they will do, what act is rational for them changes.[^dual-16] I don't think this is ever an issue for CEDT, but it is an issue for other Purely Consequentialist theories. For instance, GDT says that either A or B is a permissible choice in @tbl-unstable-example.
+This has an important technical consequence: Purely Consequentialist theories are *unstable* in the sense Dmitri @Gallownd has described. If the pure consequentialist changes their own probability distribution over what they will do, what act is rational for them changes.[^dual-16] I don't think this is ever an issue for CEDT, but it is an issue for other Purely Consequentialist theories. For instance, GDT says that either A or B is a permissible choice in @tbl-first-dynamic-example.
 
 [^dual-16]: The point here is somewhat connected to the point Bonanno makes about how backwards induction works in games where a player is indifferent between certain outcomes [@Bonanno2018, 80ff].
