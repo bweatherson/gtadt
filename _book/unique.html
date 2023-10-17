@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Game Theory as Decision Theory - Appendix E — Against Uniqueness</title>
+<title>Game Theory as Decision Theory - Appendix F — Against Uniqueness</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -103,7 +103,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./gad.html">Appendices</a></li><li class="breadcrumb-item"><a href="./unique.html"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Against Uniqueness</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./gad.html">Appendices</a></li><li class="breadcrumb-item"><a href="./unique.html"><span class="chapter-number">F</span>&nbsp; <span class="chapter-title">Against Uniqueness</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -285,14 +285,20 @@ div.csl-indent {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./war-signal.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Signals and Outcomes</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./buchak.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Risk-Weighted Utility</span></span></a>
+ <span class="menu-text"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Risk-Weighted Utility</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./unique.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Against Uniqueness</span></span></a>
+ <span class="menu-text"><span class="chapter-number">F</span>&nbsp; <span class="chapter-title">Against Uniqueness</span></span></a>
   </div>
 </li>
       </ul>
@@ -309,10 +315,10 @@ div.csl-indent {
     <h2 id="toc-title">In this chapter:</h2>
    
   <ul>
-  <li><a href="#chicken" id="toc-chicken" class="nav-link active" data-scroll-target="#chicken"><span class="header-section-number">E.1</span> Chicken</a></li>
-  <li><a href="#elections" id="toc-elections" class="nav-link" data-scroll-target="#elections"><span class="header-section-number">E.2</span> Elections</a></li>
-  <li><a href="#objections" id="toc-objections" class="nav-link" data-scroll-target="#objections"><span class="header-section-number">E.3</span> Objections</a></li>
-  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion"><span class="header-section-number">E.4</span> Conclusion</a></li>
+  <li><a href="#chicken" id="toc-chicken" class="nav-link active" data-scroll-target="#chicken"><span class="header-section-number">F.1</span> Chicken</a></li>
+  <li><a href="#elections" id="toc-elections" class="nav-link" data-scroll-target="#elections"><span class="header-section-number">F.2</span> Elections</a></li>
+  <li><a href="#objections" id="toc-objections" class="nav-link" data-scroll-target="#objections"><span class="header-section-number">F.3</span> Objections</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion"><span class="header-section-number">F.4</span> Conclusion</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/bweatherson/gtadt/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
@@ -321,7 +327,7 @@ div.csl-indent {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span id="sec-unique" class="quarto-section-identifier">Appendix E — Against Uniqueness</span></h1>
+<h1 class="title"><span id="sec-unique" class="quarto-section-identifier">Appendix F — Against Uniqueness</span></h1>
 </div>
 
 
@@ -344,12 +350,12 @@ div.csl-indent {
 <p>Putting the last two paragraphs together gives us four varieties of Permissive theses. The negation of a Permissive thesis is a Uniqueness thesis. The name suggests that there is precisely one rational attitude to take in a specified situation, but we’ll interpret it as the view that there is at most one rational attitude to take so as to ensure each Uniqueness thesis is the negation of a Permissive thesis. So if there are four Permissive theses, there are four Uniqueness theses that negate them.</p>
 <p>This appendix focuses on the strongest of these four Permissive theses, Acknowledged Intrapersonal Permissiveness, and its negation, Acknowledged Interpersonal Uniqueness. This is, I think, the most commonly discussed form of Permissiveness in the literature, and in any case is interesting. And I’m going to be arguing that in some cases involving symmetric games, coherence considerations provide a strong argument in favour of Acknowledged Intrapersonal Permissiveness.</p>
 <div class="page-columns page-full"><p>The next two sections set out two symmetric games where Uniqueness<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> leads to surprising results. In all cases I’ll assume that if Uniqueness is true, then the players know that it is true. And while this might be obvious, I’ll also note explicitly that they players have no evidence about the game or the players beyond what I write about the structure of the games.</p><div class="no-row-height column-margin column-container"><li id="fn3"><p><sup>3</sup>&nbsp;From now on, when I say ‘Uniqueness’ I mean Acknowledged Intrapersonal Uniqueness. It’s easier to simply stipulate this now than repeating the phrase every time.</p></li></div></div>
-<section id="chicken" class="level2 page-columns page-full" data-number="E.1">
-<h2 data-number="E.1" class="anchored" data-anchor-id="chicken"><span class="header-section-number">E.1</span> Chicken</h2>
-<p>Some finite symmetric games don’t have a symmetric pure-strategy equilibrium. One notable example is Chicken, one version of which is in <a href="#tbl-unique-chicken">Table&nbsp;<span>E.1</span></a>.</p>
+<section id="chicken" class="level2 page-columns page-full" data-number="F.1">
+<h2 data-number="F.1" class="anchored" data-anchor-id="chicken"><span class="header-section-number">F.1</span> Chicken</h2>
+<p>Some finite symmetric games don’t have a symmetric pure-strategy equilibrium. One notable example is Chicken, one version of which is in <a href="#tbl-unique-chicken">Table&nbsp;<span>F.1</span></a>.</p>
 <div id="tbl-unique-chicken" class="anchored">
 <table class="table">
-<caption>Table&nbsp;E.1: Chicken</caption>
+<caption>Table&nbsp;F.1: Chicken</caption>
 <thead>
 <tr class="header">
 <th style="text-align: center;"></th>
@@ -395,8 +401,8 @@ div.csl-indent {
 <p>It’s even more puzzling because of another feature of Uniqueness. It’s often very hard to see what the uniquely rational attitude could be in cases where the evidence is very sparse. The usual way to resolve this problem is to appeal to what <span class="citation" data-cites="Keynes1921">Keynes (<a href="references.html#ref-Keynes1921" role="doc-biblioref">1921</a>)</span> dubbed the Principle of Indifference. That principle says, roughly, that if the evidence available for two options is equally good, treat them as equally likely. Here, Row thinks that Column is a utility maximiser who has two options of equal utility available to them. And Row concludes (and must conclude if Uniqueness is correct) that one of these options is 99 times more likely to be played. That’s not inconsistent with the letter of the Principle of Indifference. But it is inconsistent with the spirit of it.</p>
 <p>All that said, I suspect many defenders of Uniqueness will be happy to accept these conclusions. The next case is I think poses a deeper problem for them.</p>
 </section>
-<section id="elections" class="level2 page-columns page-full" data-number="E.2">
-<h2 data-number="E.2" class="anchored" data-anchor-id="elections"><span class="header-section-number">E.2</span> Elections</h2>
+<section id="elections" class="level2 page-columns page-full" data-number="F.2">
+<h2 data-number="F.2" class="anchored" data-anchor-id="elections"><span class="header-section-number">F.2</span> Elections</h2>
 <p>The cases in this section come from some recent work on a rather old question,</p>
 <blockquote class="blockquote">
 <p>If a symmetric game has an equilibrium, does it have a symmetric equilibrium?</p>
@@ -440,8 +446,8 @@ div.csl-indent {
 </ul>
 <p>The main difference between this model and Xefteris’s is that it allows that players have false beliefs. But why shouldn’t they have false beliefs? All they know is that the other players are rational, and rationality (we’re assuming) does not settle a unique verdict for what players will do. So I think this strategy set, where the players have rational (but false) beliefs about the other players, is more useful to think about.</p>
 </section>
-<section id="objections" class="level2 page-columns page-full" data-number="E.3">
-<h2 data-number="E.3" class="anchored" data-anchor-id="objections"><span class="header-section-number">E.3</span> Objections</h2>
+<section id="objections" class="level2 page-columns page-full" data-number="F.3">
+<h2 data-number="F.3" class="anchored" data-anchor-id="objections"><span class="header-section-number">F.3</span> Objections</h2>
 <p>The arguments for premises 2 and 3 in the argument above assumed something slightly stronger than Uniqueness. They each assumed that each player knew Uniqueness was true, and could use that in their reasoning. (Most importantly, in the argument for premise 3, it’s important that each player can reason through the reasoning behind premise 2, and that reasoning used Uniqueness.) What happens if we drop that assumption, and consider the possibility that Uniqueness is true but unknowable?</p>
 <p>This possibility is a little uncomfortable for philosophical defenders of Uniqueness. If the players in these games do not know that Uniqueness is true, then neither do the authors writing about Uniqueness. And now we have to worry about whether it is permissible to assert in print that Uniqueness is true. I wouldn’t make too much of this though. It is unlikely that a knowledge norm governs assertion in philosophical journals.</p>
 <div class="page-columns page-full"><p>The bigger worry here is that one key argument for Uniqueness seems to require that Uniqueness is knowable. A number of recent authors have argued that Uniqueness best explains our practice of deferring to rational people.<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a> For instance, Greco and Hedden use this principle in their argument for Uniqueness.</p><div class="no-row-height column-margin column-container"><li id="fn6"><p><sup>6</sup>&nbsp;There is a nice discussion of this argument, including citations of the papers I’m about to discuss, in <span class="citation" data-cites="KopecTitelbaum2016">Kopec and Titelbaum (<a href="references.html#ref-KopecTitelbaum2016" role="doc-biblioref">2016, 195</a>)</span>.</p></li></div></div>
@@ -458,8 +464,8 @@ div.csl-indent {
 <p>For any number that either player picks, there is a better option available. It is always better to pick <span class="math inline">\(\frac{x+1}{2}\)</span> than <em>x</em>, for example. So it is impossible that each player knows the other is rational, and that rationality means never picking one option when a better option is available.</p>
 <p>So the Uniqueness theorist could say that the same thing is going on in the Xefteris game. Some infinitely games cannot be played by rational actors (understood as people who never choose sub-optimal options); this is one of them. But if this is all the Uniqueness theorist says, it is not a well motivated response. We can say why it is impossible to rationally play games like the open interval game; the options get better without end. But that isn’t true in the Xefteris game. The only thing that makes the game seem impossible is the Uniqueness assumption. People who reject Uniqueness can easily describe how the Xefteris game can be played by rational players. Simply saying that it is impossible, without any motivation or explanation for this other than Uniqueness itself, feels like an implausible move.</p>
 </section>
-<section id="conclusion" class="level2" data-number="E.4">
-<h2 data-number="E.4" class="anchored" data-anchor-id="conclusion"><span class="header-section-number">E.4</span> Conclusion</h2>
+<section id="conclusion" class="level2" data-number="F.4">
+<h2 data-number="F.4" class="anchored" data-anchor-id="conclusion"><span class="header-section-number">F.4</span> Conclusion</h2>
 <p>If Uniqueness is true, then the following thing happens in games between people who know each other to have the same evidence, and to be rational. When someone forms a belief about what the other person will do, they can infer that this is a rational way to play the game given knowledge that everyone else will do the same thing. But sometimes this is a very unintuitive inference. In Chicken, it implies that we should have asymmetric attitudes to someone who is facing a choice between two options with equal expected value. In the election game Xefteris describes, a game that feels consistent turns out to be impossible.</p>
 <p>I think the conclusion to draw from these cases of symmetric interactions this is that Uniqueness is false, and hence Permissivism is true. Sometimes in such an interaction one simply has to form a belief about the other player, knowing they may well form a different belief about you. Indeed, sometimes only coherent way to form a belief about the other player is to believe that they will form a different belief about you. And that means giving up on Uniqueness.</p>
 
@@ -872,7 +878,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./buchak.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Risk-Weighted Utility</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Risk-Weighted Utility</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

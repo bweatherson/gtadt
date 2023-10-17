@@ -152,7 +152,7 @@ A decision theory should say what to do not just in one problem, but across a fa
 
 So as I'm using the term, Causal Decision Theory is not a theory. That might be surprising, since it has the word 'Theory' in the name. But we're used to things like the United States of America which includes parts that are neither States nor in America (e.g., Guam). We can live with Causal Decision Theory not being a theory, and instead being a family that agree about what to do, and why to do it, in [Newcomb's Problem](#tbl-newcomb). The bulk of this book will be an in house dispute between causal decision theories, though I'll spend some time objecting to EDT, and also some time objecting to other theories that reject both CDT and EDT.[^intro-2]
 
-[^intro-2]: The most notable of these will be the Functional Decision Theory of @LevinsteinSoares2020, and the non-expectationist theories of @Quiggin1982 and @Buchak2013.
+[^intro-2]: The most notable of these will be the Functional Decision Theory of @LevinsteinSoares2020, and the non-expectationist theories of @Quiggin1982 and @BuchakRisk.
 
 ## Gamified Decision Theory {#sec-gdt-defined}
 

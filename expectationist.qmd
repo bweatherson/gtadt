@@ -10,7 +10,7 @@ Say that a normal decision problem is one where the states are probabilistically
 
 The view I call expectationism has two parts. First, it says that in normal decision problems, the rational agent maximises the expected value of something like the value of their action. So if the states are H and T, the expected value of a choice X is V(XH)Pr(H) + V(XT)Pr(T), and the expectationist says to choose the choice with the highest expected value.[^expectationist-2] Second, it says that something like this expected value plays an important role in the theory of abnormal decision problems. What's an important role is vague, so there are possible borderline cases. But in practice this doesn't arise, at least in the philosophy literature. Everyone working on abnormal problems is an expectationist. Indeed, most work assumes without even saying it that the first clause of expectationism is correct. Everyone working on normal problems makes it clear which side they fall on, so there is no vagueness there. And every game theory text is expectationist. 
 
-[^expectationist-2]: Some theorists will put conditional probabilities in place of probabilities in this formula, so they'll use Pr(H\|X) rather than Pr(H). But since we're restricting attention to normal problems, this is a distinction without a difference.
+[^expectationist-2]: Some theorists will put conditional probabilities in place of probabilities in this formula, so they'll use Pr(H\|X) rather than Pr(H). But since we're restricting attention to normal problems, this is a distinction without a relevant difference.
 
 I'm going to mostly follow suit. So why am I belabouring this point? One small reason and one large reason. The small reason is that one of the arguments I'll give concerning abnormal cases generalises to an argument for expectationism about normal cases. I go over the details of this in @sec-buchak. The other reason is dialectical.
 
@@ -28,9 +28,11 @@ Given that, it is surprising how many expectationists rely on intuitions about c
 
 If the philosopher is an expectationist, they can't really endorse this argument. Premise 2 can't possibly be true. No matter how well theory theory does at tracking intuitions about abnormal cases, a modified version of their theory that allows for risk-aversion will do an even better job, especially when normal cases are considered. And for that reason, they can't really believe premise 1. After all, if premise 1 is true, then the correct decision theory for normal decision problems is not expectationist.
 
-So this means that arguments like this one should not be used in decision theory. Of course, we can't entirely depart from intuitions about cases. If our theory disagrees too much with common sense it starts becoming a theory of something else [@Jackson1998, Ch. 2]. The role of intuitions is like the drawing on a wanted poster. It's not true that the criminal is the person who best resembles the drawing, but you should be very sceptical of a theory that the criminal looks nothing at all like the poster. Still, you should also be sceptical of a theory that the criminal is someone who lacks what we thought were necessary skills for committing the crime, even if the person who most resembles the poster lacks those skills. One aim of this book is to develop several plausible preconditions on a good theory of decision, most importantly the Exit Principle of @sec-indecisive, and argue that only GDT (or something like it) satisfies those preconditions. That's more philosophically significant than whether GDT best tracks intuitions about cases.
+So this means that arguments like this one should not be used in decision theory. Of course, we can't entirely depart from intuitions about cases. If our theory disagrees too much with common sense it starts becoming a theory of something else [@Jackson1998, Ch. 2]. The role of intuitions is like the drawing on a wanted poster. It's not true that the criminal is the person who best resembles the drawing, but you should be very sceptical of a theory that the criminal looks nothing at all like the poster. Still, you should also be sceptical of a theory that the criminal is someone who lacks what we thought were necessary skills for committing the crime, even if the person who most resembles the poster lacks those skills. One aim of this book is to develop several plausible preconditions on a good theory of decision, most importantly the Single Choice Principle of @sec-indecisive, and argue that only GDT (or something like it) satisfies those preconditions. That's more philosophically significant than whether GDT best tracks intuitions about cases.
 
 If expectationism does not maximise agreement with intuition, why is it so popular? It is because there are several plausible principles that are consistent with expectationism, but which are not consistent with the best alternative, namely the Quiggin-Buchak theory. These include[^expectationist-5]:
+
+[^expectationist-5]: Philosophers often attribute the result that expectationism implies News is Valuable to @Good1967, but it's really just a reformulation of a result due to David @Blackwell1951, which I think is a better attribution. That said, @Das2023 notes that a similar result is in an old note by C. S. @Peirce1876, first published in an academic setting in 1967, but (according to @Wible1994), published in a US government report in 1879. So maybe the result is very old.
 
 News is Valuable
 
@@ -44,11 +46,9 @@ Substitution of Indifferents
 
 :   If Chooser is indifferent between A and B, then Chooser should be indifferent between any two gambles that have the same payouts in all but one possibility, and in that possibility one of them returns A, and the other returns B.
 
-Exit Principle
+Single Choice Principle
 
-:   If the choice Chooser makes does not make a difference to the payout Chooser gets if *p* is false, then it should not matter to Chooser whether they make their choice before or after finding out whether *p* is true.
-
-[^expectationist-5]: Philosophers often attribute the result that expectationism implies News is Valuable to @Good1967, but it's really just a reformulation of a result due to David @Blackwell1951, which I think is a better attribution. That said, @Das2023 notes that a similar result is in an old note by C. S. @Peirce1876, first published in an academic setting in 1967, but (according to @Wible1994), in a US government report in 1879. So maybe the result is very old.
+:   If in a dynamic choice situation, there is only one possible point where Chooser has to make a choice, the same options are permissible choices for Chooser whether they are choosing at that point, or at any earlier point in the tree.
 
 These four principles suggest four arguments for expectationism. First, argue that either expectationism is true, or the Quiggin-Buchak theory is true. Second, argue that one of these principles is a plausible second premise. Then conclude, since the principle rules out the Quiggin-Buchak theory, that expectationism must be true.
 
@@ -62,10 +62,14 @@ And, perhaps more surprisingly, there are versions of CDT that reject Sure Thing
 
 [^expectationist-6]: I'll have much more to say about this in @sec-select.
 
------FINISH CHAPTER----
+Still, it isn't a requirement that an expectationist theory endorse all of these principles. What is required is that they endorse some good argument for expectationism. And, once they've endorsed it, they endorse it consistently when they start discussing abnormal problems involving demons. Moreover, they can't endorse any argument about demons that would imply, if endorsed consistently, that expectationism itself is false.
 
-Expectationism has a big practical advantage; it lets us treat the payouts in a game table as expected values, not any kind of final value. This is useful because it is very rare that a decision problem results in outcomes that have anything like final value. Often we are thinking about decision problems where the payouts are in dollars, or some other currency. That's to say, we are often considering gambles whose payout is another gamble. Holding some currency is a bet against inflation; in general, the value of currency is typically highly uncertain.[^expectationist-7] For the expectationist, this is not a serious theoretical difficulty. As long as a dollar, or a euro, or a peso, has an expected value, we can sensibly talk about decision problems with payouts in those currencies. Depending on just how the non-expectationist thinks about compound gambles, they might have a much harder time handling even simple money bets.[^expectationist-8]
+I think the best option for most philosophical decision theorists is to endorse something like Substitution of Indifferents. That's the only plausible principle I can see that is consistent with EDT, and which implies expectationism. That's not to say I'm endorsing EDT; I'm just saying that the defender of EDT also needs to offer a defence of expectationism, and I think one starting with Substitution of Indifferents is their best option.
 
-[^expectationist-7]: See @Alcoba2023 for what happens when people start thinking that bet is a bad one.
+Expectationism has a big practical advantage; it lets us treat the payouts in a game table as expected values, not any kind of final value.[^expectationist-7] This is useful because it is very rare that a decision problem results in outcomes that have anything like final value. Often we are thinking about decision problems where the payouts are in dollars, or some other currency. That's to say, we are often considering gambles whose payout is another gamble. Holding some currency is a bet against inflation; in general, the value of currency is typically highly uncertain.[^expectationist-8] For the expectationist, this is not a serious theoretical difficulty. As long as a dollar, or a euro, or a peso, has an expected value, we can sensibly talk about decision problems with payouts in those currencies. Depending on just how the non-expectationist thinks about compound gambles, they might have a much harder time handling even simple money bets.[^expectationist-9]
 
-[^expectationist-8]: Joanna @Thoma2019 develops a subtle critique of some non-expectationist theories starting with something like this point.
+[^expectationist-7]: A certain kind of pragmatist might take the reasoning in this paragraph to be an independent argument for expectationism.
+
+[^expectationist-8]: See @Alcoba2023 for what happens when people start thinking that bet is a bad one.
+
+[^expectationist-9]: Joanna @Thoma2019 develops a subtle critique of some non-expectationist theories starting with something like this point.
