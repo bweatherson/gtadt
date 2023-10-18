@@ -6,19 +6,22 @@ Game theorists, like philosophical decision theorists, are doing ideal theory. T
 
 [^idealised-1]: The dubbing is in @Robinson1949. For a thorough history of the problem, see @Schrijver2005. For an accessible history of the problem, which includes these references, see the wikipedia page on 'Traveling Salesman Problem'.
 
-> **Salesman** Chooser is given the straight line distance between each pair of cities from the 257 represented on the map below. Using this information, Chooser has to find as short a path as possible that goes through all 257 cities and returns to the first one. The longer a path Chooser selects, the worse things will be for Chooser.
+> **Salesman** Chooser is given the straight line distance between each pair of cities from the 257 represented on the map in @fig-salesman-points. Using this information, Chooser has to find as short a path as possible that goes through all 257 cities and returns to the first one. The longer a path Chooser selects, the worse things will be for Chooser.
+
+```{r load-packages}
+#| include: false
+require(tidyverse)
+require(TSP)
+require(maps)
+```
 
 ```{r salesman-points}
 #| label: fig-salesman-points
 #| fig-cap: "The 257 cities that must be visited in the Salesman problem."
 #| echo: false
 #| cache: true
-#! warnings: false
+#! warning: false
 #| message: false
-
-require(tidyverse)
-require(TSP)
-require(maps)
 
 theme_map <- function(base_size=9, base_family="") {
   theme_bw(base_size=base_size, base_family=base_family) %+replace%

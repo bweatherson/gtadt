@@ -70,6 +70,7 @@ format:
     epub: default
     pdf: 
       format: scrreprt
+      keep-tex: true
       geometry: "left=1.5in,right=1.5in,top=1.78in,bottom=1.78in"
       mainfont: Scala Pro
       sansfont: Scala Sans Pro
@@ -81,6 +82,8 @@ format:
         text: |
           \setlength\heavyrulewidth{0ex}
           \setlength\lightrulewidth{0ex}
+          \usepackage{makecell}
+          \renewcommand\theadfont{\bfseries}
 
 editor: visual
 

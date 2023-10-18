@@ -8,7 +8,7 @@ Ratificationism, the view that the correct theory says all choices are ratifiabl
 
 One was the existence of cases where there is (allegedly) no ratifiable option. @tbl-no-pure is one such case.
 
-|       |   PA   |  PB    |
+|       | **PA** | **PB** |
 |:-----:|:------:|:------:|
 | **A** |   3    |   5    |
 | **B** |   4    |   3    |
@@ -17,21 +17,21 @@ One was the existence of cases where there is (allegedly) no ratifiable option. 
 
 If Chooser plays A, they would prefer to play B. If Chooser plays B, they would prefer to play A. Things get worse if we add an option that is ratifiable, but unfortunate, as in @tbl-bad-third.
 
-|       | PA  | PB     |    PX  |
-|:-----:|:---:|:------:|:------:|
-| **A** |  3  |   5    |   0    |
-| **B** |  4  |   3    |   0    |
-| **X** |  0  |   0    |   0    |
+|       | **PA** | **PB** | **PX** |
+|:-----:|:------:|:------:|:------:|
+| **A** |   3    |   5    |   0    |
+| **B** |   4    |   3    |   0    |
+| **X** |   0    |   0    |   0    |
 
 : A case with only a bad pure ratifiable option. {#tbl-bad-third}
 
 The only ratifiable option is X, but surely it is worse than Up or Down. One might avoid this example by saying that there is a weak dominance constraint on rational choices, as well as a ratifiability constraint. But that won't help us much, as was pointed out by @Skyrms1984, since in @tbl-verybad-third there is no weakly dominant option, but X is surely still a bad play.
 
-|          | PA      | PB        |    PX         |
-|:--------:|:-------:|:---------:|:-------------:|
-|  **A**   |    3    |     5     |       0       |
-| **B**    |    4    |     3     |       0       |
-|  **X**   |    0    |     0     | $\varepsilon$ |
+|       | **PA** | **PB** |    **PX**     |
+|:-----:|:------:|:------:|:-------------:|
+| **A** |   3    |   5    |       0       |
+| **B** |   4    |   3    |       0       |
+| **X** |   0    |   0    | $\varepsilon$ |
 
 : Skyrms's counterexample to ratificationism. {#tbl-verybad-third}
 
@@ -54,7 +54,7 @@ Ratifiability is an intuitive constraint. There is something very odd about sayi
 | **Chooser**: I said that I would.
 | **Theory**: Er, I don't know what to say.
 
-That's bad, and Theory should not sound like this. 
+That's bad, and Theory should not sound like this.
 
 It's also an important part of game theory that there really isn't a distinction between theorists and practitioners. A theorist can only say X is the right thing to do in situation S if someone actually in S could reason their way to doing X by following the exact same argument as the theorist uses to conclude that X is the right thing to do. That's impossible if (a) the theory rejects ratifiability, and (b) the person in S knows that they are going to follow the theory. Their conclusion that they will do X will be self-undermining, so they won't draw it. If the theorist draws it anyway, that violates the (rather attractive) idea that one can't draw more conclusions from outside a game than what an intelligent player could draw from inside the game.
 

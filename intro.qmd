@@ -27,10 +27,10 @@ I'm squeamish about assigning probability 1 to predictions that are causally iso
 
 A generic binary choice problem involving Chooser and Demon can be depicted by @tbl-gen-dem-problem-text.
 
-|       | PA  | PB  |
-|:-----:|:---:|:---:|
-| **A** | *x* | *y* |
-| **B** | *z* | *w* |
+|       | **PA** | **PB** |
+|:-----:|:------:|:------:|
+| **A** |  *x*   |  *y*   |
+| **B** |  *z*   |  *w*   |
 
 : The generic demonic decision problem. {#tbl-gen-dem-problem-text}
 
@@ -42,7 +42,7 @@ Chooser selects A or B, Demon predicts the choice, and there are four possible o
 #| fig.ext: 'png'
 #| cache: TRUE
 #| echo: FALSE
-#| fig.width: 4
+#| out.width: "50%"
 \usetikzlibrary{calc}
 
 \begin{tikzpicture}[scale=1.4,font=\footnotesize]
@@ -86,7 +86,7 @@ square node/.style={rectangle,draw, inner sep = 1, fill = black}
     };
 
 % information set
-\draw[dashed,rounded corners=10]($(1) + (-.45,.45)$)rectangle($(2) +(.45,-.45)$);
+\draw[dashed,rounded corners=10]($(1) + (-.45,.25)$)rectangle($(2) +(.45,-.25)$);
 \node at ($(1)!.5!(2)$) {Chooser};
 \end{tikzpicture}
 ```
@@ -101,10 +101,10 @@ Following @Nozick1969, the most common problem that people discuss involving Dem
 
 The standard example uses (more or less) the values in @tbl-newcomb, but all that really matters are the three inequalities above.
 
-|       |  PA  | PB  |
-|:-----:|:----:|:---:|
-| **A** | 1000 |  0  |
-| **B** | 1001 |  1  |
+|       | **PA** | **PB** |
+|:-----:|:------:|:------:|
+| **A** |  1000  |   0    |
+| **B** |  1001  |   1    |
 
 : Newcomb's Problem. {#tbl-newcomb}
 
@@ -128,10 +128,10 @@ Then EDT says that higher valued options are better, so A is better than B, sinc
 
 Causal Decision Theory (CDT), on the other hand, is moved by the following argument. Whatever Demon has predicted, Chooser is better off choosing B than A. That, says CDT, settles things; Chooser should take option B. I think this is right; Chooser should choose B, and they should do so for this reason. But note that this is not anything like a complete theory of choice. Two people could agree with this little argument and have any number of different views about problems that not so easily disposed of. In this book, especially in @sec-indecisive, I'll spend a lot of time on problems like @tbl-stag-decision-first.
 
-|       | PA  | PB  |
-|:-----:|:---:|:---:|
-| **A** |  6  |  0  |
-| **B** |  5  |  2  |
+|       | **PA** | **PB** |
+|:-----:|:------:|:------:|
+| **A** |   6    |   0    |
+| **B** |   5    |   2    |
 
 : The Stag Decision.[^intro-1] {#tbl-stag-decision-first}
 
@@ -165,7 +165,7 @@ The 'ratificationism' in causal ratificationism means that Chooser will ratify t
 [^intro-3]: In general, the sum on each side of the inequality ranges over all possible states, so if there are more than two states, there will be more than two summands on either side. And A must be ratified compared to all alternatives, so if there are more than two options, this inequality must hold if you replace B with C, D, or any other choice.
 
 |                                                                                   |
-|:---------------------------------------------------------------------------------:|
+|:----------------------------------------------------------------------:|
 | V(APA) · Pr~A~(PA) + V(APB) · Pr~A~(PB) ≥ V(BPA) · Pr~A~(PA) + V(BPB) · Pr~A~(PB) |
 
 By Pr~A~ I mean the rational probabilities that Chooser has after choosing A. If there is more than one rational probability that Chooser could have, all that matters is that the inequality hold for one such probability function.[^intro-4] In somewhat technical English, what this inequality says is that once A is chosen, the expected value of choosing A is at least as great as the expected value of having chosen B. That's what I mean by ratifiability; once Chooser selects A, they think it was for the best (or at least equal best) that they chose it.
@@ -178,10 +178,10 @@ GDT, as I'm defining it, has three extra features beyond this causal ratificatio
 
 GDT says that permissible choices are not weakly dominated. An option weakly dominates another if it could be better, and couldn't be worse. So in @tbl-weak-dominance-example, A is not a permissible choice because it is weakly dominated by B.
 
-|       | PA  | PB  |
-|:-----:|:---:|:---:|
-| **A** |  2  |  0  |
-| **B** |  2  |  1  |
+|       | **PA** | **PB** |
+|:-----:|:------:|:------:|
+| **A** |   2    |   0    |
+| **B** |   2    |   1    |
 
 : An example of weak dominance. {#tbl-weak-dominance-example}
 
@@ -193,10 +193,10 @@ In dynamic choices, GDT says that Chooser must satisfy two constraints. First, t
 
 [^intro-6]: In this problem, the Demon makes a prediction after Chooser opts to Continue, but this prediction is only revealed after Chooser selects A or B.
 
-|       | PA  | PB  |
-|:-----:|:---:|:---:|
-| **A** |  4  |  4  |
-| **B** |  0  |  8  |
+|       | **PA** | **PB** |
+|:-----:|:------:|:------:|
+| **A** |   4    |   4    |
+| **B** |   0    |   8    |
 
 : The second stage of a dynamic problem. {#tbl-first-dynamic-example}
 
