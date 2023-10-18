@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.433">
+<meta name="generator" content="quarto-1.3.340">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -78,8 +78,7 @@ div.csl-indent {
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
+    "search-submit-button-title": "Submit"
   }
 }</script>
 <script type="application/json" class="js-hypothesis-config">
@@ -107,7 +106,7 @@ div.csl-indent {
       <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ratify.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Ratificationist</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -121,7 +120,7 @@ div.csl-indent {
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Game Theory as Decision Theory</a> 
         <div class="sidebar-tools-main tools-wide">
-    <a href="https://github.com/bweatherson/gtadt" rel="" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <a href="https://github.com/bweatherson/gtadt" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
     <div class="dropdown">
       <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download"><i class="bi bi-download"></i></a>
       <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
@@ -312,7 +311,15 @@ div.csl-indent {
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar"><div class="quarto-margin-header"><div class="margin-header-item">
 <p>&nbsp;</p>
 </div></div>
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">In this chapter:</h2>
+   
+  <ul>
+  <li><a href="#a-brief-history-of-ratificationism" id="toc-a-brief-history-of-ratificationism" class="nav-link active" data-scroll-target="#a-brief-history-of-ratificationism"><span class="header-section-number">6.1</span> A Brief History of Ratificationism</a></li>
+  <li><a href="#two-quick-arguments-for-ratifiability" id="toc-two-quick-arguments-for-ratifiability" class="nav-link" data-scroll-target="#two-quick-arguments-for-ratifiability"><span class="header-section-number">6.2</span> Two Quick Arguments for Ratifiability</a></li>
+  <li><a href="#ratifiability-without-mixtures" id="toc-ratifiability-without-mixtures" class="nav-link" data-scroll-target="#ratifiability-without-mixtures"><span class="header-section-number">6.3</span> Ratifiability Without Mixtures</a></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/bweatherson/gtadt/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content page-columns page-full" id="quarto-document-content">
@@ -334,55 +341,61 @@ div.csl-indent {
 
 </header>
 
-<p>Solution concepts in game theory tend to be equilibria. And by an equilibria, everyone is happy with their moves knowing what all the moves of all the players are. (Or, at least, they are as happy as they can be.) Put in decision theoretic terms, that means that all solutions are ratifiable; Chooser is happy with their choice once it is made.</p>
-<p>Ratificationism used to be a more popular view among decision theorists. Richard <span class="citation" data-cites="Jeffrey1983">Jeffrey (<a href="references.html#ref-Jeffrey1983" role="doc-biblioref">1983</a>)</span> added a ratifiability constraint to a broadly evidential decision theory. And ratifiability was endorsed by causal theorists such as <span class="citation" data-cites="Weirich1985">Weirich (<a href="references.html#ref-Weirich1985" role="doc-biblioref">1985</a>)</span> and <span class="citation" data-cites="Harper1986">Harper (<a href="references.html#ref-Harper1986" role="doc-biblioref">1986</a>)</span>. It fell out of popularity, though it has been recently endorsed by <span class="citation" data-cites="Fuscond">Fusco (<a href="references.html#ref-Fuscond" role="doc-biblioref">n.d.</a>)</span>. The loss of popularity was for two reasons.</p>
+<p>Solution concepts in game theory tend to be equilibria. When game theorists describe a situation as an equilibria, they mean that everyone is happy with their moves knowing what all the moves of all the players are. (Or, at least, they are as happy as they can be.) Put in decision theoretic terms, that means that all solutions are ratifiable. Any solution of a decision problem involves Chooser being happy with their choice once it is made. That is, if the correct theory says X is choiceworthy in a particular situation, it also says that X is choiceworthy conditional on being chosen.</p>
+<section id="a-brief-history-of-ratificationism" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="a-brief-history-of-ratificationism"><span class="header-section-number">6.1</span> A Brief History of Ratificationism</h2>
+<p>Ratificationism, the view that the correct theory says all choices are ratifiable in this sense, used to be a more popular view among decision theorists. Richard <span class="citation" data-cites="Jeffrey1983">Jeffrey (<a href="references.html#ref-Jeffrey1983" role="doc-biblioref">1983</a>)</span> added a ratifiability constraint to a broadly evidential decision theory. Ratifiability was endorsed by causal theorists such as <span class="citation" data-cites="Weirich1985">Weirich (<a href="references.html#ref-Weirich1985" role="doc-biblioref">1985</a>)</span> and <span class="citation" data-cites="Harper1986">Harper (<a href="references.html#ref-Harper1986" role="doc-biblioref">1986</a>)</span>. It subsequently fell out of popularity, though it has been recently endorsed by <span class="citation" data-cites="Fuscond">Fusco (<a href="references.html#ref-Fuscond" role="doc-biblioref">n.d.</a>)</span>. The loss of popularity was for two reasons.</p>
 <p>One was the existence of cases where there is (allegedly) no ratifiable option. <a href="#tbl-no-pure">Table&nbsp;<span>6.1</span></a> is one such case.</p>
 <div id="tbl-no-pure" class="anchored">
 <table class="table">
 <caption>Table&nbsp;6.1: A case with no pure ratifiable options.</caption>
+<thead>
+<tr class="header">
+<th style="text-align: center;"></th>
+<th style="text-align: center;">PA</th>
+<th style="text-align: center;">PB</th>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: center;"></td>
-<td style="text-align: center;"><strong>PUp</strong></td>
-<td style="text-align: center;"><strong>PDown</strong></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><strong>Up</strong></td>
+<td style="text-align: center;"><strong>A</strong></td>
 <td style="text-align: center;">3</td>
 <td style="text-align: center;">5</td>
 </tr>
-<tr class="odd">
-<td style="text-align: center;"><strong>Down</strong></td>
+<tr class="even">
+<td style="text-align: center;"><strong>B</strong></td>
 <td style="text-align: center;">4</td>
 <td style="text-align: center;">3</td>
 </tr>
 </tbody>
 </table>
 </div>
-<p>If Chooser plays Up, they would prefer to play Down. If Chooser plays Down, they would prefer to play Up. Things get worse if we add an option that is ratifiable, but unfortunate, as in <a href="#tbl-bad-third">Table&nbsp;<span>6.2</span></a>.</p>
+<p>If Chooser plays A, they would prefer to play B. If Chooser plays B, they would prefer to play A. Things get worse if we add an option that is ratifiable, but unfortunate, as in <a href="#tbl-bad-third">Table&nbsp;<span>6.2</span></a>.</p>
 <div id="tbl-bad-third" class="anchored">
 <table class="table">
 <caption>Table&nbsp;6.2: A case with only a bad pure ratifiable option.</caption>
+<thead>
+<tr class="header">
+<th style="text-align: center;"></th>
+<th style="text-align: center;">PA</th>
+<th style="text-align: center;">PB</th>
+<th style="text-align: center;">PX</th>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: center;"></td>
-<td style="text-align: center;"><strong>PUp</strong></td>
-<td style="text-align: center;"><strong>PDown</strong></td>
-<td style="text-align: center;"><strong>PX</strong></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><strong>Up</strong></td>
+<td style="text-align: center;"><strong>A</strong></td>
 <td style="text-align: center;">3</td>
 <td style="text-align: center;">5</td>
 <td style="text-align: center;">0</td>
 </tr>
-<tr class="odd">
-<td style="text-align: center;"><strong>Down</strong></td>
+<tr class="even">
+<td style="text-align: center;"><strong>B</strong></td>
 <td style="text-align: center;">4</td>
 <td style="text-align: center;">3</td>
 <td style="text-align: center;">0</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: center;"><strong>X</strong></td>
 <td style="text-align: center;">0</td>
 <td style="text-align: center;">0</td>
@@ -391,30 +404,32 @@ div.csl-indent {
 </tbody>
 </table>
 </div>
-<p>The only ratifiable option is X, but surely it is worse than Up or Down. One might avoid this example by saying that there is a weak dominance constraint on rational choices, as well as a ratifiability constraint. That won’t solve the problem, but it will turn it into a problem like <a href="#tbl-no-pure">Table&nbsp;<span>6.1</span></a>, where there is no good solution. But that won’t help us much, as was pointed out by <span class="citation" data-cites="Skyrms1984">Skyrms (<a href="references.html#ref-Skyrms1984" role="doc-biblioref">1984</a>)</span>, since in <a href="#tbl-verybad-third">Table&nbsp;<span>6.3</span></a> there is no weakly dominant option, but X is surely still a bad play.</p>
+<p>The only ratifiable option is X, but surely it is worse than Up or Down. One might avoid this example by saying that there is a weak dominance constraint on rational choices, as well as a ratifiability constraint. But that won’t help us much, as was pointed out by <span class="citation" data-cites="Skyrms1984">Skyrms (<a href="references.html#ref-Skyrms1984" role="doc-biblioref">1984</a>)</span>, since in <a href="#tbl-verybad-third">Table&nbsp;<span>6.3</span></a> there is no weakly dominant option, but X is surely still a bad play.</p>
 <div id="tbl-verybad-third" class="anchored">
 <table class="table">
 <caption>Table&nbsp;6.3: Skyrms’s counterexample to ratificationism.</caption>
+<thead>
+<tr class="header">
+<th style="text-align: center;"></th>
+<th style="text-align: center;">PA</th>
+<th style="text-align: center;">PB</th>
+<th style="text-align: center;">PX</th>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: center;"></td>
-<td style="text-align: center;"><strong>PUp</strong></td>
-<td style="text-align: center;"><strong>PDown</strong></td>
-<td style="text-align: center;"><strong>PX</strong></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><strong>Up</strong></td>
+<td style="text-align: center;"><strong>A</strong></td>
 <td style="text-align: center;">3</td>
 <td style="text-align: center;">5</td>
 <td style="text-align: center;">0</td>
 </tr>
-<tr class="odd">
-<td style="text-align: center;"><strong>Down</strong></td>
+<tr class="even">
+<td style="text-align: center;"><strong>B</strong></td>
 <td style="text-align: center;">4</td>
 <td style="text-align: center;">3</td>
 <td style="text-align: center;">0</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: center;"><strong>X</strong></td>
 <td style="text-align: center;">0</td>
 <td style="text-align: center;">0</td>
@@ -423,11 +438,28 @@ div.csl-indent {
 </tbody>
 </table>
 </div>
-<p>A better option is to insist, as <span class="citation" data-cites="Harper1986">Harper (<a href="references.html#ref-Harper1986" role="doc-biblioref">1986</a>)</span> did, and as I argued in previous section, that if Chooser is rational, they can play a mixed strategy. In all three of these games, the mixed strategy of (0.5 U, 0.5 D) will be ratifiable, as long as Chooser forms the belief (upon choosing to play this), that Demon will play the mixed strategy (1/3 U, 2/3 D). And that’s a sensible thing for Demon to play, since it is the only strategy that is ratifiable for Demon if Demon thinks Chooser can tell what they are going to do. And given Chooser’s knowledge of Demon’s goals, Chooser can tell what Demon is going to do once they choose.</p>
-<p>So if mixed strategies are allowed, none of the problems for ratifiability persist. And since mixed strategies should be allowed, since Chooser is an ideal practical actor, and not being able to play mixed strategies is an imperfection.</p>
-<p>Moreover, ratifiability is an intuitive constraint. There is something very odd about saying that such-and-such is a rational thing to do, but whoever does it will regret it the moment they act. So I’ll follow the game theory textbooks in saying ratifiability should be part of the correct decision theory.</p>
-<p>This does not mean that we need to have an explicit ratifiability clause in our theory. It could be, and arguably should be, that ratifiability is a consequence of the theory, not an explicit stipulation.</p>
-<p>Could we defend ratifiability without appeal to mixed strategies? It’s not a completely impossible task, but nor is it an appealing one.</p>
+<p>A better option is to insist, as <span class="citation" data-cites="Harper1986">Harper (<a href="references.html#ref-Harper1986" role="doc-biblioref">1986</a>)</span> did, and as I argued in <a href="mix.html"><span>Chapter&nbsp;5</span></a>, that if Chooser is rational, they can play a mixed strategy. In all three of these games, the mixed strategy of (0.5 U, 0.5 D) will be ratifiable, as long as Chooser forms the belief (upon choosing to play this), that Demon will play the mixed strategy (1/3 U, 2/3 D). That’s a sensible thing for Demon to play, since it is the only strategy that is ratifiable for Demon if Demon thinks Chooser can tell what they are going to do. And given Chooser’s knowledge of Demon’s goals, Chooser can tell what Demon is going to do once they choose.</p>
+<p>So if mixed strategies are allowed, neither of the problems for ratifiability persist.</p>
+</section>
+<section id="two-quick-arguments-for-ratifiability" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="two-quick-arguments-for-ratifiability"><span class="header-section-number">6.2</span> Two Quick Arguments for Ratifiability</h2>
+<p>Ratifiability is an intuitive constraint. There is something very odd about saying that such-and-such is a rational thing to do, but whoever does it will regret it the moment they act. If a theory does not endorse ratifiability, it feels like Chooser could have the following conversation with Theory. (In this example, Theory recommends X, but says it is better to have done Y conditional on having done X. If Theory does not comply with ratifiability, an example like this exists.)</p>
+<p><strong>Chooser</strong>: I believe in you Theory, I’ll do what you say.<br>
+<strong>Theory</strong>: Do X!<br>
+<strong>Chooser</strong>: Done.<br>
+<strong>Theory</strong>: Oh no, you should have done Y.<br>
+<strong>Chooser</strong>: Why didn’t you say that earlier?<br>
+<strong>Theory</strong>: Because earlier you hadn’t done X.<br>
+<strong>Chooser</strong>: But you told me to do X.<br>
+<strong>Theory</strong>: I didn’t know you would agree.<br>
+<strong>Chooser</strong>: I said that I would.<br>
+<strong>Theory</strong>: Er, I don’t know what to say.</p>
+<p>That’s bad, and Theory should not sound like this.</p>
+<p>It’s also an important part of game theory that there really isn’t a distinction between theorists and practitioners. A theorist can only say X is the right thing to do in situation S if someone actually in S could reason their way to doing X by following the exact same argument as the theorist uses to conclude that X is the right thing to do. That’s impossible if (a) the theory rejects ratifiability, and (b) the person in S knows that they are going to follow the theory. Their conclusion that they will do X will be self-undermining, so they won’t draw it. If the theorist draws it anyway, that violates the (rather attractive) idea that one can’t draw more conclusions from outside a game than what an intelligent player could draw from inside the game.</p>
+</section>
+<section id="ratifiability-without-mixtures" class="level2 page-columns page-full" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="ratifiability-without-mixtures"><span class="header-section-number">6.3</span> Ratifiability Without Mixtures</h2>
+<p>My defense of ratifiability made heavy use of mixed strategies. Could we defend ratifiability without appeal to mixed strategies? It’s not a completely impossible task, but nor is it an appealing one.</p>
 <div class="page-columns page-full"><p><a href="#tbl-no-pure">Table&nbsp;<span>6.1</span></a> poses no serious problem. Without mixed strategies, the case is simply a dilemma. And we know that there are dilemmas in decision theory. Here’s one familiar example. A sinner faces Judgment Day. Because of his sins, it is clear things will end badly for him. But he has done some good in his life, and that counts for something. The judge thinks he should get some days in the Good Place before being off to the Bad Place. But the judge can’t decide how many. So the judge says to the sinner to pick a natural number <em>n</em>, and the sinner will spend <em>n</em> days in the Good Place, and then goodbye. This clearly is a dilemma; for any large <em>n</em>, saying <em>n</em>! would be considerably better.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> <span class="citation" data-cites="Ahmed2012">Ahmed (<a href="references.html#ref-Ahmed2012" role="doc-biblioref">2012</a>)</span> says that it is an objection to a theory that it allows dilemmas in cases with finitely many options; dilemmas should only arise in infinite cases. But he doesn’t really argue for this, and I can’t see what an argument would be. Once you’ve allowed dilemmas of any kind, the door is open to all of them.</p><div class="no-row-height column-margin column-container"><li id="fn1"><p><sup>1</sup>&nbsp;Note that this is true even if days in heaven have diminishing marginal utility, so the dilemma can arise even if we work within bounded utility theory. This is not just the kind of problem, as discussed by <span class="citation" data-cites="Goodsellnd">Goodsell (<a href="references.html#ref-Goodsellnd" role="doc-biblioref">n.d.</a>)</span>, that arises in decision theory with unbounded utilities.</p></li></div></div>
 <p>Nor does <a href="#tbl-bad-third">Table&nbsp;<span>6.2</span></a> pose a problem, since as I said, the ratifiability theorist could add a weak dominance constraint and turn Second table into another dilemma.</p>
 <p>The problem is <a href="#tbl-verybad-third">Table&nbsp;<span>6.3</span></a>. There the ratifiability theorist who does not allow mixed strategies has to say that the case is an odd kind of Newcomb Problem, where the rational agent will predictably do badly. But it’s a very odd Newcomb Problem; by choosing X the chooser didn’t even make themselves better off. Indeed, they guaranteed the lowest payout in the game. I don’t have a knock-down argument here, and maybe there is more to be said. This is where I think the argument for ratificationism really needs mixed strategies.</p>
@@ -456,6 +488,7 @@ Skyrms, Brian. 1984. <em>Pragmatics and Empiricism</em>. New Haven, CT: Yale Uni
 Weirich, Paul. 1985. <span>“Decision Instability.”</span> <em>Australasian Journal of Philosophy</em> 63 (4): 465–72. <a href="https://doi.org/10.1080/00048408512342061">https://doi.org/10.1080/00048408512342061</a>.
 </div>
 </div>
+</section>
 
 
 </main> <!-- /main -->
@@ -823,4 +856,4 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/bweatherson/gtadt/issues/new" class="toc-action">Report an issue</a></p></div></div></div></div></footer></body></html>
+</body></html>
