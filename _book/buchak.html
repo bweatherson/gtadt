@@ -333,21 +333,21 @@ div.csl-indent {
 
 </header>
 
-<p>This appendix goes over a problem for Lara Buchak’s risk-weighted utility theory, based around the Exit Principle from <a href="indecisive.html"><span>Chapter&nbsp;8</span></a>. Buchak’s theory concerns normal decision problems, where there are no demons lying around, so we have to modify Exit Principle a little to make it apply. The modifications still leave it recognisably the same principle though. And the main point of this appendix is to show that it is possible to theorise about normal and abnormal decision problems using the same tools.</p>
-<p>The core of Buchak’s theory is a non-standard way of valuing a gamble. For simplicity, we’ll focus on gambles with finitely many outcomes. Associate a gamble with a random variable <span class="math inline">\(O\)</span>, which takes values <span class="math inline">\(o_1, \dots, o_n\)</span>, where <span class="math inline">\(o_j &gt; o_i\)</span> iff <span class="math inline">\(j &gt; i\)</span>. Buchak says that the risk-weighted expected utility of <span class="math inline">\(O\)</span> is given by this formula, where <span class="math inline">\(r\)</span> is the agent’s risk-weighting function.</p>
+<p>This appendix goes over a problem for Lara Buchak’s risk-weighted utility theory, based around the Single Choice Principle from <a href="indecisive.html"><span>Chapter&nbsp;8</span></a>. Buchak’s theory concerns normal decision problems, where there are no demons lying around, so we have to modify Single Choice Principle a little to make it apply. The modifications still leave it recognisably the same principle though. And the main point of this appendix is to show that it is possible to theorise about normal and abnormal decision problems using the same tools.</p>
+<p>The core of Buchak’s theory is a non-standard way of valuing a gamble. For simplicity, we’ll focus on gambles with finitely many outcomes. Associate a gamble with a random variable <em>O</em>, which takes values <em>o</em><sub>1</sub>, <span class="math inline">\(\dots\)</span>, <em>o<sub>n</sub></em>, where <em>o<sub>j</sub></em>&nbsp;&gt;&nbsp;<em>o<sub>i</sub></em> iff <em>j</em>&nbsp;&gt;&nbsp;<em>i</em>. Buchak says that the risk-weighted expected utility of <em>O</em> is given by this formula, where <em>r</em> is the agent’s risk-weighting function.</p>
 <p><span class="math display">\[
 REU(O) = o_1 + \sum_{i = 2}^n r(\Pr(O \geq o_i))(o_i - o_{i-1})
 \]</span></p>
 <p>The decision rule then is simple: choose the gamble with the highest REU.</p>
-<p>The key notion here is the function <span class="math inline">\(r\)</span>, which measures Chooser’s attitudes to risk. If <span class="math inline">\(r\)</span> is the identity function, then this definition becomes a slightly non-standard way of defining expected utility. Buchak allows it to be much more general. The key constraints are that <span class="math inline">\(r\)</span> is monotonically increasing, that <span class="math inline">\(r(0) = 0\)</span> and <span class="math inline">\(r(1) = 1\)</span>. In general, if <span class="math inline">\(r(x) &lt; x\)</span>, Chooser is some intuitive sense more risk-averse than an expected utility maximiser, while if <span class="math inline">\(r(x) &gt; x\)</span>, Chooser is more risk-seeking. The former case is more relevant to everyday intuitions.</p>
-<p>There are a number of good reasons to like Buchak’s theory. Standard expected utility theory explains risk-aversion in a surprisingly roundabout way. Risk-aversion simply falls out as a consequence of the fact that at almost all points, almost all goods have a declining marginal utility. This is theoretically elegant - risk-aversion and relative satiation are explained in a single framework - but has a number of downsides. For one thing, it doesn’t allow rational agents to have certain kinds of risk-aversion, such as the kind described by <span class="citation" data-cites="Allais1953">Allais (<a href="references.html#ref-Allais1953" role="doc-biblioref">1953</a>)</span>. For another, it doesn’t seem like risk-aversion just is the same thing as the declining marginal utility of goods. Buchak’s theory, by putting attitudes to risk into <span class="math inline">\(r\)</span>, avoids both these problems.</p>
+<p>The key notion here is the function <em>r</em>, which measures Chooser’s attitudes to risk. If <em>r</em> is the identity function, then this definition becomes a slightly non-standard way of defining expected utility. Buchak allows it to be much more general. The key constraints are that <em>r</em> is monotonically increasing, that <em>r</em>(0)&nbsp;=&nbsp;0 and <em>r</em>(1)&nbsp;=&nbsp;1. In general, if <em>r</em>(<em>x</em>)&nbsp;&lt;&nbsp;<em>x</em>, Chooser is some intuitive sense more risk-averse than an expected utility maximiser, while if <em>r</em>(<em>x</em>)&nbsp;&gt;&nbsp;<em>x</em>, Chooser is more risk-seeking. The former case is more relevant to everyday intuitions.</p>
+<p>There are a number of good reasons to like Buchak’s theory. Standard expected utility theory explains risk-aversion in a surprisingly roundabout way. Risk-aversion simply falls out as a consequence of the fact that at almost all points, almost all goods have a declining marginal utility. This is theoretically elegant - risk-aversion and relative satiation are explained in a single framework - but has a number of downsides. For one thing, it doesn’t allow rational agents to have certain kinds of risk-aversion, such as the kind described by <span class="citation" data-cites="Allais1953">Allais (<a href="references.html#ref-Allais1953" role="doc-biblioref">1953</a>)</span>. For another, it doesn’t seem like risk-aversion just is the same thing as the declining marginal utility of goods. Buchak’s theory, by putting attitudes to risk into <em>r</em>, avoids both these problems.</p>
 <p>Unfortunately, Buchak’s theory runs into problems. Our focus will be on two-stage problems where Chooser’s choice only makes a difference if the game gets to stage 2. The general structure will be this.</p>
 <ol type="1">
-<li>A coin with probability <span class="math inline">\(y\)</span> of landing Heads will be flipped. If it lands Tails, Chooser gets the Exit Payout, and the game ends.</li>
-<li>If the game is still going, a second coin, with probability <span class="math inline">\(x\)</span> of landing Heads, will be flipped.</li>
+<li>A coin with probability <em>y</em> of landing Heads will be flipped. If it lands Tails, Chooser gets the Exit Payout, and the game ends.</li>
+<li>If the game is still going, a second coin, with probability <em>x</em> of landing Heads, will be flipped.</li>
 <li>Chooser’s payout will be a function of whether they chose Up or Down, and the result of this second coin.</li>
 </ol>
-<p>I’ll write <span class="math inline">\(H_1\)</span> and <span class="math inline">\(T_1\)</span> for the propositions that the first coin lands Heads and Tails respectively, and <span class="math inline">\(H_2\)</span> and <span class="math inline">\(T_2\)</span> for the propositions that the second coin lands Heads and Tails respectively. I’ll mostly be interested in the case where Up is a bet on <span class="math inline">\(H_2\)</span>, and Down is declining that bet, but the general case is important to have on the table. The general structure of these problems is given by <a href="#tbl-general-coin-exit">Table&nbsp;<span>E.1</span></a>.</p>
+<p>I’ll write <em>H</em><sub>1</sub> and <em>T</em><sub>1</sub> for the propositions that the first coin lands Heads and Tails respectively, and <em>H</em><sub>2</sub> and <em>T</em><sub>2</sub> for the propositions that the second coin lands Heads and Tails respectively. I’ll mostly be interested in the case where Up is a bet on <em>H</em><sub>2</sub>, and Down is declining that bet, but the general case is important to have on the table. The general structure of these problems is given by <a href="#tbl-general-coin-exit">Table&nbsp;<span>E.1</span></a>.</p>
 <div id="tbl-general-coin-exit" class="tbl-parent quarto-layout-panel anchored">
 <div class="panel-caption table-caption">
 <p>Table&nbsp;E.1: The abstract form of an exit problem with coins.</p>
@@ -359,15 +359,15 @@ REU(O) = o_1 + \sum_{i = 2}^n r(\Pr(O \geq o_i))(o_i - o_{i-1})
 <tbody>
 <tr class="odd">
 <td style="text-align: center;">Exit Payout</td>
-<td style="text-align: center;"><span class="math inline">\(e\)</span></td>
+<td style="text-align: center;"><em>e</em></td>
 </tr>
 <tr class="even">
-<td style="text-align: center;">Pr(<span class="math inline">\(H_1\)</span>)</td>
-<td style="text-align: center;"><span class="math inline">\(y\)</span></td>
+<td style="text-align: center;">Pr(<em>H</em><sub>1</sub>)</td>
+<td style="text-align: center;"><em>y</em></td>
 </tr>
 <tr class="odd">
-<td style="text-align: center;">Pr(<span class="math inline">\(H_2\)</span>)</td>
-<td style="text-align: center;"><span class="math inline">\(x\)</span></td>
+<td style="text-align: center;">Pr(<em>H</em><sub>2</sub>)</td>
+<td style="text-align: center;"><em>x</em></td>
 </tr>
 </tbody>
 </table>
@@ -375,37 +375,39 @@ REU(O) = o_1 + \sum_{i = 2}^n r(\Pr(O \geq o_i))(o_i - o_{i-1})
 <div id="tbl-coin-exit-r2g" class="quarto-layout-cell quarto-layout-cell-subref anchored" data-ref-parent="tbl-general-coin-exit" style="flex-basis: 50.0%;justify-content: center;">
 <table class="table">
 <caption>(b) Round 2 game</caption>
+<thead>
+<tr class="header">
+<th style="text-align: center;"></th>
+<th style="text-align: center;"><strong><em>H</em></strong><sub><strong>2</strong></sub></th>
+<th style="text-align: center;"><strong><em>T</em></strong><sub><strong>2</strong></sub></th>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: center;"></td>
-<td style="text-align: center;"><span class="math inline">\(H_2\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(T_2\)</span></td>
+<td style="text-align: center;"><strong>Up</strong></td>
+<td style="text-align: center;"><em>a</em></td>
+<td style="text-align: center;"><em>b</em></td>
 </tr>
 <tr class="even">
-<td style="text-align: center;"><strong>Up</strong></td>
-<td style="text-align: center;"><span class="math inline">\(a\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(b\)</span></td>
-</tr>
-<tr class="odd">
 <td style="text-align: center;"><strong>Down</strong></td>
-<td style="text-align: center;"><span class="math inline">\(c\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(d\)</span></td>
+<td style="text-align: center;"><em>c</em></td>
+<td style="text-align: center;"><em>d</em></td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
 </div>
-<p>Then we get a version of Exit Principle that applies to games like this.</p>
+<p>Then we get a version of Single Choice Principle that applies to games like this.</p>
 <ul>
-<li><strong>Exit Principle</strong>: Whether a choice is rational for Chooser is independent of whether Chooser chooses before or after they are told the result of the first coin flip.</li>
+<li><strong>Single Choice Principle</strong>: Whether a choice is rational for Chooser is independent of whether Chooser chooses before or after they are told the result of the first coin flip.</li>
 </ul>
-<p>Again, the argument for this turns on reflections about conditional questions. If Chooser is asked before the first coin flip, they are being asked what they want to do if the first coin lands Heads; if they are asked after that flip, they are being asked what they want to do now that the first coin landed Heads. These questions should get the same answer. I’ll show that REU-maximisation only gets that result if <span class="math inline">\(r\)</span> is the identity function, i.e., if REU-maximisation just is expected utility maximisation.</p>
-<p>As before, I’ll refer to Chooser’s Early and Late choices, meaning their choices before and after being told the result of the first coin. I’ll write <span class="math inline">\(REU_E(X)\)</span> to be the risk-weighted expected utility of <span class="math inline">\(X\)</span> before finding out the result of the first coin toss, and <span class="math inline">\(REU_L(X)\)</span> to be the risk-weighted expected utility of <span class="math inline">\(X\)</span> after finding out the result of the first coin toss. So Exit Principle essentially becomes this biconditional, for any gambles <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>.</p>
+<p>Again, the argument for this turns on reflections about conditional questions. If Chooser is asked before the first coin flip, they are being asked what they want to do if the first coin lands Heads; if they are asked after that flip, they are being asked what they want to do now that the first coin landed Heads. These questions should get the same answer. I’ll show that REU-maximisation only gets that result if <em>r</em> is the identity function, i.e., if REU-maximisation just is expected utility maximisation.</p>
+<p>As before, I’ll refer to Chooser’s Early and Late choices, meaning their choices before and after being told the result of the first coin. I’ll write <em>REU<sub>E</sub></em>(<em>X</em>) to be the risk-weighted expected utility of <em>X</em> before finding out the result of the first coin toss, and <em>REU<sub>L</sub></em>(<em>X</em>) to be the risk-weighted expected utility of <em>X</em> after finding out the result of the first coin toss. So Single Choice Principle essentially becomes this biconditional, for any gambles <em>X</em> and <em>Y</em>.</p>
 <p><span class="math display">\[
 REU_E(X) \geq REU_E(Y) \leftrightarrow REU_L(X) \geq REU_L(Y)
 \]</span></p>
-<p>I’ll first prove that this implies that <span class="math inline">\(r\)</span> must be multiplicative, i.e., that <span class="math inline">\(r(xy) = r(x)r(y)\)</span> for all <span class="math inline">\(x, y\)</span>. This isn’t a particularly problematic result; the most intuitive values for <span class="math inline">\(r\)</span>, like <span class="math inline">\(r(x) = x^2\)</span>, are multiplicative. Consider the Exit Problem shown in <a href="#tbl-zero-coin-exit">Table&nbsp;<span>E.2</span></a>, where <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> are arbitrary.</p>
+<p>I’ll first prove that this implies that <em>r</em> must be multiplicative, i.e., that <em>r</em>(<em>xy</em>) = <em>r</em>(<em>x</em>)<em>r</em>(<em>y</em>) for all <em>x</em>, <em>y</em>. This isn’t a particularly problematic result; the most intuitive values for r, like r(x<em>)&nbsp;=</em> x<sup>2</sup>, are multiplicative. Consider the Exit Problem shown in <a href="#tbl-zero-coin-exit">Table&nbsp;<span>E.2</span></a>, where <em>x</em> and <em>y</em> are arbitrary.</p>
 <div id="tbl-zero-coin-exit" class="tbl-parent quarto-layout-panel anchored">
 <div class="panel-caption table-caption">
 <p>Table&nbsp;E.2: An exit game with exit payout 0.</p>
@@ -420,12 +422,12 @@ REU_E(X) \geq REU_E(Y) \leftrightarrow REU_L(X) \geq REU_L(Y)
 <td style="text-align: center;">0</td>
 </tr>
 <tr class="even">
-<td style="text-align: center;">Pr(<span class="math inline">\(H_1\)</span>)</td>
-<td style="text-align: center;"><span class="math inline">\(y\)</span></td>
+<td style="text-align: center;">Pr(<em>H</em><sub>1</sub>)</td>
+<td style="text-align: center;"><em>y</em></td>
 </tr>
 <tr class="odd">
-<td style="text-align: center;">Pr(<span class="math inline">\(H_2\)</span>)</td>
-<td style="text-align: center;"><span class="math inline">\(x\)</span></td>
+<td style="text-align: center;">Pr(<em>H</em><sub>2</sub>)</td>
+<td style="text-align: center;"><em>x</em></td>
 </tr>
 </tbody>
 </table>
@@ -433,18 +435,20 @@ REU_E(X) \geq REU_E(Y) \leftrightarrow REU_L(X) \geq REU_L(Y)
 <div id="tbl-zero-coin-exit-r2g" class="quarto-layout-cell quarto-layout-cell-subref anchored" data-ref-parent="tbl-zero-coin-exit" style="flex-basis: 50.0%;justify-content: center;">
 <table class="table">
 <caption>(b) Round 2 game</caption>
+<thead>
+<tr class="header">
+<th style="text-align: center;"></th>
+<th style="text-align: center;"><strong><em>H</em></strong><sub><strong>2</strong></sub></th>
+<th style="text-align: center;"><strong><em>T</em></strong><sub><strong>2</strong></sub></th>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: center;"></td>
-<td style="text-align: center;"><span class="math inline">\(H_2\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(T_2\)</span></td>
-</tr>
-<tr class="even">
 <td style="text-align: center;"><strong>Up</strong></td>
 <td style="text-align: center;"><span class="math inline">\(\frac{1}{r(x)}\)</span></td>
 <td style="text-align: center;">0</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: center;"><strong>Down</strong></td>
 <td style="text-align: center;">1</td>
 <td style="text-align: center;">1</td>
@@ -454,8 +458,8 @@ REU_E(X) \geq REU_E(Y) \leftrightarrow REU_L(X) \geq REU_L(Y)
 </div>
 </div>
 </div>
-<p>It’s easy to check that <span class="math inline">\(REU_L(U) = REU_L(D) = 1\)</span>. So by Exit Principle, <span class="math inline">\(REU_E(U) = REU_E(D)\)</span>. Since <span class="math inline">\(REU_E(U) = \frac{r(xy)}{r(x)}\)</span>, and <span class="math inline">\(REU_L(D) = r(y)\)</span>, it follows that <span class="math inline">\(r(xy) = r(x)r(y)\)</span>, as required.</p>
-<p>Define <span class="math inline">\(m\)</span>, for midpoint, as <span class="math inline">\(r^{-1}(0.5)\)</span>. Intuitively, <span class="math inline">\(m\)</span> is the probability where the risk-weighting agent is indifferent between taking and declining a bet that stands to win and lose the same amount. Since <span class="math inline">\(r\)</span> is monotonically increasing, and goes from 0 to 1, <span class="math inline">\(m\)</span> must exist. Consider now <a href="#tbl-one-coin-exit">Table&nbsp;<span>E.3</span></a>, where <span class="math inline">\(y\)</span> is arbitrary.</p>
+<p>It’s easy to check that <em>REU<sub>L</sub></em>(<em>U</em>)&nbsp;=&nbsp;<em>REU<sub>L</sub></em>(<em>D</em>)&nbsp;=&nbsp;1. So by Single Choice Principle, <em>REU<sub>E</sub></em>(<em>U</em>)&nbsp;=&nbsp;<em>REU<sub>E</sub></em>(<em>D</em>). Since <em>REU<sub>E</sub></em>(<em>U</em>)&nbsp;=&nbsp;<span class="math inline">\(\frac{r(xy)}{r(x)}\)</span>, and <em>REU<sub>L</sub></em>(<em>D</em>)&nbsp;=&nbsp;<em>r</em>(<em>y</em>), it follows that <em>r</em>(<em>xy</em>)&nbsp;=&nbsp;<em>r</em>(<em>x</em>)<em>r</em>(<em>y</em>), as required.</p>
+<p>Define <em>m</em>, for midpoint, as <em>r</em><sup>-1</sup>(0.5). Intuitively, <em>m</em> is the probability where the risk-weighting agent is indifferent between taking and declining a bet that stands to win and lose the same amount. Since <em>r</em> is monotonically increasing, and goes from 0 to 1, <em>m</em> must exist. Consider now <a href="#tbl-one-coin-exit">Table&nbsp;<span>E.3</span></a>, where <em>y</em> is arbitrary.</p>
 <div id="tbl-one-coin-exit" class="tbl-parent quarto-layout-panel anchored">
 <div class="panel-caption table-caption">
 <p>Table&nbsp;E.3: An exit game with exit payout 1.</p>
@@ -470,12 +474,12 @@ REU_E(X) \geq REU_E(Y) \leftrightarrow REU_L(X) \geq REU_L(Y)
 <td style="text-align: center;">1</td>
 </tr>
 <tr class="even">
-<td style="text-align: center;">Pr(<span class="math inline">\(H_1\)</span>)</td>
-<td style="text-align: center;"><span class="math inline">\(y\)</span></td>
+<td style="text-align: center;">Pr(<em>H</em><sub>1</sub>)</td>
+<td style="text-align: center;"><em>y</em></td>
 </tr>
 <tr class="odd">
-<td style="text-align: center;">Pr(<span class="math inline">\(H_2\)</span>)</td>
-<td style="text-align: center;"><span class="math inline">\(m\)</span></td>
+<td style="text-align: center;">Pr(<em>H</em><sub>2</sub>)</td>
+<td style="text-align: center;"><em>m</em></td>
 </tr>
 </tbody>
 </table>
@@ -483,18 +487,20 @@ REU_E(X) \geq REU_E(Y) \leftrightarrow REU_L(X) \geq REU_L(Y)
 <div id="tbl-one-coin-exit-r2g" class="quarto-layout-cell quarto-layout-cell-subref anchored" data-ref-parent="tbl-one-coin-exit" style="flex-basis: 50.0%;justify-content: center;">
 <table class="table">
 <caption>(b) Round 2 game</caption>
+<thead>
+<tr class="header">
+<th style="text-align: center;"></th>
+<th style="text-align: center;"><strong><em>H</em></strong><sub><strong>2</strong></sub></th>
+<th style="text-align: center;"><strong><em>T</em></strong><sub><strong>2</strong></sub></th>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: center;"></td>
-<td style="text-align: center;"><span class="math inline">\(H_2\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(T_2\)</span></td>
-</tr>
-<tr class="even">
 <td style="text-align: center;"><strong>Up</strong></td>
 <td style="text-align: center;">2</td>
 <td style="text-align: center;">0</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: center;"><strong>Down</strong></td>
 <td style="text-align: center;">1</td>
 <td style="text-align: center;">1</td>
@@ -504,7 +510,7 @@ REU_E(X) \geq REU_E(Y) \leftrightarrow REU_L(X) \geq REU_L(Y)
 </div>
 </div>
 </div>
-<p>In <a href="#tbl-one-coin-exit">Table&nbsp;<span>E.3</span></a>, it’s also easy to see that <span class="math inline">\(REU_L(U) = REU_L(D) = 1\)</span>. So by Exit Principle, <span class="math inline">\(REU_E(U) = REU_E(D)\)</span>. And it’s also clear that <span class="math inline">\(REU_E(D) = 1\)</span>, since that’s the only possible payout for Down. So <span class="math inline">\(REU_E(U) = 1\)</span>. So we get the following result.</p>
+<p>In <a href="#tbl-one-coin-exit">Table&nbsp;<span>E.3</span></a>, it’s also easy to see that <em>REU<sub>L</sub></em>(<em>U</em>)&nbsp;=&nbsp;<em>REU<sub>L</sub></em>(<em>D</em>)&nbsp;=&nbsp;1. So by Single Choice Principle, <em>REU<sub>E</sub></em>(<em>U</em>)&nbsp;=&nbsp;<em>REU<sub>E</sub></em>(<em>D</em>). And it’s also clear that <em>REU<sub>E</sub></em>(<em>D</em>)&nbsp;=&nbsp;1, since that’s the only possible payout for Down. So <em>REU<sub>E</sub></em>(<em>U</em>)&nbsp;=&nbsp;1. So we get the following result.</p>
 <span class="math display">\[\begin{align*}
 REU_E(U) &amp;= r(1-y(1-m)) + r(ym) \\
 &amp;= 1    \\
@@ -525,12 +531,12 @@ REU_E(U) &amp;= r(1-y(1-m)) + r(ym) \\
 <td style="text-align: center;">2</td>
 </tr>
 <tr class="even">
-<td style="text-align: center;">Pr(<span class="math inline">\(H_1\)</span>)</td>
-<td style="text-align: center;"><span class="math inline">\(y\)</span></td>
+<td style="text-align: center;">Pr(<em>H</em><sub>1</sub>)</td>
+<td style="text-align: center;"><em>y</em></td>
 </tr>
 <tr class="odd">
-<td style="text-align: center;">Pr(<span class="math inline">\(H_2\)</span>)</td>
-<td style="text-align: center;"><span class="math inline">\(m\)</span></td>
+<td style="text-align: center;">Pr(<em>H</em><sub>2</sub>)</td>
+<td style="text-align: center;"><em>m</em></td>
 </tr>
 </tbody>
 </table>
@@ -541,8 +547,8 @@ REU_E(U) &amp;= r(1-y(1-m)) + r(ym) \\
 <tbody>
 <tr class="odd">
 <td style="text-align: center;"></td>
-<td style="text-align: center;"><span class="math inline">\(H_2\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(T_2\)</span></td>
+<td style="text-align: center;"><em>H</em><sub>2</sub></td>
+<td style="text-align: center;"><em>T</em><sub>2</sub></td>
 </tr>
 <tr class="even">
 <td style="text-align: center;"><strong>Up</strong></td>
@@ -559,7 +565,7 @@ REU_E(U) &amp;= r(1-y(1-m)) + r(ym) \\
 </div>
 </div>
 </div>
-<p>In <a href="#tbl-two-coin-exit">Table&nbsp;<span>E.4</span></a>, it’s again easy to see that <span class="math inline">\(REU_L(U) = REU_L(D) = 1\)</span>. So by Exit Principle, <span class="math inline">\(REU_E(U) = REU_E(D)\)</span>. But the early values are more complicated. <span class="math inline">\(REU_E(D) = 1 + r(1-y)\)</span>, and <span class="math inline">\(REU_E(U) = 2r(1-y(1-m))\)</span>. Using what we’ve discovered so far, we can do something with that last value.</p>
+<p>In <a href="#tbl-two-coin-exit">Table&nbsp;<span>E.4</span></a>, it’s again easy to see that <em>REU<sub>L</sub></em>(<em>U</em>)&nbsp;=&nbsp;<em>REU<sub>L</sub></em>(<em>D</em>)&nbsp;=&nbsp;1. So by Single Choice Principle, <em>REU<sub>E</sub></em>(<em>U</em>)&nbsp;=&nbsp;<em>REU<sub>E</sub></em>(<em>D</em>). But the early values are more complicated: <em>REU<sub>E</sub></em>(<em>D</em>)&nbsp;=&nbsp;1&nbsp;+&nbsp;<em>r</em>(1-<em>y</em>), and <em>REU<sub>E</sub></em>(<em>U</em>)&nbsp;=&nbsp;2<em>r</em>(1-<em>y</em>(1-<em>m</em>)). Using what we’ve discovered so far, we can do something with that last value.</p>
 <span class="math display">\[\begin{align*}
 REU_E(U) &amp;= 2r(1-y(1-m)) \\
   &amp;= 2(1-r(ym))  &amp;&amp; \text{from previous calculations} \\
@@ -573,8 +579,8 @@ REU_E(D) &amp;= REU_E(U)  &amp;&amp; \Rightarrow \\
 1 + r(1-y) &amp;= 2 - r(y) &amp;&amp; \Rightarrow \\
 r(y) + r(1-y) &amp;= 1
 \end{align*}\]</span>
-<p>So <span class="math inline">\(r\)</span> is a monotonic increasing function satisfying <span class="math inline">\(r(0) = 0, r(1) = 1, r(xy) = r(x)r(y)\)</span> and <span class="math inline">\(r(y) + r(1-y) = 1\)</span>. The only such function is <span class="math inline">\(r(x) = x\)</span>. So the only version of risk-weighted expected utility theory that satisfies Exit Principle is where <span class="math inline">\(r(x) = x\)</span>, i.e., where risk-weighted expected utility just is old-fashioned expected utility.</p>
-<p>This doesn’t yet prove expectationism. I haven’t shown that there is no other alternative to expected utility theory that satisfies Exit Principle. There are such other theories out there, such as the Weighted-linear utility theory described by <span class="citation" data-cites="BottomleyWilliamsonnd">Bottomley and WIlliamson (<a href="references.html#ref-BottomleyWilliamsonnd" role="doc-biblioref">n.d.</a>)</span>. But it’s a guide to how we could start defending expectationism in a way consistent with how we handle decision problems involving demons.</p>
+<p>So <em>r</em> is a monotonic increasing function satisfying <em>r</em>(0)&nbsp;=&nbsp;0, <em>r</em>(1)&nbsp;=&nbsp;1, <em>r</em>(<em>xy</em>)&nbsp;=&nbsp;<em>r</em>(<em>x</em>)<em>r</em>(<em>y</em>), and <em>r</em>(<em>y</em>)&nbsp;+&nbsp;<em>r</em>(1-<em>y</em>)&nbsp;=&nbsp;1. The only such function is <em>r</em>(<em>x</em>)&nbsp;=&nbsp;<em>x</em>. So the only version of risk-weighted expected utility theory that satisfies Single Choice Principle is where <em>r</em>(<em>x</em>)&nbsp;=&nbsp;<em>x</em>, i.e., where risk-weighted expected utility just is old-fashioned expected utility.</p>
+<p>This doesn’t yet prove expectationism. I haven’t shown that there is no other alternative to expected utility theory that satisfies Single Choice Principle. There are such other theories out there, such as the Weighted-linear utility theory described by <span class="citation" data-cites="BottomleyWilliamsonnd">Bottomley and WIlliamson (<a href="references.html#ref-BottomleyWilliamsonnd" role="doc-biblioref">n.d.</a>)</span>. But it’s a guide to how we could start defending expectationism in a way consistent with how we handle decision problems involving demons.</p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">

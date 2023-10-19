@@ -1,5 +1,5 @@
 # Signals and Outcomes {#sec-war-signal}
- 
+
 In @sec-war-on-war, I said there was another case where EDT left one with less money, and where this didn't rely on having different evidence in the high return case to the low return case. This appendix describes such a case. It is a version of a signalling game of the kind introduced by @Lewis1969a. And in particular it's a version of the broadly adversarial kinds of signalling games that are central to the plot of @ChoKreps1987. It will involve a human Chooser, and a Demon who is excellent at predictions, and the game will have three stages.
 
 At the first stage a fair coin is flipped, and the result shown to Chooser, but not to Demon. At the second stage, Chooser will choose Up or Down, and the choice will be publicly announced. At the third stage, Demon will try to guess what the coin showed. Demon knows the payoff table I'm about to show you, and is arbitrarily good at predicting Chooser's strategy for what to do given how the coin appears. This prediction is causally independent of Chooser's choice, but Demon's guess is not independent; it could be affected by the choice. The payoffs to each player are a function of what happens at each of the three steps, and are given by table @tbl-payoffs-demon-coin. (The payoffs here are all in utils.)
@@ -32,7 +32,7 @@ require(tidyverse)
 #| fig.ext: 'png'
 #| cache: TRUE
 #| echo: FALSE
-#| fig.width: 6
+#| out.width: "60%"
 
 \usetikzlibrary{calc}
 
@@ -91,9 +91,9 @@ edge from parent node [below,align=center]{T \\ 0.5}
 \end{tikzpicture}
 ```
 
-Demon predicts Chooser's strategy. That is, Demon predicts Chooser's plan about what to do if the coin lands Heads and what to do if the coin lands Tails, before the game starts. They make their guess about how the coin landed after seeing Chooser's actual choice, and updating their prior beliefs (about both the coin and Chooser) with this information. If they predict that Chooser will do the same thing however the coin lands, they will have no useful information about the coin, so they will flip their own coin to make a guess. In that case it will be 50/50 whether Demon says Heads or Tails. Also, if Demon is surprised by what Chooser does, i.e., if they had predicted Chooser would do one thing however the coin lands but Chooser does the other thing, Demon will also flip their own coin to make a guess.[^causal-9] Finally, Demon's predictions are arbitrarily accurate. For simplicity, I'll assume Demon is correct with probability 1, though it doesn't matter if you allow for probability $\varepsilon$ that Demon gets it wrong.
+Demon predicts Chooser's strategy. That is, Demon predicts Chooser's plan about what to do if the coin lands Heads and what to do if the coin lands Tails, before the game starts. They make their guess about how the coin landed after seeing Chooser's actual choice, and updating their prior beliefs (about both the coin and Chooser) with this information. If they predict that Chooser will do the same thing however the coin lands, they will have no useful information about the coin, so they will flip their own coin to make a guess. In that case it will be 50/50 whether Demon says Heads or Tails. Also, if Demon is surprised by what Chooser does, i.e., if they had predicted Chooser would do one thing however the coin lands but Chooser does the other thing, Demon will also flip their own coin to make a guess.[^war-signal-1] Finally, Demon's predictions are arbitrarily accurate. For simplicity, I'll assume Demon is correct with probability 1, though it doesn't matter if you allow for probability $\varepsilon$ that Demon gets it wrong.
 
-[^causal-9]: A key part of the discussion in @ChoKreps1987 is that in some cases we can say substantive things about what a player will do if they are surprised in this sense. But @fig-second-anti-war is not such a case.
+[^war-signal-1]: A key part of the discussion in @ChoKreps1987 is that in some cases we can say substantive things about what a player will do if they are surprised in this sense. But @fig-second-anti-war is not such a case.
 
 Now I want to analyse what Chooser will do if they follow EDT. It should be fairly clear that if the coin lands Heads, Chooser should say Up. The worst possible return from Up is 40, the best possible return from Down is 0. So that's what any theory would recommend, and Chooser will do that whether or not they follow EDT. Indeed, this is so clear that we should assume Demon will predict that Chooser will play Up if the coin lands Heads. So what happens if the coin lands Tails? There are four possibilities here: the two things Chooser might do crossed with the two predictions Demon might make. The expected return to Chooser in these four possibilities is given in @tbl-payout-if-tails.
 

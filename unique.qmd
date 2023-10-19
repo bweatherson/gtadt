@@ -26,14 +26,14 @@ The next two sections set out two symmetric games where Uniqueness[^unique-3] le
 
 Some finite symmetric games don't have a symmetric pure-strategy equilibrium. One notable example is Chicken, one version of which is in @tbl-unique-chicken.
 
-|            |   Stay    | Swerve |
+|            | **Stay**  | Swerve |
 |:----------:|:---------:|:------:|
 |  **Stay**  | -100,-100 | 1, -1  |
 | **Swerve** |   -1, 1   |  0, 0  |
 
 : Chicken {#tbl-unique-chicken}
 
-The symmetric pure-strategy pairs $\langle$ Stay, Stay $\rangle$ and $\langle$ Swerve, Swerve $\rangle$ are not equilibria; in each case both parties have an incentive to defect. But the game does have a symmetric mixed strategy equilibrium. It is that both players play the mixed strategy of Stay with probability 0.01, and Swerve with probability 0.99.
+The symmetric pure-strategy pairs (Stay, Stay) and (Swerve, Swerve) are not equilibria; in each case both parties have an incentive to defect. But the game does have a symmetric mixed strategy equilibrium. It is that both players play the mixed strategy of Stay with probability 0.01, and Swerve with probability 0.99.
 
 Now assume that Row and Column have the same relevant evidence, that they are self-aware and fully rational, and that these facts and no other are common knowledge between them, and that they are about to play Chicken one time. (It's also common knowledge that they won't play again; dropping this would raise the possibility of complicated strategic reasoning.)
 
@@ -76,9 +76,9 @@ But recently it has been proven that the answer to the general question is no. M
 
 [^unique-5]: In Fey's game both players pick a real in \[0, 1\]. If both players pick numbers in (0, 1), the one who picks the larger number wins. But there are a lot of complications if one or both pick an extreme value, including the game not always being zero-sum. I'm not relying on it here because it is a little too close to the game I'll discuss at the end of this section where everyone agrees there is no way to play it given common knowledge of rationality. Fey's paper also includes a nice chronology of some of the proofs of positive answers to restricted forms of the question.
 
-> Consider a unit mass of voters. Each voter is characterised by her ideal policy. We assume that the ideal policies of the voters are uniformly distributed in \[0, 1\]. We moreover assume that three candidates *A*, *B* and *C* compete for a single office. Each candidate *J* ∈ {*A*, *B*, *C*} announces a policy *s~J~* ∈ \[0, 1\] and each voter votes for the candidate who announced the policy platform which is nearest to her ideal policy. If a voter is indifferent between two or among all three candidates she evenly splits her vote between/among them. A candidate *J* ∈ {*A*, *B*, *C*} gets a payoff equal to one if she receives a vote-share strictly larger than the vote-share of each of the two other candidates. If two candidates tie in the first place each gets a payoff equal to one half. If all three candidates receive the same vote-shares then each gets a payoff equal to one third. In all other cases a candidate gets a payoff equal to zero. [@Xefteris2015, 124]
+> Consider a unit mass of voters. Each voter is characterised by her ideal policy. We assume that the ideal policies of the voters are uniformly distributed in \[0, 1\]. We moreover assume that three candidates *A*, *B* and *C* compete for a single office. Each candidate *J* $\in$ {*A*, *B*, *C*} announces a policy *s~J~* $\in$ \[0, 1\] and each voter votes for the candidate who announced the policy platform which is nearest to her ideal policy. If a voter is indifferent between two or among all three candidates she evenly splits her vote between/among them. A candidate *J* $\in$ {*A*, *B*, *C*} gets a payoff equal to one if she receives a vote-share strictly larger than the vote-share of each of the two other candidates. If two candidates tie in the first place each gets a payoff equal to one half. If all three candidates receive the same vote-shares then each gets a payoff equal to one third. In all other cases a candidate gets a payoff equal to zero. [@Xefteris2015, 124]
 
-It is clear that there is no symmetric pure-strategy equilibrium here. If all candidates announced the same policy, everyone would get a payoff of $\frac{1}{3}$. But no matter what that strategy is, if *B* and *C* announce the same policy, then *A* has a winning move available. (If the number *B* and *C* say is not 0.5, *A* wins by saying 0.5. If they do both say 0.5, then *A* wins by saying 0.4.)
+It is clear that there is no symmetric pure-strategy equilibrium here. If all candidates announced the same policy, everyone would get a payoff of $\frac{1}{3}$. But no matter what that policy is, if *B* and *C* announce the same policy, then *A* has a winning move available. (If the number *B* and *C* say is not 0.5, *A* wins by saying 0.5. If they do both say 0.5, then *A* wins by saying 0.4.)
 
 What's more surprising, and what Xefteris proves, is that there is no symmetric mixed strategy equilibria either. Again, in such an equilibrium, any player would have a payoff of $\frac{1}{3}$. Very roughly, the proof that no such equilibrium exists is that random deviations from the equilibrium are as likely to lead to winning as losing, so they have a payoff of roughly $\frac{1}{2}$. So there is no incentive to stay in the equilibrium. So no symmetric equilibrium exists.
 
