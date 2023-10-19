@@ -6,20 +6,18 @@ An option *a* weakly dominates another option *b* if *a* is at least as good as 
 
 Start with @tbl-first-wd; what would the ideal chooser do?
 
-|       | PU  | PD  |
+|       | **PA**  | **PB**  |
 |:-----:|:---:|:---:|
-| **U** |  1  |  1  |
-| **D** |  0  |  1  |
+| **A** |  1  |  1  |
+| **B** |  0  |  1  |
 
 : A ratifiable, weakly dominated, option. {#tbl-first-wd}
 
-On the one hand, D is ratifiable, as long as Demon is sufficiently reliable. If Demon will in fact get the predictions right, D gets a return of 1, and had Chooser played U, they would have still received 1. So they would not regret playing D, so by ratifiability it is fine to play it. Against this, there are three reasons to not play D.
+On the one hand, B is ratifiable, as long as Demon is sufficiently reliable. If Demon will in fact get the predictions right, B gets a return of 1, and had Chooser played A, they would have still received 1. So they would not regret playing B, so by ratifiability it is fine to play it. Against this, there are two reasons to not play B.
 
-First, it is rather unrealistic to think that the probability that Demon will make an accurate prediction is 1. And even if Demon's prediction is correct with probability 1 - ε, then D will not be ratifiable. I'm inclined to rule out, on broadly Humean grounds, the very possibility of a Demon whose predictions are correct with probability 1, but is causally independent of Chooser's choice. Temporally backwards causation is not a logical impossibility, and a world where the predictions are correct with probability 1 seems like a world which has backwards causation. I don't want to rest the case for GDT on contentious metaphysics, so I won't lean on this point.
+First, if we don't say that Demon is perfectly accurate, but only that their accuracy is arbitrarily close to being perfect, the argument that B is ratifiable doesn't go through. It has been argued by game theorists that we should always allow for the possibility that one or other player in a game will make some kind of performance error. This idea is at the heart of Reinhard Selten's notion of trembling hand equilibrium [@Selten1975], and Roger Myerson's notion of proper equilibrium [@Myerson1978]. If a strategy would not make sense if the probability of an error by one or other player was positive, even if it was arbitrarily low, it should not be played. Since B only makes sense if the probability of an error by Demon is 0, that means B should not be played.
 
-Second, playing D involves taking on an uncompensated risk. It might be that we don't have a good way of capturing within probability theory just what this risk is. Perhaps you think that it makes sense to say that Demon is correct with probability 1. Still, in some sense D has a risk of failure that U lacks. One should not take on a risk without some compensation. So one should not play D in this case. This, I think, is the most persuasive argument against D.^[This paragraph is somewhere between heavily influence by, and a notational variant on, the argument in section 3 of @Stalnaker1999.]
-
-Third, it has been argued by game theorists that we should always allow for the possibility that one or other player in a game will make some kind of performance error. This idea is at the heart of Reinhard Selten's notion of trembling hand equilibrium [@Selten1975], and Roger Myerson's notion of proper equilibrium [@Myerson1978]. If a strategy would not make sense if the probability of an error by one or other player was positive, even if it was arbitrarily low, it should not be played. Since D only makes sense if the probability of an error by Demon is 0, that means D should not be played.
+Second, playing B involves taking on an uncompensated risk. It might be that we don't have a good way of capturing within probability theory just what this risk is. Perhaps you think that it makes sense to say that Demon is correct with probability 1 without this raising questions about backwards causation. Still, in some sense B has a risk of failure that A lacks. One should not take on a risk without some compensation. So one should not play B in this case. This, I think, is the most persuasive argument against B.^[This paragraph is somewhere between heavily influence by, and a notational variant on, the argument in section 3 of @Stalnaker1999.]
 
 ## Against Iterative Deletion {#sec-weak-iterate}
 
