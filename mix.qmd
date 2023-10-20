@@ -1,5 +1,7 @@
 # Mixtures {#sec-mixed}
 
+## Ideal Agents Can Mix
+
 Perhaps the biggest difference between the decision theory found in game theory textbooks, and the one found in philosophy journals, concerns the status of mixed strategies. In the textbooks, mixed strategies are brought in almost without comment, or perhaps with a remark about their role in a celebrated theorem by @Nash1951. In philosophy journals, the possibility of mixed strategies is often dismissed almost as quickly.
 
 The philosophers' dismissal is usually accompanied by one or both of the following two reasons.[^mix-1] First, Chooser might not be capable of carrying out a mixed strategy. They might not, for instance, have any coins in their pocket.[^mix-2] Second, Demon might punish people for randomising in some way, so the payouts will change. I'm going to argue that both reasons overgenerate. If they are reasons to reject mixed strategies, they are also reasons to reject the claim that agents have perfect knowledge of arithmetic. Since we do assume the latter, in decision theory agents take any bet on a true arithmetic claim at any odds, since all arithmetic truths have probability 1, we should also assume mixed strategies are permitted.
@@ -21,3 +23,7 @@ Perhaps you think my account of idealisation in @sec-ideal was wrong, and ideali
 That's not to say all decision theory should be idealised decision theory. We certainly need theories for real humans. Nor is it to say that decision theory for agents who can't perform mixed strategies is useless. For any set of idealisations, it could in principle be useful to work out what happens when you relax some of them from the model. The thing that is odd about contemporary philosophical decision theory, and the thing I've been stressing in this chapter, is that there should be some motivation for why one leaves some idealisations in place, and relaxes others. I don't see any theoretical or practical interest in working out decision theory for agents who are logically and mathematically perfect, but can't carry out mixed strategies. Such agents are not a lot like us; since we are not logically and mathematically perfect. And they aren't even particularly close to us; most people are better at carrying out unpredictable mixed strategies than they are at solving the optimisation problems they face in everyday life. That said, it's important to be cautious here. It's often hard to tell in advance which combinations of keeping these idealisations and relaxing those will be useful. Still, I haven't seen much use for the particular combination that most philosophers have landed on, and I'm not sure what use it even could have.
 
 So from now on I'll assume (a) if two strategies are available, so is any mixed strategy built on them, and (b) if Chooser plays a mixed strategy, Demon can possibly predict that they play the mixed strategy, but not the output of it.
+
+## What is a Mixed Strategy?
+
+
