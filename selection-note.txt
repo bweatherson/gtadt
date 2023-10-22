@@ -1,0 +1,19 @@
+https://www-cambridge-org.proxy.lib.umich.edu/core/journals/economics-and-philosophy/article/interval-values-and-rational-choice/880E37B346C93D744F7AC0FCE344D822
+
+Martin Peterson, Interval Values and Rational Choice
+
+Argues in favor of following principle
+
+Choice Parity. For all a, b ∈ S, if ¬(a > b) and ¬(a ~ b) and ¬(b < a), then a ∈ C(a) iff C(b).
+
+The last bit should read a ∈ C(S) iff b ∈ C(S).
+
+The principle is absurd. The following is his example. Let a have value 0.51, b have value 0.49, and c have value [0, 1]. Then by two applications of Choice Parity we get that b is choosable.
+
+But we could get the same thing the following way.
+
+Let a have value 0.51
+Let b have value 0.49
+Let c be such that if Pc, it has value 1, otherwise it has value 0.
+
+Both a and c seem choosable. (If this is denied, we end up back in the paradoxes of indecisive chapter.) But what should we say about their pairwise choice. Seems can't really endorse any of the three traditional options. So should reject Choice Parity. But once Choice Parity is out, why even care about binary comparisons.
