@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.340">
+<meta name="generator" content="quarto-1.4.470">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -24,6 +24,7 @@ ul.task-list li input[type="checkbox"] {
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -68,7 +69,13 @@ div.csl-indent {
   "collapse-after": 3,
   "panel-placement": "start",
   "type": "textbox",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -78,7 +85,8 @@ div.csl-indent {
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 <script type="application/json" class="js-hypothesis-config">
@@ -87,6 +95,11 @@ div.csl-indent {
 }
 </script>
 <script async="" src="https://hypothes.is/embed.js"></script>
+<script>
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    document.body.classList.add('hypothesis-enabled');
+  });
+</script>
 <link rel="stylesheet" href="https://use.typekit.net/uzz2drx.css">
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
@@ -100,13 +113,13 @@ div.csl-indent {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./gad.html">Appendices</a></li><li class="breadcrumb-item"><a href="./buchak.html"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Risk-Weighted Utility</span></a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./gad.html">Appendices</a></li><li class="breadcrumb-item"><a href="./buchak.html"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Risk-Weighted Utility</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -115,7 +128,7 @@ div.csl-indent {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Game Theory as Decision Theory</a> 
@@ -306,7 +319,7 @@ div.csl-indent {
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar"><div class="quarto-margin-header"><div class="margin-header-item">
 <p>&nbsp;</p>
@@ -316,7 +329,7 @@ div.csl-indent {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./gad.html">Appendices</a></li><li class="breadcrumb-item"><a href="./buchak.html"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Risk-Weighted Utility</span></a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title"><span id="sec-buchak" class="quarto-section-identifier">Appendix E — Risk-Weighted Utility</span></h1>
 </div>
@@ -331,9 +344,11 @@ div.csl-indent {
   </div>
   
 
+
 </header>
 
-<p>This appendix goes over a problem for Lara Buchak’s risk-weighted utility theory, based around the Single Choice Principle from <a href="indecisive.html"><span>Chapter&nbsp;8</span></a>. Buchak’s theory concerns normal decision problems, where there are no demons lying around, so we have to modify Single Choice Principle a little to make it apply. The modifications still leave it recognisably the same principle though. And the main point of this appendix is to show that it is possible to theorise about normal and abnormal decision problems using the same tools.</p>
+
+<p>This appendix goes over a problem for Lara Buchak’s risk-weighted utility theory, based around the Single Choice Principle from <a href="indecisive.html" class="quarto-xref"><span>Chapter&nbsp;8</span></a>. Buchak’s theory concerns normal decision problems, where there are no demons lying around, so we have to modify Single Choice Principle a little to make it apply. The modifications still leave it recognisably the same principle though. And the main point of this appendix is to show that it is possible to theorise about normal and abnormal decision problems using the same tools.</p>
 <p>The core of Buchak’s theory is a non-standard way of valuing a gamble. For simplicity, we’ll focus on gambles with finitely many outcomes. Associate a gamble with a random variable <em>O</em>, which takes values <em>o</em><sub>1</sub>, <span class="math inline">\(\dots\)</span>, <em>o<sub>n</sub></em>, where <em>o<sub>j</sub></em>&nbsp;&gt;&nbsp;<em>o<sub>i</sub></em> iff <em>j</em>&nbsp;&gt;&nbsp;<em>i</em>. Buchak says that the risk-weighted expected utility of <em>O</em> is given by this formula, where <em>r</em> is the agent’s risk-weighting function.</p>
 <p><span class="math display">\[
 REU(O) = o_1 + \sum_{i = 2}^n r(\Pr(O \geq o_i))(o_i - o_{i-1})
@@ -347,15 +362,22 @@ REU(O) = o_1 + \sum_{i = 2}^n r(\Pr(O \geq o_i))(o_i - o_{i-1})
 <li>If the game is still going, a second coin, with probability <em>x</em> of landing Heads, will be flipped.</li>
 <li>Chooser’s payout will be a function of whether they chose Up or Down, and the result of this second coin.</li>
 </ol>
-<p>I’ll write <em>H</em><sub>1</sub> and <em>T</em><sub>1</sub> for the propositions that the first coin lands Heads and Tails respectively, and <em>H</em><sub>2</sub> and <em>T</em><sub>2</sub> for the propositions that the second coin lands Heads and Tails respectively. I’ll mostly be interested in the case where Up is a bet on <em>H</em><sub>2</sub>, and Down is declining that bet, but the general case is important to have on the table. The general structure of these problems is given by <a href="#tbl-general-coin-exit">Table&nbsp;<span>E.1</span></a>.</p>
-<div id="tbl-general-coin-exit" class="tbl-parent quarto-layout-panel anchored">
-<div class="panel-caption table-caption">
-<p>Table&nbsp;E.1: The abstract form of an exit problem with coins.</p>
-</div>
+<p>I’ll write <em>H</em><sub>1</sub> and <em>T</em><sub>1</sub> for the propositions that the first coin lands Heads and Tails respectively, and <em>H</em><sub>2</sub> and <em>T</em><sub>2</sub> for the propositions that the second coin lands Heads and Tails respectively. I’ll mostly be interested in the case where Up is a bet on <em>H</em><sub>2</sub>, and Down is declining that bet, but the general case is important to have on the table. The general structure of these problems is given by <a href="#tbl-general-coin-exit" class="quarto-xref">Table&nbsp;<span>E.1</span></a>.</p>
+<div id="tbl-general-coin-exit" class="quarto-layout-panel anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="table quarto-float-caption quarto-float-tbl" id="tbl-general-coin-exit-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;E.1: The abstract form of an exit problem with coins.
+</figcaption>
+<div aria-describedby="tbl-general-coin-exit-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="quarto-layout-row quarto-layout-valign-top">
-<div id="tbl-coin-exit-param" class="quarto-layout-cell quarto-layout-cell-subref anchored" data-ref-parent="tbl-general-coin-exit" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="tbl-general-coin-exit" style="flex-basis: 50.0%;justify-content: center;">
+<div id="tbl-coin-exit-param" class="anchored">
+<figure class="quarto-float quarto-subfloat-tbl figure">
+<figcaption class="table quarto-subfloat-caption quarto-subfloat-tbl" id="tbl-coin-exit-param-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) Exit Parameters
+</figcaption>
+<div aria-describedby="tbl-coin-exit-param-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="table">
-<caption>(a) Exit Parameters</caption>
 <tbody>
 <tr class="odd">
 <td style="text-align: center;">Exit Payout</td>
@@ -372,9 +394,17 @@ REU(O) = o_1 + \sum_{i = 2}^n r(\Pr(O \geq o_i))(o_i - o_{i-1})
 </tbody>
 </table>
 </div>
-<div id="tbl-coin-exit-r2g" class="quarto-layout-cell quarto-layout-cell-subref anchored" data-ref-parent="tbl-general-coin-exit" style="flex-basis: 50.0%;justify-content: center;">
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="tbl-general-coin-exit" style="flex-basis: 50.0%;justify-content: center;">
+<div id="tbl-coin-exit-r2g" class="anchored">
+<figure class="quarto-float quarto-subfloat-tbl figure">
+<figcaption class="table quarto-subfloat-caption quarto-subfloat-tbl" id="tbl-coin-exit-r2g-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) Round 2 game
+</figcaption>
+<div aria-describedby="tbl-coin-exit-r2g-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="table">
-<caption>(b) Round 2 game</caption>
 <thead>
 <tr class="header">
 <th style="text-align: center;"></th>
@@ -396,7 +426,12 @@ REU(O) = o_1 + \sum_{i = 2}^n r(\Pr(O \geq o_i))(o_i - o_{i-1})
 </tbody>
 </table>
 </div>
+</figure>
 </div>
+</div>
+</div>
+</div>
+</figure>
 </div>
 <p>Then we get a version of Single Choice Principle that applies to games like this.</p>
 <ul>
@@ -407,15 +442,22 @@ REU(O) = o_1 + \sum_{i = 2}^n r(\Pr(O \geq o_i))(o_i - o_{i-1})
 <p><span class="math display">\[
 REU_E(X) \geq REU_E(Y) \leftrightarrow REU_L(X) \geq REU_L(Y)
 \]</span></p>
-<p>I’ll first prove that this implies that <em>r</em> must be multiplicative, i.e., that <em>r</em>(<em>xy</em>) = <em>r</em>(<em>x</em>)<em>r</em>(<em>y</em>) for all <em>x</em>, <em>y</em>. This isn’t a particularly problematic result; the most intuitive values for r, like r(x<em>)&nbsp;=</em> x<sup>2</sup>, are multiplicative. Consider the Exit Problem shown in <a href="#tbl-zero-coin-exit">Table&nbsp;<span>E.2</span></a>, where <em>x</em> and <em>y</em> are arbitrary.</p>
-<div id="tbl-zero-coin-exit" class="tbl-parent quarto-layout-panel anchored">
-<div class="panel-caption table-caption">
-<p>Table&nbsp;E.2: An exit game with exit payout 0.</p>
-</div>
+<p>I’ll first prove that this implies that <em>r</em> must be multiplicative, i.e., that <em>r</em>(<em>xy</em>) = <em>r</em>(<em>x</em>)<em>r</em>(<em>y</em>) for all <em>x</em>, <em>y</em>. This isn’t a particularly problematic result; the most intuitive values for r, like r(x<em>)&nbsp;=</em> x<sup>2</sup>, are multiplicative. Consider the Exit Problem shown in <a href="#tbl-zero-coin-exit" class="quarto-xref">Table&nbsp;<span>E.2</span></a>, where <em>x</em> and <em>y</em> are arbitrary.</p>
+<div id="tbl-zero-coin-exit" class="quarto-layout-panel anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="table quarto-float-caption quarto-float-tbl" id="tbl-zero-coin-exit-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;E.2: An exit game with exit payout 0.
+</figcaption>
+<div aria-describedby="tbl-zero-coin-exit-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="quarto-layout-row quarto-layout-valign-top">
-<div id="tbl-zero-coin-exit-param" class="quarto-layout-cell quarto-layout-cell-subref anchored" data-ref-parent="tbl-zero-coin-exit" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="tbl-zero-coin-exit" style="flex-basis: 50.0%;justify-content: center;">
+<div id="tbl-zero-coin-exit-param" class="anchored">
+<figure class="quarto-float quarto-subfloat-tbl figure">
+<figcaption class="table quarto-subfloat-caption quarto-subfloat-tbl" id="tbl-zero-coin-exit-param-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) Exit Parameters
+</figcaption>
+<div aria-describedby="tbl-zero-coin-exit-param-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="table">
-<caption>(a) Exit Parameters</caption>
 <tbody>
 <tr class="odd">
 <td style="text-align: center;">Exit Payout</td>
@@ -432,9 +474,17 @@ REU_E(X) \geq REU_E(Y) \leftrightarrow REU_L(X) \geq REU_L(Y)
 </tbody>
 </table>
 </div>
-<div id="tbl-zero-coin-exit-r2g" class="quarto-layout-cell quarto-layout-cell-subref anchored" data-ref-parent="tbl-zero-coin-exit" style="flex-basis: 50.0%;justify-content: center;">
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="tbl-zero-coin-exit" style="flex-basis: 50.0%;justify-content: center;">
+<div id="tbl-zero-coin-exit-r2g" class="anchored">
+<figure class="quarto-float quarto-subfloat-tbl figure">
+<figcaption class="table quarto-subfloat-caption quarto-subfloat-tbl" id="tbl-zero-coin-exit-r2g-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) Round 2 game
+</figcaption>
+<div aria-describedby="tbl-zero-coin-exit-r2g-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="table">
-<caption>(b) Round 2 game</caption>
 <thead>
 <tr class="header">
 <th style="text-align: center;"></th>
@@ -456,18 +506,30 @@ REU_E(X) \geq REU_E(Y) \leftrightarrow REU_L(X) \geq REU_L(Y)
 </tbody>
 </table>
 </div>
+</figure>
 </div>
+</div>
+</div>
+</div>
+</figure>
 </div>
 <p>It’s easy to check that <em>REU<sub>L</sub></em>(<em>U</em>)&nbsp;=&nbsp;<em>REU<sub>L</sub></em>(<em>D</em>)&nbsp;=&nbsp;1. So by Single Choice Principle, <em>REU<sub>E</sub></em>(<em>U</em>)&nbsp;=&nbsp;<em>REU<sub>E</sub></em>(<em>D</em>). Since <em>REU<sub>E</sub></em>(<em>U</em>)&nbsp;=&nbsp;<span class="math inline">\(\frac{r(xy)}{r(x)}\)</span>, and <em>REU<sub>L</sub></em>(<em>D</em>)&nbsp;=&nbsp;<em>r</em>(<em>y</em>), it follows that <em>r</em>(<em>xy</em>)&nbsp;=&nbsp;<em>r</em>(<em>x</em>)<em>r</em>(<em>y</em>), as required.</p>
-<p>Define <em>m</em>, for midpoint, as <em>r</em><sup>-1</sup>(0.5). Intuitively, <em>m</em> is the probability where the risk-weighting agent is indifferent between taking and declining a bet that stands to win and lose the same amount. Since <em>r</em> is monotonically increasing, and goes from 0 to 1, <em>m</em> must exist. Consider now <a href="#tbl-one-coin-exit">Table&nbsp;<span>E.3</span></a>, where <em>y</em> is arbitrary.</p>
-<div id="tbl-one-coin-exit" class="tbl-parent quarto-layout-panel anchored">
-<div class="panel-caption table-caption">
-<p>Table&nbsp;E.3: An exit game with exit payout 1.</p>
-</div>
+<p>Define <em>m</em>, for midpoint, as <em>r</em><sup>-1</sup>(0.5). Intuitively, <em>m</em> is the probability where the risk-weighting agent is indifferent between taking and declining a bet that stands to win and lose the same amount. Since <em>r</em> is monotonically increasing, and goes from 0 to 1, <em>m</em> must exist. Consider now <a href="#tbl-one-coin-exit" class="quarto-xref">Table&nbsp;<span>E.3</span></a>, where <em>y</em> is arbitrary.</p>
+<div id="tbl-one-coin-exit" class="quarto-layout-panel anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="table quarto-float-caption quarto-float-tbl" id="tbl-one-coin-exit-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;E.3: An exit game with exit payout 1.
+</figcaption>
+<div aria-describedby="tbl-one-coin-exit-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="quarto-layout-row quarto-layout-valign-top">
-<div id="tbl-one-coin-exit-param" class="quarto-layout-cell quarto-layout-cell-subref anchored" data-ref-parent="tbl-one-coin-exit" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="tbl-one-coin-exit" style="flex-basis: 50.0%;justify-content: center;">
+<div id="tbl-one-coin-exit-param" class="anchored">
+<figure class="quarto-float quarto-subfloat-tbl figure">
+<figcaption class="table quarto-subfloat-caption quarto-subfloat-tbl" id="tbl-one-coin-exit-param-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) Exit Parameters
+</figcaption>
+<div aria-describedby="tbl-one-coin-exit-param-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="table">
-<caption>(a) Exit Parameters</caption>
 <tbody>
 <tr class="odd">
 <td style="text-align: center;">Exit Payout</td>
@@ -484,9 +546,17 @@ REU_E(X) \geq REU_E(Y) \leftrightarrow REU_L(X) \geq REU_L(Y)
 </tbody>
 </table>
 </div>
-<div id="tbl-one-coin-exit-r2g" class="quarto-layout-cell quarto-layout-cell-subref anchored" data-ref-parent="tbl-one-coin-exit" style="flex-basis: 50.0%;justify-content: center;">
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="tbl-one-coin-exit" style="flex-basis: 50.0%;justify-content: center;">
+<div id="tbl-one-coin-exit-r2g" class="anchored">
+<figure class="quarto-float quarto-subfloat-tbl figure">
+<figcaption class="table quarto-subfloat-caption quarto-subfloat-tbl" id="tbl-one-coin-exit-r2g-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) Round 2 game
+</figcaption>
+<div aria-describedby="tbl-one-coin-exit-r2g-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="table">
-<caption>(b) Round 2 game</caption>
 <thead>
 <tr class="header">
 <th style="text-align: center;"></th>
@@ -508,23 +578,35 @@ REU_E(X) \geq REU_E(Y) \leftrightarrow REU_L(X) \geq REU_L(Y)
 </tbody>
 </table>
 </div>
+</figure>
 </div>
 </div>
-<p>In <a href="#tbl-one-coin-exit">Table&nbsp;<span>E.3</span></a>, it’s also easy to see that <em>REU<sub>L</sub></em>(<em>U</em>)&nbsp;=&nbsp;<em>REU<sub>L</sub></em>(<em>D</em>)&nbsp;=&nbsp;1. So by Single Choice Principle, <em>REU<sub>E</sub></em>(<em>U</em>)&nbsp;=&nbsp;<em>REU<sub>E</sub></em>(<em>D</em>). And it’s also clear that <em>REU<sub>E</sub></em>(<em>D</em>)&nbsp;=&nbsp;1, since that’s the only possible payout for Down. So <em>REU<sub>E</sub></em>(<em>U</em>)&nbsp;=&nbsp;1. So we get the following result.</p>
+</div>
+</div>
+</figure>
+</div>
+<p>In <a href="#tbl-one-coin-exit" class="quarto-xref">Table&nbsp;<span>E.3</span></a>, it’s also easy to see that <em>REU<sub>L</sub></em>(<em>U</em>)&nbsp;=&nbsp;<em>REU<sub>L</sub></em>(<em>D</em>)&nbsp;=&nbsp;1. So by Single Choice Principle, <em>REU<sub>E</sub></em>(<em>U</em>)&nbsp;=&nbsp;<em>REU<sub>E</sub></em>(<em>D</em>). And it’s also clear that <em>REU<sub>E</sub></em>(<em>D</em>)&nbsp;=&nbsp;1, since that’s the only possible payout for Down. So <em>REU<sub>E</sub></em>(<em>U</em>)&nbsp;=&nbsp;1. So we get the following result.</p>
 <span class="math display">\[\begin{align*}
 REU_E(U) &amp;= r(1-y(1-m)) + r(ym) \\
 &amp;= 1    \\
 \therefore  r(1-y(1-m)) &amp;= r(ym)
 \end{align*}\]</span>
-<p>That doesn’t look like a particularly notable result, but it will become useful when we discuss our last case, <a href="#tbl-two-coin-exit">Table&nbsp;<span>E.4</span></a>, which is just the same as <a href="#tbl-one-coin-exit">Table&nbsp;<span>E.3</span></a>, except the exit payout is now 2.</p>
-<div id="tbl-two-coin-exit" class="tbl-parent quarto-layout-panel anchored">
-<div class="panel-caption table-caption">
-<p>Table&nbsp;E.4: An exit game with exit payout 2.</p>
-</div>
+<p>That doesn’t look like a particularly notable result, but it will become useful when we discuss our last case, <a href="#tbl-two-coin-exit" class="quarto-xref">Table&nbsp;<span>E.4</span></a>, which is just the same as <a href="#tbl-one-coin-exit" class="quarto-xref">Table&nbsp;<span>E.3</span></a>, except the exit payout is now 2.</p>
+<div id="tbl-two-coin-exit" class="quarto-layout-panel anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="table quarto-float-caption quarto-float-tbl" id="tbl-two-coin-exit-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;E.4: An exit game with exit payout 2.
+</figcaption>
+<div aria-describedby="tbl-two-coin-exit-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="quarto-layout-row quarto-layout-valign-top">
-<div id="tbl-two-coin-exit-param" class="quarto-layout-cell quarto-layout-cell-subref anchored" data-ref-parent="tbl-two-coin-exit" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="tbl-two-coin-exit" style="flex-basis: 50.0%;justify-content: center;">
+<div id="tbl-two-coin-exit-param" class="anchored">
+<figure class="quarto-float quarto-subfloat-tbl figure">
+<figcaption class="table quarto-subfloat-caption quarto-subfloat-tbl" id="tbl-two-coin-exit-param-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) Exit Parameters
+</figcaption>
+<div aria-describedby="tbl-two-coin-exit-param-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="table">
-<caption>(a) Exit Parameters</caption>
 <tbody>
 <tr class="odd">
 <td style="text-align: center;">Exit Payout</td>
@@ -541,9 +623,17 @@ REU_E(U) &amp;= r(1-y(1-m)) + r(ym) \\
 </tbody>
 </table>
 </div>
-<div id="tbl-two-coin-exit-r2g" class="quarto-layout-cell quarto-layout-cell-subref anchored" data-ref-parent="tbl-two-coin-exit" style="flex-basis: 50.0%;justify-content: center;">
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="tbl-two-coin-exit" style="flex-basis: 50.0%;justify-content: center;">
+<div id="tbl-two-coin-exit-r2g" class="anchored">
+<figure class="quarto-float quarto-subfloat-tbl figure">
+<figcaption class="table quarto-subfloat-caption quarto-subfloat-tbl" id="tbl-two-coin-exit-r2g-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) Round 2 game
+</figcaption>
+<div aria-describedby="tbl-two-coin-exit-r2g-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="table">
-<caption>(b) Round 2 game</caption>
 <tbody>
 <tr class="odd">
 <td style="text-align: center;"></td>
@@ -563,9 +653,14 @@ REU_E(U) &amp;= r(1-y(1-m)) + r(ym) \\
 </tbody>
 </table>
 </div>
+</figure>
 </div>
 </div>
-<p>In <a href="#tbl-two-coin-exit">Table&nbsp;<span>E.4</span></a>, it’s again easy to see that <em>REU<sub>L</sub></em>(<em>U</em>)&nbsp;=&nbsp;<em>REU<sub>L</sub></em>(<em>D</em>)&nbsp;=&nbsp;1. So by Single Choice Principle, <em>REU<sub>E</sub></em>(<em>U</em>)&nbsp;=&nbsp;<em>REU<sub>E</sub></em>(<em>D</em>). But the early values are more complicated: <em>REU<sub>E</sub></em>(<em>D</em>)&nbsp;=&nbsp;1&nbsp;+&nbsp;<em>r</em>(1-<em>y</em>), and <em>REU<sub>E</sub></em>(<em>U</em>)&nbsp;=&nbsp;2<em>r</em>(1-<em>y</em>(1-<em>m</em>)). Using what we’ve discovered so far, we can do something with that last value.</p>
+</div>
+</div>
+</figure>
+</div>
+<p>In <a href="#tbl-two-coin-exit" class="quarto-xref">Table&nbsp;<span>E.4</span></a>, it’s again easy to see that <em>REU<sub>L</sub></em>(<em>U</em>)&nbsp;=&nbsp;<em>REU<sub>L</sub></em>(<em>D</em>)&nbsp;=&nbsp;1. So by Single Choice Principle, <em>REU<sub>E</sub></em>(<em>U</em>)&nbsp;=&nbsp;<em>REU<sub>E</sub></em>(<em>D</em>). But the early values are more complicated: <em>REU<sub>E</sub></em>(<em>D</em>)&nbsp;=&nbsp;1&nbsp;+&nbsp;<em>r</em>(1-<em>y</em>), and <em>REU<sub>E</sub></em>(<em>U</em>)&nbsp;=&nbsp;2<em>r</em>(1-<em>y</em>(1-<em>m</em>)). Using what we’ve discovered so far, we can do something with that last value.</p>
 <span class="math display">\[\begin{align*}
 REU_E(U) &amp;= 2r(1-y(1-m)) \\
   &amp;= 2(1-r(ym))  &amp;&amp; \text{from previous calculations} \\
@@ -583,7 +678,7 @@ r(y) + r(1-y) &amp;= 1
 <p>This doesn’t yet prove expectationism. I haven’t shown that there is no other alternative to expected utility theory that satisfies Single Choice Principle. There are such other theories out there, such as the Weighted-linear utility theory described by <span class="citation" data-cites="BottomleyWilliamsonnd">Bottomley and WIlliamson (<a href="references.html#ref-BottomleyWilliamsonnd" role="doc-biblioref">n.d.</a>)</span>. But it’s a guide to how we could start defending expectationism in a way consistent with how we handle decision problems involving demons.</p>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
 <div id="ref-Allais1953" class="csl-entry" role="listitem">
 Allais, M. 1953. <span>“Le Comportement de l’homme Rationnel Devant Le Risque: Critique Des Postulats Et Axiomes de l’ecole Americaine.”</span> <em>Econometrica</em> 21 (4): 503–46. <a href="https://doi.org/10.2307/1907921">https://doi.org/10.2307/1907921</a>.
 </div>
@@ -634,6 +729,33 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       } else {
         el.classList.add('notransition');
       }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
     }
   }
   const toggleColorMode = (alternate) => {
@@ -702,13 +824,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return localAlternateSentinel;
     }
   }
-  let localAlternateSentinel = 'default';
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
   // Dark / light mode switch
   window.quartoToggleColorScheme = () => {
     // Read the current dark / light value 
     let toAlternate = !hasAlternateSentinel();
     toggleColorMode(toAlternate);
     setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
   };
   // Ensure there is a toggle, if there isn't float one in the top right
   if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
@@ -787,10 +911,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -800,8 +923,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -814,6 +946,128 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    const typesetMath = (el) => {
+      if (window.MathJax) {
+        // MathJax Typeset
+        window.MathJax.typeset([el]);
+      } else if (window.katex) {
+        // KaTeX Render
+        var mathElements = el.getElementsByClassName("math");
+        var macros = [];
+        for (var i = 0; i < mathElements.length; i++) {
+          var texText = mathElements[i].firstChild;
+          if (mathElements[i].tagName == "SPAN") {
+            window.katex.render(texText.data, mathElements[i], {
+              displayMode: mathElements[i].classList.contains('display'),
+              throwOnError: false,
+              macros: macros,
+              fleqn: false
+            });
+          }
+        }
+      }
+    }
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        for (let i = 0; i < 2; i++) {
+          container.appendChild(note.children[i].cloneNode(true));
+        }
+        typesetMath(container);
+        return container.innerHTML
+      } else {
+        typesetMath(note);
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      typesetMath(note);
+      return note.innerHTML;
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -857,6 +1111,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -882,6 +1137,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -943,12 +1224,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./war-signal.html" class="pagination-link">
+      <a href="./war-signal.html" class="pagination-link  aria-label=" &lt;span="" and="" outcomes&lt;="" span&gt;"="">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Signals and Outcomes</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./unique.html" class="pagination-link">
+      <a href="./unique.html" class="pagination-link" aria-label="<span class='chapter-number'>F</span>&nbsp; <span class='chapter-title'>Against Uniqueness</span>">
         <span class="nav-page-text"><span class="chapter-number">F</span>&nbsp; <span class="chapter-title">Against Uniqueness</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
@@ -957,4 +1238,5 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/bweatherson/gtadt/issues/new" class="toc-action">Report an issue</a></p></div></div></div></div></footer></body></html>
+
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/bweatherson/gtadt/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>

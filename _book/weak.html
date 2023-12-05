@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.340">
+<meta name="generator" content="quarto-1.4.470">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -24,6 +24,7 @@ ul.task-list li input[type="checkbox"] {
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -68,7 +69,13 @@ div.csl-indent {
   "collapse-after": 3,
   "panel-placement": "start",
   "type": "textbox",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -78,7 +85,8 @@ div.csl-indent {
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 <script type="application/json" class="js-hypothesis-config">
@@ -87,6 +95,11 @@ div.csl-indent {
 }
 </script>
 <script async="" src="https://hypothes.is/embed.js"></script>
+<script>
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    document.body.classList.add('hypothesis-enabled');
+  });
+</script>
 <link rel="stylesheet" href="https://use.typekit.net/uzz2drx.css">
 
 
@@ -98,13 +111,13 @@ div.csl-indent {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./weak.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Weak Dominance, Once</span></a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./weak.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Weak Dominance, Once</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -113,7 +126,7 @@ div.csl-indent {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Game Theory as Decision Theory</a> 
@@ -304,7 +317,7 @@ div.csl-indent {
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar"><div class="quarto-margin-header"><div class="margin-header-item">
 <p>&nbsp;</p>
@@ -318,7 +331,7 @@ div.csl-indent {
   <li><a href="#sec-weak-strong" id="toc-sec-weak-strong" class="nav-link" data-scroll-target="#sec-weak-strong"><span class="header-section-number">11.3</span> Back to Strong Dominance</a></li>
   <li><a href="#sec-weak-summary" id="toc-sec-weak-summary" class="nav-link" data-scroll-target="#sec-weak-summary"><span class="header-section-number">11.4</span> Summary</a></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/bweatherson/gtadt/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/bweatherson/gtadt/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content page-columns page-full" id="quarto-document-content">
@@ -338,47 +351,58 @@ div.csl-indent {
   </div>
   
 
+
 </header>
+
 
 <p>An option <em>a</em> weakly dominates another option <em>b</em> if <em>a</em> is at least as good as <em>b</em> in all states, and better than <em>b</em> in some states. Just what role weak dominance has in decision theory is one of the most unsettled topics in game theory. There are three natural positions, and all of them are occupied. One is that weak dominance is of no significance. A second is that ideal agents do not choose weakly dominated options, and that’s the only role weak dominance has. And a third is that ideal agents do not choose options that are eliminated by an iterative process of deleting weakly dominated strategies. I’m going to argue in favour of the middle position. I’m not going to try to argue this is the standard game-theoretic move; as I said, I think you can find prominent support for all three options. To argue for the middle position requires making two cases: first, that weakly dominated options are not ideally chosen; and second, that options that would be eliminated by iterative deletion of weakly dominated options are ideally chosen. I’ll argue for these in turn.</p>
 <section id="sec-weak-avoid" class="level2 page-columns page-full" data-number="11.1">
 <h2 data-number="11.1" class="anchored" data-anchor-id="sec-weak-avoid"><span class="header-section-number">11.1</span> Avoid Weakly Dominated Options</h2>
-<p>Start with <a href="#tbl-first-wd">Table&nbsp;<span>11.1</span></a>; what would the ideal chooser do?</p>
+<p>Start with <a href="#tbl-first-wd" class="quarto-xref">Table&nbsp;<span>11.1</span></a>; what would the ideal chooser do?</p>
 <div id="tbl-first-wd" class="anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="table quarto-float-caption quarto-float-tbl" id="tbl-first-wd-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;11.1: A ratifiable, weakly dominated, option.
+</figcaption>
+<div aria-describedby="tbl-first-wd-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="table">
-<caption>Table&nbsp;11.1: A ratifiable, weakly dominated, option.</caption>
 <thead>
 <tr class="header">
 <th style="text-align: center;"></th>
-<th style="text-align: center;">PU</th>
-<th style="text-align: center;">PD</th>
+<th style="text-align: center;"><strong>PA</strong></th>
+<th style="text-align: center;"><strong>PB</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: center;"><strong>U</strong></td>
+<td style="text-align: center;"><strong>A</strong></td>
 <td style="text-align: center;">1</td>
 <td style="text-align: center;">1</td>
 </tr>
 <tr class="even">
-<td style="text-align: center;"><strong>D</strong></td>
+<td style="text-align: center;"><strong>B</strong></td>
 <td style="text-align: center;">0</td>
 <td style="text-align: center;">1</td>
 </tr>
 </tbody>
 </table>
 </div>
-<p>On the one hand, D is ratifiable, as long as Demon is sufficiently reliable. If Demon will in fact get the predictions right, D gets a return of 1, and had Chooser played U, they would have still received 1. So they would not regret playing D, so by ratifiability it is fine to play it. Against this, there are three reasons to not play D.</p>
-<p>First, it is rather unrealistic to think that the probability that Demon will make an accurate prediction is 1. And even if Demon’s prediction is correct with probability 1 - ε, then D will not be ratifiable. I’m inclined to rule out, on broadly Humean grounds, the very possibility of a Demon whose predictions are correct with probability 1, but is causally independent of Chooser’s choice. Temporally backwards causation is not a logical impossibility, and a world where the predictions are correct with probability 1 seems like a world which has backwards causation. I don’t want to rest the case for GDT on contentious metaphysics, so I won’t lean on this point.</p>
-<div class="page-columns page-full"><p>Second, playing D involves taking on an uncompensated risk. It might be that we don’t have a good way of capturing within probability theory just what this risk is. Perhaps you think that it makes sense to say that Demon is correct with probability 1. Still, in some sense D has a risk of failure that U lacks. One should not take on a risk without some compensation. So one should not play D in this case. This, I think, is the most persuasive argument against D.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p><div class="no-row-height column-margin column-container"><li id="fn1"><p><sup>1</sup>&nbsp;This paragraph is somewhere between heavily influence by, and a notational variant on, the argument in section 3 of <span class="citation" data-cites="Stalnaker1999">Stalnaker (<a href="references.html#ref-Stalnaker1999" role="doc-biblioref">1999</a>)</span>.</p></li></div></div>
-<p>Third, it has been argued by game theorists that we should always allow for the possibility that one or other player in a game will make some kind of performance error. This idea is at the heart of Reinhard Selten’s notion of trembling hand equilibrium <span class="citation" data-cites="Selten1975">(<a href="references.html#ref-Selten1975" role="doc-biblioref">Selten 1975</a>)</span>, and Roger Myerson’s notion of proper equilibrium <span class="citation" data-cites="Myerson1978">(<a href="references.html#ref-Myerson1978" role="doc-biblioref">Myerson 1978</a>)</span>. If a strategy would not make sense if the probability of an error by one or other player was positive, even if it was arbitrarily low, it should not be played. Since D only makes sense if the probability of an error by Demon is 0, that means D should not be played.</p>
-</section>
+</figure>
+</div>
+<p>On the one hand, B is ratifiable, as long as Demon is sufficiently reliable. If Demon will in fact get the predictions right, B gets a return of 1, and had Chooser played A, they would have still received 1. So they would not regret playing B, so by ratifiability it is fine to play it. Against this, there are two reasons to not play B.</p>
+<p>First, if we don’t say that Demon is perfectly accurate, but only that their accuracy is arbitrarily close to being perfect, the argument that B is ratifiable doesn’t go through. It has been argued by game theorists that we should always allow for the possibility that one or other player in a game will make some kind of performance error. This idea is at the heart of Reinhard Selten’s notion of trembling hand equilibrium <span class="citation" data-cites="Selten1975">(<a href="references.html#ref-Selten1975" role="doc-biblioref">Selten 1975</a>)</span>, and Roger Myerson’s notion of proper equilibrium <span class="citation" data-cites="Myerson1978">(<a href="references.html#ref-Myerson1978" role="doc-biblioref">Myerson 1978</a>)</span>. If a strategy would not make sense if the probability of an error by one or other player was positive, even if it was arbitrarily low, it should not be played. Since B only makes sense if the probability of an error by Demon is 0, that means B should not be played.</p>
+<p>Second, playing B involves taking on an uncompensated risk. It might be that we don’t have a good way of capturing within probability theory just what this risk is. Perhaps you think that it makes sense to say that Demon is correct with probability 1 without this raising questions about backwards causation. Still, in some sense B has a risk of failure that A lacks. One should not take on a risk without some compensation. So one should not play B in this case. This, I think, is the most persuasive argument against B.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<div class="no-row-height column-margin column-container"><li id="fn1"><p><sup>1</sup>&nbsp;This paragraph is somewhere between heavily influence by, and a notational variant on, the argument in section 3 of <span class="citation" data-cites="Stalnaker1999">Stalnaker (<a href="references.html#ref-Stalnaker1999" role="doc-biblioref">1999</a>)</span>.</p></li></div></section>
 <section id="sec-weak-iterate" class="level2 page-columns page-full" data-number="11.2">
 <h2 data-number="11.2" class="anchored" data-anchor-id="sec-weak-iterate"><span class="header-section-number">11.2</span> Against Iterative Deletion</h2>
-<div class="page-columns page-full"><p>If it is good to remove weakly dominated options, then one might think it follows straight away that it is good to keep doing this.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> Think about <a href="#tbl-wd-itd">Table&nbsp;<span>11.2</span></a>.</p><div class="no-row-height column-margin column-container"><li id="fn2"><p><sup>2</sup>&nbsp;This suggestion is made by, for example <span class="citation" data-cites="HareHedden2015">Hare and Hedden (<a href="references.html#ref-HareHedden2015" role="doc-biblioref">2015</a>)</span>.</p></li></div></div>
-<div id="tbl-wd-itd" class="anchored">
+<p>If it is good to remove weakly dominated options, then one might think it follows straight away that it is good to keep doing this.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> Think about <a href="#tbl-wd-itd" class="quarto-xref">Table&nbsp;<span>11.2</span></a>.</p>
+<div class="no-row-height column-margin column-container"><li id="fn2"><p><sup>2</sup>&nbsp;This suggestion is made by, for example <span class="citation" data-cites="HareHedden2015">Hare and Hedden (<a href="references.html#ref-HareHedden2015" role="doc-biblioref">2015</a>)</span>.</p></li></div><div id="tbl-wd-itd" class="anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="table quarto-float-caption quarto-float-tbl" id="tbl-wd-itd-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;11.2: An example of iterated weak dominance.
+</figcaption>
+<div aria-describedby="tbl-wd-itd-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="table">
-<caption>Table&nbsp;11.2: An example of iterated weak dominance.</caption>
 <thead>
 <tr class="header">
 <th style="text-align: center;"></th>
@@ -409,14 +433,20 @@ div.csl-indent {
 </tbody>
 </table>
 </div>
-<p>In <a href="#tbl-wd-itd">Table&nbsp;<span>11.2</span></a>, X is weakly dominated by D. So it shouldn’t be played. But if X isn’t played, then PX is weakly dominated by both PU and PD. Demon can’t make a correct prediction by playing PX, since by hypothesis it won’t be played, so it can’t be better than PU or PD. But both PU and PD can be better than PX. So PX is now weakly dominated. So let’s remove it as well. If both X and PX are deleted, we’re back to <a href="#tbl-first-wd">Table&nbsp;<span>11.1</span></a>, in which we said Chooser should play U.</p>
-<p>So does it make sense to say that U is the only play in <a href="#tbl-wd-itd">Table&nbsp;<span>11.2</span></a>? I think not, for three reasons.</p>
+</figure>
+</div>
+<p>In <a href="#tbl-wd-itd" class="quarto-xref">Table&nbsp;<span>11.2</span></a>, X is weakly dominated by D. So it shouldn’t be played. But if X isn’t played, then PX is weakly dominated by both PU and PD. Demon can’t make a correct prediction by playing PX, since by hypothesis it won’t be played, so it can’t be better than PU or PD. But both PU and PD can be better than PX. So PX is now weakly dominated. So let’s remove it as well. If both X and PX are deleted, we’re back to <a href="#tbl-first-wd" class="quarto-xref">Table&nbsp;<span>11.1</span></a>, in which we said Chooser should play U.</p>
+<p>So does it make sense to say that U is the only play in <a href="#tbl-wd-itd" class="quarto-xref">Table&nbsp;<span>11.2</span></a>? I think not, for three reasons.</p>
 <p>First, as Bonanno <span class="citation" data-cites="Bonanno2018">(<a href="references.html#ref-Bonanno2018" role="doc-biblioref">2018, 37</a>)</span> points out, in general iterative deletion of weakly dominated strategies is not a well defined decision procedure. It turns out that in two player games, the order that weakly dominated strategies are deleted can affect which choices one ends up with. There are ways of fixing this problem, by specifying one or other order of deletion as canonical, but they all feel somewhat artificial.</p>
-<p>Second, the reasons we gave for avoiding the weakly dominated option in <a href="#tbl-first-wd">Table&nbsp;<span>11.1</span></a> simply don’t carry over to <a href="#tbl-wd-itd">Table&nbsp;<span>11.2</span></a>. In the latter game, D is not an uncompensated risk. It’s true that D loses if Demon makes an incorrect prediction and plays PU. But U loses if Demon makes an incorrect prediction and plays PX. Unless one thinks that PX is particularly unlikely to be played, it seems U and D are just as risky as each other. So both of them look like rational plays.</p>
-<p>Third, iterative deletion of weakly dominated strategies (combined with the <a href="./dual.html">dual mandate</a> approach to dynamic choice) leads to a single solution to the <a href="#tbl-money-burning">money burning game</a> described by <span class="citation" data-cites="BenPorathDekel1992">Ben-Porath and Dekel (<a href="references.html#ref-BenPorathDekel1992" role="doc-biblioref">1992</a>)</span>. The money burning game has two players, and two stages. At stage 1, Column will have the choice to burn or not burn $20. The burning will be public, so Row will see what Column does, or does not do. At stage 2, Row and Column will play the simultaneous move game in <a href="#tbl-money-burning-part-two">Table&nbsp;<span>11.3</span></a>.</p>
+<p>Second, the reasons we gave for avoiding the weakly dominated option in <a href="#tbl-first-wd" class="quarto-xref">Table&nbsp;<span>11.1</span></a> simply don’t carry over to <a href="#tbl-wd-itd" class="quarto-xref">Table&nbsp;<span>11.2</span></a>. In the latter game, D is not an uncompensated risk. It’s true that D loses if Demon makes an incorrect prediction and plays PU. But U loses if Demon makes an incorrect prediction and plays PX. Unless one thinks that PX is particularly unlikely to be played, it seems U and D are just as risky as each other. So both of them look like rational plays.</p>
+<p>Third, iterative deletion of weakly dominated strategies (combined with the <a href="./dual.html">dual mandate</a> approach to dynamic choice) leads to a single solution to the <a href="#tbl-money-burning">money burning game</a> described by <span class="citation" data-cites="BenPorathDekel1992">Ben-Porath and Dekel (<a href="references.html#ref-BenPorathDekel1992" role="doc-biblioref">1992</a>)</span>. The money burning game has two players, and two stages. At stage 1, Column will have the choice to burn or not burn $20. The burning will be public, so Row will see what Column does, or does not do. At stage 2, Row and Column will play the simultaneous move game in <a href="#tbl-money-burning-part-two" class="quarto-xref">Table&nbsp;<span>11.3</span></a>.</p>
 <div id="tbl-money-burning-part-two" class="anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="table quarto-float-caption quarto-float-tbl" id="tbl-money-burning-part-two-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;11.3: The second stage of the money burning game
+</figcaption>
+<div aria-describedby="tbl-money-burning-part-two-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="table">
-<caption>Table&nbsp;11.3: The second stage of the money burning game</caption>
 <thead>
 <tr class="header">
 <th style="text-align: center;"></th>
@@ -438,6 +468,8 @@ div.csl-indent {
 </tbody>
 </table>
 </div>
+</figure>
+</div>
 <p>Here is one way to think about the game. I’m going to number the steps here so we can refer back to them later.</p>
 <ol type="1">
 <li>It would be irrational to burn the money and play B, since that results in a maximum possible payout to Column of -$10, when any strategy that involves not burning the money results in a minimum payout of $0.</li>
@@ -447,11 +479,15 @@ div.csl-indent {
 <li>Hence Column does not need to burn the money, since Row will play A, and hence playing A without burning will get them $40.</li>
 </ol>
 <p>So this looks like an interesting result. By just giving Column the option of burning the money, we guarantee that Column will get their best possible outcome, even though they don’t actually use that option. We’ll come back to whether this reasoning works. (Spoiler alert: I’m going to endorse an existing objection to it.)</p>
-<p>Let’s look at the argument in something like strategic form. For simplicity, I’m going to assume Column has four strategies: whether to burn or not burn, crossed with whether to play A or B in <a href="#tbl-money-burning-part-two">Table&nbsp;<span>11.3</span></a>. Strictly speaking, we should distinguish strategies that differ in what Column is disposed to do in the non-taken option at stage 1, but such distinctions don’t matter to the analysis, and end up cluttering the table. Row has four strategies: two choices for what to do if Column burns the money, crossed with two choices for what to do if Column keeps the money.</p>
+<p>Let’s look at the argument in something like strategic form. For simplicity, I’m going to assume Column has four strategies: whether to burn or not burn, crossed with whether to play A or B in <a href="#tbl-money-burning-part-two" class="quarto-xref">Table&nbsp;<span>11.3</span></a>. Strictly speaking, we should distinguish strategies that differ in what Column is disposed to do in the non-taken option at stage 1, but such distinctions don’t matter to the analysis, and end up cluttering the table. Row has four strategies: two choices for what to do if Column burns the money, crossed with two choices for what to do if Column keeps the money.</p>
 <p>So as not to confuse the Burning with playing option B, I’ll write <strong>L</strong> for Lighting the money on fire, and <strong>K</strong> for Keeping the money. So Column’s strategies will be one of L and K, followed by one of A and B. For Row, I’ll write XY for the strategy of doing option X if Column keeps the money, and option Y if Column lights it on fire. So AB is the strategy of doing A iff they don’t see the money on fire. Given that, here is the payout table. (To reduce clutter, I’ll write the payouts in dollars, but will leave off the dollar signs.)</p>
 <div id="tbl-money-burning" class="anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="table quarto-float-caption quarto-float-tbl" id="tbl-money-burning-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;11.4: Simplified strategic form of the money burning game.
+</figcaption>
+<div aria-describedby="tbl-money-burning-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="table">
-<caption>Table&nbsp;11.4: Simplified strategic form of the money burning game.</caption>
 <thead>
 <tr class="header">
 <th style="text-align: center;"></th>
@@ -493,6 +529,8 @@ div.csl-indent {
 </tbody>
 </table>
 </div>
+</figure>
+</div>
 <p>We can use weak dominance to then reason as follows.</p>
 <ol type="1">
 <li>LB is strongly dominated by both KA and KB, so it won’t be played.</li>
@@ -510,9 +548,9 @@ div.csl-indent {
 </section>
 <section id="sec-weak-strong" class="level2" data-number="11.3">
 <h2 data-number="11.3" class="anchored" data-anchor-id="sec-weak-strong"><span class="header-section-number">11.3</span> Back to Strong Dominance</h2>
-<p>This argument might, for some readers, trigger guilt by association concerns. If initially appealing reasoning like the 1-5 inference in <a href="#sec-weak-iterate"><span>Section&nbsp;11.2</span></a> is wrong, might it also be that iterated strong dominance reasoning rests on a fallacy?</p>
+<p>This argument might, for some readers, trigger guilt by association concerns. If initially appealing reasoning like the 1-5 inference in <a href="#sec-weak-iterate" class="quarto-xref"><span>Section&nbsp;11.2</span></a> is wrong, might it also be that iterated strong dominance reasoning rests on a fallacy?</p>
 <p>I suspect that concern is at least half-right; some informal presentations of iterated strong dominance reasoning probably does commit exactly the same fallacy. But it turns out not to matter; we have independent reason to accept iterated strong dominance</p>
-<p>The reason comes from the theorem of Pearce’s that I mentioned back in <a href="causal.html#sec-no-ratify"><span>Section&nbsp;4.1</span></a>, in the context of discussing <a href="./causal.html#tbl-frustrator">The Frustrator</a>. Pearce goes on to show something stronger than what I described there, but it needs a little more terminology to state it.</p>
+<p>The reason comes from the theorem of Pearce’s that I mentioned back in <a href="causal.html#sec-no-ratify" class="quarto-xref"><span>Section&nbsp;4.1</span></a>, in the context of discussing <a href="./causal.html#tbl-frustrator">The Frustrator</a>. Pearce goes on to show something stronger than what I described there, but it needs a little more terminology to state it.</p>
 <p>Say a strategy <em>S</em> in a two player game is a best-response<sub>1</sub> iff there is some probability distribution <em>Pr</em> over the other player’s strategies such that given <em>Pr</em>, no strategy available to the player has a higher expected return than <em>S</em> does.</p>
 <p>Say a strategy <em>S</em> in a two player game is a best-response<sub><em>k</em>+1</sub> iff there is some probability distribution <em>Pr</em> over the other player’s strategies such that (a) <em>Pr</em> only assigns positive probability to the other player choosing strategies which are best-responses<sub><em>k</em></sub>, and (b) given <em>Pr</em>, no strategy available to the player has a higher expected return than <em>S</em> does.</p>
 <p>Finally, say that a strategy <em>S</em> is <strong>rationalisable</strong> iff for any <em>n</em>, it is a best-response<sub><em>k</em></sub>.</p>
@@ -524,14 +562,14 @@ div.csl-indent {
 </ul>
 <p>This line of questioning could go on indefinitely. Presumably <em>Pr</em><sub>2</sub> isn’t defined over any old things the other player might play. But if the original strategy is rationalisable, it will give positive probabilities to things that it would make some sense for the other player to play. And so on indefinitely.</p>
 <p>This, ultimately, is why I think dominance reasoning, and in particular iterated dominance reasoning, should be incorporated into our decision theory. Using dominance reasoning is a somewhat convenient shorthand for what we should be doing, namely finding rationalisable strategies.</p>
-<p>To be sure, I think we should do somewhat more than find rationalisable strategies. We should also find strategies that are not weakly dominated (as argued in <a href="#sec-weak"><span>Chapter&nbsp;11</span></a>), and which are substantively rational (as argued in <a href="substantive.html"><span>Chapter&nbsp;10</span></a>). But the first necessary step is to remove the non-rationalisable strategies.</p>
+<p>To be sure, I think we should do somewhat more than find rationalisable strategies. We should also find strategies that are not weakly dominated (as argued in <a href="#sec-weak" class="quarto-xref"><span>Chapter&nbsp;11</span></a>), and which are substantively rational (as argued in <a href="substantive.html" class="quarto-xref"><span>Chapter&nbsp;10</span></a>). But the first necessary step is to remove the non-rationalisable strategies.</p>
 </section>
 <section id="sec-weak-summary" class="level2" data-number="11.4">
 <h2 data-number="11.4" class="anchored" data-anchor-id="sec-weak-summary"><span class="header-section-number">11.4</span> Summary</h2>
-<p>So I conclude that we just need one round of deleting weakly dominated options to get rid of irrational plays. D is irrational in <a href="#tbl-first-wd">Table&nbsp;<span>11.1</span></a>, but not in <a href="#tbl-wd-itd">Table&nbsp;<span>11.2</span></a>. The reasons for not iterating weak dominance reasoning do not apply to strong dominance reasoning, and iterated strong dominance reasoning leads to the same results as reasoning that is unimpeachable, namely finding rationalisable strategies.</p>
+<p>So I conclude that we just need one round of deleting weakly dominated options to get rid of irrational plays. D is irrational in <a href="#tbl-first-wd" class="quarto-xref">Table&nbsp;<span>11.1</span></a>, but not in <a href="#tbl-wd-itd" class="quarto-xref">Table&nbsp;<span>11.2</span></a>. The reasons for not iterating weak dominance reasoning do not apply to strong dominance reasoning, and iterated strong dominance reasoning leads to the same results as reasoning that is unimpeachable, namely finding rationalisable strategies.</p>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
 <div id="ref-BenPorathDekel1992" class="csl-entry" role="listitem">
 Ben-Porath, Elchanan, and Eddie Dekel. 1992. <span>“Signaling Future Actions and the Potential for Sacrifice.”</span> <em>Journal of Economic Theory</em> 57 (1): 36–51. <a href="https://doi.org/10.1016/S0022-0531(05)80039-0">https://doi.org/10.1016/S0022-0531(05)80039-0</a>.
 </div>
@@ -601,6 +639,33 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       }
     }
   }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
   const toggleColorMode = (alternate) => {
     // Switch the stylesheets
     const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
@@ -667,13 +732,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return localAlternateSentinel;
     }
   }
-  let localAlternateSentinel = 'default';
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
   // Dark / light mode switch
   window.quartoToggleColorScheme = () => {
     // Read the current dark / light value 
     let toAlternate = !hasAlternateSentinel();
     toggleColorMode(toAlternate);
     setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
   };
   // Ensure there is a toggle, if there isn't float one in the top right
   if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
@@ -752,10 +819,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -765,8 +831,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -779,6 +854,128 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    const typesetMath = (el) => {
+      if (window.MathJax) {
+        // MathJax Typeset
+        window.MathJax.typeset([el]);
+      } else if (window.katex) {
+        // KaTeX Render
+        var mathElements = el.getElementsByClassName("math");
+        var macros = [];
+        for (var i = 0; i < mathElements.length; i++) {
+          var texText = mathElements[i].firstChild;
+          if (mathElements[i].tagName == "SPAN") {
+            window.katex.render(texText.data, mathElements[i], {
+              displayMode: mathElements[i].classList.contains('display'),
+              throwOnError: false,
+              macros: macros,
+              fleqn: false
+            });
+          }
+        }
+      }
+    }
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        for (let i = 0; i < 2; i++) {
+          container.appendChild(note.children[i].cloneNode(true));
+        }
+        typesetMath(container);
+        return container.innerHTML
+      } else {
+        typesetMath(note);
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      typesetMath(note);
+      return note.innerHTML;
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -822,6 +1019,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -847,6 +1045,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -908,17 +1132,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./substantive.html" class="pagination-link">
+      <a href="./substantive.html" class="pagination-link  aria-label=" &lt;span="">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Substantive</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./conclusion.html" class="pagination-link">
+      <a href="./conclusion.html" class="pagination-link" aria-label="<span class='chapter-number'>12</span>&nbsp; <span class='chapter-title'>Conclusion</span>">
         <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Conclusion</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
+
 
 
 

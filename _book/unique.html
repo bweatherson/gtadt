@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.340">
+<meta name="generator" content="quarto-1.4.470">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -24,6 +24,7 @@ ul.task-list li input[type="checkbox"] {
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -67,7 +68,13 @@ div.csl-indent {
   "collapse-after": 3,
   "panel-placement": "start",
   "type": "textbox",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -77,7 +84,8 @@ div.csl-indent {
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 <script type="application/json" class="js-hypothesis-config">
@@ -86,6 +94,11 @@ div.csl-indent {
 }
 </script>
 <script async="" src="https://hypothes.is/embed.js"></script>
+<script>
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    document.body.classList.add('hypothesis-enabled');
+  });
+</script>
 <link rel="stylesheet" href="https://use.typekit.net/uzz2drx.css">
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
@@ -99,13 +112,13 @@ div.csl-indent {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./gad.html">Appendices</a></li><li class="breadcrumb-item"><a href="./unique.html"><span class="chapter-number">F</span>&nbsp; <span class="chapter-title">Against Uniqueness</span></a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./gad.html">Appendices</a></li><li class="breadcrumb-item"><a href="./unique.html"><span class="chapter-number">F</span>&nbsp; <span class="chapter-title">Against Uniqueness</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -114,7 +127,7 @@ div.csl-indent {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Game Theory as Decision Theory</a> 
@@ -305,7 +318,7 @@ div.csl-indent {
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar"><div class="quarto-margin-header"><div class="margin-header-item">
 <p>&nbsp;</p>
@@ -319,12 +332,12 @@ div.csl-indent {
   <li><a href="#objections" id="toc-objections" class="nav-link" data-scroll-target="#objections"><span class="header-section-number">F.3</span> Objections</a></li>
   <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion"><span class="header-section-number">F.4</span> Conclusion</a></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/bweatherson/gtadt/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/bweatherson/gtadt/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content page-columns page-full" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./gad.html">Appendices</a></li><li class="breadcrumb-item"><a href="./unique.html"><span class="chapter-number">F</span>&nbsp; <span class="chapter-title">Against Uniqueness</span></a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title"><span id="sec-unique" class="quarto-section-identifier">Appendix F — Against Uniqueness</span></h1>
 </div>
@@ -339,22 +352,28 @@ div.csl-indent {
   </div>
   
 
+
 </header>
+
 
 <p>In setting out GDT, I said that what mattered was that Chooser maximised expected utility given some credal function that was rational having made their choice. Some philosophers argue that the quantifier in the previous sentence is redundant; there is only one rational credence function one could have given some evidence. This view is known as Uniqueness, and its negation is known as Permissivism. The way I’ve stated GDT presupposes that Permissivism is correct, and I should defend that presupposition.</p>
 <p>This appendix argues that thinking about symmetric games gives us new reason to believe in Permissivism. In keeping with the spirit of the book, the arguments will be game-theoretic. I’m going to offer two arguments, one involving finite games, and the other involving infinite games. In finite games, the theorist who denies Permissivism says that the players have to think that the other player is more likely to take one action rather than another, although they know the actions have equal expected utility. In infinite games, the theorist who denies Permissivism has to say that it is impossible for certain games to be played with common knowledge of rationality and shared evidence, although there does not seem to be anything paradoxical about the games. The latter set of arguments rely on the recent discovery that there are symmetric games with only asymmetric equilibria. It was long known that there are symmetric games with no pure strategy symmetric equilibria; the surprising new discovery is that there are symmetric games with asymmetric equilibria, but no symmetric equilibria involving either mixed or pure strategies. In both cases, thinking about players in symmetric games pushes us towards accepting Permissivism.</p>
-<div class="page-columns page-full"><p>The Permissivist theses that have been the focus on recent philosophical attention vary along two dimensions.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p><div class="no-row-height column-margin column-container"><li id="fn1"><p><sup>1</sup>&nbsp;For a much more thorough introduction to the debate, and especially into the varieties of Permissivist theses, see <span class="citation" data-cites="KopecTitelbaum2016">Kopec and Titelbaum (<a href="references.html#ref-KopecTitelbaum2016" role="doc-biblioref">2016</a>)</span> and <span class="citation" data-cites="Meacham2019">Meacham (<a href="references.html#ref-Meacham2019" role="doc-biblioref">2019</a>)</span>. The next three paragraphs draw heavily from these two papers. For more recent arguments in favour of Permissivism, see <span class="citation" data-cites="Callahan2021">Callahan (<a href="references.html#ref-Callahan2021" role="doc-biblioref">2021</a>)</span>, <span class="citation" data-cites="Lota2023">Lota and Hlobil (<a href="references.html#ref-Lota2023" role="doc-biblioref">2023</a>)</span>, <span class="citation" data-cites="Palmira2023">Palmira (<a href="references.html#ref-Palmira2023" role="doc-biblioref">2023</a>)</span>, and <span class="citation" data-cites="Ye2023">Ye (<a href="references.html#ref-Ye2023" role="doc-biblioref">2023</a>)</span>. For criticisms, see <span class="citation" data-cites="Schultheis2018">Schultheis (<a href="references.html#ref-Schultheis2018" role="doc-biblioref">2018</a>)</span> and <span class="citation" data-cites="Ross2021">Ross (<a href="references.html#ref-Ross2021" role="doc-biblioref">2021</a>)</span>.</p></li></div></div>
-<div class="page-columns page-full"><p>The first dimension concerns what we hold fixed when we say that multiple attitudes are rationally permissible. It’s basically common ground that people with different evidence can rationally believe different things, or that a person can believe different things when their evidence changes. But are these sufficient conditions for rational disagreement or change also necessary conditions. What’s called <em>Interpersonal Permissiveness</em> says that given some evidence, there may be more than one doxastic state that it is rational to be in.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> What’s called <em>Intrapersonal Permissiveness</em> says that given a person and some evidence, there may be more one doxastic state that it is rational to be in. A classic form of subjectivist Bayesianism says that a person can pick any prior they like, but they have to update it by conditionalisation. This is a version of a view that rejects Intrapersonal Permissiveness, since given one’s prior there is only one permissible posterior, but endorses Interpersonal Permissiveness, since there are multiple permissible priors.</p><div class="no-row-height column-margin column-container"><li id="fn2"><p><sup>2</sup>&nbsp;In setting up the debate, I’m following the standard practice and assuming some kind of evidentialism. If one thinks that other things than evidence matter to rational credence, such as thinking that testimony provides non-evidential reasons for belief, it is a little complicated but possible to restate everything here to fit such an epistemological view. The general picture is that ‘evidence’ here really means non-pragmatic reasons for belief. But it’s simpler to say ‘evidence’, and that’s what I’ll generally say.</p></li></div></div>
+<p>The Permissivist theses that have been the focus on recent philosophical attention vary along two dimensions.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<div class="no-row-height column-margin column-container"><li id="fn1"><p><sup>1</sup>&nbsp;For a much more thorough introduction to the debate, and especially into the varieties of Permissivist theses, see <span class="citation" data-cites="KopecTitelbaum2016">Kopec and Titelbaum (<a href="references.html#ref-KopecTitelbaum2016" role="doc-biblioref">2016</a>)</span> and <span class="citation" data-cites="Meacham2019">Meacham (<a href="references.html#ref-Meacham2019" role="doc-biblioref">2019</a>)</span>. The next three paragraphs draw heavily from these two papers. For more recent arguments in favour of Permissivism, see <span class="citation" data-cites="Callahan2021">Callahan (<a href="references.html#ref-Callahan2021" role="doc-biblioref">2021</a>)</span>, <span class="citation" data-cites="Lota2023">Lota and Hlobil (<a href="references.html#ref-Lota2023" role="doc-biblioref">2023</a>)</span>, <span class="citation" data-cites="Palmira2023">Palmira (<a href="references.html#ref-Palmira2023" role="doc-biblioref">2023</a>)</span>, and <span class="citation" data-cites="Ye2023">Ye (<a href="references.html#ref-Ye2023" role="doc-biblioref">2023</a>)</span>. For criticisms, see <span class="citation" data-cites="Schultheis2018">Schultheis (<a href="references.html#ref-Schultheis2018" role="doc-biblioref">2018</a>)</span> and <span class="citation" data-cites="Ross2021">Ross (<a href="references.html#ref-Ross2021" role="doc-biblioref">2021</a>)</span>.</p></li><li id="fn2"><p><sup>2</sup>&nbsp;In setting up the debate, I’m following the standard practice and assuming some kind of evidentialism. If one thinks that other things than evidence matter to rational credence, such as thinking that testimony provides non-evidential reasons for belief, it is a little complicated but possible to restate everything here to fit such an epistemological view. The general picture is that ‘evidence’ here really means non-pragmatic reasons for belief. But it’s simpler to say ‘evidence’, and that’s what I’ll generally say.</p></li></div><p>The first dimension concerns what we hold fixed when we say that multiple attitudes are rationally permissible. It’s basically common ground that people with different evidence can rationally believe different things, or that a person can believe different things when their evidence changes. But are these sufficient conditions for rational disagreement or change also necessary conditions. What’s called <em>Interpersonal Permissiveness</em> says that given some evidence, there may be more than one doxastic state that it is rational to be in.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> What’s called <em>Intrapersonal Permissiveness</em> says that given a person and some evidence, there may be more one doxastic state that it is rational to be in. A classic form of subjectivist Bayesianism says that a person can pick any prior they like, but they have to update it by conditionalisation. This is a version of a view that rejects Intrapersonal Permissiveness, since given one’s prior there is only one permissible posterior, but endorses Interpersonal Permissiveness, since there are multiple permissible priors.</p>
 <p>The second dimension concerns whether the distinct views can be acknowledged as rational. Stewart <span class="citation" data-cites="Cohen2013">Cohen (<a href="references.html#ref-Cohen2013" role="doc-biblioref">2013</a>)</span> defends the view that multiple attitudes can be rational, but one cannot rationally acknowledge a distinct view as rational. Following <span class="citation" data-cites="KopecTitelbaum2016">Kopec and Titelbaum (<a href="references.html#ref-KopecTitelbaum2016" role="doc-biblioref">2016</a>)</span>, call a view that says multiple views can both be rationally held and be believed to be rational <em>Acknowledged Permissiveness</em>, and the view that says multiple views could be rationally held, but could not be acknowledged, <em>Unacknowledged Permissiveness</em>.</p>
 <p>Putting the last two paragraphs together gives us four varieties of Permissive theses. The negation of a Permissive thesis is a Uniqueness thesis. The name suggests that there is precisely one rational attitude to take in a specified situation, but we’ll interpret it as the view that there is at most one rational attitude to take so as to ensure each Uniqueness thesis is the negation of a Permissive thesis. So if there are four Permissive theses, there are four Uniqueness theses that negate them.</p>
 <p>This appendix focuses on the strongest of these four Permissive theses, Acknowledged Intrapersonal Permissiveness, and its negation, Acknowledged Interpersonal Uniqueness. This is, I think, the most commonly discussed form of Permissiveness in the literature, and in any case is interesting. And I’m going to be arguing that in some cases involving symmetric games, coherence considerations provide a strong argument in favour of Acknowledged Intrapersonal Permissiveness.</p>
-<div class="page-columns page-full"><p>The next two sections set out two symmetric games where Uniqueness<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> leads to surprising results. In all cases I’ll assume that if Uniqueness is true, then the players know that it is true. And while this might be obvious, I’ll also note explicitly that they players have no evidence about the game or the players beyond what I write about the structure of the games.</p><div class="no-row-height column-margin column-container"><li id="fn3"><p><sup>3</sup>&nbsp;From now on, when I say ‘Uniqueness’ I mean Acknowledged Intrapersonal Uniqueness. It’s easier to simply stipulate this now than repeating the phrase every time.</p></li></div></div>
-<section id="chicken" class="level2 page-columns page-full" data-number="F.1">
+<p>The next two sections set out two symmetric games where Uniqueness<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> leads to surprising results. In all cases I’ll assume that if Uniqueness is true, then the players know that it is true. And while this might be obvious, I’ll also note explicitly that they players have no evidence about the game or the players beyond what I write about the structure of the games.</p>
+<div class="no-row-height column-margin column-container"><li id="fn3"><p><sup>3</sup>&nbsp;From now on, when I say ‘Uniqueness’ I mean Acknowledged Intrapersonal Uniqueness. It’s easier to simply stipulate this now than repeating the phrase every time.</p></li></div><section id="chicken" class="level2 page-columns page-full" data-number="F.1">
 <h2 data-number="F.1" class="anchored" data-anchor-id="chicken"><span class="header-section-number">F.1</span> Chicken</h2>
-<p>Some finite symmetric games don’t have a symmetric pure-strategy equilibrium. One notable example is Chicken, one version of which is in <a href="#tbl-unique-chicken">Table&nbsp;<span>F.1</span></a>.</p>
+<p>Some finite symmetric games don’t have a symmetric pure-strategy equilibrium. One notable example is Chicken, one version of which is in <a href="#tbl-unique-chicken" class="quarto-xref">Table&nbsp;<span>F.1</span></a>.</p>
 <div id="tbl-unique-chicken" class="anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="table quarto-float-caption quarto-float-tbl" id="tbl-unique-chicken-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;F.1: Chicken
+</figcaption>
+<div aria-describedby="tbl-unique-chicken-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="table">
-<caption>Table&nbsp;F.1: Chicken</caption>
 <thead>
 <tr class="header">
 <th style="text-align: center;"></th>
@@ -375,6 +394,8 @@ div.csl-indent {
 </tr>
 </tbody>
 </table>
+</div>
+</figure>
 </div>
 <p>The symmetric pure-strategy pairs (Stay, Stay) and (Swerve, Swerve) are not equilibria; in each case both parties have an incentive to defect. But the game does have a symmetric mixed strategy equilibrium. It is that both players play the mixed strategy of Stay with probability 0.01, and Swerve with probability 0.99.</p>
 <p>Now assume that Row and Column have the same relevant evidence, that they are self-aware and fully rational, and that these facts and no other are common knowledge between them, and that they are about to play Chicken one time. (It’s also common knowledge that they won’t play again; dropping this would raise the possibility of complicated strategic reasoning.)</p>
@@ -407,8 +428,8 @@ div.csl-indent {
 <p>If a symmetric game has an equilibrium, does it have a symmetric equilibrium?</p>
 </blockquote>
 <p>Over the years, a positive answer was given to various restricted forms of that question. Most importantly, John <span class="citation" data-cites="Nash1951">Nash (<a href="references.html#ref-Nash1951" role="doc-biblioref">1951</a>)</span> showed that if each player has finitely many moves available, then the game does have a symmetric equilibrium.</p>
-<div class="page-columns page-full"><p>But recently it has been proven that the answer to the general question is no. Mark <span class="citation" data-cites="Fey2012">Fey (<a href="references.html#ref-Fey2012" role="doc-biblioref">2012</a>)</span> describes an example of a positive-sum two-player game that has only asymmetric equilibria.<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a> Dimitrios <span class="citation" data-cites="Xefteris2015">Xefteris (<a href="references.html#ref-Xefteris2015" role="doc-biblioref">2015</a>)</span> showed that there is a symmetric three-player zero-sum game that has only asymmetric equilibria. In fact, he showed that a very familiar game, a version of a Hotelling–Downs model of elections, has this property. Here’s how he describes the game.</p><div class="no-row-height column-margin column-container"><li id="fn5"><p><sup>5</sup>&nbsp;In Fey’s game both players pick a real in [0, 1]. If both players pick numbers in (0, 1), the one who picks the larger number wins. But there are a lot of complications if one or both pick an extreme value, including the game not always being zero-sum. I’m not relying on it here because it is a little too close to the game I’ll discuss at the end of this section where everyone agrees there is no way to play it given common knowledge of rationality. Fey’s paper also includes a nice chronology of some of the proofs of positive answers to restricted forms of the question.</p></li></div></div>
-<blockquote class="blockquote">
+<p>But recently it has been proven that the answer to the general question is no. Mark <span class="citation" data-cites="Fey2012">Fey (<a href="references.html#ref-Fey2012" role="doc-biblioref">2012</a>)</span> describes an example of a positive-sum two-player game that has only asymmetric equilibria.<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a> Dimitrios <span class="citation" data-cites="Xefteris2015">Xefteris (<a href="references.html#ref-Xefteris2015" role="doc-biblioref">2015</a>)</span> showed that there is a symmetric three-player zero-sum game that has only asymmetric equilibria. In fact, he showed that a very familiar game, a version of a Hotelling–Downs model of elections, has this property. Here’s how he describes the game.</p>
+<div class="no-row-height column-margin column-container"><li id="fn5"><p><sup>5</sup>&nbsp;In Fey’s game both players pick a real in [0, 1]. If both players pick numbers in (0, 1), the one who picks the larger number wins. But there are a lot of complications if one or both pick an extreme value, including the game not always being zero-sum. I’m not relying on it here because it is a little too close to the game I’ll discuss at the end of this section where everyone agrees there is no way to play it given common knowledge of rationality. Fey’s paper also includes a nice chronology of some of the proofs of positive answers to restricted forms of the question.</p></li></div><blockquote class="blockquote">
 <p>Consider a unit mass of voters. Each voter is characterised by her ideal policy. We assume that the ideal policies of the voters are uniformly distributed in [0, 1]. We moreover assume that three candidates <em>A</em>, <em>B</em> and <em>C</em> compete for a single office. Each candidate <em>J</em> <span class="math inline">\(\in\)</span> {<em>A</em>, <em>B</em>, <em>C</em>} announces a policy <em>s<sub>J</sub></em> <span class="math inline">\(\in\)</span> [0, 1] and each voter votes for the candidate who announced the policy platform which is nearest to her ideal policy. If a voter is indifferent between two or among all three candidates she evenly splits her vote between/among them. A candidate <em>J</em> <span class="math inline">\(\in\)</span> {<em>A</em>, <em>B</em>, <em>C</em>} gets a payoff equal to one if she receives a vote-share strictly larger than the vote-share of each of the two other candidates. If two candidates tie in the first place each gets a payoff equal to one half. If all three candidates receive the same vote-shares then each gets a payoff equal to one third. In all other cases a candidate gets a payoff equal to zero. <span class="citation" data-cites="Xefteris2015">(<a href="references.html#ref-Xefteris2015" role="doc-biblioref">Xefteris 2015, 124</a>)</span></p>
 </blockquote>
 <p>It is clear that there is no symmetric pure-strategy equilibrium here. If all candidates announced the same policy, everyone would get a payoff of <span class="math inline">\(\frac{1}{3}\)</span>. But no matter what that policy is, if <em>B</em> and <em>C</em> announce the same policy, then <em>A</em> has a winning move available. (If the number <em>B</em> and <em>C</em> say is not 0.5, <em>A</em> wins by saying 0.5. If they do both say 0.5, then <em>A</em> wins by saying 0.4.)</p>
@@ -449,14 +470,14 @@ div.csl-indent {
 <h2 data-number="F.3" class="anchored" data-anchor-id="objections"><span class="header-section-number">F.3</span> Objections</h2>
 <p>The arguments for premises 2 and 3 in the argument above assumed something slightly stronger than Uniqueness. They each assumed that each player knew Uniqueness was true, and could use that in their reasoning. (Most importantly, in the argument for premise 3, it’s important that each player can reason through the reasoning behind premise 2, and that reasoning used Uniqueness.) What happens if we drop that assumption, and consider the possibility that Uniqueness is true but unknowable?</p>
 <p>This possibility is a little uncomfortable for philosophical defenders of Uniqueness. If the players in these games do not know that Uniqueness is true, then neither do the authors writing about Uniqueness. And now we have to worry about whether it is permissible to assert in print that Uniqueness is true. I wouldn’t make too much of this though. It is unlikely that a knowledge norm governs assertion in philosophical journals.</p>
-<div class="page-columns page-full"><p>The bigger worry here is that one key argument for Uniqueness seems to require that Uniqueness is knowable. A number of recent authors have argued that Uniqueness best explains our practice of deferring to rational people.<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a> For instance, Greco and Hedden use this principle in their argument for Uniqueness.</p><div class="no-row-height column-margin column-container"><li id="fn6"><p><sup>6</sup>&nbsp;There is a nice discussion of this argument, including citations of the papers I’m about to discuss, in <span class="citation" data-cites="KopecTitelbaum2016">Kopec and Titelbaum (<a href="references.html#ref-KopecTitelbaum2016" role="doc-biblioref">2016, 195</a>)</span>.</p></li></div></div>
-<blockquote class="blockquote">
+<p>The bigger worry here is that one key argument for Uniqueness seems to require that Uniqueness is knowable. A number of recent authors have argued that Uniqueness best explains our practice of deferring to rational people.<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a> For instance, Greco and Hedden use this principle in their argument for Uniqueness.</p>
+<div class="no-row-height column-margin column-container"><li id="fn6"><p><sup>6</sup>&nbsp;There is a nice discussion of this argument, including citations of the papers I’m about to discuss, in <span class="citation" data-cites="KopecTitelbaum2016">Kopec and Titelbaum (<a href="references.html#ref-KopecTitelbaum2016" role="doc-biblioref">2016, 195</a>)</span>.</p></li></div><blockquote class="blockquote">
 <p>If agent <em>S</em><sub>1</sub> judges that <em>S</em><sub>2</sub>’s belief that <em>P</em> is rational and that <em>S</em><sub>1</sub> does not have relevant evidence that <em>S</em><sub>2</sub> lacks, then <em>S</em><sub>1</sub> defers to <em>S</em><sub>2</sub>’s belief that <em>P</em>. <span class="citation" data-cites="GrecoHedden2016">(<a href="references.html#ref-GrecoHedden2016" role="doc-biblioref">Greco and Hedden 2016, 373</a>)</span>.</p>
 </blockquote>
 <p>Similar kinds of arguments are made by <span class="citation" data-cites="Dogramaci2012">Dogramaci (<a href="references.html#ref-Dogramaci2012" role="doc-biblioref">2012</a>)</span> and <span class="citation" data-cites="Horowitz2014">Horowitz (<a href="references.html#ref-Horowitz2014" role="doc-biblioref">2014</a>)</span>. But the principle looks rather dubious in the case of these games. Imagine that <em>A</em> forms a belief (we’ll come back to how) that <em>B</em> believes that a rational thing to do in the Xefteris game is to play 0.6, and so believes that <em>B</em> will play 0.6. This last step requires Uniqueness, or, more specifically, <em>A</em>’s belief that <em>B</em> believes in Uniqueness. The reasoning is as follows. <em>A</em> thinks that <em>B</em> thinks that 0.6 is a rational move; so, by Uniqueness, <em>A</em> believes that <em>B</em> believes that 0.6 is the only rational move; so, by <em>B</em>’s belief in their own rationality, <em>B</em> believes that they will play 0.6; so, by <em>B</em>’s self-control as a practically rational agent, <em>B</em> will in fact play 0.6. Now <em>A</em> believes that they have the same evidence as <em>B</em>, and that a rational thing to do with that evidence is play 0.6. By Uniqueness, they will believe that the only rational thing for someone with the evidence that they have (and that <em>B</em> has) is to play 0.6. But that can’t be right. If <em>B</em> is playing 0.6, as <em>A</em> has independently judged they will, the rational thing for <em>A</em> to do is to play something other than 0.6.</p>
 <p>And that’s the general case for these symmetric games with only asymmetric equilibria. Believing that someone else is at an equilibrium point is a reason to not copy them. Uniqueness, combined with common knowledge of shared evidence and rationality, implies that anyone who believes that another player will adopt strategy <em>s</em> has a reason to adopt strategy <em>s</em>. After all, another player is playing it, and since that player is rational it is a rational thing to do in their situation, so by common evidence it is a rational thing to do in one’s own situation, so by Uniqueness it is the only rational thing to do in one’s own situation. But since the symmetric situations are not equilibria, believing that the other person will do <em>s</em> cannot be a reason to do <em>s</em>. That means one of the three assumptions we made here - common knowledge of rationality, common knowledge of shared evidence, and Uniqueness, must be wrong. Since it is typically taken to be at least coherent to have common knowledge of rationality and common knowledge of shared evidence, it follows that Uniqueness is wrong.</p>
-<div class="page-columns page-full"><p>But maybe the Uniqueness theorist could resist that last step. Maybe they could deny that the game, with the assumption of common knowledge of rationality and shared evidence, really is possible. <a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a> This perhaps isn’t as surprising as it might seem.</p><div class="no-row-height column-margin column-container"><li id="fn7"><p><sup>7</sup>&nbsp;This move won’t really help with Chicken; but maybe in that case they can simply insist that a rational player will rationally think the other player is more likely to make one of the two choices with equal expected payoffs.</p></li></div></div>
-<p>Note two things about the Xefteris game. First, it is an infinite game in the sense that each player has infinitely many choices. It turns out this matters to the proof that there is no symmetric equilibrium to the game. Second, we are assuming it is common knowledge, and hence true, that the players are perfectly rational. Third, we are assuming that perfect rationality entails that people will not choose one option when there is a better option available. When you put those three things together, some things that do not look obviously inconsistent turn out to be impossible. Here’s one example of that.</p>
+<p>But maybe the Uniqueness theorist could resist that last step. Maybe they could deny that the game, with the assumption of common knowledge of rationality and shared evidence, really is possible. <a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a> This perhaps isn’t as surprising as it might seem.</p>
+<div class="no-row-height column-margin column-container"><li id="fn7"><p><sup>7</sup>&nbsp;This move won’t really help with Chicken; but maybe in that case they can simply insist that a rational player will rationally think the other player is more likely to make one of the two choices with equal expected payoffs.</p></li></div><p>Note two things about the Xefteris game. First, it is an infinite game in the sense that each player has infinitely many choices. It turns out this matters to the proof that there is no symmetric equilibrium to the game. Second, we are assuming it is common knowledge, and hence true, that the players are perfectly rational. Third, we are assuming that perfect rationality entails that people will not choose one option when there is a better option available. When you put those three things together, some things that do not look obviously inconsistent turn out to be impossible. Here’s one example of that.</p>
 <blockquote class="blockquote">
 <p><em>A</em> and <em>B</em> are playing a game. Each picks a real number in the open interval (0, 1). They each receive a payoff equal to the average of the two numbers picked.</p>
 </blockquote>
@@ -469,7 +490,7 @@ div.csl-indent {
 <p>I think the conclusion to draw from these cases of symmetric interactions this is that Uniqueness is false, and hence Permissivism is true. Sometimes in such an interaction one simply has to form a belief about the other player, knowing they may well form a different belief about you. Indeed, sometimes only coherent way to form a belief about the other player is to believe that they will form a different belief about you. And that means giving up on Uniqueness.</p>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
 <div id="ref-Callahan2021" class="csl-entry" role="listitem">
 Callahan, Laura Frances. 2021. <span>“Epistemic Existentialism.”</span> <em>Episteme</em> 18 (4): 539–54. <a href="https://doi.org/10.1017/epi.2019.25">https://doi.org/10.1017/epi.2019.25</a>.
 </div>
@@ -569,6 +590,33 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       }
     }
   }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
   const toggleColorMode = (alternate) => {
     // Switch the stylesheets
     const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
@@ -635,13 +683,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return localAlternateSentinel;
     }
   }
-  let localAlternateSentinel = 'default';
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
   // Dark / light mode switch
   window.quartoToggleColorScheme = () => {
     // Read the current dark / light value 
     let toAlternate = !hasAlternateSentinel();
     toggleColorMode(toAlternate);
     setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
   };
   // Ensure there is a toggle, if there isn't float one in the top right
   if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
@@ -720,10 +770,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -733,8 +782,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -747,6 +805,128 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    const typesetMath = (el) => {
+      if (window.MathJax) {
+        // MathJax Typeset
+        window.MathJax.typeset([el]);
+      } else if (window.katex) {
+        // KaTeX Render
+        var mathElements = el.getElementsByClassName("math");
+        var macros = [];
+        for (var i = 0; i < mathElements.length; i++) {
+          var texText = mathElements[i].firstChild;
+          if (mathElements[i].tagName == "SPAN") {
+            window.katex.render(texText.data, mathElements[i], {
+              displayMode: mathElements[i].classList.contains('display'),
+              throwOnError: false,
+              macros: macros,
+              fleqn: false
+            });
+          }
+        }
+      }
+    }
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        for (let i = 0; i < 2; i++) {
+          container.appendChild(note.children[i].cloneNode(true));
+        }
+        typesetMath(container);
+        return container.innerHTML
+      } else {
+        typesetMath(note);
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      typesetMath(note);
+      return note.innerHTML;
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -790,6 +970,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -815,6 +996,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -876,7 +1083,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./buchak.html" class="pagination-link">
+      <a href="./buchak.html" class="pagination-link  aria-label=" &lt;span="" utility&lt;="" span&gt;"="">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Risk-Weighted Utility</span></span>
       </a>          
   </div>
@@ -884,6 +1091,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
+
 
 
 

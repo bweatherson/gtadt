@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.340">
+<meta name="generator" content="quarto-1.4.470">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -24,6 +24,7 @@ ul.task-list li input[type="checkbox"] {
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -68,7 +69,13 @@ div.csl-indent {
   "collapse-after": 3,
   "panel-placement": "start",
   "type": "textbox",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -78,7 +85,8 @@ div.csl-indent {
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 <script type="application/json" class="js-hypothesis-config">
@@ -87,6 +95,11 @@ div.csl-indent {
 }
 </script>
 <script async="" src="https://hypothes.is/embed.js"></script>
+<script>
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    document.body.classList.add('hypothesis-enabled');
+  });
+</script>
 <link rel="stylesheet" href="https://use.typekit.net/uzz2drx.css">
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
@@ -100,13 +113,13 @@ div.csl-indent {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./gad.html">Appendices</a></li><li class="breadcrumb-item"><a href="./war-signal.html"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Signals and Outcomes</span></a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./gad.html">Appendices</a></li><li class="breadcrumb-item"><a href="./war-signal.html"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Signals and Outcomes</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -115,7 +128,7 @@ div.csl-indent {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Game Theory as Decision Theory</a> 
@@ -306,7 +319,7 @@ div.csl-indent {
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar"><div class="quarto-margin-header"><div class="margin-header-item">
 <p>&nbsp;</p>
@@ -316,7 +329,7 @@ div.csl-indent {
 <!-- main -->
 <main class="content page-columns page-full" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./gad.html">Appendices</a></li><li class="breadcrumb-item"><a href="./war-signal.html"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Signals and Outcomes</span></a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title"><span id="sec-war-signal" class="quarto-section-identifier">Appendix D — Signals and Outcomes</span></h1>
 </div>
@@ -331,13 +344,19 @@ div.csl-indent {
   </div>
   
 
+
 </header>
 
-<p>In <a href="causal.html#sec-war-on-war"><span>Section&nbsp;4.3</span></a>, I said there was another case where EDT left one with less money, and where this didn’t rely on having different evidence in the high return case to the low return case. This appendix describes such a case. It is a version of a signalling game of the kind introduced by <span class="citation" data-cites="Lewis1969a">Lewis (<a href="references.html#ref-Lewis1969a" role="doc-biblioref">1969</a>)</span>. And in particular it’s a version of the broadly adversarial kinds of signalling games that are central to the plot of <span class="citation" data-cites="ChoKreps1987">Cho and Kreps (<a href="references.html#ref-ChoKreps1987" role="doc-biblioref">1987</a>)</span>. It will involve a human Chooser, and a Demon who is excellent at predictions, and the game will have three stages.</p>
-<p>At the first stage a fair coin is flipped, and the result shown to Chooser, but not to Demon. At the second stage, Chooser will choose Up or Down, and the choice will be publicly announced. At the third stage, Demon will try to guess what the coin showed. Demon knows the payoff table I’m about to show you, and is arbitrarily good at predicting Chooser’s strategy for what to do given how the coin appears. This prediction is causally independent of Chooser’s choice, but Demon’s guess is not independent; it could be affected by the choice. The payoffs to each player are a function of what happens at each of the three steps, and are given by table <a href="#tbl-payoffs-demon-coin">Table&nbsp;<span>D.1</span></a>. (The payoffs here are all in utils.)</p>
+
+<p>In <a href="causal.html#sec-war-on-war" class="quarto-xref"><span>Section&nbsp;4.3</span></a>, I said there was another case where EDT left one with less money, and where this didn’t rely on having different evidence in the high return case to the low return case. This appendix describes such a case. It is a version of a signalling game of the kind introduced by <span class="citation" data-cites="Lewis1969a">Lewis (<a href="references.html#ref-Lewis1969a" role="doc-biblioref">1969</a>)</span>. And in particular it’s a version of the broadly adversarial kinds of signalling games that are central to the plot of <span class="citation" data-cites="ChoKreps1987">Cho and Kreps (<a href="references.html#ref-ChoKreps1987" role="doc-biblioref">1987</a>)</span>. It will involve a human Chooser, and a Demon who is excellent at predictions, and the game will have three stages.</p>
+<p>At the first stage a fair coin is flipped, and the result shown to Chooser, but not to Demon. At the second stage, Chooser will choose Up or Down, and the choice will be publicly announced. At the third stage, Demon will try to guess what the coin showed. Demon knows the payoff table I’m about to show you, and is arbitrarily good at predicting Chooser’s strategy for what to do given how the coin appears. This prediction is causally independent of Chooser’s choice, but Demon’s guess is not independent; it could be affected by the choice. The payoffs to each player are a function of what happens at each of the three steps, and are given by table <a href="#tbl-payoffs-demon-coin" class="quarto-xref">Table&nbsp;<span>D.1</span></a>. (The payoffs here are all in utils.)</p>
 <div id="tbl-payoffs-demon-coin" class="anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="table quarto-float-caption quarto-float-tbl" id="tbl-payoffs-demon-coin-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;D.1: Payouts for the coins and signals game
+</figcaption>
+<div aria-describedby="tbl-payoffs-demon-coin-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="table">
-<caption>Table&nbsp;D.1: Payouts for the coins and signals game</caption>
 <thead>
 <tr class="header">
 <th style="text-align: center;">Coin</th>
@@ -407,22 +426,32 @@ div.csl-indent {
 </tbody>
 </table>
 </div>
-<p><a href="#fig-second-anti-war">Figure&nbsp;<span>D.1</span></a> shows the game they are playing in tree form. We start at the middle, then move left or right depending on the coin flip, up or down depending on Chooser’s choice, and at one or other angle depending on Demon’s choice. Demons’s payoffs are just as you’d expect - they get rewarded iff they figure out how the coin landed. Chooser’s payoffs are more complicated, but the big things to note are the huge payout if they get to the top-left and Demon does not make a correct prediction, and the generally poor payouts for choosing Down.</p>
-<div class="cell" data-hash="war-signal_cache/html/fig-second-anti-war_5ba1a34cad17c647fd0626fd3d0b4d62">
+</figure>
+</div>
+<p><a href="#fig-second-anti-war" class="quarto-xref">Figure&nbsp;<span>D.1</span></a> shows the game they are playing in tree form. We start at the middle, then move left or right depending on the coin flip, up or down depending on Chooser’s choice, and at one or other angle depending on Demon’s choice. Demons’s payoffs are just as you’d expect - they get rewarded iff they figure out how the coin landed. Chooser’s payoffs are more complicated, but the big things to note are the huge payout if they get to the top-left and Demon does not make a correct prediction, and the generally poor payouts for choosing Down.</p>
+<div class="cell" data-hash="war-signal_cache/html/fig-second-anti-war_dfb2fd7688075e6fb5643e1eda069955">
 <div class="cell-output-display">
-<div id="fig-second-anti-war" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="war-signal_files/figure-html/fig-second-anti-war-1.png" class="img-fluid figure-img" style="width:60.0%"></p>
-<figcaption class="figure-caption">Figure&nbsp;D.1: Tree Diagram of the Coins and Signals Game</figcaption>
+<div id="fig-second-anti-war" class="quarto-figure quarto-figure-center anchored" width="60%">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-second-anti-war-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="war-signal_files/figure-html/fig-second-anti-war-1.png" class="img-fluid figure-img" style="width:60.0%">
+</div>
+<figcaption class="figure quarto-float-caption quarto-float-fig" id="fig-second-anti-war-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;D.1: Tree Diagram of the Coins and Signals Game
+</figcaption>
 </figure>
 </div>
 </div>
 </div>
-<div class="page-columns page-full"><p>Demon predicts Chooser’s strategy. That is, Demon predicts Chooser’s plan about what to do if the coin lands Heads and what to do if the coin lands Tails, before the game starts. They make their guess about how the coin landed after seeing Chooser’s actual choice, and updating their prior beliefs (about both the coin and Chooser) with this information. If they predict that Chooser will do the same thing however the coin lands, they will have no useful information about the coin, so they will flip their own coin to make a guess. In that case it will be 50/50 whether Demon says Heads or Tails. Also, if Demon is surprised by what Chooser does, i.e., if they had predicted Chooser would do one thing however the coin lands but Chooser does the other thing, Demon will also flip their own coin to make a guess.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> Finally, Demon’s predictions are arbitrarily accurate. For simplicity, I’ll assume Demon is correct with probability 1, though it doesn’t matter if you allow for probability <span class="math inline">\(\varepsilon\)</span> that Demon gets it wrong.</p><div class="no-row-height column-margin column-container"><li id="fn1"><p><sup>1</sup>&nbsp;A key part of the discussion in <span class="citation" data-cites="ChoKreps1987">Cho and Kreps (<a href="references.html#ref-ChoKreps1987" role="doc-biblioref">1987</a>)</span> is that in some cases we can say substantive things about what a player will do if they are surprised in this sense. But <a href="#fig-second-anti-war">Figure&nbsp;<span>D.1</span></a> is not such a case.</p></li></div></div>
-<p>Now I want to analyse what Chooser will do if they follow EDT. It should be fairly clear that if the coin lands Heads, Chooser should say Up. The worst possible return from Up is 40, the best possible return from Down is 0. So that’s what any theory would recommend, and Chooser will do that whether or not they follow EDT. Indeed, this is so clear that we should assume Demon will predict that Chooser will play Up if the coin lands Heads. So what happens if the coin lands Tails? There are four possibilities here: the two things Chooser might do crossed with the two predictions Demon might make. The expected return to Chooser in these four possibilities is given in <a href="#tbl-payout-if-tails">Table&nbsp;<span>D.2</span></a>.</p>
+<p>Demon predicts Chooser’s strategy. That is, Demon predicts Chooser’s plan about what to do if the coin lands Heads and what to do if the coin lands Tails, before the game starts. They make their guess about how the coin landed after seeing Chooser’s actual choice, and updating their prior beliefs (about both the coin and Chooser) with this information. If they predict that Chooser will do the same thing however the coin lands, they will have no useful information about the coin, so they will flip their own coin to make a guess. In that case it will be 50/50 whether Demon says Heads or Tails. Also, if Demon is surprised by what Chooser does, i.e., if they had predicted Chooser would do one thing however the coin lands but Chooser does the other thing, Demon will also flip their own coin to make a guess.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> Finally, Demon’s predictions are arbitrarily accurate. For simplicity, I’ll assume Demon is correct with probability 1, though it doesn’t matter if you allow for probability <span class="math inline">\(\varepsilon\)</span> that Demon gets it wrong.</p>
+<div class="no-row-height column-margin column-container"><li id="fn1"><p><sup>1</sup>&nbsp;A key part of the discussion in <span class="citation" data-cites="ChoKreps1987">Cho and Kreps (<a href="references.html#ref-ChoKreps1987" role="doc-biblioref">1987</a>)</span> is that in some cases we can say substantive things about what a player will do if they are surprised in this sense. But <a href="#fig-second-anti-war" class="quarto-xref">Figure&nbsp;<span>D.1</span></a> is not such a case.</p></li></div><p>Now I want to analyse what Chooser will do if they follow EDT. It should be fairly clear that if the coin lands Heads, Chooser should say Up. The worst possible return from Up is 40, the best possible return from Down is 0. So that’s what any theory would recommend, and Chooser will do that whether or not they follow EDT. Indeed, this is so clear that we should assume Demon will predict that Chooser will play Up if the coin lands Heads. So what happens if the coin lands Tails? There are four possibilities here: the two things Chooser might do crossed with the two predictions Demon might make. The expected return to Chooser in these four possibilities is given in <a href="#tbl-payout-if-tails" class="quarto-xref">Table&nbsp;<span>D.2</span></a>.</p>
 <div id="tbl-payout-if-tails" class="anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="table quarto-float-caption quarto-float-tbl" id="tbl-payout-if-tails-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;D.2: The expected payout to Chooser in four cases if the coin lands Tails
+</figcaption>
+<div aria-describedby="tbl-payout-if-tails-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="table">
-<caption>Table&nbsp;D.2: The expected payout to Chooser in four cases if the coin lands Tails</caption>
 <thead>
 <tr class="header">
 <th style="text-align: center;"></th>
@@ -444,19 +473,21 @@ div.csl-indent {
 </tbody>
 </table>
 </div>
-<p>The numbers in <a href="#tbl-payout-if-tails">Table&nbsp;<span>D.2</span></a> aren’t entirely obvious; I’ll spell out how I got them.</p>
+</figure>
+</div>
+<p>The numbers in <a href="#tbl-payout-if-tails" class="quarto-xref">Table&nbsp;<span>D.2</span></a> aren’t entirely obvious; I’ll spell out how I got them.</p>
 <ul>
-<li>If Demon predicts Up (i.e., Demon predicts that Chooser will adopt a strategy that involves playing Up if the coin lands Heads) Demon will flip a coin. And they’ll do that whatever Chooser does. That’s because they’ll either get no information (if Chooser plays Up), or will be surprised (if Chooser plays Down). So Chooser will get the average of lines 5 and 6 in <a href="#tbl-payoffs-demon-coin">Table&nbsp;<span>D.1</span></a> if they play Up, and the average of lines 7 and 8 if they play Down.</li>
-<li>If Demon predicts Down, and Chooser plays Up, Demon will think (falsely) that the coin must have landed Heads, since Demon will have predicted that Chooser will only say Up if Heads. So Demon will say Heads. So we’ll definitely be at line 5 of <a href="#tbl-payoffs-demon-coin">Table&nbsp;<span>D.1</span></a>, where Chooser gets 40.</li>
-<li>If Demon predicts Down, and Chooser plays Down, Demon will think (correctly) that the coin must have landed Tails. So Demon will say that, and we’ll be at line 8 of <a href="#tbl-payoffs-demon-coin">Table&nbsp;<span>D.1</span></a>.</li>
+<li>If Demon predicts Up (i.e., Demon predicts that Chooser will adopt a strategy that involves playing Up if the coin lands Heads) Demon will flip a coin. And they’ll do that whatever Chooser does. That’s because they’ll either get no information (if Chooser plays Up), or will be surprised (if Chooser plays Down). So Chooser will get the average of lines 5 and 6 in <a href="#tbl-payoffs-demon-coin" class="quarto-xref">Table&nbsp;<span>D.1</span></a> if they play Up, and the average of lines 7 and 8 if they play Down.</li>
+<li>If Demon predicts Down, and Chooser plays Up, Demon will think (falsely) that the coin must have landed Heads, since Demon will have predicted that Chooser will only say Up if Heads. So Demon will say Heads. So we’ll definitely be at line 5 of <a href="#tbl-payoffs-demon-coin" class="quarto-xref">Table&nbsp;<span>D.1</span></a>, where Chooser gets 40.</li>
+<li>If Demon predicts Down, and Chooser plays Down, Demon will think (correctly) that the coin must have landed Tails. So Demon will say that, and we’ll be at line 8 of <a href="#tbl-payoffs-demon-coin" class="quarto-xref">Table&nbsp;<span>D.1</span></a>.</li>
 </ul>
-<p>In a decision problem like <a href="#tbl-payout-if-tails">Table&nbsp;<span>D.2</span></a>, EDT says that all that matters is which of the top-left and bottom-right cells is largest. In this case, it’s the bottom-right, so EDT says to play Down. That isn’t absurd in this case; it gets the best possible payout of 44. So that’s our analysis of the game for EDT: Chooser plays Up if Heads, Down if Tails, gets 40 if Heads and 44 if Tails (plus/minus a small amount in expectation if Demon has <span class="math inline">\(\varepsilon\)</span> chance of being wrong), and on average gets 42.</p>
-<p>GDT does not give any clear verdict about what to do in <a href="#tbl-payout-if-tails">Table&nbsp;<span>D.2</span></a>; it says either Up or Down is permissible. So following GDT doesn’t mean you’ll do better than EDT in this game; you might do exactly as well as EDT. But all it takes to get a “Why Ain’cha Rich?” argument going is to show that one theory does better than EDT. And the version of CDT that Dmitri <span class="citation" data-cites="Gallow2020">Gallow (<a href="references.html#ref-Gallow2020" role="doc-biblioref">2020</a>)</span> endorses implies that one should play Up in <a href="#tbl-payout-if-tails">Table&nbsp;<span>D.2</span></a>. So someone following his theory will play Up however the coin lands. So Demon will always flip a coin to decide what to do. So all of the top four outcomes in <a href="#fig-second-anti-war">Figure&nbsp;<span>D.1</span></a> are equally likely, and Chooser will on average get a return of 127. Since 127&nbsp;&gt;&nbsp;42, that means that on average if Chooser follows Gallow’s theory, they will on average be much richer than if they follow EDT. So if “Why Ain’Cha Rich?”, they show that EDT should be rejected in favour of Gallow’s theory.</p>
+<p>In a decision problem like <a href="#tbl-payout-if-tails" class="quarto-xref">Table&nbsp;<span>D.2</span></a>, EDT says that all that matters is which of the top-left and bottom-right cells is largest. In this case, it’s the bottom-right, so EDT says to play Down. That isn’t absurd in this case; it gets the best possible payout of 44. So that’s our analysis of the game for EDT: Chooser plays Up if Heads, Down if Tails, gets 40 if Heads and 44 if Tails (plus/minus a small amount in expectation if Demon has <span class="math inline">\(\varepsilon\)</span> chance of being wrong), and on average gets 42.</p>
+<p>GDT does not give any clear verdict about what to do in <a href="#tbl-payout-if-tails" class="quarto-xref">Table&nbsp;<span>D.2</span></a>; it says either Up or Down is permissible. So following GDT doesn’t mean you’ll do better than EDT in this game; you might do exactly as well as EDT. But all it takes to get a “Why Ain’cha Rich?” argument going is to show that one theory does better than EDT. And the version of CDT that Dmitri <span class="citation" data-cites="Gallow2020">Gallow (<a href="references.html#ref-Gallow2020" role="doc-biblioref">2020</a>)</span> endorses implies that one should play Up in <a href="#tbl-payout-if-tails" class="quarto-xref">Table&nbsp;<span>D.2</span></a>. So someone following his theory will play Up however the coin lands. So Demon will always flip a coin to decide what to do. So all of the top four outcomes in <a href="#fig-second-anti-war" class="quarto-xref">Figure&nbsp;<span>D.1</span></a> are equally likely, and Chooser will on average get a return of 127. Since 127&nbsp;&gt;&nbsp;42, that means that on average if Chooser follows Gallow’s theory, they will on average be much richer than if they follow EDT. So if “Why Ain’Cha Rich?”, they show that EDT should be rejected in favour of Gallow’s theory.</p>
 <p>Ian <span class="citation" data-cites="Wells2019">Wells (<a href="references.html#ref-Wells2019" role="doc-biblioref">2019</a>)</span> has earlier offered an example where EDT predictably does worse than (all versions of) CDT. His case involves a two-step game, where the EDTer will, at step 2, make a decision that everyone, whether they believe in CDT or EDT or any other plausible theory, think is bad from the perspective of the player at step 1. At round 1 the players can pay to tie their hands at round 2, and the EDTer will make this payment. (As would the CDTer who thinks they will become an EDTer before round 2 starts.) Arif <span class="citation" data-cites="Ahmed2020">Ahmed (<a href="references.html#ref-Ahmed2020" role="doc-biblioref">2020</a>)</span> responds that this is an unfair criticism. In Wells’s cases, he says, the EDT and CDT deciders are not in equivalent situations in round one. The EDTer knows that they will use EDT in later rounds, and the CDTer knows that they will use CDT in later rounds. So they have different evidence about what will happen at some later time in a way that’s relevant to their current decision, so it’s not a like-for-like comparison between CDT and EDT at the first stage.</p>
 <p>I don’t think this is a fair criticism of Wells, or a successful defence of EDT. But even if you think Ahmed has shown how EDT survives Wells’s criticisms, his response doesn’t work here. Chooser will definitely choose Up if the coin lands Heads, whether they follow EDT, Gallow’s theory, or any remotely plausible theory. And this is common knowledge. Demon knows this, and Chooser knows that Demon knows it, and so on. The only difference is that if Chooser follows EDT, they will play Down if Tails. And that’s good as far as it goes; they’ll probably get the highest possible payoff they can get at that point. More importantly for this debate, they will have the same subjective states if Tails is true whether they follow EDT, Gallow’s theory, or anything else. They will believe that they would have played Up if Heads, and that the Demon would have predicted that. So the different choices they make if the coin lands Tails can’t be traced back to differences in their subjective states. So the complaint that Ahmed makes about Wells’s examples can’t be made here (even setting aside the question of whether it is a fair complaint). Nonetheless, the EDTer ends up with less money in the long run than the follower of Gallow’s theory when playing this game.</p>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
 <div id="ref-Ahmed2020" class="csl-entry" role="listitem">
 Ahmed, Arif. 2020. <span>“Equal Opportunities in Newcomb’s Problem and Elsewhere.”</span> <em>Mind</em> 129 (515): 867–86. <a href="https://doi.org/10.1093/mind/fzz073">https://doi.org/10.1093/mind/fzz073</a>.
 </div>
@@ -517,6 +548,33 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       } else {
         el.classList.add('notransition');
       }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
     }
   }
   const toggleColorMode = (alternate) => {
@@ -585,13 +643,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return localAlternateSentinel;
     }
   }
-  let localAlternateSentinel = 'default';
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
   // Dark / light mode switch
   window.quartoToggleColorScheme = () => {
     // Read the current dark / light value 
     let toAlternate = !hasAlternateSentinel();
     toggleColorMode(toAlternate);
     setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
   };
   // Ensure there is a toggle, if there isn't float one in the top right
   if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
@@ -670,10 +730,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -683,8 +742,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -697,6 +765,128 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    const typesetMath = (el) => {
+      if (window.MathJax) {
+        // MathJax Typeset
+        window.MathJax.typeset([el]);
+      } else if (window.katex) {
+        // KaTeX Render
+        var mathElements = el.getElementsByClassName("math");
+        var macros = [];
+        for (var i = 0; i < mathElements.length; i++) {
+          var texText = mathElements[i].firstChild;
+          if (mathElements[i].tagName == "SPAN") {
+            window.katex.render(texText.data, mathElements[i], {
+              displayMode: mathElements[i].classList.contains('display'),
+              throwOnError: false,
+              macros: macros,
+              fleqn: false
+            });
+          }
+        }
+      }
+    }
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        for (let i = 0; i < 2; i++) {
+          container.appendChild(note.children[i].cloneNode(true));
+        }
+        typesetMath(container);
+        return container.innerHTML
+      } else {
+        typesetMath(note);
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      typesetMath(note);
+      return note.innerHTML;
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -740,6 +930,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -765,6 +956,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -826,12 +1043,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./rps.html" class="pagination-link">
+      <a href="./rps.html" class="pagination-link  aria-label=" &lt;span="">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Rock-Paper-Scissors</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./buchak.html" class="pagination-link">
+      <a href="./buchak.html" class="pagination-link" aria-label="<span class='chapter-number'>E</span>&nbsp; <span class='chapter-title'>Risk-Weighted Utility</span>">
         <span class="nav-page-text"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Risk-Weighted Utility</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
@@ -840,4 +1057,5 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/bweatherson/gtadt/issues/new" class="toc-action">Report an issue</a></p></div></div></div></div></footer></body></html>
+
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/bweatherson/gtadt/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
