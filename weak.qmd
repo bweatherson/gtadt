@@ -97,7 +97,7 @@ From all this, I conclude that iterated weak dominance reasoning rests on a fall
 
 This argument might, for some readers, trigger guilt by association concerns. If initially appealing reasoning like the 1-5 inference in @sec-weak-iterate is wrong, might it also be that iterated strong dominance reasoning rests on a fallacy?
 
-I suspect that concern is at least half-right; some informal presentations of iterated strong dominance reasoning probably does commit exactly the same fallacy. But it turns out not to matter; we have independent reason to accept iterated strong dominance
+I suspect that concern is at least half-right; some informal presentations of iterated strong dominance reasoning probably do commit exactly the same fallacy. But it turns out not to matter; we have independent reason to accept iterated strong dominance
 
 The reason comes from the theorem of Pearce's that I mentioned back in @sec-no-ratify, in the context of discussing [The Frustrator](causal.qmd#tbl-frustrator). Pearce goes on to show something stronger than what I described there, but it needs a little more terminology to state it.
 
@@ -117,7 +117,7 @@ This line of questioning could go on indefinitely. Presumably *Pr*~2~ isn't defi
 
 This, ultimately, is why I think dominance reasoning, and in particular iterated dominance reasoning, should be incorporated into our decision theory. Using dominance reasoning is a somewhat convenient shorthand for what we should be doing, namely finding rationalisable strategies.
 
-To be sure, I think we should do somewhat more than find rationalisable strategies. We should also find strategies that are not weakly dominated (as argued in @sec-weak), and which are substantively rational (as argued in @sec-substantive). But the first necessary step is to remove the non-rationalisable strategies.
+To be sure, I think we should do somewhat more than find rationalisable strategies. We should also find strategies that are not weakly dominated (as argued in @sec-weak-avoid), and which are substantively rational (as argued in @sec-substantive). But the first necessary step is to remove the non-rationalisable strategies.
 
 ## Summary {#sec-weak-summary}
 

@@ -18,21 +18,27 @@ I'm going to offer two arguments against this. First, I'll argue that this notio
 
 ## Against Structural Rationality {#sec-against-structural}
 
-At least sometimes, game theorists impose non-structural, substantive conditions on the beliefs of players. Most notably, the "intuitive criterion" of @ChoKreps1987 is meant to be continuous with other equilibrium conditions, and is a substantive constraint. Someone who violates it has coherent beliefs that don't conform to their evidence. The intuitive criterion takes some time to set up, but I'll get to a simplified version of it later in this section.
+In this section I'll note some general reasons for scepticism about this use of the substantive-structural distinction. One obvious reason is that Piz and Za do not look like rational choosers. 
 
-First, I'll note some general reasons for scepticism about this use of the substantive-structural distinction. One obvious point is that Piz and Za do not look like rational choosers. Another is that this draws distinctions between overly similar characters, such as these two, Cla and Sic. Both of them have taken classes in classical statistics, but only skimmed the textbooks without attending to the details. Cla came away with the belief that any experiment with a *P* value less than 0.05 proved that its hypothesis is true. Sic came away with a standing disposition to belief the hypothesis whenever there was an experiment with a *P* value less than 0.05. Cla is incoherent; there is no possible world where that belief is true. Sic is coherent; any one of their beliefs could be true. It's just they just have a disposition to often form substantially irrational beliefs. Personally, I don't think the difference between Cla and Sic is important enough to be philosophically load bearing. Lastly, it has proven incredibly hard to even define what makes a norm structural. The most important recent attempt is in Alex Worsnip's book *Fitting Things Together: Coherence and the Demands of Structural Rationality* [@Worsnip2021]. Here's his definition:
+Another reason is that distinguishing structural from substantive rationality this draws distinctions where we should be seeing similarities. To see this, consider two more characters: Cla and Sic. Both of them have taken classes in classical statistics, but only skimmed the textbooks without attending to the details. Cla came away with the belief that any experiment with a *P* value less than 0.05 proved that its hypothesis is true. Sic came away with a standing disposition to belief the hypothesis whenever there was an experiment with a *P* value less than 0.05. Cla is incoherent; there is no possible world where that belief is true. Sic is coherent; any one of their beliefs could be true. It's just they just have a disposition to often form substantially irrational beliefs. Personally, I don't think the difference between Cla and Sic is important enough to be philosophically load bearing. 
+
+Lastly, it has proven incredibly hard to even define what makes a norm structural. The most important recent attempt is in Alex Worsnip's book *Fitting Things Together: Coherence and the Demands of Structural Rationality* [@Worsnip2021]. Here's his definition:
 
 > *Incoherence Test*. A set of attitudinal mental states is jointly incoherent iff it is (partially) constitutive of (at least some of) the states in the set that any agent who holds this set of states has a disposition, when conditions of full transparency are met, to revise at least one of the states. [@Worsnip2021, 132]
 
-This won't capture nearly enough. If probabilism is correct, then non-probabilists about uncertainty like Glenn @Shafer1976 endorse incoherent views. If expectationalism is correct, then non-expectationalist decision theorists, like Lara @BuchakRisk, endorse incoherent views. If classical logic is correct, then intuitionist logicians like Crispin @WrightVaguenessCollection are incoherent. Those three all seem to meet Worsnip's conditions of full transparency, and don't seem disposed to revise their beliefs. Maybe this is just a problem with Worsnip's definition, but it is also a reason to be sceptical that there even is a distinction to be drawn here. Wooram @Leend raises some different challenges for Worsnip, and offers a rival theory. But for that theory to work, Lee requires that when a dialethist proposes to solve the Liar Paradox by saying the liar sentence is both true and not true, they are being insincere. The idea is that sincerely saying *p* requires believing *p* and not believing its negation. But this simply isn't part of the concept of sincerity, and as much as I find the dialethist solution to the Liar implausible, I think the dialethists I know have been perfectly sincere in offering it. Maybe there is some theory of coherence waiting to be found, but the search for one feels like a degenerating research program.[^substantive-3]
+This won't capture nearly enough. If probabilism is correct, then non-probabilists about uncertainty like Glenn @Shafer1976 endorse incoherent views. If expectationalism is correct, then non-expectationalist decision theorists, like Lara @BuchakRisk, endorse incoherent views. If classical logic is correct, then intuitionist logicians like Crispin @WrightVaguenessCollection are incoherent. Those three all seem to meet Worsnip's conditions of full transparency, and don't seem disposed to revise their beliefs. 
+
+Maybe this is just a problem with Worsnip's definition, but it is also a reason to be sceptical that there even is a distinction to be drawn here. Wooram @Leend raises some different challenges for Worsnip, and offers a rival theory. But for that theory to work, Lee requires that when a dialethist proposes to solve the Liar Paradox by saying the liar sentence is both true and not true, they are being insincere. The idea is that sincerely saying *p* requires believing *p* and not believing its negation. But this simply isn't part of the concept of sincerity. As much as I find the dialethist solution to the Liar implausible, I think the dialethists I know have been perfectly sincere in offering it. 
+
+Maybe there is some theory of coherence waiting to be found, but the search for one feels like a degenerating research program.[^substantive-3]
 
 [^substantive-3]: See also @Heinzelmannnd for a different set of reasons to be sceptical that there is a notion of coherence that can do the work its philosophical defenders want.
 
 ## The Beer-Quiche Game {#sec-beer-quiche}
 
-Even if the substantive/structural distinction can be made precise, and shown to do philosophical work, it won't track the notion game theorists most care about. We can see this with a version of the beer-quiche game @ChoKreps1987, here translated into decision-theoretic language.
+Even if the substantive/structural distinction can be made precise, and shown to do philosophical work, it won't track the notion game theorists most care about. We can see this with a version of the beer-quiche game developed by @ChoKreps1987. In this section I'll translate that game into decision-theoretic language, and say why it shows that decision theory should care about substantive, and not just structural, rationality.
 
-There are five steps in the game. (I'm going to call it the beer-quiche game to refer back to Cho and Kreps, and to distinguish it from the similar game earlier that is shown in @fig-second-anti-war,)
+There are five steps in the game. (I'm going to call it the beer-quiche game to refer back to Cho and Kreps, and to distinguish it from the similar game earlier that is shown in @fig-second-anti-war.)
 
 1.  A coin will be flipped, landing Heads or Tails. It is biased, 60% likely to land Heads. It will be shown to Chooser, but not to Demon.
 2.  Chooser will say either Heads or Tails.
@@ -44,7 +50,7 @@ There are five steps in the game. (I'm going to call it the beer-quiche game to 
 
 [^substantive-5]: If both are equally likely, Demon will flip a fair coin and say how it lands.
 
-If you prefer things in table form, the payouts are in @tbl-cho-kreps.
+If you prefer things in table form, the payouts of the game are in @tbl-cho-kreps.
 
 | Coin | Chooser | Demon | Dollars |
 |:----:|:-------:|:-----:|:-------:|
@@ -59,7 +65,7 @@ If you prefer things in table form, the payouts are in @tbl-cho-kreps.
 
 : The beer-quiche game in table form. {#tbl-cho-kreps}
 
-Or in graphical form it looks like @fig-cho-kreps.
+Or in graphical form the game looks like @fig-cho-kreps.
 
 ```{r engine='tikz'}
 #| label: fig-cho-kreps
