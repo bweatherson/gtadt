@@ -165,7 +165,7 @@ The 'ratificationism' in causal ratificationism means that Chooser will ratify t
 [^intro-3]: In general, the sum on each side of the inequality ranges over all possible states, so if there are more than two states, there will be more than two summands on either side. And A must be ratified compared to all alternatives, so if there are more than two options, this inequality must hold if you replace B with C, D, or any other choice.
 
 |                                                                                   |
-|:----------------------------------------------------------------------:|
+|:---------------------------------------------------------------------------------:|
 | V(APA) · Pr~A~(PA) + V(APB) · Pr~A~(PB) ≥ V(BPA) · Pr~A~(PA) + V(BPB) · Pr~A~(PB) |
 
 By Pr~A~ I mean the rational probabilities that Chooser has after choosing A. If there is more than one rational probability that Chooser could have, all that matters is that the inequality hold for one such probability function.[^intro-4] In somewhat technical English, what this inequality says is that once A is chosen, the expected value of choosing A is at least as great as the expected value of having chosen B. That's what I mean by ratifiability; once Chooser selects A, they think it was for the best (or at least equal best) that they chose it.

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.340">
+<meta name="generator" content="quarto-1.4.470">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -24,6 +24,7 @@ ul.task-list li input[type="checkbox"] {
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -68,7 +69,13 @@ div.csl-indent {
   "collapse-after": 3,
   "panel-placement": "start",
   "type": "textbox",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -78,7 +85,8 @@ div.csl-indent {
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 <script type="application/json" class="js-hypothesis-config">
@@ -87,6 +95,11 @@ div.csl-indent {
 }
 </script>
 <script async="" src="https://hypothes.is/embed.js"></script>
+<script>
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    document.body.classList.add('hypothesis-enabled');
+  });
+</script>
 <link rel="stylesheet" href="https://use.typekit.net/uzz2drx.css">
 
 
@@ -98,13 +111,13 @@ div.csl-indent {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./expectationist.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Expectationist</span></a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./expectationist.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Expectationist</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -113,7 +126,7 @@ div.csl-indent {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Game Theory as Decision Theory</a> 
@@ -304,7 +317,7 @@ div.csl-indent {
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar"><div class="quarto-margin-header"><div class="margin-header-item">
 <p>&nbsp;</p>
@@ -329,24 +342,26 @@ div.csl-indent {
   </div>
   
 
+
 </header>
 
-<div class="page-columns page-full"><p>There is a strange split in contemporary decision theory. On the one hand, there are questions about the way to model attitudes to risk, largely organised around the challenge to orthodoxy from <span class="citation" data-cites="Quiggin1982">Quiggin (<a href="references.html#ref-Quiggin1982" role="doc-biblioref">1982</a>)</span> and <span class="citation" data-cites="BuchakRisk">Buchak (<a href="references.html#ref-BuchakRisk" role="doc-biblioref">2013</a>)</span>. On the other hand, there are questions about what to do in cases where the states are causally but not probabilistically independent of one’s actions, with the central case being Newcomb’s Problem. The strange split is that these two literatures have almost nothing in common.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p><div class="no-row-height column-margin column-container"><li id="fn1"><p><sup>1</sup>&nbsp;There is a survey article from a few years ago - <span class="citation" data-cites="Elliot2019">Elliott (<a href="references.html#ref-Elliot2019" role="doc-biblioref">2019</a>)</span> - that has summaries of the then state-of-the-art on these two questions. And it makes it very striking how little the literatures on each of them overlap.</p></li></div></div>
-<p>This split might seem to make sense when one reflects that there is no logical difficulty in endorsing any prominent answer to one set of questions with any prominent answer to the other set. But things get more difficult quickly. For one thing, one answer to questions about risk, what I’ll call the expectationist answer, is universally assumed by people working on issues around Newcomb’s Problem. For another, the argument forms used in the two debates are similar, and that should affect how the two arguments go.&nbsp;</p>
+
+<p>There is a strange split in contemporary decision theory. On the one hand, there are questions about the way to model attitudes to risk, largely organised around the challenge to orthodoxy from <span class="citation" data-cites="Quiggin1982">Quiggin (<a href="references.html#ref-Quiggin1982" role="doc-biblioref">1982</a>)</span> and <span class="citation" data-cites="BuchakRisk">Buchak (<a href="references.html#ref-BuchakRisk" role="doc-biblioref">2013</a>)</span>. On the other hand, there are questions about what to do in cases where the states are causally but not probabilistically independent of one’s actions, with the central case being Newcomb’s Problem. The strange split is that these two literatures have almost nothing in common.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<div class="no-row-height column-margin column-container"><li id="fn1"><p><sup>1</sup>&nbsp;There is a survey article from a few years ago - <span class="citation" data-cites="Elliot2019">Elliott (<a href="references.html#ref-Elliot2019" role="doc-biblioref">2019</a>)</span> - that has summaries of the then state-of-the-art on these two questions. And it makes it very striking how little the literatures on each of them overlap.</p></li></div><p>This split might seem to make sense when one reflects that there is no logical difficulty in endorsing any prominent answer to one set of questions with any prominent answer to the other set. But things get more difficult quickly. For one thing, one answer to questions about risk, what I’ll call the expectationist answer, is universally assumed by people working on issues around Newcomb’s Problem. For another, the argument forms used in the two debates are similar, and that should affect how the two arguments go.&nbsp;</p>
 <p>Say that a normal decision problem is one where the states are probabilistically independent of the choices. A simple example is betting on a coin flip. In talking about normal decision problems I’ll normally label the states H, for Heads, or T for Tails. Unless otherwise stated coins are fair, so H and T are equiprobable.&nbsp;And say that an abnormal decision problem is simply one that isn’t normal. A simple example is where the states are predictions of an arbitrarily accurate predictor.</p>
-<div class="page-columns page-full"><p>The view I call expectationism has two parts. First, it says that in normal decision problems, the rational agent maximises the expected value of something like the value of their action. So if the states are H and T, the expected value of a choice X is V(XH)Pr(H)&nbsp;+&nbsp;V(XT)Pr(T), and the expectationist says to choose the choice with the highest expected value.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> Second, it says that something like this expected value plays an important role in the theory of abnormal decision problems. What’s an important role is vague, so there are possible borderline cases. But in practice this doesn’t arise, at least in the philosophy literature. Everyone working on abnormal problems is an expectationist. Indeed, most work assumes without even saying it that the first clause of expectationism is correct. Everyone working on normal problems makes it clear which side they fall on, so there is no vagueness there. And every game theory text is expectationist.&nbsp;</p><div class="no-row-height column-margin column-container"><li id="fn2"><p><sup>2</sup>&nbsp;Some theorists will put conditional probabilities in place of probabilities in this formula, so they’ll use Pr(H|X) rather than Pr(H). But since we’re restricting attention to normal problems, this is a distinction without a relevant difference.</p></li></div></div>
-<p>I’m going to mostly follow suit. So why am I belabouring this point? One small reason and one large reason. The small reason is that one of the arguments I’ll give concerning abnormal cases generalises to an argument for expectationism about normal cases. I go over the details of this in <a href="buchak.html"><span>Appendix&nbsp;E</span></a>. The other reason is dialectical.</p>
-<div class="page-columns page-full"><p>Expectationism does a surprisingly bad job at matching untutored intuition about cases. In some important sense, it says that risk-aversion is irrational.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> But intuition says that risk-aversion is rational. To be sure, expectationism does have things to say here. There is something like risk-aversion which makes sense given the declining marginal utility of money.<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> And, I think, expectationism can explain why risk-aversion seems rational to people who primarily think about bets in terms of goods with declining marginal value. But still, the expectationist is playing defence here. It seems intuitively like risk-aversion is rational, and as <span class="citation" data-cites="Allais1953">Allais (<a href="references.html#ref-Allais1953" role="doc-biblioref">1953</a>)</span> showed, this implies that expectationism says unintuitive things about some fairly simple cases.</p><div class="no-row-height column-margin column-container"><li id="fn3"><p><sup>3</sup>&nbsp;More precisely, it says the following. If B is between A and C in value, and the difference in value between A and B equals the difference in value between B and C, then a rational agent will be indifferent between getting B for sure, and a 50/50 chance of getting A or C. The risk-averse agent, in the sense of risk-aversion at issue here, will prefer B.</p></li><li id="fn4"><p><sup>4</sup>&nbsp;To modify the example of the previous footnote, if A, B and C are monetary rewards, and B is half-way between A and C in terms of its monetary value, then expectationism says that an agent can, and probably should, prefer B to a 50/50 chance of getting A or C.</p></li></div></div>
-<p>Given that, it is surprising how many expectationists rely on intuitions about cases when assessing the merits of different theories of decision in abnormal cases. It often seems, when reading this part of the literature, that philosophical decision theorists endorse the following argument schema.</p>
+<p>The view I call expectationism has two parts. First, it says that in normal decision problems, the rational agent maximises the expected value of something like the value of their action. So if the states are H and T, the expected value of a choice X is V(XH)Pr(H)&nbsp;+&nbsp;V(XT)Pr(T), and the expectationist says to choose the choice with the highest expected value.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> Second, it says that something like this expected value plays an important role in the theory of abnormal decision problems. What’s an important role is vague, so there are possible borderline cases. But in practice this doesn’t arise, at least in the philosophy literature. Everyone working on abnormal problems is an expectationist. Indeed, most work assumes without even saying it that the first clause of expectationism is correct. Everyone working on normal problems makes it clear which side they fall on, so there is no vagueness there. And every game theory text is expectationist.&nbsp;</p>
+<div class="no-row-height column-margin column-container"><li id="fn2"><p><sup>2</sup>&nbsp;Some theorists will put conditional probabilities in place of probabilities in this formula, so they’ll use Pr(H|X) rather than Pr(H). But since we’re restricting attention to normal problems, this is a distinction without a relevant difference.</p></li></div><p>I’m going to mostly follow suit. So why am I belabouring this point? One small reason and one large reason. The small reason is that one of the arguments I’ll give concerning abnormal cases generalises to an argument for expectationism about normal cases. I go over the details of this in <a href="buchak.html" class="quarto-xref"><span>Appendix&nbsp;E</span></a>. The other reason is dialectical.</p>
+<p>Expectationism does a surprisingly bad job at matching untutored intuition about cases. In some important sense, it says that risk-aversion is irrational.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> But intuition says that risk-aversion is rational. To be sure, expectationism does have things to say here. There is something like risk-aversion which makes sense given the declining marginal utility of money.<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> And, I think, expectationism can explain why risk-aversion seems rational to people who primarily think about bets in terms of goods with declining marginal value. But still, the expectationist is playing defence here. It seems intuitively like risk-aversion is rational, and as <span class="citation" data-cites="Allais1953">Allais (<a href="references.html#ref-Allais1953" role="doc-biblioref">1953</a>)</span> showed, this implies that expectationism says unintuitive things about some fairly simple cases.</p>
+<div class="no-row-height column-margin column-container"><li id="fn3"><p><sup>3</sup>&nbsp;More precisely, it says the following. If B is between A and C in value, and the difference in value between A and B equals the difference in value between B and C, then a rational agent will be indifferent between getting B for sure, and a 50/50 chance of getting A or C. The risk-averse agent, in the sense of risk-aversion at issue here, will prefer B.</p></li><li id="fn4"><p><sup>4</sup>&nbsp;To modify the example of the previous footnote, if A, B and C are monetary rewards, and B is half-way between A and C in terms of its monetary value, then expectationism says that an agent can, and probably should, prefer B to a 50/50 chance of getting A or C.</p></li></div><p>Given that, it is surprising how many expectationists rely on intuitions about cases when assessing the merits of different theories of decision in abnormal cases. It often seems, when reading this part of the literature, that philosophical decision theorists endorse the following argument schema.</p>
 <ol type="1">
 <li>The correct decision theory is the one that best tracks intuitions about cases.</li>
 <li>The decision theory that best tracks intuitions about cases is T (the preferred theory of the person making the argument).</li>
 <li>Therefore, the correct decision theory is T.</li>
 </ol>
 <p>If the philosopher is an expectationist, they can’t really endorse this argument. Premise 2 can’t possibly be true. No matter how well theory theory does at tracking intuitions about abnormal cases, a modified version of their theory that allows for risk-aversion will do an even better job, especially when normal cases are considered. And for that reason, they can’t really believe premise 1. After all, if premise 1 is true, then the correct decision theory for normal decision problems is not expectationist.</p>
-<p>So this means that arguments like this one should not be used in decision theory. Of course, we can’t entirely depart from intuitions about cases. If our theory disagrees too much with common sense it starts becoming a theory of something else <span class="citation" data-cites="Jackson1998">(<a href="references.html#ref-Jackson1998" role="doc-biblioref">Jackson 1998</a>, Ch. 2)</span>. The role of intuitions is like the drawing on a wanted poster. It’s not true that the criminal is the person who best resembles the drawing, but you should be very sceptical of a theory that the criminal looks nothing at all like the poster. Still, you should also be sceptical of a theory that the criminal is someone who lacks what we thought were necessary skills for committing the crime, even if the person who most resembles the poster lacks those skills. One aim of this book is to develop several plausible preconditions on a good theory of decision, most importantly the Single Choice Principle of <a href="indecisive.html"><span>Chapter&nbsp;8</span></a>, and argue that only GDT (or something like it) satisfies those preconditions. That’s more philosophically significant than whether GDT best tracks intuitions about cases.</p>
-<div class="page-columns page-full"><p>If expectationism does not maximise agreement with intuition, why is it so popular? It is because there are several plausible principles that are consistent with expectationism, but which are not consistent with the best alternative, namely the Quiggin-Buchak theory. These include<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a>:</p><div class="no-row-height column-margin column-container"><li id="fn5"><p><sup>5</sup>&nbsp;Philosophers often attribute the result that expectationism implies News is Valuable to <span class="citation" data-cites="Good1967">Good (<a href="references.html#ref-Good1967" role="doc-biblioref">1967</a>)</span>, but it’s really just a reformulation of a result due to David <span class="citation" data-cites="Blackwell1951">Blackwell (<a href="references.html#ref-Blackwell1951" role="doc-biblioref">1951</a>)</span>, which I think is a better attribution. That said, <span class="citation" data-cites="Das2023">Das (<a href="references.html#ref-Das2023" role="doc-biblioref">2023</a>)</span> notes that a similar result is in an old note by C. S. <span class="citation" data-cites="Peirce1876">Peirce (<a href="references.html#ref-Peirce1876" role="doc-biblioref">1967</a>)</span>, first published in an academic setting in 1967, but (according to <span class="citation" data-cites="Wible1994">Wible (<a href="references.html#ref-Wible1994" role="doc-biblioref">1994</a>)</span>), published in a US government report in 1879. So maybe the result is very old.</p></li></div></div>
-<dl>
+<p>So this means that arguments like this one should not be used in decision theory. Of course, we can’t entirely depart from intuitions about cases. If our theory disagrees too much with common sense it starts becoming a theory of something else <span class="citation" data-cites="Jackson1998">(<a href="references.html#ref-Jackson1998" role="doc-biblioref">Jackson 1998</a>, Ch. 2)</span>. The role of intuitions is like the drawing on a wanted poster. It’s not true that the criminal is the person who best resembles the drawing, but you should be very sceptical of a theory that the criminal looks nothing at all like the poster. Still, you should also be sceptical of a theory that the criminal is someone who lacks what we thought were necessary skills for committing the crime, even if the person who most resembles the poster lacks those skills. One aim of this book is to develop several plausible preconditions on a good theory of decision, most importantly the Single Choice Principle of <a href="indecisive.html" class="quarto-xref"><span>Chapter&nbsp;8</span></a>, and argue that only GDT (or something like it) satisfies those preconditions. That’s more philosophically significant than whether GDT best tracks intuitions about cases.</p>
+<p>If expectationism does not maximise agreement with intuition, why is it so popular? It is because there are several plausible principles that are consistent with expectationism, but which are not consistent with the best alternative, namely the Quiggin-Buchak theory. These include<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a>:</p>
+<div class="no-row-height column-margin column-container"><li id="fn5"><p><sup>5</sup>&nbsp;Philosophers often attribute the result that expectationism implies News is Valuable to <span class="citation" data-cites="Good1967">Good (<a href="references.html#ref-Good1967" role="doc-biblioref">1967</a>)</span>, but it’s really just a reformulation of a result due to David <span class="citation" data-cites="Blackwell1951">Blackwell (<a href="references.html#ref-Blackwell1951" role="doc-biblioref">1951</a>)</span>, which I think is a better attribution. That said, <span class="citation" data-cites="Das2023">Das (<a href="references.html#ref-Das2023" role="doc-biblioref">2023</a>)</span> notes that a similar result is in an old note by C. S. <span class="citation" data-cites="Peirce1876">Peirce (<a href="references.html#ref-Peirce1876" role="doc-biblioref">1967</a>)</span>, first published in an academic setting in 1967, but (according to <span class="citation" data-cites="Wible1994">Wible (<a href="references.html#ref-Wible1994" role="doc-biblioref">1994</a>)</span>), published in a US government report in 1879. So maybe the result is very old.</p></li></div><dl>
 <dt>News is Valuable</dt>
 <dd>
 <p>It is never worse to have more information before making a decision, and it is typically better to have more information.</p>
@@ -367,14 +382,14 @@ div.csl-indent {
 <p>These four principles suggest four arguments for expectationism. First, argue that either expectationism is true, or the Quiggin-Buchak theory is true. Second, argue that one of these principles is a plausible second premise. Then conclude, since the principle rules out the Quiggin-Buchak theory, that expectationism must be true.</p>
 <p>It’s certainly not a requirement of any expectationist that they endorse all four of these arguments. It isn’t even a requirement that they endorse any of these four; they could have some other argument. But since expectationism is not the intuitive theory, it is a requirement that they endorse some argument or other, probably something like one of these, to the conclusion that expectationism is true.</p>
 <p>This is harder than it looks. EDT, for example, rejects both News is Valuable and Sure Thing in Newcomb’s Problem. The news about what Demon has predicted is not, according to EDT, valuable. If Chooser learns what Demon predicted, they will (rationally) choose B, and get, in expectation, a worse return than if they had not learned this and chosen A. And choosing B is preferable conditional on either the Demon predicting, or not predicting, that Chooser will choose A. But A is preferable overall.</p>
-<p>That said, it’s not like all versions of CDT endorse these principles either. There are a lot of intuitive counterexamples to News is Valuable. It’s good to avoid spoilers for movies or football matches. In asymmetric coordination games (such as <a href="gad.html#tbl-bach-stravinsky">Table&nbsp;<span>A.9</span></a> in <a href="gad.html"><span>Appendix&nbsp;A</span></a>), it’s bad to have it be conventional wisdom that you know what the other person will do. You’re sure not to get the best result that way. <span class="citation" data-cites="Das2023">Das (<a href="references.html#ref-Das2023" role="doc-biblioref">2023</a>)</span> argues that even given expectationism, the argument for News is Valuable fails on externalist conceptions of evidence. There is more to say about each of these cases, but the problems for News is Valuable are substantial enough that it doesn’t seem like a good premise in an argument against a decision theory.</p>
-<div class="page-columns page-full"><p>And, perhaps more surprisingly, there are versions of CDT that reject Sure Thing. Dmitri <span class="citation" data-cites="Gallownd">Gallow (<a href="references.html#ref-Gallownd" role="doc-biblioref">n.d.</a>)</span> argues that any version of CDT which is ‘stable’ in his sense will reject it. I suspect the argument he gives can generalise to some theories that are not stable in his sense as well. GDT avoids his argument only by the expedient of not offering a preference ordering over alternatives; it just says which choices are choice-worthy, not which choices should and should not be preferred to others.<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a> So Sure Thing doesn’t look like a safe starting point either, even if something like it might turn out to be true.</p><div class="no-row-height column-margin column-container"><li id="fn6"><p><sup>6</sup>&nbsp;I’ll have much more to say about this in <a href="select.html"><span>Chapter&nbsp;9</span></a>.</p></li></div></div>
-<p>Still, it isn’t a requirement that an expectationist theory endorse all of these principles. What is required is that they endorse some good argument for expectationism. And, once they’ve endorsed it, they endorse it consistently when they start discussing abnormal problems involving demons. Moreover, they can’t endorse any argument about demons that would imply, if endorsed consistently, that expectationism itself is false.</p>
-<p>I think the best option for most philosophical decision theorists is to endorse something like Substitution of Indifferents. That’s the only plausible principle I can see that is consistent with EDT, and which implies expectationism. That’s not to say I’m endorsing EDT; I’m just saying that the defender of EDT also needs to offer a defence of expectationism, and I think one starting with Substitution of Indifferents is their best option.</p>
-<div class="page-columns page-full"><p>Expectationism has a big practical advantage; it lets us treat the payouts in a game table as expected values, not any kind of final value.<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a> This is useful because it is very rare that a decision problem results in outcomes that have anything like final value. Often we are thinking about decision problems where the payouts are in dollars, or some other currency. That’s to say, we are often considering gambles whose payout is another gamble. Holding some currency is a bet against inflation; in general, the value of currency is typically highly uncertain.<a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a> For the expectationist, this is not a serious theoretical difficulty. As long as a dollar, or a euro, or a peso, has an expected value, we can sensibly talk about decision problems with payouts in those currencies. Depending on just how the non-expectationist thinks about compound gambles, they might have a much harder time handling even simple money bets.<a href="#fn9" class="footnote-ref" id="fnref9" role="doc-noteref"><sup>9</sup></a></p><div class="no-row-height column-margin column-container"><li id="fn7"><p><sup>7</sup>&nbsp;A certain kind of pragmatist might take the reasoning in this paragraph to be an independent argument for expectationism.</p></li><li id="fn8"><p><sup>8</sup>&nbsp;See <span class="citation" data-cites="Alcoba2023">Alcoba (<a href="references.html#ref-Alcoba2023" role="doc-biblioref">2023</a>)</span> for what happens when people start thinking that bet is a bad one.</p></li><li id="fn9"><p><sup>9</sup>&nbsp;Joanna <span class="citation" data-cites="Thoma2019">Thoma (<a href="references.html#ref-Thoma2019" role="doc-biblioref">2019</a>)</span> develops a subtle critique of some non-expectationist theories starting with something like this point.</p></li></div></div>
+<p>That said, it’s not like all versions of CDT endorse these principles either. There are a lot of intuitive counterexamples to News is Valuable. It’s good to avoid spoilers for movies or football matches. In asymmetric coordination games (such as <a href="gad.html#tbl-bach-stravinsky" class="quarto-xref">Table&nbsp;<span>A.9</span></a> in <a href="gad.html" class="quarto-xref"><span>Appendix&nbsp;A</span></a>), it’s bad to have it be conventional wisdom that you know what the other person will do. You’re sure not to get the best result that way. <span class="citation" data-cites="Das2023">Das (<a href="references.html#ref-Das2023" role="doc-biblioref">2023</a>)</span> argues that even given expectationism, the argument for News is Valuable fails on externalist conceptions of evidence. There is more to say about each of these cases, but the problems for News is Valuable are substantial enough that it doesn’t seem like a good premise in an argument against a decision theory.</p>
+<p>And, perhaps more surprisingly, there are versions of CDT that reject Sure Thing. Dmitri <span class="citation" data-cites="Gallownd">Gallow (<a href="references.html#ref-Gallownd" role="doc-biblioref">n.d.</a>)</span> argues that any version of CDT which is ‘stable’ in his sense will reject it. I suspect the argument he gives can generalise to some theories that are not stable in his sense as well. GDT avoids his argument only by the expedient of not offering a preference ordering over alternatives; it just says which choices are choice-worthy, not which choices should and should not be preferred to others.<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a> So Sure Thing doesn’t look like a safe starting point either, even if something like it might turn out to be true.</p>
+<div class="no-row-height column-margin column-container"><li id="fn6"><p><sup>6</sup>&nbsp;I’ll have much more to say about this in <a href="select.html" class="quarto-xref"><span>Chapter&nbsp;9</span></a>.</p></li></div><p>Still, it isn’t a requirement that an expectationist theory endorse all of these principles. What is required is that they endorse some good argument for expectationism. And, once they’ve endorsed it, they endorse it consistently when they start discussing abnormal problems involving demons. Moreover, they can’t endorse any argument about demons that would imply, if endorsed consistently, that expectationism itself is false.</p>
+<p>I think the best option for most philosophical decision theorists is to endorse something like Substitution of Indifferents. That’s the only plausible principle I can see that is consistent with most theories philosophers have offered for dealing with Newcomb-like cases, and which implies expectationism. In particular, it’s the onlyprinciple that’s consistent with <em>Evidential</em> Decision Theory (EDT), is plausible, and implies expectationism, so evidential decision theorists should definitely endorse it. That’s not to say I’m endorsing EDT; I’m just saying that the defender of EDT also needs to offer a defence of expectationism, and I think one starting with Substitution of Indifferents is their only good option.</p>
+<p>Expectationism has a big practical advantage; it lets us treat the payouts in a game table as expected values, not any kind of final value.<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a> This is useful because it is very rare that a decision problem results in outcomes that have anything like final value. Often we are thinking about decision problems where the payouts are in dollars, or some other currency. That’s to say, we are often considering gambles whose payout is another gamble. Holding some currency is a bet against inflation; in general, the value of currency is typically highly uncertain.<a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a> For the expectationist, this is not a serious theoretical difficulty. As long as a dollar, or a euro, or a peso, has an expected value, we can sensibly talk about decision problems with payouts in those currencies. Depending on just how the non-expectationist thinks about compound gambles, they might have a much harder time handling even simple money bets.<a href="#fn9" class="footnote-ref" id="fnref9" role="doc-noteref"><sup>9</sup></a></p>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div class="no-row-height column-margin column-container"><li id="fn7"><p><sup>7</sup>&nbsp;A certain kind of pragmatist might take the reasoning in this paragraph to be an independent argument for expectationism.</p></li><li id="fn8"><p><sup>8</sup>&nbsp;See <span class="citation" data-cites="Alcoba2023">Alcoba (<a href="references.html#ref-Alcoba2023" role="doc-biblioref">2023</a>)</span> for what happens when people start thinking that bet is a bad one.</p></li><li id="fn9"><p><sup>9</sup>&nbsp;Joanna <span class="citation" data-cites="Thoma2019">Thoma (<a href="references.html#ref-Thoma2019" role="doc-biblioref">2019</a>)</span> develops a subtle critique of some non-expectationist theories starting with something like this point.</p></li></div><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
 <div id="ref-Alcoba2023" class="csl-entry" role="listitem">
 Alcoba, Natalie. 2023. <span>“In Argentina, Inflation Passes 100% (and the Restaurants Are Packed).”</span> <em>The New York Times</em>, June 19, 2023. <a href="https://www.nytimes.com/2023/06/19/world/americas/argentina-inflation-peso-restaurants.html">https://www.nytimes.com/2023/06/19/world/americas/argentina-inflation-peso-restaurants.html</a>.
 </div>
@@ -461,6 +476,33 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       }
     }
   }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
   const toggleColorMode = (alternate) => {
     // Switch the stylesheets
     const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
@@ -527,13 +569,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return localAlternateSentinel;
     }
   }
-  let localAlternateSentinel = 'default';
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
   // Dark / light mode switch
   window.quartoToggleColorScheme = () => {
     // Read the current dark / light value 
     let toAlternate = !hasAlternateSentinel();
     toggleColorMode(toAlternate);
     setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
   };
   // Ensure there is a toggle, if there isn't float one in the top right
   if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
@@ -612,10 +656,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -625,8 +668,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -639,6 +691,128 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    const typesetMath = (el) => {
+      if (window.MathJax) {
+        // MathJax Typeset
+        window.MathJax.typeset([el]);
+      } else if (window.katex) {
+        // KaTeX Render
+        var mathElements = el.getElementsByClassName("math");
+        var macros = [];
+        for (var i = 0; i < mathElements.length; i++) {
+          var texText = mathElements[i].firstChild;
+          if (mathElements[i].tagName == "SPAN") {
+            window.katex.render(texText.data, mathElements[i], {
+              displayMode: mathElements[i].classList.contains('display'),
+              throwOnError: false,
+              macros: macros,
+              fleqn: false
+            });
+          }
+        }
+      }
+    }
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        for (let i = 0; i < 2; i++) {
+          container.appendChild(note.children[i].cloneNode(true));
+        }
+        typesetMath(container);
+        return container.innerHTML
+      } else {
+        typesetMath(note);
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      typesetMath(note);
+      return note.innerHTML;
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -682,6 +856,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -707,6 +882,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -768,12 +969,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./idealised.html" class="pagination-link">
+      <a href="./idealised.html" class="pagination-link  aria-label=" &lt;span="">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Idealised</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./causal.html" class="pagination-link">
+      <a href="./causal.html" class="pagination-link" aria-label="<span class='chapter-number'>4</span>&nbsp; <span class='chapter-title'>Causal</span>">
         <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Causal</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
@@ -782,4 +983,5 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/bweatherson/gtadt/issues/new" class="toc-action">Report an issue</a></p></div></div></div></div></footer></body></html>
+
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/bweatherson/gtadt/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>

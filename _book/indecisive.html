@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.340">
+<meta name="generator" content="quarto-1.4.470">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -24,6 +24,7 @@ ul.task-list li input[type="checkbox"] {
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -68,7 +69,13 @@ div.csl-indent {
   "collapse-after": 3,
   "panel-placement": "start",
   "type": "textbox",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -78,7 +85,8 @@ div.csl-indent {
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 <script type="application/json" class="js-hypothesis-config">
@@ -87,6 +95,11 @@ div.csl-indent {
 }
 </script>
 <script async="" src="https://hypothes.is/embed.js"></script>
+<script>
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    document.body.classList.add('hypothesis-enabled');
+  });
+</script>
 <link rel="stylesheet" href="https://use.typekit.net/uzz2drx.css">
 
 
@@ -98,13 +111,13 @@ div.csl-indent {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./indecisive.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Indecisive</span></a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./indecisive.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Indecisive</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -113,7 +126,7 @@ div.csl-indent {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Game Theory as Decision Theory</a> 
@@ -304,7 +317,7 @@ div.csl-indent {
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar"><div class="quarto-margin-header"><div class="margin-header-item">
 <p>&nbsp;</p>
@@ -329,14 +342,20 @@ div.csl-indent {
   </div>
   
 
+
 </header>
+
 
 <p>Game theory is full of <em>solution concepts</em>; ideas for how to solve a game. That is, they are methods for determining the possible outcomes of a game played by rational players. Compared to philosophical decision theory, there are two big things to know about these solution concepts. One is that there are many of them. It isn’t like having a single theory to rule all cases. More complex theories tend to give more intuitive results on more cases. But the complexity is a cost, and in any case no theory gets all the intuitions about all the cases. The other thing is that these will often say that there are multiple possible outcomes for a game, and that knowing the players are rational doesn’t suffice to know what they will do. It’s this latter feature of game theory that I’ll argue here decision theory should imitate.</p>
 <p>Say that a theory is <em>indecisive</em> if for at least one problem it says there are at least two options such that both are rationally permissible, and the options are not equally good. And say, following Ruth <span class="citation" data-cites="Chang2002">Chang (<a href="references.html#ref-Chang2002" role="doc-biblioref">2002</a>)</span>, that two options are equally good if improving either of them by a small amount epsilon would make that one better, i.e., would make it the only permissible choice. So an indecisive theory says that sometimes, multiple choices are permissible, and stay permissible after one or other is sweetened by a small improvement. The vast majority of decision theories on the market are decisive. That’s because they first assign a numerical value to each option, and say to choose with the highest value. This allows multiple options iff multiple choices have the same numerical value. But sweetenings increase the value, so they destroy equality and hence the permissibility of each choice.</p>
-<div class="page-columns page-full"><p>Perhaps the most intuitive case for indecisiveness involves what I’ll call Stag Hunt decisions.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> Here is an example of a Stag Hunt decision.</p><div class="no-row-height column-margin column-container"><li id="fn1"><p><sup>1</sup>&nbsp;For much more on the philosophical importance of Stag Hunts, see <span class="citation" data-cites="Skyrms2004">Skyrms (<a href="references.html#ref-Skyrms2004" role="doc-biblioref">2004</a>)</span>.</p></li></div></div>
-<div id="tbl-stag-hunt" class="anchored">
+<p>Perhaps the most intuitive case for indecisiveness involves what I’ll call Stag Hunt decisions.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> Here is an example of a Stag Hunt decision.</p>
+<div class="no-row-height column-margin column-container"><li id="fn1"><p><sup>1</sup>&nbsp;For much more on the philosophical importance of Stag Hunts, see <span class="citation" data-cites="Skyrms2004">Skyrms (<a href="references.html#ref-Skyrms2004" role="doc-biblioref">2004</a>)</span>.</p></li></div><div id="tbl-stag-hunt" class="anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="table quarto-float-caption quarto-float-tbl" id="tbl-stag-hunt-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;8.1: An example of a Stag Hunt.
+</figcaption>
+<div aria-describedby="tbl-stag-hunt-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="table">
-<caption>Table&nbsp;8.1: An example of a Stag Hunt.</caption>
 <tbody>
 <tr class="odd">
 <td style="text-align: center;"></td>
@@ -356,12 +375,18 @@ div.csl-indent {
 </tbody>
 </table>
 </div>
+</figure>
+</div>
 <p>Note three things about this game. First, both Up and Down are ratifiable. Second, Up has a higher expected return than Down. Third, Up has a higher possible regret than Down. If Chooser plays Up and Demon is wrong, Chooser gets 2 less than they might have otherwise. (They get 0 but could have got 2.) If Chooser plays Down and Demon is wrong, Chooser only gets 1 less than they might have otherwise. (They get 5 but could have got 6.)</p>
-<div class="page-columns page-full"><p>There is considerable disagreement about what this means for Chooser. EDT says that Chooser should play Up, as does the ratifiable variant of EDT in <span class="citation" data-cites="Jeffrey1983">Jeffrey (<a href="references.html#ref-Jeffrey1983" role="doc-biblioref">1983</a>)</span>, and some causal decision theorists such as <span class="citation" data-cites="Arntzenius2008">Arntzenius (<a href="references.html#ref-Arntzenius2008" role="doc-biblioref">2008</a>)</span> and <span class="citation" data-cites="Gustafsson2011">Gustafsson (<a href="references.html#ref-Gustafsson2011" role="doc-biblioref">2011</a>)</span>. On the other hand, several other theorists who endorse two-boxing in Newcomb’s Problem, like <span class="citation" data-cites="Wedgwood2013a">Wedgwood (<a href="references.html#ref-Wedgwood2013a" role="doc-biblioref">2013</a>)</span>, <span class="citation" data-cites="Gallow2020">Gallow (<a href="references.html#ref-Gallow2020" role="doc-biblioref">2020</a>)</span>, <span class="citation" data-cites="Podgorski2022">Podgorski (<a href="references.html#ref-Podgorski2022" role="doc-biblioref">2022</a>)</span>, and <span class="citation" data-cites="Barnett2022">Barnett (<a href="references.html#ref-Barnett2022" role="doc-biblioref">2022</a>)</span>, endorse playing Down on the ground of regret miminisation. I think both Up and Down are permissible.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> I also think this is the intuitively right verdict, though I place no weight on that intuition. In general, I think in any problem that has the three features described in the last paragraph (two equilibria, one better according to EDT, the other with lower possible regret), either option is permissible. Since lightly sweetening either Up or Down in this problem doesn’t change either feature, that is why my theory is indecisive.</p><div class="no-row-height column-margin column-container"><li id="fn2"><p><sup>2</sup>&nbsp;The view I’m going to develop is hence similar to the ‘permissive CDT’ defended by <span class="citation" data-cites="Fuscond">Fusco (<a href="references.html#ref-Fuscond" role="doc-biblioref">n.d.</a>)</span>.</p></li></div></div>
-<p>My argument for indecisiveness will turn on a case that all seven of the views mentioned in the last paragraph agree on, namely <a href="#tbl-coord">Table&nbsp;<span>8.2</span></a>.</p>
+<p>There is considerable disagreement about what this means for Chooser. EDT says that Chooser should play Up, as does the ratifiable variant of EDT in <span class="citation" data-cites="Jeffrey1983">Jeffrey (<a href="references.html#ref-Jeffrey1983" role="doc-biblioref">1983</a>)</span>, and some causal decision theorists such as <span class="citation" data-cites="Arntzenius2008">Arntzenius (<a href="references.html#ref-Arntzenius2008" role="doc-biblioref">2008</a>)</span> and <span class="citation" data-cites="Gustafsson2011">Gustafsson (<a href="references.html#ref-Gustafsson2011" role="doc-biblioref">2011</a>)</span>. On the other hand, several other theorists who endorse two-boxing in Newcomb’s Problem, like <span class="citation" data-cites="Wedgwood2013a">Wedgwood (<a href="references.html#ref-Wedgwood2013a" role="doc-biblioref">2013</a>)</span>, <span class="citation" data-cites="Gallow2020">Gallow (<a href="references.html#ref-Gallow2020" role="doc-biblioref">2020</a>)</span>, <span class="citation" data-cites="Podgorski2022">Podgorski (<a href="references.html#ref-Podgorski2022" role="doc-biblioref">2022</a>)</span>, and <span class="citation" data-cites="Barnett2022">Barnett (<a href="references.html#ref-Barnett2022" role="doc-biblioref">2022</a>)</span>, endorse playing Down on the ground of regret miminisation. I think both Up and Down are permissible.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> I also think this is the intuitively right verdict, though I place no weight on that intuition. In general, I think in any problem that has the three features described in the last paragraph (two equilibria, one better according to EDT, the other with lower possible regret), either option is permissible. Since lightly sweetening either Up or Down in this problem doesn’t change either feature, that is why my theory is indecisive.</p>
+<div class="no-row-height column-margin column-container"><li id="fn2"><p><sup>2</sup>&nbsp;The view I’m going to develop is hence similar to the ‘permissive CDT’ defended by <span class="citation" data-cites="Fuscond">Fusco (<a href="references.html#ref-Fuscond" role="doc-biblioref">n.d.</a>)</span>.</p></li></div><p>My argument for indecisiveness will turn on a case that all seven of the views mentioned in the last paragraph agree on, namely <a href="#tbl-coord" class="quarto-xref">Table&nbsp;<span>8.2</span></a>.</p>
 <div id="tbl-coord" class="anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="table quarto-float-caption quarto-float-tbl" id="tbl-coord-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;8.2: An example of a coordination game.
+</figcaption>
+<div aria-describedby="tbl-coord-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="table">
-<caption>Table&nbsp;8.2: An example of a coordination game.</caption>
 <tbody>
 <tr class="odd">
 <td style="text-align: center;"></td>
@@ -381,6 +406,8 @@ div.csl-indent {
 </tbody>
 </table>
 </div>
+</figure>
+</div>
 <p>All of them agree that Up is the uniquely rational play in this example, and I think intuition agrees with them. I’ll argue, however, that Down is permissible. The argument turns on a variation that embeds cite table in a more complicated problem. This problem involves two demons, each of whom are arbitrarily good at predicting Chooser. The (first version of) the problem involves the following sequence.</p>
 <ol type="1">
 <li>Both Demon-1 and Demon-2 predict Chooser, but do not reveal their prediction.</li>
@@ -389,15 +416,22 @@ div.csl-indent {
 <li>Demon-2’s prediction is chosen, and that determines whether we are in state PU or state PD.</li>
 <li>Chooser’s payouts are given by cite above table.</li>
 </ol>
-<p>I’ll call these Exit Problems, and <a href="#tbl-general-exit">Table&nbsp;<span>8.3</span></a> gives the general form of such a problem. Our problem has this abstract of <a href="#tbl-general-exit">Table&nbsp;<span>8.3</span></a> with <em>b</em> = <em>c</em> = <em>e</em> = <em>y</em> = 0, <em>x</em> = 0.5, <em>a</em> = 4, <em>d</em> = 3.</p>
-<div id="tbl-general-exit" class="tbl-parent quarto-layout-panel anchored">
-<div class="panel-caption table-caption">
-<p>Table&nbsp;8.3: The abstract form of an exit problem.</p>
-</div>
+<p>I’ll call these Exit Problems, and <a href="#tbl-general-exit" class="quarto-xref">Table&nbsp;<span>8.3</span></a> gives the general form of such a problem. Our problem has this abstract of <a href="#tbl-general-exit" class="quarto-xref">Table&nbsp;<span>8.3</span></a> with <em>b</em> = <em>c</em> = <em>e</em> = <em>y</em> = 0, <em>x</em> = 0.5, <em>a</em> = 4, <em>d</em> = 3.</p>
+<div id="tbl-general-exit" class="quarto-layout-panel anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="table quarto-float-caption quarto-float-tbl" id="tbl-general-exit-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;8.3: The abstract form of an exit problem.
+</figcaption>
+<div aria-describedby="tbl-general-exit-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="quarto-layout-row quarto-layout-valign-top">
-<div id="tbl-exit-param" class="quarto-layout-cell quarto-layout-cell-subref anchored" data-ref-parent="tbl-general-exit" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="tbl-general-exit" style="flex-basis: 50.0%;justify-content: center;">
+<div id="tbl-exit-param" class="anchored">
+<figure class="quarto-float quarto-subfloat-tbl figure">
+<figcaption class="table quarto-subfloat-caption quarto-subfloat-tbl" id="tbl-exit-param-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) Exit Parameters
+</figcaption>
+<div aria-describedby="tbl-exit-param-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="table">
-<caption>(a) Exit Parameters</caption>
 <tbody>
 <tr class="odd">
 <td style="text-align: center;">Exit Payout</td>
@@ -414,9 +448,17 @@ div.csl-indent {
 </tbody>
 </table>
 </div>
-<div id="tbl-exit-r2g" class="quarto-layout-cell quarto-layout-cell-subref anchored" data-ref-parent="tbl-general-exit" style="flex-basis: 50.0%;justify-content: center;">
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="tbl-general-exit" style="flex-basis: 50.0%;justify-content: center;">
+<div id="tbl-exit-r2g" class="anchored">
+<figure class="quarto-float quarto-subfloat-tbl figure">
+<figcaption class="table quarto-subfloat-caption quarto-subfloat-tbl" id="tbl-exit-r2g-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) Round 2 game
+</figcaption>
+<div aria-describedby="tbl-exit-r2g-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="table">
-<caption>(b) Round 2 game</caption>
 <tbody>
 <tr class="odd">
 <td style="text-align: center;"></td>
@@ -436,7 +478,12 @@ div.csl-indent {
 </tbody>
 </table>
 </div>
+</figure>
 </div>
+</div>
+</div>
+</div>
+</figure>
 </div>
 <p>Now consider a simple variant of the above 5 step problem. The same things happen, but steps 2 and 3 are reversed. That is, Chooser decides on Up or Down after Demons make their predictions, but before they are told whether Demon-1 decided to Exit. Still, their choice will only matter if Demon-1 decided not to Exit, since their choices do not make a difference if Demon-1 Exits. Call this variant the Early Choice version, and the original the Late Choice variant. I don’t have any clear intuitions about what to do in most Exit Problems, save for this constraint on choices.</p>
 <ul>
@@ -449,11 +496,15 @@ div.csl-indent {
 <li>So, <em>p</em> happened. What do you want to do?</li>
 </ol>
 <p>When one is asked to choose a strategy for a tree that has only one possible decision in it, the question one is being asked is that if we get to the point in the tree where one has to decide, what will you do. And the ‘Late Question’ is that that point in the tree has been reached; now what will you do? So the questions fit the schema, and should get the same answers. One could see this as a consequence of applying something like the Ramsey test to conditional questions <span class="citation" data-cites="RamseyGeneralProp">(<a href="references.html#ref-RamseyGeneralProp" role="doc-biblioref">Ramsey 1990</a>)</span>. Denying Exit Principle means treating these two very similar sounding questions differently, and that’s implausible.</p>
-<div class="page-columns page-full"><p>One could also argue, I think correctly, that anyone who violates Exit Principle will violate a plausible version of the Sure Thing Principle.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> Such an argument seems sound to me, but the Sure Thing Principle is controversial, and I prefer to put more weight on the argument from how conditional reasoning works in the previous paragraph. (Indeed, I think using the Exit Principle to motivate a version of the Sure Thing Principle is more plausible than the reverse argument.)</p><div class="no-row-height column-margin column-container"><li id="fn3"><p><sup>3</sup>&nbsp;To be sure, it’s not entirely clear how to even state the Sure Thing Principle in the framework of causal ratificationism. Ratificationism does not output a preference ordering over options; it just says which options are and are not choice-worthy. And exactly how to translate principles like Sure Thing that are usually stated in terms of preference to ones in terms of choiceworthiness isn’t always clear. One consequence of this is that I don’t want to lean on Sure Thing as a premise. Another is that ratificationism isn’t really subject to the objections that <span class="citation" data-cites="Gallownd">Gallow (<a href="references.html#ref-Gallownd" role="doc-biblioref">n.d.</a>)</span> makes to theories that endorse Sure Thing, since the version of Sure Thing he uses is stated in terms of preferences. (Officially, ratificationism is ‘unstable’ in his sense because it doesn’t output a preference ordering over unchosen options; that doesn’t seem like a weakness to me.)</p></li></div></div>
-<p>Any plausible theory that says that only Up is rationally playable in problems like <a href="#tbl-coord">Table&nbsp;<span>8.2</span></a> cite above table will violate Exit Principle. Think about what they will say <a href="#tbl-early-choice">Table&nbsp;<span>8.4</span></a>.</p>
+<p>One could also argue, I think correctly, that anyone who violates Exit Principle will violate a plausible version of the Sure Thing Principle.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> Such an argument seems sound to me, but the Sure Thing Principle is controversial, and I prefer to put more weight on the argument from how conditional reasoning works in the previous paragraph. (Indeed, I think using the Exit Principle to motivate a version of the Sure Thing Principle is more plausible than the reverse argument.)</p>
+<div class="no-row-height column-margin column-container"><li id="fn3"><p><sup>3</sup>&nbsp;To be sure, it’s not entirely clear how to even state the Sure Thing Principle in the framework of causal ratificationism. Ratificationism does not output a preference ordering over options; it just says which options are and are not choice-worthy. And exactly how to translate principles like Sure Thing that are usually stated in terms of preference to ones in terms of choiceworthiness isn’t always clear. One consequence of this is that I don’t want to lean on Sure Thing as a premise. Another is that ratificationism isn’t really subject to the objections that <span class="citation" data-cites="Gallownd">Gallow (<a href="references.html#ref-Gallownd" role="doc-biblioref">n.d.</a>)</span> makes to theories that endorse Sure Thing, since the version of Sure Thing he uses is stated in terms of preferences. (Officially, ratificationism is ‘unstable’ in his sense because it doesn’t output a preference ordering over unchosen options; that doesn’t seem like a weakness to me.)</p></li></div><p>Any plausible theory that says that only Up is rationally playable in problems like <a href="#tbl-coord" class="quarto-xref">Table&nbsp;<span>8.2</span></a> cite above table will violate Exit Principle. Think about what they will say <a href="#tbl-early-choice" class="quarto-xref">Table&nbsp;<span>8.4</span></a>.</p>
 <div id="tbl-early-choice" class="anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="table quarto-float-caption quarto-float-tbl" id="tbl-early-choice-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;8.4: The Early Choice decision.
+</figcaption>
+<div aria-describedby="tbl-early-choice-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="table">
-<caption>Table&nbsp;8.4: The Early Choice decision.</caption>
 <tbody>
 <tr class="odd">
 <td style="text-align: center;"></td>
@@ -476,10 +527,16 @@ div.csl-indent {
 </tbody>
 </table>
 </div>
-<p>In this problem, PUp means that both demons predict Up, PDown means that they both predict Down, and PMixed means that one predicts one, and one the other. This possibility is arbitrarily improbable, and the two strategies have the same expected return given M in any case, so we can ignore it. So really this game comes to <a href="#tbl-early-choice-simplified">Table&nbsp;<span>8.5</span></a>.</p>
+</figure>
+</div>
+<p>In this problem, PUp means that both demons predict Up, PDown means that they both predict Down, and PMixed means that one predicts one, and one the other. This possibility is arbitrarily improbable, and the two strategies have the same expected return given M in any case, so we can ignore it. So really this game comes to <a href="#tbl-early-choice-simplified" class="quarto-xref">Table&nbsp;<span>8.5</span></a>.</p>
 <div id="tbl-early-choice-simplified" class="anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="table quarto-float-caption quarto-float-tbl" id="tbl-early-choice-simplified-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;8.5: The Early Choice decision simplified.
+</figcaption>
+<div aria-describedby="tbl-early-choice-simplified-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="table">
-<caption>Table&nbsp;8.5: The Early Choice decision simplified.</caption>
 <tbody>
 <tr class="odd">
 <td style="text-align: center;"></td>
@@ -499,10 +556,16 @@ div.csl-indent {
 </tbody>
 </table>
 </div>
-<p>Now presumably if one prefers Up in above table, it is because one prefers Up in any game like <a href="#tbl-general-coord">Table&nbsp;<span>8.6</span></a> Table below where <em>x</em> &gt; <em>y</em> &gt; 0.</p>
+</figure>
+</div>
+<p>Now presumably if one prefers Up in above table, it is because one prefers Up in any game like <a href="#tbl-general-coord" class="quarto-xref">Table&nbsp;<span>8.6</span></a> Table below where <em>x</em> &gt; <em>y</em> &gt; 0.</p>
 <div id="tbl-general-coord" class="anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="table quarto-float-caption quarto-float-tbl" id="tbl-general-coord-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;8.6: General coordination game.
+</figcaption>
+<div aria-describedby="tbl-general-coord-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="table">
-<caption>Table&nbsp;8.6: General coordination game.</caption>
 <tbody>
 <tr class="odd">
 <td style="text-align: center;"></td>
@@ -522,12 +585,18 @@ div.csl-indent {
 </tbody>
 </table>
 </div>
-<p>How could it be otherwise? Given expectationism, it’s not like there is anything special about the numbers 4 and 3. But anyone who endorses this policy will play Down <a href="#tbl-early-choice-simplified">Table&nbsp;<span>8.5</span></a> and so, presumably, in <a href="#tbl-early-choice">Table&nbsp;<span>8.4</span></a>. And that means they will violate Exit Principle.</p>
-<p>The only view that is consistent with Exit Principle in cases like <a href="#tbl-general-coord">Table&nbsp;<span>8.6</span></a> is that both Up and Down are permissible. And since in any such case, improving Up or Down be a tiny amount wouldn’t materially change the case, they must both be permissible after small sweetenings. So, given Exit Principle, the only viable theories are indecisive.</p>
-<p>Exit Principle also offers a response to some intuitions that have led people to question CDT in recent years. <a href="#tbl-frustrating-button">Table&nbsp;<span>8.7</span></a> is an example that Jack <span class="citation" data-cites="Spencer2023">Spencer (<a href="references.html#ref-Spencer2023" role="doc-biblioref">2023</a>)</span> used to model the kind of case that’s at issue. As he notes, it is similar to the psychopath button case <span class="citation" data-cites="Egan2007-EGASCT">(<a href="references.html#ref-Egan2007-EGASCT" role="doc-biblioref">Egan 2007</a>)</span>, the asymmetric Death in Damascus case <span class="citation" data-cites="Richter1984">(<a href="references.html#ref-Richter1984" role="doc-biblioref">Richter 1984</a>)</span>, and other puzzles for CDT.</p>
+</figure>
+</div>
+<p>How could it be otherwise? Given expectationism, it’s not like there is anything special about the numbers 4 and 3. But anyone who endorses this policy will play Down <a href="#tbl-early-choice-simplified" class="quarto-xref">Table&nbsp;<span>8.5</span></a> and so, presumably, in <a href="#tbl-early-choice" class="quarto-xref">Table&nbsp;<span>8.4</span></a>. And that means they will violate Exit Principle.</p>
+<p>The only view that is consistent with Exit Principle in cases like <a href="#tbl-general-coord" class="quarto-xref">Table&nbsp;<span>8.6</span></a> is that both Up and Down are permissible. And since in any such case, improving Up or Down be a tiny amount wouldn’t materially change the case, they must both be permissible after small sweetenings. So, given Exit Principle, the only viable theories are indecisive.</p>
+<p>Exit Principle also offers a response to some intuitions that have led people to question CDT in recent years. <a href="#tbl-frustrating-button" class="quarto-xref">Table&nbsp;<span>8.7</span></a> is an example that Jack <span class="citation" data-cites="Spencer2023">Spencer (<a href="references.html#ref-Spencer2023" role="doc-biblioref">2023</a>)</span> used to model the kind of case that’s at issue. As he notes, it is similar to the psychopath button case <span class="citation" data-cites="Egan2007-EGASCT">(<a href="references.html#ref-Egan2007-EGASCT" role="doc-biblioref">Egan 2007</a>)</span>, the asymmetric Death in Damascus case <span class="citation" data-cites="Richter1984">(<a href="references.html#ref-Richter1984" role="doc-biblioref">Richter 1984</a>)</span>, and other puzzles for CDT.</p>
 <div id="tbl-frustrating-button" class="anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="table quarto-float-caption quarto-float-tbl" id="tbl-frustrating-button-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;8.7: Frustrating Button (from <span class="citation" data-cites="Spencer2023">Spencer (<a href="references.html#ref-Spencer2023" role="doc-biblioref">2023</a>)</span>).
+</figcaption>
+<div aria-describedby="tbl-frustrating-button-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="table">
-<caption>Table&nbsp;8.7: Frustrating Button (from <span class="citation" data-cites="Spencer2023">Spencer (<a href="references.html#ref-Spencer2023" role="doc-biblioref">2023</a>)</span>).</caption>
 <tbody>
 <tr class="odd">
 <td style="text-align: center;"></td>
@@ -547,15 +616,24 @@ div.csl-indent {
 </tbody>
 </table>
 </div>
-<p>Apparently the common intuition here is that that Up is the uniquely rational play. Note though that if we embed Frustrating Button in an exit problem, as in <a href="#tbl-frustrating-exit">Table&nbsp;<span>8.8</span></a>, the intuitions shift.</p>
-<div id="tbl-frustrating-exit" class="tbl-parent quarto-layout-panel anchored">
-<div class="panel-caption table-caption">
-<p>Table&nbsp;8.8: An exit problem with Frustrating Button in round 2.</p>
+</figure>
 </div>
+<p>Apparently the common intuition here is that that Up is the uniquely rational play. Note though that if we embed Frustrating Button in an exit problem, as in <a href="#tbl-frustrating-exit" class="quarto-xref">Table&nbsp;<span>8.8</span></a>, the intuitions shift.</p>
+<div id="tbl-frustrating-exit" class="quarto-layout-panel anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="table quarto-float-caption quarto-float-tbl" id="tbl-frustrating-exit-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;8.8: An exit problem with Frustrating Button in round 2.
+</figcaption>
+<div aria-describedby="tbl-frustrating-exit-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="quarto-layout-row quarto-layout-valign-top">
-<div id="tbl-exit-param-fb" class="quarto-layout-cell quarto-layout-cell-subref anchored" data-ref-parent="tbl-frustrating-exit" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="tbl-frustrating-exit" style="flex-basis: 50.0%;justify-content: center;">
+<div id="tbl-exit-param-fb" class="anchored">
+<figure class="quarto-float quarto-subfloat-tbl figure">
+<figcaption class="table quarto-subfloat-caption quarto-subfloat-tbl" id="tbl-exit-param-fb-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) Exit Parameters
+</figcaption>
+<div aria-describedby="tbl-exit-param-fb-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="table">
-<caption>(a) Exit Parameters</caption>
 <tbody>
 <tr class="odd">
 <td style="text-align: center;">Exit Payout</td>
@@ -572,9 +650,17 @@ div.csl-indent {
 </tbody>
 </table>
 </div>
-<div id="tbl-exit-r2g-fb" class="quarto-layout-cell quarto-layout-cell-subref anchored" data-ref-parent="tbl-frustrating-exit" style="flex-basis: 50.0%;justify-content: center;">
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="tbl-frustrating-exit" style="flex-basis: 50.0%;justify-content: center;">
+<div id="tbl-exit-r2g-fb" class="anchored">
+<figure class="quarto-float quarto-subfloat-tbl figure">
+<figcaption class="table quarto-subfloat-caption quarto-subfloat-tbl" id="tbl-exit-r2g-fb-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) Frustrating Button
+</figcaption>
+<div aria-describedby="tbl-exit-r2g-fb-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="table">
-<caption>(b) Frustrating Button</caption>
 <tbody>
 <tr class="odd">
 <td style="text-align: center;"></td>
@@ -594,12 +680,21 @@ div.csl-indent {
 </tbody>
 </table>
 </div>
+</figure>
 </div>
 </div>
-<p>The Early Version of <a href="#tbl-frustrating-exit">Table&nbsp;<span>8.8</span></a> is <a href="#tbl-ev-fe">Table&nbsp;<span>8.9</span></a>.</p>
+</div>
+</div>
+</figure>
+</div>
+<p>The Early Version of <a href="#tbl-frustrating-exit" class="quarto-xref">Table&nbsp;<span>8.8</span></a> is <a href="#tbl-ev-fe" class="quarto-xref">Table&nbsp;<span>8.9</span></a>.</p>
 <div id="tbl-ev-fe" class="anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="table quarto-float-caption quarto-float-tbl" id="tbl-ev-fe-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;8.9: Early Version of <a href="#tbl-frustrating-exit" class="quarto-xref">Table&nbsp;<span>8.8</span></a>.
+</figcaption>
+<div aria-describedby="tbl-ev-fe-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="table">
-<caption>Table&nbsp;8.9: Early Version of <a href="#tbl-frustrating-exit">Table&nbsp;<span>8.8</span></a>.</caption>
 <tbody>
 <tr class="odd">
 <td style="text-align: center;"></td>
@@ -619,11 +714,13 @@ div.csl-indent {
 </tbody>
 </table>
 </div>
-<div class="page-columns page-full"><p>And if there is an intuition here, it is that it’s better to choose Down rather than Up.<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> This violates Exit Principle, and it seems incoherent to say that one would choose Down in this game, when Down just means playing Down in round 2, and if one were to reach round 2, one would prefer Up.</p><div class="no-row-height column-margin column-container"><li id="fn4"><p><sup>4</sup>&nbsp;The theory offered in <span class="citation" data-cites="Spencer2021b">Spencer (<a href="references.html#ref-Spencer2021b" role="doc-biblioref">2021</a>)</span> agrees with intuition here.</p></li></div></div>
-<p>Exit Principle can also be used to argue against the non-expectationist theory offered by Lara <span class="citation" data-cites="BuchakRisk">Buchak (<a href="references.html#ref-BuchakRisk" role="doc-biblioref">2013</a>)</span>, but that argument is more complicated, and I’ll leave it to Appendix Two.</p>
+</figure>
+</div>
+<p>And if there is an intuition here, it is that it’s better to choose Down rather than Up.<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> This violates Exit Principle, and it seems incoherent to say that one would choose Down in this game, when Down just means playing Down in round 2, and if one were to reach round 2, one would prefer Up.</p>
+<div class="no-row-height column-margin column-container"><li id="fn4"><p><sup>4</sup>&nbsp;The theory offered in <span class="citation" data-cites="Spencer2021b">Spencer (<a href="references.html#ref-Spencer2021b" role="doc-biblioref">2021</a>)</span> agrees with intuition here.</p></li></div><p>Exit Principle can also be used to argue against the non-expectationist theory offered by Lara <span class="citation" data-cites="BuchakRisk">Buchak (<a href="references.html#ref-BuchakRisk" role="doc-biblioref">2013</a>)</span>, but that argument is more complicated, and I’ll leave it to Appendix Two.</p>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
 <div id="ref-Arntzenius2008" class="csl-entry" role="listitem">
 Arntzenius, Frank. 2008. <span>“No Regrets; or, Edith Piaf Revamps Decision Theory.”</span> <em>Erkenntnis</em> 68 (2): 277–97. <a href="https://doi.org/10.1007/s10670-007-9084-8">https://doi.org/10.1007/s10670-007-9084-8</a>.
 </div>
@@ -722,6 +819,33 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       }
     }
   }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
   const toggleColorMode = (alternate) => {
     // Switch the stylesheets
     const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
@@ -788,13 +912,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return localAlternateSentinel;
     }
   }
-  let localAlternateSentinel = 'default';
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
   // Dark / light mode switch
   window.quartoToggleColorScheme = () => {
     // Read the current dark / light value 
     let toAlternate = !hasAlternateSentinel();
     toggleColorMode(toAlternate);
     setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
   };
   // Ensure there is a toggle, if there isn't float one in the top right
   if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
@@ -873,10 +999,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -886,8 +1011,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -900,6 +1034,128 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    const typesetMath = (el) => {
+      if (window.MathJax) {
+        // MathJax Typeset
+        window.MathJax.typeset([el]);
+      } else if (window.katex) {
+        // KaTeX Render
+        var mathElements = el.getElementsByClassName("math");
+        var macros = [];
+        for (var i = 0; i < mathElements.length; i++) {
+          var texText = mathElements[i].firstChild;
+          if (mathElements[i].tagName == "SPAN") {
+            window.katex.render(texText.data, mathElements[i], {
+              displayMode: mathElements[i].classList.contains('display'),
+              throwOnError: false,
+              macros: macros,
+              fleqn: false
+            });
+          }
+        }
+      }
+    }
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        for (let i = 0; i < 2; i++) {
+          container.appendChild(note.children[i].cloneNode(true));
+        }
+        typesetMath(container);
+        return container.innerHTML
+      } else {
+        typesetMath(note);
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      typesetMath(note);
+      return note.innerHTML;
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -943,6 +1199,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -968,6 +1225,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -1029,12 +1312,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./dual.html" class="pagination-link">
+      <a href="./dual.html" class="pagination-link  aria-label=" &lt;span="" mandate&lt;="" span&gt;"="">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Dual Mandate</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./select.html" class="pagination-link">
+      <a href="./select.html" class="pagination-link" aria-label="<span class='chapter-number'>9</span>&nbsp; <span class='chapter-title'>Selection</span>">
         <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Selection</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
@@ -1043,4 +1326,5 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/bweatherson/gtadt/issues/new" class="toc-action">Report an issue</a></p></div></div></div></div></footer></body></html>
+
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/bweatherson/gtadt/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
