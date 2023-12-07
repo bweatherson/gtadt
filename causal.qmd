@@ -64,6 +64,33 @@ There are a lot of promissory notes in the last paragraph, but hopefully I've sa
 
 -   Cite Ahmed book for the general problem
 -   Cite Hedden's recent version
+ 
+I'm not going to reply to this problem as much as dismiss it. There are three reasons to think that it isn't the kind of thing we should worry about given the purposes for which CDT is used.
+
+One immediate reason for dismissing it is that this is not a case that satisfies the idealising constraints, and CDT is a theory of ideal decision. If what Chooser can do is determined by the past and the laws, and Chooser doesn't know the past or the laws, then Chooser doesn't know what they can do. And in ideal decision theory, Chooser always knows what they can do. Just what decision theory should look like in situations where the range of possible choices is potentially unknown is quite tricky; I suspect it should not be expectationist. But it's not the problem CDT, or for that matter EDT, is addressing.
+
+Second, I'm not sure we should go along with the claim that the laws are causally independent of our actions. Distinguish the following two claims:
+
+- *A* is causally independent of *B* iff it is not the case that *B* causes, in whole or in part, *A*.
+- *A* is causally independent of *B* iff *A* and *B* are events such that it is not the case that *B* causes, in whole or in part, *A*.
+
+When *A* is a proposition about the laws, and *B* is a proposition about a particular action, the first is somewhat plausible. (Though I'll dispute it presently.) But the second is rather implausible. There was no event of the laws of nature being imposed, perhaps in some divine law-giving ceremony.
+
+The claim I'm making here is roughly that talk of causal independence presupposes that the allegedly independent things are the right kinds of things to stand in causal relationships. That is, that they are events. When I say that the states of the world must be causally independent of Chooser's action, I mean that they are the kind of thing that could have been caused by some action, but in fact they are not.
+
+The main concern with this reply is that it overgenerates. We want to apply decision theory to bets on laws of nature, as when a chemist is betting on which research program will be most worthwhile. And some applications of causal decision theory, like the Spence model of education [insert citation here!] also seem to rely on states, like the underlying cognitive skill of the decider, that aren't obviously events. So we'd have to see if imposing this constraint would undermine desired applications of decision theory.^[I rather doubt EDT is compatible with the use of signaling games to model real-world phenomena, so this objection isn't entirely good news for the critic of CDT.]
+
+This gets to the final objection: perhaps we do in fact cause the past. It's really tricky in the context of determinism to even say just what it is for a proposition to even be about a time, let alone motivate a causal independence claim.
+
+Consider a toy example. I start eating my lunchtime burrito precisely four hours after my cat, Squid, started eating her breakfast. Call this proposition *p*. What time is the proposition *p* about? Is it when Squid ate her breakfast, or when I ate my lunch? It seems at least in part to be about the earlier time. Add to the story that my burrito was delayed because the person making it messed up a step. Did that mess-up cause *p*, and thereby cause a proposition in part about the past to be true? I think it sort of did; the bar on backward causation only applies to very special kinds of propositions, and *p* is not one of them.
+
+Now change the example a bit. Squid sleeps in and doesn't have breakfast. But we're now in a deterministic world. At nine o'clock, the world is such that it's determined I will start eating a burrito at one o'clock. Did the person who messed up the order cause me to start eating at one o'clock? Sure - I would have eating earlier without them. Did they cause the world at nine o'clock to be such that I'd start eating at one o'clock? Well, that's a harder question. On the one hand, it would seem like a weird kind of backwards causation if they did so. On the other hand, if they did not, we have to distinguish the causal role of claims that are nomologically equivalent. That sounds bad too.
+
+I think the best thing to say here is, echoing the previous point, that claims like *Messing up the order caused the world at nine o'clock to be such that I started eating at one o'clock* have a presupposition failure, and are neither true nor false. And the causal independence constraint is that it is false that the action Chooser takes causes which state of the world is actual.
+
+Things are even clearer when it comes to propositions about the laws. Like David Lewis, I'm a Humean about laws of nature. So I think laws are constituted by all the actions in the world, past, present, and future. So I think we all totally cause, and constitute, the laws in everything we do. Now I don't expect everyone to agree with this kind of Humeanism. But I do find it very odd that something which is set up as an objection to Lewis on decision theory^[Ahmed says that this case is an objection to CDT more generally, but it's clear from the introduction to his book that he's really just objecting to Lewis. He gestures in the direction of an argument that Lewis's version of CDT is sufficiently general that objections to it will apply to all other versions. But that claim is false, despite it's Ludovician pedigree. O“ne really shouldn't take objections to Lewis's version of CDT to apply to the versions defended by Skyrms, or Joyce, or Fusco, or me.] simply starts with the assumption that Lewis is wrong about laws.
+
+ 
 -   Note I'm really dismissing this problem not replying to it
 -   Objection 1: This violates the idealising constraints; we don't know what we can do.
 -   Objection 2: These are not events, and causal independence requires independent events. (Caveat: All that matters is that it can be treated as an event, as in Spence or ChoKreps. Can it? Eh, maybe.)
