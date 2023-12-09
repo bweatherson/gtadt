@@ -60,7 +60,7 @@ GDT's response to these kinds of problems is in two parts. One part is to argue,
 
 There are a lot of promissory notes in the last paragraph, but hopefully I've said enough to say how GDT will, eventually, respond to cases like these.
 
-## Laws, and other Non-Events
+## Laws, and other Non-Events {#sec-laws-events}
 
 -   Cite Ahmed book for the general problem
 -   Cite Hedden's recent version

@@ -1,26 +1,112 @@
 # Selection {#sec-select}
 
+## Selection Functions {#sec-selection-functions}
+
 Some decision theories, most notably EDT, output a valuation of all possible choices. From that valuation a preference function over choices can be easily generated; choices that are more highly valued are preferred to those that are less highly valued. Indeed, that preference ordering will be a total preorder. Other theories, especially the theories that recommend Gathering in Stag Decisions, do not output valuations of all choices, but they do output a preference ordering over all choices. In some cases that is a total preorder, but often it is simply a preorder. Still, they share with EDT the idea that a decision theory outputs a preference ordering over the choices.
 
-GDT rejects this assumption. The aim of a decision theory is to say what the idealised chooser will choose, given some options. It is not to say that this unchosen option is 7th best, and that unchosen one is 9th best. It can't be that, because these claims don't explain behaviour, and explaining behaviour is the aim of the project. One does not behave differently whether this or that unchosen option is preferred.
+GDT rejects this assumption. A decision theory says what the idealised chooser will choose, given some options. It does not go on to say that the chooser will think this option is 7th best, and that one is 9th best. Such further claims would be pointless because they don't explain behaviour, and explaining behaviour is the aim of the project. One does not behave differently whether this or that unchosen option is preferred.
 
-So we should think of GDT as outputting not a preference function, but a choice function in the sense of @Samuelson1938, @Chernoff1954, and @Sen1971. This is consistent with the practice in decision theory. Think about the use of solution concepts like subgame perfect equilibrium [@Bonanno2018, sec 4.4] or Perfect Bayesian equilibrium [@Bonanno2018, ch. 13]. These describe which choices are acceptable in dynamic situations. But they don't even purport to offer a ranking over the unchosen options. The algorithms one uses to solve games using these concepts don't suggest that this or that unchosen option is better than some others. All the theory says is that given a situation, these options are choice-worthy, and these ones are not.
+So we should think of GDT as outputting not a preference function, but a choice function in the sense of @Samuelson1938, @Chernoff1954, and @Sen1971. This is consistent with the practice in game theory. Think about the use of solution concepts like subgame perfect equilibrium [@Bonanno2018, sec 4.4] or Perfect Bayesian equilibrium [@Bonanno2018, ch. 13]. These describe which choices are acceptable in dynamic situations. But they don't even purport to offer a ranking over the unchosen options. All the theory says is that given a situation, these options are choice-worthy, and these ones are not.
 
-That doesn't mean that anything goes when it comes to choice. We can put some substantive constraints on what a choice function looks like. Following standard practice, when _X_ is a set of options, let _c_(_X_) be the set of choice-worthy options in _X_. One plausible principle is that if _Y_ is a subset of _X_, i.e., it is generated from _X_ by deleting alternatives, then anything in _c_(_X_) that is also in _Y_ is in _c_(_Y_). That is, deleting options does not turn something choice-worthy into something non-choice-worthy, unless it is indeed deleted. This is called principle $\alpha$ by @Sen1971, though it is often also (following @Moulin1985) called the Chernoff condition, since it is equivalent to one of Chernoff's postulates. And this principle is important in game theory, for without it the method of solving games by deleting rejected options would not make sense.
+The algorithms one uses to solve games using these concepts don't suggest that this or that unchosen option is better than some others. If one option is guaranteed to be epsilon worse than the best option in all circumstances, then it will be the first one eliminated by most algorithms, even if in some good sense it is second-best.
 
-- Solution concepts are not preference ordering
-- Talk about Sen for a bit, and how there are principled constraints on selection functions
-- One reason why not preference ordering: Indecisiveness. The permissible choices are not things the chooser is indifferent between
-- Another, better, reason why not preference ordering: doesn't play an explanatory role. 
-- Possible objection: It does play an explanatory role, it explains what they would do with fewer choices.
-- This is I think the most important point, and it's why I've put off this discussion for so long.
-- First reply: Gotta specify whether the loss of option is common knowledge or not, and both answers have flaws
-- Second reply: Taking away mixed strategies might take us out of the realm of rational choice (if I'm right in mixed strategies chapter)
-- Third reply: Taking away some strategies in dynamic cases might be really weird.
-- Example: Two rounds. At each round a $1 bill is on table, and Chooser takes it or leaves it.
-- What does it mean to remove the strategy TTT, i.e., take at R1, and then take at R2 whether you take or leave at R1.
-- Counter: This is an artifact of the definition of strategies
-- My reply: Need this definition of strategies to explain simple (3 step) centipede problems
-- Counter: Stalnaker says that this is wrong
-- My reply: Eh, that's a point. I disagree here, but whatever
-- This is why I reject strategic form normal form
+That doesn't mean that anything goes when it comes to choice. We can put some substantive constraints on what a choice function looks like. Following standard practice, when *X* is a set of options, let *c*(*X*) be the set of choice-worthy options in *X*. (Call this the 'choice set'.) One plausible principle is that if *Y* is a subset of *X*, i.e., it is generated from *X* by deleting alternatives, then anything in *c*(*X*) that is also in *Y* is in *c*(*Y*). That is, deleting options does not turn something choice-worthy into something non-choice-worthy, unless it is indeed deleted. This is called principle $\alpha$ by @Sen1971, though it is often also (following @Moulin1985) called the Chernoff condition. This name is used because it is equivalent to one of Chernoff's postulates for choice. And this principle is important in game theory, for without it the method of solving games by deleting rejected options would not make sense.
+
+## Generating Preference Orderings {#sec-generating-orderings}
+
+I made a lot of assertions in @sec-selection-functions that one might reject. Among other things, one might reject the idea that a selection function does not determine a preference ordering. After all, there are many ways to get from a choice function to a preference ordering. Here is one such way.
+
+1. If *o*~1~ $\in$ *c*(*X*) and *o*~2~ $\notin$ *c*(*X*), then *o*~1~ is strictly preferred to *o*~2~.
+2. Otherwise, *o*~1~ is not strictly preferred to *o*~2~.
+
+There's nothing wrong with point 1 here, but point 2 is implausible. Consider the following 'game'. Chooser is presented three options: a \$20 bill, a \$10 bill, and a \$5 bill, and told they can choose any one of them. Their choice set is just the \$20 bill. But, contra point 2, they strictly prefer the \$10 bill, to the \$5 bill.
+
+So if we want to turn a selection function into a preference ordering, we need something more sophisticated than this.
+
+I could at this point run through all the possible ways of generating a preference ordering from a selection function, and argue that none of them are adequate. But I suspect this approach would suffer from three problems. 
+
+First, there would be enough different things to try that every reader would find my response to at least one of them unconvincing. 
+
+Second, it's not really true that I could survey *every* response one might take, and a moderately enterprising reader would come up with one I'd missed.
+
+Third, and this is the most important, one might agree with everything I say about the problems of each attempt, and conclude "Ah well, all the worse for the selection function approach.". If one is convinced that preference orderings are needed, and I've argued successfully that every way of generating them from selection functions fails, then one will conclude that decision theory needs more than selection functions. I need a way to convince you that the right conclusion to draw here is that we don't in fact need preference orderings.
+
+## Counterfactual Selections {#sec-counterfactual-selections}
+
+To that end, let's start with a slightly different way of generating preference orderings from selection functions.
+
+1. If *o*~1~ $\in$ *c*(\{*o*~1~, *o*~2~\}) and *o*~2~ $\notin$ *c*(\{*o*~1~, *o*~2~\}), then *o*~1~ is strictly preferred to *o*~2~.
+2. Otherwise, *o*~1~ is not strictly preferred to *o*~2~.
+
+This approach has several nice features. First, it gets the case of the three bank notes correct. Second, it captures something intuitively right about what it means to say that one option is preferred to another; it would be chosen over it in a binary choice. Third, it promises to have some explanatory power, as the following case indicates.
+
+Chooser has two unpainted wooden toys, a bus and a truck. Chooser's job is to paint one of them red, and the other blue, and offer them to Child. Child will then pick one. Chooser will get \$2 if Child picks the blue one, and a further \$1 if Child picks the bus. Chooser just cares about money, and does not care about Child's preferences. Child's preference ordering over toys is common knowledge, and it is:
+
+> Blue truck \>  red bus \> blue bus \> red truck
+
+Chooser will disappoint Child by painting the bus blue, and the truck red, and getting the \$3. And the explanation for this is that if they painted things the other way around, Child would select the truck, and Chooser would only get \$2.
+
+So it looks like we need choices over counterfactual settings to explain behaviour. It's because Child would choose blue truck from the options \{blue truck, red bus\} that Chooser paints the bus blue and the truck red. And this in turn motivates the thought that choices from restricted option sets is exactly the kind of thing we should appeal to in explanations.
+
+Everything I've said so far in this section is plausible, but, I hope to convince you, ultimately mistaken. I'll briefly say why there is a different explanation for what happens in this game, and then spend the rest of the chapter arguing that choices from restricted sets are not something we should include in explanations.
+
+In the Chooser-Child game, we should think of both players as adopting one or other kind of *strategy*. As noted back in \[include cross-ref here\] a strategy includes a plan for what to do at every node in the tree where it is one's responsibility to choose. So child has to plan for what to do whichever choice Chooser makes. Given their preferences, the only rational plan is to always take the blue toy. And given that, Chooser's only rational play is to paint the truck blue, and hence the bus red. That pair of strategies is the unique sub-game perfect equilibrium of the game.
+
+Crucially, this explanation just appeals to the strategy that Child adopts, and why it is preferable to the other three strategies they might have adopted. It doesn't appeal at any point to Child's preferences over the three unadopted strategies. So once we are clear about what the options are, i.e., strategies, there is a possible explanation of the outcome of the game that makes no appeal to preferences over unchosen options.
+
+In the rest of this chapter I'll run through three reasons for thinking that we should not in fact use things like *c*(\{*o*~1~, *o*~2~\}) in our explanations of what happens in games. As in the Chooser-Child example, I'll pay particular attention to what happens in dynamic games.
+
+## What is Held Fixed? {#sec-held-fixed}
+
+The first puzzle concerns figuring what *c*(\{*o*~1~, *o*~2~\}) even means. Is it what Chooser would select if those were the only options and (a) everything else is held fixed; or (b) it is common knowledge that those are the only choices, and everything else is held fixed? These two can come apart, as when Chooser is Row in @tbl-held-fixed.
+
+|       |  **A**   |  **B**   |  **C**  |
+|:-----:|:--------:|:--------:|:-------:|
+| **A** |   7,1    |   2,0    |   6,0   |
+| **B** |   1,0    |   1,1    |   5,0   |
+| **C** |   4,0    |   0,0    |   3,1   |
+
+: Which is better for Row: B or C? {#tbl-held-fixed}
+
+The only ratifiable option is A, and that's pretty clearly what Chooser will play. But which will they choose if B and C are the only options? Well, that depends on what is held fixed.
+
+As things stand Chooser will expect that Column will play A, so holding everything fixed, they prefer C to B. After all, it gets 4 and B only gets 1.
+
+If it was common knowledge that B and C were the only choices, then Column will not play A, since it is now weakly dominated, and given that, B strongly dominates C. So Chooser will play B.
+
+So the proposal needs to be refined to make clear what *c*(\{B, C\}) even is in this context. Whichever way that is done, the refined concept seems more ad hoc, and a little less explanatorily powerful, than the initial concept did.
+
+## Mixed Strategies and Restricted Choice {#sec-mixed-restricted}
+
+Recall [The Frustrator](#tbl-frustrator) from @sec-no-ratify.
+
+|       | **PA** | **PB** | **PX** |
+|:-----:|:------:|:------:|:------:|
+| **A** |   0    |  100   |   50   |
+| **B** |  100   |   0    |   50   |
+| **X** |   40   |   40   |   40   |
+
+: The Frustrator {#tbl-frustrator}
+
+I argued that the only rational choice there is a 50/50 mixture of A and B. But if we say that *c* is defined over arbitrary sets of possible choices, we might go on to ask, which is the best pure strategy here? Put another way, what is *c*(\{A, B, X\})?
+
+That question has no sensible answer. The point of *c* is that it is what idealised, perfectly rational, Chooser will select. And idealised, perfectly rational, Chooser cannot possibly be facing just that menu of choices. To say they are facing this choice is to say that they are not perfectly rational. And that means that *c* is not defined.
+
+## Dynamic Games and Restricted Choice {#sec-dynamic-restricted}
+
+The argument in @sec-mixed-restricted appealed to my earlier arguments about mixed strategies. There is another version of this argument that makes no such appeal. Consider the following two-stage game.
+
+1. At stage 1, a dollar bill will be placed in front of Chooser. Their option is to take it or leave it.
+2. Whatever they do at stage 1, at stage 2, a new dollar bill will be placed in front of Chooser. Their option is to take it or leave it.
+
+At the end, Chooser will have some amount between \$2 and \$0. Chooser has eight possible strategies, which we'll denote as XYZ, where X is T if they will take at stage 1, and L otherwise; Y is T if they will take at stage 2 after taking at stage 1, and L if they will leave at stage 2 after taking at stage 1; and Z is T if they will take at stage 2 after leaving at stage 1, and L if they will leave at stage 2 after leaving at stage 1.
+
+The only rational choice here is TTT. That is, given the eight options, Chooser will select TTT. Now we might ask ourselves a new question. If TTT is unavailable, what will Chooser select?
+
+If we think of this as a static game, the answer is easy. Choosing TTL gets \$2, all the other options get less than \$2, so TTL is best.
+
+But the game is not a static game, it is a dynamic game. And there isn't any dynamic game where it is meaningful to ask what Chooser will do if TTT is not available. What things can Chooser do or not do under the assumption that TTT is not available? There isn't a natural answer to this which respects the dynamic nature of the game.
+
+That's the general case for dynamic games. In general, dynamic games have structural constraints on what choices are available. If some choices are available, some others must be available as well. If TTL is available, TTT must be available too. After all, there is no instruction you can give Chooser which implements a differential restriction on these strategies.
+
+So in general we should not think that if *c*(*S*) is meaningful, then *c* will also be defined for arbitrary subsets of *c*. And that means we shouldn't think that *c*(\{*o*~1~, *o*~2~\}) is in general well-defined. So we shouldn't think that it is how preference orderings are defined given selection functions. And, relatedly, we shouldn't think that preferences over non-chosen options are explanatorily important.

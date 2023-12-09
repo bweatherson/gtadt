@@ -1,8 +1,12 @@
 # Indecisive {#sec-indecisive}
 
+## Introducing Indecision {#sec-indecisive-intro}
+
 Game theory is full of *solution concepts*; ideas for how to solve a game. That is, they are methods for determining the possible outcomes of a game played by rational players. Compared to philosophical decision theory, there are two big things to know about these solution concepts. One is that there are many of them. It isn't like in philosophical decision theory where we are used to the idea that some theory, typically a variant on expected utility maximisation, will rule all cases. More complex solution concepts tend to give more intuitive results on more cases. But the complexity is a cost, and in any case no solution concept gets all the intuitions about all the cases. The other thing is that these solution concepts will often say that there are multiple possible outcomes for a game, and that knowing the players are rational doesn't suffice to know what they will do. This chapter will argue that in this respect game theory is right and philosophical decision theory has typically been wrong; theory should not always give a unique answer as to what rational agents will do.
 
 Say that a theory is *indecisive* if for at least one problem it says there are at least two options such that both are rationally permissible, and the options are not equally good. And say, following Ruth @Chang2002, that two options are equally good if improving either of them by a small amount epsilon would make that one better, i.e., would make it the only permissible choice. So an indecisive theory says that sometimes, multiple choices are permissible, and stay permissible after one or other is sweetened by a small improvement. The vast majority of decision theories on the market are decisive. That's because they first assign a numerical value to each option, and say to choose with the highest value. This allows multiple options iff multiple choices have the same numerical value. But small increases in value to one option, what Chang calls sweetenings, are incompatible with the options having the same value both before and after the increase. So these theories do not allow indecisiveness.
+
+## Stag Hunt Decisions {#sec-stag-hunt}
 
 Perhaps the most intuitive case for indecisiveness involves what I'll call Stag Hunt decisions.[^indecisive-1] Here is an example of a Stag Hunt decision.
 
@@ -20,6 +24,8 @@ Note three things about this game. First, both Up and Down are ratifiable. Secon
 
 There is considerable disagreement about what this means for Chooser. EDT says that Chooser should play Up, as does the ratifiable variant of EDT in @Jeffrey1983. Some causal decision theorists, such as @Arntzenius2008 and @Gustafsson2011, also say Chooser should play Up. On the other hand, several other causal decision theorists, like @Wedgwood2013a, @Gallow2020, @Podgorski2022, and @Barnett2022, endorse playing Down on the ground of regret miminisation. I think both Up and Down are permissible.[^indecisive-2] I also think this is the intuitively right verdict, though I place no weight on that intuition. In general, I think in any problem that has the three features described in the last paragraph (two equilibria, one better according to EDT, the other with lower possible regret), either option is permissible. Since lightly sweetening either Up or Down in this problem doesn't change either feature, I think the right treatment of these games is indecisive.
 
+## Exit Games {#sec-exit-games}
+
 My argument for indecisiveness will turn on a case that all seven of the views mentioned in the last paragraph agree on, namely @tbl-coord.
 
 |          |         |           |
@@ -30,15 +36,15 @@ My argument for indecisiveness will turn on a case that all seven of the views m
 
 : An example of a coordination game. {#tbl-coord}
 
-All of them agree that Up is the uniquely rational play in this example, and I think intuition agrees with them. I'll argue, however, that Down is permissible. The argument turns on a variation that embeds cite table in a more complicated problem. This problem involves two demons, each of whom are arbitrarily good at predicting Chooser. The (first version of) the problem involves the following sequence.
+All of them agree that Up is the uniquely rational play in this example, and I think intuition agrees with them. I'll argue, however, that Down is permissible. The argument turns on a variation that embeds @tbl-coord in a more complicated problem. This problem involves two demons, each of whom are arbitrarily good at predicting Chooser. The (first version of) the problem involves the following sequence.
 
 1.  Both Demon-1 and Demon-2 predict Chooser, but do not reveal their prediction.
 2.  If Demon-1 predicts Chooser plays Up, they Exit with probability 0.5, and Chooser gets 0. If Demon-1 predicts Chooser plays Down, they do not Exit. (That is, they Exit with probability 0.) If they Exit, the problem ends, and Chooser is told this. Otherwise, we go to the next step.
 3.  Chooser chooses Up or Down.
-4.  Demon-2's prediction is chosen, and that determines whether we are in state PU or state PD.
-5.  Chooser's payouts are given by cite above table.
+4.  Demon-2's prediction is revealed, and that determines whether we are in state PU or state PD.
+5.  Chooser's payouts are given by @tbl-coord.
 
-I'll call these Exit Problems, and @tbl-general-exit gives the general form of such a problem. Our problem has this abstract of @tbl-general-exit with *b* = *c* = *e* = *y* = 0, *x* = 0.5, *a* = 4, *d* = 3.
+I'll call these Exit Problems, and @tbl-general-exit gives the general form of such a problem. Our problem can be generated from @tbl-general-exit by setting *b* = *c* = *e* = *y* = 0, *x* = 0.5, *a* = and 4, *d* = 3.
 
 ::: {#tbl-general-exit layout-ncol="2"}
 |                   |     |
@@ -57,27 +63,53 @@ I'll call these Exit Problems, and @tbl-general-exit gives the general form of s
 
 : Round 2 game {#tbl-exit-r2g}
 
-The abstract form of an exit problem.
+The abstract form of an Exit Problem.
 :::
 
-Now consider a simple variant of the above 5 step problem. The same things happen, but steps 2 and 3 are reversed. That is, Chooser decides on Up or Down after Demons make their predictions, but before they are told whether Demon-1 decided to Exit. Still, their choice will only matter if Demon-1 decided not to Exit, since their choices do not make a difference if Demon-1 Exits. Call this variant the Early Choice version, and the original the Late Choice variant. I don't have any clear intuitions about what to do in most Exit Problems, save for this constraint on choices.
+Now consider a simple variant of the above 5 step problem. The same things happen, but steps 2 and 3 are reversed. That is, Chooser decides on Up or Down after the demons make their predictions, but before they are told whether Demon-1 decided to Exit. Still, their choice will only matter if Demon-1 decided not to Exit, since their choices do not make a difference if Demon-1 Exits. Call this variant the Early Choice version, and the original the Late Choice variant. I don't have any clear intuitions about what to do in most Exit Problems, save for this constraint on choices.
 
--   **Exit Principle**: In any Exit Problem, the same choices are permissible in the Early Choice and Late Choice variants.
+Exit Principle
+:    In any Exit Problem, the same choices are permissible in the Early Choice and Late Choice variants.
 
-The reason comes from thinking about what Chooser is doing in the Early Choice variant. They are making a decision about what to do if Demon-1 doesn't Exit. The way to make that decision is just to assume that Demon-1 doesn't Exit, and then decide what to do. It just is the same choice as they face in the Late Choice variant, except now they make it in the context of a conditional. So they should decide it the same way.
+This principle will be enough to argue that that the right account of @tbl-coord is indecisive. Before I show that, I'll argue for Exit principle. In the next section I'll give a direct argument for it, then show how it can be derived from two other important general principles.
 
-To put the point in game-theoretic terms, there is no difference between extensive form and normal form reasoning when a decider has only one possible choice to make. And there is a natural argument for this claim. It starts with the idea that for any *p*, the following two questions have the same answers.
+## Arguing for Exit Principle {#sec-exit-principle-argument}
+
+The simplest reason to endorse Exit Principle comes from thinking about what Chooser is doing in the Early Choice variant. They are making a decision about what to do if Demon-1 doesn't Exit. The way to make that decision is just to assume that Demon-1 doesn't Exit, and then decide what to do. It just is the same choice as they face in the Late Choice variant, except now they make it in the context of a conditional. So they should decide it the same way.
+
+In general, the following two questions should have the same answers.
 
 1.  If *p* happens, what do you want to do?
 2.  So, *p* happened. What do you want to do?
 
-When one is asked to choose a strategy for a tree that has only one possible decision in it, the question one is being asked is that if we get to the point in the tree where one has to decide, what will you do. And the 'Late Question' is that that point in the tree has been reached; now what will you do? So the questions fit the schema, and should get the same answers. One could see this as a consequence of applying something like the Ramsey test to conditional questions [@RamseyGeneralProp]. Denying Exit Principle means treating these two very similar sounding questions differently, and that's implausible.
+Here *p* is that Demon-1 doesn't exit. All that Chooser is asked to do in the Early Variant is to say what they want to do if they have to make a choice, i.e., if Demon-1 doesn't exit. In the Late Variant, they are either told they got nothing, or asked what they want to do now that it is public that Demon-1 didn't exit. They should give the same answer as they gave to the conditional question.
 
-One could also argue, I think correctly, that anyone who violates Exit Principle will violate a plausible version of the Sure Thing Principle.[^indecisive-3] Such an argument seems sound to me, but the Sure Thing Principle is controversial, and I prefer to put more weight on the argument from how conditional reasoning works in the previous paragraph. (Indeed, I think using the Exit Principle to motivate a version of the Sure Thing Principle is more plausible than the reverse argument.)
+One could see this as a consequence of applying something like the Ramsey test to conditional questions [@RamseyGeneralProp]. Denying Exit Principle means treating these two very similar sounding questions differently, and that's implausible.
+
+Exit Principle can also be derived from some other more general principles. One of these is that the Dual Mandate approach to dynamic choice, as defended in @sec-dual, is correct. The other is that a restricted version of Strategic Form - Extensive Form Equivalence is correct. In @sec-equivalence-intro I introduced this equivalence and defined it as follows.
+
+Strategic Form - Extensive Form Equivalence
+:   Some moves in an extensive form of a decision tree are rational (both individually and collectively) iff they are part of some strategy that can be rationally played in the corresponding strategic form decision.
+
+As I noted there, this is widely rejected by game theory textbooks, though it does have notable defenders in philosophy (e.g., @Stalnaker1998). But there is a special case of it that is at least implicitly endorsed.
+
+Restricted Strategic Form - Extensive Form Equivalence
+:   Consider any decision tree where for each agent, either Chooser or Demon, there is at most one information set where they have to move. In such a tree, some moves are rational (both individually and collectively) iff they are part of some strategy that can be rationally played in the corresponding strategic form game.
+
+I haven't seen textbook explicitly endorse that, but I wouldn't be surprised if one has somewhere. The reason I say that it is implicitly endorsed is that it is a consequence of every solution concept for dynamic games that are discussed. Indeed, it's hard to even imagine a solution concept that would treat them differently.
+
+
+
+
+
+Finally, one could argue, I think correctly, that anyone who violates Exit Principle will violate a plausible version of the Sure Thing Principle.[^indecisive-3] Such an argument seems sound to me, but the Sure Thing Principle is controversial, and I prefer to put more weight on the argument from how conditional reasoning works in the previous paragraph. (Indeed, I think using the Exit Principle to motivate a version of the Sure Thing Principle is more plausible than the reverse argument.)
 
 [^indecisive-3]: To be sure, it's not entirely clear how to even state the Sure Thing Principle in the framework of causal ratificationism. Ratificationism does not output a preference ordering over options; it just says which options are and are not choice-worthy. And exactly how to translate principles like Sure Thing that are usually stated in terms of preference to ones in terms of choiceworthiness isn't always clear. One consequence of this is that I don't want to lean on Sure Thing as a premise. Another is that ratificationism isn't really subject to the objections that @Gallownd makes to theories that endorse Sure Thing, since the version of Sure Thing he uses is stated in terms of preferences. (Officially, ratificationism is 'unstable' in his sense because it doesn't output a preference ordering over unchosen options; that doesn't seem like a weakness to me.)
 
+## From Exit Principle to Indecisiveness {#sec-exit-to-indecisive}
+
 Any plausible theory that says that only Up is rationally playable in problems like @tbl-coord cite above table will violate Exit Principle. Think about what they will say @tbl-early-choice.
+
 
 |          |         |            |           |
 |:--------:|:-------:|:----------:|:---------:|

@@ -4,7 +4,7 @@ An option *a* weakly dominates another option *b* if *a* is at least as good as 
 
 ## Avoid Weakly Dominated Options {#sec-weak-avoid}
 
-Start with @tbl-first-wd; what would the ideal chooser do?
+Start with @tbl-first-wd; what would ideal Chooser do?
 
 |       | **PA**  | **PB**  |
 |:-----:|:---:|:---:|

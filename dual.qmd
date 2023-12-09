@@ -75,7 +75,6 @@ Given a decision tree, we can generate a related game where each player has prec
 One way to make progress on this question is to ask whether the strategic form and extensive form are equivalent, in the sense that the following thesis is true.
 
 Strategic Form - Extensive Form Equivalence
-
 :   Some moves in an extensive form of a decision tree are rational (both individually and collectively) iff they are part of some strategy that can be rationally played in the corresponding strategic form decision.
 
 Most game theorists deny this equivalence.[^dual-7] The examples used to motivate this are fairly simple. In @fig-subgame-example, Demon moves first, and Chooser moves second. Chooser can play A or B, Demon can play PA or PB. Demon wants these predictions to be correct. Chooser gets a reward iff Demon's prediction is correct. Chooser gets a higher reward if they both choose A than if they both choose B. Demon is arbitrarily good at predicting Chooser's [strategy](#sec-strategies), and this is common knowledge to both players. Demon will do whatever makes it most likely that their prediction is correct, or flip a coin if their choice does not affect the probability that they will make a correct prediction.
