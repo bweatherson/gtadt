@@ -67,9 +67,12 @@ format:
     docx:
       reference-doc: my-template.docx
       toc: false
-    epub: default
+      output-file: "Game Theory as Decision Theory"
+    epub:
+      output-file: "Game Theory as Decision Theory"
     pdf: 
       format: scrreprt
+      output-file: "Game Theory as Decision Theory"
       keep-tex: true
       geometry: "left=1.5in,right=1.5in,top=1.78in,bottom=1.78in"
       mainfont: Scala Pro
