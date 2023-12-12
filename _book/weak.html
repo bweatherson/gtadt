@@ -1,0 +1,1158 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.523">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Game Theory as Decision Theory - 11&nbsp; Weak Dominance, Once</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./conclusion.html" rel="next">
+<link href="./substantive.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script type="application/json" class="js-hypothesis-config">
+{
+  "theme": "clean"
+}
+</script>
+<script async="" src="https://hypothes.is/embed.js"></script>
+<script>
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    document.body.classList.add('hypothesis-enabled');
+  });
+</script>
+<link rel="stylesheet" href="https://use.typekit.net/uzz2drx.css">
+
+
+</head>
+
+<body class="nav-sidebar floating slimcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./weak.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Weak Dominance, Once</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Game Theory as Decision Theory</a> 
+        <div class="sidebar-tools-main tools-wide">
+    <a href="https://github.com/bweatherson/gtadt" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <div class="dropdown">
+      <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download"><i class="bi bi-download"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="./Game-Theory-as-Decision-Theory.pdf">
+              <i class="bi bi-bi-file-pdf pe-1"></i>
+            Download PDF
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="./Game-Theory-as-Decision-Theory.epub">
+              <i class="bi bi-bi-journal pe-1"></i>
+            Download ePub
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="./Game-Theory-as-Decision-Theory.docx">
+              <i class="bi bi-bi-file-word pe-1"></i>
+            Download Docx
+            </a>
+          </li>
+      </ul>
+    </div>
+    <div class="dropdown">
+      <a href="" title="Share" id="quarto-navigation-tool-dropdown-1" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Share"><i class="bi bi-share"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-1">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://twitter.com/intent/tweet?url=|url|">
+              <i class="bi bi-bi-twitter pe-1"></i>
+            Twitter
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://www.facebook.com/sharer/sharer.php?u=|url|">
+              <i class="bi bi-bi-facebook pe-1"></i>
+            Facebook
+            </a>
+          </li>
+      </ul>
+    </div>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./idealised.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Idealised</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./expectationist.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Expectationist</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./causal.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Causal</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./mix.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Mixtures</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ratify.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Ratificationist</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./dual.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Dual Mandate</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./indecisive.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Indecisive</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./select.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Selection</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./substantive.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Substantive</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./weak.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Weak Dominance, Once</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./conclusion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Conclusion</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./gad.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Games as Decisions</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./nidt.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Non-Ideal Decision Theory</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./rps.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Rock-Paper-Scissors</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./war-signal.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Signals and Outcomes</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./buchak.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Risk-Weighted Utility</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unique.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">F</span>&nbsp; <span class="chapter-title">Against Uniqueness</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar"><div class="quarto-margin-header"><div class="margin-header-item">
+<p>&nbsp;</p>
+</div></div>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">In this chapter:</h2>
+   
+  <ul>
+  <li><a href="#sec-weak-avoid" id="toc-sec-weak-avoid" class="nav-link active" data-scroll-target="#sec-weak-avoid"><span class="header-section-number">11.1</span> Avoid Weakly Dominated Options</a></li>
+  <li><a href="#sec-weak-iterate" id="toc-sec-weak-iterate" class="nav-link" data-scroll-target="#sec-weak-iterate"><span class="header-section-number">11.2</span> Against Iterative Deletion</a></li>
+  <li><a href="#sec-weak-strong" id="toc-sec-weak-strong" class="nav-link" data-scroll-target="#sec-weak-strong"><span class="header-section-number">11.3</span> Back to Strong Dominance</a></li>
+  <li><a href="#sec-weak-summary" id="toc-sec-weak-summary" class="nav-link" data-scroll-target="#sec-weak-summary"><span class="header-section-number">11.4</span> Summary</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/bweatherson/gtadt/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content page-columns page-full" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span id="sec-weak" class="quarto-section-identifier"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Weak Dominance, Once</span></span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>An option <em>a</em> weakly dominates another option <em>b</em> if <em>a</em> is at least as good as <em>b</em> in all states, and better than <em>b</em> in some states. Just what role weak dominance has in decision theory is one of the most unsettled topics in game theory. There are three natural positions, and all of them are occupied. One is that weak dominance is of no significance. A second is that ideal agents do not choose weakly dominated options, and that’s the only role weak dominance has. And a third is that ideal agents do not choose options that are eliminated by an iterative process of deleting weakly dominated strategies. I’m going to argue in favour of the middle position. I’m not going to try to argue this is the standard game-theoretic move; as I said, I think you can find prominent support for all three options. To argue for the middle position requires making two cases: first, that weakly dominated options are not ideally chosen; and second, that options that would be eliminated by iterative deletion of weakly dominated options are ideally chosen. I’ll argue for these in turn.</p>
+<section id="sec-weak-avoid" class="level2 page-columns page-full" data-number="11.1">
+<h2 data-number="11.1" class="anchored" data-anchor-id="sec-weak-avoid"><span class="header-section-number">11.1</span> Avoid Weakly Dominated Options</h2>
+<p>Start with <a href="#tbl-first-wd" class="quarto-xref">Table&nbsp;<span>11.1</span></a>; what would ideal Chooser do?</p>
+<div id="tbl-first-wd" class="anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-first-wd-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;11.1: A ratifiable, weakly dominated, option.
+</figcaption>
+<div aria-describedby="tbl-first-wd-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="table">
+<thead>
+<tr class="header">
+<th style="text-align: center;"></th>
+<th style="text-align: center;"><strong>PA</strong></th>
+<th style="text-align: center;"><strong>PB</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><strong>A</strong></td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong>B</strong></td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p>On the one hand, B is ratifiable, as long as Demon is sufficiently reliable. If Demon will in fact get the predictions right, B gets a return of 1, and had Chooser played A, they would have still received 1. So they would not regret playing B, so by ratifiability it is fine to play it. Against this, there are two reasons to not play B.</p>
+<p>First, if we don’t say that Demon is perfectly accurate, but only that their accuracy is arbitrarily close to being perfect, the argument that B is ratifiable doesn’t go through. It has been argued by game theorists that we should always allow for the possibility that one or other player in a game will make some kind of performance error. This idea is at the heart of Reinhard Selten’s notion of trembling hand equilibrium <span class="citation" data-cites="Selten1975">(<a href="references.html#ref-Selten1975" role="doc-biblioref">Selten, 1975</a>)</span>, and Roger Myerson’s notion of proper equilibrium <span class="citation" data-cites="Myerson1978">(<a href="references.html#ref-Myerson1978" role="doc-biblioref">Myerson, 1978</a>)</span>. If a strategy would not make sense if the probability of an error by one or other player was positive, even if it was arbitrarily low, it should not be played. Since B only makes sense if the probability of an error by Demon is 0, that means B should not be played.</p>
+<p>Second, playing B involves taking on an uncompensated risk. It might be that we don’t have a good way of capturing within probability theory just what this risk is. Perhaps you think that it makes sense to say that Demon is correct with probability 1 without this raising questions about backwards causation. Still, in some sense B has a risk of failure that A lacks. One should not take on a risk without some compensation. So one should not play B in this case. This, I think, is the most persuasive argument against B.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<div class="no-row-height column-margin column-container"><li id="fn1"><p><sup>1</sup>&nbsp;This paragraph is somewhere between heavily influence by, and a notational variant on, the argument in section 3 of <span class="citation" data-cites="Stalnaker1999">Stalnaker (<a href="references.html#ref-Stalnaker1999" role="doc-biblioref">1999</a>)</span>.</p></li></div></section>
+<section id="sec-weak-iterate" class="level2 page-columns page-full" data-number="11.2">
+<h2 data-number="11.2" class="anchored" data-anchor-id="sec-weak-iterate"><span class="header-section-number">11.2</span> Against Iterative Deletion</h2>
+<p>If it is good to remove weakly dominated options, then one might think it follows straight away that it is good to keep doing this.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> Think about <a href="#tbl-wd-itd" class="quarto-xref">Table&nbsp;<span>11.2</span></a>.</p>
+<div class="no-row-height column-margin column-container"><li id="fn2"><p><sup>2</sup>&nbsp;This suggestion is made by, for example <span class="citation" data-cites="HareHedden2015">Hare &amp; Hedden (<a href="references.html#ref-HareHedden2015" role="doc-biblioref">2015</a>)</span>.</p></li></div><div id="tbl-wd-itd" class="anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-wd-itd-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;11.2: An example of iterated weak dominance.
+</figcaption>
+<div aria-describedby="tbl-wd-itd-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="table">
+<thead>
+<tr class="header">
+<th style="text-align: center;"></th>
+<th style="text-align: center;">PU</th>
+<th style="text-align: center;">PD</th>
+<th style="text-align: center;">PX</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><strong>U</strong></td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong>D</strong></td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><strong>X</strong></td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p>In <a href="#tbl-wd-itd" class="quarto-xref">Table&nbsp;<span>11.2</span></a>, X is weakly dominated by D. So it shouldn’t be played. But if X isn’t played, then PX is weakly dominated by both PU and PD. Demon can’t make a correct prediction by playing PX, since by hypothesis it won’t be played, so it can’t be better than PU or PD. But both PU and PD can be better than PX. So PX is now weakly dominated. So let’s remove it as well. If both X and PX are deleted, we’re back to <a href="#tbl-first-wd" class="quarto-xref">Table&nbsp;<span>11.1</span></a>, in which we said Chooser should play U.</p>
+<p>So does it make sense to say that U is the only play in <a href="#tbl-wd-itd" class="quarto-xref">Table&nbsp;<span>11.2</span></a>? I think not, for three reasons.</p>
+<p>First, as Bonanno <span class="citation" data-cites="Bonanno2018">(<a href="references.html#ref-Bonanno2018" role="doc-biblioref">2018: 37</a>)</span> points out, in general iterative deletion of weakly dominated strategies is not a well defined decision procedure. It turns out that in two player games, the order that weakly dominated strategies are deleted can affect which choices one ends up with. There are ways of fixing this problem, by specifying one or other order of deletion as canonical, but they all feel somewhat artificial.</p>
+<p>Second, the reasons we gave for avoiding the weakly dominated option in <a href="#tbl-first-wd" class="quarto-xref">Table&nbsp;<span>11.1</span></a> simply don’t carry over to <a href="#tbl-wd-itd" class="quarto-xref">Table&nbsp;<span>11.2</span></a>. In the latter game, D is not an uncompensated risk. It’s true that D loses if Demon makes an incorrect prediction and plays PU. But U loses if Demon makes an incorrect prediction and plays PX. Unless one thinks that PX is particularly unlikely to be played, it seems U and D are just as risky as each other. So both of them look like rational plays.</p>
+<p>Third, iterative deletion of weakly dominated strategies (combined with the <a href="./dual.html">dual mandate</a> approach to dynamic choice) leads to a single solution to the <a href="#tbl-money-burning">money burning game</a> described by <span class="citation" data-cites="BenPorathDekel1992">Ben-Porath &amp; Dekel (<a href="references.html#ref-BenPorathDekel1992" role="doc-biblioref">1992</a>)</span>. The money burning game has two players, and two stages. At stage 1, Column will have the choice to burn or not burn $20. The burning will be public, so Row will see what Column does, or does not do. At stage 2, Row and Column will play the simultaneous move game in <a href="#tbl-money-burning-part-two" class="quarto-xref">Table&nbsp;<span>11.3</span></a>.</p>
+<div id="tbl-money-burning-part-two" class="anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-money-burning-part-two-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;11.3: The second stage of the money burning game
+</figcaption>
+<div aria-describedby="tbl-money-burning-part-two-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="table">
+<thead>
+<tr class="header">
+<th style="text-align: center;"></th>
+<th style="text-align: center;">A</th>
+<th style="text-align: center;">B</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><strong>A</strong></td>
+<td style="text-align: center;">$10, $40</td>
+<td style="text-align: center;">$0, $0</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong>B</strong></td>
+<td style="text-align: center;">$0, $0</td>
+<td style="text-align: center;">$40, $10</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p>Here is one way to think about the game. I’m going to number the steps here so we can refer back to them later.</p>
+<ol type="1">
+<li>It would be irrational to burn the money and play B, since that results in a maximum possible payout to Column of -$10, when any strategy that involves not burning the money results in a minimum payout of $0.</li>
+<li>So Row can infer that if Column burns the money, they are playing A. So if Column burns the money, Row would maximise their own return by also playing A.</li>
+<li>Since Column can figure out everything in steps 1-2, it follows that burning the money will get them a return of $20, while playing B gets at most $10, so it is irrational to ever play B.</li>
+<li>Since Row can figure out steps 1-3, it follows that Row knows that Column will play A, hence it is always rational for Row to play A.</li>
+<li>Hence Column does not need to burn the money, since Row will play A, and hence playing A without burning will get them $40.</li>
+</ol>
+<p>So this looks like an interesting result. By just giving Column the option of burning the money, we guarantee that Column will get their best possible outcome, even though they don’t actually use that option. We’ll come back to whether this reasoning works. (Spoiler alert: I’m going to endorse an existing objection to it.)</p>
+<p>Let’s look at the argument in something like strategic form. For simplicity, I’m going to assume Column has four strategies: whether to burn or not burn, crossed with whether to play A or B in <a href="#tbl-money-burning-part-two" class="quarto-xref">Table&nbsp;<span>11.3</span></a>. Strictly speaking, we should distinguish strategies that differ in what Column is disposed to do in the non-taken option at stage 1, but such distinctions don’t matter to the analysis, and end up cluttering the table. Row has four strategies: two choices for what to do if Column burns the money, crossed with two choices for what to do if Column keeps the money.</p>
+<p>So as not to confuse the Burning with playing option B, I’ll write <strong>L</strong> for Lighting the money on fire, and <strong>K</strong> for Keeping the money. So Column’s strategies will be one of L and K, followed by one of A and B. For Row, I’ll write XY for the strategy of doing option X if Column keeps the money, and option Y if Column lights it on fire. So AB is the strategy of doing A iff they don’t see the money on fire. Given that, here is the payout table. (To reduce clutter, I’ll write the payouts in dollars, but will leave off the dollar signs.)</p>
+<div id="tbl-money-burning" class="anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-money-burning-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;11.4: Simplified strategic form of the money burning game.
+</figcaption>
+<div aria-describedby="tbl-money-burning-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="table">
+<thead>
+<tr class="header">
+<th style="text-align: center;"></th>
+<th style="text-align: center;">KA</th>
+<th style="text-align: center;">KB</th>
+<th style="text-align: center;">LA</th>
+<th style="text-align: center;">LB</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><strong>AA</strong></td>
+<td style="text-align: center;">10, 40</td>
+<td style="text-align: center;">0, 0</td>
+<td style="text-align: center;">10, 20</td>
+<td style="text-align: center;">0, -20</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong>AB</strong></td>
+<td style="text-align: center;">10, 40</td>
+<td style="text-align: center;">0, 0</td>
+<td style="text-align: center;">0, -20</td>
+<td style="text-align: center;">40, -10</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><strong>BA</strong></td>
+<td style="text-align: center;">0, 0</td>
+<td style="text-align: center;">40, 10</td>
+<td style="text-align: center;">10, 20</td>
+<td style="text-align: center;">0, -20</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong>BB</strong></td>
+<td style="text-align: center;">0, 0</td>
+<td style="text-align: center;">40, 10</td>
+<td style="text-align: center;">0, -20</td>
+<td style="text-align: center;">10, -10</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p>We can use weak dominance to then reason as follows.</p>
+<ol type="1">
+<li>LB is strongly dominated by both KA and KB, so it won’t be played.</li>
+<li>If LB is deleted, then AB is weakly dominated by AA, and BB is weakly dominated by BA, so both AB and BB can be deleted.</li>
+<li>Without AB and BB, LA strongly dominates KB, so KB can be deleted.</li>
+<li>Without KB and LB, AA weakly dominates BA, so BA can be deleted.</li>
+<li>Without AB, BA and BB, KA strongly dominates LA, so LA can be deleted.</li>
+</ol>
+<p>The result is that only AA and KA remain, and that’s the solution to the game. Note that it’s not just that we’ve got the same result by thinking through the strategic form of the game as we’d reached by the earlier dynamic analysis, we’ve reached it in exactly the same way. Whatever one thinks in general about strategic analysis of dynamic games, in this case it seems the two analyses are as good as each other.</p>
+<p>That’s bad news for iterated weak dominance, because in the dynamic argument, step 2 is bad. That implies that in the strategic argument, which uses weak dominance, step 2 is also bad. Notably, that’s the very first step where iterated weak dominance is used, so we have strong evidence that iterated weak dominance is the culprit here.</p>
+<p>The problem with step 2, as <span class="citation" data-cites="Stalnaker1998">Stalnaker (<a href="references.html#ref-Stalnaker1998" role="doc-biblioref">1998</a>)</span> points out, is that it confuses indicative and subjunctive conditionals. What Row knows at that point is the negation of a conjunction: it’s not the case that Column will burn the money and play B. Arguably, that implies the indicative conditional: If Column burns the money, they don’t play B. But what is needed for the next step is the subjunctive: If Column burned the money, they would not play B. And that doesn’t at all follow from the negated conjunction.</p>
+<p>Maybe you don’t agree that a subjunctive conditional is what Row needs this point. That part of Stalnaker’s analysis is unnecessary for the main argument. It’s enough to note that this negated conjunction can’t be enough to derive any inferences about what to do if Column burns the money. That’s because by the end of the derivation, Row knows that column (if rational) won’t burn the money. So here’s another negated conjunction that they know: it’s not the case that Column will burn the money and play A. They know this because they know the first conjunct is false, and they are (on standard assumptions) logically omniscient. Since Row’s knowledge is symmetric in this respect, they know both the negated conjunctions, Column won’t burn and play A, and, Column won’t burn and play B, knowledge of one of them can’t motivate an asymmetric attitude to what Column will do.</p>
+<p>The five-step argument is self-undermining in a related way. It concludes that if Column is rational they won’t burn the money. But it gets there by making substantive inferences about what Column will do if they rationally burn the money. There are no such substantive inferences to draw; rational Column will (according to the argument) not burn the money, so once Row sees the money on fire, they should infer Column is irrational, and stop making any inferences about what Column will or won’t do based on the assumption of rationality.</p>
+<p>From all this, I conclude that iterated weak dominance reasoning rests on a fallacy. I agree with Stalnaker’s diagnosis that the fallacy is confusing indicative and subjunctive conditionals, but as I’ve argued in the last two paragraphs, there is independent reason to accept Stalnaker’s claim that there is a fallacy involved even if you don’t accept his diagnosis.</p>
+</section>
+<section id="sec-weak-strong" class="level2" data-number="11.3">
+<h2 data-number="11.3" class="anchored" data-anchor-id="sec-weak-strong"><span class="header-section-number">11.3</span> Back to Strong Dominance</h2>
+<p>This argument might, for some readers, trigger guilt by association concerns. If initially appealing reasoning like the 1-5 inference in <a href="#sec-weak-iterate" class="quarto-xref"><span>Section&nbsp;11.2</span></a> is wrong, might it also be that iterated strong dominance reasoning rests on a fallacy?</p>
+<p>I suspect that concern is at least half-right; some informal presentations of iterated strong dominance reasoning probably do commit exactly the same fallacy. But it turns out not to matter; we have independent reason to accept iterated strong dominance</p>
+<p>The reason comes from the theorem of Pearce’s that I mentioned back in <a href="causal.html#sec-no-ratify" class="quarto-xref"><span>Section&nbsp;4.1</span></a>, in the context of discussing <a href="./causal.html#tbl-frustrator">The Frustrator</a>. Pearce goes on to show something stronger than what I described there, but it needs a little more terminology to state it.</p>
+<p>Say a strategy <em>S</em> in a two player game is a best-response<sub>1</sub> iff there is some probability distribution <em>Pr</em> over the other player’s strategies such that given <em>Pr</em>, no strategy available to the player has a higher expected return than <em>S</em> does.</p>
+<p>Say a strategy <em>S</em> in a two player game is a best-response<sub><em>k</em>+1</sub> iff there is some probability distribution <em>Pr</em> over the other player’s strategies such that (a) <em>Pr</em> only assigns positive probability to the other player choosing strategies which are best-responses<sub><em>k</em></sub>, and (b) given <em>Pr</em>, no strategy available to the player has a higher expected return than <em>S</em> does.</p>
+<p>Finally, say that a strategy <em>S</em> is <strong>rationalisable</strong> iff for any <em>n</em>, it is a best-response<sub><em>k</em></sub>.</p>
+<p>It is very intuitive that given common knowledge of rationality, each player should play rationalisable strategies. Playing rationalisable strategies just means having answers to all of the following questions.</p>
+<ul>
+<li>Why are you playing <em>S</em>? Because my credence distribution over the other player’s strategies is <em>Pr</em><sub>0</sub>, and given <em>Pr</em><sub>0</sub>, <em>S</em> maximises expected returns.</li>
+<li>Why is your credence distribution over the other player’s strategies <em>Pr</em><sub>0</sub>? Because for every strategy that <em>Pr</em><sub>0</sub> gives positive probability to, there is some probability distribution <em>Pr</em><sub>1</sub> that they might have over my strategies such that, given <em>Pr</em><sub>1</sub>, that strategy is optimal.</li>
+<li>Why should we think <em>Pr</em><sub>1</sub> is their probability distribution? Because for every strategy of mine that <em>Pr</em><sub>1</sub> gives positive probability to, there is some probability distribution <em>Pr</em><sub>2</sub> such that that strategy is optimal given <em>Pr</em><sub>2</sub>.</li>
+</ul>
+<p>This line of questioning could go on indefinitely. Presumably <em>Pr</em><sub>2</sub> isn’t defined over any old things the other player might play. But if the original strategy is rationalisable, it will give positive probabilities to things that it would make some sense for the other player to play. And so on indefinitely.</p>
+<p>This, ultimately, is why I think dominance reasoning, and in particular iterated dominance reasoning, should be incorporated into our decision theory. Using dominance reasoning is a somewhat convenient shorthand for what we should be doing, namely finding rationalisable strategies.</p>
+<p>To be sure, I think we should do somewhat more than find rationalisable strategies. We should also find strategies that are not weakly dominated (as argued in <a href="#sec-weak-avoid" class="quarto-xref"><span>Section&nbsp;11.1</span></a>), and which are substantively rational (as argued in <a href="substantive.html" class="quarto-xref"><span>Chapter&nbsp;10</span></a>). But the first necessary step is to remove the non-rationalisable strategies.</p>
+</section>
+<section id="sec-weak-summary" class="level2" data-number="11.4">
+<h2 data-number="11.4" class="anchored" data-anchor-id="sec-weak-summary"><span class="header-section-number">11.4</span> Summary</h2>
+<p>So I conclude that we just need one round of deleting weakly dominated options to get rid of irrational plays. D is irrational in <a href="#tbl-first-wd" class="quarto-xref">Table&nbsp;<span>11.1</span></a>, but not in <a href="#tbl-wd-itd" class="quarto-xref">Table&nbsp;<span>11.2</span></a>. The reasons for not iterating weak dominance reasoning do not apply to strong dominance reasoning, and iterated strong dominance reasoning leads to the same results as reasoning that is unimpeachable, namely finding rationalisable strategies.</p>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list" style="display: none">
+<div id="ref-BenPorathDekel1992" class="csl-entry" role="listitem">
+Ben-Porath, Elchanan, and Eddie Dekel. (1992). Signaling future actions and the potential for sacrifice. <em>Journal of Economic Theory</em>, <em>57</em>(1), 36–51. doi:<a href="https://doi.org/10.1016/S0022-0531(05)80039-0">10.1016/S0022-0531(05)80039-0</a>
+</div>
+<div id="ref-Bonanno2018" class="csl-entry" role="listitem">
+Bonanno, Giacomo. (2018). Game theory. Retrieved from <a href="http://faculty.econ.ucdavis.edu/faculty/bonanno/GT_Book.html">http://faculty.econ.ucdavis.edu/faculty/bonanno/GT_Book.html</a>
+</div>
+<div id="ref-HareHedden2015" class="csl-entry" role="listitem">
+Hare, Caspar, and Brian Hedden. (2015). Self-reinforcing and self-frustrating decisions. <em>Noûs</em>, <em>50</em>(3), 604–628. doi:<a href="https://doi.org/10.1111/nous.12094">10.1111/nous.12094</a>
+</div>
+<div id="ref-Myerson1978" class="csl-entry" role="listitem">
+Myerson, R. B. (1978). Refinements of the nash equilibrium concept. <em>International Journal of Game Theory</em>, <em>7</em>(2), 73–80. doi:<a href="https://doi.org/10.1007/BF01753236">10.1007/BF01753236</a>
+</div>
+<div id="ref-Selten1975" class="csl-entry" role="listitem">
+Selten, R. (1975). Reexamination of the perfectness concept for equilibrium points in extensive games. <em>International Journal of Game Theory</em>, <em>4</em>(1), 25–55. doi:<a href="https://doi.org/10.1007/BF01766400">10.1007/BF01766400</a>
+</div>
+<div id="ref-Stalnaker1998" class="csl-entry" role="listitem">
+Stalnaker, Robert. (1998). Belief revision in games: Forward and backward induction. <em>Mathematical Social Sciences</em>, <em>36</em>(1), 31–56. doi:<a href="https://doi.org/10.1016/S0165-4896(98)00007-9">10.1016/S0165-4896(98)00007-9</a>
+</div>
+<div id="ref-Stalnaker1999" class="csl-entry" role="listitem">
+Stalnaker, Robert. (1999). Extensive and strategic forms: Games and models for games. <em>Research in Economics</em>, <em>53</em>(3), 293–319. doi:<a href="https://doi.org/10.1006/reec.1999.0200">10.1006/reec.1999.0200</a>
+</div>
+</div>
+</section>
+
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    const typesetMath = (el) => {
+      if (window.MathJax) {
+        // MathJax Typeset
+        window.MathJax.typeset([el]);
+      } else if (window.katex) {
+        // KaTeX Render
+        var mathElements = el.getElementsByClassName("math");
+        var macros = [];
+        for (var i = 0; i < mathElements.length; i++) {
+          var texText = mathElements[i].firstChild;
+          if (mathElements[i].tagName == "SPAN") {
+            window.katex.render(texText.data, mathElements[i], {
+              displayMode: mathElements[i].classList.contains('display'),
+              throwOnError: false,
+              macros: macros,
+              fleqn: false
+            });
+          }
+        }
+      }
+    }
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        typesetMath(container);
+        return container.innerHTML
+      } else {
+        typesetMath(note);
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      typesetMath(note);
+      return note.innerHTML;
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./substantive.html" class="pagination-link  aria-label=" &lt;span="">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Substantive</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./conclusion.html" class="pagination-link" aria-label="<span class='chapter-number'>12</span>&nbsp; <span class='chapter-title'>Conclusion</span>">
+        <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Conclusion</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
