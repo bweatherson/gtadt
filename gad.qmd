@@ -29,7 +29,7 @@ In words, what this says is that each player chooses either A or B. If they both
 -   *y* \> *w*
 -   *w* \> *x*
 
-Some books will also add 2_x\_ \> *y* + *z* as a further constraint, but I'll stick with these three.
+Some books will also add 2*x* \> *y* + *z* as a further constraint, but I'll stick with these three.
 
 Now to turn a game into a demonic decision problem, first replace column's payouts with 1s and 0s, with 1s along the main diagonal, and 0s everywhere else. Table @tbl-demon-sym-game shows what a generic symmetric game looks like after this transformation.
 

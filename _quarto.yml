@@ -33,7 +33,8 @@ book:
     - buchak.qmd
     - unique.qmd
 
-bibliography: ../articles/rBib.bib
+bibliography: gtadt-ref.bib
+csl: ergo.csl
 
 comments:
   hypothesis: 
@@ -78,8 +79,11 @@ format:
       mainfont: Scala Pro
       sansfont: Scala Sans Pro
       mainfontoptions: Scale = MatchLowercase
+#      biblio-style: philreview
       fontsize: 12pt
       linkcolor: black
+      citecolor: black
+      urlcolor: black
       link-citations: true
       include-in-header:
         text: |

@@ -223,7 +223,7 @@ The surprising prediction is that this will *decrease* the frequency with which 
 
 The point of decision theory is not to advise people on what to do in Rock-Paper-Scissors, or in Salesman. In each case, it would give bad advice. Really you should try to read your opponent's body shape for clues in Rock-Paper-Scissors, and find some good software in Salesman. You won't find either of those bits of advice in a game theory, or decision theory, text. Rather, the point is be part of explanations like why there was such a large discount on used cars in the 20th century, and why the bystander's gambit won't work in my modified version of Rock-Paper-Scissors. David Lewis gives a similar account of the purpose of decision theory in a letter to Hugh Mellor. The context of the letter, like the context of this section, is a discussion of why idealisations are useful in decision theory. Lewis writes,
 
-> We're describing (one aspect of) what an ideally rational agent would do, and remarking that somehow we manage to approximate this, and perhaps -- I'd play this down -- advising people to approximate it a bit better if they can. [@Lewis1981Mellor, 432]
+> We're describing (one aspect of) what an ideally rational agent would do, and remarking that somehow we manage to approximate this, and perhaps -- I'd play this down -- advising people to approximate it a bit better if they can. [@Lewis-Mellor-14101981, 432]
 
 ## Why This Idealisation {#sec-why-this-ideal}
 

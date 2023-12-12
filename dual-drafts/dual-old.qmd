@@ -32,7 +32,7 @@ The three options from the last three paragraphs do not exhaust the field. There
 
 In philosophy, the purely strategic approach is often called the resolute approach[^dual-old-4], and the purely consequentialist approach is called the sophisticated approach. But I don't think it's too bad to introduce new names here. My use of consequentialist follows the very influential use of @Hammond1988, and it's useful to connect the strategic approach to game-theoretic strategies.
 
-[^dual-old-4]: Most notably defended by @McClennan1990.
+[^dual-old-4]: Most notably defended by @McClennen1990.
 
 The orthodoxy in game theory, going back to at least @Selten1965, is that both views are correct. When faced with a decision tree, Chooser should follow the advice of the sophisticated theorists, and (given they are ideally rational) do what would be best on the assumption that future choices will be rational. But in doing so, they should instantiate (part of) a strategy that could be rationally chosen by the resolute chooser. I call this the Dual Mandate approach, and I am going to defend it.
 

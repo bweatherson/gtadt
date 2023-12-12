@@ -2,7 +2,7 @@
 
 Solution concepts in game theory tend to be equilibria. When game theorists describe a situation as an equilibria, they mean that everyone is happy with their moves knowing what all the moves of all the players are. (Or, at least, they are as happy as they can be.) Put in decision theoretic terms, that means that all solutions are ratifiable. Any solution of a decision problem involves Chooser being happy with their choice once it is made. That is, if the correct theory says X is choiceworthy in a particular situation, it also says that X is choiceworthy conditional on being chosen.
 
-## A Brief History of Ratificationism
+## A Brief History of Ratificationism {#sec-ratify-brief-history}
 
 Ratificationism, the view that the correct theory says all choices are ratifiable in this sense, used to be a more popular view among decision theorists. Richard @Jeffrey1983 added a ratifiability constraint to a broadly evidential decision theory. Ratifiability was endorsed by causal theorists such as @Weirich1985 and @Harper1986. It subsequently fell out of popularity, though it has been recently endorsed by @Fuscond. The loss of popularity was for two reasons.
 
@@ -39,7 +39,7 @@ A better option is to insist, as @Harper1986 did, and as I argued in @sec-mixed,
 
 So if mixed strategies are allowed, neither of the problems for ratifiability persist.
 
-## Two Quick Arguments for Ratificationism.
+## Two Quick Arguments for Ratificationism {#sec-ratify-two-quick}
 
 Ratifiability is an intuitive constraint. There is something very odd about saying that such-and-such is a rational thing to do, but whoever does it will regret it the moment they act. If a theory does not endorse ratifiability, it feels like Chooser could have the following conversation with Theory. (In this example, Theory recommends X, but says it is better to have done Y conditional on having done X. If Theory does not comply with ratifiability, an example like this exists.)
 

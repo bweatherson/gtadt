@@ -110,7 +110,7 @@
   \setlength{\itemsep}{#2\baselineskip}}}
  {\end{list}}
 \usepackage{calc}
-\newcommand{\CSLBlock}[1]{\hfill\break#1\hfill\break}
+\newcommand{\CSLBlock}[1]{\hfill\break\parbox[t]{\linewidth}{\strut\ignorespaces#1\strut}}
 \newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{\strut#1\strut}}
 \newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{\strut#1\strut}}
 \newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
@@ -176,16 +176,17 @@
   colorlinks=true,
   linkcolor={black},
   filecolor={Maroon},
-  citecolor={Blue},
-  urlcolor={Blue},
+  citecolor={black},
+  urlcolor={black},
   pdfcreator={LaTeX via pandoc}}
 
 \title{Game Theory as Decision Theory}
 \author{Brian Weatherson}
-\date{2023-12-08}
+\date{2023-12-12}
 
 \begin{document}
 \maketitle
+
 \renewcommand*\contentsname{Table of contents}
 {
 \hypersetup{linkcolor=}
@@ -266,7 +267,7 @@ What I do want to argue is that you can find some support for all of
 these in some game theory textbooks, and that combined they produce a
 plausible decision theory. While the textbooks don't all agree, for
 simplicity I'm going to focus on one book: Giacomo Bonanno's \emph{Game
-Theory} (\citeproc{ref-Bonanno2018}{Bonanno 2018}). This book has two
+Theory} (\citeproc{ref-Bonanno2018}{Bonanno, 2018}). This book has two
 important virtues: it is philosophically deep, and it is available for
 free. It isn't hard to find a game theory text with one or other of
 these virtues, but few have both. So it will be our primary guide in
@@ -277,7 +278,7 @@ referenced in that book).
 
 A lot of contemporary philosophical decision theory revolves around what
 to do if there is a certain kind of demon around. Following Nozick
-(\citeproc{ref-Nozick1969}{1969}), such a demon is typically taken to be
+(\citeproc{ref-Nozick1969}{n.d.}), such a demon is typically taken to be
 arbitrarily good at predicting what a human deliberator will do. I'll
 call our arbitrary deliberator Chooser, and a typical demon Demon.
 Whenever X is a choice Chooser can make, I'll use PX to mean that Demon
@@ -351,7 +352,7 @@ being better. I'll come back to this assumption briefly in
 Chapter~\ref{sec-ideal}, and more substantively in
 Chapter~\ref{sec-expect}.
 
-Following Nozick (\citeproc{ref-Nozick1969}{1969}), the most common
+Following Nozick (\citeproc{ref-Nozick1969}{n.d.}), the most common
 problem that people discuss involving Demon is what Nozick dubbed
 ``Newcomb's Problem'', after the physicist who suggested the problem to
 him. A Newcomb problem is an instance of
@@ -474,7 +475,7 @@ Decision}.
   Frank Arntzenius (\citeproc{ref-Arntzenius2008}{2008}) and Johan E.
   Gustafsson (\citeproc{ref-Gustafsson2011}{2011}) recommend Choosing A.
 \item
-  Ralph Wedgwood (\citeproc{ref-Wedgwood2012}{2012}), Dmitri Gallow
+  Ralph Wedgwood (\citeproc{ref-Wedgwood2013a}{2013}), Dmitri Gallow
   (\citeproc{ref-Gallow2020}{2020}), Abelard Podgorski
   (\citeproc{ref-Podgorski2022}{2022}), and David Barnett
   (\citeproc{ref-Barnett2022}{2022}) recommend choosing B.
@@ -526,7 +527,7 @@ family that agree about what to do, and why to do it, in
 an in house dispute between causal decision theories, though I'll spend
 some time objecting to EDT, and also some time objecting to other
 theories that reject both CDT and EDT.\footnote{The most notable of
-  these will be the Functional Decision Theory of Levinstein and Soares
+  these will be the Functional Decision Theory of Levinstein \& Soares
   (\citeproc{ref-LevinsteinSoares2020}{2020}), and the
   non-expectationist theories of Quiggin
   (\citeproc{ref-Quiggin1982}{1982}) and Buchak
@@ -639,10 +640,10 @@ strategy\footnote{A strategy in this sense must plan for what to do in
 point in time, they must choose an option that would be permissible were
 the dynamic choice problem to have started at that point, with that set
 of options. These two constraints, which I'll discuss much more in
-chapter Chapter~\ref{sec-dual}, have some surprising consequences.
-Imagine that Chooser has the following two-stage problem. At stage 1,
-they can choose to Exit or Continue. If they Exit, they get 5. If they
-continue, they make a choice in the problem depicted in
+Chapter~\ref{sec-dual}, have some surprising consequences. Imagine that
+Chooser has the following two-stage problem. At stage 1, they can choose
+to Exit or Continue. If they Exit, they get 5. If they continue, they
+make a choice in the problem depicted in
 Table~\ref{tbl-first-dynamic-example}.\footnote{In this problem, the
   Demon makes a prediction after Chooser opts to Continue, but this
   prediction is only revealed after Chooser selects A or B.}
@@ -684,9 +685,9 @@ with them on this point.
 
 There are some decision theorists who agree with GDT that decisions
 should not be strictly consequentialist. These include the resolute
-theorists, in the sense of McClennan
-(\citeproc{ref-McClennan1990}{1990a}), and the functional theorists, in
-the sense of Levinstein and Soares
+theorists, in the sense of McClennen
+(\citeproc{ref-McClennen1990}{1990}), and the functional theorists, in
+the sense of Levinstein \& Soares
 (\citeproc{ref-LevinsteinSoares2020}{2020}). But GDT disagrees with them
 as well. Those theorists think that the only thing Chooser must do is
 choose a sensible plan, and then at each stage Chooser should just carry
@@ -696,7 +697,7 @@ with the choice of rational moves at each point in a dynamic choice
 problem.\footnote{One might have expected it would be easy to generate
   examples where this fails in GDT, by simply translating the examples
   of games involving incredible threats
-  (\citeproc{ref-Bonanno2018}{Bonanno 2018, 86}) into demonic decision
+  (\citeproc{ref-Bonanno2018}{Bonanno, 2018: 86}) into demonic decision
   problems. It turns out to be harder than one might have expected, or
   at least than I originally expected, to come up with such a case where
   (a) one player is Demon, and (b) the `threat' strategy is not weakly
@@ -773,7 +774,7 @@ plan to decide what to do. She's going to flip a fair coin. If it lands
 heads, Billy will get the ticket. If it lands tails, Billy will get a
 choice of the ticket or the dollar. Billy's risk-function\footnote{On
   the role of risk-functions in Buchak's theory, see
-  (\citeproc{ref-Buchak2017}{Buchak 2017, 2366}).} \emph{r} is
+  (\citeproc{ref-Buchak2017}{Buchak, 2017: 2366}).} \emph{r} is
 \emph{r}(\emph{p})~=~\emph{p}\textsuperscript{2}. And money has an
 ever-so-slightly declining marginal utility for Billy.\footnote{The
   example is not sensitive to the details on this point, but to make it
@@ -806,7 +807,7 @@ would choose the red box, they put \$10 in the red box, and \$11 in the
 blue box. If Demon predicted Chooser would choose the blue box, they put
 \$0 in the red box, and \$1 in the blue box. The second principle says
 that in this case, Chooser must take the blue box. What it rules out is
-the following reasoning, which is endorsed by, e.g., Levinstein and
+the following reasoning, which is endorsed by, e.g., Levinstein \&
 Soares (\citeproc{ref-LevinsteinSoares2020}{2020}). The optimal strategy
 is to plan to take the red box, since on average that gets \$10 rather
 than \$1. Then when the boxes are opened, what Chooser should do is
@@ -999,7 +1000,7 @@ Non-Ideal Decision & Study optimization & Pass \\
 Game theory agrees with the middle row. GDT, the theory I'm developing
 in this book, does so too. And so do almost all decision theorists
 working in philosophy.\footnote{The exceptions are people working in
-  `descriptive decision theory' (\citeproc{ref-ChandlerSEP}{Chandler
+  `descriptive decision theory' (\citeproc{ref-ChandlerSEP}{Chandler,
   2017}). But that's normally not taken to be a normative theory; it
   isn't about what people should do in problems like Salesman, but what
   they actually do.} So in trying to convince philosophers to adopt GDT,
@@ -1021,8 +1022,8 @@ make things worse. The ideal agent will announce the best answer they
 have after spending no time calculating the solution to Salesman, and
 resembling the ideal agent in that respect will make Chooser
 worse.\footnote{This is a special case of Lipsey and Lancaster's Theory
-  of the Second Best (\citeproc{ref-LipseyLancaster}{Lipsey and
-  Lancaster 1956}). If you don't have control over every parameter,
+  of the Second Best (\citeproc{ref-LipseyLancaster}{Lipsey \&
+  Lancaster, 1956}). If you don't have control over every parameter,
   setting the parameters you do control to the ideal values is generally
   inadvisable.} And there is a separate problem. Why say it is ideal to
 make a choice in Basketball that Chooser knows will lead to a
@@ -1085,7 +1086,7 @@ But this \emph{long run} is a misleading guide to current affairs.
 \emph{In the long run we are all dead}. Economists set themselves too
 easy, too useless a task if in tempestuous seasons they can only tell us
 that when the storm is long past the ocean will be flat again.
-(\citeproc{ref-Keynes1923}{Keynes 1923, 80}, emphasis in original)
+(\citeproc{ref-Keynes1923}{Keynes, 1923: 80}, emphasis in original)
 \end{quote}
 
 Don't focus on the temporal connotations of Keynes's terminology of
@@ -1129,7 +1130,7 @@ COVID-19 pandemic, for reasons I don't at all understand.)
 
 Here's an even simpler surprising prediction that you need something
 like GDT to get, and which is relevant to some debates in philosophical
-decision theory.\footnote{Bonanno (\citeproc{ref-Bonanno2018}{2018,
+decision theory.\footnote{Bonanno (\citeproc{ref-Bonanno2018}{2018:
   216}) makes a somewhat similar point with the example of the drowning
   dog.} Imagine Row and Column are playing rock-paper-scissors. A
 bystander, C, says that he really likes seeing rock beat scissors, so he
@@ -1211,7 +1212,8 @@ idealisations are useful in decision theory. Lewis writes,
 We're describing (one aspect of) what an ideally rational agent would
 do, and remarking that somehow we manage to approximate this, and
 perhaps -- I'd play this down -- advising people to approximate it a bit
-better if they can. (\citeproc{ref-Lewis1981Mellor}{Lewis 2020a, 432})
+better if they can. (\citeproc{ref-Lewis-Mellor-14101981}{Lewis, 2020:
+432})
 \end{quote}
 
 \section{Why This Idealisation}\label{sec-why-this-ideal}
@@ -1229,22 +1231,22 @@ our description of various cases to say it holds in all cases. Why don't
 we use the idealisation that says it does in fact hold in all cases? The
 answer here depends a bit on the `we'. Some generalisations about less
 than ideally rational behavior are useful in empirical studies of
-consumer choice.\footnote{See
-  (\citeproc{ref-Barta2023}{\textbf{Barta2023?}}) for a relatively
-  recent example, picked more or less at random.} But there is a reason
-that philosophers and more theoretical economists have focussed on
-rational idealisations. The thought is that a lot of deviations from
-rationality are short-cuts that are sensible to use when the stakes are
-low. But in high-stakes situations, humans will more closely approximate
-ideally rational agents. (This might be coupled with the suggestion that
-over time they will do this better, simply because the ones who more
-closely approximate the rational choice will increase their market
-share.) And getting correct predictions and explanations in high-stakes
-cases might be particularly important in understanding society and the
-economy. So while non-rational idealisations might be crucially
-important in understanding store design (e.g., why supermarkets have
-produce at the entrance), rational idealisations are needed for
-understanding the nature of stock markets and business investment.
+consumer choice.\footnote{See Barta, Gurrea, \& Flavián
+  (\citeproc{ref-Barta2023}{2023}) for a relatively recent example,
+  picked more or less at random.} But there is a reason that
+philosophers and more theoretical economists have focussed on rational
+idealisations. The thought is that a lot of deviations from rationality
+are short-cuts that are sensible to use when the stakes are low. But in
+high-stakes situations, humans will more closely approximate ideally
+rational agents. (This might be coupled with the suggestion that over
+time they will do this better, simply because the ones who more closely
+approximate the rational choice will increase their market share.) And
+getting correct predictions and explanations in high-stakes cases might
+be particularly important in understanding society and the economy. So
+while non-rational idealisations might be crucially important in
+understanding store design (e.g., why supermarkets have produce at the
+entrance), rational idealisations are needed for understanding the
+nature of stock markets and business investment.
 
 That reasoning looks like it might over-generate. In high-stakes cases,
 people are not only more careful with their decision making process,
@@ -1290,7 +1292,7 @@ long run it is not so. The \emph{market} behaves \emph{as if} men were
 wont to calculate with the utmost precision in making their choices. We
 live largely, of necessity, by rule and blindly; but the results
 approximate rationality fairly well on an average.
-(\citeproc{ref-Knight1921}{Knight 1921, 67n1})
+(\citeproc{ref-Knight1921}{Knight, 1921: 67n1})
 \end{quote}
 
 I don't agree with everything Knight says here; I think he's much too
@@ -1332,17 +1334,17 @@ powerful kind of explanation from very carefully working out the ideal
 theory, and then relaxing one of the components of the idealisation. At
 a very high level of abstraction, that's what happened with the Eyster
 and Rabin's development of the notion of cursed equilibrium
-(\citeproc{ref-EysterRabin2005}{Eyster and Rabin 2005}). The
+(\citeproc{ref-EysterRabin2005}{Eyster \& Rabin, 2005}). The
 explanations they give for certain kinds of behavior in auctions are
 completely different from anything I'd have expected, but they seem to
 do empirically fairly well.\footnote{And there are even more empirically
-  successful theories that build on their work, such as in Fong, Lin,
-  and Palfrey (\citeproc{ref-fong2023cursed}{2023}) and Shani Cohen and
-  Li (\citeproc{ref-cohen2023sequential}{2023}).} Their models have
-people acting as if they have solved very complex equations, but have
-ignored simple facts, notably that other people may know more than they
-do. A priori, this is not very plausible. But if it fits the data, and
-it seems to, it is worth taking seriously. And while it was logically
+  successful theories that build on their work, such as in Fong, Lin, \&
+  Palfrey (\citeproc{ref-fong2023cursed}{2023}) and Shani Cohen \& Li
+  (\citeproc{ref-cohen2023sequential}{2023}).} Their models have people
+acting as if they have solved very complex equations, but have ignored
+simple facts, notably that other people may know more than they do. A
+priori, this is not very plausible. But if it fits the data, and it
+seems to, it is worth taking seriously. And while it was logically
 possible to develop a model like cursed equilibrium without first
 developing an ideal model and then relaxing it, that's not in fact how
 it was developed. In fact the development of certain kinds of ideal
@@ -1370,8 +1372,8 @@ Finally, I'll assume it means they have numerical credences and
 utilities. I'm not sure this should be part of the same idealisation,
 but it simplifies the discussion, and it is arguable that non-numerical
 credences and utilities come from the same kind of unawareness that
-we're assuming away. (\citeproc{ref-GrantEtAl2021}{Grant, Ani, and
-Quiggin 2021})
+we're assuming away. (\citeproc{ref-GrantEtAl2021}{Grant, Ani, \&
+Quiggin, 2021})
 
 So the problems our choosers face look like this. There are some
 possible states of the world, and possible choices. The chooser knows
@@ -1499,7 +1501,7 @@ So this means that arguments like this one should not be used in
 decision theory. Of course, we can't entirely depart from intuitions
 about cases. If our theory disagrees too much with common sense it
 starts becoming a theory of something else
-(\citeproc{ref-Jackson1998}{Jackson 1998}, Ch. 2). The role of
+(\citeproc{ref-Jackson1998}{Jackson, 1998}, Ch. 2). The role of
 intuitions is like the drawing on a wanted poster. It's not true that
 the criminal is the person who best resembles the drawing, but you
 should be very sceptical of a theory that the criminal looks nothing at
@@ -1636,9 +1638,9 @@ harder time handling even simple money bets.\footnote{Joanna Thoma
   (\citeproc{ref-Thoma2019}{2019}) develops a subtle critique of some
   non-expectationist theories starting with something like this point.
   And the way I'm developing the point also owes a lot to the
-  observation Ray (\citeproc{ref-Briggs2015}{\textbf{Briggs2015?}})
-  makes that expectationism is ``a valuable tool that enables theorists
-  to simplify so-called grand-world decisions into so-called small-world
+  observation Ray Briggs (\citeproc{ref-Briggs2015}{2015}) makes that
+  expectationism is ``a valuable tool that enables theorists to simplify
+  so-called grand-world decisions into so-called small-world
   decisions.''}
 
 So imagine we have a simple problem. Chooser must accept or decline a
@@ -1675,12 +1677,12 @@ committed a broadly causal version of decision theory.\footnote{This
   similar to ones he drew.} For one thing, they always recommend
 defecting in Prisoners' Dilemma, even when playing with a twin. As David
 Lewis showed, this is equivalent to recommending two-boxing in Newcomb's
-Problem (\citeproc{ref-Lewis1979e}{Lewis 1979}). They endorse the causal
-decision theorist's signature argument form: the deletion of strongly
-dominated strategies. Indeed, the typical book introduces this before it
-introduces anything about probability. When they do get around to
-probabilities, they tend to define the expected value of a choice in a
-way only a causal decision theorist could endorse. In particular, they
+Problem (\citeproc{ref-Lewis1979e}{Lewis, 1979}). They endorse the
+causal decision theorist's signature argument form: the deletion of
+strongly dominated strategies. Indeed, the typical book introduces this
+before it introduces anything about probability. When they do get around
+to probabilities, they tend to define the expected value of a choice in
+a way only a causal decision theorist could endorse. In particular, they
 define expected values using unconditional, rather than conditional,
 probabilities.\footnote{See, for instance, the introduction of them on
   page 136 of Bonanno (\citeproc{ref-Bonanno2018}{2018}). And note that
@@ -1760,7 +1762,7 @@ says A is the only rational choice, and it is a problem for a decision
 theory that doesn't agree.\footnote{This objection goes back to Richter
   (\citeproc{ref-Richter1984}{1984}). The most memorable version of an
   asymmetric problem with no ratifiable choice is the Psychopath Button
-  case presented by Andy Egan (\citeproc{ref-Egan2007}{2007a}).}
+  case presented by Andy Egan (\citeproc{ref-Egan2007}{2007}).}
 
 A related objection is raised by Arif Ahmed
 (\citeproc{ref-Ahmed2014a}{2014}) and by Jack Spencer and Ian Wells
@@ -1802,14 +1804,14 @@ states, PA, PB, and PX, such that X maximises expected utility. If
 Pr(PA) ≥ Pr(PB), then A will have a higher expected return than X, and
 if Pr(PB) ≥ Pr(PA), then B will have a greater return than X. In
 game-theoretic terms, X is not a best response
-(\citeproc{ref-Bonanno2018}{Bonanno 2018, 41}); no matter what Chooser
+(\citeproc{ref-Bonanno2018}{Bonanno, 2018: 41}); no matter what Chooser
 thinks Demon will do, indeed no matter what probability Chooser has over
 Demon's choices, X is sub-optimal.
 
 The last two things turn out to be equivalent. As Pearce
 (\citeproc{ref-Pearce1984}{1984}) shows, an option is sometimes a best
 response iff it is not strictly dominated by any other pure or mixed
-strategy.\footnote{Bonanno (\citeproc{ref-Bonanno2018}{2018, 207})
+strategy.\footnote{Bonanno (\citeproc{ref-Bonanno2018}{2018: 207})
   attributes this to Pearce, who has a rather elegant proof of the
   result that involves turning the decision problem into a zero-sum
   game, and applying a famous result of Nash's.} That is, for any option
@@ -2077,7 +2079,7 @@ Problem and Up in Table~\ref{tbl-edt-war}.\footnote{These theories
   recommend always playing Up in Figure~\ref{fig-second-anti-war}, the
   `complicated' example I mentioned above}. Those theories leave their
 proponents well off in all the cases. The so-called `foundational
-decision theory' that Levinstein and Soares
+decision theory' that Levinstein \& Soares
 (\citeproc{ref-LevinsteinSoares2020}{2020}) endorse also endorse the
 same three choices. But those theories are vulnerable to much more
 serious objections, that I'll come to in
@@ -2104,7 +2106,7 @@ dismissed almost as quickly.
 
 The philosophers' dismissal is usually accompanied by one or both of the
 following two reasons.\footnote{These reasons are both offered, briefly,
-  by Nozick (\citeproc{ref-Nozick1969}{1969}), so they have a history in
+  by Nozick (\citeproc{ref-Nozick1969}{n.d.}), so they have a history in
   decision theory.} First, Chooser might not be capable of carrying out
 a mixed strategy. They might not, for instance, have any coins in their
 pocket.\footnote{Not a particularly realistic concern when everyone
@@ -2156,17 +2158,16 @@ This doesn't block the argument that ideal agents can play mixed
 strategies. Being able to carry out a mixed strategy is of practical
 value, especially when there are predictors around.\footnote{This point
   goes back at least to Oskar Morgenstern's discussion of the
-  Holmes-Moriarty game
-  ((\citeproc{ref-Morgenstern1935}{\textbf{Morgenstern1935?}})).} It's
-not good to lose every game of rock-paper-scissors to the nearest
-predictor. If some mental activity is of practical value, then being
-able to carry it out is a skill to do with practical rationality. The
-idealised agents in decision theory have all the skills to do with
-practical rationality. Hence they can carry out mixed strategies, since
-carrying them out is a skill to do with practical rationality. So I
-conclude that if we are idealising, and if that idealisation extends at
-least as far as arithmetic perfection, it should also extend to being
-able to carry out mixed strategies.
+  Holmes-Moriarty game (Morgenstern
+  (\citeproc{ref-Morgenstern1935}{1976})).} It's not good to lose every
+game of rock-paper-scissors to the nearest predictor. If some mental
+activity is of practical value, then being able to carry it out is a
+skill to do with practical rationality. The idealised agents in decision
+theory have all the skills to do with practical rationality. Hence they
+can carry out mixed strategies, since carrying them out is a skill to do
+with practical rationality. So I conclude that if we are idealising, and
+if that idealisation extends at least as far as arithmetic perfection,
+it should also extend to being able to carry out mixed strategies.
 
 That's not to say all decision theory should be idealised decision
 theory. We certainly need theories for real humans. Nor is it to say
@@ -2211,7 +2212,7 @@ choiceworthy in a particular situation, it also says that X is
 choiceworthy conditional on being chosen.
 
 \section{A Brief History of
-Ratificationism}\label{a-brief-history-of-ratificationism}
+Ratificationism}\label{sec-ratify-brief-history}
 
 Ratificationism, the view that the correct theory says all choices are
 ratifiable in this sense, used to be a more popular view among decision
@@ -2307,7 +2308,7 @@ So if mixed strategies are allowed, neither of the problems for
 ratifiability persist.
 
 \section{Two Quick Arguments for
-Ratificationism.}\label{two-quick-arguments-for-ratificationism.}
+Ratificationism}\label{sec-ratify-two-quick}
 
 Ratifiability is an intuitive constraint. There is something very odd
 about saying that such-and-such is a rational thing to do, but whoever
@@ -2447,7 +2448,7 @@ following items.
   collection of mutually disjoint subsets of \emph{D\textsubscript{i}}
   whose union is equal to \emph{D\textsubscript{i}}). Each element of
   \(\mathfrak{D}_i\) is called an information set of player
-  \emph{i}.''(\citeproc{ref-Bonanno2018}{Bonanno 2018, 119})
+  \emph{i}.''(\citeproc{ref-Bonanno2018}{Bonanno, 2018: 119})
 \end{itemize}
 \end{quote}
 
@@ -2549,7 +2550,7 @@ rational or irrational.
 \subsection{Special Players}\label{sec-special-players}
 
 Trees in game theory textbooks frequently designate one special player:
-Nature (\citeproc{ref-Bonanno2018}{Bonanno 2018, 134ff}). Nature is
+Nature (\citeproc{ref-Bonanno2018}{Bonanno, 2018: 134ff}). Nature is
 different to human players in two key respects.
 
 Nature does not care about which outcome the game ends with; formally,
@@ -2626,7 +2627,7 @@ can be rationally played in the corresponding strategic form decision.
 
 Most game theorists deny this equivalence.\footnote{The next few
   paragraphs are based on the game theoretic notion of non-credible
-  threats (\citeproc{ref-Bonanno2018}{Bonanno 2018, 86ff}).} The
+  threats (\citeproc{ref-Bonanno2018}{Bonanno, 2018: 86ff}).} The
 examples used to motivate this are fairly simple. In
 Figure~\ref{fig-subgame-example}, Demon moves first, and Chooser moves
 second. Chooser can play A or B, Demon can play PA or PB. Demon wants
@@ -2735,7 +2736,7 @@ node. This is sometimes known in philosophy as the resolute approach to
 decision theory.\footnote{That particular term, `resolute', is
   associated with a view that Edward McClennen developed to deal with
   cases of foreseeable changes of preference
-  (\citeproc{ref-McClennen1990}{McClennan 1990b}). As already indicated,
+  (\citeproc{ref-McClennen1990}{McClennen, 1990}). As already indicated,
   I'm just looking at games where preferences do not change over the
   game.} In a finite game, there will be finitely many strategies. This
 finite number may be very large, but it can be calculated. And similarly
@@ -2886,7 +2887,7 @@ ends. After stage 3, the game ends either way. Chooser's payouts are
 given on the tree. Demon's disposition is to do whatever they predict
 Chooser will do at stage 3, and they are arbitrarily good at predicting
 Chooser's strategy.\footnote{This problem is very closely modelled on a
-  game described by Stalnaker (\citeproc{ref-Stalnaker1998}{1998, 47}).
+  game described by Stalnaker (\citeproc{ref-Stalnaker1998}{1998: 47}).
   But note that how I've described Demon is different to how Stalnaker
   describes `Bob', the player who moves at stage 2 in his version of the
   game. In his version of the game, the player who moves first just
@@ -3067,7 +3068,7 @@ SEDT is a fairly simple theory. It has two rules.
 \end{enumerate}
 
 SEDT is very similar to the Functional Decision Theory defended by
-Levinstein and Soares (\citeproc{ref-LevinsteinSoares2020}{2020}). My
+Levinstein \& Soares (\citeproc{ref-LevinsteinSoares2020}{2020}). My
 excuses for using a new name are that (a) this name is a little more
 descriptive, and (b) I'm not quite sure that the theories are the same.
 I think they say the same things about every case I'll discuss in this
@@ -3292,7 +3293,7 @@ consequentialist changes their own probability distribution over what
 they will do, what act is rational for them changes.\footnote{The point
   here is somewhat connected to the point Bonanno makes about how
   backwards induction works in games where a player is indifferent
-  between certain outcomes (\citeproc{ref-Bonanno2018}{Bonanno 2018,
+  between certain outcomes (\citeproc{ref-Bonanno2018}{Bonanno, 2018:
   80ff}).} I don't think this is ever an issue for CEDT, but it is an
 issue for other Purely Consequentialist theories. For instance, GDT says
 that either A or B is a permissible choice in
@@ -3375,14 +3376,14 @@ theorists, like Wedgwood (\citeproc{ref-Wedgwood2013a}{2013}), Gallow
 (\citeproc{ref-Gallow2020}{2020}), Podgorski
 (\citeproc{ref-Podgorski2022}{2022}), and Barnett
 (\citeproc{ref-Barnett2022}{2022}), endorse playing Down on the ground
-of regret miminisation. I think both Up and Down are
-permissible.{[}\^{}indecisive-2{]} I also think this is the intuitively
-right verdict, though I place no weight on that intuition. In general, I
-think in any problem that has the three features described in the last
-paragraph (two equilibria, one better according to EDT, the other with
-lower possible regret), either option is permissible. Since lightly
-sweetening either Up or Down in this problem doesn't change either
-feature, I think the right treatment of these games is indecisive.
+of regret miminisation. I think both Up and Down are permissible. I also
+think this is the intuitively right verdict, though I place no weight on
+that intuition. In general, I think in any problem that has the three
+features described in the last paragraph (two equilibria, one better
+according to EDT, the other with lower possible regret), either option
+is permissible. Since lightly sweetening either Up or Down in this
+problem doesn't change either feature, I think the right treatment of
+these games is indecisive.
 
 \section{Exit Games}\label{sec-exit-games}
 
@@ -3532,7 +3533,7 @@ as they gave to the conditional question.
 
 One could see this as a consequence of applying something like the
 Ramsey test to conditional questions
-(\citeproc{ref-RamseyGeneralProp}{Ramsey 1990}). Denying Exit Principle
+(\citeproc{ref-RamseyGeneralProp}{Ramsey, 1990}). Denying Exit Principle
 means treating these two very similar sounding questions differently,
 and that's implausible.
 
@@ -3669,9 +3670,9 @@ people to question CDT in recent years.
 Table~\ref{tbl-frustrating-button} is an example that Jack Spencer
 (\citeproc{ref-Spencer2023}{2023}) used to model the kind of case that's
 at issue. As he notes, it is similar to the psychopath button case
-(\citeproc{ref-Egan2007-EGASCT}{Egan 2007b}), the asymmetric Death in
-Damascus case (\citeproc{ref-Richter1984}{Richter 1984}), and other
-puzzles for CDT.
+(\citeproc{ref-Egan2007}{Egan, 2007}), the asymmetric Death in Damascus
+case (\citeproc{ref-Richter1984}{Richter, 1984}), and other puzzles for
+CDT.
 
 \begin{longtable}[]{@{}ccc@{}}
 \caption{Frustrating Button (from Spencer
@@ -3794,8 +3795,8 @@ choice function in the sense of Samuelson
 (\citeproc{ref-Chernoff1954}{1954}), and Sen
 (\citeproc{ref-Sen1971}{1971}). This is consistent with the practice in
 game theory. Think about the use of solution concepts like subgame
-perfect equilibrium (\citeproc{ref-Bonanno2018}{Bonanno 2018}, sec 4.4)
-or Perfect Bayesian equilibrium (\citeproc{ref-Bonanno2018}{Bonanno
+perfect equilibrium (\citeproc{ref-Bonanno2018}{Bonanno, 2018}, sec 4.4)
+or Perfect Bayesian equilibrium (\citeproc{ref-Bonanno2018}{Bonanno,
 2018}, ch.~13). These describe which choices are acceptable in dynamic
 situations. But they don't even purport to offer a ranking over the
 unchosen options. All the theory says is that given a situation, these
@@ -4119,7 +4120,7 @@ is David Lewis expressing such a view.\footnote{I'm using Lewis as an
 \begin{quote}
 The central question of decision theory is: which choices are the ones
 that serve one's desires according to one's beliefs?
-(\citeproc{ref-Lewis-Gorman-10071979}{Lewis 2020b, 472})
+(\citeproc{ref-Lewis-Gorman-10071979}{Lewis, n.d.: 472})
 \end{quote}
 
 We need one caveat on this. Philosophical decision theories typically do
@@ -4147,11 +4148,11 @@ this notion of structural rationality, if it is even coherent, is not
 philosophically interesting. This is a big debate, and I don't suspect
 I'll convince many people of something this sweeping.\footnote{My own
   book length contribution to this debate is in \emph{Normative
-  Externalism} (\citeproc{ref-Weatherson2019}{Weatherson 2019}).}
+  Externalism} (\citeproc{ref-Weatherson2019}{Weatherson, 2019}).}
 Hopefully I'll convince some, but I don't want to rest the argument on
 these general considerations. So second, I'll focus more on decision
 theory, and argue that reflecting on an important case from the game
-theory literature, the beer-quiche game due to Cho and Kreps
+theory literature, the beer-quiche game due to Cho \& Kreps
 (\citeproc{ref-ChoKreps1987}{1987}), gives us reason to deny that
 decision theory is part of the theory of structural rationality.
 
@@ -4179,7 +4180,7 @@ philosophically load bearing.
 Lastly, it has proven incredibly hard to even define what makes a norm
 structural. The most important recent attempt is in Alex Worsnip's book
 \emph{Fitting Things Together: Coherence and the Demands of Structural
-Rationality} (\citeproc{ref-Worsnip2021}{Worsnip 2021}). Here's his
+Rationality} (\citeproc{ref-Worsnip2021}{Worsnip, 2021}). Here's his
 definition:
 
 \begin{quote}
@@ -4187,7 +4188,8 @@ definition:
 incoherent iff it is (partially) constitutive of (at least some of) the
 states in the set that any agent who holds this set of states has a
 disposition, when conditions of full transparency are met, to revise at
-least one of the states. (\citeproc{ref-Worsnip2021}{Worsnip 2021, 132})
+least one of the states. (\citeproc{ref-Worsnip2021}{Worsnip, 2021:
+132})
 \end{quote}
 
 This won't capture nearly enough. If probabilism is correct, then
@@ -4224,7 +4226,7 @@ search for one feels like a degenerating research program.\footnote{See
 Even if the substantive/structural distinction can be made precise, and
 shown to do philosophical work, it won't track the notion game theorists
 most care about. We can see this with a version of the beer-quiche game
-developed by Cho and Kreps (\citeproc{ref-ChoKreps1987}{1987}). In this
+developed by Cho \& Kreps (\citeproc{ref-ChoKreps1987}{1987}). In this
 section I'll translate that game into decision-theoretic language, and
 say why it shows that decision theory should care about substantive, and
 not just structural, rationality.
@@ -4425,8 +4427,8 @@ B is ratifiable doesn't go through. It has been argued by game theorists
 that we should always allow for the possibility that one or other player
 in a game will make some kind of performance error. This idea is at the
 heart of Reinhard Selten's notion of trembling hand equilibrium
-(\citeproc{ref-Selten1975}{Selten 1975}), and Roger Myerson's notion of
-proper equilibrium (\citeproc{ref-Myerson1978}{Myerson 1978}). If a
+(\citeproc{ref-Selten1975}{Selten, 1975}), and Roger Myerson's notion of
+proper equilibrium (\citeproc{ref-Myerson1978}{Myerson, 1978}). If a
 strategy would not make sense if the probability of an error by one or
 other player was positive, even if it was arbitrarily low, it should not
 be played. Since B only makes sense if the probability of an error by
@@ -4448,7 +4450,7 @@ persuasive argument against B.\footnote{This paragraph is somewhere
 
 If it is good to remove weakly dominated options, then one might think
 it follows straight away that it is good to keep doing this.\footnote{This
-  suggestion is made by, for example Hare and Hedden
+  suggestion is made by, for example Hare \& Hedden
   (\citeproc{ref-HareHedden2015}{2015}).} Think about
 Table~\ref{tbl-wd-itd}.
 
@@ -4481,7 +4483,7 @@ Table~\ref{tbl-first-wd}, in which we said Chooser should play U.
 So does it make sense to say that U is the only play in
 Table~\ref{tbl-wd-itd}? I think not, for three reasons.
 
-First, as Bonanno (\citeproc{ref-Bonanno2018}{2018, 37}) points out, in
+First, as Bonanno (\citeproc{ref-Bonanno2018}{2018: 37}) points out, in
 general iterative deletion of weakly dominated strategies is not a well
 defined decision procedure. It turns out that in two player games, the
 order that weakly dominated strategies are deleted can affect which
@@ -4501,7 +4503,7 @@ rational plays.
 Third, iterative deletion of weakly dominated strategies (combined with
 the \href{dual.qmd}{dual mandate} approach to dynamic choice) leads to a
 single solution to the \hyperref[tbl-money-burning]{money burning game}
-described by Ben-Porath and Dekel
+described by Ben-Porath \& Dekel
 (\citeproc{ref-BenPorathDekel1992}{1992}). The money burning game has
 two players, and two stages. At stage 1, Column will have the choice to
 burn or not burn \$20. The burning will be public, so Row will see what
@@ -4809,6 +4811,565 @@ classes at University of Michigan.
 
 \markboth{References}{References}
 
+\phantomsection\label{refs}
+\begin{CSLReferences}{1}{0}
+\bibitem[\citeproctext]{ref-Ahmed2012}
+Ahmed, Arif. (2012). Push the button. \emph{Philosophy of Science},
+\emph{79}(3), 386--395.
+doi:\href{https://doi.org/10.1086/666065}{10.1086/666065}
+
+\bibitem[\citeproctext]{ref-Ahmed2014a}
+Ahmed, Arif. (2014). Dicing with death. \emph{Analysis}, \emph{74}(4),
+587--592.
+doi:\href{https://doi.org/10.1093/analys/anu084}{10.1093/analys/anu084}
+
+\bibitem[\citeproctext]{ref-Ahmed2020}
+Ahmed, Arif. (2020). Equal opportunities in newcomb's problem and
+elsewhere. \emph{Mind}, \emph{129}(515), 867--886.
+doi:\href{https://doi.org/10.1093/mind/fzz073}{10.1093/mind/fzz073}
+
+\bibitem[\citeproctext]{ref-Akerlof1970}
+Akerlof, George. (1970). The market for "lemons": Quality uncertainty
+and the market mechanism. \emph{Quarterly Journal of Economics},
+\emph{84}(3), 488--500.
+doi:\href{https://doi.org/10.2307/1879431}{10.2307/1879431}
+
+\bibitem[\citeproctext]{ref-Alcoba2023}
+Alcoba, Natalie. (2023). In argentina, inflation passes 100\% (and the
+restaurants are packed). \emph{The New York Times}, June 19, 2023.
+Retrieved from
+\url{https://www.nytimes.com/2023/06/19/world/americas/argentina-inflation-peso-restaurants.html}
+
+\bibitem[\citeproctext]{ref-Allais1953}
+Allais, M. (1953). Le comportement de l'homme rationnel devant le
+risque: Critique des postulats et axiomes de l'ecole americaine.
+\emph{Econometrica}, \emph{21}(4), 503--546.
+doi:\href{https://doi.org/10.2307/1907921}{10.2307/1907921}
+
+\bibitem[\citeproctext]{ref-Arntzenius2008}
+Arntzenius, Frank. (2008). No regrets; or, edith piaf revamps decision
+theory. \emph{Erkenntnis}, \emph{68}(2), 277--297.
+doi:\href{https://doi.org/10.1007/s10670-007-9084-8}{10.1007/s10670-007-9084-8}
+
+\bibitem[\citeproctext]{ref-Barnett2022}
+Barnett, David James. (2022). Graded ratifiability. \emph{Journal of
+Philosophy}, \emph{119}(2), 57--88.
+doi:\href{https://doi.org/10.5840/jphil202211925}{10.5840/jphil202211925}
+
+\bibitem[\citeproctext]{ref-Barta2023}
+Barta, Sergio, Raquel Gurrea, and Carlos Flavián. (2023). Consequences
+of consumer regret with online shopping. \emph{Journal of Retailing and
+Consumer Services}, \emph{73}, 103332.
+doi:\href{https://doi.org/10.1016/j.jretconser.2023.103332}{10.1016/j.jretconser.2023.103332}
+
+\bibitem[\citeproctext]{ref-BenPorathDekel1992}
+Ben-Porath, Elchanan, and Eddie Dekel. (1992). Signaling future actions
+and the potential for sacrifice. \emph{Journal of Economic Theory},
+\emph{57}(1), 36--51.
+doi:\href{https://doi.org/10.1016/S0022-0531(05)80039-0}{10.1016/S0022-0531(05)80039-0}
+
+\bibitem[\citeproctext]{ref-Blackwell1951}
+Blackwell, David. (1951). Comparison of experiments. \emph{Proceedings
+of the Berkeley Symposium on Mathematical Statistics and Probability},
+\emph{2}(1), 93--102.
+
+\bibitem[\citeproctext]{ref-Bonanno2018}
+Bonanno, Giacomo. (2018). Game theory. Retrieved from
+\url{http://faculty.econ.ucdavis.edu/faculty/bonanno/GT_Book.html}
+
+\bibitem[\citeproctext]{ref-BottomleyWilliamsonnd}
+Bottomley, Christopher, and Timothy Luke WIlliamson. (n.d.). Rational
+risk-aversion: Good things come to those who weight.
+doi:\href{https://doi.org/10.1111/phpr.13006}{10.1111/phpr.13006}
+
+\bibitem[\citeproctext]{ref-Briggs2015}
+Briggs, Ray. (2015). Costs of abandoning the sure thing principle.
+\emph{Canadian Journal of Philosophy}, \emph{45}(5), 827--840.
+doi:\href{https://doi.org/10.1080/00455091.2015.1122387}{10.1080/00455091.2015.1122387}
+
+\bibitem[\citeproctext]{ref-BuchakRisk}
+Buchak, Lara. (2013). \emph{Risk and rationality}. Oxford University
+Press.
+
+\bibitem[\citeproctext]{ref-Buchak2017}
+Buchak, Lara. (2017). Pr{é}cis of risk and rationality.
+\emph{Philosophical Studies}, \emph{174}(9), 2363--2368.
+doi:\href{https://doi.org/10.1007/s11098-017-0904-7}{10.1007/s11098-017-0904-7}
+
+\bibitem[\citeproctext]{ref-Callahan2021}
+Callahan, Laura Frances. (2021). Epistemic existentialism.
+\emph{Episteme}, \emph{18}(4), 539--554.
+doi:\href{https://doi.org/10.1017/epi.2019.25}{10.1017/epi.2019.25}
+
+\bibitem[\citeproctext]{ref-ChandlerSEP}
+Chandler, Jake. (2017). {Descriptive Decision Theory}. In Edward N.
+Zalta (Ed.), \emph{The {Stanford} encyclopedia of philosophy} ({W}inter
+2017).
+\url{https://plato.stanford.edu/archives/win2017/entries/decision-theory-descriptive/};
+Metaphysics Research Lab, Stanford University.
+
+\bibitem[\citeproctext]{ref-Chang2002}
+Chang, Ruth. (2002). The possibility of parity. \emph{Ethics},
+\emph{112}(4), 659--688.
+doi:\href{https://doi.org/10.1086/339673}{10.1086/339673}
+
+\bibitem[\citeproctext]{ref-Chernoff1954}
+Chernoff, Herman. (1954). Rational selection of decision functions.
+\emph{Econometrica}, \emph{22}(4), 422--443.
+doi:\href{https://doi.org/10.2307/1907435}{10.2307/1907435}
+
+\bibitem[\citeproctext]{ref-ChoKreps1987}
+Cho, In-Koo, and David M. Kreps. (1987). Signalling games and stable
+equilibria. \emph{The Quarterly Journal of Economics}, \emph{102}(2),
+179--221. doi:\href{https://doi.org/10.2307/1885060}{10.2307/1885060}
+
+\bibitem[\citeproctext]{ref-cohen2023sequential}
+Cohen, Shani, and Shengwu Li. (2023). \emph{Sequential cursed
+equilibrium}. Retrieved from \url{https://arxiv.org/abs/2212.06025}
+
+\bibitem[\citeproctext]{ref-Cohen2013}
+Cohen, Stewart. (2013). A defence of the (almost) equal weight view. In
+David Christensen \& Jennifer Lackey (Eds.), \emph{The epistemology of
+disagreement: New essays} (98--117). Oxford University Press.
+
+\bibitem[\citeproctext]{ref-Conlisk1996}
+Conlisk, John. (1996). Why bounded rationality? \emph{Journal of
+Economic Literature}, \emph{34}(2), 669--700.
+
+\bibitem[\citeproctext]{ref-Das2023}
+Das, Nilanjan. (2023). The value of biased information. \emph{British
+Journal for the Philosophy of Science}, \emph{74}(1), 25--55.
+doi:\href{https://doi.org/10.1093/bjps/axaa003}{10.1093/bjps/axaa003}
+
+\bibitem[\citeproctext]{ref-Davey2011}
+Davey, Kevin. (2011). Idealizations and contextualism in physics.
+\emph{Philosophy of Science}, \emph{78}(1), 16--38.
+doi:\href{https://doi.org/10.1086/658093}{10.1086/658093}
+
+\bibitem[\citeproctext]{ref-Dogramaci2012}
+Dogramaci, Sinan. (2012). Reverse engineering epistemic evaluations.
+\emph{Philosophy and Phenomenological Research}, \emph{84}(3), 513--530.
+doi:\href{https://doi.org/10.1111/j.1933-1592.2011.00566.x}{10.1111/j.1933-1592.2011.00566.x}
+
+\bibitem[\citeproctext]{ref-Egan2007}
+Egan, Andy. (2007). Some counterexamples to causal decision theory.
+\emph{Philosophical Review}, \emph{116}(1), 93--114.
+doi:\href{https://doi.org/10.1215/00318108-2006-023}{10.1215/00318108-2006-023}
+
+\bibitem[\citeproctext]{ref-Elga2000}
+Elga, Adam. (2000). Self-locating belief and the sleeping beauty
+problem. \emph{Analysis}, \emph{60}(4), 143--147.
+doi:\href{https://doi.org/10.1093/analys/60.2.143}{10.1093/analys/60.2.143}
+
+\bibitem[\citeproctext]{ref-Elliot2019}
+Elliott, Edward. (2019). Normative decision theory. \emph{Analysis},
+\emph{79}(4), 755--772.
+doi:\href{https://doi.org/10.1093/analys/anz059}{10.1093/analys/anz059}
+
+\bibitem[\citeproctext]{ref-EysterRabin2005}
+Eyster, Erik, and Matthew Rabin. (2005). Cursed equilibrium.
+\emph{Econometrica}, \emph{73}(5), 1623--1672. Retrieved from
+\href{https://10.1111/j.1468-0262.2005.00631.x}{10.1111/j.1468-0262.2005.00631.x}
+
+\bibitem[\citeproctext]{ref-Fey2012}
+Fey, Mark. (2012). Symmetric games with only asymmetric equilibria.
+\emph{Games and Economic Behavior}, \emph{75}(1), 424--427.
+doi:\href{https://doi.org/10.1016/j.geb.2011.09.008}{10.1016/j.geb.2011.09.008}
+
+\bibitem[\citeproctext]{ref-fong2023cursed}
+Fong, Meng-Jhang, Po-Hsuan Lin, and Thomas R. Palfrey. (2023).
+\emph{Cursed sequential equilibrium}. Retrieved from
+\url{https://arxiv.org/abs/2301.11971}
+
+\bibitem[\citeproctext]{ref-Fuscond}
+Fusco, Melissa. (n.d.). Absolution of a causal decision theorist.
+doi:\href{https://doi.org/10.1111/nous.12459}{10.1111/nous.12459}
+
+\bibitem[\citeproctext]{ref-Gallownd}
+Gallow, J. Dmitri. (n.d.). The sure thing principle leads to
+instability. Retrieved from Philosophical Quarterly website:
+\url{https://philpapers.org/archive/GALTST-2.pdf}
+
+\bibitem[\citeproctext]{ref-Gallow2020}
+Gallow, J. Dmitri. (2020). The causal decision theorist's gudie to
+managing the news. \emph{The Journal of Philosophy}, \emph{117}(3),
+117--149.
+doi:\href{https://doi.org/10.5840/jphil202011739}{10.5840/jphil202011739}
+
+\bibitem[\citeproctext]{ref-GibbardHarper1978}
+Gibbard, Allan, and William Harper. (1978). \emph{Counterfactuals and
+two kinds of expected utility}.
+
+\bibitem[\citeproctext]{ref-Good1967}
+Good, I. J. (1967). On the principle of total evidence. \emph{British
+Journal for the Philosophy of Science}, \emph{17}(4), 319--321.
+doi:\href{https://doi.org/10.1093/bjps/17.4.319}{10.1093/bjps/17.4.319}
+
+\bibitem[\citeproctext]{ref-Goodsellnd}
+Goodsell, Zachary. (n.d.). Decision theory unbound.
+doi:\href{https://doi.org/10.1111/nous.12473}{10.1111/nous.12473}
+
+\bibitem[\citeproctext]{ref-GrantEtAl2021}
+Grant, Simon, Guerdjikova Ani, and John Quiggin. (2021). Ambiguity and
+awareness: A coherent multiple priors model. \emph{The B.E. Journal of
+Theoretical Economics}, \emph{21}(2), 571--612.
+doi:\href{https://doi.org/10.1515/bejte-2018-0185}{10.1515/bejte-2018-0185}
+
+\bibitem[\citeproctext]{ref-GrecoHedden2016}
+Greco, Daniel, and Brian Hedden. (2016). Uniqueness and
+metaepistemology. \emph{The Journal of Philosophy}, \emph{113}(8),
+365--395.
+doi:\href{https://doi.org/10.1111/phc3.12318}{10.1111/phc3.12318}
+
+\bibitem[\citeproctext]{ref-Gustafsson2011}
+Gustafsson, Johan E. (2011). A note in defence of ratificationism.
+\emph{Erkenntnis}, \emph{75}(1), 147--150.
+doi:\href{https://doi.org/10.1007/s10670-010-9267-6}{10.1007/s10670-010-9267-6}
+
+\bibitem[\citeproctext]{ref-Hammond1988}
+Hammond, Peter J. (1988). Consequentialist foundations for expected
+utility. \emph{Theory and Decision}, \emph{25}(1), 25--78.
+doi:\href{https://doi.org/10.1007/BF00129168}{10.1007/BF00129168}
+
+\bibitem[\citeproctext]{ref-HareHedden2015}
+Hare, Caspar, and Brian Hedden. (2015). Self-reinforcing and
+self-frustrating decisions. \emph{Noûs}, \emph{50}(3), 604--628.
+doi:\href{https://doi.org/10.1111/nous.12094}{10.1111/nous.12094}
+
+\bibitem[\citeproctext]{ref-Harper1986}
+Harper, William. (1986). Mixed strategies and ratifiability in causal
+decision theory. \emph{Erkenntnis}, \emph{24}(1), 25--36.
+doi:\href{https://doi.org/10.1007/BF00183199}{10.1007/BF00183199}
+
+\bibitem[\citeproctext]{ref-Harper1988}
+Harper, William. (1988). Causal decision theory and game theory: A
+classic argument for equilibrium solutions, a defense of weak
+equilibria, and a new problem for the normal form representation. In
+William Harper \& Brian Skyrms (Eds.), \emph{Causation in decision,
+belief change, and statistics: Proceedings of the irvine conference on
+probability and causation} (25--48).
+doi:\href{https://doi.org/10.1007/978-94-009-2865-7_2}{10.1007/978-94-009-2865-7\_2}
+
+\bibitem[\citeproctext]{ref-Heinzelmannnd}
+Heinzelmann, Nora. (n.d.). Rationality is not coherence.
+doi:\href{https://doi.org/10.1093/pq/pqac083}{10.1093/pq/pqac083}
+
+\bibitem[\citeproctext]{ref-Horowitz2014}
+Horowitz, Sophie. (2014). Immoderately rational. \emph{Philosohical
+Studies}, \emph{167}(1), 41--56.
+doi:\href{https://doi.org/10.1007/s11098-013-0231-6}{10.1007/s11098-013-0231-6}
+
+\bibitem[\citeproctext]{ref-Jackson1998}
+Jackson, Frank. (1998). \emph{From metaphysics to ethics: A defence of
+conceptual analysis}. Oxford.
+
+\bibitem[\citeproctext]{ref-Jeffrey1983}
+Jeffrey, Richard. (1983). Bayesianism with a human face. In J. Earman
+(ed.) (Ed.), \emph{Testing scientific theories}. University of Minnesota
+Press.
+
+\bibitem[\citeproctext]{ref-Joyce2012}
+Joyce, James M. (2012). Regret and instability in causal decision
+theory. \emph{Synthese}, \emph{187}(1), 123--145.
+doi:\href{https://doi.org/10.1007/s11229-011-0022-6}{10.1007/s11229-011-0022-6}
+
+\bibitem[\citeproctext]{ref-Keynes1921}
+Keynes, John Maynard. (1921). \emph{Treatise on probability}. Macmillan.
+
+\bibitem[\citeproctext]{ref-Keynes1923}
+Keynes, John Maynard. (1923). \emph{A tract on monetary reform}.
+Macmillan.
+
+\bibitem[\citeproctext]{ref-Knight1921}
+Knight, Frank. (1921). \emph{Risk, uncertainty and profit}. University
+of Chicago Press.
+
+\bibitem[\citeproctext]{ref-KopecTitelbaum2016}
+Kopec, Matthew, and Michael G. Titelbaum. (2016). The uniqueness thesis.
+\emph{Philosophy Compass}, \emph{11}(4), 189--200.
+doi:\href{https://doi.org/10.1111/phc3.12318}{10.1111/phc3.12318}
+
+\bibitem[\citeproctext]{ref-Leend}
+Lee, Wooram. (n.d.). What is structural rationality?
+doi:\href{https://doi.org/10.1093/pq/pqad072}{10.1093/pq/pqad072}
+
+\bibitem[\citeproctext]{ref-LevinsteinSoares2020}
+Levinstein, Benjamin Anders, and Nate Soares. (2020). Cheating death in
+damascus. \emph{Journal of Philosophy}, \emph{117}(5), 237--266.
+doi:\href{https://doi.org/10.5840/jphil2020117516}{10.5840/jphil2020117516}
+
+\bibitem[\citeproctext]{ref-Lewis-Gorman-10071979}
+Lewis, David. (n.d.). Letter to jonathan gorman, 19 april 1989. In
+\emph{Philosophical letters of david {K}. lewis} (472--3).
+
+\bibitem[\citeproctext]{ref-Lewis1969a}
+Lewis, David. (1969). \emph{Convention: A philosophical study}. Harvard
+University Press.
+
+\bibitem[\citeproctext]{ref-Lewis1979e}
+Lewis, David. (1979). Prisoners' dilemma is a {N}ewcomb problem.
+\emph{Philosophy and Public Affairs}, \emph{8}(3), 235--240.
+
+\bibitem[\citeproctext]{ref-Lewis1981e}
+Lewis, David. (1981). Why ain'cha rich? \emph{No{û}s}, \emph{15}(3),
+377--380. doi:\href{https://doi.org/10.2307/2215439}{10.2307/2215439}
+
+\bibitem[\citeproctext]{ref-Lewis-Mellor-14101981}
+Lewis, David. (2020). Letter to {D}. H. Mellor, 14 october 1981. In
+\emph{Philosophical letters of david {K}. lewis} (432--434).
+
+\bibitem[\citeproctext]{ref-LipseyLancaster}
+Lipsey, R. G., and Kelvin Lancaster. (1956). The general theory of
+second best. \emph{Review of Economic Studies}, \emph{24}(1), 11--32.
+doi:\href{https://doi.org/10.2307/2296233}{10.2307/2296233}
+
+\bibitem[\citeproctext]{ref-Lota2023}
+Lota, Kenji, and Ulf Hlobil. (2023). Resolutions against uniqueness.
+\emph{Erkenntnis}, \emph{88}(3), 1013--1033.
+doi:\href{https://doi.org/10.1007/s10670-021-00391-z}{10.1007/s10670-021-00391-z}
+
+\bibitem[\citeproctext]{ref-McClennen1990}
+McClennen, Edward. (1990). \emph{Rationality and dynamic choice}.
+{C}ambridge {U}niversity {P}ress.
+
+\bibitem[\citeproctext]{ref-Meacham2019}
+Meacham, Christopher. (2019). Deference and uniqueness.
+\emph{Philosohical Studies}, \emph{176}(3), 709--732.
+doi:\href{https://doi.org/10.1007/s11098-018-1036-4}{10.1007/s11098-018-1036-4}
+
+\bibitem[\citeproctext]{ref-Mills2005}
+Mills, Charles W. (2005). "Ideal theory" as ideology. \emph{Hypatia},
+\emph{20}(3), 165--184.
+doi:\href{https://doi.org/10.1111/j.1527-2001.2005.tb00493.x}{10.1111/j.1527-2001.2005.tb00493.x}
+
+\bibitem[\citeproctext]{ref-Morgenstern1935}
+Morgenstern, Oscar. (1976). Perfect foresight and economic equilibrium.
+In Andrew Schotter (Ed.), \emph{Economic writings of oscar morgenstern}
+(169--183).
+doi:\href{https://doi.org/10.1007/BF01311642}{10.1007/BF01311642}
+
+\bibitem[\citeproctext]{ref-Moulin1985}
+Moulin, H. (1985). Choice functions over a finite set: A summary.
+\emph{Social Choice and Welfare}, \emph{2}(2), 147--160.
+doi:\href{https://doi.org/10.1007/BF00437315}{10.1007/BF00437315}
+
+\bibitem[\citeproctext]{ref-Myerson1978}
+Myerson, R. B. (1978). Refinements of the nash equilibrium concept.
+\emph{International Journal of Game Theory}, \emph{7}(2), 73--80.
+doi:\href{https://doi.org/10.1007/BF01753236}{10.1007/BF01753236}
+
+\bibitem[\citeproctext]{ref-Nash1951}
+Nash, John. (1951). Non-cooperative games. \emph{Annals of Mathematics},
+\emph{54}(2), 286--295.
+doi:\href{https://doi.org/10.2307/1969529}{10.2307/1969529}
+
+\bibitem[\citeproctext]{ref-Nozick1969}
+Nozick, Robert. (n.d.). Newcomb's problem and two principles of choice.
+In \emph{Essays in honor of carl {G}. Hempel: A tribute on the occasion
+of his sixty-fifth birthday. Hempel: A tribute on the occasion of his
+sixty-fifth birthday} (114--146).
+
+\bibitem[\citeproctext]{ref-OConnor2019}
+O'Connor, Cailin. (2019). \emph{The origins of unfairness: Social
+categories and cultural evolution}. {O}xford {U}niversity {P}ress.
+
+\bibitem[\citeproctext]{ref-Palmira2023}
+Palmira, Michele. (2023). Permissivism and the truth connection.
+\emph{Erkenntnis}, \emph{88}(2), 641--6556.
+doi:\href{https://doi.org/10.1007/s10670-020-00373-7}{10.1007/s10670-020-00373-7}
+
+\bibitem[\citeproctext]{ref-Pearce1984}
+Pearce, David G. (1984). Rationalizable strategic behavior and the
+problem of perfection. \emph{Econometrica}, \emph{52}(4), 1029--1050.
+doi:\href{https://doi.org/10.2307/1911197}{10.2307/1911197}
+
+\bibitem[\citeproctext]{ref-Peirce1876}
+Peirce, C. S. (1967). Note on the theory of the economy of research.
+\emph{Operations Research}, \emph{15}(4), 643--648.
+
+\bibitem[\citeproctext]{ref-Podgorski2022}
+Podgorski, Aberlard. (2022). Tournament decision theory. \emph{No{û}s},
+\emph{56}(1), 176--203.
+doi:\href{https://doi.org/10.1111/nous.12353}{10.1111/nous.12353}
+
+\bibitem[\citeproctext]{ref-Quiggin1982}
+Quiggin, John. (1982). A theory of anticipated utility. \emph{Journal of
+Economic Behavior \& Organization}, \emph{3}(4), 323--343.
+doi:\href{https://doi.org/10.1016/0167-2681(82)90008-7}{10.1016/0167-2681(82)90008-7}
+
+\bibitem[\citeproctext]{ref-RamseyGeneralProp}
+Ramsey, Frank. (1990). General propositions and causality. In D. H.
+Mellor (Ed.), \emph{Philosophical papers} (145--163). Cambridge
+University Press.
+
+\bibitem[\citeproctext]{ref-Richter1984}
+Richter, Reed. (1984). Rationality revisited. \emph{Australasian Journal
+of Philosophy}, \emph{62}(4), 393--404.
+doi:\href{https://doi.org/10.1080/00048408412341601}{10.1080/00048408412341601}
+
+\bibitem[\citeproctext]{ref-Risse2000}
+Risse, Mathias. (2000). What is rational about nash equilibria?
+\emph{Synthese}, \emph{124}(3), 361--384.
+doi:\href{https://doi.org/10.1023/a:1005259701040}{10.1023/a:1005259701040}
+
+\bibitem[\citeproctext]{ref-Robinson1949}
+Robinson, Julia. (1949). \emph{On the hamiltonian game (a traveling
+salesman problem)}. Santa Monica, CA: The RAND Corporation.
+
+\bibitem[\citeproctext]{ref-Ross2021}
+Ross, Ryan. (2021). Alleged counterexamples to uniqueness. \emph{Logos
+and Episteme}, \emph{12}(2), 203--13.
+doi:\href{https://doi.org/10.5840/logos-episteme202112214}{10.5840/logos-episteme202112214}
+
+\bibitem[\citeproctext]{ref-Samuelson1938}
+Samuelson, Paul A. (1938). A note on the pure theory of consumer's
+behaviour. \emph{Econometrica}, \emph{5}(17), 61--71.
+doi:\href{https://doi.org/10.2307/2548836}{10.2307/2548836}
+
+\bibitem[\citeproctext]{ref-Schrijver2005}
+Schrijver, Alexander. (2005). On the history of combinatorial
+optimization (till 1960). \emph{Handbooks in Operations Research and
+Management Science}, \emph{12}, 1--68.
+doi:\href{https://doi.org/10.1016/S0927-0507(05)12001-5}{10.1016/S0927-0507(05)12001-5}
+
+\bibitem[\citeproctext]{ref-Schultheis2018}
+Schultheis, Ginger. (2018). Living on the edge: Against epistemic
+permissivism. \emph{Mind}, \emph{127}(507), 863--879.
+doi:\href{https://doi.org/10.1093/mind/fzw065}{10.1093/mind/fzw065}
+
+\bibitem[\citeproctext]{ref-Selten1975}
+Selten, R. (1975). Reexamination of the perfectness concept for
+equilibrium points in extensive games. \emph{International Journal of
+Game Theory}, \emph{4}(1), 25--55.
+doi:\href{https://doi.org/10.1007/BF01766400}{10.1007/BF01766400}
+
+\bibitem[\citeproctext]{ref-Sen1971}
+Sen, Amartya. (1971). Choice functions and revealed preference.
+\emph{Review of Economic Studies}, \emph{38}(3), 307--317.
+doi:\href{https://doi.org/10.2307/2296384}{10.2307/2296384}
+
+\bibitem[\citeproctext]{ref-Sen2006}
+Sen, Amartya. (2006). What do we want from a theory of justice?
+\emph{Journal of Philosophy}, \emph{103}(5), 215--238.
+doi:\href{https://doi.org/10.5840/jphil2006103517}{10.5840/jphil2006103517}
+
+\bibitem[\citeproctext]{ref-Shafer1976}
+Shafer, Glenn. (1976). \emph{A mathematical theory of evidence}.
+Princeton University Press.
+
+\bibitem[\citeproctext]{ref-Skyrms1984}
+Skyrms, Brian. (1984). \emph{Pragmatics and empiricism}. Yale University
+Press.
+
+\bibitem[\citeproctext]{ref-Skyrms2004}
+Skyrms, Brian. (2004). \emph{The stag hunt and the evolution of social
+structure}. {C}ambridge {U}niversity {P}ress.
+
+\bibitem[\citeproctext]{ref-Smullyan1978}
+Smullyan, Raymond. (1978). \emph{What is the name of this book? The
+riddle of dracula and other logical puzzles}. Prentice-Hall.
+
+\bibitem[\citeproctext]{ref-Spencer2021b}
+Spencer, Jack. (2021). Rational monism and rational pluralism.
+\emph{Philosophical Studies}, \emph{178}, 1769--1800.
+doi:\href{https://doi.org/10.1007/s11098-020-01509-9}{10.1007/s11098-020-01509-9}
+
+\bibitem[\citeproctext]{ref-Spencer2023}
+Spencer, Jack. (2023). Can it be irrational to knowingly choose the
+best? \emph{Australasian Journal of Philosophy}, \emph{101}(1),
+128--139.
+doi:\href{https://doi.org/10.1080/00048402.2021.1958880}{10.1080/00048402.2021.1958880}
+
+\bibitem[\citeproctext]{ref-SpencerWells2019}
+Spencer, Jack, and Ian Wells. (2019). Why take both boxes?
+\emph{{P}hilosophy and {P}henomenological {R}esearch}, \emph{99}(1),
+27--48.
+doi:\href{https://doi.org/10.1111/phpr.12466}{10.1111/phpr.12466}
+
+\bibitem[\citeproctext]{ref-Stalnaker1998}
+Stalnaker, Robert. (1998). Belief revision in games: Forward and
+backward induction. \emph{Mathematical Social Sciences}, \emph{36}(1),
+31--56.
+doi:\href{https://doi.org/10.1016/S0165-4896(98)00007-9}{10.1016/S0165-4896(98)00007-9}
+
+\bibitem[\citeproctext]{ref-Stalnaker1999}
+Stalnaker, Robert. (1999). Extensive and strategic forms: Games and
+models for games. \emph{Research in Economics}, \emph{53}(3), 293--319.
+doi:\href{https://doi.org/10.1006/reec.1999.0200}{10.1006/reec.1999.0200}
+
+\bibitem[\citeproctext]{ref-Stalnaker2008}
+Stalnaker, Robert. (2008). \emph{Our knowledge of the internal world}.
+Oxford University Press.
+
+\bibitem[\citeproctext]{ref-Strevens2008}
+Strevens, Michael. (2008). \emph{Depth: An account of scientific
+explanations}. Harvard University Press.
+
+\bibitem[\citeproctext]{ref-Sutton2000}
+Sutton, John. (2000). \emph{Marshall's tendencies: What can economists
+know?} {MIT} Press.
+
+\bibitem[\citeproctext]{ref-Thoma2019}
+Thoma, Johanna. (2019). Risk aversion and the long run. \emph{Ethics},
+\emph{129}(2), 230--253.
+doi:\href{https://doi.org/10.1086/699256}{10.1086/699256}
+
+\bibitem[\citeproctext]{ref-Valentini2012}
+Valentini, Laura. (2012). Ideal vs. Non-ideal theory: A conceptual map.
+\emph{Philosophy Compass}, \emph{7}(9), 654--664.
+doi:\href{https://doi.org/10.1111/phco.2012.7.issue-9}{10.1111/phco.2012.7.issue-9}
+
+\bibitem[\citeproctext]{ref-Weatherson2019}
+Weatherson, Brian. (2019). \emph{Normative externalism}. Oxford
+University Press.
+
+\bibitem[\citeproctext]{ref-Wedgwood2013a}
+Wedgwood, Ralph. (2013). Gandalf's solution to the newcomb problem.
+\emph{Synthese}, \emph{190}(14), 2643--2675.
+doi:\href{https://doi.org/10.1007/s11229-011-9900-1}{10.1007/s11229-011-9900-1}
+
+\bibitem[\citeproctext]{ref-Weirich1985}
+Weirich, Paul. (1985). Decision instability. \emph{Australasian Journal
+of Philosophy}, \emph{63}(4), 465--472.
+doi:\href{https://doi.org/10.1080/00048408512342061}{10.1080/00048408512342061}
+
+\bibitem[\citeproctext]{ref-Wells2019}
+Wells, Ian. (2019). Equal opportunity and newcomb's problem.
+\emph{Mind}, \emph{128}(510), 429--457.
+doi:\href{https://doi.org/10.1093/mind/fzx018}{10.1093/mind/fzx018}
+
+\bibitem[\citeproctext]{ref-Wible1994}
+Wible, James R. (1994). Charles sanders peirce's economy of research.
+\emph{Journal of Economic Methodology}, \emph{1}(1), 135--160.
+doi:\href{https://doi.org/10.1080/13501789400000009}{10.1080/13501789400000009}
+
+\bibitem[\citeproctext]{ref-Wilson1967}
+Wilson, Robert B. (1967). Competitive bidding with asymmetric
+information. \emph{Management Science}, \emph{13}(11), 816--820.
+doi:\href{https://doi.org/10.1287/mnsc.13.11.816}{10.1287/mnsc.13.11.816}
+
+\bibitem[\citeproctext]{ref-Worsnip2021}
+Worsnip, Alex. (2021). \emph{Fitting things together: Coherence and the
+demands of structural rationality}. Oxford University Press.
+
+\bibitem[\citeproctext]{ref-WrightVaguenessCollection}
+Wright, Crispin. (2021). \emph{The riddle of vagueness: Selected essays
+1975-2020}. Oxford University Press.
+
+\bibitem[\citeproctext]{ref-Xefteris2015}
+Xefteris, Dimitrios. (2015). Symmetric zero-sum games with only
+asymmetric equilibria. \emph{Games and Economic Behavior}, \emph{89}(1),
+122--125.
+doi:\href{https://doi.org/10.1016/j.geb.2014.12.001}{10.1016/j.geb.2014.12.001}
+
+\bibitem[\citeproctext]{ref-Ye2023}
+Ye, Ru. (2023). Permissivism, the value of rationality, and a
+convergence-theoretic epistemology. \emph{Philosophy and
+Phenomenological Research}, \emph{106}(1), 157--175.
+doi:\href{https://doi.org/10.1111/phpr.12845}{10.1111/phpr.12845}
+
+\end{CSLReferences}
+
 \cleardoublepage
 \phantomsection
 \addcontentsline{toc}{part}{Appendices}
@@ -4915,7 +5476,7 @@ are met.
   \emph{w} \textgreater{} \emph{x}
 \end{itemize}
 
-Some books will also add 2\_x\_ \textgreater{} \emph{y} + \emph{z} as a
+Some books will also add 2\emph{x}~\textgreater~\emph{y}~+~\emph{z} as a
 further constraint, but I'll stick with these three.
 
 Now to turn a game into a demonic decision problem, first replace
@@ -4968,7 +5529,7 @@ If we add the constraints \emph{x} \textgreater{} \emph{z}, \emph{y}
 Newcomb Problem. I'm a long way from the first to point out the
 connections between Prisoners' Dilemma and Newcomb's Problem; it's
 literally in the title of a David Lewis paper
-(\citeproc{ref-Lewis1979e}{Lewis 1979}). But what I want to stress here
+(\citeproc{ref-Lewis1979e}{Lewis, 1979}). But what I want to stress here
 is the recipe for turning a familiar game into a demonic problem.
 
 We can do the same thing with Chicken. The toy story behind Chicken is
@@ -5055,8 +5616,8 @@ Chicken.}\label{tbl-egan-game}\tabularnewline
 \end{longtable}
 
 And Table~\ref{tbl-egan-game} is just the Psychopath Button example that
-Andy Egan (\citeproc{ref-Egan2007}{2007a}) raises as a problem for
-Causal Decision Theory.
+Andy Egan (\citeproc{ref-Egan2007}{2007}) raises as a problem for Causal
+Decision Theory.
 
 Another familiar game from introductory game theory textbooks is
 matching pennies. This is a somewhat simplified version of
@@ -5108,7 +5669,7 @@ problem.}\label{tbl-death-in-damascus}\tabularnewline
 \end{longtable}
 
 And Table~\ref{tbl-death-in-damascus} is the familiar problem Death in
-Damascus from Gibbard and Harper
+Damascus from Gibbard \& Harper
 (\citeproc{ref-GibbardHarper1978}{1978}).
 
 Let's do one last one, starting with the familiar game Battle of the
@@ -5233,7 +5794,7 @@ applying the transformations discussed in this appendix.
 But there are so many more interesting examples from game theory that
 could be used to generate interesting decision problems. I've made heavy
 use in this book of demonic decision problems that are generated by
-thinking of the beer-quiche game from Cho and Kreps
+thinking of the beer-quiche game from Cho \& Kreps
 (\citeproc{ref-ChoKreps1987}{1987}) as a demonic decision problem. I'm
 sure that there are more interesting arguments that can be generated by
 transforming other games into demonic decision problems.
@@ -5317,7 +5878,7 @@ evidence in the high return case to the low return case. This appendix
 describes such a case. It is a version of a signalling game of the kind
 introduced by Lewis (\citeproc{ref-Lewis1969a}{1969}). And in particular
 it's a version of the broadly adversarial kinds of signalling games that
-are central to the plot of Cho and Kreps
+are central to the plot of Cho \& Kreps
 (\citeproc{ref-ChoKreps1987}{1987}). It will involve a human Chooser,
 and a Demon who is excellent at predictions, and the game will have
 three stages.
@@ -5391,9 +5952,9 @@ whether Demon says Heads or Tails. Also, if Demon is surprised by what
 Chooser does, i.e., if they had predicted Chooser would do one thing
 however the coin lands but Chooser does the other thing, Demon will also
 flip their own coin to make a guess.\footnote{A key part of the
-  discussion in Cho and Kreps (\citeproc{ref-ChoKreps1987}{1987}) is
-  that in some cases we can say substantive things about what a player
-  will do if they are surprised in this sense. But
+  discussion in Cho \& Kreps (\citeproc{ref-ChoKreps1987}{1987}) is that
+  in some cases we can say substantive things about what a player will
+  do if they are surprised in this sense. But
   Figure~\ref{fig-second-anti-war} is not such a case.} Finally, Demon's
 predictions are arbitrarily accurate. For simplicity, I'll assume Demon
 is correct with probability 1, though it doesn't matter if you allow for
@@ -5878,7 +6439,7 @@ utility just is old-fashioned expected utility.
 This doesn't yet prove expectationism. I haven't shown that there is no
 other alternative to expected utility theory that satisfies Single
 Choice Principle. There are such other theories out there, such as the
-Weighted-linear utility theory described by Bottomley and WIlliamson
+Weighted-linear utility theory described by Bottomley \& WIlliamson
 (\citeproc{ref-BottomleyWilliamsonnd}{n.d.}). But it's a guide to how we
 could start defending expectationism in a way consistent with how we
 handle decision problems involving demons.
@@ -5916,12 +6477,12 @@ symmetric games pushes us towards accepting Permissivism.
 The Permissivist theses that have been the focus on recent philosophical
 attention vary along two dimensions.\footnote{For a much more thorough
   introduction to the debate, and especially into the varieties of
-  Permissivist theses, see Kopec and Titelbaum
+  Permissivist theses, see Kopec \& Titelbaum
   (\citeproc{ref-KopecTitelbaum2016}{2016}) and Meacham
   (\citeproc{ref-Meacham2019}{2019}). The next three paragraphs draw
   heavily from these two papers. For more recent arguments in favour of
   Permissivism, see Callahan (\citeproc{ref-Callahan2021}{2021}), Lota
-  and Hlobil (\citeproc{ref-Lota2023}{2023}), Palmira
+  \& Hlobil (\citeproc{ref-Lota2023}{2023}), Palmira
   (\citeproc{ref-Palmira2023}{2023}), and Ye
   (\citeproc{ref-Ye2023}{2023}). For criticisms, see Schultheis
   (\citeproc{ref-Schultheis2018}{2018}) and Ross
@@ -5956,7 +6517,7 @@ The second dimension concerns whether the distinct views can be
 acknowledged as rational. Stewart Stewart Cohen
 (\citeproc{ref-Cohen2013}{2013}) defends the view that multiple
 attitudes can be rational, but one cannot rationally acknowledge a
-distinct view as rational. Following Kopec and Titelbaum
+distinct view as rational. Following Kopec \& Titelbaum
 (\citeproc{ref-KopecTitelbaum2016}{2016}), call a view that says
 multiple views can both be rationally held and be believed to be
 rational \emph{Acknowledged Permissiveness}, and the view that says
@@ -6174,7 +6735,7 @@ the vote-share of each of the two other candidates. If two candidates
 tie in the first place each gets a payoff equal to one half. If all
 three candidates receive the same vote-shares then each gets a payoff
 equal to one third. In all other cases a candidate gets a payoff equal
-to zero. (\citeproc{ref-Xefteris2015}{Xefteris 2015, 124})
+to zero. (\citeproc{ref-Xefteris2015}{Xefteris, 2015: 124})
 \end{quote}
 
 It is clear that there is no symmetric pure-strategy equilibrium here.
@@ -6374,8 +6935,8 @@ The bigger worry here is that one key argument for Uniqueness seems to
 require that Uniqueness is knowable. A number of recent authors have
 argued that Uniqueness best explains our practice of deferring to
 rational people.\footnote{There is a nice discussion of this argument,
-  including citations of the papers I'm about to discuss, in Kopec and
-  Titelbaum (\citeproc{ref-KopecTitelbaum2016}{2016, 195}).} For
+  including citations of the papers I'm about to discuss, in Kopec \&
+  Titelbaum (\citeproc{ref-KopecTitelbaum2016}{2016: 195}).} For
 instance, Greco and Hedden use this principle in their argument for
 Uniqueness.
 
@@ -6385,7 +6946,7 @@ If agent \emph{S}\textsubscript{1} judges that
 \emph{S}\textsubscript{1} does not have relevant evidence that
 \emph{S}\textsubscript{2} lacks, then \emph{S}\textsubscript{1} defers
 to \emph{S}\textsubscript{2}'s belief that \emph{P}.
-(\citeproc{ref-GrecoHedden2016}{Greco and Hedden 2016, 373}).
+(\citeproc{ref-GrecoHedden2016}{Greco \& Hedden, 2016: 373}).
 \end{quote}
 
 Similar kinds of arguments are made by Dogramaci
@@ -6488,553 +7049,6 @@ about the other player, knowing they may well form a different belief
 about you. Indeed, sometimes only coherent way to form a belief about
 the other player is to believe that they will form a different belief
 about you. And that means giving up on Uniqueness.
-
-\phantomsection\label{refs}
-\begin{CSLReferences}{1}{0}
-\bibitem[\citeproctext]{ref-Ahmed2012}
-Ahmed, Arif. 2012. {``Push the Button.''} \emph{Philosophy of Science}
-79 (3): 386--95. \url{https://doi.org/10.1086/666065}.
-
-\bibitem[\citeproctext]{ref-Ahmed2014a}
----------. 2014. {``Dicing with Death.''} \emph{Analysis} 74 (4):
-587--92. \url{https://doi.org/10.1093/analys/anu084}.
-
-\bibitem[\citeproctext]{ref-Ahmed2020}
----------. 2020. {``Equal Opportunities in Newcomb's Problem and
-Elsewhere.''} \emph{Mind} 129 (515): 867--86.
-\url{https://doi.org/10.1093/mind/fzz073}.
-
-\bibitem[\citeproctext]{ref-Akerlof1970}
-Akerlof, George. 1970. {``The Market for "Lemons": Quality Uncertainty
-and the Market Mechanism.''} \emph{Quarterly Journal of Economics} 84
-(3): 488--500. \url{https://doi.org/10.2307/1879431}.
-
-\bibitem[\citeproctext]{ref-Alcoba2023}
-Alcoba, Natalie. 2023. {``In Argentina, Inflation Passes 100\% (and the
-Restaurants Are Packed).''} \emph{The New York Times}, June 19, 2023.
-\url{https://www.nytimes.com/2023/06/19/world/americas/argentina-inflation-peso-restaurants.html}.
-
-\bibitem[\citeproctext]{ref-Allais1953}
-Allais, M. 1953. {``Le Comportement de l'homme Rationnel Devant Le
-Risque: Critique Des Postulats Et Axiomes de l'ecole Americaine.''}
-\emph{Econometrica} 21 (4): 503--46.
-\url{https://doi.org/10.2307/1907921}.
-
-\bibitem[\citeproctext]{ref-Arntzenius2008}
-Arntzenius, Frank. 2008. {``No Regrets; or, Edith Piaf Revamps Decision
-Theory.''} \emph{Erkenntnis} 68 (2): 277--97.
-\url{https://doi.org/10.1007/s10670-007-9084-8}.
-
-\bibitem[\citeproctext]{ref-Barnett2022}
-Barnett, David James. 2022. {``Graded Ratifiability.''} \emph{Journal of
-Philosophy} 119 (2): 57--88.
-\url{https://doi.org/10.5840/jphil202211925}.
-
-\bibitem[\citeproctext]{ref-BenPorathDekel1992}
-Ben-Porath, Elchanan, and Eddie Dekel. 1992. {``Signaling Future Actions
-and the Potential for Sacrifice.''} \emph{Journal of Economic Theory} 57
-(1): 36--51. \url{https://doi.org/10.1016/S0022-0531(05)80039-0}.
-
-\bibitem[\citeproctext]{ref-Blackwell1951}
-Blackwell, David. 1951. {``Comparison of Experiments.''}
-\emph{Proceedings of the Berkeley Symposium on Mathematical Statistics
-and Probability} 2 (1): 93--102.
-
-\bibitem[\citeproctext]{ref-Bonanno2018}
-Bonanno, Giacomo. 2018. {``Game Theory.''} Davis, CA: Kindle Direct
-Publishing. 2018.
-\url{http://faculty.econ.ucdavis.edu/faculty/bonanno/GT_Book.html}.
-
-\bibitem[\citeproctext]{ref-BottomleyWilliamsonnd}
-Bottomley, Christopher, and Timothy Luke WIlliamson. n.d. {``Rational
-Risk-Aversion: Good Things Come to Those Who Weight.''} {P}hilosophy and
-{P}henomenological {R}esearch.
-\url{https://doi.org/doi.org/10.1111/phpr.13006}.
-
-\bibitem[\citeproctext]{ref-BuchakRisk}
-Buchak, Lara. 2013. \emph{Risk and Rationality}. Oxford: Oxford
-University Press.
-
-\bibitem[\citeproctext]{ref-Buchak2017}
----------. 2017. {``Pr{é}cis of Risk and Rationality.''}
-\emph{Philosophical Studies} 174 (9): 2363--68.
-\url{https://doi.org/10.1007/s11098-017-0904-7}.
-
-\bibitem[\citeproctext]{ref-Callahan2021}
-Callahan, Laura Frances. 2021. {``Epistemic Existentialism.''}
-\emph{Episteme} 18 (4): 539--54.
-\url{https://doi.org/10.1017/epi.2019.25}.
-
-\bibitem[\citeproctext]{ref-ChandlerSEP}
-Chandler, Jake. 2017. {``{Descriptive Decision Theory}.''} In \emph{The
-{Stanford} Encyclopedia of Philosophy}, edited by Edward N. Zalta,
-{W}inter 2017.
-\url{https://plato.stanford.edu/archives/win2017/entries/decision-theory-descriptive/};
-Metaphysics Research Lab, Stanford University.
-
-\bibitem[\citeproctext]{ref-Chang2002}
-Chang, Ruth. 2002. {``The Possibility of Parity.''} \emph{Ethics} 112
-(4): 659--88. \url{https://doi.org/10.1086/339673}.
-
-\bibitem[\citeproctext]{ref-Chernoff1954}
-Chernoff, Herman. 1954. {``Rational Selection of Decision Functions.''}
-\emph{Econometrica} 22 (4): 422--43.
-\url{https://doi.org/10.2307/1907435}.
-
-\bibitem[\citeproctext]{ref-ChoKreps1987}
-Cho, In-Koo, and David M. Kreps. 1987. {``Signalling Games and Stable
-Equilibria.''} \emph{The Quarterly Journal of Economics} 102 (2):
-179--221. \url{https://doi.org/10.2307/1885060}.
-
-\bibitem[\citeproctext]{ref-cohen2023sequential}
-Cohen, Shani, and Shengwu Li. 2023. {``Sequential Cursed Equilibrium.''}
-\url{https://arxiv.org/abs/2212.06025}.
-
-\bibitem[\citeproctext]{ref-Cohen2013}
-Cohen, Stewart. 2013. {``A Defence of the (Almost) Equal Weight View.''}
-In \emph{The Epistemology of Disagreement: New Essays}, edited by David
-Christensen and Jennifer Lackey, 98--117. Oxford: Oxford University
-Press.
-
-\bibitem[\citeproctext]{ref-Conlisk1996}
-Conlisk, John. 1996. {``Why Bounded Rationality?''} \emph{Journal of
-Economic Literature} 34 (2): 669--700.
-
-\bibitem[\citeproctext]{ref-Das2023}
-Das, Nilanjan. 2023. {``The Value of Biased Information.''}
-\emph{British Journal for the Philosophy of Science} 74 (1): 25--55.
-\url{https://doi.org/10.1093/bjps/axaa003}.
-
-\bibitem[\citeproctext]{ref-Davey2011}
-Davey, Kevin. 2011. {``Idealizations and Contextualism in Physics.''}
-\emph{Philosophy of Science} 78 (1): 16--38.
-\url{https://doi.org/10.1086/658093}.
-
-\bibitem[\citeproctext]{ref-Dogramaci2012}
-Dogramaci, Sinan. 2012. {``Reverse Engineering Epistemic Evaluations.''}
-\emph{Philosophy and Phenomenological Research} 84 (3): 513--30.
-\url{https://doi.org/10.1111/j.1933-1592.2011.00566.x}.
-
-\bibitem[\citeproctext]{ref-Egan2007}
-Egan, Andy. 2007a. {``Some Counterexamples to Causal Decision Theory.''}
-\emph{Philosophical Review} 116 (1): 93--114.
-\url{https://doi.org/10.1215/00318108-2006-023}.
-
-\bibitem[\citeproctext]{ref-Egan2007-EGASCT}
----------. 2007b. {``{Some Counterexamples to Causal Decision
-Theory}.''} \emph{Philosophical Review} 116 (1): 93--114.
-\url{https://doi.org/10.1215/00318108-2006-023}.
-
-\bibitem[\citeproctext]{ref-Elga2000}
-Elga, Adam. 2000. {``Self-Locating Belief and the Sleeping Beauty
-Problem.''} \emph{Analysis} 60 (4): 143--47.
-\url{https://doi.org/10.1093/analys/60.2.143}.
-
-\bibitem[\citeproctext]{ref-Elliot2019}
-Elliott, Edward. 2019. {``Normative Decision Theory.''} \emph{Analysis}
-79 (4): 755--72. \url{https://doi.org/10.1093/analys/anz059}.
-
-\bibitem[\citeproctext]{ref-EysterRabin2005}
-Eyster, Erik, and Matthew Rabin. 2005. {``Cursed Equilibrium.''}
-\emph{Econometrica} 73 (5): 1623--72.
-\href{https://10.1111/j.1468-0262.2005.00631.x}{10.1111/j.1468-0262.2005.00631.x}.
-
-\bibitem[\citeproctext]{ref-Fey2012}
-Fey, Mark. 2012. {``Symmetric Games with Only Asymmetric Equilibria.''}
-\emph{Games and Economic Behavior} 75 (1): 424--27.
-\url{https://doi.org/10.1016/j.geb.2011.09.008}.
-
-\bibitem[\citeproctext]{ref-fong2023cursed}
-Fong, Meng-Jhang, Po-Hsuan Lin, and Thomas R. Palfrey. 2023. {``Cursed
-Sequential Equilibrium.''} \url{https://arxiv.org/abs/2301.11971}.
-
-\bibitem[\citeproctext]{ref-Fuscond}
-Fusco, Melissa. n.d. {``Absolution of a Causal Decision Theorist.''}
-No{û}s. \url{https://doi.org/10.1111/nous.12459}.
-
-\bibitem[\citeproctext]{ref-Gallow2020}
-Gallow, J. Dmitri. 2020. {``The Causal Decision Theorist's Gudie to
-Managing the News.''} \emph{The Journal of Philosophy} 117 (3): 117--49.
-\url{https://doi.org/10.5840/jphil202011739}.
-
-\bibitem[\citeproctext]{ref-Gallownd}
----------. n.d. {``The Sure Thing Principle Leads to Instability.''}
-Philosophical Quarterly.
-\url{https://philpapers.org/archive/GALTST-2.pdf}.
-
-\bibitem[\citeproctext]{ref-GibbardHarper1978}
-Gibbard, Allan, and William Harper. 1978. {``Counterfactuals and Two
-Kinds of Expected Utility.''} In \emph{Foundations and Applications of
-Decision Theory}, edited by C. A. Hooker, J. J. Leach, and E. F.
-McClennen, 125--62. Dordrecht: Reidel.
-
-\bibitem[\citeproctext]{ref-Good1967}
-Good, I. J. 1967. {``On the Principle of Total Evidence.''}
-\emph{British Journal for the Philosophy of Science} 17 (4): 319--21.
-\url{https://doi.org/10.1093/bjps/17.4.319}.
-
-\bibitem[\citeproctext]{ref-Goodsellnd}
-Goodsell, Zachary. n.d. {``Decision Theory Unbound.''} No{û}s.
-\url{https://doi.org/10.1111/nous.12473}.
-
-\bibitem[\citeproctext]{ref-GrantEtAl2021}
-Grant, Simon, Guerdjikova Ani, and John Quiggin. 2021. {``Ambiguity and
-Awareness: A Coherent Multiple Priors Model.''} \emph{The B.E. Journal
-of Theoretical Economics} 21 (2): 571--612.
-\url{https://doi.org/10.1515/bejte-2018-0185}.
-
-\bibitem[\citeproctext]{ref-GrecoHedden2016}
-Greco, Daniel, and Brian Hedden. 2016. {``Uniqueness and
-Metaepistemology.''} \emph{The Journal of Philosophy} 113 (8): 365--95.
-\url{https://doi.org/10.1111/phc3.12318}.
-
-\bibitem[\citeproctext]{ref-Gustafsson2011}
-Gustafsson, Johan E. 2011. {``A Note in Defence of Ratificationism.''}
-\emph{Erkenntnis} 75 (1): 147--50.
-\url{https://doi.org/10.1007/s10670-010-9267-6}.
-
-\bibitem[\citeproctext]{ref-Hammond1988}
-Hammond, Peter J. 1988. {``Consequentialist Foundations for Expected
-Utility.''} \emph{Theory and Decision} 25 (1): 25--78.
-\url{https://doi.org/10.1007/BF00129168}.
-
-\bibitem[\citeproctext]{ref-HareHedden2015}
-Hare, Caspar, and Brian Hedden. 2015. {``Self-Reinforcing and
-Self-Frustrating Decisions.''} \emph{Noûs} 50 (3): 604--28.
-\url{https://doi.org/10.1111/nous.12094}.
-
-\bibitem[\citeproctext]{ref-Harper1986}
-Harper, William. 1986. {``Mixed Strategies and Ratifiability in Causal
-Decision Theory.''} \emph{Erkenntnis} 24 (1): 25--36.
-\url{https://doi.org/10.1007/BF00183199}.
-
-\bibitem[\citeproctext]{ref-Harper1988}
----------. 1988. {``Causal Decision Theory and Game Theory: A Classic
-Argument for Equilibrium Solutions, a Defense of Weak Equilibria, and a
-New Problem for the Normal Form Representation.''} In \emph{Causation in
-Decision, Belief Change, and Statistics: Proceedings of the Irvine
-Conference on Probability and Causation}, edited by William Harper and
-Brian Skyrms, 25--48. Dordrecht: Springer Netherlands.
-\url{https://doi.org/10.1007/978-94-009-2865-7_2}.
-
-\bibitem[\citeproctext]{ref-Heinzelmannnd}
-Heinzelmann, Nora. n.d. {``Rationality Is Not Coherence.''}
-Philosophical Quarterly. \url{https://doi.org/10.1093/pq/pqac083}.
-
-\bibitem[\citeproctext]{ref-Horowitz2014}
-Horowitz, Sophie. 2014. {``Immoderately Rational.''} \emph{Philosohical
-Studies} 167 (1): 41--56.
-\url{https://doi.org/10.1007/s11098-013-0231-6}.
-
-\bibitem[\citeproctext]{ref-Jackson1998}
-Jackson, Frank. 1998. \emph{From Metaphysics to Ethics: A Defence of
-Conceptual Analysis}. Clarendon Press: Oxford.
-
-\bibitem[\citeproctext]{ref-Jeffrey1983}
-Jeffrey, Richard. 1983. {``Bayesianism with a Human Face.''} In
-\emph{Testing Scientific Theories}, edited by J. Earman (ed.).
-Minneapolis: University of Minnesota Press.
-
-\bibitem[\citeproctext]{ref-Joyce2012}
-Joyce, James M. 2012. {``Regret and Instability in Causal Decision
-Theory.''} \emph{Synthese} 187 (1): 123--45.
-\url{https://doi.org/10.1007/s11229-011-0022-6}.
-
-\bibitem[\citeproctext]{ref-Keynes1921}
-Keynes, John Maynard. 1921. \emph{Treatise on Probability}. London:
-Macmillan.
-
-\bibitem[\citeproctext]{ref-Keynes1923}
----------. 1923. \emph{A Tract on Monetary Reform}. London: Macmillan.
-
-\bibitem[\citeproctext]{ref-Knight1921}
-Knight, Frank. 1921. \emph{Risk, Uncertainty and Profit}. Chicago:
-University of Chicago Press.
-
-\bibitem[\citeproctext]{ref-KopecTitelbaum2016}
-Kopec, Matthew, and Michael G. Titelbaum. 2016. {``The Uniqueness
-Thesis.''} \emph{Philosophy Compass} 11 (4): 189--200.
-\url{https://doi.org/10.1111/phc3.12318}.
-
-\bibitem[\citeproctext]{ref-Leend}
-Lee, Wooram. n.d. {``What Is Structural Rationality?''} Philosophical
-Quarterly. \url{https://doi.org/10.1093/pq/pqad072}.
-
-\bibitem[\citeproctext]{ref-LevinsteinSoares2020}
-Levinstein, Benjamin Anders, and Nate Soares. 2020. {``Cheating Death in
-Damascus.''} \emph{Journal of Philosophy} 117 (5): 237--66.
-\url{https://doi.org/10.5840/jphil2020117516}.
-
-\bibitem[\citeproctext]{ref-Lewis1969a}
-Lewis, David. 1969. \emph{Convention: A Philosophical Study}. Cambridge:
-Harvard University Press.
-
-\bibitem[\citeproctext]{ref-Lewis1979e}
----------. 1979. {``Prisoners' Dilemma Is a {N}ewcomb Problem.''}
-\emph{Philosophy and Public Affairs} 8 (3): 235--40.
-
-\bibitem[\citeproctext]{ref-Lewis1981e}
----------. 1981. {``Why Ain'cha Rich?''} \emph{No{û}s} 15 (3): 377--80.
-\url{https://doi.org/10.2307/2215439}.
-
-\bibitem[\citeproctext]{ref-Lewis1981Mellor}
----------. 2020a. {``Letter to Hugh Mellor Dated 14 October 1981.''} In
-\emph{Philosophical Letters of David k. Lewis}, edited by Helen Beebee
-and A. R. J. Fisher, 2: Mind, Language, Epistemology:432--34. Oxford:
-Oxford University Press.
-
-\bibitem[\citeproctext]{ref-Lewis-Gorman-10071979}
----------. 2020b. {``Letter to Jonathan Gorman, 19 April 1989.''} In
-\emph{Philosophical Letters of David {K}. Lewis}, edited by Helen Beebee
-and A. R. J. Fisher, 2:472--73. Oxford: Oxford University Press.
-
-\bibitem[\citeproctext]{ref-LipseyLancaster}
-Lipsey, R. G., and Kelvin Lancaster. 1956. {``The General Theory of
-Second Best.''} \emph{Review of Economic Studies} 24 (1): 11--32.
-\url{https://doi.org/10.2307/2296233}.
-
-\bibitem[\citeproctext]{ref-Lota2023}
-Lota, Kenji, and Ulf Hlobil. 2023. {``Resolutions Against Uniqueness.''}
-\emph{Erkenntnis} 88 (3): 1013--33.
-\url{https://doi.org/10.1007/s10670-021-00391-z}.
-
-\bibitem[\citeproctext]{ref-McClennen1990}
-McClennan, Edward. 1990b. \emph{Rationality and Dynamic Choice}.
-Cambridge: {C}ambridge {U}niversity {P}ress.
-
-\bibitem[\citeproctext]{ref-McClennan1990}
----------. 1990a. \emph{Rationality and Dynamic Choice}. Cambridge:
-Cambridge University Press.
-
-\bibitem[\citeproctext]{ref-Meacham2019}
-Meacham, Christopher. 2019. {``Deference and Uniqueness.''}
-\emph{Philosohical Studies} 176 (3): 709--32.
-\url{https://doi.org/10.1007/s11098-018-1036-4}.
-
-\bibitem[\citeproctext]{ref-Mills2005}
-Mills, Charles W. 2005. {``"Ideal Theory" as Ideology.''} \emph{Hypatia}
-20 (3): 165--84.
-\url{https://doi.org/10.1111/j.1527-2001.2005.tb00493.x}.
-
-\bibitem[\citeproctext]{ref-Moulin1985}
-Moulin, H. 1985. {``Choice Functions over a Finite Set: A Summary.''}
-\emph{Social Choice and Welfare} 2 (2): 147--60.
-
-\bibitem[\citeproctext]{ref-Myerson1978}
-Myerson, R. B. 1978. {``Refinements of the Nash Equilibrium Concept.''}
-\emph{International Journal of Game Theory} 7 (2): 73--80.
-\url{https://doi.org/10.1007/BF01753236}.
-
-\bibitem[\citeproctext]{ref-Nash1951}
-Nash, John. 1951. {``Non-Cooperative Games.''} \emph{Annals of
-Mathematics} 54 (2): 286--95.
-
-\bibitem[\citeproctext]{ref-Nozick1969}
-Nozick, Robert. 1969. {``Newcomb's Problem and Two Principles of
-Choice.''} In \emph{Essays in Honor of Carl {G}. Hempel: A Tribute on
-the Occasion of His Sixty-Fifth Birthday. Hempel: A Tribute on the
-Occasion of His Sixty-Fifth Birthday}, edited by Nicholas Rescher,
-114--46. Riedel: Springer.
-
-\bibitem[\citeproctext]{ref-OConnor2019}
-O'Connor, Cailin. 2019. \emph{The Origins of Unfairness: Social
-Categories and Cultural Evolution}. Oxford: {O}xford {U}niversity
-{P}ress.
-
-\bibitem[\citeproctext]{ref-Palmira2023}
-Palmira, Michele. 2023. {``Permissivism and the Truth Connection.''}
-\emph{Erkenntnis} 88 (2): 641--6556.
-\url{https://doi.org/10.1007/s10670-020-00373-7}.
-
-\bibitem[\citeproctext]{ref-Pearce1984}
-Pearce, David G. 1984. {``Rationalizable Strategic Behavior and the
-Problem of Perfection.''} \emph{Econometrica} 52 (4): 1029--50.
-\url{https://doi.org/10.2307/1911197}.
-
-\bibitem[\citeproctext]{ref-Peirce1876}
-Peirce, C. S. 1967. {``Note on the Theory of the Economy of Research.''}
-\emph{Operations Research} 15 (4): 643--48.
-
-\bibitem[\citeproctext]{ref-Podgorski2022}
-Podgorski, Aberlard. 2022. {``Tournament Decision Theory.''}
-\emph{No{û}s} 56 (1): 176--203.
-\url{https://doi.org/10.1111/nous.12353}.
-
-\bibitem[\citeproctext]{ref-Quiggin1982}
-Quiggin, John. 1982. {``A Theory of Anticipated Utility.''}
-\emph{Journal of Economic Behavior \& Organization} 3 (4): 323--43.
-\url{https://doi.org/10.1016/0167-2681(82)90008-7}.
-
-\bibitem[\citeproctext]{ref-RamseyGeneralProp}
-Ramsey, Frank. 1990. {``General Propositions and Causality.''} In
-\emph{Philosophical Papers}, edited by D. H. Mellor, 145--63. Cambridge:
-Cambridge University Press.
-
-\bibitem[\citeproctext]{ref-Richter1984}
-Richter, Reed. 1984. {``Rationality Revisited.''} \emph{Australasian
-Journal of Philosophy} 62 (4): 393--404.
-\url{https://doi.org/10.1080/00048408412341601}.
-
-\bibitem[\citeproctext]{ref-Risse2000}
-Risse, Mathias. 2000. {``What Is Rational about Nash Equilibria?''}
-\emph{Synthese} 124 (3): 361--84.
-\url{https://doi.org/10.1023/a:1005259701040}.
-
-\bibitem[\citeproctext]{ref-Robinson1949}
-Robinson, Julia. 1949. {``On the Hamiltonian Game (a Traveling Salesman
-Problem).''} Santa Monica, CA: The RAND Corporation.
-
-\bibitem[\citeproctext]{ref-Ross2021}
-Ross, Ryan. 2021. {``Alleged Counterexamples to Uniqueness.''}
-\emph{Logos and Episteme} 12 (2): 203--13.
-
-\bibitem[\citeproctext]{ref-Samuelson1938}
-Samuelson, Paul A. 1938. {``A Note on the Pure Theory of Consumer's
-Behaviour.''} \emph{Econometrica} 5 (17): 61--71.
-\url{https://doi.org/10.2307/2548836}.
-
-\bibitem[\citeproctext]{ref-Schrijver2005}
-Schrijver, Alexander. 2005. {``On the History of Combinatorial
-Optimization (till 1960).''} \emph{Handbooks in Operations Research and
-Management Science} 12: 1--68.
-\url{https://doi.org/10.1016/S0927-0507(05)12001-5}.
-
-\bibitem[\citeproctext]{ref-Schultheis2018}
-Schultheis, Ginger. 2018. {``Living on the Edge: Against Epistemic
-Permissivism.''} \emph{Mind} 127 (507): 863--79.
-\url{https://doi.org/10.1093/mind/fzw065}.
-
-\bibitem[\citeproctext]{ref-Selten1975}
-Selten, R. 1975. {``Reexamination of the Perfectness Concept for
-Equilibrium Points in Extensive Games.''} \emph{International Journal of
-Game Theory} 4 (1): 25--55. \url{https://doi.org/10.1007/BF01766400}.
-
-\bibitem[\citeproctext]{ref-Sen1971}
-Sen, Amartya. 1971. {``Choice Functions and Revealed Preference.''}
-\emph{Review of Economic Studies} 38 (3): 307--17.
-\url{https://doi.org/10.2307/2296384}.
-
-\bibitem[\citeproctext]{ref-Sen2006}
----------. 2006. {``What Do We Want from a Theory of Justice?''}
-\emph{Journal of Philosophy} 103 (5): 215--38.
-\url{https://doi.org/10.5840/jphil2006103517}.
-
-\bibitem[\citeproctext]{ref-Shafer1976}
-Shafer, Glenn. 1976. \emph{A Mathematical Theory of Evidence}.
-Princeton: Princeton University Press.
-
-\bibitem[\citeproctext]{ref-Skyrms1984}
-Skyrms, Brian. 1984. \emph{Pragmatics and Empiricism}. New Haven, CT:
-Yale University Press.
-
-\bibitem[\citeproctext]{ref-Skyrms2004}
----------. 2004. \emph{The Stag Hunt and the Evolution of Social
-Structure}. Cambridge: {C}ambridge {U}niversity {P}ress.
-
-\bibitem[\citeproctext]{ref-Smullyan1978}
-Smullyan, Raymond. 1978. \emph{What Is the Name of This Book? The Riddle
-of Dracula and Other Logical Puzzles}. Englewood Cliffs, NJ:
-Prentice-Hall.
-
-\bibitem[\citeproctext]{ref-Spencer2021b}
-Spencer, Jack. 2021. {``Rational Monism and Rational Pluralism.''}
-\emph{Philosophical Studies} 178: 1769--1800.
-\url{https://doi.org/10.1007/s11098-020-01509-9}.
-
-\bibitem[\citeproctext]{ref-Spencer2023}
----------. 2023. {``Can It Be Irrational to Knowingly Choose the
-Best?''} \emph{Australasian Journal of Philosophy} 101 (1): 128--39.
-\url{https://doi.org/10.1080/00048402.2021.1958880}.
-
-\bibitem[\citeproctext]{ref-SpencerWells2019}
-Spencer, Jack, and Ian Wells. 2019. {``Why Take Both Boxes?''}
-\emph{{P}hilosophy and {P}henomenological {R}esearch} 99 (1): 27--48.
-\url{https://doi.org/10.1111/phpr.12466}.
-
-\bibitem[\citeproctext]{ref-Stalnaker1998}
-Stalnaker, Robert. 1998. {``Belief Revision in Games: Forward and
-Backward Induction.''} \emph{Mathematical Social Sciences} 36 (1):
-31--56. \url{https://doi.org/10.1016/S0165-4896(98)00007-9}.
-
-\bibitem[\citeproctext]{ref-Stalnaker1999}
----------. 1999. {``Extensive and Strategic Forms: Games and Models for
-Games.''} \emph{Research in Economics} 53 (3): 293--319.
-\url{https://doi.org/10.1006/reec.1999.0200}.
-
-\bibitem[\citeproctext]{ref-Stalnaker2008}
----------. 2008. \emph{Our Knowledge of the Internal World}. Oxford:
-Oxford University Press.
-
-\bibitem[\citeproctext]{ref-Strevens2008}
-Strevens, Michael. 2008. \emph{Depth: An Account of Scientific
-Explanations}. Cambridge, MA: Harvard University Press.
-
-\bibitem[\citeproctext]{ref-Sutton2000}
-Sutton, John. 2000. \emph{Marshall's Tendencies: What Can Economists
-Know?} Cambridge, MA: {MIT} Press.
-
-\bibitem[\citeproctext]{ref-Thoma2019}
-Thoma, Johanna. 2019. {``Risk Aversion and the Long Run.''}
-\emph{Ethics} 129 (2): 230--53. \url{https://doi.org/10.1086/699256}.
-
-\bibitem[\citeproctext]{ref-Valentini2012}
-Valentini, Laura. 2012. {``Ideal Vs. Non-Ideal Theory: A Conceptual
-Map.''} \emph{Philosophy Compass} 7 (9): 654--64.
-\url{https://doi.org/10.1111/phco.2012.7.issue-9}.
-
-\bibitem[\citeproctext]{ref-Weatherson2019}
-Weatherson, Brian. 2019. \emph{Normative Externalism}. Oxford: Oxford
-University Press.
-
-\bibitem[\citeproctext]{ref-Wedgwood2012}
-Wedgwood, Ralph. 2012. {``Justified Inference.''} \emph{Synthese} 189
-(2): 273--95. \url{https://doi.org/10.1007/s11229-011-0012-8}.
-
-\bibitem[\citeproctext]{ref-Wedgwood2013a}
----------. 2013. {``Gandalf's Solution to the Newcomb Problem.''}
-\emph{Synthese} 190 (14): 2643--75.
-\url{https://doi.org/10.1007/s11229-011-9900-1}.
-
-\bibitem[\citeproctext]{ref-Weirich1985}
-Weirich, Paul. 1985. {``Decision Instability.''} \emph{Australasian
-Journal of Philosophy} 63 (4): 465--72.
-\url{https://doi.org/10.1080/00048408512342061}.
-
-\bibitem[\citeproctext]{ref-Wells2019}
-Wells, Ian. 2019. {``Equal Opportunity and Newcomb's Problem.''}
-\emph{Mind} 128 (510): 429--57.
-\url{https://doi.org/10.1093/mind/fzx018}.
-
-\bibitem[\citeproctext]{ref-Wible1994}
-Wible, James R. 1994. {``Charles Sanders Peirce's Economy of
-Research.''} \emph{Journal of Economic Methodology} 1 (1): 135--60.
-\url{https://doi.org/10.1080/13501789400000009}.
-
-\bibitem[\citeproctext]{ref-Wilson1967}
-Wilson, Robert B. 1967. {``Competitive Bidding with Asymmetric
-Information.''} \emph{Management Science} 13 (11): 816--20.
-\url{https://doi.org/10.1287/mnsc.13.11.816}.
-
-\bibitem[\citeproctext]{ref-Worsnip2021}
-Worsnip, Alex. 2021. \emph{Fitting Things Together: Coherence and the
-Demands of Structural Rationality}. Oxford: Oxford University Press.
-
-\bibitem[\citeproctext]{ref-WrightVaguenessCollection}
-Wright, Crispin. 2021. \emph{The Riddle of Vagueness: Selected Essays
-1975-2020}. Oxford: Oxford University Press.
-
-\bibitem[\citeproctext]{ref-Xefteris2015}
-Xefteris, Dimitrios. 2015. {``Symmetric Zero-Sum Games with Only
-Asymmetric Equilibria.''} \emph{Games and Economic Behavior} 89 (1):
-122--25. \url{https://doi.org/10.1016/j.geb.2014.12.001}.
-
-\bibitem[\citeproctext]{ref-Ye2023}
-Ye, Ru. 2023. {``Permissivism, the Value of Rationality, and a
-Convergence-Theoretic Epistemology.''} \emph{Philosophy and
-Phenomenological Research} 106 (1): 157--75.
-\url{https://doi.org/10.1111/phpr.12845}.
-
-\end{CSLReferences}
 
 
 
